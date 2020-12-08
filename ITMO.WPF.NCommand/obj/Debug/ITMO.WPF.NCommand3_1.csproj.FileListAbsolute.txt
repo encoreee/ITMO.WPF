@@ -1,0 +1,14 @@
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\bin\Debug\ITMO.WPF.NCommand.exe.config
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\bin\Debug\ITMO.WPF.NCommand.exe
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\bin\Debug\ITMO.WPF.NCommand.pdb
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\MainWindow.g.cs
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\App.g.cs
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand_MarkupCompile.cache
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand_MarkupCompile.lref
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\MainWindow.baml
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand.g.resources
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand.Properties.Resources.resources
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand3_1.csproj.GenerateResource.cache
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand3_1.csproj.CoreCompileInputs.cache
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand.exe
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand.pdb

@@ -1,0 +1,15 @@
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.csprojAssemblyReference.cache
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\MainWindow.g.cs
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\App.g.cs
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1_MarkupCompile.cache
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1_MarkupCompile.lref
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\bin\Debug\WpfRoutedEvent_2_1.exe.config
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\bin\Debug\WpfRoutedEvent_2_1.exe
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\bin\Debug\WpfRoutedEvent_2_1.pdb
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\MainWindow.baml
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.g.resources
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.Properties.Resources.resources
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.csproj.GenerateResource.cache
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.csproj.CoreCompileInputs.cache
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.exe
+D:\Александр\Repository\ITMO.WPF\WpfRoutedEvent_2_1\obj\Debug\WpfRoutedEvent_2_1.pdb
