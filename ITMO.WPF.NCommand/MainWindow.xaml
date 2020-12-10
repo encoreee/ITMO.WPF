@@ -4,23 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITMO.WPF.NCommand"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="20 " Margin="10,10,0,0" VerticalAlignment="Top" Width="774">
-            <MenuItem Header="Правка" Click="MenuItem_Click" Height="20">
+            <MenuItem Header="Правка"  Height="20">
                 <MenuItem Header="Копировать" CommandTarget="{Binding ElementName=MainWindow}" Command="Copy"/>
                 <MenuItem Header="Вырезать" CommandTarget="{Binding ElementName=MainWindow}" Command="Cut"/>
                 <MenuItem Header="Вставить" CommandTarget="{Binding ElementName=MainWindow}" Command="Paste"/>
-                <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <RichTextBox Height="100" Width="100">
+             
+                <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <RichTextBox x:Name="richTextBox" Height="100" Width="100">
                     <FlowDocument>
                         <Paragraph>
                             <Run Text="RichTextBox"/>
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
+                <MenuItem Header="MenuItem" HorizontalAlignment="Left" Height="20" Width="30"/>
+            </MenuItem>
+            <MenuItem Header="Menu Item" Height="20">
+                <MenuItem Header="Launch" HorizontalAlignment="Left" Height="20" />
             </MenuItem>
         </Menu>
+        <Button Command="local:CustomCommands.Launch" Content="Launch" HorizontalAlignment="Left" Margin="55,61,0,0" VerticalAlignment="Top" Width="75" Height="15"/>
+     
+
+        <CheckBox x:Name="checkBox" Content="Enable Launch Command" HorizontalAlignment="Left" Margin="160,61,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -12,3 +12,4 @@ D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.N
 D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand3_1.csproj.CoreCompileInputs.cache
 D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand.exe
 D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand.pdb
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.NCommand\obj\Debug\ITMO.WPF.NCommand3_1.csprojAssemblyReference.cache
