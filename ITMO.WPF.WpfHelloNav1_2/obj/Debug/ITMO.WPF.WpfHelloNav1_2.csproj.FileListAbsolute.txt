@@ -16,3 +16,4 @@ D:\Александр\Repository\ITMO.WPF\ITMO.WPF.WpfHelloNav1_2\obj\Debug\Page
 D:\Александр\Repository\ITMO.WPF\ITMO.WPF.WpfHelloNav1_2\obj\Debug\Page2.g.cs
 D:\Александр\Repository\ITMO.WPF\ITMO.WPF.WpfHelloNav1_2\obj\Debug\Page1.baml
 D:\Александр\Repository\ITMO.WPF\ITMO.WPF.WpfHelloNav1_2\obj\Debug\Page2.baml
+D:\Александр\Repository\ITMO.WPF\ITMO.WPF.WpfHelloNav1_2\obj\Debug\ITMO.WPF.WpfHelloNav1_2.csprojAssemblyReference.cache
