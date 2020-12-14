@@ -16,3 +16,8 @@ D:\Александр\Repository\ITMO.WinFormS\ITMO.Finalcontrol.Calculator_star
 D:\Александр\Repository\ITMO.WinFormS\ITMO.Finalcontrol.Calculator_starter\CalculatorEngine\obj\Debug\CalculatorEngine.csproj.CoreCompileInputs.cache
 D:\Александр\Repository\ITMO.WinFormS\ITMO.Finalcontrol.Calculator_starter\CalculatorEngine\obj\Debug\CalculatorEngine.dll
 D:\Александр\Repository\ITMO.WinFormS\ITMO.Finalcontrol.Calculator_starter\CalculatorEngine\obj\Debug\CalculatorEngine.pdb
+D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\bin\Debug\CalculatorEngine.dll
+D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\bin\Debug\CalculatorEngine.pdb
+D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.csproj.CoreCompileInputs.cache
+D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.dll
+D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.pdb
