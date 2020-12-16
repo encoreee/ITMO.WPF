@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "245443",
+    "ThreadId": "71904",
+    "Html": "<p>I'm learning to use the WPF DataGrid with the MVVM pattern and I have stumbled over a couple of minor issues.<br><br>1)<br>I generally don't use the auto-generation feature for columns.<br>First for localization and then because often I don't want to visualize every property.<br><br>So I defined my columns manually in XAML and then the most natural thing to do seemed to bind the single headers to properties on the ViewModel.<br><br>Alas, this doesn't work.<br>I have to let the View pull the values from the ViewModel in the code-behind and update the Header contents programmatically.<br><br>2)<br>I always bind the DataGrid's ItemSource property to another property on the ViewModel, usually a List.<br>In certain cases I don't want to use the DataGrid's built-in capabilities for adding/removing/editing rows.<br><br>So after having modified the list on the ViewModel I have it do something like InvokePropertyChanged(&quot;MyList&quot;);<br>However this doesn't work, I would have expected the DataGrid to pick-up the changes but this isn't the case.<br>In order to compensate for this I call something like grid.Items.Refresh() on the View.<br><br><br>For both cases I'd like to ask if this the intended behaviour and if you see something fundamentally wrong with my approach.<br>So far I'm having quite a good time with WPF and MVVM but since the DataGrid is a fundamental component of almost any LOB application these two quirks somewhat break consistency with how MVVM is usually implemented in WPF apps.<br><br>Regards,<br>-Rob</p>",
+    "PostedDate": "2009-10-14T01:33:41.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

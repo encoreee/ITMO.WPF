@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "143059",
+    "ThreadId": "43040",
+    "Html": "<p>Hi,<br>\r\n<br>\r\nI'm using WPF Datagrid bound to ObservableCollection of business objects.<br>\r\nThe business object classes implement IDataErrorInfo.<br>\r\nThe DataGrid uses row and cell level validations. The sample is bellow.<br>\r\n<br>\r\nThe issue is: in the scenario of validation error occured, then all cells in all rows become readonly unless the invalid data is corrected. I want to allow the user to delete invalid row if needed.<br>\r\nIn this case the the DataGrid remains readonly and I did not find the way to reset it to edit mode again.<br>\r\nMy main point: I want to control validation error for entire datagrid and clearv all of them when needed.<br>\r\n<br>\r\nI tried even clearing validation error on the errornous cell's textbox, did not help:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#2b91af\">DataGridRow</span><span style=\"font-size:13px\"> row =\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.dataGridUserFields.ItemContainerGenerator.ContainerFromItem(sessionUserDataDefinition) </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">as\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DataGridRow</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">if</span><span style=\"font-size:13px\"> (row!=</span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)\r\n<p>&nbsp;</p>\r\n<p>{</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">BindingExpression</span><span style=\"font-size:13px\"> bindingEx =\r\n<p>&nbsp;</p>\r\n<p>((</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">TextBox</span><span style=\"font-size:13px\">) ((</span><span style=\"font-size:13px;color:#2b91af\">DataGridTextColumn</span><span style=\"font-size:13px\">) </span><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.dataGridUserFields.Columns[0]).GetCellContent(row)).\r\n<p>&nbsp;</p>\r\n<p>GetBindingExpression(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">TextBox</span><span style=\"font-size:13px\">.TextProperty);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">ReadOnlyObservableCollection</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#2b91af\">ValidationError</span><span style=\"font-size:13px\">&gt; errors = </span><span style=\"font-size:13px;color:#2b91af\">Validation</span><span style=\"font-size:13px\">.GetErrors(\r\n<p>&nbsp;</p>\r\n<p>((</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">TextBox</span><span style=\"font-size:13px\">) ((</span><span style=\"font-size:13px;color:#2b91af\">DataGridTextColumn</span><span style=\"font-size:13px\">) </span><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.dataGridUserFields.Columns[0]).GetCellContent(row)));\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">if</span><span style=\"font-size:13px\"> (bindingEx!=</span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">Validation</span><span style=\"font-size:13px\">.ClearInvalid(bindingEx);\r\n<p>&nbsp;</p>\r\n<p>}</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><em>&lt;dg:DataGrid Margin=&quot;20,20,0,10&quot; Name=&quot;dataGridUserFields&quot; SelectionMode=&quot;Single&quot; AutoGenerateColumns=&quot;False&quot; HorizontalAlignment=&quot;Stretch&quot;  VerticalAlignment=&quot;Stretch&quot; RowHeaderWidth=&quot;30&quot; RowHeight=&quot;25&quot; AlternationCount=&quot;1&quot; CanUserAddRows=&quot;False&quot; CanUserDeleteRows=&quot;False&quot; AlternatingRowBackground=&quot;AliceBlue&quot; SizeChanged=&quot;dataGridUserFields_SizeChanged&quot; GridLinesVisibility=&quot;All&quot; HeadersVisibility=&quot;All&quot; IsSynchronizedWithCurrentItem=&quot;True&quot; <br>\r\n                                     RowStyle=&quot;{StaticResource RowStyle}&quot;&gt;<br>\r\n                         <br>\r\n                            &lt;dg:DataGrid.RowValidationRules&gt;<br>\r\n                                &lt;PlugIn:RowDataInfoValidationRule ValidationStep=&quot;UpdatedValue&quot; /&gt;<br>\r\n                            &lt;/dg:DataGrid.RowValidationRules&gt;<br>\r\n                            &lt;dg:DataGrid.ItemsSource&gt;<br>\r\n                                &lt;Binding/&gt;<br>\r\n                            &lt;/dg:DataGrid.ItemsSource&gt;<br>\r\n                            &lt;dg:DataGrid.DataContext &gt;<br>\r\n                                &lt;Binding Path=&quot;SessionUserDataConfiguration&quot;/&gt;<br>\r\n                            &lt;/dg:DataGrid.DataContext&gt;<br>\r\n                            <br>\r\n                                &lt;dg:DataGrid.Columns&gt;<br>\r\n                               <br>\r\n                                    &lt;!--&lt;dg:DataGridTextColumn Header=&quot;ID&quot; Binding=&quot;{Binding Path=ID}&quot; Width=&quot;30&quot; /&gt;--&gt;<br>\r\n                                &lt;dg:DataGridTextColumn Header=&quot;Field Name&quot; Width=&quot;380&quot; EditingElementStyle=&quot;{StaticResource CellEditStyle}&quot;&gt;<br>\r\n                                    &lt;dg:DataGridTextColumn.Binding &gt;<br>\r\n                                        &lt;Binding Path=&quot;FieldName&quot; UpdateSourceTrigger=&quot;PropertyChanged&quot;&gt;<br>\r\n                                          &lt;Binding.ValidationRules&gt;<br>\r\n                                            &lt;PlugIn:CellDataInfoValidationRule ValidationStep=&quot;UpdatedValue&quot;/&gt;<br>\r\n                                          &lt;/Binding.ValidationRules&gt;<br>\r\n                                        &lt;/Binding&gt;<br>\r\n                                    &lt;/dg:DataGridTextColumn.Binding&gt;<br>\r\n                                &lt;/dg:DataGridTextColumn&gt;<span style=\"font-size:13px;color:#2b91af\">\r\n<p>&nbsp;</p>\r\n</span></em></p>\r\n",
+    "PostedDate": "2008-12-26T11:59:06.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143480",
+    "ThreadId": "43040",
+    "Html": "Hi,<br>\r\n<br>\r\nPressing Escape key in the invalidated cell would allow you to edit other cells as well. <br>\r\n<br>\r\nIf you dont like to press Escape explicitly then you can alternately play with cell.IsEditing property to check i making it false can achieve what you need. <br>\r\n<br>\r\nBut I agree with the default behaviour that pressing escape gives user an alternate way to edit otehr cells as well when error occur.<br>\r\n<br>\r\nCheers.\r\n",
+    "PostedDate": "2008-12-30T02:30:31.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144038",
+    "ThreadId": "43040",
+    "Html": "<br>\r\n<p>vinitvsankhe,</p>\r\n<p>Thank you for the tips!</p>\r\n<p>Escape key works for error clear purpose.<br>\r\nHowever, I need to achive that effect programmically, not by user.</p>\r\n<p>Setting cell.IsEditing = false doesn't clear the error, my object that implement IDataErrorInfo interface and bound to the row still contains invalid data and remains invalid.</p>\r\n<p> </p>\r\n",
+    "PostedDate": "2009-01-02T12:56:39.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147394",
+    "ThreadId": "43040",
+    "Html": "Does calling DataGrid.CancelEdit() help?<br>\r\n",
+    "PostedDate": "2009-01-15T07:52:00.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429967",
+    "ThreadId": "43040",
+    "Html": "<p>Did you manage to solve this? I have the same problem.</p>\r\n<p>I want to be able to remove a row whether it failes validation or not. Tried the above without success. My grid is connected to an observable collection.</p>\r\n<p>Also, How do I check to see if a row has a validation error? What do I send to Validation.HasError()?</p>",
+    "PostedDate": "2010-04-12T04:31:38.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429987",
+    "ThreadId": "43040",
+    "Html": "<p>I found a solution for my problem.</p>\r\n<p>I simply set the datagrids itemssource to null, and then set it back to my observable collection. This seems to cause the grid to reset clearing the validations. <br>Since 'm working from the observable collection, the row is gone.</p>",
+    "PostedDate": "2010-04-12T05:54:50.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

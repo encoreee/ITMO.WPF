@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "528675",
+    "ThreadId": "236480",
+    "Html": "\r\n<p>Hi All ,</p>\r\n<p>I used the ribbon control in WPF browser application.</p>\r\n<p>Is it possible to hide QuickAccessToolBar. But i tried right click, the context menu only working on minimize not working for QuickAccessToolBar.</p>\r\n<p>Any one please help me ..</p>\r\n",
+    "PostedDate": "2010-11-30T00:23:19.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "585746",
+    "ThreadId": "236480",
+    "Html": "<p>I'd like an answer to this question too!</p>",
+    "PostedDate": "2011-03-24T07:39:15.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "205828",
+    "ThreadId": "60751",
+    "Html": "<p>i have (readonly) grid with own column types where cell content is <span style=\"font-size:small\">DockPanel </span>with one Label inside</p>\r\n<p>when i click to 2nd row 1st column it selelects its label =&nbsp; correct</p>\r\n<p>now when i use keyboard right key to get to row2 column2 it jumps up to r1 c1 = bad</p>\r\n<p>(i see nothing special into predefined column types to handle this behaviour)</p>\r\n<p>how to fix it?</p>",
+    "PostedDate": "2009-06-26T03:03:58.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210738",
+    "ThreadId": "60751",
+    "Html": "<p>reproducible just with</p>\r\n<p><span style=\"font-size:small\">\r\n<p>Microsoft::Windows::Controls::DataGridSelectionUnit::Cell</p>\r\n<p><span style=\"font-size:small\">\r\n<p>having SelectionUnit</p>\r\n</span></p>\r\n</span></p>\r\n<p><span style=\"font-size:small\">\r\n<p>Microsoft::Windows::Controls::DataGridSelectionUnit::FullRow</p>\r\n<p>no problem</p>\r\n</span></p>",
+    "PostedDate": "2009-07-10T00:39:57.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213041",
+    "ThreadId": "60751",
+    "Html": "<p>problem&nbsp;is related to my code calling grid-&gt;Focus during&nbsp;<span style=\"font-size:small\">MouseLeftButtonUp</span></p>\r\n<p><span style=\"font-size:small\">cell stays selected for user but next keyboard move jumps to 0:0</span></p>\r\n<p><span style=\"font-size:small\">= BUG in Focus handling?</span></p>\r\n<p><span style=\"font-size:small\">how to set focus to grid correctly?</span></p>",
+    "PostedDate": "2009-07-17T06:55:48.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

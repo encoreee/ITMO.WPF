@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "240403",
+    "ThreadId": "70581",
+    "Html": "<p>Hello,</p>\r\n<p>I have a datagrid with 3 columns and x rows. They are all of type &quot;int&quot;. The first two columns have a value. These values<br>can be inserted/updated by the user. I would like to see in the third column the SUM of the values in column 1 and 2...</p>\r\n<p>But I do not know how to write the binding for this so the datagrid automatically makes the summation of both columns (on each row).</p>\r\n<p>Hope you can help me out.</p>\r\n<p>Regards!<br>M</p>",
+    "PostedDate": "2009-09-30T06:35:24.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "240582",
+    "ThreadId": "70581",
+    "Html": "<p>One approach is to write a value convertor which takes in the two values and calculates the third value. &nbsp; I am assuming that the &quot;SUM&quot; is a view only items and doesn't get saved or pushed into any databound object.</p>\r\n<p>Tracy</p>",
+    "PostedDate": "2009-09-30T11:55:27.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "240712",
+    "ThreadId": "70581",
+    "Html": "<div style=\"color:Black;background-color:White\">Another thing you can do is implement the logic in the object you're displaying in the datagrid.&nbsp; I haven't tested this but it should get you started... you'll need to set the binding to ColumnSum to read only.\r\n<pre>&nbsp;</pre>\r\n<pre><span style=\"color:Blue\">public</span> <span style=\"color:Blue\">class</span> MyClass&nbsp;: INotifyPropertyChanged\r\n{\r\n\r\n   <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">event</span> PropertyChangedEventHandler PropertyChanged;\r\n\r\n   <span style=\"color:Blue\">private</span> column1;\r\n   <span style=\"color:Blue\">private</span> column2;\r\n\r\n   <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">int</span> Column1\r\n   {\r\n      <span style=\"color:Blue\">get</span>\r\n      {\r\n         <span style=\"color:Blue\">return</span> column1;\r\n      }\r\n\r\n      <span style=\"color:Blue\">set</span>\r\n      {\r\n         column1 = value;\r\n         OnPropertyChanged(<span style=\"color:#A31515\">&quot;ColumnSum&quot;</span>);\r\n      }\r\n   }\r\n\r\n   <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">int</span> Column2\r\n   {\r\n      <span style=\"color:Blue\">get</span>\r\n      {\r\n         <span style=\"color:Blue\">return</span> column2;\r\n      }\r\n\r\n      <span style=\"color:Blue\">set</span>\r\n      {\r\n         column2 = value;\r\n         OnPropertyChanged(<span style=\"color:#A31515\">&quot;ColumnSum&quot;</span>);\r\n      }\r\n   }\r\n\r\n   <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">int</span> ColumnSum\r\n   {\r\n      <span style=\"color:Blue\">get</span>\r\n      {\r\n         <span style=\"color:Blue\">return</span> Column1 + Column2;\r\n      }\r\n   }\r\n\r\n   <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> OnPropertyChanged(<span style=\"color:Blue\">string</span> propertyName)\r\n   {\r\n        <span style=\"color:Blue\">if</span> (PropertyChanged != <span style=\"color:Blue\">null</span>)\r\n        {\r\n            PropertyChanged(<span style=\"color:Blue\">this</span>, <span style=\"color:Blue\">new</span> PropertyChangedEventArgs(propertyName));\r\n        }\r\n   }\r\n\r\n}&nbsp;\r\n</pre>\r\n</div>",
+    "PostedDate": "2009-09-30T19:26:58.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "240884",
+    "ThreadId": "70581",
+    "Html": "<p>Hello,</p>\r\n<p>I'm interessted in using the Converter solution... I have 2 columns. Each is bound to a BINDING...<br>Now I try to bind the third column. I need to do this in code...</p>\r\n<p>I'm trying this but that gives me an error:</p>\r\n<p>\r\n<p><span style=\"font-family:Courier New;font-size:x-small\"><span style=\"font-family:Courier New;font-size:x-small\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> column = <span style=\"color:Blue\">new</span> DataGridTextColumn { Header = <span style=\"color:#A31515\">&quot;Sum&quot;</span> };\r\nMultiBinding multiBinding = <span style=\"color:Blue\">new</span> MultiBinding();\r\n<span style=\"color:Blue\">var</span> col1 = (DataGridTextColumn)dataGrid.Columns[2];\r\n<span style=\"color:Blue\">var</span> col2 = (DataGridTextColumn)dataGrid.Columns[3];\r\nmultiBinding.Bindings.Add(col1.Binding);\r\nmultiBinding.Bindings.Add(col2.Binding);\r\nmultiBinding.Converter = MyConverter;\r\ncolumn.Binding = multiBinding; \r\ndataGrid.Columns.Add(column);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<span style=\"font-family:Courier New;font-size:x-small\"><span style=\"font-family:Courier New;font-size:x-small\"><br>\r\n<p>But this doesn't seem to work. I always get the error:</p>\r\n<p>Cannot set UpdateSourceTrigger on inner Binding of MultiBinding. Only the default Immediate UpdateSourceTrigger is valid.</p>\r\n<p>&nbsp;</p>\r\n</span></span></span></span></p>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-family:Courier New;font-size:x-small\">&nbsp;</span>&nbsp;</p>",
+    "PostedDate": "2009-10-01T05:50:06.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

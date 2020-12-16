@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "176386",
+    "ThreadId": "52481",
+    "Html": "Hi,<div>My application has a configuration dialog which uses the common OK-Cancel-Apply buttons. I use a BindingGroup on the Window and call the appropriate BeginEdit/CommitEdit/CancelEdit when the buttons are clicked. That works well for all the controls in the Window except for the DataGrid.</div><div>When I change a value in the DataGrid, it changes the source (data) object on the cell end edit. For example, if in my grid I have a list of catagories and that I change the name of a category, as soon as the cell ends the editing, the category is updated (I can see it in my main window). I would like it to update the source data object only when I click OK or Apply (which calls CommitEdit on the modal Window BindingGroup).</div><div><br></div><div>Is there a way to do this with the DataGrid?</div><div><br></div><div>Thank you,</div><div><br></div><div>gabriel</div>",
+    "PostedDate": "2009-04-06T17:10:32.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

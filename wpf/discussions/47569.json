@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "159303",
+    "ThreadId": "47569",
+    "Html": "How do I change the text-alignment of a header in the DataGrid? Is there any way besides creating a whole new ControlTemplate? I do not wish to lose any existing functionality, such as automatic columnwidth.\r\n",
+    "PostedDate": "2009-02-19T01:26:58.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159326",
+    "ThreadId": "47569",
+    "Html": "Hi xyph,<br>\r\n<br>\r\nTry the following:<br>\r\n<br>\r\n&lt;Style x:Key=&quot;HeaderStyle&quot; TargetType=&quot;{x:Type dg:DataGridColumnHeader}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Right&quot;/&gt;<br>\r\n&lt;/Style&gt;<br>\r\n<br>\r\nSetting your DataGrid.ColumnHeaderStyle to this style will right align the header text.<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-02-19T02:18:44.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159332",
+    "ThreadId": "47569",
+    "Html": "Hi Colin!<br>\r\n<br>\r\nThat did the trick! Thank you very much for the fast reply! It was easier than I thought :-)\r\n",
+    "PostedDate": "2009-02-19T02:30:27.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "215304",
+    "ThreadId": "63327",
+    "Html": "<p>I have two DataGrid binding tricks I want to know how to do:</p>\r\n<p>1. I'd like to have a column's binding ItemsSource be different than the others. In my situation, I need to have a column bound to the selected item of a combobox and the path a property of the selected object.</p>\r\n<p>2. I'd like to have a more than one binding for a column. I'd like a binding one-way target to source and another one-way source to target. So the effect here would be a passthrough of data from one data source object to another, through the datagrid's column's binding.</p>\r\n<p>&nbsp;</p>\r\n<p>TIA,</p>\r\n<p>Bill</p>",
+    "PostedDate": "2009-07-23T07:20:10.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

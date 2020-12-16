@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "117738",
+    "ThreadId": "35418",
+    "Html": "One of my columns in datagrid is a checkbox column. It is not a bound column. My other columns in the grid are bound columns.<br>\r\nHow do I &nbsp;find out all the rows with checked checkboxes?<br>\r\nI want to iterate through each row in the grid and check the IsChecked property of CheckBox column.<br>\r\nI did not see anything in the grid to iterate through each row and column.<br>\r\n<br>\r\nDo I have to bind the checkbox column also and then check those bound properties?<br>\r\n<br>\r\nthanks for the help\r\n",
+    "PostedDate": "2008-09-10T21:23:34.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118011",
+    "ThreadId": "35418",
+    "Html": "If the column is unbound and you want to iterate through all the rows to find out if they are checked you can go through each row visual and check the cell of that column.&nbsp; This thread,&nbsp;<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065</a>, has an example of how you can get the cell based on the row and column index.\r\n",
+    "PostedDate": "2008-09-11T18:47:17.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

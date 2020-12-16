@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "117614",
+    "ThreadId": "35383",
+    "Html": "I enabled &quot;CanUserAddRows&quot; to my datagrid which is bound to XML content, but it didn't change anything.&nbsp; What's the interface for using this properly?&nbsp; Am I missing something?<br>\r\n",
+    "PostedDate": "2008-09-10T11:34:59.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117717",
+    "ThreadId": "35383",
+    "Html": "I am having the same issue - the bindings work but I can't get the &quot;CanUserAddRows&quot; to work either. When I add &quot;Mode=TwoWay&quot; to the binding I see this error:<br>\r\n<br>\r\nA TwoWay or OneWayToSource binding cannot work on the read-only property 'Item' of type 'MS.Internal.Data.XDeferredAxisSource'.<br>\r\n<br>\r\nI was able to wrap my grid data in an ObservableCollection&lt;T&gt; and I could get the 'delete' to work (CanUserDeleteRows), but did not get the empty 'new' row and&nbsp;this makes a copy of the collection and I lose the syncronization between the ui and the backing xml data.<br>\r\n<br>\r\nDoes anyone know what the specific requirements are on the underlying collection to make &quot;CanUserAddRows&quot; work?\r\n",
+    "PostedDate": "2008-09-10T18:03:50.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117840",
+    "ThreadId": "35383",
+    "Html": "When using an XmlDataProvider as the ItemsSource you get a ListCollectionView but the collection is a fixed size.&nbsp; Because of that CanUserAddRows is coerced to false even if you try to set it to true.&nbsp; <br>\r\n<br>\r\nSee the comments on this post,&nbsp;<a href=\"http://blogs.msdn.com/vinsibal/archive/2008/05/27/using-ieditablecollectionview-with-dynamically-generated-gridviewcolumns.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/05/27/using-ieditablecollectionview-with-dynamically-generated-gridviewcolumns.aspx</a>, for the requirements for CanUserAddRows to work.\r\n",
+    "PostedDate": "2008-09-11T06:50:23.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117861",
+    "ThreadId": "35383",
+    "Html": "Would there be a way I can fake this?&nbsp; Bind an empty row to the end of the data grid, then create the element I need when the user goes to edit the empty cell?<br>\r\n",
+    "PostedDate": "2008-09-11T08:19:08.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117922",
+    "ThreadId": "35383",
+    "Html": "That isn't really how IEditableCollectionView works.&nbsp; If you don't have bound data then you can do this by calling DataGrid.Items.Add but I'm guess that you don't want to do that as the XmlDataProvider is a requirement.\r\n",
+    "PostedDate": "2008-09-11T12:54:25.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

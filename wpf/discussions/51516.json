@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "172786",
+    "ThreadId": "51516",
+    "Html": "I need to hide a column on a trigger.<br>\r\n<br>\r\nBut I figgured out that:<br>\r\n1) There is no Style for a DataGridColumn<br>\r\n2) After setting Visibility=Collapsed with CellStyle, ElementStyle, HeaderStyle on ReadOnly column the column hides. But other columns doesn't shift to hidden column's place. And a hole in a table doesn't look nice.<br>\r\n3) Setting Width=0 also doesn't solve the problem.<br>\r\n<br>\r\nHow to hide the column properly?<br>\r\n<br>\r\nTest project: http://depositfiles.com/files/s1mb95y4f<br>\r\n<br>\r\nCode:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Grid.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Style x:Key=&quot;hiddenStyle&quot; TargetType=&quot;FrameworkElement&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Visibility&quot; Value=&quot;Collapsed&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Style&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Grid.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;toolkit:DataGrid<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;False&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;toolkit:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;toolkit:DataGridTextColumn<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header=&quot;Name Column&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Binding=&quot;{Binding Name}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IsReadOnly=&quot;True&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CellStyle=&quot;{StaticResource hiddenStyle}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ElementStyle=&quot;{StaticResource hiddenStyle}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HeaderStyle=&quot;{StaticResource hiddenStyle}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;toolkit:DataGridTextColumn<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header=&quot;Value Column&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Binding=&quot;{Binding Value}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IsReadOnly=&quot;True&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/toolkit:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/toolkit:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n",
+    "PostedDate": "2009-03-27T07:48:36.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172879",
+    "ThreadId": "51516",
+    "Html": "Where exactly do you want to add the trigger? Is it on cell level, row level or datagrid level. The solution depends on which level the trigger is.\r\n",
+    "PostedDate": "2009-03-27T11:27:40.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172891",
+    "ThreadId": "51516",
+    "Html": "On the UserControl level that hosts DataGrid.<br>\r\nI thought that I can define a style that will watch for some Dependency Property (of enum type) and will switch visibility of some rows. <br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;UserControl.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Style x:Key=&quot;visibleOnPersonalMedicalRecordStyle&quot; TargetType=&quot;FrameworkElement&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Visibility&quot; Value=&quot;Collapsed&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Style.Triggers&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTrigger Value=&quot;PersonalMedicalRecord&quot; Binding=&quot;{Binding ElementName=medicalRecordGrid, Path=State}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Visibility&quot; Value=&quot;Visible&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTrigger&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Style.Triggers&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Style&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/UserControl.Resources&gt;<br>\r\n<br>\r\nBut it requires Style property for a Column (witch doesn't exist).<br>\r\nWhat are other options? If I knew how to hide column at each level you mentioned I wouldn't ask =)<br>\r\n",
+    "PostedDate": "2009-03-27T11:57:02.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172915",
+    "ThreadId": "51516",
+    "Html": "There are two options...<br>\r\n<br>\r\n<ol>\r\n    <li>Set the visibility of the column, by indexing into the columns collection of DataGrid like....</li>\r\n</ol>\r\n<p>                &lt;Setter Property=&quot;datagrid.Columns[2].Visibility&quot; Value=&quot;Collapsed&quot;/&gt;<br>\r\n    But personally I dont like this approach.</p>\r\n<p>    2.  Use ViewModel approach. Have some property on the DataContext of DataGrid and bind the Visibility of column to the property (I like this approach).</p>\r\n",
+    "PostedDate": "2009-03-27T13:17:41.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173360",
+    "ThreadId": "51516",
+    "Html": "Thanks for hints.<br>\r\n<br>\r\nBut first suggestion will not work - XAML syntax does not support methods or indexers. <br>\r\nThere will be an error &quot;Cannot resolve the Style Property 'Visibility'. Verify that the owning type is the Style's TargetType, or use Class.Property syntax to specify the Property.&quot;<br>\r\n",
+    "PostedDate": "2009-03-30T00:35:07.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173417",
+    "ThreadId": "51516",
+    "Html": "Second suggestion doesn't work either!<br>\r\n<br>\r\n<br>\r\nDataGridTextColumn is not inherited from FrameworkElement so this code:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;toolkit:DataGridTextColumn <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Binding=&quot;{Binding Id}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visibility=&quot;{Binding IdVisibility}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&gt;<br>\r\n<br>\r\n<br>\r\nWill result in following error:<br>\r\n<br>\r\nSystem.Windows.Data Error: 2 : Cannot find governing FrameworkElement or FrameworkContentElement for target element. BindingExpression:Path=IdVisibility; DataItem=null; target element is 'DataGridTextColumn' (HashCode=41519911); target property is 'Visibility' (type 'Visibility')<br>\r\n<br>\r\n<br>\r\nThe explanation is: WPF won't add inheritance context for custom classes in current\r\nversion. And DataGridTextColumn is custom class (not inherited from FrameworkElement).<br>\r\n(http://social.expression.microsoft.com/Forums/en-US/wpf/thread/aff23943-5483-40b2-816b-4ce687bc6bf8/)<br>\r\n<br>\r\n<br>\r\nThe question is still open. How to hide column?<br>\r\n",
+    "PostedDate": "2009-03-30T04:40:27.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173427",
+    "ThreadId": "51516",
+    "Html": "You can forward the DataContext to the columns as described in this blog post, <a href=\"http://blogs.msdn.com/jaimer/archive/2008/11/22/forwarding-the-datagrid-s-datacontext-to-its-columns.aspx\">http://blogs.msdn.com/jaimer/archive/2008/11/22/forwarding-the-datagrid-s-datacontext-to-its-columns.aspx</a>.  That should enable scenario 2.\r\n",
+    "PostedDate": "2009-03-30T05:26:36.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173484",
+    "ThreadId": "51516",
+    "Html": "Smart workaround. Thanks.<br>\r\n<br>\r\nI hope there will be some design improvements in .net 4.0 though.<br>\r\n",
+    "PostedDate": "2009-03-30T07:39:02.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219604",
+    "ThreadId": "51516",
+    "Html": "<p>This is a wonderful workaround, however I have one question about how to make full use of it:</p>\r\n<p>Now I am able to bind the Visibility property of a column and that works perfectly. However, some of my columns are generated dynamically in code-behind rather than in XAML by copying properties of an existing column, and I need to create binding for the Visibility of those columns too. Ideally I would do this by copying an existing column's binding (so that I only need to change things in one place), however creating a new binding in code-behind would be acceptable.</p>\r\n<p>The problem is I cannot find a way to set (or get) the binding from a DataGridColumn.Visibility in code-behind, because objects of type Visibility do not have any binding and are not DependencyObjects, in theory. I suspect if it were a UIElement.Visibility object all would be fine, but it is not and I do not know how to turn it into one.</p>\r\n<p>Any help would be appreciated. I am probably missing something obvious...</p>",
+    "PostedDate": "2009-08-05T01:53:38.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "285830",
+    "ThreadId": "83159",
+    "Html": "<p>Hi!</p>\r\n<p>I am using customized DataGrid to visualise some specialized data. To do this I've created a WPF template (with converters and several data bindings to underlying row item) applied to some datagrid cells on predefined datagrid columns.</p>\r\n<p>The problem occurs when I use virtualization for scrolling (it is essential for me due to large amount of data). Scrolling for normal, simple datagrid cells works properly, but for my specialised, templated cells seems to &quot;shuffle&quot; them between rows (ex. scrolling up and down several times makes such a mess)</p>\r\n<p>It looks like UI (rows) refreshing occurs to late (after VirtualizingStackPanel scrolls elements) in comparison to simple elements. Is there any method for accesing particular cell and refreshing its UI content? (I have got access to DataGridRows collection and DataGrid object from MouseWheelUp and MouseWheelDown event handler in VirtualizingStackPanel)</p>",
+    "PostedDate": "2010-02-04T08:12:36.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "286140",
+    "ThreadId": "83159",
+    "Html": "<p>Problem fixed:</p>\r\n<p>When DataGrid EnableRowVirtualization property is set to True problem occurs - changing it to false makes everything ok.</p>\r\n<p>I think I had this problem because of using templated rows container with elements with enabled virtualization - maybe it was generating some conflicts with biult-in DataGrid virtualization?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-05T01:36:23.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "286570",
+    "ThreadId": "83159",
+    "Html": "<p>It seems it's not fixed.</p>\r\n<p>Can anyone please help me with this case?? Changing EnableRowVirtualization to false with virtualization enabled in elements from templated DataGrid doesn't work - it freezes DataGrid for about 15 seconds for rendering graphics.</p>\r\n<p>As described here: <a title=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39458\" href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39458\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39458</a> refresh call leads to an asychronous call to UpdateLayout operation - is there a way for overriding it? Let's say updating DataGrid vritualized panel after each cell has been refreshed?</p>\r\n<p>Thanks for any help!!</p>",
+    "PostedDate": "2010-02-06T05:48:36.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

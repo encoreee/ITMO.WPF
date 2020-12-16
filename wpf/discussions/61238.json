@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "207696",
+    "ThreadId": "61238",
+    "Html": "<p>I have a MVVM implementation, where the ViewModel is an Entity Framework set (colleciton) bound to a grid. This works fine..until an addition happens.</p>\r\n<p>The add is from a form (Not in grid) , and is persisted to the store correctly.</p>\r\n<p>In my code, I do the following:</p>\r\n<ol>\r\n<li>Set the dg.ItemsSource = null;</li>\r\n<li>Recreate the viewModel ( this.Model = new MyModel(); )</li>\r\n<li>set the dg.ItemsSource = this.Model ; </li>\r\n<li>Iterate the Model entities - all are there (Debug.WriteLine(item.Name);) </li>\r\n<li>bind the grid with this.dg.Items.Refresh();</li>\r\n</ol>\r\n<p>The grid does not show the new item :( If I restart the app, the item appears.</p>\r\n<p>Any idea what I am missing here ?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-01T12:49:09.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207996",
+    "ThreadId": "61238",
+    "Html": "<p>I think this will give you an idea as to how to proceed.</p>\r\n<p><a href=\"http://blogs.msdn.com/bethmassi/archive/2009/05/08/using-the-wpf-observablecollection-with-ef-entities.aspx\">http://blogs.msdn.com/bethmassi/archive/2009/05/08/using-the-wpf-observablecollection-with-ef-entities.aspx</a></p>",
+    "PostedDate": "2009-07-02T08:28:51.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

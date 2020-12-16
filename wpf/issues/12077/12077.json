@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nVisual Studio 2010 RC project attached to repeat the exception.\n \nhttp://www.sendspace.com/file/1z1lhy\n \nJust click into the Schooclass or Subject column and you hit the exception! but only when in the 3rd column is a RichTextbox in a DataGridTemplateColumn. Without that datatemplated richtextbox there is no exception.",
+    "LastUpdatedDate": "2013-02-21T18:40:41.84-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-14T05:53:42.77-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in DataGrid: SystemArgumentException: {\"'{0}' is not a Visual or Visual3D.\"} INNER EXCEPTION: NULL",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12077
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "434709",
+    "ThreadId": "210337",
+    "Html": "<p>Hello everybody,</p>\r\n<p>Could someone kindly explain me how&nbsp;GroupSizeDefinitions work?&nbsp;</p>\r\n<p>I looked at the examples provided with the WPF Ribbon Framework, and I went through the few lines of explanation that are in windowsclient.net.</p>\r\n<p>I tried to get some additional help Googling it but with no luck at the end.</p>\r\n<p>&nbsp;</p>\r\n<p>If I understood correctly, GroupSizeDefinitions are used to define how the Groups in a RibbonTab have to layout.</p>\r\n<p>Personally, I would expect that if I have 3 groups and 3 GroupDefinitions (LLL, LSS, LSL), the first group lays out using the LLL schema, the second one with the LSS and the last one with the LSL.&nbsp;</p>\r\n<p>But that's not what happens. All of them are displayed with the LLL layout/groupdefinition.</p>\r\n<p>&nbsp;</p>\r\n<p>Could you help me to bring some light on this?&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance,</p>\r\n<p>Cheers,</p>\r\n<p>GC.</p>",
+    "PostedDate": "2010-04-23T10:10:08.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "194263",
+    "ThreadId": "57474",
+    "Html": "<p>Can not wrap my mind around it. I want to highlight cells in DataGrid so that I get two triangles, upper-right and bottom-left. Any possible suggestions?</p>",
+    "PostedDate": "2009-05-26T06:18:17.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194498",
+    "ThreadId": "57474",
+    "Html": "<p>Can you provide more details as to what you are trying to do as far as the triage highlighting?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-26T13:37:14.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194640",
+    "ThreadId": "57474",
+    "Html": "<p>Lets say a datagrid is &quot;split&quot; by a diagonal from top-left to bottom-right. Those cells on the diagonal are &quot;neutral&quot;, those cells above diagonal are &quot;positive&quot;, below diagonal are &quot;negative&quot;. I would like to hightlight positive and negative cells in some way: font color, weght, background, anyhow. This table allows to show some dynamic at two time points so that diagonal cells show no changes, but other cells do show changes between these two time points</p>",
+    "PostedDate": "2009-05-26T23:23:04.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

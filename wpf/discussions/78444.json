@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "268490",
+    "ThreadId": "78444",
+    "Html": "<p><a href=\"http://www.getpivot.com/\">http://www.getpivot.com/</a></p>\r\n<p>It would be nice to see a control like the ones above from the MS labs&nbsp;show up here at the WPF Toolkit.&nbsp; Even if it isnt showing huge web datasets, a control that allows the user to move so effortlessly between massive amounts of data visualizations would be a nice thing to have.&nbsp; Think of it against a cube type database.</p>\r\n<p>That is the kind of visionary controls that would be nice to see in the&nbsp;WPF Toolkit.&nbsp; What other suggestions do people have?&nbsp; Maybe we can kickstart some life back into this project instead of the same old boring ( though neccesary ) data grid and Ribbon Control.&nbsp; We need some WPF love and goodness soon, or I am gonna start doing Silverlight &lt;grin&gt;.&nbsp; Hey MS,&nbsp; how about a&nbsp;christmas present or two for us WPF developers?&nbsp;&nbsp; Even the transitioning layout panel that that link shows would be a neat thing to have.&nbsp;</p>\r\n<p>Paul</p>",
+    "PostedDate": "2009-12-17T06:36:40.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1004982",
+    "ThreadId": "78444",
+    "Html": "The control made into Windows Phone, can it now make into WPF proper please? It's a fantastic way to display tabs and, in theory, the work is already done. Please, please release a Pivot control for WPF, specifically the Modern/Metro/Win8Store apps to use.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-02-21T18:15:23.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

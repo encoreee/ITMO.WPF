@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "194002",
+    "ThreadId": "57409",
+    "Html": "<p>Hi,</p>\r\n<p>I would like to include the vsm in my main assembly, but when I do this, I always get an error when I put the vsm&nbsp; as child of a border when the border has another child.</p>\r\n<p>&lt;Border x:Name=&quot;border&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;vsm:VisualStateManager.VisualStateGroups&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;...&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/vsm:VisualStateManager.VisualStateGroups&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Content of the Control&gt;<br>&lt;/Border&gt;</p>\r\n<p>VisualStudio tells me that a Border can only have one child.</p>\r\n<p>But when I put the VSM-Stuff in an extra assembly this code runs fine.</p>\r\n<p>Anyone can point me what is going wrong there?</p>",
+    "PostedDate": "2009-05-25T13:29:22.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194512",
+    "ThreadId": "57409",
+    "Html": "<p>Is your Border the root of&nbsp;a template?&nbsp; If not, that might explain why you're hitting this issue - in the Toolkit, VSM only works inside of a template or a UserControl (ie., you can't set VisualStateGroups directly on a control).&nbsp; This will change in 4.0, but there are some caveats which I won't get into here (they will be documented on MSDN, though).</p>",
+    "PostedDate": "2009-05-26T13:57:19.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

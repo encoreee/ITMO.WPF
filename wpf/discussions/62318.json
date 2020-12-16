@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "211544",
+    "ThreadId": "62318",
+    "Html": "<p>Ok, MVVM is new to me.&nbsp; So new, I've&nbsp;not tried the new toolkit ( only scan over it ).&nbsp; It appears this type of model is where WPF applications are heading and I wanted to know if my thinking is correct.&nbsp; Don't be too harsh, but let me know if I'm headed in right/wrong direction.&nbsp; I base my thinking on using MVVM with a menu control ( either basic toolbar or new WPF Ribbon ).</p>\r\n<p>I would like to create an app that has many UI for various processes, charts, wizards, etc.&nbsp; Each UI would be displayed via a menu selection to start each individual process.&nbsp; I would like to have some UI visible at the same time, so I'm thinking some sort of Docking control would be required. ( NOTE: If showing multiple UI is harder to implement, we can just start out with one UI at a time for now.&nbsp; Also, I don't want to have to use third party Docking controls;&nbsp; Looks like MS won't be releasing a Docking control for some time now. ).&nbsp;</p>\r\n<p>Now I picture this app having two pieces... a menu and a docking area/Frame for holding the UIs.&nbsp; I say docking area/Frame control because I don't want to do the usual ShowModal() and have another UI overlapping my main application.&nbsp; I would like for it to be displayed in docking area/Frame control.</p>\r\n<p>With that said,&nbsp;it this where MVVM comes in handy?&nbsp; Is my thinking right/wrong?&nbsp; Should I have put more effort in learning the MVVM toolkit and/or other MVVM links/blogs?&nbsp; Is there samples in the toolkit that do what I'm asking?&nbsp; Or other examples elsewhere I should review?</p>\r\n<p>In addition to this, I really hope that the WPF team plans on releasing a Docking control in not-so-distant future.&nbsp; There are many controls I would love to see moved over from WinForm and Silverlight platforms, but the Docking control is a must.&nbsp; Thanks in advance.</p>",
+    "PostedDate": "2009-07-13T17:53:29.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

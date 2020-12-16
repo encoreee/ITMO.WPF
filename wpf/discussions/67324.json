@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "228811",
+    "ThreadId": "67324",
+    "Html": "<p>On a Windows XP machine, when I maximize the RibbonWindow, it covers the Windows taskbar.&nbsp; This does not occur on Vista or Win7.</p>",
+    "PostedDate": "2009-08-28T12:03:02.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228833",
+    "ThreadId": "67324",
+    "Html": "<p>Hi burton,</p>\r\n<p>This is a known issue and will be addressed in V1 of the Ribbon.&nbsp; To my knowledge, I don't believe that there's a simple workaround that you can implement in the CTP.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-08-28T13:13:42.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228836",
+    "ThreadId": "67324",
+    "Html": "<div>\r\n<div id=ThreadNotificationFooter style=\"border:none;border-top:solid #CCCCCC 1.0pt;padding:0in 0in 0in 0in\">\r\n<p><span style=\"font-size:11.0pt;font-family:'Calibri','sans-serif';color:#1F497D\">Thanks!&nbsp; Just wanted to make sure somebody was aware of it.</span></p>\r\n<p><span style=\"font-size:11.0pt;font-family:'Calibri','sans-serif';color:#1F497D\"> </span></p>\r\n<p><span style=\"font-size:11.0pt;font-family:'Calibri','sans-serif';color:#1F497D\">Burton</span></p>\r\n</div>\r\n</div>\r\n<pre><br></pre>",
+    "PostedDate": "2009-08-28T13:18:14.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263762",
+    "ThreadId": "67324",
+    "Html": "<p>I was waiting patiently for a new CTP, but since that hasn't come yet, I have derived this workaround.&nbsp; This requires references to System.Windows.Forms and System.Drawing.&nbsp; Window1 is a RibbonWindow.</p>\r\n<p>Imports System.Windows.Forms<br><br>Class Window1<br>&nbsp;&nbsp;&nbsp; Private Sub Window1_LocationChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.LocationChanged<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WindowsXPMaximizeBug()<br>&nbsp;&nbsp;&nbsp; End Sub<br><br>&nbsp;&nbsp;&nbsp; Private Sub Window1_StateChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.StateChanged<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WindowsXPMaximizeBug()<br>&nbsp;&nbsp;&nbsp; End Sub<br><br>&nbsp;&nbsp;&nbsp; Private Sub WindowsXPMaximizeBug()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' In Ribbon CTP1, on Windows XP, maximizing the window covers the Windows Task Bar.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' If we're on XP, get the client area, convert it to WPF units and set the MaxHeight of the Window.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If Environment.OSVersion.Version.Major &lt; 6 Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim source = PresentationSource.FromVisual(Me)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If source IsNot Nothing Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim todevice = source.CompositionTarget.TransformToDevice<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim workingarea = Screen.GetWorkingArea( _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New System.Drawing.Point(Me.Left * todevice.M11, Me.Top * todevice.M22))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim heightdips = workingarea.Height * source.CompositionTarget.TransformFromDevice.M22<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.MaxHeight = heightdips + (SystemParameters.ResizeFrameVerticalBorderWidth * 2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>&nbsp;&nbsp;&nbsp; End Sub<br>End Class</p>",
+    "PostedDate": "2009-12-04T12:15:30.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447404",
+    "ThreadId": "67324",
+    "Html": "<p>Hi There,&nbsp;<br><br>Great workaround, it works well when the user minimises the window then maximises but when they maximise the window straight off it still covers the taskbar. To avoid this I need to call Me.Hide, Me.Show to refresh the window with the new values.&nbsp;<br><br>Thanks again Burton.&nbsp;</p>",
+    "PostedDate": "2010-05-25T20:29:59.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

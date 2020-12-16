@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130242",
+    "ThreadId": "39263",
+    "Html": "Hi<br>\r\n<br>\r\nWhen I use readonly columns in datagrid V1, I have the following effect:<br>\r\n1) I click in a readonly col, the cell will get marked (Blue background)<br>\r\n2) When I click in another cell of the same col, the cell which was clicked in step 1) will remain blue background, and the current cell will get blue too<br>\r\n3) This is repeatable as long as I do not click in any col that is readwrite<br>\r\n<br>\r\nI already check the example vinsibal posted (DataGridSample), there I cannot reproduce this effect<br>\r\n<br>\r\nDo you have any clue? <br>\r\nRegards<br>\r\nKlaus \r\n",
+    "PostedDate": "2008-11-05T08:36:06.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130310",
+    "ThreadId": "39263",
+    "Html": "Could you explain the differences b/w your app and my sample.  Maybe we can find out what the issue is that way.\r\n",
+    "PostedDate": "2008-11-05T12:31:59.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

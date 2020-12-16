@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "234874",
+    "ThreadId": "69027",
+    "Html": "<p>Hi</p>\r\n<p>I have a datagrid which shows data from a table (of cities)</p>\r\n<p>It has a RowDetails section showing data from a second table (of streets in the selected city), which I switch visible using a button.</p>\r\n<p>If I fill the grid with many records, the vertical scrollbar shows up (because the cities records exceed the visible space), to achieve this I do not have to set the VerticalScrollBarVisibility property.</p>\r\n<p>Now the problem: If I only fill in few cities (so that the cities records does not fill the visible space), the scrollbar does not show up, even if expanding the RowDetails (the streets) would fill more than enough street records for the visible part of the grid</p>\r\n<p>When I set VerticalScrollBarVisibility it does not help.</p>\r\n<p>Is this a known issue?</p>\r\n<p>Regards</p>\r\n<p>Klaus</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-15T12:49:58.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268471",
+    "ThreadId": "69027",
+    "Html": "<p>Hi Klaus</p>\r\n<p>Try to put a MaxHeight or Height on your RowDetail section so that when the rows exceed the height you had set then the scroll bar will appear.</p>\r\n<p>&nbsp;</p>\r\n<p>Claudiu</p>",
+    "PostedDate": "2009-12-17T05:57:30.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

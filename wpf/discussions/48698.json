@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "162616",
+    "ThreadId": "48698",
+    "Html": "<div id=\"result_box\" dir=ltr style=\"text-align:left\">I would like to use the wpf toolkit datagrid merge multiple cells, Expert answer, thank you!</div>\r\n",
+    "PostedDate": "2009-02-26T23:18:39.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163564",
+    "ThreadId": "48698",
+    "Html": "Visually merging cells (as excel does) is not a possiblity with current implementation of DataGrid. But you can always merge data from two properties into a single cell using Converters. Also you can have two visual elements inside a single cells corresponding to two data properties using Template columns.\r\n",
+    "PostedDate": "2009-03-02T11:27:39.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467866",
+    "ThreadId": "48698",
+    "Html": "<p>I'm bringing this up again to try to get an update on where the issue stands.&nbsp; Are there still plans to add this as a feature to the WPF datagrid?&nbsp; This feature has been in other datagrids prior to WPF for at least 15 or more&nbsp;years now.&nbsp; This seems like a HUGE step backward that we can't simply merge cells.&nbsp; Has anyone found a viable&nbsp;work around?</p>",
+    "PostedDate": "2010-07-15T09:02:42.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

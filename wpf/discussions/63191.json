@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "214738",
+    "ThreadId": "63191",
+    "Html": "<p>I am implementing the WPF DataGrid (very new to WPF). I followed tutorials that showed how to bind the comboboxcolumn using staticresources. However, the databinding for a few columns in my datagrid will not be known until runtime.</p>\r\n<p>Because of this, I can't bind them with the staticresource. Is there any other way to databind the comboboxcolumns in a datagrid? In ASP.NET, I know we had the rowdatabound code where we could do this and dynamically create the contents of the columns. But, in WPF, it looks like everything is done through resources.</p>\r\n<p>How can you databind using dynamic resources in the datagrid?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-07-22T05:37:16.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214754",
+    "ThreadId": "63191",
+    "Html": "<p>You can use the ComboBox.ItemsSource and set it to an ObservableCollection or an equivalent. The class that is part of the collection should override the ToString method and return the text you want displayed in the ComboBox text box. All the columns you want to bind to in the class must be properties. If you want I could provide some C# sample code.</p>\r\n<p>&nbsp;</p>\r\n<p>Tom Groszko</p>",
+    "PostedDate": "2009-07-22T06:27:00.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214756",
+    "ThreadId": "63191",
+    "Html": "<p>The C# sample code would be very helpful. I'm binding like: &lt;toolkit:DataGridComboBoxColumn ItemsSource=&quot;{Binding Source={StaticResource OBJ_DATA_PROVIDER_NAME}}&quot;... I've only seen samples that show how to bind to an object data provider in the XAML using a resource, but not directly binding to the object data provider that&nbsp;is not a&nbsp;static resource.</p>",
+    "PostedDate": "2009-07-22T06:31:50.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214932",
+    "ThreadId": "63191",
+    "Html": "<p>&lt;Window x:Class=&quot;ComboBoxExample.Window1&quot;<br>&nbsp;&nbsp;&nbsp; xmlns=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</a>&quot;<br>&nbsp;&nbsp;&nbsp; xmlns:x=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml\">http://schemas.microsoft.com/winfx/2006/xaml</a>&quot;<br>&nbsp;&nbsp;&nbsp; Title=&quot;Window1&quot; Height=&quot;200&quot; Width=&quot;600&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>&nbsp;&lt;ComboBox Name=&quot;ASampleComboBox&quot; Height=&quot;23&quot; Width=&quot;300&quot; Margin=&quot;44,86,114,0&quot; VerticalAlignment=&quot;Top&quot; SelectionChanged=&quot;ASampleComboBox_SelectionChanged&quot; /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>&lt;/Window&gt;</p>\r\n<p>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Windows;<br>using System.Windows.Controls;<br>using System.Windows.Data;<br>using System.Windows.Documents;<br>using System.Windows.Input;<br>using System.Windows.Media;<br>using System.Windows.Media.Imaging;<br>using System.Windows.Navigation;<br>using System.Windows.Shapes;<br>using System.Collections.ObjectModel; // &lt;=== this is where ObservableCollection lives</p>\r\n<p>namespace ComboBoxExample<br>{&nbsp;public partial class Window1: Window<br>&nbsp;{&nbsp;public PersonObservableCollection&nbsp;&nbsp;MyPersonCollection = null;<br>&nbsp;&nbsp;public Window1 ()<br>&nbsp;&nbsp;{&nbsp;InitializeComponent ();<br>&nbsp;&nbsp;&nbsp;MyPersonCollection = new PersonObservableCollection();<br>&nbsp;&nbsp;&nbsp;MyPersonCollection.Add(new PersonName(&quot;Jones&quot;, &quot;James&quot;, &quot;&quot;, &quot;The Big Guy&quot;));<br>&nbsp;&nbsp;&nbsp;MyPersonCollection.Add(new PersonName(&quot;Smith&quot;, &quot;John&quot;, &quot;James&quot;, &quot;JJ&quot;));<br>&nbsp;&nbsp;&nbsp;MyPersonCollection.Add(new PersonName(&quot;Potter&quot;, &quot;Harry&quot;, &quot;&quot;, &quot;The Wize Guy&quot;));<br>&nbsp;&nbsp;&nbsp;ASampleComboBox.ItemsSource = MyPersonCollection;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;private void ASampleComboBox_SelectionChanged (object sender, SelectionChangedEventArgs e)<br>&nbsp;&nbsp;{&nbsp;if&nbsp;(ASampleComboBox.SelectedItem != null)<br>&nbsp;&nbsp;&nbsp;{&nbsp;PersonName SelectedPerson = (PersonName) ASampleComboBox.SelectedItem;<br>&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(SelectedPerson.ToString());<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&nbsp;}<br>&nbsp;public class PersonName<br>&nbsp;{&nbsp;public String LastName&nbsp;&nbsp;{get {return _LastName;}&nbsp;&nbsp;set {_LastName&nbsp;&nbsp;= value;}}&nbsp;private String _LastName&nbsp;&nbsp;= String.Empty;<br>&nbsp;&nbsp;public String FirstName&nbsp;&nbsp;{get {return _FirstName;}&nbsp;&nbsp;set {_FirstName&nbsp;&nbsp;= value;}}&nbsp;private String _FirstName&nbsp;&nbsp;= String.Empty;<br>&nbsp;&nbsp;public String MiddleName&nbsp;{get {return _MiddleName;}&nbsp;&nbsp;set {_MiddleName&nbsp;= value;}}&nbsp;private String _MiddleName&nbsp;&nbsp;= String.Empty;<br>&nbsp;&nbsp;public String PreferredName {get {return _PreferredName;}&nbsp;set {_PreferredName&nbsp;= value;}}&nbsp;private String _PreferredName&nbsp;= String.Empty;<br>&nbsp;&nbsp;public String FullName&nbsp;&nbsp;{get {return LastName + &quot;, &quot; + FirstName + &quot; &quot; + MiddleName + &quot; (&quot; + PreferredName + &quot;)&quot;;}}<br>&nbsp;&nbsp;&nbsp;public PersonName&nbsp;(String LastName, String FirstName, String MiddleName, String PreferredName)<br>&nbsp;&nbsp;&nbsp;{&nbsp;this.LastName&nbsp;&nbsp;= LastName;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;this.FirstName&nbsp;&nbsp;= FirstName;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;this.MiddleName&nbsp;&nbsp;= MiddleName;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;this.PreferredName&nbsp;= PreferredName; <br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;public override string ToString ()<br>&nbsp;&nbsp;{&nbsp;return FullName;<br>&nbsp;&nbsp;}<br>&nbsp;}<br>&nbsp;public class PersonObservableCollection &nbsp;: ObservableCollection&lt;PersonName&gt;<br>&nbsp;{&nbsp;public&nbsp;PersonObservableCollection() {} <br>&nbsp;}<br>}</p>",
+    "PostedDate": "2009-07-22T12:42:16.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

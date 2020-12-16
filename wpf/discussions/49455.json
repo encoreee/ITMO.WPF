@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "165469",
+    "ThreadId": "49455",
+    "Html": "Is it possible ot set validationrules for a DataGridComboBoxColumn? Essentially I want to make sure that an item is selected from each combobox in my datagrid and while I could do this procedurally upon submission of the page, I would prefer to setup a validationrule similar to those for a DataGridTextColumn column. Given that the coder controls what can possibly be selected, I can understand why this feature would not be available for this type of control - but is there a recommended (declarative hopefully...) workaround?<div><br></div><div>Thank You</div>",
+    "PostedDate": "2009-03-06T11:18:48.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166080",
+    "ThreadId": "49455",
+    "Html": "Does row-level validation help?<br>\r\n",
+    "PostedDate": "2009-03-09T07:23:36.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

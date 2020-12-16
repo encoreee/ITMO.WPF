@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The first time the ItemsSource property is set, everything seems to work as expected.\nIf I change the ItemsSource everything is still ok if I'm working with 5000 items or so.\n \nThe problem appears only if I have a small collection of items.\nIf I'm using a collection of 5 items or so, when the ItemsSource is set for the first time, all is ok.\nIf I change the ItemsSource, the first item is not visible.  It seems to be hidden behind the ColumnHeaders.\nIf I select an item it gets highlighted. \nPressing the up arrow key will highlight the item directly above.\nPressing the up arrow key when the first visible row is highlighted will cause the highlighting to disappear.\nIf I click on a ColumnHeader, the missing row will reappear.\n \nI hope there is an easy fix for this because I cannot use the DataGrid the way it is working.",
+    "LastUpdatedDate": "2013-02-21T18:41:19.177-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-24T13:30:10.98-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid ItemsSource",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9857
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

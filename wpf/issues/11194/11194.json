@@ -1,0 +1,165 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Place a Calendar and a TextBox inside a Grid. Now select a date in the calender and then click on the TextBox to enter some text. You'll notice that you have to click twice in the TextBox that it receives input focus.\nThis \"bug\"??? exists only in WPF. In Silverlight the Control works as expected. :-)",
+    "LastUpdatedDate": "2013-12-04T05:44:24.793-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-12-14T12:11:28.17-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Calendar doesn't lose focus",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 14,
+    "Id": 11194
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "linksaussen,\r\n\r\nThanks for reporting this issue. We have filed a bug in our internal database to fix this. \r\n\r\nNavin",
+      "PostedDate": "2009-12-16T18:23:03.51-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-02-16T08:11:38.747-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-09T15:49:00.08-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is there any news on this? The problem still exists as of the February release.",
+      "PostedDate": "2010-03-09T15:49:47.49-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-13T08:22:20.513-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I wasn't getting this previously. Now with the Feb release I am! Does anyone know of a workaround?",
+      "PostedDate": "2010-05-13T08:23:28.307-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-22T04:44:13.363-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-07-03T22:45:10.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Navin - any chance at a workaround or suggestion about what is not letting the control lose focus?",
+      "PostedDate": "2010-07-03T22:46:54.007-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-10-12T06:41:36.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-28T02:34:09.463-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Any update ? This bug is causing major functionality issues. Thanks ",
+      "PostedDate": "2011-01-28T02:36:52.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-28T02:43:10.17-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-28T02:43:31.073-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-28T02:44:04.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Has anyone got a work around for this or is there any fix's available",
+      "PostedDate": "2011-01-28T02:46:09.427-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-28T02:51:31.573-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-28T02:53:02.61-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The work around is to use this code inside a PreviewMouseUp event handler.\r\n\r\nif (Mouse.Captured is CalendarItem) { Mouse.Capture(null); }",
+      "PostedDate": "2011-03-21T09:20:49.347-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-07T21:53:00.297-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Brian's workaround worked for my situation. Thanks!",
+      "PostedDate": "2012-11-12T14:07:02.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:49.177-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-03-06T07:55:45.683-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "\"Thanks for reporting this issue. We have filed a bug in our internal database to fix this.\"\r\n\r\nThree years later. WPF 4.5 is out. Any update on when this will be fixed?",
+      "PostedDate": "2013-03-06T07:55:59.653-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-12-04T05:44:24.793-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

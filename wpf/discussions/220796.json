@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "471189",
+    "ThreadId": "220796",
+    "Html": "<p>Hi all</p>\r\n<p>I have a datagrid and a button &quot;Add Row&quot; I would like to achieve the following.When a user presses the add button a new row is added and the first cell gets the focus and is ready to write</p>\r\n<p>The example here&nbsp; <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx</a>&nbsp;</p>\r\n<p>&nbsp;does just that but I find it too complex (sorry still beginner) to make it work in my example.</p>\r\n<p>I have tried to strip it all down to the bare minimum so that i can get just the bits I need to give the user a simple edit experience.</p>\r\n<p>Do you have an example I can download or help me to strip down the basicgrid in the example to the bare minimun so that does simple editing no frills and stuff so that i can see how its done.</p>\r\n<p>Cannot beleive there are no examples out there.</p>\r\n<p>&nbsp;</p>\r\n<p>thanks for any suggestions</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-22T12:50:35.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

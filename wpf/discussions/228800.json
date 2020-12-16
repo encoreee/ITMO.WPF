@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "499285",
+    "ThreadId": "228800",
+    "Html": "<p>I'm using the latest version of MS Ribbon for WPF (3.5.40729.1) and want to change the skin of the ribbon. <br>The solution by MSDN (see below) doesn't work, and in the object browser I can't find the SkinRessources.<br><br>Solution by MSDN:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Window.Resources</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">ResourceDictionary</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">ResourceDictionary.MergedDictionaries</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">ResourceDictionary</span> <span style=\"color:red\">Source</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/RibbonControlsLibrary;component/themes/office2007silver.xaml</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n    <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">ResourceDictionary.MergedDictionaries</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">ResourceDictionary</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Window.Resources</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n<pre><br>How can I change the skin ?</pre>\r\n</div>\r\n<div style=\"color:black;background-color:white\"></div>",
+    "PostedDate": "2010-09-27T22:45:13.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "582154",
+    "ThreadId": "228800",
+    "Html": "<p>Does anybody have a solution for this? &nbsp;I'm using the final release (on .NET 4.0) and the themes are not included there, so the above solution doesn't work. &nbsp;</p>\r\n<p>I extracted the XAML from the Office UI Ribbon control, which does include the additional themes, however the XAML just won't work with the final release, seems like the controls have changed enough that several of the extensions or properties have changed.</p>\r\n<p>I really just want the window chrome to look nice in XP, instead of the old, \"classic\" look that it picks by default.</p>\r\n<p>Any alternatives will be greatly appreciated.</p>",
+    "PostedDate": "2011-03-17T08:51:01.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "582593",
+    "ThreadId": "228800",
+    "Html": "<p>How about these themes?</p>\r\n<p>http://wpfthemes.codeplex.com/</p>",
+    "PostedDate": "2011-03-18T06:21:41.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

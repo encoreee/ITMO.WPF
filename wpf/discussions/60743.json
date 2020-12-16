@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "205802",
+    "ThreadId": "60743",
+    "Html": "<p>Hi All,</p>\r\n<p>&nbsp;</p>\r\n<p>I see there is some Data Visualization inside the WPF Toolkit June Release. Is it the same with Data Virtualization? If not, what is data visualization?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-26T01:27:27.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205869",
+    "ThreadId": "60743",
+    "Html": "<p>That is the Silverlight (and now WPF!) charting component.</p>",
+    "PostedDate": "2009-06-26T05:33:41.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205994",
+    "ThreadId": "60743",
+    "Html": "<p>Tonytam,</p>\r\n<p>There is a Data Visualization assembly which includes the charting controls (the same ones found in the Silverlight Toolkit).&nbsp; There is no Data Virtualization, though.&nbsp; For that, you will need a third-party component or to roll your own.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-06-26T10:56:19.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206306",
+    "ThreadId": "60743",
+    "Html": "<p>Hi All,</p>\r\n<p>Thanks for your reply! Now I understand what it is. Many thanks again!!</p>",
+    "PostedDate": "2009-06-28T01:19:43.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1099842",
+    "ThreadId": "459393",
+    "Html": "I'm brand new to WPF and I'm trying to add custom tooltips to a Stacked bar 100% series chart. I've tried setting the Series definition tooltip property:\r<br />\n<br />\n this.InProcess.ToolTip = &quot;Customer Name&quot;;\r<br />\n<br />\nBut that doesn't work. The default value is still shown. Is there a simple way of adding custom tooltips? One that doesn't require creating a custom template, etc, etc, etc?<br />\n",
+    "PostedDate": "2013-09-26T14:14:52.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

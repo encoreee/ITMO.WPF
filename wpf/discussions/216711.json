@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "457920",
+    "ThreadId": "216711",
+    "Html": "<p>Hi,</p>\r\n<p>as the project was not updated since some month - even after launch of VS2010 - I am a bit unsue if I should invest time into using it.</p>\r\n<p>Currently WPF 4.0 contains at least the major controls from this lib so there is no big need to it. But some advanced charts had not make it into WPF unfortunately.</p>\r\n<p>Using the Toolkit is a bit difficult, as the documentation is not really great (but the parts in WPF4.0 are not good either). And its not building on my VS2010 machine as the sources are not adjusted f&uuml;r .Net 4.0 up to now.</p>\r\n<p>Would be sad if they just stopped going further with that (no developer was active since more than 60 days...).</p>",
+    "PostedDate": "2010-06-21T00:35:24.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

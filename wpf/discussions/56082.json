@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "189396",
+    "ThreadId": "56082",
+    "Html": "<p>Hi.</p>\r\n<p>I have a fairly simple DataGrid, and for styling reasons, I want it to look a particular way. So, let's say I have column A-D. Columns A-C are displayed as headers, and D, which is a long section of text, should be displayed underneath.&nbsp;</p>\r\n<p>For Example:</p>\r\n<table border=0>\r\n<tbody>\r\n<tr>\r\n<th>Column A</th><th>Column B</th><th>Column C</th>\r\n</tr>\r\n<tr>\r\n<td>Value</td>\r\n<td>Value</td>\r\n<td>Value</td>\r\n</tr>\r\n<tr>\r\n<td colspan=3>This is some text that should span columns and will<br>wrap when it gets large enough.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>The obvious way to handle this seemed the RowDetailsTemplate, which works quite well. What <em>isn't</em>&nbsp;working well is that no matter what I put into the RowDetailsTemplate, even if it's just a label with the word &quot;blah&quot; in it, the size of the Grid vertically gets larger. Quite a bit larger.</p>\r\n<p>Once I reach 5 or 6 rows, the grid will now be at least 10 times the size it should have been. I have also noticed that when I change the RowDetailsTemplate to only show on selected, the grid height grows the first time the RowDetailsTemplate is shown, and doesn't revert when its closed.</p>\r\n<p>Any and all help are appreciated. I'm would prefer not to abandon the DataGrid here, so I'm hoping someone can provide an answer.</p>\r\n<p>Cheers.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-12T10:04:55.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189468",
+    "ThreadId": "56082",
+    "Html": "<p>Hey aibynn,</p>\r\n<p>Can you attach the xaml for your project and the RowDetailsTemplate?&nbsp; That is not the standard behavior so we should be able to help once we see exactly how you're doing things.</p>\r\n<p>Thanks!</p>\r\n<p>Alexis</p>",
+    "PostedDate": "2009-05-12T13:25:36.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

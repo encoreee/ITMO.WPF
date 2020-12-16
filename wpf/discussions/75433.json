@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "258167",
+    "ThreadId": "75433",
+    "Html": "<p>I wish to set the alignment of a column of WPF DataGrid to be right, and I wrote the code as follows,<br><br>ColumnIndex = 2;<br>// Set the alignment of the double column<br>if (grid.Columns.Count &gt; ColumnIndex)<br>{<br>&nbsp;&nbsp;&nbsp; grid.Columns[ColumnIndex].CellStyle = new Style(typeof(DataGridCell));<br>&nbsp;&nbsp;&nbsp; <span style=\"color:#ff0000\">grid.Columns[ColumnIndex].CellStyle.Setters.Add(new Setter(HorizontalContentAlignmentProperty, HorizontalAlignment.Right));<br></span>}<br><br>but there was an exception like &quot;after using SetterBaseCollection(sealed), you can not change it&quot; when I compiled the project.<br><br>So how will I change the&nbsp;code?</p>",
+    "PostedDate": "2009-11-18T00:31:25.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266913",
+    "ThreadId": "75433",
+    "Html": "<p align=left><span style=\"color:#2b91af\" lang=EN-US>Style</span> alignStyle = <span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">Style</span>(<span style=\"color:blue\">typeof</span>(<span style=\"color:#2b91af\">DataGridCell</span>));<br>alignStyle.Setters.Add(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">Setter</span>(<span style=\"color:#2b91af\">DataGridCell</span>.WidthProperty, 20.0));<br><span style=\"text-decoration:underline\">alignStyle.Setters.Add(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">Setter</span>(<span style=\"color:#2b91af\">DataGridCell</span>.HorizontalAlignmentProperty, <span style=\"color:#2b91af\">HorizontalAlignment</span>.Center));</span><br>alignStyle.Setters.Add(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">Setter</span>(<span style=\"color:#2b91af\">DataGridCell</span>.VerticalAlignmentProperty, <span style=\"color:#2b91af\">VerticalAlignment</span>.Center));<br><span lang=EN-US><span style=\"color:blue\" lang=EN-US>this</span></span>.Columns[0].CellStyle = alignStyle;<span id=\"_marker\">&nbsp;</span></p>\r\n<p align=left><span>thanks, I have solved the issue above.</span></p>",
+    "PostedDate": "2009-12-14T00:20:06.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

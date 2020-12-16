@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "503988",
+    "ThreadId": "230079",
+    "Html": "<p>Hi all,</p>\r\n<p>We are currently using Blend 4 and&nbsp;are trying to use the&nbsp;Accordion control that ships with the WPF Toolkit in our application.&nbsp;&nbsp;The style is not exactly what we need, so we wanted to modify the Accordion style (along with all the elements that fall under it).&nbsp; So what we did was in blend, we right click teh Accordion control that is dropped on our grid, go to &quot;Edit Template&quot;, and try to &quot;Edit a Copy&quot;.&nbsp; When the &quot;Create Style Resource&quot; dialog shows up, we input the name, and select an existing Resource dictionary, and click &quot;OK&quot;.&nbsp; This causes Blend to crash, and we do not get our style.</p>\r\n<p>I also tried editing a copy of the template in the current document, and that does not cause Blend to crash, but in doing so, we lose all of the triggers (i.e Mouse over, click to expand, etc.).</p>\r\n<p>Is there&nbsp;a workaround to this issue?&nbsp; How do we get the styles with all of the triggers?</p>",
+    "PostedDate": "2010-10-07T17:22:56.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

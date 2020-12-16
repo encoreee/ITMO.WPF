@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "162096",
+    "ThreadId": "48549",
+    "Html": "How would i in a VS2008 Setup and Deployment project set a launch condition to check for .NET 3.5 <b>SP1 and WPFToolkit?<br>\r\n<br>\r\n</b>Setting the lauch condition to check for the prior installation of .NET is a lauch condition item that can be chosen, then there<br>\r\nis even a drop down list with installed version numbers, that can be set and check for.<br>\r\n<br>\r\nBut not SP1 ... and not WPFToolkit.<br>\r\n<br>\r\nSo how would i sort this one out? ... if the WPF app gets any installed without these prerequisites, the user clicks the app icon but &quot;nothing&quot; happens.  It probably crashes during the creation of the startup UI.<br>\r\n<br>\r\nThanks,<br>\r\nPaul\r\n",
+    "PostedDate": "2009-02-25T14:32:27.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162130",
+    "ThreadId": "48549",
+    "Html": "For WPF Toolkit, we recommend that you ship the assembly in your setup package since it is not installed as a system component (i.e. not in the Global Assembly Cache).<br>\r\nHowever, you can check the following registry key: HKLM\\Software\\Microsoft\\.NETFramework\\AssemblyFolders\\WPF Toolkit v3.5.40128.1 (change the version number to match the version of the toolkit you want) to see if our MSI was installed on the system.<br>\r\n<br>\r\nI haven't checked, but after installing Visual Studio 2008 SP1, it might check for 3.5 SP1, but I'm not sure.<br>\r\n<br>\r\nIf you want to check registry keys manually, .NET 3.5 SP1 ships as either the full package or a Client Profile (a subset).<br>\r\n<br>\r\nFor the full package:<br>\r\nHKLM\\SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v3.5<br>\r\nValue &quot;SP&quot; should be set.<br>\r\n<br>\r\nFor Client Profile:<br>\r\nHKLM\\SOFTWARE\\Microsoft\\NET Framework Setup\\DotNetClient\\v3.5<br>\r\nValue &quot;SP&quot; should be set.<br>\r\n<br>\r\nBen<br>\r\n",
+    "PostedDate": "2009-02-25T17:11:07.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

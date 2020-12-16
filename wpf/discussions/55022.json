@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "185764",
+    "ThreadId": "55022",
+    "Html": "Hello all,<br>\r\n<br>\r\nDoes anyone know how to get the grid to programmatically run all RowValidationRules? It seems to be the only way to get the ValidationErrorTemplate to appear.<br>\r\n<br>\r\nMy situation is: The user can change other fields in the UI which can cause the rows to be invalid. The row data implements IDataErrorInfo, so the data behind the row knows it's invalid; however the DataGridRow.ValidationErrorTemplate is not updated unless the DataGrid.RowValidationRules fire a ValidationRule which was triggered by a ValidationStep. So, I don't see the error template present unless the user begin/ends edit of a row to force the ValidationStep. I think this may also be a problem if you bind to an item source which already contains invalid IDataErrorInfo items; the grid won't show this.<br>\r\n<br>\r\nPerhaps there is a way using Validation.MarkInvalid()?\r\n",
+    "PostedDate": "2009-04-30T20:03:07.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

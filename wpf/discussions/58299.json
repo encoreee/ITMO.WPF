@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "197173",
+    "ThreadId": "58299",
+    "Html": "<p>What is the best practice to produce a ViewModel for a WPF DataGrid with ADO.NET Entity Framework data-binding? More in detail:</p>\r\n<p>I have the Project entity (which is a Visual Studio entity designer generated (ADO.NET entity) class actually, with INotifyPropertyChanged etc.)</p>\r\n<p>I created a ProjectEntityViewModel wrapping&nbsp;the&nbsp;Project entity type&nbsp;and mostly exposing the Project entity's properties. I also have a DataGridViewModel which is related to a view&nbsp;containing a WPF DataGrid. I want to be able to query the ObjectContext and then populate&nbsp;some ProjectViewModel and then bind another ViewModel which contains an ObservableCollection of ProjectViewModels to a WPF DataGrid for adding/removing/editing items.</p>\r\n<p>Now when I create an ObservableCollection&lt;ProjectentityViewModel&gt; within the DataGridViewModel and populate it using the ADO.NET ObjectContext's ObjectQuery to List() (that is I get the List&lt;Project&gt; projects = myObjectContext.Projects.ToList() and then iterate this list to populate ObservableCollection&lt;ProjectEntityViewModel&gt; of DataGridViewModel). In this case when I add a new item using the DataGrid (that is CanUserAddRows=True for DataGrid), the ObservableCollection&lt;ProjectEntityViewModel&gt; gets updated since it's bound to DataGrid in question&nbsp;but ObjectContext can not see the added item since&nbsp;the ObservableCollection&lt;ProjectEntityViewModel&gt; and the&nbsp;Project list of the ObjectContext (List&lt;Project&gt; projects)&nbsp;are seperate.&nbsp;What is the best practice to achieve this? Should I handle the CollectionChanged&nbsp;event of the ObservableCollection&lt;ProjectEntityViewModel&gt; and then Add/Remove the items&nbsp;to/from the ObservableCollection to/from the ObjectContext manually or is there a better way to do this? This looks like too much hassle (that is creating a ViewModel for entities then creating&nbsp;ObservableCollections for those entity&nbsp;viewmodels within container ViewModels and keeping those Observable collections in sync with ObjectContext manuallly just to avoid some WPF ValueConverters&nbsp;and having the ablility to generate custom presentation rules etc.)</p>\r\n<p>So can you please tell me the best way to update the ObjectContext when a ViewModel's ObservableCollection (bound to a DataGrid) of entity ViewModels&nbsp;is changed by adding/removing items?</p>\r\n<p>Note that I don't have and don't want to have any Buttons on the Datagrid rows, so binding commands to those and performing Add/Remove&nbsp;is out of option. I want to preserve the automatic behavior of adding a new row and deleting a row with Del key of the DataGrid.</p>\r\n<p>I'd have shown some code but unfortunately the software I am working on is a commercial one so I can't. I hope I was able to explain the scenario well enough.</p>\r\n<p>Thanks in advance for the answers. I really liked the idea of MVVM but it's still confusing at some points for me so I am interested in learning/understanding the best practices.</p>\r\n<p>Regards.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-03T02:51:15.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212746",
+    "ThreadId": "58299",
+    "Html": "<p>Hello,</p>\r\n<p>I'm also looking for more information about using CodePlex DataGrid with Entity Framework. Don't know if the best aproach is to bind directly or to use an intermediate observeable collection class. Either whay, don't know how to perform sucessfully 2-way binding.</p>\r\n<p>If you have any updated information, please let me know.</p>\r\n<p>Sincerely,</p>\r\n<p>Igor</p>",
+    "PostedDate": "2009-07-16T13:22:06.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452411",
+    "ThreadId": "58299",
+    "Html": "I would also like to know how this could be done. Any help would be much appreciated.  I'm using EF 4, MVVM and I would like to have a solution that links my view to a collection in a viewmodel with some code to load the data into that collection. \r\n\r\nThanks, \r\n\r\nRichard",
+    "PostedDate": "2010-06-07T05:14:52.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

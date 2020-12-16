@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "171407",
+    "ThreadId": "51143",
+    "Html": "Hi,<br>\r\n<br>\r\nHow can I get the <strong>DataGridCellsPresenter</strong> object from/of a <strong>DataGridRow</strong>? Please, this is an urgent query.<br>\r\n<br>\r\nThanks in advance.<br>\r\n<br>\r\nCheers, \r\n",
+    "PostedDate": "2009-03-24T10:47:16.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171473",
+    "ThreadId": "51143",
+    "Html": "DataGrid doesn't expose an API to do this. It would be interesting to know your scenario for needing it.<br>\r\n<br>\r\nIf you have access to a cell, you can get to the DataGridCellsPresenter by calling ItemsControl.ItemsControlFromItemContainer(cell).<br>\r\nIf you don't then you can do a tree walk down from the DataGridRow using VisualTreeHelper.GetChild and GetChildrenCount. It is relatively close to the top of the default template.<br>\r\nIf you have replaced the template for the DataGridRow, you can set x:Name to a name on the DataGridCellsPresenter. Then call myDataGridRow.Template.FindName(theNameYouPutOnDataGridCellsPresenter, myDataGridRow).<br>\r\n<br>\r\nHope that helps,<br>\r\nBen\r\n",
+    "PostedDate": "2009-03-24T12:48:51.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171780",
+    "ThreadId": "51143",
+    "Html": "<span style=\"font-family:calibri\">\r\n<p><span style=\"font-size:10pt;font-family:calibri\">Thanks for the reply Ben. I want to get a specific cell based of the Column Number and Row Number from the datagrid. I found an thread </span></p>\r\n<p style=\"margin-bottom:12pt\"><span style=\"font-size:10pt;font-family:calibri\"><a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=34065\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=34065</a></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:10pt;font-family:calibri\">Which provides a way of doing this but has the following line of code:</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:10pt;font-family:calibri\"> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:10pt;color:#2b91af;font-family:calibri\">DataGridCellsPresenter</span><span style=\"font-size:10pt;color:#080808;font-family:calibri\"> presenter = GetVisualChild&lt;</span><span style=\"font-size:10pt;color:#2b91af;font-family:calibri\">DataGridCellsPresenter</span><span style=\"font-size:10pt;color:#080808;font-family:calibri\">&gt;(rowContainer);<br>\r\n</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:10pt;color:#080808;font-family:calibri\">//Where rowContainer is the row containing the DataGridCell I am after.<br>\r\n </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:10pt;color:#080808;font-family:calibri\">Which I am finding a bit difficult to understand.</span> </p>\r\n</span>\r\n",
+    "PostedDate": "2009-03-25T03:59:44.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171879",
+    "ThreadId": "51143",
+    "Html": "I am trying this code for but its not working properly.<br>\r\n<br>\r\nprivate DataGridCellsPresenter GetVisualChild&lt;T1&gt;(DataGridRow rowContainer)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; VisualTreeHelper.GetChildrenCount(this.dataGrid1); i++)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (VisualTreeHelper.GetChild(this.dataGrid1, i).GetType().Name.Equals(&quot;DataGridCellsPresenter&quot;))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (DataGridCellsPresenter)VisualTreeHelper.GetChild(rowContainer, i);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return null;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nThis returns me a null as the VisualTreeHelper.GetChildrenCount(this.dataGrid1) always returns 1, which is Border.<br>\r\n<br>\r\nRegards,<br>\r\n",
+    "PostedDate": "2009-03-25T07:38:45.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171977",
+    "ThreadId": "51143",
+    "Html": "You will want to use this code from the thread you referred to:<br>\r\npublic static T GetVisualChild&lt;T&gt;(Visual parent) where T : Visual<br>\r\n{<br>\r\n    T child = default(T);<br>\r\n    int numVisuals = VisualTreeHelper.GetChildrenCount(parent);<br>\r\n    for (int i = 0; i &lt; numVisuals; i++)<br>\r\n    {<br>\r\n        Visual v = (Visual)VisualTreeHelper.GetChild(parent, i);<br>\r\n        child = v as T;<br>\r\n        if (child == null)<br>\r\n        {<br>\r\n            child = GetVisualChild&lt;T&gt;(v);<br>\r\n        }<br>\r\n        if (child != null)<br>\r\n        {<br>\r\n            break;<br>\r\n        }<br>\r\n    }<br>\r\n    return child;<br>\r\n}<br>\r\n<br>\r\nThen when you want a DataGridCellsPresenter:<br>\r\nGetVisualChild&lt;DataGridCellsPresenter&gt;(dataGridRow);<br>\r\n",
+    "PostedDate": "2009-03-25T11:37:03.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172211",
+    "ThreadId": "51143",
+    "Html": "Many thanks Ben, this worked.<br>\r\n<br>\r\nRegards,<br>\r\nbrquantum.<br>\r\n",
+    "PostedDate": "2009-03-26T02:51:09.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

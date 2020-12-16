@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "162441",
+    "ThreadId": "48652",
+    "Html": "Is there a way that I can make all cell content padding larger so that my rows are spaced out more?<div><br></div><div>I would like to be able to do this for all cells in the Grid. </div><div><br></div><div>I have tried setting a default cell style, but the padding property is not used in the template it seems, so the is not padding. </div><div>I have also tried setting the row padding property in the default style but this leads to the same problem.</div><div><br></div><div>Next I tried setting the Element style on the column, and this worked, but the problem is I would have to do that for each of the columns I make. I can't make a default style for the DataGridBoundColumn becuase it is not a FrameworkElement. </div><div><br></div><div>I need to be able to do this padding without specifying it each column declaration, as this grid is in a base class window and we want as much abstraction as we can get. </div><div><br></div><div>Any ideas?</div><div><br></div><div>Thanks,</div><div>Evan</div><div><br></div>",
+    "PostedDate": "2009-02-26T10:49:11.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

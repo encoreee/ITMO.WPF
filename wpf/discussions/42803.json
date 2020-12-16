@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "142260",
+    "ThreadId": "42803",
+    "Html": "<span id=UniqueID1229915246583>\r\n<p>Hi Everyone,<br>\r\n<br>\r\n<span style=\"text-decoration:underline\">This error occured in my wpf datagrid: </span><br>\r\n<br>\r\nArgumentOutOfRangeException was unhandled<br>\r\nSpecified argument was out of the range of valid values.<br>\r\nParameter name: index<br>\r\n<br>\r\nThis error occured everytime that I edit the item in <strong>column 3, row 3</strong>. After I was edited the item. I use my mouse pointed to <strong>column 2, row 3 (</strong>by clicking once<strong>)</strong> then afterwards I clicked the <strong>arrow right key </strong>to proceed to the <strong>column 3, row 3</strong>.<br>\r\n<br>\r\n---------------------------------------------------------<br>\r\nCol1      |       <strong>Col2</strong>      |        <strong>Col3</strong>      |     Col4                             &lt;- Column<br>\r\n---------------------------------------------------------<br>\r\nRow1    |       Row1    |        Row1     |    Row1<br>\r\n---------------------------------------------------------     <br>\r\nRow2    |       Row2    |        Row2     |    Row2                             &lt;- Rows<br>\r\n-----------------------------------------------------------<br>\r\nRow3    |       <strong>Row3</strong>    |        <strong>Row3</strong>     |    Row3<br>\r\n----------------------------------------------------------<br>\r\nRow4    |       Row4    |        Row4     |    Row4<br>\r\n<br>\r\n<strong>My code to view the items in the datagrid are the ff:</strong>  </p>\r\n<p><span style=\"font-size:10px;color:#008000\">' Fill the database<br>\r\n</span><span style=\"font-size:10px\">io_sql = </span><span style=\"font-size:10px;color:#0000ff\">New</span><span style=\"font-size:10px\"> FLSKP_LIB.SQL </span>  </p>\r\n<p><span style=\"font-size:10px;color:#0000ff\">With</span><span style=\"font-size:10px\"> io_sql<br>\r\n.SQLQuery = &quot;<span style=\"font-size:10px;color:#a31515\">select * from users</span>&quot;<br>\r\n.OpenConnection(io_connection.ConnectionString)<br>\r\n.Fill(</span><span style=\"font-size:10px;color:#a31515\">&quot;tbl&quot;</span><span style=\"font-size:10px\">)<br>\r\n</span><span style=\"font-size:10px;color:#0000ff\">End</span><span style=\"font-size:10px\"> </span><span style=\"font-size:10px;color:#0000ff\"><span style=\"font-size:10px;color:#0000ff\">With\r\n<p> </p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:10px;color:#008000\">' Initialized the datagrid<br>\r\n</span><span style=\"font-size:10px\">mainGrid.Columns.Clear()<br>\r\n</span><span style=\"font-size:10px;color:#008000\">' Bind dataset to the datagrid<br>\r\n</span><span style=\"font-size:10px\">mainGrid.ItemsSource = io_sql.GetDataSet.Tables(</span><span style=\"font-size:10px;color:#a31515\">&quot;tbl&quot;</span><span style=\"font-size:10px\">).DefaultView<br>\r\n</span><br>\r\nThe error is unhandled that's why I can't able to try and catch the problem. Can someone help me on this error to solve. Is it a bug of a WPF datagrid or an error on my coding?<br>\r\n<br>\r\nThank You for your help.<br>\r\n<br>\r\nJunicef<br>\r\n</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n",
+    "PostedDate": "2008-12-21T19:25:57.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "142449",
+    "ThreadId": "42803",
+    "Html": "Hi Junicef,<br>\r\n<br>\r\nWe are aware of this issue. Unfortunately this is neither a problem of your code nor an issue with WPF datagrid. This is a bug in ADO.net (That is the reason why it repros only with SQL DataSet). We are in discussions with ADO.net team to get this fixed. Also unfortunately there is no external workaround for this. \r\n",
+    "PostedDate": "2008-12-22T13:34:40.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "142483",
+    "ThreadId": "42803",
+    "Html": "<br>\r\nHi VamseeP,<br>\r\n<br>\r\nThank you very much for the information. I'm hoping that the ADO.net team will give patch on this issue because it's totally a bad impact our users on the system. Do you have any temporary solution on this thing? I tried to use the dataset.acceptchanges and the error was not appeared. However if I modify three records, then only one record will be saved.<br>\r\n<br>\r\nRegards,<br>\r\n<br>\r\n<strong>Junicef</strong>\r\n",
+    "PostedDate": "2008-12-22T16:21:12.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

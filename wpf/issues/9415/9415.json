@@ -1,0 +1,180 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DatePicker",
+      "DisplayName": "DatePicker"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In current DatePicker, when no date is selected (or when a date is deselected), a string \"Show Calendar\" will show. Application developers may want to leave it empty or show their own custom information when no date is selected. \nDatePicker should provide a way for developers to set the message.",
+    "LastUpdatedDate": "2013-02-21T18:41:29.163-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-04T00:49:19.96-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker should allow developers to set custom messages when no date is selected.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 25,
+    "Id": 9415
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for reporting this issue.  We've filed a bug in our internal database to track this and will fix it in a future release.",
+      "PostedDate": "2009-03-04T10:55:37.487-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-04T10:55:39.363-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-04T15:49:56.41-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-09T06:45:35.597-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-09T07:11:48.983-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-20T04:08:07.57-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-23T01:36:23.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-23T03:39:55.663-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Well to even go a bit further: It shouldn't display anything at all. Just drop any message.\r\n\r\nI know no other WPF control which states that you should enter something. TextBox doesn't say please enter text here.\r\n\r\nI think maybe the team got misleaded because the dataPicker always returns a DateTime and something SHOULD be entered.\r\n\r\nBut SelectedDate can also be as System.Nullable<DateTime> (more than half the dates in my project) in which case the user doesn't need to select anything.\r\n\r\nRegards,\r\n\r\nDave\r\n",
+      "PostedDate": "2009-03-23T08:55:26.913-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-05T07:29:57.65-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-06T04:05:11.38-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-09T06:41:54.22-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-16T22:33:48.88-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-23T01:54:37.753-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T07:40:58.837-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-13T05:26:55.743-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-27T14:28:52.957-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-10T11:34:27.073-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-21T11:14:56.903-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-25T03:58:11.823-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-28T14:09:07.527-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-12T12:14:47.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-11T20:07:06.08-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-16T05:35:10.117-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-21T07:15:55.873-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-28T16:26:34.793-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-02-04T03:08:13.54-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:29.163-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

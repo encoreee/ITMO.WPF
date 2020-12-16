@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "426613",
+    "ThreadId": "208097",
+    "Html": "<p>Hi,</p>\r\n<p>I'am using the WPF Toolkit LineCharts. But I have two problems:</p>\r\n<p>1.) Is there any opportunity to hide the legend on the right side of the linechart.</p>\r\n<p>2.) Can I use custom labels for the values of the Y axis. I have only 3 values which are possible (High, Moderate and Normal). Currently I bind the DependentValueBinding to a Integer property (possible values 1,2,3). So the labels on the left side of the Y axis are 1,2,3. If I bind the DependentValueBinding to a enumeration property the chart doesn't work.</p>\r\n<p>- So is there any opportunity to bind the DependentValueBinding to an property of an enumeration type (enum Type { Normal = 1, PriceType.Moderate = 2, PriceType.High=3 } )&nbsp; ?</p>\r\n<p>- Or is there any opportunity to bind to an integer property but set the Labels of the Y axis to (Normal for 1, Moderate for 2, High for 3)</p>\r\n<p>Thanks for help</p>",
+    "PostedDate": "2010-04-01T12:27:53.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427841",
+    "ThreadId": "208097",
+    "Html": "<p>1) Retemplate the Chart to remove Legend. Look at the default-Style in the source code located in the generic.xaml in the themes folder for guidance.</p>\r\n<p>2) Make a converter that converts 1 to Normal etc and associate it with the DependentValueBinding.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-06T06:30:06.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

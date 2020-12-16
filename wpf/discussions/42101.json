@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "139911",
+    "ThreadId": "42101",
+    "Html": "I thought I'd change it up a bit and ask how all you developers out there are going about testing your applications that use DataGrid.  We just recently released a set of utilities to help test WPF applications here, <a href=\"http://www.codeplex.com/TestApi\">http://www.codeplex.com/TestApi</a>.  I also wrote a blog post on doing a simple visual verification test with the DataGrid in a sample app here, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/12/10/wpf-testapi-and-datagrid-sample.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/12/10/wpf-testapi-and-datagrid-sample.aspx</a>.  We believe that these utilities will greatly help out customers in testing their WPF apps, but it would be really valuable to know what you guys are currently doing to keep your applications at a high quality level and what tools or utilities would be helpful to further enable testability.  \r\n",
+    "PostedDate": "2008-12-11T18:42:09.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

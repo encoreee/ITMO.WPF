@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "633590",
+    "ThreadId": "262952",
+    "Html": "\r\n<p>When you're in the last column of the last row in a DataGrid and hit tab a new row is added to the bottom but focus goes up to the 1st column in the 1st row instead. You have to tab through all the rows again and when you get to the last one then it will\r\n tab down to the bottom blank row, or arrow down to the last row. Hitting Enter when you are in the last column of the last row will bring focus down to the new row that's added, but you'll be in the last column not the 1st.</p>\r\n<p>Shouldn't pressing tab there bring you down to the 1st column of the new row that's added?</p>\r\n",
+    "PostedDate": "2011-06-27T08:57:30.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

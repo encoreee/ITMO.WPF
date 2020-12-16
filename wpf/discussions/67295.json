@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "228733",
+    "ThreadId": "67295",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to populate datagrid from a webservice. It returns an array of arrays of objects named Property each containing two properties: Name and Value. Name should become a column name in grid, and Value should go into cell, inner arrays forming rows in the grid.&nbsp;</p>\r\n<p>I do not know at design time number of columns and their names (both can vary), therefore I cannot use XAML for data binding, and everything must be done in code.</p>\r\n<p>Any help is appreciated.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-28T08:22:03.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228839",
+    "ThreadId": "67295",
+    "Html": "<p>You should be able to fairly easily build the DataGrid.Columns collection at runtime.&nbsp; The first thing you should try is binding DataGrid's ItemsSource to your array to see if the autogeneration of columns feature can interpret it and automatically create the columns for you.&nbsp; If that doesn't work, I would recommend parsing the array and building a collection of items which the autogeneration feature can interpret (such as a collection of objects of your own custom type which has properties for each field specified in the array).&nbsp; You can customize which columns get displayed by hooking into the autogeneration events and cancelling or modifying each column as it's created.</p>",
+    "PostedDate": "2009-08-28T13:21:41.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

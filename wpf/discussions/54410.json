@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "183390",
+    "ThreadId": "54410",
+    "Html": "The first time the ItemsSource property is set, everything seems to work as expected.<br>\r\nIf I change the ItemsSource everything is still ok if I'm working with 5000 items or so.<br>\r\n<br>\r\nThe problem appears only if I have a small collection of items.<br>\r\nIf I'm using a collection of 5 items or so, when the ItemsSource is set for the first time, all is ok.<br>\r\nIf I change the ItemsSource, the first item is not visible.  It seems to be hidden behind the ColumnHeaders.<br>\r\nIf I select an item it gets highlighted. <br>\r\nPressing the up arrow key will highlight the item directly above.<br>\r\nPressing the up arrow key when the first visible row is highlighted will cause the highlighting to disappear.<br>\r\nIf I click on a ColumnHeader, the missing row will reappear.<br>\r\n<br>\r\nI hope there is an easy fix for this because I cannot use the DataGrid the way it is working.\r\n",
+    "PostedDate": "2009-04-24T13:28:54.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

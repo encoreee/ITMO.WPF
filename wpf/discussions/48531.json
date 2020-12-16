@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "162030",
+    "ThreadId": "48531",
+    "Html": "I am having a problem where letters are being cut off in the second line of text in large icon view.<br>\r\n<br>\r\nPlease\r\nsee the screenshot. In small image mode, everything is fine. In large,\r\nall letters below the base line of text are cut off. In this\r\nscreenshot, those are j, q, and y for illustration purposes. Specifying\r\nHeight does not do anything.<br>\r\n<a href=\"http://img156.imageshack.us/my.php?image=ribbonproblemscreenshot.png\">Screenshot</a><br>\r\n<br>\r\nI apologize if this is a duplicate issue, but I don't see anyone discussing this problem or any workaround.  Please help.\r\n",
+    "PostedDate": "2009-02-25T11:39:04.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162135",
+    "ThreadId": "48531",
+    "Html": "I don't have a workaround at this time, but I did file a bug in our internal database regarding this issue.\r\n",
+    "PostedDate": "2009-02-25T17:37:26.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162137",
+    "ThreadId": "48531",
+    "Html": "Just to clarify, I did not mean that specifying Height does not do anything.&nbsp; I meant that it does not fix anything.&nbsp; It does actually push the name of the ribbon group offscreen, while still clipping the 2nd line text, i.e. making things worse.<br>\r\n",
+    "PostedDate": "2009-02-25T17:48:18.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

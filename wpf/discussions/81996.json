@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "281649",
+    "ThreadId": "81996",
+    "Html": "<p>I've downloaded &lt;&lt;Lab: What&rsquo;s Coming in WPF: Datagrid, Ribbon, and VSM&gt;&gt;from</p>\r\n<p>http://windowsclient.net/downloads/folders/hands-on-labs/entry76491.aspx</p>\r\n<p>and place RibbonControlsLibrary.dll to</p>\r\n<p>d:\\Sample\\WPFFeaturesPreviewHOLOnline\\WPF Features Preview HOL Online - Source\\source\\exercise2\\task2\\CheckbookManager\\</p>\r\n<p>build is ok, and running is ok and nice.</p>\r\n<p>but in *design mode* of MainWindow.xaml, the designer can't display anything and reported an error:</p>\r\n<p>Error&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp; &nbsp;Value 'me:AppCommands.AddNew' cannot be assigned to property 'Command'. 'CommandValueSerializer' ValueSerializer cannot convert from 'System.String'.&nbsp;&nbsp; &nbsp;D:\\Sample\\WPFFeaturesPreviewHOLOnline\\WPF Features Preview HOL Online - Source\\source\\exercise2\\final\\CheckbookManager\\MainWindow.xaml&nbsp;&nbsp; &nbsp;14&nbsp;&nbsp; &nbsp;25&nbsp;&nbsp; &nbsp;CheckbookManager</p>\r\n<p>What could me do?</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2010-01-25T18:28:28.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281651",
+    "ThreadId": "81996",
+    "Html": "<p>oh, I checked out this forum and found this discuss @ 2008:</p>\r\n<p>http://wpf.codeplex.com/Thread/View.aspx?ThreadId=39159</p>\r\n<p>so is there a new version of sample that solved it ?</p>\r\n<p>Thank you!</p>",
+    "PostedDate": "2010-01-25T18:36:45.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281803",
+    "ThreadId": "81996",
+    "Html": "<p>I think I've resolved this problem:</p>\r\n<p>use &quot;StaticResource&quot; instead as follows</p>\r\n<p>&lt;CommandBinding Command=&quot;{StaticResource AddNewCommand}&quot; Executed=&quot;OnAddNewEntry&quot; /&gt;</p>\r\n<p>...</p>\r\n<p>&lt;r:RibbonButton Command=&quot;{StaticResource AddNewCommand}&quot; r:RibbonQuickAccessToolBar.Placement=&quot;InCustomizeMenuAndToolBar&quot; /&gt;</p>\r\n<p>...</p>",
+    "PostedDate": "2010-01-26T04:34:45.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

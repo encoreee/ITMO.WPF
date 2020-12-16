@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "260151",
+    "ThreadId": "76062",
+    "Html": "<p>Hi all,</p>\r\n<p>I have a problem whereby some rows on my DataGrid have row headers and some do not, which also causes the rows with headers to be offset. There are not supposed to be any row headers at all. Please see these mock-ups:&nbsp;<a href=\"http://www.racelogic.co.uk/_downloads/misc/GoodDataGrid.bmp\">Correct</a>&nbsp;and <a href=\"http://www.racelogic.co.uk/_downloads/misc/BadDataGrid.bmp\">Incorrect</a>. (Whilst&nbsp;the error occurs frequently it is not fully repeatable, and I have been unable to get it to occur&nbsp;whilst trying to get a screenshot!)</p>\r\n<p>I suspect the problem may occur because the DataGrid's content&nbsp;sometimes updates at the same time as the FrameworkElement that contains it is either&nbsp;moved,&nbsp;it's visibility changed or its parent changed to a different FrameworkElement.</p>\r\n<p>Perhaps I can work around the problem with calls to BeginInit() or EndInit(), or by forcing the DataGrid to redraw. Unfortunately I am not sure when to do either of these (the DataGrid relies heavily on databinding, so it may be when the binding sources are changed that the DataGrid experiences this problem), so any guidance would be greatly appreciated.</p>\r\n<p>EDIT: Additionally, there is a multibinding that changes the opacity of the foreground of each column dependant upon whether or not the Show value (the first column) for the corresponding object (row) is set to true; if it is set to false the opacity is set to 0.5, otherwise the opacity is unchanged (it has the default value, which appears to be 1.0 in most cases). However, I have noticed that any erroneous&nbsp;rows (those with row headers and that are offset) do not have this opacity applied for the second column (&quot;Channel (Current)&quot;), however it is still applied correctly for the remaining columns. Perhaps this information may also be of use.</p>",
+    "PostedDate": "2009-11-24T02:13:50.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

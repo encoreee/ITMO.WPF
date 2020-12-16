@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Issue where user may click on a cell to edit an item in a set of grouped data.  Tabbing to the next cell, causes the row to move to the bottom of the group's collection of items.\nThe item in the cell doesn't even have to be edited.  Simply activate the editing, and tab (or shift-tab) to an adjacent cell.\n \nThis is disconcerting, and our users have complained to us.\n \nThe only workaround I have at the moment is to enforce sorting on a secondary column which has unique data, which fixes all the rows in place.  This however requires some juggling around whenever the user wants to sort the datagrid.\n \nNote, this may be similar to Item 10065",
+    "LastUpdatedDate": "2013-02-21T18:40:52.103-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-17T14:40:11.483-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid : grouped items, editing cell TAB out of shifts rows vertically",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10953
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3546,
+      "FileName": "WpfApplication-DataGridgrouprowbug.zip",
+      "DownloadUrl": ".\\3546"
+    }
+  ],
+  "Comments": []
+}

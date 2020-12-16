@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "209401",
+    "ThreadId": "61706",
+    "Html": "<p>Hi all,</p>\r\n<p>I need to set the width of one of&nbsp;my DataGrid's columns to auto. I then need to add a number of columns programmatically (the number of columns to be added depends on the user's data). These columns are based on a separate column defined in XAML.</p>\r\n<p>The problem I am experiencing is that the column whose width is set to auto determines its width before the additional columns are added. Since I have multiple instances of the DataGrid in different TabItems, for any DataGrid after the first the column whose width is auto gets set to a much larger value than on the first DataGrid, and its additional columns are then added outside of the viewable area.</p>\r\n<p>This behaviour does not entirely make sense to me (I guess the window's size is being increased by the first DataGrid, and the new size used by the subsequent DataGrids before the additional columns are added - but why does the window's size not increase&nbsp;with every&nbsp;additional DataGrid?), but I am trying to cope with it regardless. Is there a way I can force the auto-width column to re-evaluate its width after the additional columns are generated? I have tried setting its width (again) to auto in code-behind - whilst this does resize the column as desired, it has the side-effect of making the column headers invisible - but only in the first instance of the DataGrid / TabItem!</p>\r\n<p>Any ideas?</p>",
+    "PostedDate": "2009-07-07T04:07:45.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209652",
+    "ThreadId": "61706",
+    "Html": "<p>Could you please&nbsp;send a repro project which demonstrates the problem?&nbsp; We're a bit confused because it sounds like you have multiple DataGrids inside a TabControl and that they are somehow causing the Window's width to change?&nbsp; It would be really helpful if we could take a look at a simple project which shows the issue(s) you're encountering.&nbsp; (You can create an issue under the Issue Tracker section and attach a project there.)</p>\r\n<p>In general, all WPF ItemsControls are &quot;grow-only&quot;, meaning that we do the initial layout pass and subsequently the control will only resize larger if the content changes.&nbsp; The reason we don't resize smaller by default is that it would require an expensive measure and arrange pass, which would negatively impact performance.&nbsp; In your case, in sounds like the initial column is laying out correctly, and as expected, when you add the new columns, the first column maintains its larger width.&nbsp; You've found the right workaround for this, which is to set the column width to a small width (like 0) and then back to auto, which will cause the DataGrid to re-layout that column.&nbsp; However, the column headers should not be disappearing when you do this so I'm not sure why that's happening.&nbsp;</p>\r\n<p>If you could send a repro project, we could take a closer look at this.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-07-07T13:44:18.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209826",
+    "ThreadId": "61706",
+    "Html": "<p>Thanks, Samantha. I will knock up as simple a demo as possible and submit it ASAP.</p>",
+    "PostedDate": "2009-07-08T02:12:27.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

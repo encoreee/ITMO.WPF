@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "571310",
+    "ThreadId": "247371",
+    "Html": "<p>I want to accomplish that AutoCompleteBox accepts enter key, so that user can type new line in the AutoCompleteBox.&nbsp;<br /> Is it possible, or applicable?</p>\n<p>According to documentation (MSDN) I have created TextBox style<br /> &lt;Style &nbsp;x:Key=\"myTBStyle\" TargetType=\"TextBox\"&gt;<br /> &lt;Setter Property=\"TextWrapping\" Value=\"Wrap\"&gt;&lt;/Setter&gt;<span> <br /> </span>&lt;Setter Property=\"VerticalScrollBarVisibility\" Value=\"Visible\"&gt;&lt;/Setter&gt;<span> <br /> </span>&lt;Setter Property=\"AcceptsReturn\" Value=\"True\"&gt;&lt;/Setter&gt;<br /> &lt;/Style&gt;<br /> , that is applied to the AutoCompleteBox</p>\n<p>&lt;input:AutoCompleteBox TextBoxStyle=\"{StaticResource myTBStyle}\"&nbsp;<span> <br /></span> <br /> But when user pres the enter key &nbsp;AutoCompleteBox.OnKeyDown event handler is called (AutoCompleteBox.cs, line 2652) and where the Key.Enter &nbsp;is handled in the standard way, like commit event.</p>\n<p>Thanks in advance,</p>\n<p>Sanjin</p>",
+    "PostedDate": "2011-02-23T23:46:07.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

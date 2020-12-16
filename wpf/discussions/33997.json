@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "112652",
+    "ThreadId": "33997",
+    "Html": "Hello,<br>\r\nI was skinning DataGrid and i've run to a little problem. I wasn't able to remove(set to transparent) that white background under column headers(grids background is transparent and that gray textured background is applied to whole form).<br>\r\n<br>\r\n<a href=\"http://img236.imageshack.us/my.php?image=skinnedgriddb8.jpg\"><img src=\"http://img236.imageshack.us/img236/8726/skinnedgriddb8.th.jpg\" alt=\"Free Image Hosting at www.ImageShack.us\" border=0></a><br>\r\n<br>\r\nI really need to remove that so if anybody can help me please. I was trying to edit the sources but still no result (i'm not skilled enough i think). And it will be also nice to enable other developers to skin even this part.<br>\r\nI haven't got through there but i think the same applies to the row headers.<br>\r\n<br>\r\nThanks Jan Dryk<br>\r\n",
+    "PostedDate": "2008-08-21T07:38:38.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112896",
+    "ThreadId": "33997",
+    "Html": "<p>Hallo Jan,</p>\r\n<p>the screenshot looks nice. Are you able to publish your xaml style file? I would appreciate it !<br>\r\nI have just begun to evaluate the DataGrid and currently I have no idea where to start!</p>\r\n<p>Thank you</p>\r\n<p>Michael</p>\r\n",
+    "PostedDate": "2008-08-22T02:12:12.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112901",
+    "ThreadId": "33997",
+    "Html": "Thanks but this style is based mainly on transparency and with that damn white background i can't use it. <br>\r\nIt is a&nbsp; whole library of controls that i want to use for my apps.<br>\r\n<br>\r\nThere are sources:<br>\r\n<a href=\"http://rapidshare.com/files/139216834/SkinnedDataGrid.rar\">http://rapidshare.com/files/139216834/SkinnedDataGrid.rar</a><br>\r\nMaybe you can help me with my little white problem :-)<br>\r\n<br>\r\nRegards Jan Dryk<br>\r\n",
+    "PostedDate": "2008-08-22T03:28:32.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112959",
+    "ThreadId": "33997",
+    "Html": "Hallo Jan,<br>\r\nthank you for the code (xaml) example. I analyzed it&nbsp;with Snoop (by the way:&nbsp;great tool)&nbsp;and came to the conclusion that there is a gray button under the header controls. In snoop you can see the following (partial) visual tree:<br>\r\n<br>\r\n- DataGrid<br>\r\n&nbsp; - Border<br>\r\n&nbsp;&nbsp;&nbsp; - ScrollViewer<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Grid<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Button (with a gray background)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Grid<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Border (Rectangle)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Arrow (Polygon)<br>\r\n<br>\r\nI also found out that setting another theme changes the appearance (As you would expect it). <br>\r\nIt seems to me that the class&nbsp;DataGridHeaderBorder has something to do with that: It draws the background depending on the theme.<br>\r\nUnfortunately I couldn't figure out if you can set that background to &quot;Transparent&quot;.<br>\r\n<br>\r\nHope that helps&nbsp;a little anyway.<br>\r\nMichael\r\n",
+    "PostedDate": "2008-08-22T07:21:10.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113129",
+    "ThreadId": "33997",
+    "Html": "Hi, <br>\r\nThanks really much, i'll look into it but there are some ideas i haven't checked out.<br>\r\nI'll keep you posted if it worked and maybe upload finished code if you want?<br>\r\n&nbsp;<br>\r\nThanks Jan Dryk<br>\r\n",
+    "PostedDate": "2008-08-23T01:38:22.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113140",
+    "ThreadId": "33997",
+    "Html": "Hi,<br>\r\n&nbsp;I've sorted it out by deleting all the theme stuff in the DataGridHeaderBorder class.<br>\r\nNow to make it finished i need to do two more things - the rows number to the row header and skin it. I don't know how to do that yet but i hope i'll figure out.<br>\r\nThanks a lot for all your help.<br>\r\nJan Dryk<br>\r\n",
+    "PostedDate": "2008-08-23T04:41:19.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "132466",
+    "ThreadId": "39906",
+    "Html": "Hi,<br>\r\n<br>\r\nI really appreciate the new DATAGRID control in WPF which I was wondering for days.<br>\r\n<br>\r\nCan anyone answer me with VB code for the below queries:<br>\r\nI have 4 textboxes and a datagrid with 4 columns.<br>\r\n1. How to add text from textboxes to datagrid??<br>\r\n2. How to show text in textboxes from selected row in datagrid??<br>\r\n3. How to replace the selected row's text in datagrid with text from textboxes??<br>\r\n4. How to delete the selected row in datagrid??<br>\r\n<br>\r\nI appreciate if you can attach as sample.<br>\r\n<br>\r\nThanks in advance.\r\n",
+    "PostedDate": "2008-11-13T18:56:59.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132511",
+    "ThreadId": "39906",
+    "Html": "Hi,<br>\r\n<br>\r\nI recently published an article on codeproject that demonstrates most of the points you mention. You can view it here:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx<br>\r\n<br>\r\nNote that although the code snippets in the article do not demonstrate sychronisation of the grid with a group of text boxes, the cod download does. A few tips to get you looking in the right <br>\r\ndirection ....<br>\r\n<br>\r\nI am assuming that you are binding to a collection of business objects.<br>\r\n<br>\r\n1. If your collection of objects is an ObservableCollection, all you have to do is add the new object to thw collection and your DataGrid will update accordingly.<br>\r\n2. If you have both your textboxes and DataGrid bound to the same collection, enable synchronisation via the IsSynchronizedWithCurrentItem property of the DataGrid<br>\r\n3. If you have both your textboxes and DataGrid bound to the same collection thsi will happen automatically<br>\r\n4. Simply hit the Delete key!<br>\r\n<br>\r\nRegards,<br>\r\nColin E. <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-11-14T00:44:07.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132772",
+    "ThreadId": "39906",
+    "Html": "<div style=\"font-size:10pt;font-family:times new roman, new york, times, serif\">\r\n<div>Hi ColinEber,<br>\r\n</div>\r\n<div></div>\r\n<div><br>\r\nThanks for your reply.</div>\r\n<div></div>\r\n<div><br>\r\nI tried your DataGridExamples, but it shows me lot of errors. Can you please send me a simple sample with all those queries.<br>\r\n<br>\r\n<div></div>\r\nNote : My datagrid is not binded to any database. Text entered by user in textboxes are added to datagrid.<br>\r\n<br>\r\nThanks in advance.</div>\r\n</div>\r\n",
+    "PostedDate": "2008-11-14T17:41:00.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

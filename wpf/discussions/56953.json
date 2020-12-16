@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "192468",
+    "ThreadId": "56953",
+    "Html": "<p>I installed the new march tool kit and add refrences to wpftoolkit.</p>\r\n<p>1. Can I drag and drop a datagrid on to my work space?, if not how do i access/the control propetities to the datagrid?</p>",
+    "PostedDate": "2009-05-20T10:44:18.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193452",
+    "ThreadId": "56953",
+    "Html": "<p>After installing the toolkit and adding the reference to it, you&nbsp;should be able to drag and drop the WPF datagrid on to your work space.&nbsp; Give it a try and let us know if you have any further question.&nbsp;</p>",
+    "PostedDate": "2009-05-22T20:09:04.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

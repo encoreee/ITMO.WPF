@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "290860",
+    "ThreadId": "85394",
+    "Html": "<p>Hi,</p>\r\n<p>I want to apply a style for the last row of the datagrid. Is there any easy way of doing it?&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-02-15T07:58:28.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291228",
+    "ThreadId": "85394",
+    "Html": "<p>Are you talking about the row that is added by the DataGrid itself?&nbsp; if so you&nbsp;can&nbsp;create a ControlTemplate in your XAML.&nbsp; I generally place it in the Resources for the DataGrid.</p>\r\n<p>XAML:<br>================<br>&lt;ControlTemplate x:Key=&quot;LastRow_ControlTemplate&quot; TargetType=&quot;{x:Type dg:DataGridRow}&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;Border x:Name=&quot;DGR_Border&quot; Background=&quot;{TemplateBinding Background}&quot; BorderBrush=&quot;{TemplateBinding BorderBrush}&quot; BorderThickness=&quot;{TemplateBinding BorderThickness}&quot; SnapsToDevicePixels=&quot;True&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:SelectiveScrollingGrid&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Rectangle Grid.Column=&quot;1&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:SelectiveScrollingGrid&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/Border&gt;<br>&lt;/ControlTemplate&gt;</p>\r\n<p>Then in the LoadingRow Event for the DataGrid we look for the NewItemPlaceholder and set its ControlTemplate to the one we've created in XAML<br>VB.Net<br>=================<br>Private Sub myDataGrid_LoadingRow(ByVal sender As Object, ByVal e As Microsoft.Windows.Controls.DataGridRowEventArgs) Handles myDataGrid.LoadingRow<br>'We set the ControlTemplate and Height on the very last row in the running order, which is the NewItemPlaceHolder.&nbsp; This is not part of our data.&nbsp; It is added by the WPF DataGrid.<br>&nbsp;&nbsp;&nbsp; If e.Row.Item IsNot GetType(DBNull) Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If e.Row.Item Is CollectionView.NewItemPlaceholder Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.Row.Template = TryCast(FindResource(&quot;LastRow_ControlTemplate&quot;), ControlTemplate)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.Row.Height = 20<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End if<br>&nbsp;&nbsp;&nbsp; End if<br>End Sub</p>\r\n<p>Vinsibal has a really good write up on his blog about it if you need further details.<br><a href=\"http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx</a><br><br>Cheers,<br>-LT</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-16T06:32:09.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I use a DataGridTextColumn with validation, the grid refuses to leave the cell focused until the value entered conforms to the validation, perfect behavior.\n \nIf I use a DataGridTemplateColumn with validation on a textbox, it just leaves and the validation border dissappears when clicking on another cell.\n \nHow can  I implement the same validation behavior for DataGridTemplateColumn  as DataGridTextColumn?\n \nThanks!\nDave",
+    "LastUpdatedDate": "2013-02-21T18:40:53.867-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-10-22T03:03:14.82-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGridTemplateColumn validation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10815
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

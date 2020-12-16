@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "182802",
+    "ThreadId": "54257",
+    "Html": "i wish to have property could enable edit start with one click to any cell (even not focused)<br>\r\nin OnAnyMouseLeftButtonDown i see just<br>\r\n        /// TODO: Consider making a protected virtual.<br>\r\ni afraid i will need write own mouse handling\r\n",
+    "PostedDate": "2009-04-23T07:20:07.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182807",
+    "ThreadId": "54257",
+    "Html": "Try here: http://wpf.codeplex.com/Wiki/View.aspx?title=Single-Click%20Editing&amp;referringTitle=Home<br>\r\n<br>\r\nEdit: Ouch! Sorry for spamming everyone with all that HTML. \r\n",
+    "PostedDate": "2009-04-23T07:31:34.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182871",
+    "ThreadId": "54257",
+    "Html": "thanks mikj, will try start with it = copy own mouse handling<br>\r\nthe best to you, your friends and whole family<br>\r\n<br>\r\nanyway it seems i was not only who will like this parameter inside<br>\r\n<br>\r\nEdit: i was scared by email full of html\r\n",
+    "PostedDate": "2009-04-23T09:51:08.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

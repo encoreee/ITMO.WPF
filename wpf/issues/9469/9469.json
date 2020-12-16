@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Calendar",
+      "DisplayName": "Calendar"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I would like my controls to respect the CurrentUICulture, so that my user can pick whatever language he wants to use (and is supported by me). Isn't that what the CurrentUICulture property is for?",
+    "LastUpdatedDate": "2013-02-21T18:41:28.28-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-09T09:16:38.887-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Calendar/DatePicker looks at CurrentCulture instead of CurrentUICulture?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9469
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "A bug has been filed :-) The Controls should be checking the Language Property\r\n\r\nThanks,\r\n\r\n-Eric,MSFT",
+      "PostedDate": "2009-04-03T13:41:58.16-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is CurrentCulture and Language insufficent for your scenario?\r\n\r\n-Eric, MSFT",
+      "PostedDate": "2009-04-03T14:05:12.583-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I was a bit confused about what the purpose/difference was between CurrentCulture and CurrentUICulture. And the fact that WPF ignores them both, didn't help either ;-)\r\nI found this trick (http://serialseb.blogspot.com/2007/04/wpf-tips-1-have-all-your-dates-times.html) and together with CurrentCulture I think I can manage my requirements.\r\nBut I also have a 'wanted' list, which has a similar feature like in Outlook (2007): the dates in Outlook automatically change format on the fly, as soon as you change the regional settings in your control panel. The trick from Sebastien only works once at the start of your application, so I probably have some more research to do...\r\n\r\nThanks,\r\nMarcel",
+      "PostedDate": "2009-04-06T03:34:42.583-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-07T13:18:08.623-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:28.28-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

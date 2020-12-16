@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "242685",
+    "ThreadId": "71160",
+    "Html": "<p>Hello--</p>\r\n<p>&nbsp;</p>\r\n<p>I'd like to create a time series chart that only displays date/time information by business days - so it should skip the weekends and holidays.</p>\r\n<p>&nbsp;</p>\r\n<p>This is a common thing to do for stock charts, for example</p>\r\n<p>&nbsp;</p>\r\n<p>I looked into using &nbsp;category axis &amp; just specifying weekdays as categories. The problem with that approach is I want the user to be able to slide the dates around &amp; each time a category axis's bound data changes all the series need to redraw themselves.</p>\r\n<p>&nbsp;</p>\r\n<p>Does anyone have a good idea on a solution here? I'm thinking I could either implement a custom axis that inherits RangeAxis from the source (but that leads me down versioning issues, etc.)</p>\r\n<p>&nbsp;</p>\r\n<p>Or I could somehow get a DateTimeAxis and CategoryAxis working together so that the user sees a category axis &amp; the data is bound as such, but the interaction happens through a datetimeaxis so dates can be changed</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Alan</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-06T12:47:02.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

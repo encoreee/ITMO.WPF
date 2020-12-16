@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "171184",
+    "ThreadId": "51074",
+    "Html": "I'm trying to create the appearance of a column selection but need the selection mode to be single as I only want only one column to be selected at any time (and preferably also so that certain columns cannot be selected)<br>\r\n<br>\r\nIf I allow extended selection the user can select multiple cells using mouse or keyboard and I have to deal with it after the fact, and programmatically fixing selection also trigger SelectionChanged events..<br>\r\n<br>\r\nI am aware of the FAQ entry about column selection, but it doesn't really cut it for me for several reasons.<br>\r\n1) I want the user to be able to select by clicking anywhere in the column, not just the header. This can be worked around.<br>\r\n2) I cannot programmatically select multiple cells with SelectionMode=Single.<br>\r\n<br>\r\nHow can I achiveve the desired effect?<br>\r\n",
+    "PostedDate": "2009-03-23T23:50:13.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

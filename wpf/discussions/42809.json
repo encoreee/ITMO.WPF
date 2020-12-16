@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "142274",
+    "ThreadId": "42809",
+    "Html": "The performance of DataGrid becomes poor when the visibility of VerticalScrollBarVisibility is set to Visible.<br>\r\nWhen the visibility of VerticalScrollBarVisibility is set to Visible, it take more times to change the visibility of 1000 DataGridRows to Visible than the visibility of VerticalScrollBarVisibility is set to Auto.<br>\r\nWhy?<br>\r\nfollowing is the source code.<br>\r\n<a href=\"http://www.box.net/shared/vcd86u0cmb\">http://www.box.net/shared/vcd86u0cmb</a>\r\n",
+    "PostedDate": "2008-12-21T22:51:00.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

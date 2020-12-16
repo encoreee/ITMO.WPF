@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "230094",
+    "ThreadId": "67706",
+    "Html": "<p>Hello Developers,</p>\r\n<p>&nbsp;</p>\r\n<p>I would like the Calendar Control to show more than one month at the same time only. I mean I want to show multiple months with all its days like the WinForms Calendar Control&hellip;</p>\r\n<p>&nbsp;</p>\r\n<p>I know there is no property provided for this but:</p>\r\n<p>Is there a way doing this only by using Styles and Templates? I don&rsquo;t want any Code-behind... it should be done only in XAML.</p>\r\n<p>&nbsp;</p>\r\n<p>I think of a template that contains several calendar-controls which must be synchronized when one Calendar Control switches to another month?</p>\r\n<p>&nbsp;</p>\r\n<p>Would be thankful for any hint&hellip;</p>\r\n<p>&nbsp;</p>\r\n<p>Ponzilla</p>",
+    "PostedDate": "2009-09-02T02:27:28.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

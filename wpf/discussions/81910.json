@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "281320",
+    "ThreadId": "81910",
+    "Html": "<p>Hello,</p>\r\n<p>I can't install WpfToolkit on my windows 7: it says i need 3.5 sp1 but on 7 it's 3.5.1 that is installed ....</p>\r\n<p>I've tried to download .Net Framework 3.5 and then 3.5 sp1 but none on them wants to install ...</p>\r\n<p>Could you help please...</p>",
+    "PostedDate": "2010-01-25T02:57:18.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281361",
+    "ThreadId": "81910",
+    "Html": "<p>oops should have begin with the issue tracker where it's describe how to resolve this problem...</p>\r\n<p>Sorry,</p>\r\n<p>&nbsp;</p>\r\n<p>Thanx</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-25T04:50:42.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "123450",
+    "ThreadId": "37196",
+    "Html": "I'm trying to put an ITypedList to the DataGrid.ItemsSource and all cells are shown empty.<br>\r\n<br>\r\nIs there any way to get a DataGridColumn wrapping a System.ComponentModel.PropertyDescriptor instance?<br>\r\nI supposed it is done by the &quot;DataGridColumn.CreateDefaultColumn&quot; but it isn't, since the only PropertyDescriptor members CreateDefaultColumn knows are: Name, PropertyType and IsReadOnly. But I need the full PropertyDescriptor support (first of all the GetValue and the SetValue methods).<br>\r\n",
+    "PostedDate": "2008-10-07T06:00:44.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

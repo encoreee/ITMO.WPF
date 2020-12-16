@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "257141",
+    "ThreadId": "75139",
+    "Html": "<p>Here is the code I am using:</p>\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">tk</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTextColumn</span> <span style=\"color:Red\">Binding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Person.Address.Zip}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n<p>I checked and I&nbsp;know for sure that the value is loaded and is not empty.</p>",
+    "PostedDate": "2009-11-14T13:06:59.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259257",
+    "ThreadId": "75139",
+    "Html": "<p>Try this...</p>\r\n<p>&lt;tk:DataGridTextColumn Binding=&quot;{Binding <strong>Path=</strong>Person.Address.Zip}&quot; /&gt;</p>\r\n<p>R</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-20T16:39:02.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259258",
+    "ThreadId": "75139",
+    "Html": "<p>Try this...</p>\r\n<p>&lt;tk:DataGridTextColumn Binding=&quot;{Binding <strong>Path=</strong>Person.Address.Zip}&quot; /&gt;</p>\r\n<p>R</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-20T16:39:05.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

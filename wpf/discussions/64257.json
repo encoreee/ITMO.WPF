@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "218606",
+    "ThreadId": "64257",
+    "Html": "<p>HI</p>\r\n<p>(System.Windows.Controls.DataVisualization.Toolkit)</p>\r\n<p>I want to extend the Datapoint and Series but find these classes (DataPoint DataPointSeries and so on) have a internal construction.</p>\r\n<p>I don't know why these constructions are internal&nbsp;.could&nbsp;they change the accesses</p>\r\n<p>&nbsp;</p>\r\n<p>PS .&nbsp;Is System.Windows.Controls.DataVisualization.Toolkit an&nbsp;open source project? How&nbsp;can get the source code?</p>\r\n<p>Thanks &nbsp;</p>",
+    "PostedDate": "2009-08-02T21:17:45.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "220070",
+    "ThreadId": "64257",
+    "Html": "<p>The classes are currently sealed because we're not quite ready for people to start subclassing - we'd rather not risk breaking them till we're a little more confident in the API surface. However, DataVis IS open source and users are welcome to work off the source code itself. You can find the source either under the &quot;Source Code&quot; tab above or under the &quot;Downloads&quot; tab above.</p>",
+    "PostedDate": "2009-08-05T16:59:13.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

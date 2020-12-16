@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We just upgraded to the February Release and found a problem when using UIA with the DataGrid. When switching from display to editing mode, the UIA tree somehow is not updated and the cell has only one child - the TextBlock used in DisplayMode. Can you give me any hints on how to solve this?",
+    "LastUpdatedDate": "2013-02-21T18:40:38.51-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-04-13T06:58:19.163-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid Editing Mode UIA Problem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12662
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

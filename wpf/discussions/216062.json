@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "455573",
+    "ThreadId": "216062",
+    "Html": "<p>Hi there,</p>\r\n<p>I have done DataGridRowValidaiton like this:</p>\r\n<p>&nbsp;&nbsp; &nbsp; InputValidationRule rule = new InputValidationRule(mGrid);</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;rule.ValidatesOnTargetUpdated = false;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;rule.ValidationStep = ValidationStep.RawProposedValue;</p>\r\n<p>&nbsp;</p>\r\n<p>this only runs the validate function when the input gets commited. I want the validation to occur while user is entering input.&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-15T03:35:59.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

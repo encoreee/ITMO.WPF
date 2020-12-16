@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "224861",
+    "ThreadId": "66197",
+    "Html": "<p>I would like to have column headers in group headers. this is easy with one group level.<br>How to get group level from Expander:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> Expander_Loaded(<span style=\"color:Blue\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            Expander expander = sender <span style=\"color:Blue\">as</span> Expander;\r\n            TextBlock textBlock = expander.FindName(<span style=\"color:#A31515\">&quot;GroupHeaderText&quot;</span>) <span style=\"color:Blue\">as</span> TextBlock;</pre>\r\n<pre>            //????? how to get group level?\r\n            textBlock.Text = <span style=\"color:#A31515\">&quot;GroupHeader1/2&quot;</span>;\r\n        }\r\n</pre>\r\n<pre>Thanks for help in advance!</pre>\r\n</div>",
+    "PostedDate": "2009-08-18T04:09:47.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224888",
+    "ThreadId": "66197",
+    "Html": "<p>I solved the problem with two groups by :</p>\r\n<p>From Converter I got:<br><br>CollectionViewGroup obj = (CollectionViewGroup)value;<br><br><span style=\"color:Blue\">if</span> (obj.IsBottomLevel == <span style=\"color:Blue\">false</span>)<br>&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">return</span> <span style=\"color:#A31515\">&quot;First Level Header: &quot;</span>;<br><span style=\"color:Blue\">else</span><br><span style=\"color:Blue\">&nbsp;&nbsp;&nbsp; return</span> <span style=\"color:#A31515\">&quot;Second Level Header: &quot;</span>;<br><br>What about three or more levels?<br><br>Thanks for help in advance!</p>",
+    "PostedDate": "2009-08-18T05:37:58.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

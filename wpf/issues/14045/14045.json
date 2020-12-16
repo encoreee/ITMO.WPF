@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Forgive me, perhaps I'm missing something...  but how do I get the new WPFToolkit DataPicker to NOT throw an exception, and crash, when I type in an invalid date (eg 17/18/2010), then make the control lose focus ?\n \nI tried declaring a new UserControl, based on the DatePicker control, and adding whatever events I could think of to catch such an \nevent, but none seem to prevent the Exception from being shown.\n \nFor example:\n \n    public class DatePickerWithValidation : DatePicker\n    {\n        public override void OnApplyTemplate()\n        {\n            this.DateValidationError += new EventHandler<DatePickerDateValidationErrorEventArgs>(DatePickerWithValidation_DateValidationError);\n            base.OnApplyTemplate();\n        }\n        void DatePickerWithValidation_DateValidationError(object sender, DatePickerDateValidationErrorEventArgs e)\n        {\n            e.ThrowException = false;\n \n            DateTime result;\n            if (!DateTime.TryParse(e.Text.Trim(), out result))\n            {\n                MessageBox.Show(\"Invalid date\", \"Error\");\n            }\n        }\n        protected override void OnDateValidationError(DatePickerDateValidationErrorEventArgs e)\n        {\n            e.ThrowException = false;\n \n            base.OnDateValidationError(e);\n        }\n \nI know, I know...  I just need the \"override\" function, not both of these...  but I was trying anything by this\npoint !!!\n \nWhen I used this code, I entered my invalid date, it threw an exception...   and THEN ran my two \"DateValidationError\" \nfunctions, which tell the DatePicker not to...  errrr..  throw an exception.\n \n \nI've looked at the \"DatePicker.cs\" source code, where the exception is thrown by the DateTime.Parse function:\n \n        private DateTime? ParseText(string text)\n        {\n            DateTime newSelectedDate;\n \n            // TryParse is not used in order to be able to pass the exception to the TextParseError event\n            try\n            {\n                newSelectedDate = DateTime.Parse(text, DateTimeHelper.GetDateFormat(DateTimeHelper.GetCulture(this)));\n                ....\n            }\n            catch (FormatException ex)\n            {\n                ....\n            }\n \n \nProblem is, this code only checks for a FormatException exception, but even though my Output window suggests \nthat a \"System.FormatException\" has occurred, the catch(...) code does not get run:\n \n           A first chance exception of type 'System.FormatException' occurred in mscorlib.dll\n           Additional information: String was not recognized as a valid DateTime.\n \nI also tried to replace this \"DateTime.Parse\" with a \"DateTime.TryParse\", and to replace the catch with\n            catch (Exception ex)\n \nbut each of these just makes the exception get thrown elsewhere, on the \"base.OnLostFocus\" function  (which I can't step into):\n \n    public sealed partial class DatePickerTextBox : TextBox\n    {\n        ...\n        protected override void OnLostFocus(RoutedEventArgs e)\n        {\n            base.OnLostFocus(e);\n            ChangeVisualState(true);\n        }\n \n \n \nI surrender...\nIs this a bug, or am I missing something ?",
+    "LastUpdatedDate": "2013-02-21T18:40:24.967-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-19T04:41:12.393-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker: Always throws an exception, when an invalid date is encountered.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 14045
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.. Am also facing the same problem here.. Is there any workaround for this ?. Please reply..",
+      "PostedDate": "2011-05-05T20:58:48.49-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "What I found was that the Exception will always be thrown, but it only \"crashes\" the application when it's run from Visual Studio in Debug mode.   In Release mode, the app doesn't crash, the exception seems to just get created, and execution continues.\r\n\r\nTo prevent Visual Studio from grinding your app to a halt each time, open the Exceptions window  (click on Debug\\Exceptions), find the \"Common Language Runtime Exceptions\" branch, then untick the \"Thrown\" box for System \\ System.FormatException.\r\n\r\nOne other useful tip.  Use the following global style to make your DateTimePickers readable in XP:\r\n\r\n\r\n<!--  By default, the header of the DatePicker is dark-blue background with black text.   The following style fixes this. -->\r\n        <LinearGradientBrush x:Key=\"{ComponentResourceKey TypeInTargetAssembly={x:Type toolkit:Calendar}, ResourceId=CalendarBackgroundBrush}\" x:Shared=\"false\" StartPoint=\"0.5,0\" EndPoint=\"0.5,1\">\r\n            <GradientStop Color=\"AliceBlue\" Offset=\"0\"/>\r\n            <GradientStop Color=\"LightSteelBlue\" Offset=\"0.16\"/>\r\n            <GradientStop Color=\"White\" Offset=\"0.16\"/>\r\n            <GradientStop Color=\"White\" Offset=\"1\"/>\r\n        </LinearGradientBrush>\r\n\r\n",
+      "PostedDate": "2011-05-06T01:17:58.147-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "What I found was that the Exception will always be thrown, but it only \"crashes\" the application when it's run from Visual Studio in Debug mode.   In Release mode, the app doesn't crash, the exception seems to just get created, and execution continues.\r\n\r\nTo prevent Visual Studio from grinding your app to a halt each time, open the Exceptions window  (click on Debug\\Exceptions), find the \"Common Language Runtime Exceptions\" branch, then untick the \"Thrown\" box for System \\ System.FormatException.\r\n\r\nOne other useful tip.  Use the following global style to make your DateTimePickers readable in XP:\r\n\r\n\r\n<!--  By default, the header of the DatePicker is dark-blue background with black text.   The following style fixes this. -->\r\n        <LinearGradientBrush x:Key=\"{ComponentResourceKey TypeInTargetAssembly={x:Type toolkit:Calendar}, ResourceId=CalendarBackgroundBrush}\" x:Shared=\"false\" StartPoint=\"0.5,0\" EndPoint=\"0.5,1\">\r\n            <GradientStop Color=\"AliceBlue\" Offset=\"0\"/>\r\n            <GradientStop Color=\"LightSteelBlue\" Offset=\"0.16\"/>\r\n            <GradientStop Color=\"White\" Offset=\"0.16\"/>\r\n            <GradientStop Color=\"White\" Offset=\"1\"/>\r\n        </LinearGradientBrush>\r\n\r\n",
+      "PostedDate": "2011-05-06T01:21:00.5-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:24.967-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "125227",
+    "ThreadId": "37766",
+    "Html": "Hi friends,<br>\r\nin winForms I've used the devexpress grid which enables Banded Columns.does the WPF DataGrid supports such feature ?<br>\r\nI need something like this:<img alt=\"\"><br>\r\n/<img style=\"border:0px none\" alt=\"clip_image004[3]\" src=\"http://community.devexpress.com/blogs/theonewith/WindowsLiveWriter/XtraGridBandandColumnCustomizationTransc_BF26/clip_image004[3]_1.jpg\" width=567 border=0 height=369><br>\r\nhttp://community.devexpress.com/blogs/theonewith/WindowsLiveWriter/XtraGridBandandColumnCustomizationTransc_BF26<br>\r\n<br>\r\nThanks<br>\r\n<img alt=\"\"><img alt=\"\">\r\n",
+    "PostedDate": "2008-10-15T02:32:55.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126140",
+    "ThreadId": "37766",
+    "Html": "any suggestions for an elegant solution? <br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-19T08:17:39.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "127127",
+    "ThreadId": "37766",
+    "Html": "hi again,<br>\r\nI still haven't found a solution for that - what I'm trying to do is to merge multiple cells in the column's header.<br>\r\nMaybe a more abstract view will help:<br>\r\n<span id=\"_ctl0_MainContent_PostFlatView\"><span><span style=\"font-size:13px\"><span style=\"font-family:Arial\"><br>\r\n</span></span></span></span><span id=\"_ctl0_MainContent_PostFlatView\"><span><span style=\"font-size:13px\"><span style=\"font-family:Arial\">for example I have </span></span></span></span>column header: <strong>Contact Number</strong> which has two sub columns named <strong>Home Phone </strong>and <strong>Work Phone</strong> under it)<br>\r\n<span id=\"_ctl0_MainContent_PostFlatView\"><span><span style=\"font-size:13px\"><span style=\"font-family:Arial\">--------------------------------------------------|<br>\r\n|&nbsp; </span></span></span></span><strong>Contact Number&nbsp; &nbsp; &nbsp;&nbsp;</strong><span id=\"_ctl0_MainContent_PostFlatView\"><span><span style=\"font-size:13px\"><span style=\"font-family:Arial\"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>\r\n|--------------------------------------------------|<br>\r\n|&nbsp; </span></span></span></span><strong>Home Phone</strong><span id=\"_ctl0_MainContent_PostFlatView\"><span><span style=\"font-size:13px\"><span style=\"font-family:Arial\"> |&nbsp; </span></span></span></span><strong>Work Phone</strong>&nbsp; |<br>\r\n<br>\r\n<br>\r\nI can think of several solution,but none of them is simple enough,so maybe you can figure out simpler one.<br>\r\nOne option is to make a new class that will contain several columns and will be styled to show the columns it contains.this seems to be complex solution since I will have to handle many cases including style,template and binding to this class by my own.<br>\r\nAnother option can be to make a new TemplateColumn but this one might limit the functionality of what I'm trying to achieve.<br>\r\n<br>\r\nI'd like to hear your opinion as well as another suggestions<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-23T01:23:45.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

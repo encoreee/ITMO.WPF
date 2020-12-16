@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "470701",
+    "ThreadId": "220545",
+    "Html": "<p>Hello!</p>\r\n<p>Can someone please explain what exactly is the difference between DataGrid's CurrentItem and SelectedItem properties.</p>\r\n<p>In which cases will these two NOT reference the same object?</p>\r\n<p>I for example I have a&nbsp;DataGrid next to a StackPanel with simple edit controls like TextBox. I want to bind the DataContext of the StackPanel to the item that is &quot;currently selected&quot; in my grid (and then bind the individual controls to properties of that object). Would I rather use SelectedItem or CurrentItem in that case?</p>\r\n<p>Also, can you please explain the magic of&nbsp;IsSynchronizedWithCurrentItem ?</p>\r\n<p>Thanks!</p>\r\n<p>Karlox<span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\"></span></span></p>",
+    "PostedDate": "2010-07-21T23:19:05.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

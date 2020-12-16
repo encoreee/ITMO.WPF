@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "205920",
+    "ThreadId": "60777",
+    "Html": "<p>Hi all,</p>\r\n<p>I need to bind the Foreground property of my DataGridTextColumn to a property of the object it is displaying (called &quot;Colour&quot;), in addition to binding the Text (AKA Binding) property to a different property of the same object (called &quot;Name&quot;). Unfortunately, I cannot seem to get this to work.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">dataGrid</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTextColumn</span> <span style=\"color:Red\">Binding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Name}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Foreground</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Colour}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span> <span style=\"color:Green\">&lt;!--Fails--&gt;</span>\r\n</pre>\r\n</div>\r\n<p>\r\n<p>I have a workaround, which is to use a DataGridTemplateColumn instead of a DataGridTextColumn and then add the necessary binding in the DataTemplate, however I do not understand why I cannot do this with a DataGridTextColumn (and it is somewhat combersome). Any thoughts?</p>\r\n</p>\r\n<p><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">dataGrid</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTemplateColumn</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">dataGrid</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTemplateColumn.CellTemplate</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">DataTemplate</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">TextBlock</span> <span style=\"color:Red\">Text</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Name}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Foreground</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Colour}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">DataTemplate</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">dataGrid</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTemplateColumn.CellTemplate</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">dataGrid</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTemplateColumn</span><span style=\"color:Blue\">&gt;</span><span style=\"color:Green\">&lt;!--Works--&gt;</span>\r\n\r\n</pre>\r\n</div>\r\n</span></span></span></span></p>",
+    "PostedDate": "2009-06-26T08:02:52.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205997",
+    "ThreadId": "60777",
+    "Html": "<p>Hi Zild,</p>\r\n<p>The reason the binding doesn't work on directly on the DataGridTextColumn is that we actually use two different controls within the column (one for editing mode and one for non-editing mode) to display the cell's content, so if you just set the Foreground on the column, we don't know if you want to apply that to the editing element, the non-editing element, or both.&nbsp; Instead of doing the binding directly on the DataGridTextColumn, you'll want to do it in the DataGridTextColumn.ElementStyle and/or DataGridTextColumn.EditingElementStyle.&nbsp; ElementStyle gives you access to Style of the control (TextBlock) which displays the cell value when not in edit mode and EditingElementStyle gives you access to the Style of the control (TextBox) which displays the cell value when in edit mode.&nbsp; You can use these just like you would any other Style, by using a Setter with Property=&quot;Foregound&quot;, Value=&quot;{Binding Colour}&quot;.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-06-26T11:03:09.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206496",
+    "ThreadId": "60777",
+    "Html": "<p>Thanks, Samantha, that worked a treat!</p>",
+    "PostedDate": "2009-06-29T01:36:04.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248516",
+    "ThreadId": "60777",
+    "Html": "<p>Thanks Zild and Samantha. Your post helped me a lot.</p>\r\n<p>For those who are stuck in writing Styles here it is:</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Custom:DataGridTextColumn&nbsp; Binding=&quot;{Binding error}&quot; Width=&quot;0.3*&quot; &gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Custom:DataGridTextColumn.ElementStyle&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Style TargetType=&quot;TextBlock&quot; &gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Foreground&quot; Value=&quot;{Binding ForegroundErrorColor}&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Style&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Custom:DataGridTextColumn.ElementStyle&gt;</p>",
+    "PostedDate": "2009-10-22T04:38:32.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

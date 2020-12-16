@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "130176",
+    "ThreadId": "39243",
+    "Html": "Hi<br>\r\n<br>\r\nsince validation using IDataErrorInfo is broken in V1, is there any date for a patch?<br>\r\nEven a &quot;not before ...&quot; can be of help<br>\r\n<br>\r\nRegards<br>\r\nKlaus \r\n",
+    "PostedDate": "2008-11-05T02:35:08.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130268",
+    "ThreadId": "39243",
+    "Html": "Hi Klaus,<br>\r\n<br>\r\nThis fix likely won't be available until .NET 4.0 since we don't plan to release any other iterations of DataGrid out-of-band before we roll it back into the framework.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-05T09:51:03.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130437",
+    "ThreadId": "39243",
+    "Html": "\r\n<div dir=ltr align=left><span class=199113508-06112008>Hi</span></div>\r\n<div dir=ltr align=left><span class=199113508-06112008></span> </div>\r\n<div dir=ltr align=left><span class=199113508-06112008>then: is \r\nthere a schedule for .net 4.0?</span></div>\r\n<div dir=ltr align=left><span class=199113508-06112008></span> </div>\r\n<div dir=ltr align=left><span class=199113508-06112008>Regards</span></div>\r\n<div dir=ltr align=left><span class=199113508-06112008>Klaus</span></div><br>\r\n<div class=OutlookMessageHeader lang=en-us dir=ltr align=left>\r\n<hr>\r\n<b>From:</b> SamanthaMSFT \r\n[mailto:notifications@codeplex.com] <br><b>Sent:</b> Mittwoch, 5. November 2008 \r\n18:51<br><b>To:</b> Klaus Wiesel<br><b>Subject:</b> Re: Datagrid V1 and \r\nIDataErrorInfo [wpf:39243]<br><br></div>\r\n<div></div>\r\n<p>From: SamanthaMSFT</p>\r\n<div id=ThreadNotificationPostBody>Hi Klaus,<br><br>This fix likely won't \r\nbe available until .NET 4.0 since we don't plan to release any other iterations \r\nof DataGrid out-of-band before we roll it back into the \r\nframework.<br><br>Thanks,<br>Samantha </div>\r\n",
+    "PostedDate": "2008-11-06T00:35:50.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130584",
+    "ThreadId": "39243",
+    "Html": "I don't believe there's been an official date announced yet, but it wouldn't be until late 2009.\r\n",
+    "PostedDate": "2008-11-06T11:03:38.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

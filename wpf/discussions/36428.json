@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "120826",
+    "ThreadId": "36428",
+    "Html": "Hi there,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am using this Datagrid but i am stuck on ways to achieve a simple thing.&nbsp; I am having a datagrid which displays records in it .. I have a &quot;Edit&quot;&nbsp;button for each row and checkboxes for multiple Deletes. Now my problem is, i want to open another window on click of Edit. How will i know which row is the user on when he clicks Edit? the same goes for deleting .. how will i know which checkbox the user has checked. There are not many examples for this&nbsp;DataGrid. Can anybody please help...<br>\r\n<br>\r\nCheers,<br>\r\nAshish.\r\n",
+    "PostedDate": "2008-09-24T19:54:14.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120832",
+    "ThreadId": "36428",
+    "Html": "For the &quot;Edit&quot; button, if it is added to a cell (DataGridTemplateColumn), when you click it DataGrid will update CurrentItem to that row.&nbsp; So you can access the row through CurrentItem.&nbsp; For the checkboxes see this thread,&nbsp;<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=35418\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=35418</a>.\r\n",
+    "PostedDate": "2008-09-24T20:56:07.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

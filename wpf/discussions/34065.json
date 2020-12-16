@@ -1,0 +1,218 @@
+[
+  {
+    "Id": "112934",
+    "ThreadId": "34065",
+    "Html": "I ask the code behind question meaning the c# code behind.&nbsp; It seems that everytime you see an example in WPF it's always shown in xaml.&nbsp; While that is great, I will hardly every create a datagrid using xaml.&nbsp; I might do the layout and set up the headers in xaml but it will be populated manually&nbsp;with the c# code behind.<br>\r\n<br>\r\nWith the new Datagrid. Using c#,&nbsp; how do you .....<br>\r\n<br>\r\n1.&nbsp; Create a new table.<br>\r\n2.&nbsp; Add a new row.<br>\r\n3.&nbsp; Add a new row at run time.<br>\r\n4.&nbsp; Add a new column.<br>\r\n5.&nbsp; Add a new column at run time.<br>\r\n6.&nbsp; Place data into individual cells.<br>\r\n7.&nbsp; Extract data from individual cells.<br>\r\n<br>\r\nSorry if these questions seem trivial, but I feel like I'm stumbling around in the the dark.<br>\r\n<br>\r\nThanks\r\n",
+    "PostedDate": "2008-08-22T05:51:57.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112967",
+    "ThreadId": "34065",
+    "Html": "Sorry about #1. I don't know what I was thinking.&nbsp; I need coffee.....\r\n",
+    "PostedDate": "2008-08-22T07:50:59.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113091",
+    "ThreadId": "34065",
+    "Html": "Just curious, but what is the scenario where you are want to populate the DataGrid manually?&nbsp; <br>\r\n<br>\r\nAdd a new row <strong>manually</strong> (at runtime or whenever):<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>DataGrid.Items.Add(</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> DataItem());</span><br>\r\n<br>\r\nAdd a new column (at runtime or whenever):<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>DataGrid.Columns.Add(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGridTextColumn</span></span><span style=\"font-size:13px\">());\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-08-22T17:01:54.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113195",
+    "ThreadId": "34065",
+    "Html": "Hi,&nbsp;<br>\r\nHere's my scenario.&nbsp; I have a DataSet.&nbsp; In that DataSet there are two DataTables.&nbsp; I set the ItemSource for my DataGrid to the DataTable containing the items I want to display.&nbsp; The other DataTable in the DataSet contains a user specified layout of the columns that user wishes to see.&nbsp; While the AutoGenerateColumns feature is nice, my DataTable may contain more columns than I wish to display&nbsp;for&nbsp;a given&nbsp;user.&nbsp; How can I display specified columns in the code behind?&nbsp;&nbsp;Using the GridView on a ListView control it is&nbsp;fairly easy and I can even define CellTemplates in my codebehind.&nbsp; There is no CellTemplate for a DataGridColumn like there is for GridViewColumn.&nbsp; Does anybody have an example of doing this in codebehind?&nbsp; Am I just missing something simple here?<br>\r\n<br>\r\nKindest Reagards,<br>\r\n-LT\r\n",
+    "PostedDate": "2008-08-23T14:28:51.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113264",
+    "ThreadId": "34065",
+    "Html": "OK, after much digging and dissecting of all two samples that are currently out there for the CTP DataGrid, I stand corrected.&nbsp; There is a CellTemplate accessible&nbsp;for the&nbsp;DataGridTemplateColumn.&nbsp;&nbsp;<br>\r\nJaime Rodriguez's sample was the key for me.<br>\r\n<br>\r\nIn C#:<br>\r\n<span style=\"font-size:13px;color:#0000ff\">void</span><span style=\"font-size:13px\"> BigKahuna_AutoGeneratingColumn(</span><span style=\"font-size:13px;color:#0000ff\">object</span><span style=\"font-size:13px\"> sender, Microsoft.Windows.Controls.</span><span style=\"font-size:13px;color:#2b91af\">DataGridAutoGeneratingColumnEventArgs</span><span style=\"font-size:13px\"> e) <br>\r\n<br>\r\n{ <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><br>\r\nif</span><span style=\"font-size:13px\"> ( e.PropertyName == </span><span style=\"font-size:13px;color:#a31515\">&quot;PurchasedDate&quot;</span><span style=\"font-size:13px\"> )<br>\r\n<br>\r\n{<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\"><br>\r\nDataGridTemplateColumn</span><span style=\"font-size:13px\"> column = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataGridTemplateColumn</span><span style=\"font-size:13px\">(); <br>\r\n<br>\r\ncolumn.Header = e.PropertyName;<br>\r\n</span><span style=\"font-size:13px\"><br>\r\ncolumn.CellTemplate = </span><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.FindResource(</span><span style=\"font-size:13px;color:#a31515\">&quot;DateTimeTemplate&quot;</span><span style=\"font-size:13px\">) </span><span style=\"font-size:13px;color:#0000ff\">as</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataTemplate</span><span style=\"font-size:13px\"> ; <br>\r\n<br>\r\ne.Column = column ; <br>\r\n<br>\r\n}&nbsp;</span>&nbsp;<br>\r\n<br>\r\n<br>\r\n<br>\r\nSo in my scenario above I set the ItemSource of my DataGrid to the DataTable containing the items I want to display.&nbsp; I set AutoGeneratingColumns to False.&nbsp; I then loop through my DataTable containing my layout columns and do the following for each column:<br>\r\nin VB:<br>\r\nDim myColumn As New DataGridTemplateColumn()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myColumn.Header = CStr(dr.Item(&quot;ColumnName&quot;))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myColumn.CellTemplate = TryCast(Me.FindResource(strDataTemplateName), DataTemplate)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myDataGrid.Columns.Add(myColumn)<br>\r\n<br>\r\nIn C#, something like this:<br>\r\n{ <br>\r\n&nbsp;&nbsp;&nbsp; DataGridTemplateColumn myColumn = new DataGridTemplateColumn(); <br>\r\n&nbsp;&nbsp;&nbsp; myColumn.Header = (string)dr.Item(&quot;ColumnName&quot;); <br>\r\n&nbsp;&nbsp;&nbsp; myColumn.CellTemplate = this.FindResource(strDataTemplateName) as DataTemplate; <br>\r\n&nbsp;&nbsp;&nbsp; myDataGrid.Columns.Add(myColumn); <br>\r\n} <br>\r\n<br>\r\nThanks.<br>\r\n-LT<br>\r\n",
+    "PostedDate": "2008-08-24T10:23:24.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113418",
+    "ThreadId": "34065",
+    "Html": "<br>\r\nThanks for your help<br>\r\n<span style=\"font-size:13px\">\r\n<p>DataGrid.Columns.Add(<span style=\"font-size:13px;color:rgb(0, 0, 255)\"><span style=\"font-size:13px;color:rgb(0, 0, 255)\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:rgb(43, 145, 175)\"><span style=\"font-size:13px;color:rgb(43, 145, 175)\">DataGridTextColumn</span></span><span style=\"font-size:13px\">());&nbsp; Did the trick. But still unclear about the &quot;DataItem&quot;?<br>\r\n</span></p>\r\n</span>\r\n<span style=\"font-size:13px\">\r\n<p>DataGrid.Items.Add(<span style=\"font-size:13px;color:rgb(0, 0, 255)\"><span style=\"font-size:13px;color:rgb(0, 0, 255)\">new</span></span><span style=\"font-size:13px\"> DataItem());??????????</span></p>\r\n<p><span style=\"font-size:13px\">What about <br>\r\n</span></p>\r\n<p>\r\n6.&nbsp; Place data into individual cells.<br>\r\n7.&nbsp; Extract data from individual cells.</p>\r\nYou know this is not intuative.&nbsp; A simple thing like datagrid.column[1].text = doesn't exist. I suppose it is because no one could really ever figure why anyone would ever populate a grid manually.&nbsp; Like you asked. <br>\r\n<p><span style=\"font-size:13px\"></span></p>\r\n<p>Why I want to populate the DataGrid manually?</p>\r\n</span>1.&nbsp; I have a program written years ago that is being replaced with a WPF C# program.&nbsp; In older program requires the user to select certain scenarios where there are a set defined descriptions for columns and a defined set of descriptions for rows.&nbsp; But in-case the user makes a mistake he has to have the ability of increasing the rows and columns accordingly.&nbsp;<br>\r\n<br>\r\n2.&nbsp; There are times I don't know how big the rows or columns will be until the user sets them.&nbsp; They will also set the Headers and Row Headers.<br>\r\n<br>\r\n3.&nbsp; There are times when I use a datagrid to display calculations for a column.&nbsp; These can't be bound.<br>\r\n<br>\r\n4.&nbsp; If the data wasn't created on the fly and just wanted to list the data.<br>\r\n<br>\r\n5.&nbsp; If the data is being loaded from a text file. You might want to do it manually.<br>\r\n<br>\r\n6.&nbsp; If the data is beling loaded from a binary file. You might want to do it manually.<br>\r\n<br>\r\nI could probably think of a dozen others.&nbsp; I try to use the correct tool for the job.&nbsp; If there is a set defined reason for hard coding something in xaml. That's fine. But there are a lot of reasons not to.<br>\r\n<br>\r\nRobert\r\n",
+    "PostedDate": "2008-08-25T06:31:14.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113907",
+    "ThreadId": "34065",
+    "Html": "<p>DataItem is just some generic object.<br>\r\n<br>\r\nDataGrid is an ItemsControl just like ListBox or ListView.&nbsp; So adding data manually is just a matter of adding items to the ItemsControl.Items collection.&nbsp; As for the columns, you can think of them like GridViewColumns where they can describe a property on a specific item of the Items collection.&nbsp; So you have to setup which property you want to show in that column through DataFieldBinding.&nbsp; <br>\r\n<br>\r\nWhat do you want datagrid.column[1].text to be exactly, the name of the header?&nbsp; If so, there is datagrid.Column[1].Header.<br>\r\n<br>\r\nAs for populating the DataGrid manually, I have a few comments on the things you describe:<br>\r\n<br>\r\n&quot;1.&nbsp; I have a program written years ago that is being replaced with a WPF C# program.&nbsp; In older program requires the user to select certain scenarios where there are a set defined descriptions for columns and a defined set of descriptions for rows.&nbsp; But in-case the user makes a mistake he has to have the ability of increasing the rows and columns accordingly.&quot;<br>\r\n<br>\r\nFor increasing rows, this can be handled automatically for you by IEditableCollectionView which is already implemented by ListCollectionView and BindingListCollectionView and therefore is baked into the DataGrid.&nbsp; For a sample and more info on this see,&nbsp;<a href=\"http://blogs.msdn.com/vinsibal/archive/2008/05/20/wpf-3-5-sp1-feature-ieditablecollectionview.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/05/20/wpf-3-5-sp1-feature-ieditablecollectionview.aspx</a>.&nbsp; <br>\r\n<br>\r\n&quot;2.&nbsp; There are times I don't know how big the rows or columns will be until the user sets them.&nbsp; They will also set the Headers and Row Headers.&quot;<br>\r\n<br>\r\nSetting DataGrid.ItemsSource to an IEnumerable collection handles the number of rows dynamically.&nbsp; There are no problems with setting DataGrid.ItemsSource at runtime.<br>\r\n<br>\r\n&quot;3.&nbsp; There are times when I use a datagrid to display calculations for a column.&nbsp; These can't be bound.&quot;<br>\r\n<br>\r\nWhy not?&nbsp; If you follow&nbsp;the MVVM pattern, you should be able to bind in situations like this.</p>\r\n<p>Generally, populating a DataGrid manually is an option you have but takes away from&nbsp;one of the core concepts that WPF is all about, which is data binding.&nbsp; Even with the 3.5 SP1 release, more features related to data binding were introduced to further push for designing with data binding in mind and really to enable the DataGrid.&nbsp; As an example, IEditableCollectionView and BindingGroups are two core features that will power the DataGrid editing and validation functionality.&nbsp; By using DataGrid.ItemsSource (or any ItemsControl.ItemsSource really) as the hook from the UI to your data, you gain a lot of this functionality for free and there is no need to have to keep track of your data through the UI by adding/deleting rows yourself.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-08-26T12:36:32.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113951",
+    "ThreadId": "34065",
+    "Html": "I guess I just don't like giving up control.&nbsp; Binding has it's place but sometimes it's way easier and necessary to use an unbound grid, I know you don't think so, but what I'm doing is not that complicated and I can't define the rows or columns in xaml.&nbsp; I know you guys have done all this work making everything to be bound and I appreciate your efforts but I'm beating my head against the wall trying to figure out how to do something really simple like.<br>\r\n<br>\r\n1. Can you write data directly to a cell in the c# code behind?&nbsp; If so, how?&nbsp; <br>\r\n2.&nbsp;Can you read data directly from a cell in the c# code behind?&nbsp; If so, how?<br>\r\n<br>\r\nThanks\r\n",
+    "PostedDate": "2008-08-26T14:54:56.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114189",
+    "ThreadId": "34065",
+    "Html": "<p>This is probably not what you are really trying to ask for but here is how you can Read/Write data&nbsp;from a cell:<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">\r\n<p>&nbsp;</p>\r\n<p>DataGridCell</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px\"> cell = GetCell(0, 0);<br>\r\n</span><span style=\"font-size:13px;color:#008000\"><span style=\"font-size:13px;color:#008000\">// read from a cell<br>\r\n</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">object</span></span><span style=\"font-size:13px\"> content = cell.Content;<br>\r\n</span><span style=\"font-size:13px;color:#008000\"><span style=\"font-size:13px;color:#008000\">// write directly to a cell<br>\r\n</span></span><span style=\"font-size:13px\">cell.Content = </span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">&quot;new content&quot;</span></span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>public<span style=\"font-size:13px\"><span style=\"color:#080808\"> </span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridCell</span></span><span style=\"color:#080808\"> GetCell(</span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">int</span></span><span style=\"color:#080808\"> row, </span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">int</span></span><span style=\"color:#080808\"> column)<br>\r\n{<br>\r\n</span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;DataGridRow</span></span><span style=\"color:#080808\"> rowContainer = GetRow(row);<br>\r\n</span></span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\"><br>\r\n<span style=\"font-size:13px\">&nbsp;&nbsp;&nbsp;&nbsp;if</span></span></span><span style=\"font-size:13px\"><span style=\"color:#080808\"> (rowContainer != </span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">null</span></span><span style=\"color:#080808\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataGridCellsPresenter</span></span><span style=\"color:#080808\"> presenter = GetVisualChild&lt;</span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridCellsPresenter</span></span><span style=\"color:#080808\">&gt;(rowContainer);</span></span></p>\r\n<p><span style=\"font-size:13px\"><span style=\"color:#008000\"><span style=\"color:#008000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// try to get the cell but it may possibly be virtualized<br>\r\n</span></span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataGridCell</span></span> cell = (<span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridCell</span></span>)presenter.ItemContainerGenerator.ContainerFromIndex(column);<br>\r\n<span style=\"color:#0000ff\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span></span> (cell == <span style=\"color:#0000ff\"><span style=\"color:#0000ff\">null</span></span>)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span><span style=\"font-size:13px\"><span style=\"color:#008000\"><span style=\"color:#008000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// now try to bring into view and retreive the cell<br>\r\n</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataGrid_Standard.ScrollIntoView(rowContainer, DataGrid_Standard.Columns[column]);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cell = (<span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridCell</span></span>)presenter.ItemContainerGenerator.ContainerFromIndex(column);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n<span style=\"color:#0000ff\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</span></span> cell;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n<span style=\"color:#0000ff\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;return</span></span> <span style=\"color:#0000ff\"><span style=\"color:#0000ff\">null</span></span>;<br>\r\n}<br>\r\n<br>\r\n</span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px\">public</span></p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px\"><span style=\"color:#080808\"> </span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridRow</span></span><span style=\"color:#080808\"> GetRow(</span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">int</span></span><span style=\"color:#080808\"> index)<br>\r\n{<br>\r\n</span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;DataGridRow</span></span><span style=\"color:#080808\"> row = (</span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridRow</span></span><span style=\"color:#080808\">)DataGrid_Standard.ItemContainerGenerator.ContainerFromIndex(index);<br>\r\n</span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;if</span></span><span style=\"color:#080808\"> (row == </span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">null</span></span><span style=\"color:#080808\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span></span><span style=\"font-size:13px\"><span style=\"color:#008000\"><span style=\"color:#008000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// may be virtualized, bring into view and try again<br>\r\n</span></span><span style=\"color:#080808\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataGrid_Standard.ScrollIntoView(DataGrid_Standard.Items[index]);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row = (</span><span style=\"color:#2b91af\"><span style=\"color:#2b91af\">DataGridRow</span></span><span style=\"color:#080808\">)DataGrid_Standard.ItemContainerGenerator.ContainerFromIndex(index);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n</span><span style=\"color:#0000ff\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;return</span></span><span style=\"color:#080808\"> row;<br>\r\n}</span><br>\r\n<br>\r\nIf you can give me an example of the data structure that you are trying to populate with the DataGrid, I may be able to better answer to this question.</span></p>\r\n",
+    "PostedDate": "2008-08-27T10:19:29.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114245",
+    "ThreadId": "34065",
+    "Html": "Great that was exactly what I needed. Thanks.&nbsp; I have one final question, but I'll start a new thread.\r\n",
+    "PostedDate": "2008-08-27T13:49:45.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116263",
+    "ThreadId": "34065",
+    "Html": "I also think everything you need can be done by changing the data itself. That's the whole point of data binding controls.<br>\r\n",
+    "PostedDate": "2008-09-05T01:02:25.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116315",
+    "ThreadId": "34065",
+    "Html": "While I will agree with you that bound controls are very cool.&nbsp; It does make sense to have an unbound control.&nbsp; Why do you think there have been so many in the past that you could use unbound?&nbsp; And you also couldn't say &quot;EVERYTHING&quot; you need can be done by a bound control.&nbsp; That's like saying everything can be fixed by a cresent wrench.&nbsp; In some cases creating a bound control is way more time consuming than just listing read only data.\r\n",
+    "PostedDate": "2008-09-05T05:23:29.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125751",
+    "ThreadId": "34065",
+    "Html": "<span style=\"font-size:13px\"><span style=\"color:rgb(43, 145, 175)\"><span style=\"color:rgb(43, 145, 175)\">Hi, vinsible<br>\r\n<br>\r\nyou are using GetVisualChild mehtod in above code snippet&nbsp; (</span></span></span><span style=\"font-size:13px\"><span style=\"color:rgb(43, 145, 175)\"><span style=\"color:rgb(43, 145, 175)\">&quot;DataGridCellsPresenter</span></span><span style=\"color:rgb(8, 8, 8)\"> presenter = GetVisualChild&lt;</span><span style=\"color:rgb(43, 145, 175)\"><span style=\"color:rgb(43, 145, 175)\">DataGridCellsPresenter</span></span><span style=\"color:rgb(8, 8, 8)\">&gt;(rowContainer);&quot;)</span></span><span style=\"font-size:13px\"><span style=\"color:rgb(43, 145, 175)\"><span style=\"color:rgb(43, 145, 175)\">, but my question is how do you override the GetVisualChild method.<br>\r\n<br>\r\n<br>\r\n</span></span><span style=\"color:rgb(8, 8, 8)\"></span></span>\r\n",
+    "PostedDate": "2008-10-16T20:05:17.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125775",
+    "ThreadId": "34065",
+    "Html": "Sorry, I found this overriding implementation in your CTP example.<br>\r\n<br>\r\nthanks.<br>\r\n",
+    "PostedDate": "2008-10-16T21:48:27.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139427",
+    "ThreadId": "34065",
+    "Html": "<span style=\"white-space:nowrap;font-family:'segoe ui';font-size:14px;color:rgb(62, 98, 166)\">I would like clarification on the &quot;DataGridCellsPresenter presenter = GetVisualChild&lt;DDataGridCellsPresenter(rowContainer);&quot; line;</span><div><span style=\"white-space:nowrap;font-family:'segoe ui';font-size:14px;color:rgb(62, 98, 166)\">I see that that method is overridden in DataGridColumnHeadersPresenter in DataGrid\\Microsoft\\Windows\\Controls\\Primitives\\DataGridColumnHeadersPresenter.cs</span></div><div><span style=\"white-space:nowrap;font-family:'segoe ui';font-size:14px;color:rgb(62, 98, 166)\">, do I need to create asimular method in \\DataGrid\\Microsoft\\Windows\\Controls\\Primitives\\DataGridCellsPresenter.cs and recomplie the DataGrid? </span></div><div><span style=\"white-space:nowrap;font-family:'segoe ui';font-size:14px;color:rgb(62, 98, 166)\">Is there a way I could subclass DataGrid?</span><div><span style=\"white-space:nowrap;font-family:'segoe ui';font-size:14px;color:rgb(62, 98, 166)\"><br></span></div><div><span style=\"white-space:nowrap;font-family:'segoe ui';font-size:14px;color:rgb(62, 98, 166)\">I would like to have a column dedicated to non-bound controls and need a way to access the objects.</span></div></div>",
+    "PostedDate": "2008-12-10T12:24:54.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139428",
+    "ThreadId": "34065",
+    "Html": "Sorry for the formatting, I had to manually put in carriage returns. Is that typical?",
+    "PostedDate": "2008-12-10T12:27:03.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141908",
+    "ThreadId": "34065",
+    "Html": "You don't have to subclass DataGrid to get access to a cell from an unbound column.  Programmatically you just need to go through the visual tree to get it's content.  GetVisualChild&lt;T&gt; is just another custom helper function.<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>public</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">static</span><span style=\"font-size:13px\"> T GetVisualChild&lt;T&gt;(</span><span style=\"font-size:13px;color:#2b91af\">Visual</span><span style=\"font-size:13px\"> parent) </span><span style=\"font-size:13px;color:#0000ff\">where</span><span style=\"font-size:13px\"> T : </span><span style=\"font-size:13px;color:#2b91af\">Visual<br>\r\n</span><span style=\"font-size:13px\">{<br>\r\n    T child = </span><span style=\"font-size:13px;color:#0000ff\">default</span><span style=\"font-size:13px\">(T);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    int</span><span style=\"font-size:13px\"> numVisuals = </span><span style=\"font-size:13px;color:#2b91af\">VisualTreeHelper</span><span style=\"font-size:13px\">.GetChildrenCount(parent);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    for</span><span style=\"font-size:13px\"> (</span><span style=\"font-size:13px;color:#0000ff\">int</span><span style=\"font-size:13px\"> i = 0; i &lt; numVisuals; i++)<br>\r\n    {<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">        Visual</span><span style=\"font-size:13px\"> v = (</span><span style=\"font-size:13px;color:#2b91af\">Visual</span><span style=\"font-size:13px\">)</span><span style=\"font-size:13px;color:#2b91af\">VisualTreeHelper</span><span style=\"font-size:13px\">.GetChild(parent, i);<br>\r\n        child = v </span><span style=\"font-size:13px;color:#0000ff\">as</span><span style=\"font-size:13px\"> T;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        if</span><span style=\"font-size:13px\"> (child == </span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)<br>\r\n        {<br>\r\n            child = GetVisualChild&lt;T&gt;(v);<br>\r\n        }<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        if</span><span style=\"font-size:13px\"> (child != </span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)<br>\r\n        {<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">            break</span><span style=\"font-size:13px\">;<br>\r\n        }<br>\r\n    }<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    return</span><span style=\"font-size:13px\"> child;<br>\r\n}\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-12-19T10:01:17.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169200",
+    "ThreadId": "34065",
+    "Html": "<p>Just a footnote for anyone trying out the example code above. If I try using the code in the following fashion, in order to set the cell focus to the next one,</p>\r\n<p>var cell = GetCell(YearlyCapitalRowGrid, currentCell.Row, currentCell.Column);</p>\r\n<p>var request = new TraversalRequest(FocusNavigationDirection.Next) { Wrapped = true };</p>\r\n<p>cell.MoveFocus(request);</p>\r\n<p>I get a NullReferenceException and the source of which is in the WPF Toolkit at System.Windows.Controls.VirtualizingStackPanel.InsertContainer(Int32 childIndex, UIElement container, Boolean isRecycled).<br>\r\n<br>\r\nNot sure if I'm using this code correctly or not. But it would be nice to get it working.<br>\r\n<br>\r\nGavin</p>\r\n",
+    "PostedDate": "2009-03-17T15:01:07.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169204",
+    "ThreadId": "34065",
+    "Html": "This occurs within the <span style=\"font-size:13px;color:#080808\">DataGrid_Standard.ScrollIntoView(DataGrid_Standard.Items[index]); statement of the GetRow method.</span>\r\n",
+    "PostedDate": "2009-03-17T15:02:52.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171033",
+    "ThreadId": "34065",
+    "Html": "I just wanted to know if anyone has got vinisbal's GetCell method to work, as I having a completely frustrating time of it.<br>\r\n<br>\r\nThanks.\r\n",
+    "PostedDate": "2009-03-23T14:28:21.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171044",
+    "ThreadId": "34065",
+    "Html": "\r\n<div>Gavin</div>\r\n<div> </div>\r\n<div>No not really.  If not populated correctly \r\nbefore you read the cell it will return unexpected results and quite often \r\nbombs.  Instead of fighting city hall, these guys designed this grid to be \r\nbound to something and it just doesn't work very well if you don't.  I \r\ndon't agree with it but that's the way it is.  But fear not, all is not \r\nlost. In the example below I'm using Sqlite database but this could be any \r\nado.net database. You just use a datatable to read and write your data and it \r\nwill do the same thing as reading and writing to the cells \r\nthemselves.</div>\r\n<div> </div>\r\n<div>Robert</div>\r\n<div>\r\n<p>sqliteconnection = new SQLiteConnection();</p>\r\n<p>ds = new DataSet();</p>\r\n<p>string connString = @&quot;Data Source=&quot; + \r\ngl.IconFolder + @&quot;\\StressTables.db&quot; \r\n+ &quot;;Version=3;New=True;Synchronous=Off&quot;;</p>\r\n<p>string query = @&quot;SELECT * FROM [&quot; \r\n+ List + &quot;]&quot;;</p>\r\n<p>// Fill the Set \r\nwith the data</p>\r\n<p>using (sqliteconnection = new \r\nSQLiteConnection(connString))</p>\r\n<p>{</p>\r\n<p>da = new SQLiteDataAdapter(query, \r\nsqliteconnection);</p>\r\n<p>// SQLiteCommandBuilder builder = new \r\nSQLiteCommandBuilder(da);</p>\r\n<p>da.Fill(ds, List);</p>\r\n<p>dt = ds.Tables[0];</p>\r\n<p>}</p>\r\n<p>dataGrid2.ItemsSource = ds.Tables[List].DefaultView;</p></div>\r\n<div style=\"font:10pt Tahoma\">\r\n<div><br></div>\r\n<div style=\"background:#f5f5f5\">\r\n<div style=\"font-color:black\"><b>From:</b> <a title=\"mailto:notifications@codeplex.com&#10;CTRL + Click to follow link\" href=\"mailto:notifications@codeplex.com\">Gavin99</a> </div>\r\n<div><b>Sent:</b> Monday, March 23, 2009 4:28 PM</div>\r\n<div><b>To:</b> <a title=\"mailto:rmartin@hitechtesting.com&#10;CTRL + Click to follow link\" href=\"mailto:rmartin@hitechtesting.com\">rmartin@hitechtesting.com</a> </div>\r\n<div><b>Subject:</b> [!! SPAM] Re: Doing Code behind stuff. \r\n[wpf:34065]</div></div></div>\r\n<div><br></div>\r\n\r\n\r\n<p>From: Gavin99</p>\r\n<div id=ThreadNotificationPostBody>I just wanted to know if anyone has got \r\nvinisbal's GetCell method to work, as I having a completely frustrating time of \r\nit.<br><br>Thanks. </div>\r\n",
+    "PostedDate": "2009-03-23T14:45:25.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171048",
+    "ThreadId": "34065",
+    "Html": "Finally got it!<br>\r\n<br>\r\nIn an obscure discussion I found this snippet by vinsibal:<br>\r\n<br>\r\nright before calling DataGrid.ScrollIntoView, call DataGrid.UpdateLayout()<br>\r\n<br>\r\nAnd if DataGrid.ScrollIntoView is called in his GetCell implementation - it works!! Nothing like leaving out a crucial piece, eh?\r\n",
+    "PostedDate": "2009-03-23T14:46:44.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171667",
+    "ThreadId": "34065",
+    "Html": "I need to have my row headers display their row number (i.e. 1, 2, 3...). In my datagrid, a user can insert above/below the current row,<br>\r\nreorder the rows (move one up/down), delete any given row, etc. No matter what the operation is, the rows will still be numbered sequentially.  So, I rely on <br>\r\nGetRow to help get me row access for renumbering when my datagridRowLoading event fires.<br>\r\n<br>\r\nI am using the GetRow as specified in the above thread-- and I have even added an UpdateLayout before calling scroll into view.  It all works<br>\r\nbeautifully UNTIL...the datagrid has reached its max height and the vertical scroll bar appears. Once that happens, I always get back null rows.<br>\r\n<br>\r\nCan you make any suggestions? If I cannot get the row header, the only way that I can think of to solve it is to have my first column act as a row header and numerically number that...<br>\r\nThanks in advance!!!<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-24T20:55:34.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174318",
+    "ThreadId": "34065",
+    "Html": "I gave up on this and bound the content of the row header <br>\r\nto an ID field in my collection. Works beautifully. Given the <br>\r\nvirtualization of rows in the datagrid, I now believe that there <br>\r\nis no other way to reasonably do this if you have insert above/below and<br>\r\nswap order functionality in the grid.\r\n",
+    "PostedDate": "2009-04-01T06:30:06.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174325",
+    "ThreadId": "34065",
+    "Html": "\r\n<div>Your right.  Unfortunately the Grid doesn't \r\nwork very well unless you bind it.</div>",
+    "PostedDate": "2009-04-01T06:46:28.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "506599",
+    "ThreadId": "34065",
+    "Html": "<p>Is there a better way to do this(<span style=\"color:black;font-size:9pt\">Read/Write Data to the Cell</span>) in WPF 4.0.?</p>",
+    "PostedDate": "2010-10-13T05:47:08.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "506637",
+    "ThreadId": "34065",
+    "Html": "<p>Hi</p>\r\n<p>How to copy items from one datagrid to anather programmatically at runtime (as in TottalCommander) when we pres button &quot;F5&quot;?</p>",
+    "PostedDate": "2010-10-13T07:03:22.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

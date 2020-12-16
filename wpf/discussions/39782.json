@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "132042",
+    "ThreadId": "39782",
+    "Html": "Does anyone know of a NumericUpDown, aka. &quot;spinner&quot; (ie. a TextBox with an up and a down button, and displaying and modifying an integer value) for WPF?<br>\r\n<br>\r\ngoogle found me this one: <a href=\"http://msdn.microsoft.com/en-us/library/ms771573.aspx\">http://msdn.microsoft.com/en-us/library/ms771573.aspx</a><br>\r\nBut it doesn't seem to be complete.  Ie. the buttons aren't wired up to the TextBox value.<br>\r\n<br>\r\nThanx!<br>\r\n<br>\r\n<br>\r\n- Steinar\r\n",
+    "PostedDate": "2008-11-12T08:36:54.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132178",
+    "ThreadId": "39782",
+    "Html": "We will be releasing one here on CodePlex in the near future along with a bunch of other controls :-)<br>\r\n<br>\r\n-Eric Fabricant, MSFT\r\n",
+    "PostedDate": "2008-11-12T18:24:25.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132209",
+    "ThreadId": "39782",
+    "Html": "Look for AvalonControl Library on the NET : This is free code with source and it has a spinner like you want.<br>\r\n<br>\r\nHope it helps !<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-12T22:47:17.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132214",
+    "ThreadId": "39782",
+    "Html": "Xavier, thanx for the tip.<br>\r\n<br>\r\nIt lives here on codeplex, I see: <a href=\"http://www.codeplex.com/AvalonControlsLib\">http://www.codeplex.com/AvalonControlsLib</a><br>\r\nSeems to be lots of interesting stuff there.\r\n",
+    "PostedDate": "2008-11-12T23:21:29.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132215",
+    "ThreadId": "39782",
+    "Html": "Eric thanx, for the heads up!  Are we talking the very very very near future here? (just fishing...:-) )\r\n",
+    "PostedDate": "2008-11-12T23:23:19.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132392",
+    "ThreadId": "39782",
+    "Html": "This control will most likely be available with V1 of the Ribbon, in mid-2009.\r\n",
+    "PostedDate": "2008-11-13T11:07:40.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132435",
+    "ThreadId": "39782",
+    "Html": "Samantha is referring to the official spinner that we plan on releasing, while I was reffering to an updated version of this: <a href=\"http://windowsclient.net/downloads/folders/controlgallery/entry2358.aspx\">http://windowsclient.net/downloads/folders/controlgallery/entry2358.aspx</a><br>\r\n<br>\r\n-Eric Fabricant, MSFT\r\n",
+    "PostedDate": "2008-11-13T14:57:58.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

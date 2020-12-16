@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "244973",
+    "ThreadId": "71790",
+    "Html": "<p>Is it posible to span multiplr columnheaders ?</p>\r\n<p>I fact I need something like</p>\r\n<p>(Header1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adress</p>\r\n<p>(Header2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Street&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Country</p>\r\n<p>(Row)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; streetcol&nbsp;&nbsp;&nbsp;&nbsp; citycol&nbsp;&nbsp;&nbsp;&nbsp; countrycolumn</p>\r\n<p>Some header grouping....</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-13T02:17:10.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

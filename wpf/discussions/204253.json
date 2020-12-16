@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "415689",
+    "ThreadId": "204253",
+    "Html": "<p>Hi all,</p>\r\n<p>I have a control with a datagrid, and I have a button that will add a new row to the datagrid with values specified in other input fields on the screen.&nbsp;(I don't allow the user to directly type in the grid to add a row).&nbsp; My question is, would it be possible to temporarily highlight the row in the grid once it's been added&nbsp;so&nbsp;the user can easily&nbsp;see where&nbsp;in the grid the row is?&nbsp; Also,&nbsp;I'm using the MVVM pattern with this project, so if it can be done without any code-behind, that would be great.&nbsp; Thanks ahead&nbsp;for any input/ideas.&nbsp; &nbsp;</p>",
+    "PostedDate": "2010-03-08T15:07:37.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

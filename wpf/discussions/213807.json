@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "447246",
+    "ThreadId": "213807",
+    "Html": "<p>When I double-click on a column header separator, the size of the column automatically resizes based on the width of the data in the column.&nbsp; But I added a MouseDoubleClick event handler to allow the user to drill into the selected row, but this behavior now occurs even when I double-click on the column header separator.&nbsp; And the column no longer resizes.</p>\r\n<p>Any idea on how to fix?</p>\r\n<p>Thanks.</p>\r\n<p>-Larry</p>",
+    "PostedDate": "2010-05-25T11:41:19.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

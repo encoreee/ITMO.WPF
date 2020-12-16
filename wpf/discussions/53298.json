@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "179311",
+    "ThreadId": "53298",
+    "Html": "I want to have the columns in my datagrid to all nicely resize as the surrounding grid area changes. To do so I have some code to iterate through the columns and set the widths to &quot;*&quot; like I would in XAML. However I can't find a struct value to set them to &quot;*&quot; though. DataGridLength doesn't have a * value.<br>\r\n<br>\r\nprivate void HistoryDataGrid_Loaded(object sender, RoutedEventArgs e)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (DataGridColumn col in this.HistoryDataGrid.Columns)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col.Width.Equals(&quot;*&quot;); // doesn't work<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nIs this possible?<br>\r\n",
+    "PostedDate": "2009-04-14T17:51:56.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179339",
+    "ThreadId": "53298",
+    "Html": "There should be a constructor like, new DataGridLength(1.0, DataGridLengthUnitType.Star), which is equivalent to &quot;*&quot;.\r\n",
+    "PostedDate": "2009-04-14T19:45:30.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "180326",
+    "ThreadId": "53298",
+    "Html": "Thank you.Works great.<br>\r\n",
+    "PostedDate": "2009-04-16T15:00:22.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217326",
+    "ThreadId": "53298",
+    "Html": "<p>how can we get the computed column width when using DataGridLengthUnitType.Star (or any non-absolute datagridlength)? The ActualWidth property doesn't get updated immediately from what I can tell.</p>",
+    "PostedDate": "2009-07-29T12:41:31.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "225357",
+    "ThreadId": "53298",
+    "Html": "<p>Try using the ContentRendered event (I think that's what its called) for the form. At that point, ActualWidth may/should be a valid value.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-19T03:52:16.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

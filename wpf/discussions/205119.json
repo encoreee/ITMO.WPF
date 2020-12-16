@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "418745",
+    "ThreadId": "205119",
+    "Html": "<p>The DataGrid data source is in ObservableCollection. If not applied datagrid.items.refresh method, the view is not updated fast enough as the data is real time signal with about a hundred per seconds. But if applied the refresh method, the CPU consumes more than 50%.</p>\r\n<p>Any suggestion?</p>\r\n<p>Thanks,</p>\r\n<p>Feng</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>OK, I removed the Refresh method and used the event base class which implement <span style=\"font-size:x-small\"><span style=\"font-family:Verdana;font-size:x-small\">INotifyPropertyChanged  interface.</span></span></p>\r\n<p><span style=\"font-size:x-small\"><span style=\"font-family:Verdana;font-size:x-small\">The CPU consuming is improved to about 35% to 41%. But still a little high.</span></span></p>\r\n<p><span style=\"font-size:x-small\"><span style=\"font-family:Verdana;font-size:x-small\"><br></span></span></p>",
+    "PostedDate": "2010-03-16T09:07:05.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

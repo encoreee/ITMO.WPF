@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "134942",
+    "ThreadId": "40692",
+    "Html": "Am I missing something, or are galleries missing from the Ribbon CTP?<br>\r\n<br>\r\nIf they <strong>are</strong> missing, is that going to change, or is the intention that we have to implement that ourself?<br>\r\n<br>\r\nThanks in advance,<br>\r\nLeighton Haynes\r\n",
+    "PostedDate": "2008-11-24T16:55:55.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135013",
+    "ThreadId": "40692",
+    "Html": "Hi Leighton,<div><br></div><div>Galleries in the Ribbon didn't make the cut for CTP due to time constraints, so for now you'll have to implement them yourself.  These are high on our priority list for V1, and will be included at that point, schedule permitting.</div><div><br></div><div>Thanks,</div><div>-Mike</div>",
+    "PostedDate": "2008-11-24T23:26:47.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

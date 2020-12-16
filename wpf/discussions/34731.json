@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "115321",
+    "ThreadId": "34731",
+    "Html": "Hi all,<br>\r\n<br>\r\nWhat is the C# code to hide certain columns and to enable those hidden columns again?<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2008-09-02T03:36:14.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115339",
+    "ThreadId": "34731",
+    "Html": "This is a feature that will be part of the final release of the WPF DataGrid.&nbsp; It is not currently in the CTP.\r\n",
+    "PostedDate": "2008-09-02T05:46:50.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115368",
+    "ThreadId": "34731",
+    "Html": "Thanks for the Info!<br>\r\n",
+    "PostedDate": "2008-09-02T07:37:08.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116095",
+    "ThreadId": "34731",
+    "Html": "What I did was subclass DataGrid, and add a List of Columns. Remove the columns you want to add from the Grid's columns, and add them to the list. Then to reshow the columns, remove them from the list and reinsert them into .Columns collections given the display index. Clear your &quot;removed columns&quot; collection when done.<br>\r\n<br>\r\nIt works for now.<br>\r\n",
+    "PostedDate": "2008-09-04T10:55:34.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117565",
+    "ThreadId": "34731",
+    "Html": "Hi,$0$0$0$0 I've solved this problem by updating the DataGrid class.$0$0$0$0$0$0$0$0 Here is the code in DataGrid.cs$0$0$0#region Visibility$0$0$0$0$0        /// &lt;summary&gt;$0$0        /// Method for hidding or showing columns$0$0        /// &lt;/summary&gt;$0$0        /// &lt;param name=&quot;column&quot;&gt;&lt;/param&gt;$0$0        internal void PerformHideOrShow(DataGridColumn column)$0$0        {$0$0            Debug.Assert(column != null, &quot;Column should not be null&quot;);$0$0$0$0$0            // fire visibility changed event$0$0            DataGridColumnVisibilityChangedEventArgs eventArgs = new DataGridColumnVisibilityChangedEventArgs(column);$0$0            OnColumnVisibilityChanged(this, eventArgs);$0$0$0$0$0            if (Items.NeedsRefresh)$0$0            {$0$0                try$0$0                {$0$0                    Items.Refresh();$0$0                }$0$0                catch (InvalidOperationException invalidOperationException)$0$0                {$0$0                    throw new InvalidOperationException(SR.Get(SRID.DataGrid_ProbableInvalidGroupDescription), invalidOperationException);$0$0                }$0$0            }$0$0        }$0$0$0$0$0        public event DataGridColumnVisibilityChangedHandler ColumnVisibilityChanged;$0$0$0$0$0        public Collection&lt;DataGridColumn&gt; HiddenColumns$0$0        {$0$0            get { return _hiddenColumns; }$0$0            set { _hiddenColumns = value; }$0$0        }$0$0$0$0$0        /// &lt;summary&gt;$0$0        /// Protected method that raises the ColumnVisibilityChanged event$0$0        /// &lt;/summary&gt;$0$0        /// &lt;param name=&quot;dataGrid&quot;&gt;&lt;/param&gt;$0$0        /// &lt;param name=&quot;eventArgs&quot;&gt;&lt;/param&gt;$0$0        protected void OnColumnVisibilityChanged(DataGrid dataGrid, DataGridColumnVisibilityChangedEventArgs eventArgs)$0$0        {$0$0            eventArgs.Handled = false;$0$0            if (ColumnVisibilityChanged != null)$0$0            {$0$0                ColumnVisibilityChanged(this, eventArgs);$0$0            }$0$0$0$0$0            if (!eventArgs.Handled)$0$0            {$0$0                DefaultColumnVisibilityChanged(eventArgs.Column);$0$0            }$0$0        }$0$0$0$0$0        /// &lt;summary&gt;$0$0        /// Perfom default visibility or hidden$0$0        /// &lt;/summary&gt;$0$0        /// &lt;param name=&quot;dataGridColumn&quot;&gt;&lt;/param&gt;$0$0        private void DefaultColumnVisibilityChanged(DataGridColumn dataGridColumn)$0$0        {$0$0            if (dataGridColumn.Visible == false)$0$0            {$0$0                // remove the column and add it to removed columns$0$0                HiddenColumns.Add(dataGridColumn);$0$0                this.Columns.Remove(dataGridColumn);$0$0                dataGridColumn.DataGridOwner = this;$0$0            }$0$0            else$0$0            {$0$0                HiddenColumns.Remove(dataGridColumn);$0$0                this.Columns.Add(dataGridColumn);$0$0            }$0$0        }$0$0$0$0$0        #endregion$0$0$0$0$0$0Add there is some more code in DataGridColumn, defining a dependecy property VisibleProperty$0$0$0$0$0Regards,$0$0Calin$0$0 $0",
+    "PostedDate": "2008-09-10T07:48:47.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

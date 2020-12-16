@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "450780",
+    "ThreadId": "214756",
+    "Html": "<p>So I'm having a problem with the charting engine from the WPF toolkit.</p>\r\n<p>We haven't moved our data to a proper object model, so the ItemSource is backed with a DataView.</p>\r\n<p>First attempt</p>\r\n<pre><code><span>&lt;chartingToolkit:ScatterSeries</span><span> </span><span>x:Name</span><span>=</span><span>&quot;TargetSeries&quot;</span><span> &nbsp;\r\n&nbsp; </span><span>DataPointStyle</span><span>=</span><span>&quot;{StaticResource TargetStyle}&quot;</span><span> &nbsp;&nbsp;\r\n&nbsp; </span><span>ItemsSource</span><span>=</span><span>&quot;{Binding Path=TargetSeriesData}&quot;</span><span>&nbsp;\r\n&nbsp; </span><span>IndependentValueBinding</span><span>=</span><span>&quot;{Binding Path=TargetSeries_X}&quot;</span><span> &nbsp;\r\n&nbsp; </span><span>DependentValueBinding</span><span>=</span><span>&quot;{Binding Path=TargetSeries_X}&quot;</span><span> </span><span>/&gt;</span><span>&nbsp;\r\n</span></code></pre>\r\n<p>This crashes because, I believe, it thinks the bindings are the values to plot or some sort of mismatch.</p>\r\n<p>Second attempt</p>\r\n<pre><code><span>&lt;chartingToolkit:ScatterSeries</span><span> </span><span>x:Name</span><span>=</span><span>&quot;TargetSeries&quot;</span><span> &nbsp;\r\n&nbsp; </span><span>DataPointStyle</span><span>=</span><span>&quot;{StaticResource TargetStyle}&quot;</span><span> &nbsp;\r\n&nbsp; </span><span>ItemsSource</span><span>=</span><span>&quot;{Binding Path=TargetSeriesData}&quot;</span><span>&nbsp;\r\n&nbsp; </span><span>IndependentValuePath</span><span>=</span><span>&quot;{Binding Path=TargetSeries_X}&quot;</span><span>&nbsp;\r\n&nbsp; </span><span>DependentValuePath</span><span>=</span><span>&quot;{Binding Path=TargetSeries_X}&quot;</span><span> </span><span>/&gt;</span><span>&nbsp;\r\n</span></code></pre>\r\n<p>This crashes during the init step becaue the Path properties aren't backed with dependency properties and therefore cannot be bound.</p>\r\n<p>Third attempt</p>\r\n<pre><code><span>&lt;chartingToolkit:ScatterSeries</span><span> </span><span>x:Name</span><span>=</span><span>&quot;TargetSeries&quot;</span><span> &nbsp;\r\n&nbsp; </span><span>DataPointStyle</span><span>=</span><span>&quot;{StaticResource TargetStyle}&quot;</span><span> &nbsp;&nbsp;\r\n&nbsp; </span><span>ItemsSource</span><span>=</span><span>&quot;{Binding Path=TargetSeriesData}&quot;</span><span>&nbsp;\r\n&nbsp; </span><span>IndependentValuePath</span><span>=</span><span>&quot;targetFooXColumnName&quot;</span><span> &nbsp;\r\n&nbsp; </span><span>DependentValuePath</span><span>=</span><span>&quot;targetFooYColumnName&quot;</span><span> </span><span>/&gt;</span><span>&nbsp;\r\n</span></code></pre>\r\n<p>Now this works! But I wanted to use the binding so I can switch from using the targetFooXColumnName to the targetFooBarXColumnName. So this solution will cause a whole lot of hacky looking code to switch the Path's manually.</p>\r\n<p>Anyway to fix this? Can I use some sort of convertor to get the Binding properties to correctly pull the data from the columns in the DataView?</p>\r\n<p>Thanks, Joel</p>",
+    "PostedDate": "2010-06-02T12:23:31.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "567517",
+    "ThreadId": "214756",
+    "Html": "<p>Anybody have any idea about this?</p>",
+    "PostedDate": "2011-02-16T16:33:14.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

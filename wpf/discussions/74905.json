@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "256381",
+    "ThreadId": "74905",
+    "Html": "<p>Hi,</p>\r\n<p>I have an ObservableCollection of &quot;Foo&quot; objects which I am using as the ItemsSource for a DataGrid. Foo has a boolean property &quot;CanAck&quot; and I'd like to set the RowStyle based on this bool. I already have a style defining foreground and background colours which works fine but I'd like to invert these if the value of &quot;CanAsk&quot; is false. Can anyone point me int he right direction?</p>\r\n<p>Cheers</p>\r\n<p>Rich</p>",
+    "PostedDate": "2009-11-12T08:34:19.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256993",
+    "ThreadId": "74905",
+    "Html": "<p>RowStyleSelector would give you the functionality to change the full style depending upond the data in that row. <a href=\"http://msdn.microsoft.com/en-us/library/system.windows.controls.datagrid.rowstyleselector(VS.100).aspx\">http://msdn.microsoft.com/en-us/library/system.windows.controls.datagrid.rowstyleselector(VS.100).aspx</a></p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-11-13T16:50:31.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

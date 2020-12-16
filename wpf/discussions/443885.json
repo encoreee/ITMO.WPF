@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1044393",
+    "ThreadId": "443885",
+    "Html": "Hey guys, have you try this style (ribbon window), on Windows XP OS?\r<br />\nIt's a disaster! Unfortunately, my customers, still use right now windows XP, and because of this issue, I really don't want to use this toolkit any more.<br />\n",
+    "PostedDate": "2013-05-16T03:31:14.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046976",
+    "ThreadId": "443885",
+    "Html": "I found in the MSDN for UIRibbon.dll, which is the DLL on Windows7 that delivers the Ribbon UI. It lists these......\r<br />\n<br />\nMinimum supported client\r<br />\nWindows 7, Windows Vista with SP2 and Platform Update for Windows Vista [desktop apps only]\r<br />\n<br />\nWin XP does not supports .net 4.5 so you can´t use it on Win XP. If you use some other 3rd party Ribbon control, you have to distribute its containing library with your application.\r<br />\n<br />\nI have never tried but see if portable application can work.<br />\n",
+    "PostedDate": "2013-05-22T02:39:35.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

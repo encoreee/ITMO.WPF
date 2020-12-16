@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "219414",
+    "ThreadId": "64461",
+    "Html": "<p>Is it possible to bind a DataGridTextColumn to a method?</p>\r\n<p>In a related forum, it is clearly stated that data binding to a method is not possible when using a DataGridView.&nbsp; The possible workarounds stated were 1) creating a CustomPropertyDescriptor, overriding the GetValue method, and getting the value from the method, or 2) handling the DataGridView's CellFormatting event, and getting the value from the method.</p>\r\n<p>What are the recommended workarounds to bind a DataGridTextColumn to a method when using a WPF DataGrid?</p>\r\n<p>Thanks in advance for your help.</p>\r\n<p>C. Marchani</p>",
+    "PostedDate": "2009-08-04T12:58:00.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "588611",
+    "ThreadId": "64461",
+    "Html": "<p>HI , if u have the solution for binding a method to data grid cell /ccontrol inside cell please post.</p>\r\n<p>Thanks&nbsp;</p>\r\n<p>RP.</p>",
+    "PostedDate": "2011-03-30T00:02:28.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

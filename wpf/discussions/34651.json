@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "115078",
+    "ThreadId": "34651",
+    "Html": "I need to create DataTemplate through code.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGridTemplateColumn column = new DataGridTemplateColumn();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column.Header = property.Alias;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FrameworkElementFactory factory = new FrameworkElementFactory(typeof(Button));<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factory.Name = &quot;PopupButton&quot;;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factory.SetValue(Button.ContentProperty, &quot;+&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factory.SetBinding(Button.DataContextProperty, new\r\nBinding(property.LinkedBO.Name) { Mode = BindingMode.OneWay });<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factory.AddHandler(Button.ClickEvent, new RoutedEventHandler(ManyToOneButton_Click));<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataTemplate cellTemplate = new DataTemplate();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cellTemplate.VisualTree = factory;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column.CellTemplate = cellTemplate;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataGrid.Columns.Add(column);<br>\r\n<br>\r\n&nbsp;But unfortunately WPF DataGrid doesn't work with such a DataTemplate. It throughs an exception &quot;FrameworkElementFactory must be in a sealed template for this operation&quot;.<br>\r\nAny ideas?<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-01T00:52:19.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115507",
+    "ThreadId": "34651",
+    "Html": "Try sealing the template after you set it, column.CellTemplate.Seal().\r\n",
+    "PostedDate": "2008-09-02T16:34:28.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115874",
+    "ThreadId": "34651",
+    "Html": "<strong>Vincent Sibal, </strong>I have no exception now, but my event handler is not raised :(I think it's because of sealing the template (but I'm not sure).\r\n",
+    "PostedDate": "2008-09-03T19:15:22.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116241",
+    "ThreadId": "34651",
+    "Html": "Does anybody has this problem? Or may be I make something wrong...<br>\r\n",
+    "PostedDate": "2008-09-04T22:11:06.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116861",
+    "ThreadId": "34651",
+    "Html": "The issue has been logged and we are taking a look at it.&nbsp; Sorry for the inconvenience.&nbsp;\r\n",
+    "PostedDate": "2008-09-08T07:02:32.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

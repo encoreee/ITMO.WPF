@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I open my Ribbonwindow App and then ALT-TAB to Warcraft 3(fullscreen  3d game i think it uses d3d) and then ALT-TAB again to my app the window gets bugged\ni tested more games (UT 99 and Counter strike) all in openGL and there was no problems.\n \nsee attached file.",
+    "LastUpdatedDate": "2013-02-21T18:41:30.05-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-27T08:14:41.52-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RibbonWindow Bug with Games",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9369
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2788,
+      "FileName": "ribbonwindow bug.png",
+      "DownloadUrl": ".\\2788"
+    },
+    {
+      "FileId": 2789,
+      "FileName": "ribbonwindow normal.png",
+      "DownloadUrl": ".\\2789"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This is the normal window(attached file)",
+      "PostedDate": "2009-02-27T08:19:17.313-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-27T08:19:17.83-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Likely, the RibbonWindow is not handling the state change when the desktop window manager turns on and off. I filed a bug internally.",
+      "PostedDate": "2009-04-01T11:36:48.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:36:50.07-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-02T22:47:18.003-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:19:44.413-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:30.05-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

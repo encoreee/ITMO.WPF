@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "ControlVerifier",
+      "DisplayName": "ControlVerifier"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The DataContextTest seems unaware of when it is testing an ItemsControl, that the current WPF behavior is to not inherit the DataContext for each child item.",
+    "LastUpdatedDate": "2017-11-27T11:31:26.483-08:00",
+    "PlannedForRelease": "WPF Test Tools",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-11T09:53:18.453-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Control Verifier 0.1 - DataContextTest should be more savvy of ItemsControls",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10438
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Good point.  We'll be fixing this for our next release.  Thanks!",
+      "PostedDate": "2009-09-01T16:09:21.757-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:01.93-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-11-27T11:31:26.483-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

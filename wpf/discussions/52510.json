@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "176475",
+    "ThreadId": "52510",
+    "Html": " I want to implement the paging feature of datagrid manully, since it is not supported by wpftoolkit.<br>\r\nNow problem is , i want to display twenty records one time in a page , and when next was clicked,<br>\r\ndisplay next twenty.  I don't know how to control the count of displaying records ?<br>\r\n<br>\r\nThanks.\r\n",
+    "PostedDate": "2009-04-07T00:25:57.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

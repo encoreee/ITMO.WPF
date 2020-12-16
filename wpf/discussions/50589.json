@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "169661",
+    "ThreadId": "50589",
+    "Html": "Currently, when users resize a column in a wpf toolit datagrid, it automatically resize the other columns until they reach their minimal width. Is there any way to increase only the current column and make the horizontal scroll bar automatically appear?\r\n",
+    "PostedDate": "2009-03-18T17:01:01.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

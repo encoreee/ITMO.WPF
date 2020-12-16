@@ -1,0 +1,146 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Unlike other windows, it doesn't respect taskbar location and size.",
+    "LastUpdatedDate": "2013-02-21T18:41:39.62-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-12T09:23:21.583-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RibbonWindow fills whole monitor when maximized",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 11,
+    "Id": 8506
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3385,
+      "FileName": "RibbonWindowJPG.JPG",
+      "DownloadUrl": ".\\3385"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Coercing WindowStyle of ribbon window to WindowStyle.SingleBorderWindow (instead of WindowStyle.None, as it originally was for non-Aero environments) seems to be a solution.",
+      "PostedDate": "2008-12-15T02:06:12.133-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Under what version of windows are you seeing this behavior?  \r\nIt works for me on Vista; any extra information would be very helpful.  Thanks.",
+      "PostedDate": "2009-01-12T13:18:45.843-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-14T17:34:58.503-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Confirmed under Windows XP too.",
+      "PostedDate": "2009-01-14T17:35:05.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi pieceofsummer,\r\n\r\nWe agree that this is a bug. We are tracking this issue in our internal database and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T17:05:18.6-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:05:19.49-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-26T06:05:47.93-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-03T10:13:34.263-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-15T01:00:32.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-17T13:30:06.91-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Does not work correctly with remote desktop any version of windows. ",
+      "PostedDate": "2009-04-17T13:54:08.97-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T07:42:34.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-14T05:51:48.22-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-02T06:21:13.963-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-13T08:04:00.507-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "On vista, tried setting window style to various values in the xaml for my RibbonWindow and \r\na) none of the settings affect the look of the window\r\nb) none of the settings alter the behavior re obscuring the taskbar.\r\n\r\nWas there some special method you used to change the window style that I might try?\r\n\r\nMy window looks like the attached, regardless of setting the window style. Note also the ugly (imo) corners at that top. Is there some way to get those to look a little better.  Like if we could just remove the black line around the top left and right sides it would be pretty good.  Note that it is not there on the bottom side.  Is that something I can set?\r\n\r\nWhen is V1 coming?  Anybody know?\r\n\r\nThanks\r\n",
+      "PostedDate": "2009-09-16T09:34:23.953-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I'll try again to attach the file, maybe it will work this time...?",
+      "PostedDate": "2009-09-16T09:35:40.767-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-16T09:35:44-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-17T02:31:44.957-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:39.62-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

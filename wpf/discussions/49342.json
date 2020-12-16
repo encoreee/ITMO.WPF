@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "165061",
+    "ThreadId": "49342",
+    "Html": "What is the equivalent of this:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid_Standard.AlternatingRowBackground := new SolidColorBrush( SystemColors.InfoColor );<br>\r\n<br>\r\nin xaml?<br>\r\n<br>\r\nI tried this:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AlternatingRowBackground=&quot;{DynamicResource SystemColors.InfoColor}&quot;<br>\r\n<br>\r\nThat didn't work.<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-03-05T14:41:16.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165455",
+    "ThreadId": "49342",
+    "Html": "Use <br>\r\n    AlternatingRowBackground=&quot;{DynamicResource {x:Static SystemColors.InfoBrushKey}}&quot;\r\n",
+    "PostedDate": "2009-03-06T10:49:15.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165467",
+    "ThreadId": "49342",
+    "Html": "THANK YOU!<br>\r\n<br>\r\nAs has been said many times, it is so simple when you know how...<br>\r\n",
+    "PostedDate": "2009-03-06T11:11:44.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

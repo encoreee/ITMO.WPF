@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "153925",
+    "ThreadId": "46118",
+    "Html": "Sometimes, all commands in my application menu appear grayed out. All of their CanExecute handlers are set to:<br>\r\n<span style=\"color:#0000ff;font-size:13px\"><br>\r\nprivate</span><span style=\"font-size:13px\"> </span><span style=\"color:#0000ff;font-size:13px\">void</span><span style=\"font-size:13px\"> RibbonCommand_CanExecute(</span><span style=\"color:#0000ff;font-size:13px\">object</span><span style=\"font-size:13px\"> sender, </span><span style=\"color:#2b91af;font-size:13px\">CanExecuteRoutedEventArgs</span><span style=\"font-size:13px\"> e)\r\n<p>{</p>\r\n<p>e.CanExecute = </p>\r\n</span>\r\n<p><span style=\"color:#0000ff;font-size:13px\">true</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>}</p>\r\n</span></p>\r\nWhen the menu is grayed out , all i need to do is click somewhere on the ribbon ( either a ribbon control or even an empty space) and the menu is enabled again.<br>\r\n<br>\r\nIs there anything else , apart from CanExecute , that determines if a menu command is enabled?<br>\r\n<br>\r\n",
+    "PostedDate": "2009-02-03T12:45:36.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154036",
+    "ThreadId": "46118",
+    "Html": "Hi Banko,<br>\r\n<br>\r\nThis sounds like it might be a Focus issue.  You can try some of the solutions presented in this thread and see if they work for you: <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=40319\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=40319</a>.  (Set FocusManager.IsFocusScope to true or call Focus() directly whenever the menu items are getting grayed out.)<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-03T18:50:39.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

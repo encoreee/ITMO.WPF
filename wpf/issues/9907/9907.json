@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "1. When start typing in the last row, grid should automatically add new row and on pressing esc it should revert back. It is not happening in WPF Datagrid.\n2. Whic event should be used in WPF Datagrid in place of cell validating event of 2.0 Datagriview",
+    "LastUpdatedDate": "2013-02-21T18:41:17.937-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-01T05:18:47.937-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Datagrid new row issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9907
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Can you explain more what you think should be the correct behavior ?\r\nWhat key do you think should be pressed to create a new row (Tab, Enter, Some other key)?",
+      "PostedDate": "2009-06-02T13:53:41.28-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have the same issue, currently, when you press the Tab key you navigate to the next cell on the same row, if you where in the last cell in the row you will move to the first cell in the next row. Unfortunately, this don't apply when you are navigating in the new empty row while filling the cells with data, what happen is that when you press the Tab key while you are in the last cell in the new row, you navigate to a different control in the window!! really strange\r\nThe normal action is a new empty row will be created and the the first cell in the newest row is selected.",
+      "PostedDate": "2010-04-08T03:24:03.853-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have the same issue,when you create new row and navigate to the last,by pressing tab key,new row appears.but if i delete the current row ,selection moves to previous row and new empty row never comes in any way.",
+      "PostedDate": "2011-02-01T23:10:15.853-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "when in last column, either tab OR enter should add a new row\r\nalso a new row in the datagrid should really also add a new row to the datasource (observablecollection...)",
+      "PostedDate": "2012-02-28T03:16:51.857-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-06-20T00:21:12.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:17.937-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

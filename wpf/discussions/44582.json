@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "148371",
+    "ThreadId": "44582",
+    "Html": "How can I create a style for a menu and menu item? Can anyone show me a XAML example? Thaks.\r\n",
+    "PostedDate": "2009-01-19T07:50:48.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "148467",
+    "ThreadId": "44582",
+    "Html": "Sure.  Here is a quick example of just changing Backgrounds.  I just threw this together in XamlPad so if you need something more complex just ask.<br>\r\n<br>\r\n&lt;Page xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:sys=&quot;clr-namespace:System;assembly=mscorlib&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; &gt;<br>\r\n&lt;Page.Resources&gt;<br>\r\n&lt;Style x:Key=&quot;YellowMIBG&quot; TargetType=&quot;MenuItem&quot;&gt;<br>\r\n &lt;Setter Property=&quot;Background&quot; Value=&quot;Yellow&quot;/&gt;<br>\r\n&lt;/Style&gt;<br>\r\n&lt;Style x:Key=&quot;BlueMIBG&quot; TargetType=&quot;MenuItem&quot;&gt;<br>\r\n &lt;Setter Property=&quot;Background&quot; Value=&quot;Blue&quot;/&gt;<br>\r\n&lt;/Style&gt;<br>\r\n&lt;Style x:Key=&quot;PurpleMBG&quot; TargetType=&quot;Menu&quot;&gt;<br>\r\n &lt;Setter Property=&quot;Background&quot; Value=&quot;Purple&quot;/&gt;<br>\r\n&lt;/Style&gt;<br>\r\n&lt;/Page.Resources&gt;<br>\r\n&lt;Menu Style=&quot;{StaticResource PurpleMBG}&quot;&gt;<br>\r\n &lt;MenuItem Header=&quot;File&quot;&gt;<br>\r\n  &lt;MenuItem Header=&quot;Hello World&quot; Style=&quot;{StaticResource YellowMIBG}&quot;/&gt;<br>\r\n  &lt;MenuItem Header=&quot;World, Hello&quot; Style=&quot;{StaticResource BlueMIBG}&quot;/&gt;<br>\r\n &lt;/MenuItem&gt;<br>\r\n&lt;/Menu&gt;<br>\r\n&lt;/Page&gt;\r\n",
+    "PostedDate": "2009-01-19T11:52:06.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149072",
+    "ThreadId": "44582",
+    "Html": "<p>Thank you very much.</p>\r\n<p>How do you change other properties - for example the color of text and background on mouse over?</p>\r\n",
+    "PostedDate": "2009-01-20T23:30:21.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

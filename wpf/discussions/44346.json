@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "147599",
+    "ThreadId": "44346",
+    "Html": "I am working on an app that has data stored in a sparse directory structure in the format of year\\month\\day.  I would like to suggest an option which is the inverse of the blackout date list.  For each year\\month\\day in the directory tree, the calendar date would be enabled for selection.  The enabled dates would be highlighted by color/font.  All other dates would be disabled but displayed normally.  The advantage of this option is that the enabled dates are much easier to see and the enabled list is much smaller and more efficient.<br>\r\n<br>\r\nIf this is outside the changes possible under your work objectives and schedule, could you give some pointers to what would need to be done to implement this myself.\r\n",
+    "PostedDate": "2009-01-15T21:56:58.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223551",
+    "ThreadId": "44346",
+    "Html": "<p>Were you able to resolve this ?</p>\r\n<p>I have a similar requirement where I have to enable a range of dates and disable everything before and after (or sometimes between). Not sure how to handle it ..</p>\r\n<p>Thanks</p>\r\n<p>- arch</p>",
+    "PostedDate": "2009-08-14T08:46:24.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223601",
+    "ThreadId": "44346",
+    "Html": "\r\n\r\n<div class=Section1>\r\n\r\n<p class=MsoNormal><span style=\"font-size:11.0pt;font-family:'Calibri','sans-serif';color:#1F497D\">No.  I eventually went to another method of displaying.  What I\r\nneeded to do was show which for which dates I have photos in my photo\r\nmanagement software.  I now use a treeview which shows the directories directly\r\nand not use a calendar display.</span></p>\r\n\r\n<p class=MsoNormal><span style=\"font-size:11.0pt;font-family:'Calibri','sans-serif';color:#1F497D\"> </span></p>\r\n\r\n<div>\r\n\r\n<div style=\"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in\">\r\n\r\n<p class=MsoNormal><b><span style=\"font-size:10.0pt;font-family:'Tahoma','sans-serif'\">From:</span></b><span style=\"font-size:10.0pt;font-family:'Tahoma','sans-serif'\"> Arch\r\n[mailto:notifications@codeplex.com] <br>\r\n<b>Sent:</b> Friday, August 14, 2009 8:47 AM<br>\r\n<b>To:</b> Ross Garmoe<br>\r\n<b>Subject:</b> Re: Inverse of BlackoutDate list [wpf:44346]</span></p>\r\n\r\n</div>\r\n\r\n</div>\r\n\r\n<p class=MsoNormal> </p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif'\">From: Arch</span></p>\r\n\r\n<div style=\"margin-bottom:24.0pt\" id=ThreadNotificationPostBody>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif'\">Were you\r\nable to resolve this ?</span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif'\">I have a\r\nsimilar requirement where I have to enable a range of dates and disable\r\neverything before and after (or sometimes between). Not sure how to handle it\r\n..</span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif'\">Thanks</span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif'\">- arch</span></p>\r\n\r\n</div>\r\n\r\n<div style=\"border:none;border-top:solid #CCCCCC 1.0pt;padding:0in 0in 0in 0in\" id=ThreadNotificationFooter>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif';color:gray\">Read\r\nthe <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=44346&ANCHOR#Post223551\">full\r\ndiscussion online</a>.</span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif';color:gray\">To\r\nadd a post to this discussion, reply to this email (<a href=\"mailto:wpf@discussions.codeplex.com?subject=[wpf:44346]\">wpf@discussions.codeplex.com</a>)</span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif';color:gray\">To\r\nstart a new discussion for this project, email <a href=\"mailto:wpf@discussions.codeplex.com\">wpf@discussions.codeplex.com</a></span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif';color:gray\">You\r\nare receiving this email because you subscribed to this discussion on CodePlex.\r\nYou can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/44346\">unsubscribe</a>\r\non codePlex.com.</span></p>\r\n\r\n<p><span style=\"font-size:9.0pt;font-family:'Verdana','sans-serif';color:gray\">Please\r\nnote: Images and attachments will be removed from emails. Any posts to this\r\ndiscussion will also be available online at codeplex.com</span></p>\r\n\r\n</div>\r\n\r\n</div>\r\n\r\n",
+    "PostedDate": "2009-08-14T10:33:01.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

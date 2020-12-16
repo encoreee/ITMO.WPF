@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "281552",
+    "ThreadId": "81974",
+    "Html": "<p>I am having trouble getting a chart to render within a FixedDocument for printing.</p>\r\n<p>The Chart draws its axis and labels but no points or lines.</p>\r\n<p>Has anyone gotten a Chart to draw on paper without printing it as a 'Visual' from a Window?</p>\r\n<p>Thanks in adavnce</p>\r\n<p>Kyle</p>",
+    "PostedDate": "2010-01-25T12:19:11.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

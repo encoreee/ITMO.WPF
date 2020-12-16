@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "165194",
+    "ThreadId": "49373",
+    "Html": "When we have grouping enabled in datagrid. If user edit any entry the entry automatically moves to the last row in the group.<br>\r\nThe issue is also present in  DataGridCTP Sample.<br>\r\n<br>\r\nPlease suggest.\r\n",
+    "PostedDate": "2009-03-05T21:12:52.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166870",
+    "ThreadId": "49373",
+    "Html": "I am unable to repro your issue.  Do you mind posting some code and some context around the issue.\r\n",
+    "PostedDate": "2009-03-11T05:51:28.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177110",
+    "ThreadId": "49373",
+    "Html": "Sorry for late reply.<div><br></div><div>We tried the new DataGrid v1 (WPFToolkit v3.5.40128.1) released in March'09, but are still facing with same issue. </div><div>Here is xaml and code behind which we wrote for testing.</div><div><br></div><div>-- Window1.xaml --</div><div><div>&lt;Window x:Class=&quot;WpfToolKitTestBed.Window1&quot;</div><div>    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</div><div>    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</div><div>        xmlns:dg=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;</div><div>        xmlns:toolkit= &quot;clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit&quot;</div><div>    Title=&quot;Window1&quot; WindowState=&quot;Maximized&quot; &gt;</div><div>    &lt;Grid  Margin=&quot;10&quot; Name=&quot;myGrid&quot;&gt;</div><div>        &lt;toolkit:DataGrid Name=&quot;channelGrid&quot; </div><div>                             AutoGenerateColumns=&quot;False&quot; CanUserAddRows=&quot;False&quot; IsSynchronizedWithCurrentItem=&quot;True&quot; </div><div>                             CanUserDeleteRows=&quot;False&quot; SelectionMode=&quot;Single&quot; </div><div>            &gt;</div><div>            &lt;toolkit:DataGrid.GroupStyle&gt;</div><div>                &lt;GroupStyle&gt;</div><div>                    &lt;GroupStyle.Panel&gt;</div><div>                        &lt;ItemsPanelTemplate&gt;</div><div>                            &lt;dg:DataGridRowsPresenter/&gt;</div><div>                        &lt;/ItemsPanelTemplate&gt;</div><div>                    &lt;/GroupStyle.Panel&gt;</div><div>                    &lt;GroupStyle.HeaderTemplate&gt;</div><div>                        &lt;DataTemplate&gt;</div><div>                            &lt;TextBlock Text=&quot;{Binding Path=Name}&quot; FontWeight=&quot;Bold&quot; Padding=&quot;3&quot;/&gt;</div><div>                    &lt;/DataTemplate&gt;</div><div>                    &lt;/GroupStyle.HeaderTemplate&gt;</div><div>                &lt;/GroupStyle&gt;</div><div>            &lt;/toolkit:DataGrid.GroupStyle&gt;</div><div>            &lt;toolkit:DataGrid.Columns&gt;</div><div><br></div><div>                &lt;toolkit:DataGridTextColumn Width=&quot;Auto&quot; </div><div>                                       Header=&quot;Id&quot; </div><div>                                       Binding=&quot;{Binding Path=Id}&quot; /&gt;</div><div>                &lt;toolkit:DataGridTextColumn Width=&quot;120&quot;                                        </div><div>                                       Header=&quot;Name&quot;                                       </div><div>                                       Binding=&quot;{Binding Path=Name}&quot;  /&gt;</div><div>                &lt;toolkit:DataGridCheckBoxColumn Width=&quot;150&quot; Header=&quot;Likes Cake&quot; </div><div>                                                Binding=&quot;{Binding Path=LikesCakes}&quot; /&gt;</div><div>                &lt;toolkit:DataGridTextColumn Width=&quot;*&quot; Header=&quot;Cake Type&quot; </div><div>                                       Binding=&quot;{Binding Path=CakeType}&quot; /&gt;</div><div><br></div><div>            &lt;/toolkit:DataGrid.Columns&gt;</div><div>        &lt;/toolkit:DataGrid&gt;</div><div>    &lt;/Grid&gt;</div><div>&lt;/Window&gt;</div><div><br></div><div>-- Window1.xaml  Ends here--<br></div><div><br></div><div>-- Window1.xaml.cs --</div><div><br></div><div><div>using System.Collections.Generic;</div><div>using System.ComponentModel;</div><div>using System.Windows;</div><div>using System.Windows.Data;</div><div>using System.Windows.Documents;</div><div><br></div><div>namespace WpfToolKitTestBed {</div><div>       </div><div>    /// &lt;summary&gt;</div><div>    /// Interaction logic for Window1.xaml</div><div>    /// &lt;/summary&gt;</div><div>    public partial class Window1 : Window {</div><div><br></div><div>        public Window1() {</div><div>            InitializeComponent();</div><div><br></div><div>            List&lt;Person&gt; personData = new List&lt;Person&gt;();</div><div><br></div><div>            // generate data...</div><div>            personData.Add(new Person { Id = 1, Name = &quot;John&quot;, LikesCakes = true, CakeType = &quot;Vanilla&quot; });</div><div>            personData.Add(new Person { Id = 2, Name = &quot;Mike&quot;, LikesCakes = false, CakeType = &quot;Chocolate&quot; });</div><div>            personData.Add(new Person { Id = 3, Name = &quot;Stuart&quot;, LikesCakes = false, CakeType = &quot;Vanilla&quot; });</div><div>            personData.Add(new Person { Id = 4, Name = &quot;John&quot;, LikesCakes = true, CakeType = &quot;Strawberry&quot; });</div><div>            personData.Add(new Person { Id = 5, Name = &quot;Jill&quot;, LikesCakes = true, CakeType = &quot;Plum&quot; });</div><div>            personData.Add(new Person { Id = 6, Name = &quot;Mike&quot;, LikesCakes = true, CakeType = &quot;Vanilla&quot; });</div><div>            personData.Add(new Person { Id = 7, Name = &quot;John&quot;, LikesCakes = false, CakeType = &quot;Milk&quot; });</div><div><br></div><div>            channelGrid.ItemsSource = personData;</div><div>            this.Loaded += new RoutedEventHandler(Window1_Loaded);</div><div>        }</div><div><br></div><div>        void Window1_Loaded(object sender, RoutedEventArgs e) {            </div><div>            ICollectionView view1 = CollectionViewSource.GetDefaultView(channelGrid.ItemsSource);</div><div>            view1.GroupDescriptions.Add(new PropertyGroupDescription(&quot;Name&quot;));</div><div>        }</div><div>    }</div><div><br></div><div><br></div><div>    public class Person {</div><div><br></div><div>        public string Name { get; set; }</div><div>        public int Id { get; set; }</div><div>        public bool LikesCakes { get; set; }</div><div>        public string CakeType { get; set; }</div><div><br></div><div>    }</div><div>}</div><div><br></div><div>-- Window1.xaml.cs ends here --<br></div><div><br></div><div>The data grid created, is grouped by Name property in Person class. If we try to edit any of the column values (other than Name), the edited row is placed at the bottom within same group.</div><div><br></div><div>Hope you can reproduce with the code provided.</div><div><br></div><div>Thanks in Advanced,</div></div></div><div><br></div><div><br><div><br></div><div><br></div></div>",
+    "PostedDate": "2009-04-08T05:14:42.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178999",
+    "ThreadId": "49373",
+    "Html": "This is by design.  Note that it only moves the entry if you edit a cell from the Name column.  The reason is b/c that is what is grouped.  If you create a new name it will create a group.  Since you don't have any sorting descriptions it will add this to the bottom of the list.  If you edit any of the other cells the entry will not move to the bottom.\r\n",
+    "PostedDate": "2009-04-14T06:41:16.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179395",
+    "ThreadId": "49373",
+    "Html": "I am afriad that the row entry is moved to bottom of the group even when editing is done in any other cells (e.g. CakeType column ). Am I missing something in the code mentioned above? ",
+    "PostedDate": "2009-04-14T23:16:19.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199147",
+    "ThreadId": "49373",
+    "Html": "<p>Hello,</p>\r\n<p>I have the same problem with March 2009 wpf datagrid editing and grouping.</p>\r\n<p>Is anybody who know how to solve this issue?</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2009-06-08T10:29:28.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199457",
+    "ThreadId": "49373",
+    "Html": "<p>2 vinsibal:</p>\r\n<p>Yes I confirm that moving to the bottom occured when changing any editable cell in the grid, surely not only grouping-field.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-09T03:53:17.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204070",
+    "ThreadId": "49373",
+    "Html": "<p>Vinsibal, I too confirm that editing a cell, no matter which one, moves the row to the bottom of the grouping. When do you expect this to be addressed?</p>",
+    "PostedDate": "2009-06-22T07:29:51.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204317",
+    "ThreadId": "49373",
+    "Html": "<p>This is a bug in the CollectionView code related to grouping.&nbsp; It is fixed in dev10.&nbsp; As a workaround you&nbsp;can&nbsp;set a sortdescription on one of the columns that's not being grouped.</p>",
+    "PostedDate": "2009-06-22T21:05:19.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204504",
+    "ThreadId": "49373",
+    "Html": "<p>I'm applying sort descriptions on three columns, none with grouping.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;CollectionViewSource<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; x:Key=&quot;cvsInspectionReports&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Source=&quot;{Binding Path=.}&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;CollectionViewSource.SortDescriptions&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;scm:SortDescription PropertyName=&quot;Comportment&quot;/&gt;<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;scm:SortDescription PropertyName=&quot;IRPriority&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;scm:SortDescription PropertyName=&quot;IRCode&quot;/&gt;<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/CollectionViewSource.SortDescriptions&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;CollectionViewSource.GroupDescriptions&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PropertyGroupDescription PropertyName=&quot;License&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/CollectionViewSource.GroupDescriptions&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/CollectionViewSource&gt;</p>\r\n<p>I notice that as long as all rows and columns are visible within the datagrid window (no scrollbars) editing doesn't move the row to the bottom of the grouping, but if there are any rows or columns outside of the window, then editing does move the row. I tried setting both row and column virtualization to false and that did not work either. Is there another workaround besides what you proposed?</p>",
+    "PostedDate": "2009-06-23T07:23:11.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

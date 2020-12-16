@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n    I have a display text in ComboBox is a concatenated string from database table. The concatenated string composed of two columns (e.g. column1 (char(50)) + ' ' + column2) looks fine in SQL client. However it is messed up in ComboBox.  Obviously it's caused by different Character width. Is there any way to make those aligned nicely?",
+    "LastUpdatedDate": "2013-02-21T18:41:08.157-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-02T07:00:58.867-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Display Member (Text) Alignment in ComboBox",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10245
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3173,
+      "FileName": "Results.JPG",
+      "DownloadUrl": ".\\3173"
+    }
+  ],
+  "Comments": []
+}

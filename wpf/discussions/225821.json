@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "488308",
+    "ThreadId": "225821",
+    "Html": "<p>Don't know if the subject is clear, but here it is:<br><br>I have a WPF datagrid, with an XML file (Xelement, in fact) as datacontext; displaying works just fine. I would like to give my&nbsp;users the ability to check boxes in an added column, so that deletion would be made in batch once they click on a button to validate their changes. Problem is, I only get what is in datacontext, but I am unable to read back that new column. I must be especially dense (I am still quite new at WPF and totally new at using the WPF Toolbox), but even after spending a good chunk of time looking for it everywhere, I have been unable to find a good explanation on how to do what I am trying to.</p>\r\n<p>Thanks for any pointer.</p>\r\n<p>Bernard</p>",
+    "PostedDate": "2010-09-02T08:35:19.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

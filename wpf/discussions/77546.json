@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "265159",
+    "ThreadId": "77546",
+    "Html": "<p>I am having an issue with passing the currentItem to the CanExecute.</p>\r\n<p>Imagine a Customers grid, that has a child grid of Orders. If the order has shipped it can't be edited, but otherwise it can. Except on Tuesdays after 3 pm :P (just a joke there).</p>\r\n<p>So my template column has a Edit button that ties to a Command = &quot;{Binding EditCommand}&quot; and a CommandParameter=&quot;{Binding}&quot;.&nbsp; (Actually, the CommandParameter is BEFORE the Command statement in the XAML).</p>\r\n<p>I implement the ICommand (Technically a DelegateCommand&lt;T&gt; from Prism, but I believe it is irrelevant to this discussion) in the ViewModel. The CanEditExecute(object e), e is always null. I need this to pass in the CurrentItem so that I can see if the status is Shipped.&nbsp;</p>\r\n<p>Hope this is clear enough. I've looked through this forum and googled the heck out of it. Found some references to using the CommandMangaer.InvalidateSomethingOrOther() and tried that, but to no avail.</p>\r\n<p>Thanks !</p>\r\n<p>&nbsp;</p>\r\n<p>Larry</p>",
+    "PostedDate": "2009-12-08T19:36:43.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288653",
+    "ThreadId": "77546",
+    "Html": "<p>I'm seeing the same problem. I set CommandParameter=&quot;{Binding}&quot; (or &quot;{Binding Foo}&quot;) in my MenuItem, and the parameter&nbsp;passed to the CanExecute method of my DelegateCommand is always null.</p>\r\n<p>If I hard code my CanExecute to return true so I can make it call the Execute command, the parameter is passed through just fine. So the problem appears to be limited ot the CanExecute method when it requires a parameter.</p>\r\n<p>Is there a fix for this?</p>\r\n<p>Matt</p>",
+    "PostedDate": "2010-02-11T00:23:21.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "158974",
+    "ThreadId": "47483",
+    "Html": "I am using the datagrid with Delphi Prism and Eco 5.&nbsp; I can bind the Eco object list to the datagrid and see the data and update the database through the grid.&nbsp; However, there is no &quot;extra&quot; row at the end of the grid to allow adding a new object.&nbsp; I see this extra row with other examples I have downloaded from the web that use other dataproviders.&nbsp; Is there something special I have to do to make the &quot;extra&quot; row show up?&nbsp; What is the datagrid looking for to determine to add that extra row?<br>\r\n<br>\r\nAlso, when I add a new object through a button press, the grid doesn't show the new object in the list.&nbsp; What do I have to do to get the grid to show the new data?<br>\r\n",
+    "PostedDate": "2009-02-18T06:35:23.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159051",
+    "ThreadId": "47483",
+    "Html": "Take a look at this post on editing, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/01/overview-of-the-editing-features-in-the-wpf-datagrid.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/01/overview-of-the-editing-features-in-the-wpf-datagrid.aspx</a>.  In particular, take a look at the info on CanAddNew.  \r\n",
+    "PostedDate": "2009-02-18T09:26:08.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159132",
+    "ThreadId": "47483",
+    "Html": "Vincent,<br>\r\n<br>\r\n&nbsp;&nbsp; My problem is that the extra row in the datagrid where a new row could be added isn't there.&nbsp; Without it being there, I don't see how the <span style=\"font-size:16px;font-family:calibri\"><span></span><em>InitializingNewItem</em></span> event would get triggered. <span style=\"font-size:16px;font-family:calibri\"></span>&nbsp; I don't see anything (in your otherwise very interesing) write-ups that would help me.<br>\r\n<br>\r\n&nbsp;&nbsp; Got anything else :) \r\n",
+    "PostedDate": "2009-02-18T12:39:29.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161409",
+    "ThreadId": "47483",
+    "Html": "In your particular DataGrid, does CanUserAddRows evaluate to false?  Also, what does this, (CollectionViewSource.GetDefaultView(dataGrid.ItemsSource) as IEditableCollectionView).CanAddNew, evaluate to?\r\n",
+    "PostedDate": "2009-02-24T05:39:20.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161426",
+    "ThreadId": "47483",
+    "Html": "I JUST got this to apparently all work!!!&nbsp; (and it only took about a week)<br>\r\n<br>\r\nI was able to make an ObservableCollection passing the Eco GetAsIList as an argument to the constructor and bind the datagrid ItemsSource to that dynamically.<br>\r\n<br>\r\nThen on my Person class, I needed to have a constructor with no parameters.&nbsp; The default generated Eco Person class always has 1 parameter, the EcoSpace that will contain the Person and be responsible for persisting it to a database of some sort.&nbsp; I was able to add a constructor with no parameter to the partial class and, in that, call the constructor with one parameter.&nbsp; I had to make a class variable for Person that contained the EcoSpace to use so that the constructor could put the Person in that EcoSpace when the DataGrid tried to create it.<br>\r\n<br>\r\nHaving the &quot;empty&quot; constructor was the key that finally turned on the &quot;extra row&quot;.<br>\r\n<br>\r\nI also made the Person implement IEditableObject and INotifyPropertyChanged, but I'm not sure at the moment if the INotifyPropertyChanged was really necessary.<br>\r\n<br>\r\nBut I'm making some progress and REALLY glad the DataGrid is available AND that it works with Eco.<br>\r\n",
+    "PostedDate": "2009-02-24T06:06:20.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

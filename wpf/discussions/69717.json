@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "237325",
+    "ThreadId": "69717",
+    "Html": "<p>Hi,</p>\r\n<p>Can any1 tell me how to set red border across Datepicker whenever selected date goes beyond my date range.Please help me how to show red border whenver there are some validation for Datepicker control in wpf</p>\r\n<p>&nbsp;</p>\r\n<p>With regards,</p>\r\n<p>Mahender</p>",
+    "PostedDate": "2009-09-22T07:30:44.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237512",
+    "ThreadId": "69717",
+    "Html": "<p>Hi mahens,</p>\r\n<p>What we recommend is getting a hold of the template part (using myDatePicker.Template.FindName API)&nbsp;for the text box (&quot;PART_TextBox&quot;).&nbsp; Then you can hook into the&nbsp;TextChanged event and parse the text in the textbox to a valid date format.&nbsp; And proceed accordingly.&nbsp; For example, pop up an error message or change the background color of the DatePicker.</p>\r\n<p>Hope that helps,</p>\r\n<p>Saied K.</p>",
+    "PostedDate": "2009-09-22T13:40:36.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237757",
+    "ThreadId": "69717",
+    "Html": "<p>Thnx Saied...</p>",
+    "PostedDate": "2009-09-23T03:58:14.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271527",
+    "ThreadId": "69717",
+    "Html": "<p>Hi,</p>\r\n<p>I am relatively new to WPF and need to hook into this event for the DatePicker control. Can you give some more guidance to how to do this?</p>\r\n<p>Many Thanks,</p>\r\n<p>James</p>",
+    "PostedDate": "2009-12-29T12:36:59.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

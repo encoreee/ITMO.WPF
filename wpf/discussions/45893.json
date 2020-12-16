@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "153184",
+    "ThreadId": "45893",
+    "Html": "I have&nbsp; a bound data grid populated by an objectdataprovider.&nbsp; I have a column named &quot;Name&quot; that when someone enters in some text, it must be unique in the datagrid.&nbsp; How can I check when someone edits the cell if it already exists in the objectdataprovider, and if it does, return the focus back on to that cell.&nbsp; Looking for some help.&nbsp; TIA<br>\r\n",
+    "PostedDate": "2009-02-01T22:09:16.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154523",
+    "ThreadId": "45893",
+    "Html": "While BindingGroups help with row validation, what you want is validation at a higher level.  Here is an interested idea that can possibly help out, <a href=\"http://www.codeproject.com/KB/WPF/GlobalWPFValidation.aspx\">http://www.codeproject.com/KB/WPF/GlobalWPFValidation.aspx</a>.\r\n",
+    "PostedDate": "2009-02-04T20:22:58.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155345",
+    "ThreadId": "45893",
+    "Html": "Thanks for pointing me to this interesting article, it has changed the way I do &nbsp; Is there a way to &quot;interrupt&quot; or cancel leaving a cell.&nbsp; I do my own delete function so when a user hits the delete key, I mark the record as dirty and refresh the collection.&nbsp; Is it possible to just not allow the user to leave the cell if there is a duplicate entry?<br>\r\n",
+    "PostedDate": "2009-02-07T09:42:01.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

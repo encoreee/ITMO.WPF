@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130191",
+    "ThreadId": "39247",
+    "Html": "Hi!<br>\r\nIf i use the tab key to traverse through the columns of my grid I have to press the tab key twice for every DataGridTemplateColumn to bring it in edit mode<br>\r\nI do use the &quot;Single-Click-Editing&quot; from the Tipps&amp;Tricks-section of this page.<br>\r\n<br>\r\nHow can I archieve the same behaviour as for &quot;Standard&quot;-Grid-columns ( one tab changes cell selection).<br>\r\n<br>\r\nThanx \r\n",
+    "PostedDate": "2008-11-05T04:50:26.17-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130280",
+    "ThreadId": "39247",
+    "Html": "See this thread, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=35540\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=35540</a>.  In particular, the last response.\r\n",
+    "PostedDate": "2008-11-05T10:40:22.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

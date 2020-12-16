@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "633697",
+    "ThreadId": "262977",
+    "Html": "\r\n<p>I'm trying to expand my control to fit the entire available area of the AccordionItem's content pane. I tried implementing a custom ContentTemplate which was a simple grid. When I make this change and view the changes in the designer, VS crashes. When I\r\n run the app containing this, it also crashes when the control is loaded.</p>\r\n",
+    "PostedDate": "2011-06-27T12:06:02.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

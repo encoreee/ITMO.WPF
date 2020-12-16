@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've found a bug in the DataGrid when setting a default style for buttons and an empty collection for the ItemsSource of the grid.\n \nI've attached a sample that demonstrates the problem.  If you comment out the Style for buttons in MainWindow.xaml, then it works fine.  If you don't it will peg the CPU and lock up the GUI thread.\n \nDevelopment Environment:\nVS 2010 Pro\nWindows XP SP3\nWPF Toolkit Feb 2010 - I compiled this using VS2010 and the 3.5 Client profile since I couldn't uninstall a previous verion of the toolkit.  I confirmed the compiled version is being used via the fusionlogvw.",
+    "LastUpdatedDate": "2013-02-21T18:40:24.79-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-19T07:00:15.06-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid bug with Button Styles",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 14046
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4774,
+      "FileName": "DataGridTest.zip",
+      "DownloadUrl": ".\\4774"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I have this problem too.",
+      "PostedDate": "2010-08-21T01:15:46.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-21T01:16:13.207-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-21T05:22:17.313-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-24T06:42:00.213-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Same problem on \r\nVS 2008 (9.0.30729.1 SP)\r\nWindows XP Sp3\r\n.NET Framework 3.5 SP1\r\nWPF Toolkit Feb 2010",
+      "PostedDate": "2011-01-24T06:47:16.927-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-29T05:49:45.113-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:24.79-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

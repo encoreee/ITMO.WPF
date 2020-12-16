@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "173786",
+    "ThreadId": "51795",
+    "Html": "Hello, I use DataGrid as tools to dynamically edit ComboBoxItem in ComboBox.ItemsSource as follows.<br>\r\n<br>\r\n<blockquote>&nbsp;ComboBox cb = new ComboBox();<br>\r\n&nbsp;List&lt;ComboBoxItem&gt; list = new List&lt;ComboBoxItem&gt;();<br>\r\n&nbsp;cb.SetBinging(ComboBox.ItemsSourceProperty, new Binding(){ Source = list })<br>\r\n&nbsp;<br>\r\n&nbsp;DataGrid dg = new DataGrid();<br>\r\n&nbsp;dg.SetBinding(DataGrid.ItemsSourceProperty, new Binding(){ Source = cb.ItemsSource };<br>\r\n</blockquote><br>\r\nAnd then, I have gotten &quot;Cannot serialize a non-public type 'MS.Internal.<em>NamedObject</em>''&quot; exception in serialization to XAML<br>\r\n<br>\r\n<blockquote>&nbsp;string str = XamlWriter.Save(cb);<br>\r\n</blockquote><br>\r\nIn case of StackPanel with RadioButtons, no exceptions has been occured.<br>\r\n&nbsp;<br>\r\n<blockquote>&nbsp;StackPanel sp = new StackPanel();<br>\r\n&nbsp;sp.Children.Add(new RadioButton(){Content = &quot;radio 1&quot;};<br>\r\n&nbsp;<br>\r\n&nbsp;dg.SetBinding(DataGrid.ItemsSourceProperty, new Binding() { Source = sp.children };<br>\r\n&nbsp;string str = XamlWriter.Save(sp); // No exception occured.<br>\r\n</blockquote><br>\r\nHow can I address ?<br>\r\nThanks in advance.<br>\r\n",
+    "PostedDate": "2009-03-31T01:01:41.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189023",
+    "ThreadId": "51795",
+    "Html": "<p>The datagrid control serializes just fine until you bind it. I've tried binding to all sorts of sources and serialization always</p>\r\n<p>throws the can't serialize named object exception. This may be related to a bug that was fixed in 3.5sp1 the prevented</p>\r\n<p>the serialization of the binding class.</p>\r\n<p>Serializing the binding class is actually a very useful thing for what we do. So a workaround or hotfix would be helpful.</p>\r\n<p>Thanks,</p>\r\n<p>gmaney</p>",
+    "PostedDate": "2009-05-11T13:00:25.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

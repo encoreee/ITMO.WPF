@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "139714",
+    "ThreadId": "42062",
+    "Html": "With the V1 DataGrid, even if I set CanUserAddRows=&quot;True&quot; on the DataGrid, if the grid's ItemsSource is bound to an empty instance of a class derived only from ObservableCollection&lt;T&gt; and adding or overriding no functionality, no row for adding new entries shows up. If I add an entry to the collection before assigning it to the DataGrid's ItemsSource property, both rows (the added entry plus the new entry row) show up, but if I add an entry after assigning my collection to the DataGrid's ItemsSource property, then only that entry shows up (no way for the user to enter new data directly into the grid).<br>\r\n<br>\r\nIf I make the ItemsSource assigned value an instance of ObservableCollection&lt;T&gt;, with T being the same type, things work as expected both when assigning ItemsSource directly as well as via an intermediate variable. The variable, however, cannot be of the collection class (&quot;public class TCollection : ObservableCollection&lt;T&gt;&quot;) but must be of the exact type ObservableCollection&lt;T&gt;. If it is of my collection class type, then I get the behavior described above.<br>\r\n<br>\r\nIn all cases AutoGenerateColumns=&quot;False&quot; on the DataGrid, with columns explicitly defined.<br>\r\n<br>\r\nThis behavior seems very weird to me, and would certainly be counterintuitive to a user. Any suggestions what I might be doing wrong?<br>\r\n",
+    "PostedDate": "2008-12-11T08:16:18.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139908",
+    "ThreadId": "42062",
+    "Html": "See the comments section on this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/05/27/using-ieditablecollectionview-with-dynamically-generated-gridviewcolumns.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/05/27/using-ieditablecollectionview-with-dynamically-generated-gridviewcolumns.aspx</a> (starting with the 4th comment).  That explains a bit about what's going on.\r\n",
+    "PostedDate": "2008-12-11T18:17:55.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139950",
+    "ThreadId": "42062",
+    "Html": "Wonderful... well, at least now that I know what is going on, I suppose I can come up with a workaround. Thank you, Vincent.<br>\r\n",
+    "PostedDate": "2008-12-11T23:31:57.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

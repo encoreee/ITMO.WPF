@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "147784",
+    "ThreadId": "44402",
+    "Html": "Hi,<br>\r\n<br>\r\nI want to present the user with a custom dialog when they click on a cell to take it into edit mode. What is the preferred approach for this? I have it working by adding code into the BeginningEdit event handler and using ShowDialog to show the edit dialog. This works ok except if the user clicks the column in the bottom &quot;new row&quot;. Then I get an error &quot;Dialog result can only be set after window is created and shown as dialog&quot; when I dismiss the dialog on the custom window. So I've disabled the edit dialog if the row is &quot;detached&quot;, which is a workaround but not great.<br>\r\n<br>\r\nThanks Andy<br>\r\n",
+    "PostedDate": "2009-01-16T10:37:52.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

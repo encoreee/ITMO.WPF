@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "245024",
+    "ThreadId": "71806",
+    "Html": "<p>Hi,</p>\r\n<p>How to bind custom User control in WPFGrid, and the same time i need to Bind an collection of class to the WPF DataGrid Using Binding object in Wpf.</p>\r\n<p>Note:</p>\r\n<p>There are also some&nbsp; custom events also raised in the user control and that also needs to be handled in grid.</p>\r\n<p>I have done this with ListView item. if i achieve this with WPF DataGrid than that would be very useful.</p>\r\n<p>Thanks</p>\r\n<p>Anbu</p>",
+    "PostedDate": "2009-10-13T05:00:15.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

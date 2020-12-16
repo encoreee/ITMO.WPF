@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "242765",
+    "ThreadId": "71186",
+    "Html": "<p>Dear all</p>\r\n<p>I am using the datagrid from the toolkit. I am freezing the first three columns of the datagrid by setting the following:&nbsp; FrozenColumnCount=&quot;3&quot;. It's working fine, but I have three group headers, which do not get frozen while scrolling. Is there any way to freeze them too?</p>\r\n<p>Thank you</p>\r\n<p>Angelo</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-06T17:57:56.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

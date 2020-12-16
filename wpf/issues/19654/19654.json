@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "i was facing issue of multiple/overlapping of Column in Column series of the charting toolkit(PFA). \nwhen i snooped it by a UI tool i found that in Pie series DataPoint are getting updated but in column series it only adds up. \nwhen searched for solution. i found http://stackoverflow.com/questions/3039141/binding-update-adds-news-series-to-wpf-toolkit-chart-instead-of-replacing-updat\n\nbut i cannot use the above mentioned one as i am using dll only. is this issue fixed in newer version? or any other workaround available?",
+    "LastUpdatedDate": "2013-04-30T04:07:17.61-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2013-04-30T04:07:16.417-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Binding update adds news series to WPF Toolkit chart (instead of replacing/updating series)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19654
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6947,
+      "FileName": "ColumnSeries Charting toolkit..png",
+      "DownloadUrl": ".\\6947"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "149098",
+    "ThreadId": "44780",
+    "Html": "Hi<br>\r\n<br>\r\n<blockquote>I am looking for some sample code for changing the style of the Select All button in the upper-left corner of the WPF DataGrid.<br>\r\n<br>\r\nI have applied a new style for columns and rows but the Select All button remains unchanged.<br>\r\nI don't know how to change it.<br>\r\n<br>\r\nThere are some good examples that I don't understand completely.<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#header<br>\r\n</blockquote>Every effort to help me is appreciated.<br>\r\n<br>\r\nThanks in advance.<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-21T00:36:41.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149223",
+    "ThreadId": "44780",
+    "Html": "There isn't any kind of convenience APIs on DataGrid to customize this style.  You ethier have to create an implicit style on Button or create a copy of the DataGrid template and update the select all button template to point to your own custom template.\r\n",
+    "PostedDate": "2009-01-21T06:06:11.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149277",
+    "ThreadId": "44780",
+    "Html": "I created a custom style and applied it in Loaded event handler of the DataGrid&nbsp; but after a second my styling disappeared and returned the original one.<br>\r\n<br>\r\nWhen or where I have to place a code to change a style? <br>\r\n<br>\r\nOr maybe that button is of special type like DataGridColumnHeader or DataGridRowHeader so I may add my styling in the resources section of the XAML <br>\r\nusing that special TargetType ?<br>\r\n",
+    "PostedDate": "2009-01-21T07:38:21.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149309",
+    "ThreadId": "44780",
+    "Html": "Hi,<br>\r\n<br>\r\nFirstly, you should look at the Generic.xaml within the WPF Toolkit to understand exactly what it is you are styling.<br>\r\n<br>\r\nYou have a few options ...<br>\r\n<br>\r\n(1) Implicit style on Button - this is probably not what you want? Do you want all your buttons everywhere to look the same?<br>\r\n(2) Change the DataGrid template - this will unfortunately result in a lot of cut and paste code as you will have to reproduce all of the templates / styles that the DataGrid uses.<br>\r\n(3) Handle the Loaded event and style the Button dynamically.<br>\r\n<br>\r\nHere is an example of #3 ...<br>\r\n<br>\r\nHandle the Loaded event for your DataGrid as follows:<br>\r\n<br>\r\nprivate void Grid_Loaded(object sender, RoutedEventArgs e)<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; DependencyObject dep = sender as DependencyObject;<br>\r\n&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp; while (!(dep is Button))<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dep = VisualTreeHelper.GetChild(dep, 0);<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; Button button = dep as Button;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; object res = Resources[&quot;SelectAllButtonTemplate&quot;];<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; button.Template = res as ControlTemplate;<br>\r\n}<br>\r\n<br>\r\nThis method uses VisualTreeHelper to walk the visual tree. We are relying on the knowlegde that Button is the first element, four levels down the tree. If this were not the case, we would need some more sophisticated logic here.<br>\r\n<br>\r\nOnce the button is found, we cast then style. Here I am setting the control template because the existing template is not the template you would find on an average button.<br>\r\n<br>\r\nHere is my template:<br>\r\n<br>\r\n&lt;ControlTemplate x:Key=&quot;SelectAllButtonTemplate&quot; TargetType=&quot;{x:Type Button}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBlock Text=&quot;Hi&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n&lt;/ControlTemplate&gt;<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-21T08:56:59.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149469",
+    "ThreadId": "44780",
+    "Html": "<br>\r\nVinsibal and Colin thank you very mach for your help.<br>\r\n<br>\r\nEverything is working fine now. <br>\r\n<br>\r\nP.S:<br>\r\n<br>\r\nColin you wrote a great article http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx !<br>\r\n<br>\r\nVinsibal I am reading your demos and explanations for WPF DataGrid on your blog. Good work !! <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-01-21T14:58:35.533-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

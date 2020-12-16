@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "139765",
+    "ThreadId": "42074",
+    "Html": "Is there any way to put a DropdownBox or other controls on Contextual tab? I knew a label can appear on Contextual tab.\r\n",
+    "PostedDate": "2008-12-11T10:32:10.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139840",
+    "ThreadId": "42074",
+    "Html": "Do you mean to put a control on the ContextualTab header, in place of or next to the label?  You should be able to do this by retemplating the ContextualTab header, however, I have a feeling that this might be in violation of the Office Licensing Guidelines.  I would email the Office Licensing team (<a href=\"mailto:officeui@microsoft.com\">officeui@microsoft.com</a>) to clarify if this is allowed or not before going through the trouble of doing the work to enable this.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-12-11T13:48:21.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

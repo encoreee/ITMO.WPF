@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "241314",
+    "ThreadId": "70825",
+    "Html": "I have a hierarchical set of  DataGrid's (DataGrid contained within the <br>DataGrid.RowDetailsTemplate) that's about three levels deep and each <br>DataGrid defines a SelectionChanged event.<br><br>The issue I'm having is that SelectionChanged events for a parent <br>DataGrid are fired after the SelectionChanged event for the child (sub) <br>DataGrid. I need some way to know that which selection caused which event.<br><br><br>Thanks,<br><br>Bill",
+    "PostedDate": "2009-10-02T08:07:14.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241499",
+    "ThreadId": "70825",
+    "Html": "I set e.Handled = true to solve this.<br><br>On 10/2/2009 10:07 AM, wpmccormick wrote:<br>&gt; <br>&gt; <br>&gt; From: wpmccormick<br>&gt; <br>&gt; I have a hierarchical set of DataGrid's (DataGrid contained within the<br>&gt; DataGrid.RowDetailsTemplate) that's about three levels deep and each<br>&gt; DataGrid defines a SelectionChanged event.<br>&gt; <br>&gt; The issue I'm having is that SelectionChanged events for a parent<br>&gt; DataGrid are fired after the SelectionChanged event for the child (sub)<br>&gt; DataGrid. I need some way to know that which selection caused which event.<br>&gt; <br>&gt; <br>&gt; Thanks,<br>&gt; <br>&gt; Bill<br>&gt; <br>&gt; Read the full discussion online <br>&gt; &lt;http://wpf.codeplex.com/Thread/View.aspx?ThreadId=70825&ANCHOR#Post241314&gt;.<br>&gt; <br>&gt; To add a post to this discussion, reply to this email <br>&gt; ([email removed] <br>&gt; &lt;mailto:[email removed]?subject=[wpf:70825]&gt;)<br>&gt; <br>&gt; To start a new discussion for this project, email <br>&gt; [email removed] &lt;mailto:[email removed]&gt;<br>&gt; <br>&gt; You are receiving this email because you subscribed to this discussion <br>&gt; on CodePlex. You can unsubscribe or change your settings <br>&gt; &lt;https://wpf.codeplex.com/subscriptions/thread/project/edit&gt; on <br>&gt; codePlex.com.<br>&gt; <br>&gt; Please note: Images and attachments will be removed from emails. Any <br>&gt; posts to this discussion will also be available online at codeplex.com<br>&gt;",
+    "PostedDate": "2009-10-02T13:53:23.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

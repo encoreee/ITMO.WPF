@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "460104",
+    "ThreadId": "217386",
+    "Html": "<p>When I attempt to style the datagrid's rowheader, this functionality stops working entirely. Steps are:</p>\r\n<ol>\r\n<li>create a datagrid in Blend 3.0, populating it with some live data from the Reuters top news feed</li>\r\n<li>run the project. everything works fine. Row header exists and has the standard light blue hover, click to select states, etc.</li>\r\n<li>right click in the Objects panel and create a copy of the row header style/template</li>\r\n<li>select to create the template in the same page (window), keep Blend's name of RowHeaderStyle1</li>\r\n<li>Blend creates the style with the template inline, and assigns the datagrid the RowHeaderStyle=RowHeaderStyle1</li>\r\n<li>In the design window, the row header turns white</li>\r\n<li>Run the project. The row header is white and nonexistent. Looking at the project in Snoop, the rowheader no longer appears in the visual tree</li>\r\n</ol>\r\n<p>I really need to style this part of the datagrid. What's going on that it breaks when I just copy the style/template out?</p>\r\n<p>Thanks in advance,</p>\r\n<p>Derek</p>",
+    "PostedDate": "2010-06-25T15:57:36.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

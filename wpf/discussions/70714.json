@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "240911",
+    "ThreadId": "70714",
+    "Html": "<p>When my user types in bad data and a validation error is raised, a red border appears which is great.</p>\r\n<p>&nbsp;However, if &nbsp;the text box&rsquo;s enabled state becomes false, I would like the red border to look disabled, not bright red. Has anyone had any success at doing this?</p>\r\n<p>&nbsp;It would be nice if WPF had a way to more easily customize this. I do not want to clear out the contents of the text box because if it gets re-enabled, he can see the contents and correct it.</p>\r\n<p>&nbsp;Thanks!!!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-01T07:00:52.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

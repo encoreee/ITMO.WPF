@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "419149",
+    "ThreadId": "205231",
+    "Html": "<p>If I use the date picker control to display its calendar, then change themes, and then go back and try to use the calendar from the date picker once more, I get the following error;</p>\r\n<p>&quot;Must disconnect specified child from current parent Visual before attaching to new parent Visual.&quot;</p>\r\n<p>Has anyone else received this error? Im stumped as to how to fix it.</p>\r\n<p>Any help would be appreciated</p>\r\n<p>Regards</p>\r\n<p>David</p>",
+    "PostedDate": "2010-03-17T04:13:35.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

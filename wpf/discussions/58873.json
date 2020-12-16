@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "199403",
+    "ThreadId": "58873",
+    "Html": "<p>I implement a Customize Control of DataGridTemplateColumn and let it derive from DataGridTemplateColumn, but how to set its Resources, since I have one defined ResourceDictonary.</p>\r\n<p>Dose anyone know the answer?Thanks very much! Dan</p>",
+    "PostedDate": "2009-06-09T01:34:35.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199690",
+    "ThreadId": "58873",
+    "Html": "<p>Hi Dan,</p>\r\n<p>You should be able to set the Resources on the DataTemplate which you put inside the CellTemplate of your DataGridTemplateColumn, like so:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataGrid&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataGrid.Columns&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataGridTemplateColumn&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate Resources=&quot;...&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataGridTemplateColumn&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataGrid.Columns&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataGrid&gt;&nbsp;</p>\r\n<p>Is that what you were looking for?</p>\r\n<p>Thanks,<br>Samantha</p>",
+    "PostedDate": "2009-06-09T13:44:28.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "201963",
+    "ThreadId": "58873",
+    "Html": "<p>hi</p>\r\n<p>If i want sorting facility on this &quot;DataGridTemplateColumn&quot; then How can i do it Because i tried it but Sorting is not Working on this......</p>",
+    "PostedDate": "2009-06-16T03:48:47.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202203",
+    "ThreadId": "58873",
+    "Html": "<p>Hi Yagnesh2879,</p>\r\n<p><a href=\"http://blogs.msdn.com/jgoldb/archive/2008/08/26/improving-microsoft-datagrid-ctp-sorting-performance.aspx\">http://blogs.msdn.com/jgoldb/archive/2008/08/26/improving-microsoft-datagrid-ctp-sorting-performance.aspx</a></p>\r\n<p>This article will show you how to setup your Custom sorting for a DatgridTemplateColumn.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-06-16T14:16:56.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

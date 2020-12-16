@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello folks,\n \nI have been trying to use AccordionItem on my WPF application project (not Silverlight) but everytime I add this control, i got \"Object Reference not set to an instance of an object\" error.\n \nWhen I run it, the AccordionItem has a blue background.\n \nI didn't get this sort of error when using Accordion, AccordionButton, etc..\nBtw, I am using VS 2010.\n \nCan anybody help?\n \nThanks,\nKoko",
+    "LastUpdatedDate": "2013-02-21T18:40:28.3-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-07-06T03:22:50.27-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug on AccordionItem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 13678
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi,\r\nBlue background is a known bug by the community.\r\n\r\nYou can change the template and get over the blue background problem\r\n\r\nor do the following:\r\n\r\nhttp://social.msdn.microsoft.com/Forums/en/wpf/thread/46ffd9a7-5759-40f8-828f-159b4bdc69b5\r\n",
+      "PostedDate": "2010-07-12T11:01:26.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-27T02:12:08.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-22T15:12:15.45-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-12-10T12:41:44.69-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-12T19:20:00.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "What an efin thing",
+      "PostedDate": "2011-01-12T19:20:35.38-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:28.3-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "241925",
+    "ThreadId": "70963",
+    "Html": "<p>Hello,</p>\r\n<p>I've been using the June release and it's great!</p>\r\n<p>I'm implementing input validation in the datagrid and i know the silverlight datagrid supports validation through the System.ComponentModel.DataAnnotations attributes, which is not only straight forward but also enables you to write cleaner code.</p>\r\n<p>So far I haven't seen any support for WPF's datagrid validation with these attributes. Does it make any sense? Is it going to be included in the next version? .NET 4? Why wait for something that's not too complicated to implement? It's already done for silverlight..</p>\r\n<p>&nbsp;</p>\r\n<p>A few months ago I have implemented data validation with attributes (not the System.ComponentModel.DataAnnotation ones) and my IDataErrorInfo implementation simply checked for those attributes and checked if they were all valid by calling an abstract method i had on a base class like ValidationAttribute.</p>\r\n<p>I'm guessing I should do the same now, but using the DataAnnotation attributes right? So when the next version is released I simply change my viewmodel classes to not implement IDataErrorInfo and let the grid handle it by checking the attributes itself right? Am I in the right path?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks and keep up the good work!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-04T12:03:27.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

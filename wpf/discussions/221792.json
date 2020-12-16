@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "474040",
+    "ThreadId": "221792",
+    "Html": "<p>I have a scenario&nbsp;where the suggestions are unknown. I want to keep a history of what the user has typed before and want to provide those as the ItemSource suggestion in AutoCompleteBox.</p>\r\n<p>There is a way that I found to append the ItemSource of AutoCompleteBox&nbsp;in LostFocus event.</p>\r\n<p>Is there any other way to achieve this? Also I need this ItemSource to be persistence between sessions.</p>\r\n<p><span style=\"font-size:medium\"><span style=\"font-size:16px\"><br></span></span></p>\r\n<p>Thanks,</p>\r\n<p>Luckshy</p>",
+    "PostedDate": "2010-07-28T23:28:16.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

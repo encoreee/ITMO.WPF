@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nThe project (see zip file) demonstrates a scenario with incorrect result on an initial \"Shift-select\" user operation.\n \nA prerequisite for this to occur is \"myDataGrid.IsSynchronizedWithCurrentItem = true;\"\n \nThe zip file contains all the material.\n \nThank you,\n \nJulie",
+    "LastUpdatedDate": "2014-08-06T12:33:19.683-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-16T03:47:39.69-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: initial Shift-select gives incorrect result",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10309
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3195,
+      "FileName": "16a - initial shift select.zip",
+      "DownloadUrl": ".\\3195"
+    }
+  ],
+  "Comments": []
+}

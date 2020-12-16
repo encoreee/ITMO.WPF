@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "278905",
+    "ThreadId": "81279",
+    "Html": "<p>Hello.</p>\r\n<p>I'd like to create a new tab/window in the browser when a button is pressed.</p>\r\n<p>I'm using this code in the eventhandler for click on the button:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>System.Diagnostics.Process.Start(<span style=\"color:#A31515\">&quot;www.google.net&quot;</span>, <span style=\"color:Blue\">string</span>.Empty);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>When I press the button I get an error: &quot;System.Security.SecurityException: Request failed.&quot; (much longer error message, but that seems to be the main reason)</p>\r\n<p>I have the solution published on a server when I get the error. If I run the solution locally I don't get an error. So what am I missing?</p>",
+    "PostedDate": "2010-01-19T05:16:25.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

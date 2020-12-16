@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "134414",
+    "ThreadId": "40518",
+    "Html": "I am geting an ExecutionEgineException(Data is {System.Collections.EmptyReadOnlyDictionaryInternal}) whenever I modify two columns in the same row of my DataGrid. No problem when I modify one column at time. This only happens when I add my DataGridTemplateColumn. This column is a ListBox bound to one of the DataTable's children columns. Am I doing something wrong?  Is there a way around this exception?<span style=\"font-size:13px;color:#a31515\">\r\n<p> </p>\r\n</span>\r\n",
+    "PostedDate": "2008-11-21T22:59:05.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159217",
+    "ThreadId": "40518",
+    "Html": "Would you be able to attach a sample project to the <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8815\">issue </a>you filed?<br>\r\n<br>\r\nThanks,<br>\r\nBen\r\n",
+    "PostedDate": "2009-02-18T17:20:41.897-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

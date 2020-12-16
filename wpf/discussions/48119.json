@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "160547",
+    "ThreadId": "48119",
+    "Html": "The Wpf DataGrid is not so good looking as the Silverlight version, looking for any chances.\r\n",
+    "PostedDate": "2009-02-21T18:50:57.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161041",
+    "ThreadId": "48119",
+    "Html": "We'll be releasing some new WPF themes in a few weeks, which I believe are the same or similar to the Silverlight DataGrid theme.  Keep an eye out for the release and let us know if they help.\r\n",
+    "PostedDate": "2009-02-23T10:23:08.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

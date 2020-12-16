@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This error occurs after the value of the ItemsSource property on the DataGrid is changed to an empty collection.  In my case, the ItemsSource was bound to a property path, and the object holding the collection changed to another object that did not have any members in the corresponding collection.\n \nThe exception is thrown from DataGridCellsPanel.ComputeCellsPanelHorizontalOffset(), because the it makes a call to the TransformToAncestor with the scrollViewer as a parameter.  The row has already been unloaded and so it is not a member of the visual tree, which causes an InvalidOperationException to be thrown.  I've tracked down the issue, and it seems that this happens because the data rows generated from the old collection are never removed from the DataGrid's _rowTrackingRoot linked-list, because ClearContainerForItemOverride is never called when the ItemsSource collection is grouped.\n \nThe fact that ClearContainerForItemOverride is never called may be a bug in the underlying WPF library, as I tested and observed the same behavior with the ItemsControl.  However, in that case, it does not cause an exception to be thrown.  The exception is caused in the DataGrid because it depends on that method being called to remove objects from its tracking lists that it uses for layout.\n \nThis also raises a performance issue, as the unused DataGridRow objects are kept in the list indefinately, and can never be released until the DataGrid itself is released.",
+    "LastUpdatedDate": "2014-08-21T09:24:49.047-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-11T14:11:13.303-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid - Grouping Can Cause Exception To Be Thrown When Laying Out Columns After ItemsSource Property Is Changed",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10439
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3280,
+      "FileName": "Data Grid Layout Exception Demo.zip",
+      "DownloadUrl": ".\\3280"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hello nimrand, We were unable to reproduce the problem. Can you please provide us with a simple isolated repro application.",
+      "PostedDate": "2009-08-14T13:32:15.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Here is the repro application.  Just click the button and that will trigger the exception to be thrown.",
+      "PostedDate": "2009-08-18T06:40:34.2-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-18T06:40:39.96-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We agree that this is a bug and we logged it in our internal database. Thanks!!",
+      "PostedDate": "2009-08-18T13:29:13.153-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:01.76-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-08-21T09:24:49.047-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

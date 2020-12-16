@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "417290",
+    "ThreadId": "204726",
+    "Html": "<p>What is the style targettype to use for this style? I cannot find any documentation on this anywhere.</p>\r\n<p>&nbsp;</p>\r\n<p>Or does anyone know of a way to get the Axis labels to look different for major or minor ticks. For example i want my X axis to be a DateTimeAxis with major tick marks being the Month and minor tick marks being the day. Is something like that possible?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Eric</p>",
+    "PostedDate": "2010-03-11T22:09:43.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For some reason under Windows 8 our application, which uses RibbonWindow is displayed in classic window style",
+    "LastUpdatedDate": "2013-02-21T18:40:06.22-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2012-07-27T03:55:42.317-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RibbonWindows is not of Aero style under Windows 8 RP",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 18412
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6527,
+      "FileName": "NoAero.png",
+      "DownloadUrl": ".\\6527"
+    }
+  ],
+  "Comments": []
+}

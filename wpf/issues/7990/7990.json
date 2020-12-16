@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": ".NET 3.5 SP1 is now on Windows Update as well.",
+    "ClosedDate": "2009-02-18T18:19:13.743-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "My application using datagrid compiled fine (also followed all instructions including .NET 3.5 SP1) for the development environment. When the compiled exe (compiled for the target 3.5/x6)  was brought to a different runtime environment that has .NET 3.5 runtime/redistributable (XP OS), application crashes. Same application did not crash in the development environment.\n \nI checked, there is no .NET 3.5 SP1 runtime/redistributable version in the websites. It will also be not practical to install the huge size full SP1 package for the runtime environment. Please suggest a fix for the crash.\n \nThanks\nGomes",
+    "LastUpdatedDate": "2013-05-16T05:31:16.357-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-11-07T21:12:15.433-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Application with DataGrid crashes during runtime",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7990
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Gomez,\r\n\r\nThe end-user's machine must have .NET 3.5 SP1 on it in order for any application using DataGrid to work.  There is a new compact version of the framework called the Client Profile available which will install only a 26 mb subset of the framework.  However, it will only work for users with clean XP machines which do not have the .NET framework installed already.  You can find the Client Profile here: http://msdn.microsoft.com/en-us/library/cc656912.aspx.  Troy Martez is the Program Manager who owns the Client Profile and he has a blog which explains it in detail here: http://blogs.windowsclient.net/trickster92/archive/2008/05/21/introducing-the-net-framework-client-profile.aspx.  Also, on this site in the WPF Futures release (here: http://www.codeplex.com/wpf/Release/ProjectReleases.aspx?ReleaseId=14962), you'll find the Client Profile Configuration Designer tool with links to instructions on how to use it.\r\n\r\nThanks!\r\nSamantha",
+      "PostedDate": "2008-11-10T11:00:09.47-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T18:19:13.743-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:45.383-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:16.357-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

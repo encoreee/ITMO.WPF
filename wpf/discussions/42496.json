@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "141263",
+    "ThreadId": "42496",
+    "Html": "I have created a style for editing DataGridTextColumns like below. <br>\r\nWhen I enter data into a DataGridTextColumn the first character is always lower case, e.g. <em>dATAGRID</em> instead of <em>DATAGRID</em> as i would have expected. <br>\r\nAm I missing something?<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#800000\"><span style=\"font-size:13px;color:#800000\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#ff0000\"> BasedOn</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">Static</span><span style=\"font-size:13px;color:#ff0000\"> dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">DataGridTextColumn</span><span style=\"font-size:13px;color:#0000ff\">.DefaultEditingElementStyle}&quot;</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">Type</span><span style=\"font-size:13px;color:#ff0000\"> TextBox</span><span style=\"font-size:13px;color:#0000ff\">}&quot;</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Key</span><span style=\"font-size:13px;color:#0000ff\">=&quot;DataGridText_Upper&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;TextBox.CharacterCasing&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Upper&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<br>\r\n<br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-12-17T01:53:10.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141668",
+    "ThreadId": "42496",
+    "Html": "This is a known issue.  See this thread, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=36985\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=36985</a>.\r\n",
+    "PostedDate": "2008-12-18T12:36:54.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

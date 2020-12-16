@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "492858",
+    "ThreadId": "227043",
+    "Html": "<p>My DataGrid is bound to a DataTable. The DataTable has numeric types which AllowDBNull.</p>\r\n<p>E.g.</p>\r\n<p>gridDataTable = new DataTable(&quot;MyDataTable&quot;);<br>...<br>gridDataTable.Columns.Add(new DataColumn(&quot;LowCutOff&quot;, typeof(double)));<br>gridDataTable.Columns[4].AllowDBNull = true;<br>gridDataTable.Columns[4].DefaultValue = DBNull.Value; <br>...<br>columnsGrid.ItemsSource = gridDataTable.DefaultView;</p>\r\n<p>I can add rows to the DataTable/Grid which have DBNulls via code no problem, like this...</p>\r\n<p>gridDataTable.Rows.Add(&quot;&quot;, TypeCode.Double, &quot;&quot;, false, DBNull.Value, DBNull.Value, DBNull.Value, DBNull.Value, DBNull.Value);</p>\r\n<p><br>But there is no way I can enter null numeric values through the UI. Leaving a cell blank is the same as leaving non-numeric text in the cell, it goes into an error mode and I can't input normally after that.</p>\r\n<p>Even buggering around with the CellEditEnding event for hours hasn't solved the problem <strong>even though I've updated the underlying DataTable successfully withe the DBNull value for that location</strong>. The interface still thinks it's in an error state after that and the editcancel won't fix that either.</p>\r\n<p>Any ideas?</p>\r\n<p>(Go back to WinForms??)</p>",
+    "PostedDate": "2010-09-13T09:18:23.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

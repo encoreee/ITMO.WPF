@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "150704",
+    "ThreadId": "45188",
+    "Html": "Hi!<br>\r\nI am trying to export datagrid to Excel in WPF but I keep failing. The problem is that Data grid controller in WPF toolkit dosen´t have <br>\r\nThe following function <strong>Datagrid.RenderControl(htmlWriter);</strong><br>\r\n<br>\r\n<br>\r\nThis is my code!<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">protected</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">void</span><span style=\"font-size:13px\"> ExportToExcelFile(</span><span style=\"font-size:13px;color:#2b91af\">DataGrid</span><span style=\"font-size:13px\"> gvData) {\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>\r\n<p><span style=\"font-size:13px;color:#008000\">\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\"></span><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\"> date = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">();\r\n<p>&nbsp;</p>\r\n<p>date = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Now;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\"> strDate = date.ToString().Replace(</span><span style=\"font-size:13px;color:#a31515\">&quot;-&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;&quot;</span><span style=\"font-size:13px\">).Replace(</span><span style=\"font-size:13px;color:#a31515\">&quot;:&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;&quot;</span><span style=\"font-size:13px\">).Replace(</span><span style=\"font-size:13px;color:#a31515\">&quot;_&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;&quot;</span><span style=\"font-size:13px\">).Replace(</span><span style=\"font-size:13px;color:#a31515\">&quot; &quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;&quot;</span><span style=\"font-size:13px\">);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\"> strFilename = </span><span style=\"font-size:13px;color:#a31515\">&quot;TsPro_&quot;</span><span style=\"font-size:13px\"> + strDate + </span><span style=\"font-size:13px;color:#a31515\">&quot;.xls&quot;</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">try</span><span style=\"font-size:13px\"> {\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.Clear();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.ClearContent();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.ClearHeaders();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.Buffer = </span><span style=\"font-size:13px;color:#0000ff\">true</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.ContentType = </span><span style=\"font-size:13px;color:#a31515\">&quot;application/vnd.ms-excel&quot;</span><span style=\"font-size:13px\">; </span><span style=\"font-size:13px;color:#008000\">//&quot;text/plain&quot;; /\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.AddHeader(</span><span style=\"font-size:13px;color:#a31515\">&quot;content-disposition&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;attachment;filename=&quot;</span><span style=\"font-size:13px\"> + strFilename);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.Charset = </span><span style=\"font-size:13px;color:#a31515\">&quot;&quot;</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">StringWriter</span><span style=\"font-size:13px\"> stringWrite = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">StringWriter</span><span style=\"font-size:13px\">();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HtmlTextWriter</span><span style=\"font-size:13px\"> htmlWriter = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">HtmlTextWriter</span><span style=\"font-size:13px\">(stringWrite);\r\n<p>&nbsp;</p>\r\n<p>gvData.RenderControl(htmlWriter);</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.Write(gvData);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.Flush();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">HttpContext</span><span style=\"font-size:13px\">.Current.Response.Close();\r\n<p>&nbsp;</p>\r\n<p>} </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">catch</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">Exception</span><span style=\"font-size:13px\"> e) {\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#008000\">// LOGGER.ErrorException(&quot;Could not export a gridview to a file.&quot;, e);\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>}</p>\r\n<p>}</p>\r\n</span>\r\n",
+    "PostedDate": "2009-01-25T09:13:19.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "150910",
+    "ThreadId": "45188",
+    "Html": "WPF's DataGrid is a bit different than ASP.net's DataGrid.  One way you can export to excel with WPF's DG is to use the DataGrid.CopyToClipboard command which makes a copy in a CSV, html, and text format.  From there you can either just create a csv file or use the excel APIs to create an excel file.  Hope that helps.\r\n",
+    "PostedDate": "2009-01-26T05:26:30.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157526",
+    "ThreadId": "45188",
+    "Html": "Hi,<br>\r\n<br>\r\nI might be in dire need of lunch but I can't find a CopyToClipboard command or anything like it for  the WPF datagrid. Would it be possible for you to provide a brief code snippet because I'm scratching my head and clearly missing something obvious.<br>\r\n<br>\r\nThanks! \r\n",
+    "PostedDate": "2009-02-13T12:01:07.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157672",
+    "ThreadId": "45188",
+    "Html": "Sorry, I think what I meant to say was the built in copy functionality of DataGrid.  DataGrid has a ClipboardCopyMode and does use a command to do a copy but the only way you can customize it is by overriding one of the protected copy methods.  The default copy functionality does create the formats that I describe above so you should be able to export that to excel.\r\n",
+    "PostedDate": "2009-02-14T07:16:30.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162456",
+    "ThreadId": "45188",
+    "Html": "Vinsibal, Can you expand on this a little more?  What do you mean by &quot;default copy funcationality&quot;, because I haven't found any.<br>\r\n<br>\r\nSpitting out a DataGrid to CSV/Excel/HTML is probably the most common feature request I've seen, and while people say it can be done, I've yet to see one example of how to do it.  Any guidance would be most apprciated.<br>\r\n<br>\r\n  \r\n",
+    "PostedDate": "2009-02-26T11:45:55.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164159",
+    "ThreadId": "45188",
+    "Html": "When you do a &quot;CTRL + C&quot; on selected data in the DataGrid, it should copy it to the different formats on the clipboard which should be pastable in excel.\r\n",
+    "PostedDate": "2009-03-03T20:37:17.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164389",
+    "ThreadId": "45188",
+    "Html": "I don't know if this will be helpful but I am on a project where I will soon be facing the same problem, namely exporting from a DataGrid to Excel.  Therefore I have given it a little thought.<br>\r\n<br>\r\nI know that Excel supports data mapping using XML.<br>\r\n<br>\r\n<a href=\"http://msdn.microsoft.com/en-us/office/bb872411.aspx\">http://msdn.microsoft.com/en-us/office/bb872411.aspx</a><br>\r\n<br>\r\nI also know that many DataGrids use object collections for data binding.  You can use LINQ to XML to generate your XML.  If you are getting the data from a database you can also do a similar thing.  Then you use the methodology described in the link above to populate your Excel spreadsheet.<br>\r\n<br>\r\n-jupiter<br>\r\n<br>\r\n \r\n",
+    "PostedDate": "2009-03-04T09:12:43.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164419",
+    "ThreadId": "45188",
+    "Html": "Vinsibal,<br>\r\n<br>\r\nThat's not really a good answer though, because if I have content that scrolls, it'll be off the page and not loaded (if Virtualization is turned on).  Even if that weren't the case, writing some code that automatically selected all the rows so I can fake copy it, so I can then convert it to another format just seems like a hack to me.<br>\r\n<br>\r\nJupiter :Mapping the ItemSource is also not a viable solution either since you might not be using all the properties/members as columns and it will lose any sort of formatting you have on the grid.<br>\r\n<br>\r\nBasically, without a out of the box export (or at least a real solution which is documented on MSDN or somewhere similar), there's no way I could advise using this DataGrid to my client.  Whether we agree with it, a client's number one expectation of any sort of Grid is that they can get that data into Excel.  While I appreciate all the hard work that everyone has undertaken to get this grid out there, without a valid export it's just not a viable solution.<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-04T10:03:17.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164938",
+    "ThreadId": "45188",
+    "Html": "There is only item-container virtualization which is different than data virtualization.  So all items will be available at your disposal regardless of virtualization.  I do agree that it would be a hack to select all then execute the clipboardcopy command.  The WPF DataGrid does not have oob functionality to export to the excel format but it does have the functionality to copy it's content to the clipboard as a CSV, Text, or HTML format.  What's a little unfortunate is that the only way access this function is by selecting cells.  A bug has been logged in our database.<br>\r\n",
+    "PostedDate": "2009-03-05T09:40:05.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179487",
+    "ThreadId": "45188",
+    "Html": "You can manualy copy the content of your DataGrid to the Clipboard using this <br>\r\n<br>\r\ngrid.SelectionMode = DataGridSelectionMode.Extended;<br>\r\ngrid.SelectAllCells();<br>\r\ngrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;<br>\r\nApplicationCommands.Copy.Execute(null, grid);<br>\r\n<br>\r\nThen you can paste the data to Excel or if you need to create a file you can call Clipboard.GetData(DataFormats.CommaSeparatedValue)<br>\r\nto get the data from the clipboard in CSV.<br>\r\n",
+    "PostedDate": "2009-04-15T02:50:32.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517501",
+    "ThreadId": "45188",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>This code does not require Office libraries and end opens Microsoft Excel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p>&nbsp;<span style=\"color:blue\">try</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">if</span> (<span style=\"color:blue\">this</span>.Contactos ==\r\n<span style=\"color:blue\">null</span> || <span style=\"color:blue\">this</span>.Contactos.Count == 0)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">return</span>;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringBuilder sb =\r\n<span style=\"color:blue\">new</span> StringBuilder();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:green\">//</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:green\">// Titulos</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> item\r\n<span style=\"color:blue\">in</span> <span style=\"color:blue\">typeof</span>(ConsultarContactoSesionesResult).GetProperties())<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.AppendFormat(CultureInfo.CurrentUICulture,\r\n<span style=\"color:#a31515\">&quot;{0}\\t&quot;</span>, item.Name);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.AppendLine();<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:green\">//</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:green\">// Contenido</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> item\r\n<span style=\"color:blue\">in</span> <span style=\"color:blue\">this</span>.Contactos)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> propiedad\r\n<span style=\"color:blue\">in</span> <span style=\"color:blue\">typeof</span>(ConsultarContactoSesionesResult).GetProperties())<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.AppendFormat(CultureInfo.CurrentUICulture,\r\n<span style=\"color:#a31515\">&quot;{0}\\t&quot;</span>, propiedad.GetValue(item, <span style=\"color:blue\">\r\nnull</span>));<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.AppendLine();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:green\">//</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:green\">// Grabar Archivo</span><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">string</span> path = <span style=\"color:blue\">string</span>.Format(<span style=\"color:#a31515\">&quot;{0}\\\\Contactos_{1:yyyyMMdd}.xls&quot;</span>,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DateTime.Today);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File.WriteAllText(path, sb.ToString());<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ProcessStartInfo obInfo =\r\n<span style=\"color:blue\">new</span> ProcessStartInfo(path);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obInfo.UseShellExecute =\r\n<span style=\"color:blue\">true</span>;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obInfo.WindowStyle = ProcessWindowStyle.Normal;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<span style=\"color:blue\">using</span> (Process obJob = <span style=\"color:blue\">new</span> Process())<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obJob.StartInfo = obInfo;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obJob.Start();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:blue\">\r\ncatch</span> (Exception ex)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internas.MostrarError(ex);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n</p>\r\n",
+    "PostedDate": "2010-11-04T22:29:43.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "696657",
+    "ThreadId": "45188",
+    "Html": "<p><a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/pikul\">pikul</a></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks, your posting was the best of all. Simple and plain. Now i simply pass the CSV file to Excel.&nbsp; AMAZINGLY SIMPLE!!!!</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;</p>\r\n<p>Doc</p>",
+    "PostedDate": "2011-11-10T13:19:24.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "728570",
+    "ThreadId": "45188",
+    "Html": "<p>For Export To Excel,Pdf,CSv (With rich formatting ) , I have&nbsp;extended&nbsp;WPF Tool Kit DataGrid and posted my solution here.&nbsp;<a href=\"http://wpfextendeddatagrid.codeplex.com/\">http://wpfextendeddatagrid.codeplex.com/</a>&nbsp;.</p>\r\n<p>&nbsp;</p>\r\n<p>And if you want full version of the extended datagrid you can get it from here&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><a class=\"src-url\" href=\"http://interviewforit.firm.in/WpfControlkit/wpfcontrolkit.application\" target=\"_blank\">http://interviewforit.firm.in/WpfControlkit/wpfcontrolkit.application</a>&nbsp;Or Visit <a href=\"http://interviewforit.firm.in/WpfControlkit/wpfcontrolkit.application\">http://www.wpfcontrolkit.com</a> for more detail on the product.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Bhuhan Poojary</p>\r\n<p>CEO WPF Control Kit</p>",
+    "PostedDate": "2012-01-20T23:23:24.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

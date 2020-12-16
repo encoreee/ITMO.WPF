@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "120676",
+    "ThreadId": "36384",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a added a command binding in XAML to a Window that contains a datagrid.&nbsp; The CanExecute and Execute handlers for the command live within the main window's code behind file. CanExecute always returns true for my test.<br>\r\n<br>\r\nI also have a toolbar button in the same window that I associate to the command via it's command property.&nbsp; When I click the toolbar button, my command execute logic grabs the selected cell from the datagrid and executes successfully.<br>\r\n<br>\r\nHowever, when I select a cell in the data grid and use the keyboard gesture I assigned the command &quot;CTRL+G&quot;, the keyboard gesture never kicks off the command execute logic.&nbsp; Do I need to add anything to the datagrid to make this work?&nbsp; My understanding is that this would have bubbled up to the handler in my main window.<br>\r\n<br>\r\nAny Ideas?&nbsp; Thanks,<br>\r\nJon<br>\r\n",
+    "PostedDate": "2008-09-24T09:23:59.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120794",
+    "ThreadId": "36384",
+    "Html": "Hi Jon,<br>\r\n<br>\r\nCould you attach a repro (xaml markup or code)?&nbsp; I can take a look.<br>\r\n<br>\r\nThanks,<br>\r\nWilliam\r\n",
+    "PostedDate": "2008-09-24T16:01:44.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

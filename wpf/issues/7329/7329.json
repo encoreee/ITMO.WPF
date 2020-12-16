@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed - This issue is outside of the control of the WPF team, so we're closing it in this database.",
+    "ClosedDate": "2009-02-18T13:48:34.987-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "0) Download and put the tool kit dll in some random directory (that isn't in your PATH, I suppose).\n1) Create a control class library\n2) Create a user control that contains the DG. Reference (obviously) the toolkit dll\n3) Create new wpf app, reference control library. Place created control on design surface.\n4) Build & Run\n \nI get an error complaining it can't find the DG DLL. The problem seems to be that the toolkit DLL wasn't copied locally to application's output directory. Explicitly adding it to the references for the top level app will fix the error.\n \nI'm used to VS warning me when there is a problem like that -- or the DLL getting copied locally automatically when one of the sub-projects depends on it. Not sure why it didn't work for this DLL, but it doesn't (at least for me :-)).",
+    "LastUpdatedDate": "2013-05-16T05:31:20.207-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-08-16T15:12:58.447-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DLL Not copied when sub-project referenced",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7329
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

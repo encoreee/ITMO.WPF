@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "199705",
+    "ThreadId": "58975",
+    "Html": "<p>I can't seem to find a way to do this. &nbsp;I create a datagrid whose datacontext is initially filled with rows from a table. &nbsp;I have implemented a search functionality that will return some rows based on a condition. &nbsp;Suppose I want to display only those rows, how do I destroy the initially created datacontext and add the newly filtered collection?</p>\r\n<p>I naively started doing it like this:</p>\r\n<p>IEnumerable&lt;MyType&gt; rows = datagrid.Items.Cast&lt;MyType&gt;();</p>\r\n<p>IEnumerable&lt;MyType&gt; filteredRows = rows.Where(row =&gt; row.someCondition == true);</p>\r\n<p>how do I now make my datagrid display only the filteredRows? &nbsp;Just doing:</p>\r\n<p>datagrid.DataContext = null;</p>\r\n<p>datagrid.DataContext = filteredRows;</p>\r\n<p>doesn't work (it even smells stupid for some reason).</p>\r\n<p>I also need to do the reverse (once I get this working). &nbsp;Some buttonclick should allow the user to &quot;clear&quot; the search results and re-plug the DataContext back to &quot;rows&quot; (in the above snippet).</p>\r\n<p>What am I missing?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-09T14:32:36.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199825",
+    "ThreadId": "58975",
+    "Html": "<p>There is items filtering support built into the ItemsCollection (IIRC) base class in WPF. What you want to do can be accomplished by setting dataGrid.Items.Filter to an appropriate function, for example (written from memory and I don't use delegates much so the syntax may be slightly off, but you get the idea):</p>\r\n<p>dataGrid.Items.Filter = delegate(object row) { return (row as MyType).someCondition == true; }; // set filter</p>\r\n<p>dataGrid.Items.Filter = null; // clear filter</p>\r\n<p>Basically, you write a function that takes a single row object and returns true or false indicating whether that row should be included in the displayed collection, then assign that function to the Items.Filter property. The complete collection is left intact and can be accessed with no additional hassle and you don't have to merge the collections manually, as the filtering is purely a function of the view.</p>",
+    "PostedDate": "2009-06-09T22:58:46.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199987",
+    "ThreadId": "58975",
+    "Html": "<p>Hi Mikj</p>\r\n<p>Thanks for your response. &nbsp;I did look at the Filter property but I couldn't figure when that property is called -- in other words, how do I trigger that delegate to execute? &nbsp;Or is it that the mere Setting of the property causes the delegate to execute? &nbsp;I will try it out when I get to work today.</p>",
+    "PostedDate": "2009-06-10T06:52:04.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200038",
+    "ThreadId": "58975",
+    "Html": "<p>I tried to set the Filter property and this is what I got (partial stack trace). &nbsp;It appears I am not allowed to set that property. &nbsp;Why?</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<p>System.NotSupportedException was unhandled by user code</p>\r\n<p>&nbsp;&nbsp;Message=&quot;Specified method is not supported.&quot;</p>\r\n<p>&nbsp;&nbsp;Source=&quot;PresentationFramework&quot;</p>\r\n<p>&nbsp;&nbsp;StackTrace:</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; at System.Windows.Data.CollectionView.set_Filter(Predicate`1 value)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; at System.Windows.Controls.ItemCollection.set_Filter(Predicate`1 value)</p>\r\n</p>",
+    "PostedDate": "2009-06-10T08:37:53.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200052",
+    "ThreadId": "58975",
+    "Html": "<p>I tried this approach:&nbsp;<a href=\"http://krishnabhargav.blogspot.com/2009/02/make-your-net-application-extendible.html\">http://krishnabhargav.blogspot.com/2009/02/make-your-net-application-extendible.html</a></p>\r\n<p>It appears that the datagrid is making room for the filtered records -- that is, I can see the rows being drawn although they are squished very close to each other but I don't see the actual data. &nbsp;How could I be wasting 2 days on a simple problem like this&gt;?</p>",
+    "PostedDate": "2009-06-10T09:01:27.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200091",
+    "ThreadId": "58975",
+    "Html": "<p>I got it to work by following the example in the link I posted above.</p>\r\n<p>The problem I ran into was I was filling the DataSource with incompatible types each time I wanted to update it. &nbsp;First time it got initialized was with type Table&lt;&gt; returned by LINQ-To-SQL's GetTable&lt;&gt; method. &nbsp;Then when I filtered it I happened to pass IEnumerable&lt;T&gt; to it. &nbsp;It looks like its not enough if your data happens to implement some common base/interface. &nbsp;You need to pass in precisely the same type that went in. &nbsp;I punted a bit and normalized everything that goes into the DataSource as an instance of List&lt;T&gt; and everything now seems to work just peachy.</p>\r\n<p>Wonder what else I will run into.</p>",
+    "PostedDate": "2009-06-10T10:49:09.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

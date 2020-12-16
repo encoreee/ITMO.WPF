@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "201926",
+    "ThreadId": "59639",
+    "Html": "<p>Hi</p>\r\n<p>Clipboard copy paste is not working for <span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">\r\n<p>DataGridComboBoxColumn</p>\r\n</span></span></p>\r\n<p>becuase my Value path (ID)&nbsp;and Displaymember path (String) are differ. Eventthough i want&nbsp;to copy paste the clipboard&nbsp;colum (String)&nbsp;to Combo box,</p>\r\n<p>How can i solve this one, if anyone knows (workaround)&nbsp;please let me know asap.</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-16T01:38:57.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

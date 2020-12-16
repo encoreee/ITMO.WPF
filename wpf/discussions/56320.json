@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "190264",
+    "ThreadId": "56320",
+    "Html": "<p>I am trying to use a DataGridTemplateColumn.&nbsp; I am doing validation on the name that the user enters in the editor by throwing exceptions from my item model.&nbsp; I have done this before in a DataGridTextColumn and the editor there behaves as I expect: textbox gets a red border and stays visible (although tab moves current cell but enter does not).&nbsp; The problem I am having is that the CellEditingTemplate is being replaced with the CellTemplate as if the validation did not fail.</p>\r\n<p>Here is the xaml for the template column:</p>\r\n<p>\r\n<pre>&lt;tk:DataGridTemplateColumn x:Name=&quot;NameColumn&quot; Header=&quot;Name&quot; Width=&quot;150&quot; MinWidth=&quot;20&quot; SortMemberPath=&quot;Name&quot;&gt;\r\n   &lt;tk:DataGridTemplateColumn.CellTemplate&gt;\r\n      &lt;DataTemplate&gt;\r\n         &lt;TextBlock Text=&quot;{Binding Name}&quot;/&gt;\r\n      &lt;/DataTemplate&gt;\r\n   &lt;/tk:DataGridTemplateColumn.CellTemplate&gt;\r\n   &lt;tk:DataGridTemplateColumn.CellEditingTemplate&gt;\r\n      &lt;DataTemplate&gt;\r\n         &lt;TextBox x:Name=&quot;NameText&quot; Text=&quot;{Binding Name, ValidatesOnExceptions=True}&quot; HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Stretch&quot; Loaded=&quot;TextBox_Loaded&quot; BorderThickness=&quot;0&quot; Padding=&quot;1&quot;/&gt;\r\n      &lt;/DataTemplate&gt;\r\n   &lt;/tk:DataGridTemplateColumn.CellEditingTemplate&gt;\r\n&lt;/tk:DataGridTemplateColumn&gt;\r\n</pre>\r\n</p>",
+    "PostedDate": "2009-05-14T07:55:09.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

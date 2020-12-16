@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "243337",
+    "ThreadId": "71347",
+    "Html": "<p>When i manually resize a column in my datagrid, all the other columns (on the right) are moved and an horizontal scroolbar appear (if needed).</p>\r\n<p>I would like when I resize a column to resize only the first one on the right.</p>\r\n<p>There is a built-in way i didn't find?</p>\r\n<p>Or there is an hidden event when user manually resize column?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance.</p>",
+    "PostedDate": "2009-10-08T02:31:52.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429296",
+    "ThreadId": "71347",
+    "Html": "<p>Set the width of all or some of your columns to Auto : Width=&quot;Auto&quot;. This way, it only take the necessary space to show the data of the column. You can also set to * (Width=&quot;*&quot;) and the column will take all the remaining space. If you have one then more set to *, it will be split equally between them.</p>",
+    "PostedDate": "2010-04-09T08:09:52.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

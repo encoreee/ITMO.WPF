@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "483388",
+    "ThreadId": "224446",
+    "Html": "<p>DataGrid seems to have a built in&nbsp;transactional behavior even for objects that don't implement IEditableObject. Edits are only commited to the object when the user navigate to a cell in another row.<br>Even more, if the object do implements IEditableObject the methods BeginEdit, EndEdit, CancelEdit are actually called, but no property is set while the user is entering data en each cell of the row. So the implementation of IEditableObject of the data item is not being used at all.<br>How can I disable this transactional behavior of the DataGrid that is interfering with the desing of my objects?</p>\r\n<p>Sometimes I don't want transactional behavior, other times I do want transactional behavior but my own implementation using IEditableObject.</p>",
+    "PostedDate": "2010-08-22T19:07:07.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

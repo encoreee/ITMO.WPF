@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "132327",
+    "ThreadId": "39864",
+    "Html": "Hi,<br>\r\nI need a tip about how to arrange Horizontal Alignment for a Column?<br>\r\n<br>\r\nMany thanks in advance.<br>\r\nWorstCase<br>\r\n",
+    "PostedDate": "2008-11-13T07:48:34.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132366",
+    "ThreadId": "39864",
+    "Html": "You can do something like what is discussed on this thread, <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8001\">http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8001</a>.\r\n",
+    "PostedDate": "2008-11-13T09:32:04.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

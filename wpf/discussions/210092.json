@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "433818",
+    "ThreadId": "210092",
+    "Html": "<p>Hi there,</p>\r\n<p>I'd like to try the WPF MVVM Toolkit, but I am not sure about a couple of things:</p>\r\n<p>1) the only download link I have found is the following:&nbsp;<a id=fileDownload0 tabindex=9 href=\"http://wpf.codeplex.com/releases/view/14962#DownloadId=67235\">WPF Model-View-ViewModel Toolkit 0.1</a>&nbsp;in WPF Futures, dated May 2009. Is that right? Is there a more recent release?</p>\r\n<p>2) When I try to install the&nbsp;WPFModelViewTemplate.msi, which should install the needed templates into Visual Studio, nothing happens: I start up Visual Studio and I cannot find any new project or solution type that use the WPF MVVM Toolkit.... I am using VS2008. Any suggestion that might point me in the right direction?</p>\r\n<p>Thanks in advance,</p>\r\n<p>GC</p>",
+    "PostedDate": "2010-04-21T12:18:08.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434711",
+    "ThreadId": "210092",
+    "Html": "<p>Hello everybody,</p>\r\n<p>Sorry for the late reply on this.</p>\r\n<p>I have found the answer to my questions, and I am posting it back here for future reference:</p>\r\n<p>1) yes, I assume it is. I've looked around for a while looking for a more recent version, but I couldnt find it. I guess my confusion was due to the fact that there was a WPF toolkit version dated Feb 2010, and I thought the MVVM was kind of included in it. But it is not.</p>\r\n<p>2) There is nothing wrong with the MVVM or its setup... or at least nothing wrong when Visual Studio is set up in English. Mine was not. For this reason it was looking for the available project templates in the 1040 folder, the one corresponding to Italian, whereas the templates were installed into the 1033 folder, which is used by the English version. So, I forced my VS to English, and that did the trick.</p>\r\n<p>I hope this will help someone out there.</p>\r\n<p>Cheers,</p>\r\n<p>Gianluca.</p>",
+    "PostedDate": "2010-04-23T10:17:39.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448333",
+    "ThreadId": "210092",
+    "Html": "<p>Hi all !</p>\r\n<p>&nbsp;</p>\r\n<p>Is there a way to install the template in our language folder ? I don't have the possibility to change the language of VS2008 but I would like to use these template.</p>\r\n<p>Regards, <br>Tuttu</p>",
+    "PostedDate": "2010-05-27T12:25:25.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "265976",
+    "ThreadId": "77780",
+    "Html": "<p>I am using the Masked Text Box found in Pro WPF in C# 2008 chapter 24. I would like a masked text box as a column in the toolkit's datagrid but this one does not seem to work. Does anyone have a reference for such a control.</p>\r\n<p>Thanks</p>\r\n<p>Tom</p>",
+    "PostedDate": "2009-12-10T15:15:37.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266353",
+    "ThreadId": "77780",
+    "Html": "<p>That article might be what you need:</p>\r\n<p><a href=\"http://www.codeproject.com/KB/WPF/wpf_datagrid_filter.aspx\">http://www.codeproject.com/KB/WPF/wpf_datagrid_filter.aspx</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-11T10:36:03.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

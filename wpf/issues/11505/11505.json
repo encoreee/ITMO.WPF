@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have datatemplate columns in a datagrid and they have textblock and textbox as celltemplate and celleditingtemplate respectively. I have also implemented single click editing by copying the code DataGridCell_PreviewMouseLeftButtonDown from this site.  But I am still having two click twice, once - to select the cell and the second time to select the textbox. Is there any way to single click and be able to edit the text box?\n \nThanks\nAngelo",
+    "LastUpdatedDate": "2013-02-21T18:40:47.537-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-01-14T21:36:55.16-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid single click editing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 11505
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

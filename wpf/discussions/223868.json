@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "481540",
+    "ThreadId": "223868",
+    "Html": "<p>I am using Ribbon&nbsp;with MVVM pattern, based on provided examples.</p>\r\n<p>The first initialization is annoyingly slow, and it happens when user selects tab first time. Is there a way to force all controls to be created before user actually selects any of the tabs. Maybe somewhere on window's Load event, or anywhere?</p>",
+    "PostedDate": "2010-08-17T12:25:27.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

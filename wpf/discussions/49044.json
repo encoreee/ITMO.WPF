@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "163834",
+    "ThreadId": "49044",
+    "Html": "My menu bar doesn't seem to be themed.&nbsp; It comes out gray.&nbsp; Most apps have &quot;bluish&quot; menu bars under Windows Vista Aero theme, but not my WPF apps.<br>\r\n<br>\r\nbump.<br>\r\n<br>\r\nI realized that I didn't even have to have themes in my apps to have the default themes work. However, there is that menu color problem.<br>\r\n<br>\r\nSo isn't anyone else seeing this problem?&nbsp; And is there a solution?<br>\r\n",
+    "PostedDate": "2009-03-03T05:46:08.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164766",
+    "ThreadId": "49044",
+    "Html": "bump.\r\n",
+    "PostedDate": "2009-03-05T04:42:07.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164988",
+    "ThreadId": "49044",
+    "Html": "Hi mtiede,<br>\r\n<br>\r\nI'm not clear which control you're referring to exactly - are you talking about Toolbar or Menu or Ribbon?  It would be helpful if you sent a screenshot.<br>\r\n<br>\r\nI know that our ToolBar control doesn't have the &quot;bluish&quot; Vista look.  The themes need to be updated, but it's not something we've gotten a chance to address yet.  However, you should be able to use Styles to update the look of your toolbars yourself.  This post on MSDN has XAML approximations of the Vista toolbar background: <a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/ccd3d34a-0ce4-49d3-8779-f0643004e3b5/\">http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/ccd3d34a-0ce4-49d3-8779-f0643004e3b5/</a>.  You can just set one of those brushes to the Background of your ToolBar.  <br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-03-05T11:13:18.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165059",
+    "ThreadId": "49044",
+    "Html": "Nothing fancy here.&nbsp; Just a plain menu.<br>\r\n<br>\r\n&lt;?xml version='1.0' encoding='utf-8' ?&gt;<br>\r\n&lt;Window x:Class=&quot;PersonalPlan.MainWindow&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp;&nbsp; Title=&quot;Personal Plan&quot; <br>\r\n&nbsp;&nbsp;&nbsp; Height=&quot;374&quot; <br>\r\n&nbsp;&nbsp;&nbsp; Width=&quot;652&quot; <br>\r\n&nbsp;&nbsp;&nbsp; WindowStartupLocation=&quot;CenterScreen&quot;&gt;<br>\r\n<br>\r\n&nbsp;&nbsp; &lt;Grid x:Name=&quot;hello2&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Menu <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name=&quot;menu1&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Height=&quot;20&quot; VerticalAlignment=&quot;Top&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem Header=&quot;_New&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem Header=&quot;Person&quot; Click=&quot;NewPersonClick&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/MenuItem&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem Header=&quot;View&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem Header=&quot;Person List&quot; Click=&quot;ViewPersonList&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/MenuItem&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem Header=&quot;Options&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem x:Name=&quot;SelectThemeItem&quot; Click=&quot;SelectThemeItem_Click&quot; Header=&quot;Select Theme&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/MenuItem&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Menu&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button Height=&quot;23&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;12,41,0,0&quot; Name=&quot;button1&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;75&quot; Click=&quot;button1_Click&quot;&gt;Button&lt;/Button&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBox Margin=&quot;12,70,164,39&quot; Name=&quot;textBox1&quot; TextWrapping=&quot;Wrap&quot; /&gt;<br>\r\n&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n&lt;/Window&gt;<br>\r\n<br>\r\nHere's a screenshot showing that several others have &quot;bluish&quot; menus while the WPF one at right is gray.<br>\r\n<a href=\"http://i491.photobucket.com/albums/rr273/mtiede_photobucket/Temp/menus.jpg\">http://i491.photobucket.com/albums/rr273/mtiede_photobucket/Temp/menus.jpg</a><br>\r\n",
+    "PostedDate": "2009-03-05T14:32:57.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166068",
+    "ThreadId": "49044",
+    "Html": "I'm coming to the conclusion that maybe all the other &quot;bluish&quot; menu bars are that way because they have set their own color.&nbsp; I have just made an app that forces using a particular theme as opposed to the current theme.&nbsp; I see the controls changing and I see that the theme is taking effect.<br>\r\n<br>\r\nSo I'm guessing that the menus in other apps have been styled by their creators for a nicer look.&nbsp; <br>\r\n<br>\r\nWhat do other people say?&nbsp; Does anyone know if the other apps have their own style for their menus that look nice in, say, Aero?<br>\r\n",
+    "PostedDate": "2009-03-09T06:53:10.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "132659",
+    "ThreadId": "39968",
+    "Html": "I've got a DataGrid bound to an ObservableCollection&lt;T&gt;, and two columns bound to different properties of T, propA and propB. The T class implements IPropertyNotifyChanged. <br>\r\n<br>\r\nNow, the value of propB is dependent on the value of propA.<br>\r\nWhen I edit the propA column, it correctly updates the value of the bound propA property in T. <br>\r\n<br>\r\nI would like to force the propB column to refresh itself, to show the new value of propB.<br>\r\nAny ideas?\r\n",
+    "PostedDate": "2008-11-14T09:40:13.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132751",
+    "ThreadId": "39968",
+    "Html": "You will have to call a BindingExpression.UpdateTarget on the FrameworkElement of the DataGridCell.Content that you want to update.\r\n",
+    "PostedDate": "2008-11-14T15:31:51.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133395",
+    "ThreadId": "39968",
+    "Html": "thanks - I've got the BindingExpression.UpdateTarget to work OK for a DataGridTextColumn - I'm firing it in a CellEditEnding event handler;<br>\r\n<p><span>    DataGridRow row = e.Row;<br>\r\n    DataGridCellsPresenter</span><span> presenter = GetVisualChild&lt;</span><span>DataGridCellsPresenter</span><span>&gt;(row);<br>\r\n</span><span>    DataGridCell</span><span> cell = (</span><span>DataGridCell</span><span>)presenter.ItemContainerGenerator.ContainerFromIndex(2); </span><span>// get fac value cell<br>\r\n</span><span>    TextBlock</span><span> textBlock = cell.Content </span><span>as</span><span> </span><span>TextBlock</span><span>;<br>\r\n</span><span>    BindingExpression</span><span> be = textBlock.GetBindingExpression(TextBlock</span>&lt;spantextblock&lt; /&gt;<span>.TextProperty);<br>\r\n    </span>be.UpdateTarget();<br>\r\n <br>\r\nI'm struggling a bit to find the appropriate syntax for a <span>DataGridTemplateColumn though...\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n<p> </p>\r\n",
+    "PostedDate": "2008-11-18T05:56:59.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133435",
+    "ThreadId": "39968",
+    "Html": "You can do something like this:<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">\r\n<p>DataGridCell</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> cell = </span><span style=\"font-size:13px;color:#2b91af\">Helper</span><span style=\"font-size:13px\">.GetCell(DataGrid_Standard, rowIndex, colIndex);<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">TextBlock</span><span style=\"font-size:13px\"> tb = </span><span style=\"font-size:13px;color:#2b91af\">Helper</span><span style=\"font-size:13px\">.GetVisualChild&lt;</span><span style=\"font-size:13px;color:#2b91af\">TextBlock</span><span style=\"font-size:13px\">&gt;(cell);\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<br>\r\nYou can find the code for these helper functions in the sample on this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx</a>.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-18T09:15:35.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137303",
+    "ThreadId": "39968",
+    "Html": "<em>When I set the values to the TextBlock as shown above the DataGridColumn doesn't show the value immediately <br>\r\nWhen I set the values direct to cell.Content the values show up immediately , but they are vertically aligned at the top.<br>\r\n<br>\r\nHow can I archieve a vertically centered alignment ?</em>\r\n<br>\r\n<br>\r\n<strong>Sorry - solved my problem - works perfect!</strong><br>\r\n",
+    "PostedDate": "2008-12-03T08:30:13.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144543",
+    "ThreadId": "39968",
+    "Html": "Greetings! <br>\r\nI'm a beginner with WPF/datagrid. I need to do something like what's described in original post here - when adding a row, I need to display a a combobox in the first column and based on selection (property A of object T), I need to show property B in the textbox in column 2. Can you, please &quot;dumb-down&quot; how exactly I can achieve that? If you can point me to some example, that would be terrific. I got my grid bounded to the ObservableCollection&lt;T&gt; object. Do I need to include IPropertyNotifyChanged for that object as well? <br>\r\n<br>\r\nThanks in advance!\r\n",
+    "PostedDate": "2009-01-05T14:44:07.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

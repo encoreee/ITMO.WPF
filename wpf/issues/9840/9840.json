@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When i bind DataGrid to big ItemsSource, where number of element can be 10000 and more (for example, I use data virtualization and my DataGrid can contain million items), and when SelectionMode set to Extended, row multiselect on last items very slow.\nSo, i'm look to code of DataGrid and see this (at line 4593 in DataGrid.cs):\n                                IEnumerator enumerator = ((IEnumerable)items).GetEnumerator();\n                                for (int index = 0; index <= endIndex; index++)\n                                {\n                                    if (!enumerator.MoveNext())\n                                    {\n                                        // In case the enumerator ends unexpectedly\n                                        break;\n                                    }\n \n                                    if (index >= startIndex)\n                                    {\n                                        selectedItems.Add(enumerator.Current);\n                                    }\n                                }\nWhat for use enumerator here? If my DataGrid virtualized and there, for example, 2 million items, so... For selection last 2-3 items in 2 million, enumerator go throw all collection of empty items. What for?\nI'm replace that code with this and have great selection performance:\n                                int itemsCount = items.Count;\n                                if (startIndex < itemsCount)\n                                {\n                                    for (int index = startIndex; index <= endIndex; index++)\n                                    {\n                                        if (index < itemsCount)\n                                        {\n                                            selectedItems.Add(items[index]);\n                                        }\n                                    }\n                                }\nMaybe this help improve performance of future releases of WPF DataGrid?\n \nP.S. Sorry for my bad English.",
+    "LastUpdatedDate": "2013-02-21T18:41:19.863-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-23T07:03:29.063-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Very slow DataGrid row selection when items count >= 10000",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 9840
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Settler,\r\n\r\nThanks for suggesting this; we've filed a bug to track this and will investigate your suggested improvement.\r\n\r\nThanks,\r\nAlexis",
+      "PostedDate": "2009-04-24T13:46:29.883-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-25T07:04:23.657-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T07:36:49.4-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-05T13:44:55.047-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-22T13:14:20.663-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:19.863-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

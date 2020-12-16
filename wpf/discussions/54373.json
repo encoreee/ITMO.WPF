@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "183261",
+    "ThreadId": "54373",
+    "Html": "Hi,<br>\r\n<br>\r\nHas anyone done an example of a Docking Window in WPF. Maybe something similar to the SolutionExplorer is VS2008, or the Docking Windows in ExpressionBlend Studio? I think this would be a component that many folks would be interested in.<br>\r\n<br>\r\nthanks in advance!<br>\r\nBill\r\n",
+    "PostedDate": "2009-04-24T07:27:38.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183269",
+    "ThreadId": "54373",
+    "Html": "Many folks <em>are</em> interested in them and there are plenty of components out there that do it. Or were you asking for source code?\r\n",
+    "PostedDate": "2009-04-24T07:53:41.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183348",
+    "ThreadId": "54373",
+    "Html": "Hi Divelements,<br>\r\n<br>\r\nYes - we were wondering if anyone is sharing examples of a Docking Property window. I thought at one point that the Blend team might share this but haven't received it.<br>\r\n<br>\r\nthanks,<br>\r\nBill\r\n",
+    "PostedDate": "2009-04-24T11:30:35.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

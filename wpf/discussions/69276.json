@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "235683",
+    "ThreadId": "69276",
+    "Html": "<p>Hi, All,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; I have window which is composed of couple of ComboBox and a DataGrid. Data from database will be loaded&nbsp;into DataGrid&nbsp; based on users' selection from ComboBox. Now what I want to do is&nbsp;set window opacity to .5 before data finder (method)&nbsp;is called (usually it takes about 15 seconds), next set window back to 1.0 when data is completely loaded.</p>\r\n<p>&nbsp;&nbsp;&nbsp; I find window freezes when data finder is called. Looks like Setting opacity to .5 works after data is loaded into DataGrid (even though I set it before method is called). Why would it work this way?&nbsp;Or should I have to use second Thread to perform data finding?&nbsp;Thanks</p>\r\n<p>Troy</p>",
+    "PostedDate": "2009-09-17T10:21:34.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236208",
+    "ThreadId": "69276",
+    "Html": "<p>Hi Troy96,</p>\r\n<p>The issue is that you're doing the data load on the same thread as the UI thread.&nbsp; I recommend using a BackgroundWorker to load your data (data finder).&nbsp; Namely, it needs to be executed asynchronously.</p>\r\n<p>Thanks,</p>\r\n<p>Saied K.</p>",
+    "PostedDate": "2009-09-18T13:21:44.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "142643",
+    "ThreadId": "42924",
+    "Html": "Hello,<br>\r\n<br>\r\nI'm aware that Microsoft currently do not allow a ribbon UI to be used in any application that competes with one of the main Office applications that uses a ribbon: Outlook, Word, Access, Excel &amp; Powerpoint (if I remember rightly).<br>\r\n<br>\r\nOur company's development director is concerned that the ribbon ban might extend one day to cover Microsoft Project competitors too (in case our product is deemed a Microsoft Project competitor).<br>\r\n<br>\r\nI suspect that there'd be some outcry if Microsoft suddenly changed the rules to be more restrictive in this manner, but do you suspect that it's something we should be concerned about?<br>\r\n<br>\r\nThanks in advance for reading, and for any advice you're able to offer,<br>\r\n<br>\r\nDaniel\r\n",
+    "PostedDate": "2008-12-23T10:50:49.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144548",
+    "ThreadId": "42924",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">Hi Daniel,<br>\r\n<br>\r\n</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">I definitely understand your concern, but unfortunately I can’t offer much insight as to how the Office Fluent UI Licensing restrictions are going to change in the future.  You may want to try contacting the Office Licensing Team at </span><a href=\"mailto:officeui@microsoft.com\"><span style=\"color:#0000ff;font-family:calibri\">officeui@microsoft.com</span></a><span style=\"font-family:calibri\">.</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\"> </span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">Thanks!</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">Samantha</span></p>\r\n",
+    "PostedDate": "2009-01-05T15:14:23.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

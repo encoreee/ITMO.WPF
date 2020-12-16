@@ -1,0 +1,100 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When the datagrid is not in edit mode, it will still eat the \"escape\" key. It shouldn't do this. Instead it should allow the keystroke to bubble up to containing elements.",
+    "LastUpdatedDate": "2013-02-21T18:41:35.077-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-28T15:53:44.333-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid eats the escape key",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 9088
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "FYI: I was able to fix this by changing the code for DataGrid.OnCanExecuteCancelEdit to this:\r\n\r\n        protected virtual void OnCanExecuteCancelEdit(CanExecuteRoutedEventArgs e)\r\n        {\r\n            e.CanExecute = CanEndEdit(e, /* commit = */ false);\r\n            if (e.CanExecute)\r\n            {\r\n                e.Handled = true;    \r\n            }\r\n            else\r\n            {\r\n                e.ContinueRouting = true;\r\n            }\r\n            \r\n        }\r\n\r\nThat way, the escape key events will bubble up to the containing window.",
+      "PostedDate": "2009-01-28T17:11:02.367-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We agree this is a bug. We've filed a bug in our internal database, and it will be fixed in a future release.",
+      "PostedDate": "2009-02-18T11:00:24.347-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T11:00:36.19-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-19T10:49:11.087-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-21T10:45:31.983-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-16T22:15:45.677-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:04:44.687-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-04T07:18:04.073-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I noticed there was a release, but I didn't see this mentioned in the release notes. After testing, it appears this is still a problem in the newest release.",
+      "PostedDate": "2009-05-04T07:18:43.09-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-19T06:13:20.267-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-14T00:34:16.417-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:35.077-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

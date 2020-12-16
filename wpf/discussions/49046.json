@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "163849",
+    "ThreadId": "49046",
+    "Html": "I am having a problem where ApplicationMenu items are initially correctly displayed, but then, as soon as any command is executed, or if I click a menu, everything becomes disabled, and is never reenabled.&nbsp; My commands are static resources, and those same commands bound to MenuItems are enabled/disabled correctly.&nbsp; But the ones in ApplicationMenu never become reenabled.&nbsp; I don't see anyone posting about this, why is it happening?<br>\r\n<br>\r\nI was going to create some sample code, but this sample app has the similar behavior as well.&nbsp; Just change a theme, and then click the round button, everything will be disabled.&nbsp; Then next time you click, it's reenabled.<br>\r\nhttp://www.chakkaradeep.com/blog/proper-way-to-create-menus-submenus-in-wpf-ribbon/<br>\r\n<br>\r\nEnvironment: C#, VS2008 SP1, .NET 3.5SP1, Vista<br>\r\n<br>\r\nHere is my screenshot.&nbsp; The first part is initial view.&nbsp; The second row is the menu (where e.g. Print is enabled) and application menu (where everything is disabled).<br>\r\nhttp://img515.imageshack.us/img515/6213/ribbonproblemscreenshot.png<br>\r\n<br>\r\nSorry to cross-post to Issues, but I spent hours trying to find a workaround, and I am really frustrated. \r\n",
+    "PostedDate": "2009-03-03T06:20:30.533-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163850",
+    "ThreadId": "49046",
+    "Html": "Btw, for the RibbonApplicationMenu.Command, I tried binding to a command class that always return True for CanExecute, and that did not change anything.&nbsp; I am assuming that something about that top-level command is why everything becomes disabled, but my custom class was not even ever called.<br>\r\n",
+    "PostedDate": "2009-03-03T06:21:47.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166901",
+    "ThreadId": "49046",
+    "Html": "Doesn't anyone have a workaround or a solution for this?&nbsp; I cannot wait until V1 for something as big as this problem, and I cannot believe that I would be the only one seeing it.&nbsp; When the whole menu is disabled, including the ability of the user to exit the application, or set its options, that's a pretty big issue.<br>\r\n",
+    "PostedDate": "2009-03-11T08:20:00.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171655",
+    "ThreadId": "49046",
+    "Html": "I've encountered the same issue.&nbsp; In my case I've set FocusManager.IsFocusScope=&quot;True&quot; on the Ribbon.&nbsp; What I noticed is that when I click one of the buttons (say Save which saves a form or New which creates a new form - both insert a UserControl into a ContentPresenter in the window content) the whole Ribbon is Disabled except for the ApplicationMenu button itself.&nbsp; If I click onto something that accepts focus (the form, a textbox etc) the Ribbon comes back to life with the correct Enabled/Disabled settings.<br>\r\n<br>\r\nI've tried implementing a DispatcherTimer that calls CommandManager.InvalidateRequerySuggested() every second just to see if this would work.&nbsp; Unfortunately this didn't seem to fix the problem.<br>\r\n<br>\r\nIn the meantime I'm manually setting Focus to the first input control on the form which seems to kick the Ribbon back into life.&nbsp; I feel like I'm missing something here.<br>\r\n",
+    "PostedDate": "2009-03-24T19:47:03.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171806",
+    "ThreadId": "49046",
+    "Html": "Thanks for that response, at least that gives me something to try.&nbsp; My app isn't very form-driven, but I still have input controls, so I will try modifying the focus programmatically.<br>\r\n",
+    "PostedDate": "2009-03-25T05:09:45.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

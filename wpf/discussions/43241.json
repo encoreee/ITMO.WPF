@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "143707",
+    "ThreadId": "43241",
+    "Html": "Hello,<br>\r\n<br>\r\nhow can I set a RibbonButton enabled/disabled depending on selected text in a RTFBox? When some text is selected, the button should be enabled, otherwise disabled.<br>\r\n<br>\r\nRegards<br>\r\nCarsten\r\n",
+    "PostedDate": "2008-12-31T06:33:30.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143738",
+    "ThreadId": "43241",
+    "Html": "Hi Carsten,<br>\r\n<br>\r\nYou should add a CanExecute handler to your CommandBinding.  In the event handler you can set the CanExecute property of the event args, depending on the text selected in your RTFBox.<br>\r\n<br>\r\nAlex\r\n",
+    "PostedDate": "2008-12-31T10:27:22.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143963",
+    "ThreadId": "43241",
+    "Html": "<p dir=ltr style=\"margin-right:0px\">Hello Alex,<br>\r\n<br>\r\nI have already a CanExecute handler. <span style=\"font-size:13px;color:#a31515\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonCommand</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Key</span><span style=\"font-size:13px;color:#0000ff\">=&quot;CutCommand&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">CanExecute</span><span style=\"font-size:13px;color:#0000ff\">=&quot;OnCanExecute&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">Executed</span><span style=\"font-size:13px;color:#0000ff\">=&quot;OnCut&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">LabelTitle</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Ausschneiden&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">LargeImageSource</span><span style=\"font-size:13px;color:#0000ff\">=&quot;My Project\\Images\\Cut.png&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">SmallImageSource</span><span style=\"font-size:13px;color:#0000ff\">=&quot;My Project\\Images\\Cut.png&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">ToolTipTitle</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Ausschneiden (Ctrl+X)&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">ToolTipDescription</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Markierung in die Zwischenablage ausschneiden&quot;</span><span style=\"font-size:13px\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">ToolTipImageSource</span><span style=\"font-size:13px;color:#0000ff\">=&quot;My Project\\Images\\Cut.png&quot; /&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>In OnCut I have just for testing <span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Private</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Sub</span><span style=\"font-size:13px\"> OnCut(</span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> sender </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> System.Object, </span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> e </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> System.Windows.RoutedEventArgs)\r\n<p>&nbsp;</p>\r\n<p>MessageBox.Show(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;Klick auf den Ausschneidenbutton!.&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;Zwischenablage Ausschneiden&quot;</span><span style=\"font-size:13px\">)\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">End</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Sub<br>\r\n<br>\r\nHow should this work to enable/disable the button, if text is selected in a RTFBox? OnCut will only be executed when I press the button. Probably I don't understand the mechanism, so please give me a hint how to solve this.<br>\r\n<br>\r\nRegards<br>\r\nCarsten\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-01-02T02:09:57.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144020",
+    "ThreadId": "43241",
+    "Html": "Hi Carsten,<br>\r\n<br>\r\nTry this code:<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>Private</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Sub</span><span style=\"font-size:13px\"> OnCanExecute(</span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> sender </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Object</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> e </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> System.Windows.Input.CanExecuteRoutedEventArgs)\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">If</span><span style=\"font-size:13px\"> rtfBox.Selection.IsEmpty </span><span style=\"font-size:13px;color:#0000ff\">Then\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>e.CanExecute = </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">False\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Else\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>e.CanExecute = </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">True\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">End</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">If\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">End</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Sub<br>\r\n<br>\r\nHope this helps,<br>\r\nAlex\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-01-02T09:53:12.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144312",
+    "ThreadId": "43241",
+    "Html": "Hello Alex,<br>\r\n<br>\r\nthanks to your help. I got it running ;-)<br>\r\n<br>\r\nRegards<br>\r\nCarsten\r\n",
+    "PostedDate": "2009-01-05T00:26:33.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

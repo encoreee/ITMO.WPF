@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "149058",
+    "ThreadId": "44766",
+    "Html": "<span style=\"font-size:18px\">Hi,<br>\r\nI have a main windows with a Ribbon control on it, and a tool panel floating around, which makes my app contains two Windows.<br>\r\nThere is some command on the Ribbon that is target to the floating tool panel only. I have the command binding on the tool panel. When the focus is on the tool panel, the Ribbon buttons have the correct status(enabled), but after clicking on the Ribbon button, the focus is shifted to the Ribbon immediately, effectively disable the button before the click event is handled. After all, the command is not usable. Is there anything I can do to work around this focus shifting? Thanks!</span>\r\n",
+    "PostedDate": "2009-01-20T22:29:50.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

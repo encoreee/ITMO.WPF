@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "133378",
+    "ThreadId": "40197",
+    "Html": "Hi,<div><br></div><div>I have a DataGrid and a DataTable as its ItemsSource. This DataTable has a subtable. How it is possible to display some of the columns of the subtable next to the columns of the DataTable (in XAML)?<br></div><div><br></div><div>I tried to convert he DataTable into a XmlNode. So then I can use XPath to display the columns from subtables. But it is not possible to edit the DataGrid values!</div><div><br></div><div>What can I do?</div><div><br></div><div>Thanks for your answer?</div>",
+    "PostedDate": "2008-11-18T05:07:39.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

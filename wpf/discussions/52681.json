@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "177135",
+    "ThreadId": "52681",
+    "Html": "Hi.<br>\r\n<br>\r\n<br>\r\nIs there a reason why the SelectAll and Delete functions of the Grid are not bound to the ApplicationCommands Delete and SelectAll?<br>\r\nThis binding is done for the Copy Command but not for these two.<br>\r\n<br>\r\nIf for example a toolbar button is bound to the ApplicationCommands.SelectAll Command it does not work for the SelectAll functionality of the Grid.<br>\r\n<br>\r\nThanks for the answer.<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-08T05:57:42.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179222",
+    "ThreadId": "52681",
+    "Html": "Hi DDPommes,<br>\r\n<br>\r\nThe team discussed this and we believe that it was an oversight.  In a future version, we'd like to change it so that the DataGrid's Delete &amp; SelectAll commands forward to ApplicationCommands Delete and SelectAll.  I've filed a bug in our internal database to track this.<br>\r\n<br>\r\nThanks for bringing this to our attention!<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-04-14T14:01:09.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

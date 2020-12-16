@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "472439",
+    "ThreadId": "221359",
+    "Html": "<p>Is there a link to documentation for the Charting XAML elements?</p>\r\n<p>For example if I wanted to look up the XAML for different types of graphs, or the attributes for a particular Charting XAML element...</p>\r\n<p>thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-25T19:14:21.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474721",
+    "ThreadId": "221359",
+    "Html": "<p>PS. &nbsp;Another example: I'm just trying to work out how to not have the point markers on the lines in the graphs - ready hard to find out what is the appropriate XAML to do this without some sort of doco..</p>",
+    "PostedDate": "2010-07-30T05:47:25.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "493165",
+    "ThreadId": "221359",
+    "Html": "<p>any updates re documentation for the Charting aspect of WPFToolkit?&nbsp;&nbsp;</p>",
+    "PostedDate": "2010-09-13T23:14:41.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512696",
+    "ThreadId": "221359",
+    "Html": "\r\n<p><span style=\"color:black; font-size:10pt\">I've searched all over the Internet, and the answer is simply NO. It seems that after the other Toolkit control were added to .Net 4, and a new Chart was included in WinForms 4.0, we, the WPF users, have been neglected.</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">Anyhow, the capabilities of the 2009 Toolkit Chart control are so limited, that using\r\n</span>IntelliSense<span lang=\"EN\" style=\"color:black; font-size:10pt\"> </span><span style=\"color:black; font-size:10pt\">is sufficient.</span></p>\r\n",
+    "PostedDate": "2010-10-26T06:29:02.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

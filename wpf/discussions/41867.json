@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "138937",
+    "ThreadId": "41867",
+    "Html": "Hi all,<br>\r\n<br>\r\nThe default scenario in the DataGrid is that the changes in a row get committed when the Enter-key is pressed, or when the user leaves the edited row (using tabs, mouse, etc). I want to commit <strong>only</strong> when the Enter-key is pressed. How would I go about this?<br>\r\n<br>\r\nThanks in advance,<br>\r\nFrances<br>\r\n",
+    "PostedDate": "2008-12-09T06:51:46.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139016",
+    "ThreadId": "41867",
+    "Html": "You can listen to DataGrid.PreviewKeyDown and flag if the EnterKey has been pressed while the DataGrid is in an editing state.  You will also have to attach to RowEditEnding and if the flagged enter key is pressed continue the commit, otherwise set e.Cancel = true.\r\n",
+    "PostedDate": "2008-12-09T09:21:19.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139196",
+    "ThreadId": "41867",
+    "Html": "Hi vinsibal,<br>\r\n<br>\r\nI did think of that approach, but is seems such a roundabout way to achieve my goal. It would be a nice feature for the DataGrid if the developer could specify on which actions changes to the data should be committed (hint, hint ;-)<br>\r\n<br>\r\nThanks,<br>\r\nFrances<br>\r\n",
+    "PostedDate": "2008-12-09T22:47:48.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

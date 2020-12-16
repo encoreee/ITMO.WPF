@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nThis is a proposed enhancement, not a bug. The project (see zip file) demonstrates a user scenario where \"Extended\" selection mode does not deliver the same user result as experienced in Word, Excel.\n \nThe zip file contains all the material.\n \nThank you,\n \nJulie",
+    "LastUpdatedDate": "2013-02-21T18:41:05.457-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-16T02:17:40.613-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: \"Extended\" selection mode difference with respect to Word and Excel",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10308
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3194,
+      "FileName": "15 - shift select multiple.zip",
+      "DownloadUrl": ".\\3194"
+    }
+  ],
+  "Comments": []
+}

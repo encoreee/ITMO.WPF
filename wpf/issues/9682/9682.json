@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There seems to be a problem where, for most themes, an initially checked CheckBox does not show as checked.  The sample image on http://wpf.codeplex.com/Wiki/View.aspx?title=WPF%20Themes&referringTitle=Home bears this up - check out CheckBox2 on ExpressionDark, ShinyRed, ShinyBlue, ExpressionLight, BureauBlue, BureauBlack vs the other three.",
+    "LastUpdatedDate": "2013-02-21T18:41:21.95-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-04T13:47:16.89-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "CheckBox initial state",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 9682
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Daggmano,\r\n\r\nThanks for reporting this issue with our Themes; we have filed a bug internally to track this and are investigating the fix.\r\n\r\nAlexis",
+      "PostedDate": "2009-04-14T13:20:06.72-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-14T13:20:39.377-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-21T13:42:56.007-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-16T15:32:12.74-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Solved, the issue ocurrs in databinding too, the problem is the use of ExitAction of the trigger \"IsChecked=False\" to animate the IsChecked state. The only thing i did was separate them: \"IsChecked=True\" plays CheckedTrue storyboard and \"IsChecked=False\" plays CheckedTrue storyboard. This is the fix for ExpressionLight:\r\n\r\n<Style TargetType=\"{x:Type CheckBox}\">\r\n        <Setter Property=\"SnapsToDevicePixels\" Value=\"true\" />\r\n        <Setter Property=\"FocusVisualStyle\" Value=\"{DynamicResource CheckBoxFocusVisual}\" />\r\n        <Setter Property=\"Background\" Value=\"{DynamicResource NormalBrush}\" />\r\n        <Setter Property=\"Foreground\" Value=\"{DynamicResource TextBrush}\" />\r\n        <Setter Property=\"BorderBrush\" Value=\"{DynamicResource NormalBorderBrush}\" />\r\n        <Setter Property=\"Template\">\r\n            <Setter.Value>\r\n                <ControlTemplate TargetType=\"{x:Type CheckBox}\">\r\n                    <ControlTemplate.Resources>\r\n                        <Storyboard x:Key=\"HoverOn\">\r\n                            <DoubleAnimationUsingKeyFrames BeginTime=\"00:00:00\" Storyboard.TargetName=\"BackgroundOverlay\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.1000000\" Value=\"1\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"HoverOff\">\r\n                            <DoubleAnimationUsingKeyFrames BeginTime=\"00:00:00\" Storyboard.TargetName=\"BackgroundOverlay\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.4000000\" Value=\"0\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"PressedOn\">\r\n                            <DoubleAnimationUsingKeyFrames BeginTime=\"00:00:00\" Storyboard.TargetName=\"PressedRectangle\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.1000000\" Value=\"1\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"PressedOff\">\r\n                            <DoubleAnimationUsingKeyFrames BeginTime=\"00:00:00\" Storyboard.TargetName=\"PressedRectangle\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.3000000\" Value=\"0\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"CheckedTrue\">\r\n                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName=\"CheckIcon\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.1000000\" Value=\"1\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"CheckedFalse\">\r\n                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName=\"CheckIcon\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.4000000\" Value=\"0\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"IndeterminateOn\">\r\n                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName=\"IndeterminateIcon\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.2000000\" Value=\"1\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"IndeterminateOff\">\r\n                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName=\"IndeterminateIcon\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.4000000\" Value=\"0\" />\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"FocussedOn\">\r\n                            <DoubleAnimationUsingKeyFrames BeginTime=\"00:00:00\" Storyboard.TargetName=\"ContentFocusVisualElement\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.1000000\" Value=\"1\"/>\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                        <Storyboard x:Key=\"FocussedOff\">\r\n                            <DoubleAnimationUsingKeyFrames BeginTime=\"00:00:00\" Storyboard.TargetName=\"ContentFocusVisualElement\" Storyboard.TargetProperty=\"(UIElement.Opacity)\">\r\n                                <SplineDoubleKeyFrame KeyTime=\"00:00:00.3000000\" Value=\"0\"/>\r\n                            </DoubleAnimationUsingKeyFrames>\r\n                        </Storyboard>\r\n                    </ControlTemplate.Resources>\r\n                    <BulletDecorator Background=\"Transparent\" x:Name=\"bulletDecorator\">\r\n                        <BulletDecorator.Bullet>\r\n                            <Grid x:Name=\"grid\" Width=\"16\" Height=\"16\">\r\n                                <Rectangle Height=\"14\" Margin=\"1\" x:Name=\"Background\" Width=\"14\" Fill=\"{TemplateBinding Background}\" Stroke=\"{TemplateBinding BorderBrush}\" StrokeThickness=\"{TemplateBinding BorderThickness}\" />\r\n                                <Rectangle Height=\"14\" Margin=\"1\" x:Name=\"BackgroundOverlay\" Width=\"14\" Opacity=\"0\" Fill=\"{x:Null}\" Stroke=\"{StaticResource HoverBrush}\" StrokeThickness=\"2\" />\r\n                                <Rectangle Height=\"16\" x:Name=\"PressedRectangle\" Width=\"16\" IsHitTestVisible=\"false\" Opacity=\"0\" Stroke=\"{StaticResource HoverBrush}\" StrokeThickness=\"1\" />\r\n                                <Path Height=\"10\" Margin=\"1,1,0,1.5\" x:Name=\"CheckIcon\" Width=\"10.5\" Opacity=\"0\" Fill=\"{StaticResource GlyphBrush}\" Stretch=\"Fill\" Data=\"M102.03442,598.79645 L105.22962,597.78918 L106.78825,600.42358 C106.78825,600.42358 108.51028,595.74304 110.21724,593.60419 C112.00967,591.35822 114.89314,591.42316 114.89314,591.42316 C114.89314,591.42316 112.67844,593.42645 111.93174,594.44464 C110.7449,596.06293 107.15683,604.13837 107.15683,604.13837 z\" />\r\n                                <Rectangle Height=\"8\" x:Name=\"IndeterminateIcon\" Width=\"10\" Opacity=\"0\" Fill=\"{StaticResource GlyphBrush}\" />\r\n                                <Rectangle Height=\"14\" x:Name=\"DisabledVisualElement\" Width=\"14\" Opacity=\"0\" Fill=\"{StaticResource DisabledBackgroundBrush}\" />\r\n                                <Rectangle Height=\"16\" x:Name=\"ContentFocusVisualElement\" Width=\"16\" IsHitTestVisible=\"false\" Opacity=\"0\" Stroke=\"{StaticResource HoverShineBrush}\" StrokeThickness=\"1\" />\r\n                                <Rectangle Height=\"12\" x:Name=\"ShineRectangle\" Width=\"14\" IsHitTestVisible=\"false\" Opacity=\"1\" Stroke=\"{x:Null}\" StrokeThickness=\"1\" Fill=\"{StaticResource ShineBrush}\" Margin=\"2,2,2,2\" />\r\n                            </Grid>\r\n                        </BulletDecorator.Bullet>\r\n                        <ContentPresenter RecognizesAccessKey=\"True\" Margin=\"5,0,0,0\" VerticalAlignment=\"Top\" HorizontalAlignment=\"Left\" />\r\n                    </BulletDecorator>\r\n                    <ControlTemplate.Triggers>\r\n                        <Trigger Property=\"IsFocused\" Value=\"True\">\r\n                            <Trigger.ExitActions>\r\n                                <BeginStoryboard Storyboard=\"{StaticResource FocussedOff}\" x:Name=\"FocussedOff_BeginStoryboard\"/>\r\n                            </Trigger.ExitActions>\r\n                            <Trigger.EnterActions>\r\n                                <BeginStoryboard Storyboard=\"{StaticResource FocussedOn}\" x:Name=\"FocussedOn_BeginStoryboard\"/>\r\n                            </Trigger.EnterActions>\r\n                        </Trigger>\r\n                        <MultiTrigger>\r\n                            <MultiTrigger.Conditions>\r\n                                <Condition Property=\"IsChecked\" Value=\"True\" />\r\n                                <Condition Property=\"IsThreeState\" Value=\"True\" />\r\n                            </MultiTrigger.Conditions>\r\n                            <MultiTrigger.EnterActions>\r\n                                <BeginStoryboard x:Name=\"ThreeStateOn_BeginStoryboard\" Storyboard=\"{StaticResource CheckedFalse}\" />\r\n                            </MultiTrigger.EnterActions>\r\n                            <MultiTrigger.ExitActions>\r\n                                <BeginStoryboard x:Name=\"ThreeStateOff_BeginStoryboard\" Storyboard=\"{StaticResource CheckedTrue}\" />\r\n                            </MultiTrigger.ExitActions>\r\n                        </MultiTrigger>\r\n                        <MultiTrigger>\r\n                            <MultiTrigger.Conditions>\r\n                                <Condition Property=\"IsChecked\" Value=\"{x:Null}\" />\r\n                                <Condition Property=\"IsThreeState\" Value=\"True\" />\r\n                            </MultiTrigger.Conditions>\r\n                            <MultiTrigger.EnterActions>\r\n                                <BeginStoryboard x:Name=\"ThreeStateOn1_BeginStoryboard\" Storyboard=\"{StaticResource IndeterminateOn}\" />\r\n                            </MultiTrigger.EnterActions>\r\n                            <MultiTrigger.ExitActions>\r\n                                <BeginStoryboard x:Name=\"ThreeStateOff1_BeginStoryboard\" Storyboard=\"{StaticResource IndeterminateOff}\" />\r\n                            </MultiTrigger.ExitActions>\r\n                            <Setter Property=\"Visibility\" TargetName=\"CheckIcon\" Value=\"Hidden\"/>\r\n                        </MultiTrigger>\r\n                        <Trigger Property=\"IsChecked\" Value=\"false\">\r\n                            <Trigger.EnterActions>\r\n                                <BeginStoryboard Storyboard=\"{StaticResource CheckedFalse}\"/>\r\n                            </Trigger.EnterActions>\r\n                        </Trigger>\r\n                        <Trigger Property=\"IsChecked\" Value=\"True\">\r\n                        \t<Trigger.EnterActions>\r\n                        \t\t<BeginStoryboard x:Name=\"CheckedTrue_BeginStoryboard1\" Storyboard=\"{StaticResource CheckedTrue}\"/>\r\n                        \t</Trigger.EnterActions>\r\n                        </Trigger>\r\n                        <Trigger Property=\"IsMouseOver\" Value=\"true\">\r\n                            <Trigger.EnterActions>\r\n                                <BeginStoryboard Storyboard=\"{StaticResource HoverOn}\"/>\r\n                            </Trigger.EnterActions>\r\n                            <Trigger.ExitActions>\r\n                                <BeginStoryboard Storyboard=\"{StaticResource HoverOff}\"/>\r\n                            </Trigger.ExitActions>\r\n                        </Trigger>\r\n                        <Trigger Property=\"IsEnabled\" Value=\"false\">\r\n                            <Setter Property=\"Fill\" Value=\"{DynamicResource DisabledBackgroundBrush}\" TargetName=\"Background\" />\r\n                            <Setter Property=\"Stroke\" Value=\"{DynamicResource DisabledBorderBrush}\" TargetName=\"Background\" />\r\n                            <Setter Property=\"Foreground\" Value=\"{DynamicResource DisabledForegroundBrush}\" />\r\n                            <Setter Property=\"Opacity\" TargetName=\"bulletDecorator\" Value=\"0.5\"/>\r\n                        </Trigger>\r\n                    </ControlTemplate.Triggers>\r\n                </ControlTemplate>\r\n            </Setter.Value>\r\n        </Setter>\r\n    </Style>",
+      "PostedDate": "2009-08-18T17:28:03.79-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-21T16:25:58.223-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-21T17:03:45.333-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-26T12:41:00.443-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-14T07:03:19.523-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:21.95-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

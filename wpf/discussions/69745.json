@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "237433",
+    "ThreadId": "69745",
+    "Html": "<p>The DataGrid's CellTemplateSelector and CellEditingTemplate selector have been very useful to us. However, we now have a need to trigger the evalualtion manually (at a time other that going into and out of edit mode). Is there a way to do this? Essentially, we'd like the selector to re-evaluate at a time of our choosing.</p>\r\n<p>Tom</p>",
+    "PostedDate": "2009-09-22T11:13:27.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237510",
+    "ThreadId": "69745",
+    "Html": "<p>Hi TLangFromCodeplex,</p>\r\n<p>What you can do here is store the CellTemplateSelector in a local variable.&nbsp; Then when you want to re-evaluate the selector, you can assign the column CellTemplateSelector to null, and then back to the local stored value (original selector).</p>\r\n<p>Hope that helps,</p>\r\n<p>Saied K.</p>",
+    "PostedDate": "2009-09-22T13:39:12.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

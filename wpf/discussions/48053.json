@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "160323",
+    "ThreadId": "48053",
+    "Html": "Why do you have to bind the WPF DataGrid control ItemSource in or after the Loaded event to show the column names?  If I use the code below when my UI is created, it will bind and show the data, but covers the column names.  I have to use code below in Loaded event or after ( Click button, etc. ).  Is this a known bug and will it be fixed in next released?  Thanks<br>\r\n<br>\r\n// Note: listOfData is ObservableCollection&lt;&gt;<br>\r\n<span style=\"color:#7cfc00\">\r\n<p>// Bind lists to UI.</p>\r\n</span><span style=\"color:#e0e0e0\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"color:#eddac0\">dgTooFew</span><span style=\"color:#c0c0c0\">.</span><span style=\"color:#eddac0\">ItemsSource</span><span style=\"color:#e0e0e0\"> </span><span style=\"color:#c0c0c0\">=</span><span style=\"color:#e0e0e0\">  </span><span style=\"color:#eddac0\">listOfData;</span></p>\r\n",
+    "PostedDate": "2009-02-20T15:21:26.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160582",
+    "ThreadId": "48053",
+    "Html": "      DataContext = CheckBook.Register;<br>\r\n----&gt;<br>\r\n      dg.ItemsSource = CheckBook.Register;<br>\r\n<br>\r\ncan do? <br>\r\nruning throw error. <br>\r\n<br>\r\n不会说English. <br>\r\ndon't speak English.\r\n",
+    "PostedDate": "2009-02-21T23:47:15.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

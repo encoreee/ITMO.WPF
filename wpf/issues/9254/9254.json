@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closing - by design.",
+    "ClosedDate": "2009-02-18T10:21:48.377-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The data grid supports the \"copy\" command, and the \"delete\" command, but not the \"cut\" command. That makes little sense.\n \nI can understand why the \"paste\" command isn't supported (because you won't not know the type of object to create, or how to create it).\n \nHowever, given that you support copy, and delete, I can't think of a good reason not to support cut.",
+    "LastUpdatedDate": "2013-05-16T05:31:11.093-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-13T21:12:41.33-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Data Grid Does not support the Cut command",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9254
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi scottwis,\r\n\r\nThis is by design.  Since we don't have paste support, we didn't think it made sense to have cut support out of the box.  If cut was enabled by default with no paste, then the cut function essentially does the same thing as delete, which is already provided.  We thought that it was better for application authors to add both cut and paste where needed.  Otherwise, if we provided cut, end users could end up in a situation where they cut data from the grid but were then unable to paste it anywhere, and therefore lost the data.\r\n\r\nWe're going to close this bug out.\r\n\r\nThanks!\r\nSamantha",
+      "PostedDate": "2009-02-18T10:15:39.32-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T10:21:48.377-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:32.5-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:11.093-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

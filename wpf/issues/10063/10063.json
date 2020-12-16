@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nThe annexed application produces a \"no response / 100% CPU\" situation probably because of improper lost focus on edited cell. To make sure, I reproduced once more the problem after clean booting my computer.\n \nThank you,\n \nJulie\n \nProcedure\n------------\nUnzip annexed file\nStart Visual Studio 2008 and adjust the reference to 'WPFToolkit.dll' (I used v3.5.40128.1) in the solution project\n \nScenario\n----------\nThe scenario is illustrated in the annexed Excel file\n \nEnd",
+    "LastUpdatedDate": "2013-02-21T18:41:15.187-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-29T09:24:48.91-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid : 100% CPU probably due to improper lost focus on cell edit",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10063
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3114,
+      "FileName": "08 application no response probably caused by edit focus.zip",
+      "DownloadUrl": ".\\3114"
+    },
+    {
+      "FileId": 3128,
+      "FileName": "08 b - additional material.zip",
+      "DownloadUrl": ".\\3128"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "We are not able to repro this on the latest version of the toolkit on a Vista machine.  Do you have anyother details that might help ?",
+      "PostedDate": "2009-06-02T13:51:29.767-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "\r\nUnfortunately,\r\n\r\n- the problem occurs systematically (tried again 5 times) on my freshly booted XP system (fully up to date SP3 system with Net 3.5 plus WPF-Toolkit ; Thinkpad R52 with 1GB memory, 1.86 GHz)\r\n- important is to \"cleanly\" row select by hitting the row header (there isn't much place :), i.e. at the utmost right exactly in the middle of the row header cell. If one hits the data cell in first column (containing B1), then there is indeed no problem\r\n- there is no odd message in VS2008 output pane\r\n\r\nI have no problem in closing this issue for the time being and testing this scenario in a next release, when available (by the way, should we now track DataGrid inside beta  and later RTM or expect other WPF toolkit releases to QA up until Net 4? Possibly some kind of \"Home Page\" policy announcement would be welcome for your audience)  \r\n\r\nThank you for delivering us a very complex product in good shape,\r\n\r\nJulie",
+      "PostedDate": "2009-06-02T23:18:49.65-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This time around I was fortunate to produce additional evidence.\r\n\r\nJulie.",
+      "PostedDate": "2009-06-03T01:14:48.76-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-03T01:14:55.073-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:15.187-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

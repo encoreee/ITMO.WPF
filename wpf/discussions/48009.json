@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "160160",
+    "ThreadId": "48009",
+    "Html": "Is there a event for when the user resizes a colum?<br>\r\n<br>\r\nBecause i have a textbox just under the datagrid that needs to be the same size as the datagrid at all time.<br>\r\n<br>\r\nOr is there another way to get the same size on them?<br>\r\n<br>\r\n<br>\r\n// Jach<br>\r\n",
+    "PostedDate": "2009-02-20T07:36:25.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160164",
+    "ThreadId": "48009",
+    "Html": "I would imagine that you could data bind the TextBox's Width property to the ActualWidth property of a member of DataGrid.Columns, by name or by index (I prefer binding to elements by name). Something like this (written in web browser, and untested, but you get the idea):<br>\r\n<br>\r\n&lt;tk:DataGrid&gt;<br>\r\n&nbsp; &lt;tk:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn x:Name=&quot;something&quot; Binding=&quot;{Binding Path}&quot; /&gt;<br>\r\n&nbsp; &lt;/tk:DataGrid.Columns&gt;<br>\r\n&lt;/tk:DataGrid&gt;<br>\r\n&lt;TextBox Width=&quot;{Binding ElementName=something, Property=ActualWidth, Mode=OneWay}&quot; Text=&quot;This text box should autosize&quot; /&gt;<br>\r\n",
+    "PostedDate": "2009-02-20T07:47:47.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160968",
+    "ThreadId": "48009",
+    "Html": "Thanks i got it working with this:<br>\r\n<br>\r\n&lt;TextBox Width=&quot;{Binding ElementName='testColumn', Path='Width.DisplayValue', Mode=OneWay}&quot; /&gt;<br>\r\n<br>\r\n// JACH<br>\r\n",
+    "PostedDate": "2009-02-23T07:44:34.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "215838",
+    "ThreadId": "48009",
+    "Html": "<p>Is there a column resize event in the June 2009 release? I save column widths to the DB as user preferences, so I need to know when they resize columns. I can use the binding approach to capture updates, but if there's an event I can hook into, I'd rather use that. Thanks.</p>",
+    "PostedDate": "2009-07-24T12:38:15.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217299",
+    "ThreadId": "48009",
+    "Html": "<p>bump? any workarounds for this?</p>",
+    "PostedDate": "2009-07-29T11:35:59.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219530",
+    "ThreadId": "48009",
+    "Html": "<p>You could consider saving the preferences using an approach Vince outlined here:</p>\r\n<p><a href=\"http://www.codeproject.com/KB/WPF/WPF_Control_State_Persist.aspx\">http://www.codeproject.com/KB/WPF/WPF_Control_State_Persist.aspx</a></p>\r\n<p>I'm assuming that you don't want to write the prefernces realtime (on resize event) but on window or &quot;form&quot; close.</p>\r\n<p>Tracy</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-04T19:51:59.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "576444",
+    "ThreadId": "48009",
+    "Html": "<p>I have a similar need to hook into the column resize event. in my case the width of the column is related to the value of the cell.</p>\r\n<p>so if the value of the cell changes, then the column will need to resize as well, if the column width gets changed, the cell value needs to update.</p>\r\n<p>any ideas on how to do this without an on resize event?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks,</p>\r\n<p>David</p>",
+    "PostedDate": "2011-03-06T19:38:43.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

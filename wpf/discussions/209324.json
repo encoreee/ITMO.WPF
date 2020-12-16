@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "430931",
+    "ThreadId": "209324",
+    "Html": "<p>Hi,</p>\r\n<p>I have a chart, and in the chart&nbsp; are some LineSeries. Now I want a AreaSerie which is colored only between two different LineSeries.</p>\r\n<p>I tried that but the the AreaSeries start always at bottom of the chart and I don't know how I can start at a LineSerie.</p>\r\n<p>This picture illustrates want I want:</p>\r\n<p>http://peltiertech.com/Excel/pix3/XYAreaChart31.gif</p>\r\n<p>Thanks for your help</p>",
+    "PostedDate": "2010-04-14T07:11:04.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

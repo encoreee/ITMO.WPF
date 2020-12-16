@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "279875",
+    "ThreadId": "81527",
+    "Html": "<p>Hi,</p>\r\n<p>I want to know whether the codeplex wpf datagrid supports for virtual mode?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-01-20T22:37:40.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280402",
+    "ThreadId": "81527",
+    "Html": "<p>Yes it supports.</p>\r\n<p>Simply I have to set&nbsp;</p>\r\n<p><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\">&lt;font size=&quot;2&quot; color=&quot;#ff0000&quot;&gt;&lt;font size=&quot;2&quot; color=&quot;#ff0000&quot;&gt;\r\n<p>VirtualizingStackPanel.IsVirtualizing</p>\r\n&lt;/font&gt;&lt;/font&gt;</span>&lt;font size=&quot;2&quot; color=&quot;#ff0000&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">= &quot;True&quot;</span></span><span style=\"font-size:x-small\">&nbsp;</span></p>\r\n<span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\">VirtualizingStackPanel.VirtualizationMode</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;Recycling&quot;</span></span></p>",
+    "PostedDate": "2010-01-21T22:39:21.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280600",
+    "ThreadId": "81527",
+    "Html": "<p>Hi charith,</p>\r\n<p>The DataGrid only support UI virtualization but not the Data virtualization in this moment. UI virtualization is not exactly the same as WinForm virutual mode.</p>",
+    "PostedDate": "2010-01-22T07:45:30.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280632",
+    "ThreadId": "81527",
+    "Html": "<p>Hi,</p>\r\n<p>Can you please tell me what's the difference between those two virtualization?</p>\r\n<p>Thanks,</p>\r\n<p>Charith</p>",
+    "PostedDate": "2010-01-22T08:53:58.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281680",
+    "ThreadId": "81527",
+    "Html": "<p>Hi,</p>\r\n<p>The links below have talked about what is the difference between two virtualization:</p>\r\n<p><a href=\"http://blogs.microsoft.co.il/blogs/tomershamam/archive/2009/09/06/ui-virtualization-vs-data-virtualization.aspx\">http://blogs.microsoft.co.il/blogs/tomershamam/archive/2009/09/06/ui-virtualization-vs-data-virtualization.aspx</a></p>\r\n<p><a href=\"http://blogs.microsoft.co.il/blogs/tomershamam/archive/2009/10/01/ui-virtualization-vs-data-virtualization-part-2.aspx?CommentPosted=true#commentmessage\">http://blogs.microsoft.co.il/blogs/tomershamam/archive/2009/10/01/ui-virtualization-vs-data-virtualization-part-2.aspx?CommentPosted=true#commentmessage</a></p>\r\n<p>Hopes can help you!</p>\r\n<p>Tony</p>",
+    "PostedDate": "2010-01-25T20:53:10.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

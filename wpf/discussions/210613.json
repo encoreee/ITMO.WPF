@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "435664",
+    "ThreadId": "210613",
+    "Html": "<p>Hi.</p>\r\n<p>If you style a working AutoCompleteBox in blend the spin up your app you find that the drop down list is blank. Well its not blank, its just you can see the items in the list.</p>\r\n<p>I traced it down to this:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Border</span> <span style=\"color:red\">x:Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">PopupBorder</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">BorderThickness</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Background</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">#11000000</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">HorizontalAlignment</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Stretch</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Opacity</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Its the Opacity of 0 that causes the issue. Not sure why it only appears when you restyle it (using blend 4 RC).</p>\r\n<p>Anyway removing the Opacity=0 fixes the issue.</p>\r\n<p>Keith</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-26T13:29:07.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "141584",
+    "ThreadId": "42591",
+    "Html": "Hi,<br>\r\n<br>\r\nI noticed some things with the Ribbon that I think might be bugs:<br>\r\n<br>\r\n1. When I use the mouse wheel to switch to a different RibbonTab, the controls on the tab are disabled until I click the tab (or anywhere on the area where RibbonGroups are.)<br>\r\n<br>\r\n2. When the window is maximized, the top of the application menu button and QAT buttons are clipped off because they go off the screen.<br>\r\n<br>\r\nCould you let me know if these things are going to be fixed by V1, or if I will need to try to find a way to fix it myself?<br>\r\n<br>\r\nThanks,<br>\r\nAlex\r\n",
+    "PostedDate": "2008-12-18T06:44:12.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141598",
+    "ThreadId": "42591",
+    "Html": "Hi Alex,<br>\r\n<br>\r\nThe first one sounds like a command or focus routing issue.  We've had a lot of these reported and they should be fixed in V1.<br>\r\n<br>\r\nThe second one is a known issue and will be fixed in V1.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-12-18T07:50:44.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141630",
+    "ThreadId": "42591",
+    "Html": "OK - I'll be looking forward to V1 then.<br>\r\n<br>\r\nThanks,<br>\r\nAlex\r\n",
+    "PostedDate": "2008-12-18T09:54:01.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "253849",
+    "ThreadId": "74214",
+    "Html": "<p>&nbsp;</p>\r\n<p>I downloaded VS2010 - .Net Framework 4.0 Beta 2 and I don't see the Ribbon control.<br>It is absolutely incomprehensible, we have used the CTP version for one year and<br>now ribbon there isn't in WPF 4.0 !!! Why ?<br>(One year ago I was in Redmond and I heard a different thing....)</p>",
+    "PostedDate": "2009-11-05T09:15:24.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253868",
+    "ThreadId": "74214",
+    "Html": "<p>Microsoft have said the ribbon will ship separately to Visual Studio.</p>",
+    "PostedDate": "2009-11-05T09:55:54.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253884",
+    "ThreadId": "74214",
+    "Html": "<p>I agree, Ribbons should be included in WPF4</p>",
+    "PostedDate": "2009-11-05T10:33:58.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253912",
+    "ThreadId": "74214",
+    "Html": "<p>/signed.</p>",
+    "PostedDate": "2009-11-05T11:59:09.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

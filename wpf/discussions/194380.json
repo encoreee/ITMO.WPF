@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "402819",
+    "ThreadId": "194380",
+    "Html": "<p>I have a DataGrid in my app with a lot of columns so a horizontal scrollbar is shown.</p>\r\n<p>In the RowDetails I show a UserControl with some controls in there. I use a Template for it.</p>\r\n<p>The UserControl width should be exactly the visible width inside the ScrollViewer.</p>\r\n<p>1. I'm looking for an elegant way to keep this width always as expected. My first approach is to get the DataGridRowsPresenter width and the DataGridRowHeader width to calculate it in ArrangeMeasure of my UserControl. What I also need is the best solution for adjusting the width on resizes.</p>\r\n<p>2. My other wish is that the RowDetails should not scroll together with the rows when I scroll the horizontal bar.</p>\r\n<p>Does anybody have a hint for me how to solve my problems? Is there an alternative I have overseen?</p>",
+    "PostedDate": "2010-02-25T09:30:10.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

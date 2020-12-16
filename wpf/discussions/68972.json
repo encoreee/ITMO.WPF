@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "234692",
+    "ThreadId": "68972",
+    "Html": "<div style=\"color:Black;background-color:White\">\r\n<pre>Hi!</pre>\r\n</div>\r\n<p>I am having some problems with the DataGrid. We are saving some user settings while the user works with our application. These settings contain the DisplayIndex of the columns that are visible in the DataGrid. The big problem is, that those settings can be changed at runtime. While the settings change it may happen that a DisplayIndex is set that already exists in the existing columns. So the app crashes.</p>\r\n<p>My idea is to remove all columns before new settings are loaded an recreate them when the new settings are loaded. But I am having some problems with this too :-(</p>\r\n<p>Here is what I have been doing in Xaml:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>&lt;TK:DataGridTemplateColumn  Header=<span style=\"color:#A31515\">&quot;Wertstellung&quot;</span> IsReadOnly=<span style=\"color:#A31515\">&quot;True&quot;</span>\r\n                            CanUserSort=<span style=\"color:#A31515\">&quot;True&quot;</span> SortMemberPath=<span style=\"color:#A31515\">&quot;Valuta&quot;</span>\r\n                            Width=<span style=\"color:#A31515\">&quot;{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(FrameworkElement.DataContext).ActiveSettings.Wertstellung.Width, Converter={StaticResource DoubleToDataGridLengthConverter}, Mode=TwoWay}&quot;</span>\r\n                                         Visibility=<span style=\"color:#A31515\">&quot;{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(FrameworkElement.DataContext).ActiveSettings.Wertstellung.IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}&quot;</span>\r\n                             &gt;\r\n</pre>\r\n</div>\r\n<p>I wanted to do the same in code behind but somehow I can't set Bindings on the WidthProperty in codebehind...</p>\r\n<p><span style=\"color:Green\">//aktive Settings</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BuchungViewModel model = DataContext <span style=\"color:Blue\">as</span> BuchungViewModel;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Green\">//Splitbuchungsbutton</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGridTemplateColumn templateColumn = <span style=\"color:Blue\">new</span> DataGridTemplateColumn();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; templateColumn.Header = <span style=\"color:#A31515\">&quot;&quot;</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; templateColumn.IsReadOnly = <span style=\"color:Blue\">false</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; templateColumn.CanUserSort = <span style=\"color:Blue\">false</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Binding split1 = <span style=\"color:Blue\">new</span> Binding(<span style=\"color:#A31515\">&quot;ActiveSettings.SplitbuchungVisibility.Width&quot;</span>);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; split1.Source = model;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; templateColumn.CellTemplate = Resources[<span style=\"color:#A31515\">&quot;SplitbuchungTemplateColumn&quot;</span>] <span style=\"color:Blue\">as</span> DataTemplate;<br>templateColumn.Width. ???</p>\r\n<p>Is there a way to achieve what I want?</p>",
+    "PostedDate": "2009-09-15T05:43:25.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237182",
+    "ThreadId": "68972",
+    "Html": "<p>Is there no way to do that? I still need&nbsp;a way to recreate items from code behind...</p>",
+    "PostedDate": "2009-09-22T00:49:29.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237524",
+    "ThreadId": "68972",
+    "Html": "<p>Hi Woggly,</p>\r\n<p>In order to setup the DataGridTemplateColumn binding, you should use static method BindingOperations.SetBinding.&nbsp; Please visit the link posted below for guidance.</p>\r\n<p><a href=\"http://msdn.microsoft.com/en-us/library/system.windows.data.bindingoperations.setbinding.aspx\">http://msdn.microsoft.com/en-us/library/system.windows.data.bindingoperations.setbinding.aspx</a></p>\r\n<p>Thanks,</p>\r\n<p>Saied K.</p>",
+    "PostedDate": "2009-09-22T13:59:39.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237654",
+    "ThreadId": "68972",
+    "Html": "<p>Hi Saied!</p>\r\n<p>Thank you for your answer! I found out that it is working this way yesterday, brfore I read your answer. This way it works like I wanted!</p>",
+    "PostedDate": "2009-09-22T22:58:03.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

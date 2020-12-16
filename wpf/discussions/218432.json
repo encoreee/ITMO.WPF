@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "463673",
+    "ThreadId": "218432",
+    "Html": "I'm developing a small application that I expect to put into production in the next 6 months. I started to use the datagrid in System.Windows.Controls but now I see there is a datagrid in the Windows Toolkit. \r\n\r\nShould I consider using the toolkit version, does it fix any bugs or add new features? How about if I start using this version, is it likely that I will have problems when they role out a new version of the datagrid in .Net next ?\r\n\r\nThanks, \r\n\r\n",
+    "PostedDate": "2010-07-06T03:53:47.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463753",
+    "ThreadId": "218432",
+    "Html": "Toolkit is older than .NET 4. I think you should better using DataGrid inside .NET framework. This toolkit may contains more bugs than .NET 4.\r\n\r\nTony",
+    "PostedDate": "2010-07-06T06:50:40.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

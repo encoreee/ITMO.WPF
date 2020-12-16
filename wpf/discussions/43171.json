@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "143483",
+    "ThreadId": "43171",
+    "Html": "Hi,<br>\r\n<br>\r\nWhen I set a DataGrid column's width to asterick it gives error in the design time but it runs correctly in the run time and gives perfect effect that the column spans across the remaining space (without displaying default blank column on the right)<br>\r\n<br>\r\nHow to solve this design error though? (other settings such as Auto and fixed widths work correctly.)<br>\r\n<br>\r\nThx<br>\r\nVinit.\r\n",
+    "PostedDate": "2008-12-30T02:36:57.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143567",
+    "ThreadId": "43171",
+    "Html": "Hi Vinit,<br>\r\n<br>\r\nLook at the thread <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38679\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38679</a><br>\r\n<br>\r\nThe gist of the solution is set MaxWidth on the star (asterick) column.\r\n",
+    "PostedDate": "2008-12-30T11:23:10.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

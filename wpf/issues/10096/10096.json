@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Since I didn't find these button(s) in the ribbon,  I don't know what exactly the button(s) are called.\n \nThe attached pictures describes the 'Help' button(s)\n \nIn MSAccess 2007 there are also minimize,maximize and close buttons at this location...\n \nRegards,\n \nDave",
+    "LastUpdatedDate": "2013-02-21T18:41:13.5-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-06-05T05:40:35.803-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Ribbon no support found for 'help' buttons",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10096
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3136,
+      "FileName": "ribbon.jpg",
+      "DownloadUrl": ".\\3136"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This is not supported currently in CTP. We are tracking this for a future release. Thanks.",
+      "PostedDate": "2009-06-05T13:14:55.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-28T01:52:38.56-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:13.5-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

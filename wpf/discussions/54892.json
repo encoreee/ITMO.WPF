@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "185261",
+    "ThreadId": "54892",
+    "Html": "Hi All,<div><br></div><div>Is there a way to  transform display so rows appear as column? At runtime, I need to retrieve a collection of entities and display them. </div><div><br></div><div>I don't know the number of entities prior to retrieving from the database so I don't know the number of &quot;columns&quot; that need to be created.</div><div><br></div><div><br></div><div>This is an example:</div><div><br></div><div>Customer[0].Name<span style=\"white-space:pre\">\t</span>Customer[1].Name    Customer[2].Name</div><div>Customer[0].Age<span style=\"white-space:pre\">\t</span>Customer[1].Age        Customer[2].Age<br></div><div><br></div><div>How can I do this?  I'd like to use two-way databinding.</div><div><br></div><div>Thanks</div><div><br></div><div><br></div><div><br></div>",
+    "PostedDate": "2009-04-29T17:02:55.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185813",
+    "ThreadId": "54892",
+    "Html": "Where are you loading the collection from? You could use a cross tabulation in SQL and add each column to an ObservableCollection I think, but your DataGrid would have an indefinite number of columns.<br>\r\n",
+    "PostedDate": "2009-05-01T00:58:55.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

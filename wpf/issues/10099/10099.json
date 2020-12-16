@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Hey Julie, the problem you are facing is due to container virtualization. I see that your ViewModel&#39;s IsSelected property is bound to view&#39;s IsSelected property. One should note that not all the rows are in the tree at that moment &#40;because of virtualization&#41;. As when you scroll more rows get into the tree and their IsSelectedness gets propagated to SelectedItems. To solve your problem you should have something in your ViewModel which directly binds to SelectedItems. Hope this helps&#33;&#33;",
+    "ClosedDate": "2009-06-12T14:02:37.317-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nIn the zipped file is some simplified DataGrid scenario abstracted out of a \"real-life\" application. The latter is using a MVVM \"IsSelected\" property construction.\n \nThe results tend to demonstrate the difficulties experienced with such \"simple\" constructions.\n \nThank you,\n \nJulie.\n \nProcedure\n------------\nUnzip annexed file\nStart Visual Studio 2008 and adjust the reference to 'WPFToolkit.dll' (I used v3.5.40128.1) in the solution project\n \nScenario\n----------\nThe scenario is illustrated in the annexed Excel file\n \nEnd",
+    "LastUpdatedDate": "2013-05-16T05:31:05.767-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-06-06T04:32:09.88-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: 'IsSelected' row property and 'SelectedItems.Count' grid property",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10099
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3140,
+      "FileName": "14 datagrid - row selection.zip",
+      "DownloadUrl": ".\\3140"
+    },
+    {
+      "FileId": 3145,
+      "FileName": "14 b - datagrid - row selection.zip",
+      "DownloadUrl": ".\\3145"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Bindings dont work with SelectedItems.Count and Items.Count because they are neither DependencyProperties nor they implement INotifyPropertyChanged. Please verify if this is a binding not getting updated issue or a issue with the DataGrid itself.",
+      "PostedDate": "2009-06-09T13:54:10.583-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The associated code is indeed not attempting in any manner to bind to these properties. Please do not hesitate to point me to that part of the code sample were such binding would be inadvertently in effect: thank you.\r\n\r\nAs explained in the “readme.doc” in the zip file, the scenario and sample demonstrate:\r\nScenario 1.- Worksheet 1: Results displayed about “SelectedItems” values in the DataGrid are erratic under given scenario.\r\nScenario 2.- Worksheets 2 and 3: Performance in the case of “SHIFT-CLICK” to range select a set of rows may end up freezing the application.\r\n\r\nKind regards, Julie.",
+      "PostedDate": "2009-06-09T22:57:44.517-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The 1st paragraph in my previous explanation is absolutely and completely wrong : there is of course a Binding in the Windows.xaml file : you are right ! So, I produced an extended scenario (see zip file \"b\") that displays the said values in the MS-DOS console. These values unfortunately confirm those of the previous attempt.\r\n\r\nKind regards, Julie",
+      "PostedDate": "2009-06-09T23:22:31.507-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-09T23:22:36.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-12T14:02:37.317-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:13.33-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:05.767-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

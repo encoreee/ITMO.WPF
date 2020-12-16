@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "410394",
+    "ThreadId": "201494",
+    "Html": "<p>I have just replaced a custom autocomplete box I was using with the WPFToolkit one.&nbsp; I have a grid with a couple textboxes, datepicker, combobox and now autocomplete boxes.&nbsp; when I tab for some reason the autocomplete box is always tabed to last, no matter what the tab index is.&nbsp; Any idea why this might be happening?</p>",
+    "PostedDate": "2010-02-26T15:59:52.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456781",
+    "ThreadId": "201494",
+    "Html": "<p>I found a work-around for this issue</p>\r\n<p>I wrapped the AutoCompleteBox in a ContentControl:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">ContentControl</span> <span style=\"color:red\">Margin</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">2</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Focusable</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">False</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n   <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">toolkit</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">AutoCompleteBox</span> <span style=\"color:red\">x:Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">IconFileTextBox</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Populating</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">IconFileTextBox_Populating</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Grid.Column</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Text</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=IconFileName, Mode=TwoWay}</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Padding</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Margin</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">ContentControl</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n<pre>Note that the ContentControl Focusable property is set to False.</pre>\r\n<pre>Now the AutoCompleteBox gets the focus according to the tab index.</pre>\r\n</div>",
+    "PostedDate": "2010-06-17T08:49:48.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475499",
+    "ThreadId": "201494",
+    "Html": "Not working i am having the same issue with the tab order can you please help me out.",
+    "PostedDate": "2010-08-02T09:32:24.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475532",
+    "ThreadId": "201494",
+    "Html": "I have a similar issue about focus.\r\nI put the AutoCompleteBox control in a grid. I bind a transparent storyboard on the grid. \r\nI write on the code behind to make the keyboard focus on AutoCompleteBox. But it doesn't work.\r\nInstead, the textblock works well.",
+    "PostedDate": "2010-08-02T10:30:33.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

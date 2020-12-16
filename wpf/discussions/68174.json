@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "231857",
+    "ThreadId": "68174",
+    "Html": "<p>Hi there,</p>\r\n<p>while trying to develop my own series for the charting component, I noted some obstacles. Ie - I was trying to reuse some of the code from areaseries (the class is apparently sealed) and when doing so, I've noted that:</p>\r\n<p>a) The property PlotArea is internal - why?</p>\r\n<p>b) The class ValueHelper is internal - why?</p>\r\n<p>c) DataPointsByIndependentValue is internal - Why?</p>\r\n<p>&nbsp;</p>\r\n<p>I'm not quite sure why these members / classes need to be internal. I think it would facilitate the development if those would be public.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Andreas</p>",
+    "PostedDate": "2009-09-07T08:59:24.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

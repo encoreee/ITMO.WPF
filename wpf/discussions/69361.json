@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "235966",
+    "ThreadId": "69361",
+    "Html": "<p>how to impletent selected rows/cells will stay visibly selected (traditionaly blue background and white text) even grid will have no focus?</p>\r\n<p>in mfc it was <span style=\"font-size:small\">style |= LVS_SHOWSELALWAYS</span></p>\r\n<p>thanks</p>",
+    "PostedDate": "2009-09-18T03:31:59.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241324",
+    "ThreadId": "69361",
+    "Html": "<p>hm, since time i created this thread i see there already &quot;is <span style=\"font-size:small\">SHOWSELALWAYS set&quot; (even looking to sources history i changed nothing)</span></p>\r\n<p><span style=\"font-size:small\">so actual question is:</span></p>\r\n<p><span style=\"font-size:small\">if it is enabled than how to disable it?<br></span></p>",
+    "PostedDate": "2009-10-02T08:18:18.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

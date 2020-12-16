@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If a DataGridTextColumn cell has focus inside a data grid, regardless of whether it is in input mode or not, hitting an accelerator key will not cause the appropriate target control to get focus. Instead, focus will stay with the current data grid cell.\n \nI was able to fix this by changing the source for DataGridTextColumn.OnInput from this\n \n        internal override void OnInput(InputEventArgs e)\n        {\n            // Text input will start an edit\n            if (e is TextCompositionEventArgs)\n            {\n                BeginEdit(e);    \n            }\n        }\n \nto this\n \n        internal override void OnInput(InputEventArgs e)\n        {\n            // Text input will start an edit\n            if (e is TextCompositionEventArgs)\n            {\n                if (Keyboard.Modifiers == ModifierKeys.None || Keyboard.Modifiers == ModifierKeys.Shift)\n                {\n                    BeginEdit(e);    \n                }\n            }\n        }",
+    "LastUpdatedDate": "2013-02-21T18:41:35.41-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-27T14:00:50.133-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Accelerator Keys Don't work with DataGridTextColumns",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9056
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-18T16:37:28.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:37:29.947-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-08T00:36:28.653-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:35.41-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

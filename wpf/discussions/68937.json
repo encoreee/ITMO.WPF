@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "234574",
+    "ThreadId": "68937",
+    "Html": "<p>Hi,</p>\r\n<p>I wanted to be able to set tab order/ focusable/Hittestvisible or similar in the datagrid columns so if i have a read only grid tab would move through the rows or if i only had a few ediable fields i could tab just between the editable ones.&nbsp; I couldn't see an obvious way to do this. Any help would be apprecidated.</p>",
+    "PostedDate": "2009-09-14T21:24:44.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234957",
+    "ThreadId": "68937",
+    "Html": "<p>Fond the answer here: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=45260\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=45260</a></p>",
+    "PostedDate": "2009-09-15T17:37:01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

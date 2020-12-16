@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "170008",
+    "ThreadId": "50700",
+    "Html": "I have a DataGrid with columns where one column uses star width, and the others use Auto. &nbsp;There's no data in the DataGrid initially.&nbsp; The problem I'm having is that the columns using Width=&quot;Auto&quot; are too small and cutting off the text of the column header.&nbsp; If I were to grab the bottom-right corner of the app and resize it smaller, then back to the same size the columns adjust themselves to what I expected, all column widths take up exactly the space needed for the header text and the one star column takes up the rest.&nbsp; When looking at the example project CommonDataGridAddOns, it appears to work correctly.<br>\r\n<br>\r\nHas anyone seen this or does anyone know how to resolve this?&nbsp; If it's of any use I made a sample project I can send that replicates this issue, if this is indeed an issue.<br>\r\n<br>\r\nDave<br>\r\n",
+    "PostedDate": "2009-03-19T14:48:18.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170860",
+    "ThreadId": "50700",
+    "Html": "I am facing a very similar problem with the size of Columns headers.<br>\r\nAll my columns except the last one use Auto, the last one uses star width. <br>\r\nThe Columns using Auto width are ok, they are shoen in correct size, but the last one using star width is to big for the window! The TextAlignment in this Column is set to right and I can't see the text inside it and a scrollbar is shown.<br>\r\nWhen I am not using the last column with star width and put star width into another column it is the same problem. The last column isn't visible.<br>\r\n<br>\r\nWould be great if anyone can help us!\r\n",
+    "PostedDate": "2009-03-23T07:36:37.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170938",
+    "ThreadId": "50700",
+    "Html": "Have you tried this out with the March release?  There were some known issues with * columns in the October and January releases and we've fixed them with the March release.  Could you try out the new bits and see if they fix the issue?  If not, please post an Issue in the Issue Tracker section and attach a repro, and we can take a look at it.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-03-23T10:49:27.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170951",
+    "ThreadId": "50700",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nI just tried it with the March 2009 release and the problem is still present.&nbsp; I created the issue in the issue tracker, work item 9588, with an example project and screenshot attached.<br>\r\n<br>\r\nThanks,<br>\r\nDave<br>\r\n",
+    "PostedDate": "2009-03-23T11:13:20.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171187",
+    "ThreadId": "50700",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nThanks for the hint. Didn't know that there is already a March release.<br>\r\nI installed it and now I don't have the problem anymore.\r\n",
+    "PostedDate": "2009-03-24T00:00:10.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196232",
+    "ThreadId": "50700",
+    "Html": "<p>The problem still exists when parent container is star-sizing as well.</p>",
+    "PostedDate": "2009-05-31T20:25:01.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

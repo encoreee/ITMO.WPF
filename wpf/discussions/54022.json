@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "181910",
+    "ThreadId": "54022",
+    "Html": "I'm binding to an Observablecollection that is populated after loading the window containing the DG.  I have CanUserAddRows set to true in XAML.  <br>\r\nProblem:  No new row shown. Just my list of items.  <br>\r\n<br>\r\nDo I have to add some sort of command to allow the user to create a new row in the collection programmatically and then set focus on the new row?  I can't tell what the expected behaviour is because I can't find any documentation explaining how to template the NewItem template.  I have read Vincent Sibal's blog at:<br>\r\n<a href=\"http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx</a><br>\r\n<br>\r\nBut with all due respect to Vincent didn't care much for it as it pretty much fails to explain <strong><span style=\"text-decoration:underline\">how</span></strong> to template the new item (and the example is way too convoluted to suss the point).  Sorry if I'm coming off as negative but have spent hours trying to sort this out - to no avail.<br>\r\n<br>\r\nthx\r\n",
+    "PostedDate": "2009-04-21T10:53:53.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181950",
+    "ThreadId": "54022",
+    "Html": "public void Do()<br>\r\n{<br>\r\n        OpenMouth();<br>\r\n        ExtractFoot();<br>\r\n}<br>\r\n<br>\r\nFigured out my problem.  I had to implement the IEditableObject on my underlying business object (which was stored in an Observablecollection).  <br>\r\nSeems the DG won't present a new item row if this interface isn't implemented (on a CLR object).  <br>\r\n<br>\r\nFrustrating .... but on to new frustrations.  thx<br>\r\n<span style=\"color:#2b91af;font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n",
+    "PostedDate": "2009-04-21T11:53:57.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193831",
+    "ThreadId": "54022",
+    "Html": "<p>Hello,</p>\r\n<p>I also face the problem when I set CanUserAddRows&nbsp;to true,&nbsp;and there's no new Item to show.</p>\r\n<p>But I really see&nbsp;the new Row&nbsp;months ago when I'm beginning with DataGrid and I don't implement the IEditableObject, just using default settings and bind to my Observablecollection. At that time I set CanUserAddRows&nbsp;to false to avoid the New Row.</p>\r\n<p>Now I need to get the new Row back, so I set CanUserAddRows&nbsp;to true, but it doesn't work. It really confused me.</p>\r\n<p>I don't know do I must implement IEditableObject, because I don't want to change too much to my current&nbsp;code.</p>\r\n<p>Thanks very much</p>",
+    "PostedDate": "2009-05-25T01:43:29.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194250",
+    "ThreadId": "54022",
+    "Html": "<p>First check if IEditableCollectionView.CanAddNew is returning false.&nbsp; You can read more about it here, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/01/overview-of-the-editing-features-in-the-wpf-datagrid.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/01/overview-of-the-editing-features-in-the-wpf-datagrid.aspx</a>.</p>",
+    "PostedDate": "2009-05-26T05:43:46.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

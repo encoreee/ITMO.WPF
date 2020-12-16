@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "120694",
+    "ThreadId": "36390",
+    "Html": "Hey all -<br>\r\n<br>\r\nSetting&nbsp;CanUserResizeColumns=&quot;False&quot; on the grid does not do anything. I can still resize all columns. is there somethign else I should be doing?<br>\r\n<br>\r\nThanks!\r\n",
+    "PostedDate": "2008-09-24T10:37:55.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120770",
+    "ThreadId": "36390",
+    "Html": "Hi, this is a bug in the CTP and will be fixed in v1.&nbsp; In our testing we found that we were only able to repro this issue when the property is initally set to false before any columns exist, so a workaround&nbsp;is to set CanUserResizeColumns to false programmatically at runtime after your columns are generated.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-09-24T14:05:24.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126543",
+    "ThreadId": "36390",
+    "Html": "Suggested workaround does not work either.<br>\r\nAnd I was hoping I could use this property as a workaround for another bug:<br>\r\nWhen you resize columns and then scroll, some rows' column sizes remain unchanged. I haven't checked if it has been reported.<br>\r\n",
+    "PostedDate": "2008-10-21T07:57:30.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212823",
+    "ThreadId": "36390",
+    "Html": "<p>Workaround works if you set CanUserResizeColumns = true and then immediately after set CanUserResizeColumns = false, after you have populated the DataGrid</p>",
+    "PostedDate": "2009-07-16T17:15:42.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

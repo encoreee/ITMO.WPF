@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "200068",
+    "ThreadId": "59095",
+    "Html": "<p>There's a situation where, depending on a business rule, we would need a textbox cell (in edit mode) in a datagrid column to 'switch' to be a ComboBox.</p>\r\n<p>Is this possible? The column needs to be defined as a regular datagrid column, but if a certain value is present, then the cell needs to change to a ComboBox instead of free-text entry.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,<br>Chris</p>",
+    "PostedDate": "2009-06-10T09:52:38.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202947",
+    "ThreadId": "59095",
+    "Html": "<p>anyone?</p>",
+    "PostedDate": "2009-06-18T07:45:52.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203300",
+    "ThreadId": "59095",
+    "Html": "<p>Sir, I am no expert. But is it possible to write a trigger on the value field of the cell content and then change the cell style of column style ?</p>\r\n<p>- B</p>",
+    "PostedDate": "2009-06-19T04:26:12.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

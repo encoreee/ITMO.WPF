@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "174302",
+    "ThreadId": "51950",
+    "Html": "Is there an easy way to get the contents of a cell from the selected row in VB.net. Say i selected the fifth row in the datagrid i would like to retreive the value from the cell in column B.<br>\r\n<br>\r\nThanks\r\n",
+    "PostedDate": "2009-04-01T05:56:05.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176039",
+    "ThreadId": "51950",
+    "Html": "see this http://wpf.codeplex.com/Thread/View.aspx?ThreadId=52016\r\n",
+    "PostedDate": "2009-04-06T02:40:06.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

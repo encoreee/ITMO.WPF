@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "207057",
+    "ThreadId": "61065",
+    "Html": "<p>is this possible with the datagrid?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-30T06:42:24.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207226",
+    "ThreadId": "61065",
+    "Html": "<p>Hi edderic,</p>\r\n<p>Could you expand on what exactly you're looking to enable?&nbsp; Do you want to filter which columns are in view? Or do you want to add a filter to your column to choose which data is displayed?</p>\r\n<p>Thanks,<br>Samantha</p>",
+    "PostedDate": "2009-06-30T13:33:29.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207658",
+    "ThreadId": "61065",
+    "Html": "<p>RE:Do you want to filter which columns are in view?</p>\r\n<p>Yes like infragristrics datagrid,janus datagrid etc...</p>",
+    "PostedDate": "2009-07-01T11:27:15.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207713",
+    "ThreadId": "61065",
+    "Html": "<p>Ok, this should be relatively simple to do, depending on what kind of filter UI you're looking for.&nbsp; The DataGridColumns have a Visibility property which can be set to Visible, Hidden, or Collapsed.&nbsp; You can do something like provide a filter control&nbsp;somewhere in the app's&nbsp;UI which has a&nbsp;CheckBox for each column and bind that CheckBox's Checked state to the Visibility of the column.&nbsp; Or you could hook up a ContextMenu for the DataGrid which allows the user to choose the visible columns.&nbsp; I'm not familiar with the UI provided for this feature in the&nbsp;third party DataGrids (we have not looked at any third party controls for legal reasons), so I'm not sure what exactly you're trying to accomplish, but you should be able to build whatever UI you want and just bind it to the column Visibility to hide/show columns as desired.</p>",
+    "PostedDate": "2009-07-01T13:26:33.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207729",
+    "ThreadId": "61065",
+    "Html": "<p>i think that you not understand me,i have a column &quot;City&quot; where i can filter to Like &quot;Ab&quot; etc...Or a column &quot;Language&quot; where i can filter to &quot;Belgium&quot; etc...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-01T14:19:14.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207754",
+    "ThreadId": "61065",
+    "Html": "<p>I see - that was what I meant when I asked &quot;Or do you want to add a filter to your column to choose which data is displayed?&quot;</p>\r\n<p>We do not have this ability built in to V1, but&nbsp;it should be fairly simple to implement.&nbsp; The actual filtering can be handled by CollectionViewSource (CVS)&nbsp;and you just need to build the UI to call CVS's Filter event.&nbsp; For an example of how to filter using CVS, see this MSDN article: <a href=\"http://msdn.microsoft.com/en-us/library/system.windows.data.collectionviewsource.filter(VS.85).aspx\">http://msdn.microsoft.com/en-us/library/system.windows.data.collectionviewsource.filter(VS.85).aspx</a></p>\r\n<p>A common format for the filter UI is to add a drop down menu in the column header which contains a list of values that the user can choose to filter by, similar to the UI you would find in Excel.&nbsp; You can achieve this by&nbsp;retemplating the column header.&nbsp;</p>",
+    "PostedDate": "2009-07-01T15:58:38.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "479779",
+    "ThreadId": "223376",
+    "Html": "Hi, does anyone know how to specify a small image on a RibbonApplicationMenuItem to be used when it is displayed in the QuickAccessToolbar.\r\n\r\nI have specified Large images for RibbonApplicationMenuItem.ImageSource, but when they are displayed in the QAT, they scale badly.\r\n\r\nMany thanks, John",
+    "PostedDate": "2010-08-12T09:14:11.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

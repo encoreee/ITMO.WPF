@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "142431",
+    "ThreadId": "42851",
+    "Html": "<p>Hi</p>\r\n<p>I worked today a little bit with my own CollectionView and when testing the Replace-Handler of CollectionChanged, i noticed that, if an element is selected and this one is replaced (collection[index] = new Item();) the selection doesn't renew (e.g. it's suddenly possibly to select 2 Items at once! (SingleMode is on)), only when clicking again on the previously selected Item it works as expected!</p>\r\n<p>(I tested this issue also with the standard CollectionView and there it happens too ;-) just fyi)</p>\r\n<p>regards</p>\r\n<p></p>\r\n<p></p>\r\n",
+    "PostedDate": "2008-12-22T12:21:51.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

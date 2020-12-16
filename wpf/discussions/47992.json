@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "160117",
+    "ThreadId": "47992",
+    "Html": "I have two WPF DataGrid controls in a Window.  I want to have only one row selected at a time between both datagrids.  How do I deselect a row that is selected in one datagrid if a row is selected in the other datagrid?  Thanks.\r\n",
+    "PostedDate": "2009-02-20T05:05:42.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160122",
+    "ThreadId": "47992",
+    "Html": "Look at SelectionChanged and SelectedItems.<br>\r\n",
+    "PostedDate": "2009-02-20T05:38:28.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160135",
+    "ThreadId": "47992",
+    "Html": "Setting the datagrid's SelectedIndex to -1 will deselect any selected row.  Thanks.\r\n",
+    "PostedDate": "2009-02-20T06:14:41.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

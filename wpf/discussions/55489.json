@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "187352",
+    "ThreadId": "55489",
+    "Html": "<span style=\"background-color:#ece9d8\">Hi. What is the DataGrid (Toolkit) event when i select a row?<br>\r\nI had try &quot;<span style=\"font-size:13px\">SelectionChanged&quot; but i can't find the row selected with all values. If i check the &quot;<span style=\"font-size:13px;color:#2b91af\">SelectedCellsChangedEventArgs</span><span style=\"font-size:13px\"> e&quot; i can see only two property (AddedCells and RemovedCells).<br>\r\nWhat event i have to use?<br>\r\n<br>\r\nTHANKS\r\n<p> </p>\r\n</span></span></span>\r\n",
+    "PostedDate": "2009-05-06T06:35:11.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

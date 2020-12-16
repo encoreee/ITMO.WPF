@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "212906",
+    "ThreadId": "62724",
+    "Html": "<p>Hi,</p>\r\n<p>I want to get the selected cell text value of datagrid. I can see there is a property named &quot;<span style=\"font-size:x-small\">CurrentCellContainer&quot; in the DataGrid which is private. Why that property is private? Is there anyway to access that value?</span></p>\r\n<p><span style=\"font-size:x-small\">Thanks!</span></p>",
+    "PostedDate": "2009-07-17T00:49:47.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212991",
+    "ThreadId": "62724",
+    "Html": "<p>You can use combination of SelectedItem and SelectedIndex properties of DataGrid.</p>",
+    "PostedDate": "2009-07-17T05:01:28.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242289",
+    "ThreadId": "62724",
+    "Html": "<p>Can someone post an example of using SelectedItem and SelectedIndex properties of DataGrid to get the value of the CurrentCell?</p>\r\n<p>I see that DataGrid.CurrentCell has .Item (which represents the row as an object) and .Column properties.&nbsp; I just don't see how to intersect these 2 to get the value of the CurrentCell.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-10-05T13:28:35.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010257",
+    "ThreadId": "62724",
+    "Html": "This is bug for sure.\r<br />\nI have grid with custom datatemplate columns and i cannot get CurrentCellContainer.\r<br />\nSelectedIndex is -1;\r<br />\n<br />\n dataGridCellInfo.Column.GetCellContent(dataGridCellInfo.Item); is null.\r<br />\n<br />\ne.AddedCells[0].Item\tequals {NewItemPlaceholder}\tobject {MS.Internal.NamedObject}\r<br />\n<br />\nBut CurrentCellContainer and FocusedItem set to proper dataCell!<br />\n",
+    "PostedDate": "2013-03-04T16:37:03.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

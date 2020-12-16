@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you take the following oracle query:\n \nselect 'Hello' as \"Hello.Bug\" from dual\n \nGet this query into a dataset. \n \nAnd our XAML is\n<my:DataGrid AutoGenerateColumns=\"true\" Name=\"myGrid\" ItemsSource=\"{Binding}\"/>\n \nThen assign:\n \nmyGrid.DataContext = ds.Tables[0].DefaultView;\n \nI would expect to see\n\"Hello\" \n \nbut you see:\n \nPlain nothing. In output you see the error message:\n \n\"System.Windows.Data Error: 39 : BindingExpression path error: 'Bug' property not found on 'object' ''DataRowView'\"",
+    "LastUpdatedDate": "2013-02-21T18:40:48.997-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-12-16T10:49:06.47-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Grid doesn't display columns with \".\" in columnname",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11222
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thought I would chime in and say that I have the same issue.  I am using PropertyDescriptors to auto generate columns for my multi-dimensional array that I am data binding to.  If my column names have a \".\" in them, the values of the datagrid are not populated.",
+      "PostedDate": "2009-12-29T20:50:29.203-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-09-28T07:05:59.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:48.997-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

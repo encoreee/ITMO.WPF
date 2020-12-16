@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "131258",
+    "ThreadId": "39557",
+    "Html": "How can I use WPFTOOLKIT to achieve it?<br>\r\nthanks.\r\n",
+    "PostedDate": "2008-11-09T22:31:10.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132540",
+    "ThreadId": "39557",
+    "Html": "There is a way, We can put ToggleButton in the DataGrid, When the button is clicked, the event handler change the source data, then the child rows can be displayed through data template trigger.\r\n<p> </p>\r\n<p>Following links talks about how to implement tree List View. <span lang=EN-US></span></p>\r\n<p><span lang=EN-US><a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/ffd7e208-ea49-4f13-b8b2-2a8263373749\"><br>\r\n</a></span></p>\r\n<p><span lang=EN-US><a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/ffd7e208-ea49-4f13-b8b2-2a8263373749\">http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/ffd7e208-ea49-4f13-b8b2-2a8263373749</a></span></p>\r\n<p><span style=\"font-family:宋体\"><br>\r\n</span></p>\r\n<p><span lang=EN-US><a href=\"http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=1082266&SiteID=1\">http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=1082266&amp;SiteID=1</a></span></p>\r\n<br>\r\n",
+    "PostedDate": "2008-11-14T03:14:31.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135770",
+    "ThreadId": "39557",
+    "Html": "Following is the souce code that I write to make datagrid row can Expand/Collapse like treeview.<br>\r\n<a href=\"http://rapidshare.com/files/167801411/TreeInDataGridDemo2.zip.html \">http://rapidshare.com/files/167801411/TreeInDataGridDemo2.zip.html</a>\r\n",
+    "PostedDate": "2008-11-26T21:46:36.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

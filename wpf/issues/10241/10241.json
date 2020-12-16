@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nI have a probleme with the datagrid, when I disable it the user can change seleted item if he do a right click on others items.\n \nIf you have a solution;\n \nThank You!",
+    "LastUpdatedDate": "2013-02-21T18:41:08.363-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-02T01:15:13.727-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Probleme with right click when isEnabled is false",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10241
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We agree that it is a bug and we have logged it in our internal database.\r\n\r\nAs for workaround, you can handle PreviewMouseButtonDown on DataGrid and set e.Handled to true when it is right click and DataGrid is disabled.",
+      "PostedDate": "2009-07-07T13:55:28.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-16T14:22:47.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You can use the following codesnippet to handle all datagrid-events in one place.\r\nBUT this doesn't handle the case when the user uses the TAB-key. Do you know how to disable that event too?\r\n\r\nprivate void Window_Loaded(object sender, RoutedEventArgs e) {\r\n    EventManager.RegisterClassHandler(typeof(Microsoft.Windows.Controls.DataGrid), PreviewMouseDownEvent, new RoutedEventHandler(datagrid_PreviewMouseButtonDown));\r\n}\r\n\r\nprivate void datagrid_PreviewMouseButtonDown(object sender, RoutedEventArgs e) {\r\n    DataGrid source = sender as DataGrid;\r\n    if (source.IsEnabled == false) e.Handled = true;\r\n}\r\n\r\n// Kind regards\r\nRichard Bladh",
+      "PostedDate": "2009-11-09T05:36:46.403-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi again!\r\nI'm not sure if you need to handle the TAB-key.\r\nIn my testapplication I tabbed into a searchbox (which had a lower tabindex than the datagrid) which reloaded the datagrid, this made me believe that the TAB-key cleared the selection which wasn't the case.\r\n\r\nThe TAB-key doesn't clear my selection.\r\nI havn't verified the following code but I guess something like this could be done for good measure.\r\nthis.myDG.IsTabStop = this. myDG.Focusable = this. myDG.IsHitTestVisible = this. myDG.IsEnabled\r\n\r\nKind regards\r\nRichard Bladh\r\n",
+      "PostedDate": "2009-11-09T07:01:02.907-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:08.363-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

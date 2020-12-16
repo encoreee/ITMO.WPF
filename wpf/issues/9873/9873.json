@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I made a Style for my DataGrid's RowHeader and I am using a Template to let the resize - thumbs disappear.\nThe template is somehow attached to my RowHeader but not correctly.\nHere is the Style:\n<Style x:Key=\"LegitimiertStyle\" TargetType=\"TK:DataGridRowHeader\">\n            <Setter Property=\"Template\">\n                <Setter.Value>\n                    <ControlTemplate TargetType=\"TK:DataGridRowHeader\">\n                        <Grid>\n                            <TK:DataGridHeaderBorder IsSelected=\"{TemplateBinding IsRowSelected}\"\n                                 IsHovered =\"{TemplateBinding IsMouseOver}\"\n                                 IsPressed=\"{TemplateBinding IsPressed}\"\n                                 BorderBrush=\"{Binding RelativeSource={RelativeSource AncestorType={x:Type TK:DataGrid}}, Path=HorizontalGridLinesBrush}\"\n                                 Background=\"{TemplateBinding Background}\"                                    \n                                 BorderThickness=\"0,1,0,0\"\n                                 Padding =\"{TemplateBinding Padding}\"\n                                 Orientation=\"Horizontal\"\n                                 SeparatorVisibility=\"{TemplateBinding SeparatorVisibility}\"\n                                 SeparatorBrush=\"{TemplateBinding SeparatorBrush}\" Margin=\"0,-1,0,0\">\n                                \n                             <ContentPresenter SnapsToDevicePixels=\"{TemplateBinding SnapsToDevicePixels}\"\n                                              VerticalAlignment=\"Center\" HorizontalAlignment=\"Center\"/>\n                            </TK:DataGridHeaderBorder>\n                            <Thumb x:Name=\"PART_TopHeaderGripper\"\n                                   VerticalAlignment=\"Top\" Height=\"0\"/>\n                            <Thumb x:Name=\"PART_BottomHeaderGripper\"\n                                   VerticalAlignment=\"Bottom\" Height=\"0\"/>\n                        </Grid>\n                    </ControlTemplate>\n                </Setter.Value>\n            </Setter>\n            <Setter Property=\"Background\" Value=\"Green\"/>\n            <Setter Property=\"Width\" Value=\"20\"/>\n        </Style>\n \nWhen the Grid is rendered the RowHeader is there, but it is empty! When I scroll it suddenly pops into view. The attachment shows a little picture to demonstrate what I mean.",
+    "LastUpdatedDate": "2013-02-21T18:41:18.993-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-28T00:50:05.307-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid RowHeader Template weird behaviour",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9873
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3027,
+      "FileName": "Issue.jpg",
+      "DownloadUrl": ".\\3027"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I did a little more investigation on this issue.\r\nThe RowHeader dissapears always when the ItemsSource of the DataGrid is set. In our app the DataGrid is loaded with an empty ItemsSource and when the user chooses something the source is updated and the RowHeader is gone until the UI gets refreshed through scrolling in the DataGrid.\r\nIt seems that this style forgets to update itself when a new Itemssource is set.\r\n\r\nWould be great if anybody could give me some feedback if this is already a known issue or if this will be fixed or if there is a workaround. Thanks.",
+      "PostedDate": "2009-05-06T02:48:32.267-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:18.993-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

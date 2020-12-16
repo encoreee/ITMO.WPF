@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "460488",
+    "ThreadId": "217515",
+    "Html": "<p>In my company, we treat Saturday as the first day of the production week. Consequently I would like all DatePickers in my application to reflect that. I tried adding this to my App class's OnStartUp method, but it had no effect:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>DatePicker.FirstDayOfWeekProperty.OverrideMetadata(<span style=\"color:blue\">typeof</span>(DatePicker),\r\n    <span style=\"color:blue\">new</span> FrameworkPropertyMetadata(DayOfWeek.Saturday));</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>The working code for DatePicker (here on CodePlex) has this line in its instance constructor:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:green\">// Binding to FirstDayOfWeek and DisplayDate wont work</span>\r\n            <span style=\"color:blue\">this</span>.FirstDayOfWeek = DateTimeHelper.GetCurrentDateFormat().FirstDayOfWeek;\r\n\r\n</pre>\r\n</div>\r\n<p>Does this mean that DatePicker will ignore any property metadata overrides? Am I really going to have to set FirstDayOfWeek manually on all my DatePickers in the XAML?</p>\r\n<p>Cheers,<br>Matt</p>\r\n<p>ps. I suspect that it's getting the first day of the week from the PC's regional settings, but our SOE (such as it is) doesn't have this set, so this is no good to me.</p>",
+    "PostedDate": "2010-06-27T20:56:32.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

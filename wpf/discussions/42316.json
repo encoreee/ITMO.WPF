@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "140539",
+    "ThreadId": "42316",
+    "Html": "Hi,<br>\r\n<br>\r\nThis is a very basic question, but I couldn't see any method to add rows one by one. In my program I am going to create the columns first and then add rows on demand. I could add the header :- )&nbsp;&nbsp; but still couldn't find how to add rows on demand. If you can provide a link to a sample that would be great.<br>\r\n<br>\r\nThank you!\r\n",
+    "PostedDate": "2008-12-15T04:07:01.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140556",
+    "ThreadId": "42316",
+    "Html": "Hi,<br>\r\n<br>\r\nI would strongly recommend creating a list of objects that represent the data which you use to populate your data grid, then use data binding to bind the properties of these objects to your grid.<br>\r\n<br>\r\nThe source code for this article demonstrates how to bind to a collection of objects:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx<br>\r\n<br>\r\n(look at the validation examples for how to bind to simple objects rather that DataSet / DataTables)<br>\r\n<br>\r\nRegards,<br>\r\nColin E. \r\n",
+    "PostedDate": "2008-12-15T05:00:12.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140557",
+    "ThreadId": "42316",
+    "Html": "I can see two alternatives: either you work with the DataGrid's &quot;Items&quot; property directly (leaving the DataGrid's properties relating to data binding unset), or you bind the DataGrid control to an ObservableCollection&lt;&gt; and manipulate that (useful if you want to add custom logic to your collection, for example). In either case, you would probably need to implement a business object with the relevant properties (even if only by a simple {get;set;} pair) and data bind the columns to its properties.<br>\r\n<br>\r\nI have no direct experience working directly with the Items collection in DataGrid since I work exclusively with data-bound scenarios, but if all you want is to display information in a grid, I don't see why that wouldn't work. And if you need access to the properties, you can always cast an item back to your business object type.<br>\r\n",
+    "PostedDate": "2008-12-15T05:03:14.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140564",
+    "ThreadId": "42316",
+    "Html": "Hi,<br>\r\n<br>\r\nI am receiving some data time to time. There is not easy way to create a collection/object _without_ using reflection. &nbsp; <br>\r\n<br>\r\nAnyway I'll have to add row by row. I tried Items.Add but doesn't seem to be working.... Is there any example?<br>\r\n<br>\r\nThank you! \r\n",
+    "PostedDate": "2008-12-15T05:22:57.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140800",
+    "ThreadId": "42316",
+    "Html": "There was a similar thread about this awhile back, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065</a>.  I don't know if it will help you though.  Items.Add should work.  Could you show a code snippet.\r\n",
+    "PostedDate": "2008-12-15T18:22:59.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141303",
+    "ThreadId": "42316",
+    "Html": "Finally I decided to use DataSet and DataTables. I want to to know how can I set a DataTable to a DataGrid. <br>\r\n<br>\r\nI tried the following way but doesn't seem to be working. But as I remember I've used this way a few days ago. Now I am using a diffent set of DataGrid properties, sometimes that may be the reason for this issue. What are the properties I should set if I am going to use following way?<br>\r\n<br>\r\nDataGrid.DataContext = ds.Tables[0];<br>\r\n<br>\r\nIs there any other way to set a DataTable to the DataGrid?<br>\r\n<br>\r\nThanks!<br>\r\n",
+    "PostedDate": "2008-12-17T05:09:01.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141310",
+    "ThreadId": "42316",
+    "Html": "Try ds.Tables[0].DefaultView.\r\n",
+    "PostedDate": "2008-12-17T05:43:09.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141314",
+    "ThreadId": "42316",
+    "Html": "Or,<br>\r\n<br>\r\nDataGrid.ItemsSource = ds.Tables[0].DefaultView;<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://wpfadventures.wordpress.com/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-17T05:53:48.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141315",
+    "ThreadId": "42316",
+    "Html": "Hi Vinsibal,<br>\r\n<br>\r\nThanks for your reply. I just tried to set dataGrid.ItemSource = DataTable.DefaultView ; this seems to be working. What is the difference between setting the datatable to ItemSource and dataContext.<br>\r\n<br>\r\nActually dataContext doesn't seem to be working with Table.DefaultView!<br>\r\n<br>\r\nI have many dataTAbles and one DataGrid. I want to set my DataTAbles on demand. What do you recomand for this? <br>\r\n<br>\r\nThanks Again!<br>\r\n",
+    "PostedDate": "2008-12-17T05:54:05.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141415",
+    "ThreadId": "42316",
+    "Html": "This was asked on the MSDN forums:<br>\r\n<br>\r\n&quot;Difference(s) between ItemsSource and DataContext&quot;:<br>\r\nhttp://social.msdn.microsoft.com/Forums/en-US/wpf/thread/9bfdb32c-a4ce-46ad-b977-e12d51e815e2/<br>\r\n<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://wpfadventures.wordpress.com/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n",
+    "PostedDate": "2008-12-17T12:21:46.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

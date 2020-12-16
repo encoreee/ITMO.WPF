@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've attempted to run Locbaml against a project with the MS Ribbon Control. It fails when trying to generate the localised assembly with\n \nSystem.TypeInitializationException occurred\n  Message=\"The type initializer for 'Microsoft.Windows.Controls.Ribbon.RibbonWindow' threw an exception.\"\n  Source=\"mscorlib\"\n  TypeName=\"Microsoft.Windows.Controls.Ribbon.RibbonWindow\"\n  StackTrace:\n       at System.Runtime.CompilerServices.RuntimeHelpers._RunClassConstructor(IntPtr type)\n       at System.Windows.DependencyProperty.FromName(String name, Type ownerType)\n       at System.Windows.Markup.BamlWriter.GetDpOrPi(Type ownerType, String propName)\n       at System.Windows.Markup.BamlWriter.GetDpOrPi(String assemblyName, String ownerTypeFullName, String propName, Object& dpOrPi, Type& ownerType)\n       at System.Windows.Markup.BamlWriter.WriteProperty(String assemblyName, String ownerTypeFullName, String propName, String value, BamlAttributeUsage propUsage)\n       at MS.Internal.Globalization.BamlPropertyNode.Serialize(BamlWriter writer)\n       at MS.Internal.Globalization.BamlResourceSerializer.SerializeImp(BamlLocalizer localizer, BamlTree tree, Stream output)\n       at System.Windows.Markup.Localizer.BamlLocalizer.UpdateBaml(Stream target, BamlLocalizationDictionary updates)\n       at BamlLocalization.ResourceGenerator.GenerateBamlStream(Stream input, Stream output, BamlLocalizationDictionary dictionary, LocBamlOptions options) in D:\\dev\\LocBaml\\ResourceGenerator.cs:line 158\n  InnerException: System.NotSupportedException\n       Message=\"The URI prefix is not recognized.\"\n       Source=\"System\"\n       StackTrace:\n            at System.Net.WebRequest.Create(Uri requestUri, Boolean useUriBase)\n            at System.Net.WebRequest.Create(Uri requestUri)\n            at MS.Internal.WpfWebRequestHelper.CreateRequest(Uri uri)\n            at System.IO.Packaging.PackWebRequest.GetRequest(Boolean allowPseudoRequest)\n            at System.IO.Packaging.PackWebRequest.GetResponse()\n            at MS.Internal.WpfWebRequestHelper.GetResponse(WebRequest request)\n            at MS.Internal.WpfWebRequestHelper.GetResponseStream(WebRequest request, ContentType& contentType)\n            at System.Windows.ResourceDictionary.set_Source(Uri value)\n            at Microsoft.Windows.Controls.Ribbon.RibbonWindow..cctor()\n       InnerException: \n \nAny ideas what might be the problem.  I reference the assembly from xaml as in:\n \n    xmlns:r=\"clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary\"\n \nand the mainwindow is a RibbonWindow",
+    "LastUpdatedDate": "2013-02-21T18:41:34.257-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-04T11:05:03.43-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Locbaml and the Ribbon Control",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9168
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I took the RibbonWindow out and locbaml works fine.  Unfortunately the app doesn't look any better for it.",
+      "PostedDate": "2009-02-05T01:20:20.287-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T10:50:14.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi jifman,\r\n\r\nWe agree that this is a bug. We're filing a bug in our internal database to track this and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T10:54:46.07-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-19T10:48:53.663-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have seen the same issue using the RibbonWindow in my own application.  And yet the Sample that uses the RibbonControl RibbonWindow works fine.  I cannot detect any differences in how I am using it vs. how the sample application is using it.  Is there a workaround for this issue?  Why does the sample work?\r\n\r\nBest Regard,\r\n\r\nkhanson",
+      "PostedDate": "2009-02-25T15:14:35.087-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-25T15:19:06.787-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:18:48.883-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi,\r\n\r\ni have the same exception. I made a dll which has a ribbon window. If i call that dll through a wpf application it works fine, but if i call that dll through a winforms application i have that exception.\r\nDo you know if there is some workaround or solution for this problem?\r\n\r\nLooking forward for your feed-back.\r\n\r\nWith best regards\r\nSergio Agostinho",
+      "PostedDate": "2010-02-05T09:58:15.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi again,\r\n\r\nrelated with the problem that i reported above, i made some additional tests and i got my application working.\r\nTo solve the problem i replaced the references \"r:ribbonwindow\" with normal \"window\" and now i can open it again.\r\n\r\nThanks for your help.\r\n\r\nWith best regards\r\nSergio Agostinho\r\n",
+      "PostedDate": "2010-03-02T04:44:30.627-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:34.257-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

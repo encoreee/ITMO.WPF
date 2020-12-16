@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed - Fixed",
+    "ClosedDate": "2009-02-18T14:02:17.837-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi there,\n \nI am trying to install the Client Profile Designer tool but it is not installing on my machine. It starts extracting and then disappears. I know that this kind of info will not help much for you to debug. Please tell me what to send you (log files etc) and I will do so.\n \nThanks",
+    "LastUpdatedDate": "2013-05-16T05:31:17.36-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-10-31T03:50:26.22-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Client Profile Designer tool not installing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7929
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi there, I extracted the setup exe and ran the client profile setup and got this exception\r\n\r\nSystem.IO.FileLoadException was unhandled\r\nMessage: Could not load file or assembly 'cpdesign, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. Strong name validation failed. (Exception from HRESULT: 0x8013141A)\r\n\r\nany ideas?\r\n",
+      "PostedDate": "2008-11-03T03:12:35.313-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi marlongrech,\r\n\r\nWe discovered an issue with the signing of the binaries and are working to resolve this issue as soon as possible. Apologies for the inconvenience.\r\n\r\nThanks,\r\n-Bart",
+      "PostedDate": "2008-11-06T13:16:23.693-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have addressed this issue with the package and posted a new package last week. If you have any other issues, please let us know. Sorry for the inconvenience.\r\n\r\nThanks,\r\n-Troy",
+      "PostedDate": "2008-11-17T10:40:16.597-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T14:02:01.307-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T14:02:17.837-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:46.877-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:17.36-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

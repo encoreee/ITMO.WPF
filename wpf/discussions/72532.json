@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "247664",
+    "ThreadId": "72532",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I have a DataGrid with a RowValidationRule. The user can edit the data within the DataGrid and can save it. I want to allow the user to save the data only if the DataGrid is Valid (all rows are valid).</p>\r\n<p>How can i check whether the DataGrid is valid or not?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-10-20T05:29:26.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

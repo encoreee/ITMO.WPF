@@ -1,0 +1,186 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm trying to figure out how to get the DataGridComboBoxColumn.ItemsSource property working, well actually the DataGridComboBoxColumn in general.\nI can build the behavior I want in a custom DataGridTemplateColumn but it never works with the DataGridComboBoxColumn.\n \nA code sample is attached (simple WPF project) but I'll try to explain it.\n \nTwo simple entity classes:\n    public class Person\n    {\n        public string Name { get; set; }\n        public Country Country { get; set; }\n    }\n \n    public class Country\n    {\n        public string Name { get; set; }\n    }\n \nA simple Data class (this is the easiest way to simulate my problem, not the actual code :) )\n    public class Data\n    {\n        public List<Person> Persons { get; set; }\n        public List<Country> Countries { get; set; }\n    }\n \nAnd in the Window's constructor:\n            var data = new Data();\n            data.Countries = new List<Country> { new Country { Name = \"Belgium\" }, new Country { Name = \"USA\" } };\n            data.Persons = new List<Person> { new Person { Name = \"Steve\", Country = data.Countries[0] }, new Person { Name = \"Bill Gates\", Country = data.Countries[1] } };\n            DataContext = data;\n \nSo what I want to do is show a list of persons, and bind the combobox for county to my Countries property, the working one with DataGridTemplateColumn is the following:\n                <toolkit:DataGridTemplateColumn Header=\"Country\">\n                    <toolkit:DataGridTemplateColumn.CellTemplate>\n                        <DataTemplate>\n                            <TextBlock Text=\"{Binding Country.Name}\" />\n                        </DataTemplate>\n                    </toolkit:DataGridTemplateColumn.CellTemplate>\n                    <toolkit:DataGridTemplateColumn.CellEditingTemplate>\n                        <DataTemplate>\n                            <ComboBox SelectedItem=\"{Binding Country}\" DisplayMemberPath=\"Name\" ItemsSource=\"{Binding DataContext.Countries, RelativeSource={RelativeSource AncestorType={x:Type Window}}, IsAsync=true}\" />\n                        </DataTemplate>\n                    </toolkit:DataGridTemplateColumn.CellEditingTemplate>\n                </toolkit:DataGridTemplateColumn>\n            </toolkit:DataGrid.Columns>\n \nSo I tried to use the same bindings for the DataGridComboBoxColumn as following:\n                <toolkit:DataGridComboBoxColumn Header=\"Country\" SelectedItemBinding=\"{Binding Country}\" DisplayMemberPath=\"Name\" ItemsSource=\"{Binding DataContext.Countries, RelativeSource={RelativeSource AncestorType={x:Type Window}}, IsAsync=true}\" />\n \nBut nothing happens, the columns are empty and the combobox stays empty in editing mode.",
+    "LastUpdatedDate": "2015-10-10T12:53:17.463-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-11-20T04:23:33.01-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF DataGrid: DataGridComboBoxColumn.ItemsSource doesn't work",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 21,
+    "Id": 8153
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2291,
+      "FileName": "ComboBoxProblem.zip",
+      "DownloadUrl": ".\\2291"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Forgot to mention the errors in output window are:\r\n\r\nSystem.Windows.Data Error: 39 : BindingExpression path error: 'Country' property not found on 'object' ''Object' (HashCode=2902278)'. BindingExpression:Path=Country; DataItem='Object' (HashCode=2902278); target element is 'TextBlockComboBox' (Name=''); target property is 'SelectedItem' (type 'Object')\r\nSystem.Windows.Data Error: 39 : BindingExpression path error: 'Name' property not found on 'object' ''Object' (HashCode=2902278)'. BindingExpression:Path=Name; DataItem='Object' (HashCode=2902278); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')\r\nSystem.Windows.Data Error: 39 : BindingExpression path error: 'Country' property not found on 'object' ''Object' (HashCode=2902278)'. BindingExpression:Path=Country.Name; DataItem='Object' (HashCode=2902278); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')\r\nSystem.Windows.Data Error: 4 : Cannot find source for binding with reference 'RelativeSource FindAncestor, AncestorType='System.Windows.Window', AncestorLevel='1''. BindingExpression:Path=DataContext.Countries; DataItem=null; target element is 'DataGridComboBoxColumn' (HashCode=50510248); target property is 'ItemsSource' (type 'IEnumerable')\r\n\r\n",
+      "PostedDate": "2008-11-20T04:25:25.2-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I managed to fix this problem by changing the default behavior for the ItemsSource property.\r\nInherit from DataGridComboBoxColumn, override GenerateEditingElement and GenerateElement.\r\nWhen you have the generated element just copy the binding instead of trying to get the value.\r\n\r\nVB Code:\r\n    Public Class DataGridComboBoxColumnEx\r\n        Inherits DataGridComboBoxColumn\r\n\r\n        Protected Overrides Function GenerateEditingElement(ByVal cell As Microsoft.Windows.Controls.DataGridCell, ByVal dataItem As Object) As System.Windows.FrameworkElement\r\n            Dim element = MyBase.GenerateEditingElement(cell, dataItem)\r\n            CopyItemsSource(element)\r\n            Return element\r\n        End Function\r\n\r\n        Protected Overrides Function GenerateElement(ByVal cell As Microsoft.Windows.Controls.DataGridCell, ByVal dataItem As Object) As System.Windows.FrameworkElement\r\n            Dim element = MyBase.GenerateElement(cell, dataItem)\r\n            CopyItemsSource(element)\r\n            Return element\r\n        End Function\r\n\r\n        Private Sub CopyItemsSource(ByVal element As FrameworkElement)\r\n            BindingOperations.SetBinding(element, ComboBox.ItemsSourceProperty, BindingOperations.GetBinding(Me, ComboBox.ItemsSourceProperty))\r\n        End Sub\r\n\r\n    End Class\r\n\r\nIn short (C#):\r\nBindingOperations.SetBinding(element, ComboBox.ItemsSourceProperty, BindingOperations.GetBinding(this, ComboBox.ItemsSourceProperty));\r\n",
+      "PostedDate": "2008-12-09T03:43:05.23-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T06:56:50.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for this solution, much appreciated. I wrote a detailed example of how to use this in my blog here http://joemorrison.org/blog/2009/02/17/excedrin-headache-35401281-using-combo-boxes-with-the-wpf-datagrid/ .",
+      "PostedDate": "2009-02-18T06:58:27.103-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The issue is that Bindings rely on the DataContext to inherit to the object on which it is set. This works naturally for elements in a visual tree and through special work for a few properties. The Columns collection needs this work done in order for Bindings like the one you specified to work.  We have filed a bug in our internal database to be fixed in a future release.\r\n\r\nThanks!\r\nSamantha",
+      "PostedDate": "2009-02-18T17:40:50.243-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:41:07.383-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-06T15:36:25.17-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-09T02:59:33.813-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-06T06:40:58.543-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-04T04:37:00.943-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-19T13:19:35.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-24T03:58:00.673-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-25T06:02:36.257-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-30T04:31:48.137-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-04T02:48:34.613-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-09T07:39:20.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-18T10:38:54.9-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-16T07:55:47.657-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-08-16T02:29:56.173-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-09-22T06:37:41.853-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-01-06T09:24:52.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:43.67-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-04-23T16:50:13.293-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-01-02T05:56:08.45-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please fix this, very annoying!",
+      "PostedDate": "2014-01-02T05:57:13.803-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This solution worked for me by setting the elementstyle and the editingelementstyle:\nhttp://stackoverflow.com/a/5409984/187650 ",
+      "PostedDate": "2014-01-02T06:12:57.16-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-08-06T00:07:35.217-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-10-10T12:53:17.463-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm down to part 16 in the walkthrough - and am getting this error when I hover over my new item created. Example: Run the application, click on the coins dropdown (application menu) the one item that I added with this code (close button):\n<r:RibbonApplicationMenuItem>\n          <r:RibbonApplicationMenuItem.Command>\n             <r:RibbonCommand \n                LabelTitle=\"_Close\" \n                LabelDescription=\"Close the Application\"\n                Executed=\"OnCloseApplication\" />\n             </r:RibbonApplicationMenuItem.Command>\n          </r:RibbonApplicationMenuItem>\n       </r:RibbonApplicationMenu>\n \nDoesnt Display Close in the button - its empty and then this exception is thrown. What up with that? Was there something I missed? \nThanks for any help,\nJosh",
+    "LastUpdatedDate": "2013-02-21T18:40:49.33-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-12-12T19:01:51.45-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "'CommandConverter' is unable to convert 'Microsoft.Windows.Controls.Ribbon.RibbonCommand' to 'System.String'.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11167
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Added: This also happens on a new project.",
+      "PostedDate": "2009-12-12T20:07:00.007-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "i seem to have the same problem! please fix this issues! thanks!",
+      "PostedDate": "2009-12-13T20:27:48.087-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Anyone? I'd really like to get this working and there are 0 resources when googling this issue.",
+      "PostedDate": "2009-12-17T20:15:09.497-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Anyone? I really wasnt wanting to resort to a demo of a high priced suite knowing as a student I could never afford the full price lol. ",
+      "PostedDate": "2009-12-20T19:39:40.967-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:49.33-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

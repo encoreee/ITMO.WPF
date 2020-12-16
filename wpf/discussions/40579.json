@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "134595",
+    "ThreadId": "40579",
+    "Html": "Hi all!<br>\r\n<br>\r\nHow can I add <span style=\"font-size:16px;color:#ff0000\"><span style=\"font-size:16px;color:#ff0000\">TextTrimming</span><span style=\"font-size:16px;color:#0000ff\">=&quot;CharacterEllipsis&quot;  </span></span>to my ColumnHeaders?<br>\r\n<br>\r\n/Cake\r\n",
+    "PostedDate": "2008-11-23T10:54:53.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135153",
+    "ThreadId": "40579",
+    "Html": "Hi Cake,<br>\r\n<br>\r\nYou should be able to do this using the ColumnHeaderStyle property on DataGrid.  You will need to create a Style with TargetType DataGridColumnHeader and set the property in the Style, then assign that Style to ColumnHeaderStyle.<br>\r\n<br>\r\nLet me know if you run into any trouble.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-25T08:12:09.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135375",
+    "ThreadId": "40579",
+    "Html": "Something like the following should work for you....<br>\r\n<br>\r\n        &lt;Style x:Key=&quot;ColumnHeaderStyle&quot; TargetType=&quot;{x:Type dg:DataGridColumnHeader}&quot;&gt;<br>\r\n            &lt;Setter Property=&quot;ContentTemplate&quot;&gt;<br>\r\n                &lt;Setter.Value&gt;<br>\r\n                    &lt;DataTemplate&gt;<br>\r\n                        &lt;TextBlock TextTrimming=&quot;CharacterEllipsis&quot; <br>\r\n                                   Text=&quot;{Binding Content, RelativeSource={RelativeSource AncestorType={x:Type dg:DataGridColumnHeader}}}&quot;&gt;<br>\r\n                        &lt;/TextBlock&gt;<br>\r\n                    &lt;/DataTemplate&gt;<br>\r\n                &lt;/Setter.Value&gt;<br>\r\n            &lt;/Setter&gt;<br>\r\n        &lt;/Style&gt;<br>\r\n<br>\r\n        &lt;dg:DataGrid ColumnHeaderStyle=&quot;{StaticResource ColumnHeaderStyle}&quot; ... /&gt;\r\n",
+    "PostedDate": "2008-11-25T19:14:12.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "589006",
+    "ThreadId": "251855",
+    "Html": "<p>I notice that the samples in the WPF Visualization demos don't all have their origin at (0,0) - sometimes one axis is truncated and sometimes both. I have a stacked bar chart using code taken from the samples and the vertical axis doesn't start at 0. How can I enforce that the axes start&nbsp;at 0?&nbsp;</p>\n<p>&nbsp;</p>\n<p>Finally found it:</p>\n<p>charting:Chart x:Name=\"WorkChart\" Title=\"Work Assignment for the Year 2010\" Margin=\"18,0,18,10\" VerticalAlignment=\"Bottom\" Height=\"288\" Background=\"#FFF4EFEF\" BorderBrush=\"#FFFAF5F5\" Foreground=\"#FF4E74C3\" &gt;<br />&nbsp;&nbsp;&nbsp; &lt;charting:ColumnSeries Title=\"Work1\" ItemsSource=\"{StaticResource WorkAssignment}\"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IndependentValueBinding=\"{Binding Month}\"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DependentValueBinding=\"{Binding Work1}\"&nbsp; &gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; &lt;/charting:ColumnSeries&gt;<br /><br />&nbsp;&nbsp;&nbsp; &lt;charting:Chart.Axes&gt;<br />&nbsp;&nbsp;&nbsp; &lt;charting:LinearAxis Title=\"Jobs\" Orientation=\"Vertical\" Minimum=\"0\" Interval=\"0.2\"/&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/charting:Chart.Axes&gt;<br />&lt;/charting:Chart&gt;</p>",
+    "PostedDate": "2011-03-30T12:00:39.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

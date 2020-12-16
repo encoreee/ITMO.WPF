@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "129680",
+    "ThreadId": "39095",
+    "Html": "Hi All,<br>\r\n<br>\r\nI'm working on a project where I keep the data in the WPF datagrid updated by polling a database for newly added or changed records.<br>\r\n<br>\r\nIs anyone else here doing this?&nbsp; It would be cool to start a discussion about what strategies people are using for this.<br>\r\n<br>\r\nRight now I basically poll on the database for changes on a background thread, then pass any updates to the UI thread so that it can merge these changes into an observable collection that the grid is tied to.<br>\r\n<br>\r\nI need to do these updates while the user could be dropping an item on the grid, or performing some other action on the grid.<br>\r\n<br>\r\nIs anyone else working on something similar?<br>\r\nJon<br>\r\n",
+    "PostedDate": "2008-11-03T07:12:59.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129705",
+    "ThreadId": "39095",
+    "Html": "Yes, trying the same, currently polling on a background thread, and just updating the property that the itemsource is bound to. Check out this thread to see a link to a sample sln. <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39073\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39073</a> I'm not sure if this approch will make it to the end, but you could have a look.<div>Larsi</div><div><br></div><div><br></div>",
+    "PostedDate": "2008-11-03T08:58:09.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "362736",
+    "ThreadId": "39095",
+    "Html": "<p>I am having difficulty using the chart in this toolkit for real time data visualization.</p>\r\n<p>As an example, I have an area chart that has seven series in it. Each series uses an in-memory collection for its source of data; each collection has about 22 elements that are X/Y coordinates. This is small set of data by almost any standard.</p>\r\n<p>When I update the data on just one series at the rate of once-per-second by setting the series&rsquo; ItemSource property, my CPU usage for the application rises from 1% to an average of 12-15%, and occasionally spikes to the 20s. If I set all seven series in a single method that is called at once-per-second, I see an average CPU usage of 60-65% with spikes as in the 90s. Reducing the interval to as little as once every five seconds didn't seem make much impact on performance either.</p>\r\n<p>I have verified through code isolation that setting the ItemSource property is what is bogging down the CPU. I have also used the WPF Performance Suite (Wndows SDK)&nbsp; to verify that it is in fact the chart control that is responsible for the usage during that time.</p>\r\n<p>Based on this, I don&rsquo;t see how it could be used in a lot of &ldquo;real time visualization&rdquo; scenarios such as instrumentation applications&mdash;especially where larger sets of data might be required, multiple charts per screen, and/or other applications need to be running in the background.</p>",
+    "PostedDate": "2010-02-22T09:46:49.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "166626",
+    "ThreadId": "49783",
+    "Html": "This site <br>\r\n<br>\r\nhttp://sachabarber.net/?p=109<br>\r\n<br>\r\nimplies that 3.5 contains some &quot;new to me&quot; 3d support.&nbsp; Not sure if that is WPF 3.5 or .Net 3.5, but anyway, I created a C# WPF application in VS Express and replaced the window code with what is in the article. I changed all the goofy quotes in the article with regular double quotes.<br>\r\n<br>\r\nBut I still get errors.&nbsp; On this line (amongst other lines that cause errors)<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MeshGeometry3D x:Key=&quot;uiMesh&quot; TriangleIndices=&quot;0,1,2 3,4,5″ <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Positions=&quot;-1,-1,2 1,-1,2 1,1,2 1,1,2 -1,1,2 -1,-1,2&quot;<br>\r\n<br>\r\nTriangleIndices shows up in red which I think means it recognizes it, but Positions is in blue and the error message is:<br>\r\n<br>\r\nError&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp; &nbsp;'Name cannot begin with the '-' character, hexadecimal value 0x2D. Line 9, position 44.' XML is not valid.&nbsp;&nbsp; &nbsp;C:\\Users\\mtiede\\AppData\\Local\\Temporary Projects\\WpfApplication1\\Window1.xaml&nbsp;&nbsp; &nbsp;9&nbsp;&nbsp; &nbsp;44&nbsp;&nbsp; &nbsp;WpfApplication1<br>\r\n<br>\r\nWhat am I missing?&nbsp; Is there some assembly I need to be adding to something or what?<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-10T14:49:06.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166771",
+    "ThreadId": "49783",
+    "Html": "It looks like you didn't change the ending quote of TriangleIndices, so everything up to the start of the Positions value is considered TriangleIndices data. That would explain the error you are seeing.<br>\r\n",
+    "PostedDate": "2009-03-11T00:39:50.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166926",
+    "ThreadId": "49783",
+    "Html": "mikj,<br>\r\n<br>\r\n&nbsp;&nbsp; You were right.&nbsp; Don't know why the ReplaceAll didn't catch that.&nbsp; And I tried it at 2 different times and both times it missed that one.&nbsp; Odd.&nbsp; So now I'm past that.&nbsp; Got the app to work.<br>\r\n<br>\r\n&nbsp;&nbsp; Of course, now I just have more questions.&nbsp; I'm confused if and how I should use the 3dtools.&nbsp; Apparently at least some of this stuff is now in .Net 3.5?&nbsp; But BackMaterial, for instance, is not in the framework yet.&nbsp; <br>\r\n<br>\r\n&nbsp;&nbsp; So I downloaded the tools.&nbsp; What do I do with them?&nbsp; Do I just add a reference to the assembly(ies)?&nbsp; Does what is in the tools somehow override what is in the framework?<br>\r\n<br>\r\n&nbsp;&nbsp; The main thing I am trying to figure out how to do is take some WPF shapes and put them on the surface of a spinning sphere.&nbsp; Apparently the spinning sphere example that I have working doesn't use the new 3.5 stuff.&nbsp; I'm not sure how to integrate or convert from the example that uses ModelVisual3D into Viewport2DVisual3D (either framework one or tools one).<br>\r\n<br>\r\n&nbsp;&nbsp; Any help there?<br>\r\n<br>\r\n&nbsp;&nbsp; Apparently that sample had comments that were like &lt;!&nbsp; &gt;&nbsp; and not &lt;!-- --&gt; .&nbsp; I assume the comment was the style used in some previous version and now the new version has a different syntax.&nbsp; Is that right?\r\n",
+    "PostedDate": "2009-03-11T08:48:50.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

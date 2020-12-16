@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "After the conversion of the project was done I get a whole bunch of Namespace ambigios errors. System.WIndows.Controls and Microsoft.Windows.Controls are  all over the sources - and in WPF 4.0 you have the same names for the new controls...\nSo you need to fix all the using statements (remove them) and reference the System.Windows.Controls via the complete path if necessary...\nVS 2010 s out now some time. So I hope this project goes further...",
+    "LastUpdatedDate": "2013-02-21T18:40:29.57-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-06-21T00:26:59.997-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Build failed in VS Express 2010",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13584
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "i have exactly the same problem just with other namespaces. my design view is disabled but i can build the project.",
+      "PostedDate": "2010-07-12T05:08:08.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:29.57-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

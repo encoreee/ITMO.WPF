@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "430814",
+    "ThreadId": "209288",
+    "Html": "<p>Hi,</p>\r\n<p>I have a small problem with the datepicker and it's &quot;isEnabled&quot; property.</p>\r\n<p>When I set the property in XAML this work perfectly.</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\"><div style=\"color:Black;background-color:White\"><pre>                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">toolkit</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DatePicker</span> <span style=\"color:Red\">IsEnabled</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;False&quot;</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">'dp_birth'</span> <span style=\"color:Red\">Height</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;23&quot;</span> <span style=\"color:Red\">HorizontalAlignment</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;Left&quot;</span> <span style=\"color:Red\">Margin</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;187,107,0,0&quot;</span> <span style=\"color:Red\">VerticalAlignment</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;Top&quot;</span> <span style=\"color:Red\">Width</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;120&quot;</span><span style=\"color:Blue\">&gt;</span>                        \r\n                        &lt;toolkit:DatePicker.SelectedDate&gt;\r\n                            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Binding</span> <span style=\"color:Red\">Path</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;date_birth&quot;</span> <span style=\"color:Red\">UpdateSourceTrigger</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;PropertyChanged&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                                &lt;Binding.ValidationRules&gt;\r\n                                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">ExceptionValidationRule</span><span style=\"color:Blue\">/&gt;</span>\r\n                                &lt;/Binding.ValidationRules&gt;\r\n                            <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Binding</span><span style=\"color:Blue\">&gt;</span>\r\n                        &lt;/toolkit:DatePicker.SelectedDate&gt;\r\n                    <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">toolkit</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DatePicker</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<br></span></pre>\r\n</div>\r\n</p>\r\n<p>But when I change it in C#, the &quot;style&quot; don't work : it's stay grey but we can edit it.</p>\r\n<pre><span style=\"color:Blue\">this</span>.dp_birth.IsEnabled = <span style=\"color:Blue\">true</span>;<br></pre>",
+    "PostedDate": "2010-04-14T01:37:05.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430815",
+    "ThreadId": "209288",
+    "Html": "<p>Thanks in advance for your response.</p>\r\n<p>Regards</p>",
+    "PostedDate": "2010-04-14T01:37:54.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438248",
+    "ThreadId": "209288",
+    "Html": "<p>same issue for me</p>",
+    "PostedDate": "2010-05-03T02:17:21.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440591",
+    "ThreadId": "209288",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>D_Guidi wrote:</strong><br>\r\n<p>same issue for me</p>\r\n</blockquote>\r\n<p>May be someone have a solution. I have found nothings</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-08T02:22:05.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441014",
+    "ThreadId": "209288",
+    "Html": "<p>Yip, same problem here and using Feb 10 release :(</p>",
+    "PostedDate": "2010-05-10T03:20:42.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488074",
+    "ThreadId": "209288",
+    "Html": "<p>Same problem here using the Feb 2010 release, but I found a simple workaround.</p>\r\n<p>You can add a &lt;style&gt; which highlights when a DatePicker control is disabled.<br>I've posted sample code here:&nbsp;</p>\r\n<p><a href=\"http://stackoverflow.com/questions/2635385/wpf-datepicker-isenabled-property-not-changing-appearance/3625475#3625475\">http://stackoverflow.com/questions/2635385/wpf-datepicker-isenabled-property-not-changing-appearance/3625475#3625475</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-02T02:00:22.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "563671",
+    "ThreadId": "209288",
+    "Html": "\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add this code&nbsp; on OnIsEnabledChanged below OnVisualStatePropertyChanged(dp) and recompile the toolkit..this should work</p>\r\n<p>&nbsp; if (!dp.IsEnabled)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VisualStates.GoToState(dp, true, VisualStates.StateDisabled, VisualStates.StateNormal);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VisualStates.GoToState(dp, true, VisualStates.StateNormal);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n",
+    "PostedDate": "2011-02-09T17:35:42.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "656333",
+    "ThreadId": "209288",
+    "Html": "<p>&nbsp;</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><div style=\"color: black; background-color: white;\"><pre> <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">class</span> MyDatePicker : DatePicker\r\n    {\r\n        <span style=\"color: blue;\">public</span> MyDatePicker()\r\n        {\r\n            <span style=\"color: blue;\">this</span>.IsEnabledChanged += (o, e) =&gt; UpdateIsEnabledProperty(o <span style=\"color: blue;\">as</span> Control);\r\n        }\r\n\r\n        <span style=\"color: blue;\">private</span> <span style=\"color: blue;\">static</span> <span style=\"color: blue;\">void</span> UpdateIsEnabledProperty(Control ui)\r\n        {\r\n            <span style=\"color: blue;\">if</span> (ui == <span style=\"color: blue;\">null</span>)\r\n                <span style=\"color: blue;\">return</span>;\r\n\r\n            <span style=\"color: blue;\">const</span> <span style=\"color: blue;\">string</span> normal = <span style=\"color: #a31515;\">\"Normal\"</span>;\r\n            <span style=\"color: blue;\">const</span> <span style=\"color: blue;\">string</span> disabled = <span style=\"color: #a31515;\">\"Disabled\"</span>;\r\n            <span style=\"color: blue;\">string</span> name = ui.IsEnabled ? normal : disabled; \r\n            VisualStateManager.GoToState(ui, name , <span style=\"color: blue;\">true</span>);            \r\n        }\r\n}\r\n</pre>\r\n</div>\r\n<br /></pre>\r\n<pre><br /></pre>\r\n<pre>Using this you can avoid recompilation, unfortunately in some cases this doesn't work</pre>\r\n</div>",
+    "PostedDate": "2011-08-11T00:15:47.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "130494",
+    "ThreadId": "39337",
+    "Html": "&nbsp;I know how to use it with i.e. the listbox control <br>\r\n(i.e. TextSearch.TextPath=&quot;Note&quot; IsTextSearchEnabled=&quot;True&quot;).<br>\r\n<br>\r\nDoes Datagrid v1 supports TextSearch functionality?<br>\r\n<br>\r\nThanks in advance, Sanjin\r\n",
+    "PostedDate": "2008-11-06T06:05:42.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131338",
+    "ThreadId": "39337",
+    "Html": "Sorry, TextSearch is not supported with DataGrid.\r\n",
+    "PostedDate": "2008-11-10T05:46:09.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155180",
+    "ThreadId": "39337",
+    "Html": "Are there any plans to add TextSearch support? Any hint when this may be available, if at all? Thank you.",
+    "PostedDate": "2009-02-06T12:26:47.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

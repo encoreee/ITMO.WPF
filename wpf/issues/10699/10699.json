@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Row Virtualization is important for large data sets but it gets turned off when you use Grouping.\nI realise that grouping adds complexity when it comes to figuring out layout but I think getting these 2 features working together is very important\n \nCheers,\nJan",
+    "LastUpdatedDate": "2013-02-21T18:40:56.533-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-09-29T02:13:53.377-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Grouping breaks Row Virtualization",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10699
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

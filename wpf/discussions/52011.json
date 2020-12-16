@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "174492",
+    "ThreadId": "52011",
+    "Html": "Hello,<br>\r\n<br>\r\nI am facing a problem with adding new items with the WPF DataGrid.&nbsp; I am currently binding to an ObservableCollection&lt;Object&gt;.&nbsp; When I attempt to create/add a new item, an object of type Object is added to my collection while setting the current DataGridRow's Item property to some default Object.&nbsp; Is there any way to specify a default type for new rows, other than specifying the type through the ObservableCollection's type parameter?<br>\r\n<br>\r\n<br>\r\n* For anyone wondering why I would use an ObservableCollection&lt;Object&gt;:&nbsp; Everything was working great when I was using an ObservableCollection&lt;Product&gt; (where Product is one of my Linq-toSQL types), but I wanted to switch to ObservableCollection&lt;Object&gt; so that I could create a generic ObjectDataProvider that would be used like the following:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ObjectDataProvider x:Key=&quot;ProductProvider&quot; ObjectType=&quot;{x:Type local:GenericEntityProvider}&quot; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ObjectDataProvider.ConstructorParameters&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;x:Type Type=&quot;data:Product&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ObjectDataProvider.ConstructorParameters&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ObjectDataProvider&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ObjectDataProvider x:Key=&quot;Products&quot; ObjectInstance=&quot;{StaticResource ProductProvider}&quot; MethodName=&quot;GetEntities&quot;/&gt;<br>\r\n<br>\r\nBy specifying the type in the ConstructorParameters, I can get whatever type of entities I need, whithout having to write another class or method for each type of entity I'll want to edit.\r\n",
+    "PostedDate": "2009-04-01T13:26:42.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "175453",
+    "ThreadId": "52011",
+    "Html": "I dont think that is possible today as such. But I think you can achieve this by handling RowEditEnding event and cancel the edit when it is for add and add your custom object instead.<br>\r\n<br>\r\nIn RowEditEnding handler, the operation is add if<br>\r\n<br>\r\nIEditableCollectionView ecv = dataGrid.Items as IEditableCollectionView;<br>\r\nif(ecv != null &amp; ecv.AddingNew)<br>\r\n{<br>\r\n    // the operation is add<br>\r\n}\r\n",
+    "PostedDate": "2009-04-03T13:28:33.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "474853",
+    "ThreadId": "222024",
+    "Html": "<p>Hi,</p>\r\n<p>I am building a WPF GUI that acts like a stock monitor. I am using a DataGrid and using Data Binding to update information. I am experiencing a lot of lags when there are more than one row updating at the same time. I don't have an exact measure of how fasts these updates are, but I would say no more than 10-15 updates per seconds.&nbsp;</p>\r\n<p>I am surprised I am getting slow down, is WPF not able handle these kind of updates? Is there a feature in DataGrid that can control how many updates it makes per second or something similar? I am just wondering what other people's&nbsp;experience&nbsp;are when using WPF for fast updating front end applications.</p>\r\n<p>Thanks,</p>\r\n<p>Kelvin</p>",
+    "PostedDate": "2010-07-30T11:15:09.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475620",
+    "ThreadId": "222024",
+    "Html": "It's probably not WPF itself that's slow, but rather the WPF Toolkit DataGrid control.  This control is notoriously slow.  You might want to try a simpler control, or a different DataGrid control like a commercial one or the WinForms DataGridView control via interop.\r\n<p>\r\nBy the way, there are also WPF performance guidelines and profiling tools available to help you find out why something is slow, if you have the time and inclination to learn and explore how things work at a lower level.  For example:\r\n<p>\r\nhttp://msdn.microsoft.com/en-us/library/aa970683.aspx\r\n<br>\r\nhttp://blogs.msdn.com/b/jgoldb/archive/2010/05/21/wpfperf-performance-profiling-tools-for-wpf-4-is-now-available.aspx",
+    "PostedDate": "2010-08-02T14:01:10.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476169",
+    "ThreadId": "222024",
+    "Html": "<p>Thanks a lot. What is the commerical DataGrid? Is it the sdk:DataGrid?&nbsp;</p>\r\n<p><a href=\"http://msdn.microsoft.com/en-us/library/cc189753(v=VS.95).aspx\">http://msdn.microsoft.com/en-us/library/cc189753(v=VS.95).aspx</a></p>\r\n<p>I am using VisualStudio 2008 .Net 3.5 SP1. Do I need to install .Net 4.0 to use this?</p>\r\n<p>It's a medium sized software, I would hate to change my structure to use another type of control......</p>\r\n<p>&nbsp;</p>\r\n<p>either way, thanks a lot, those are very useful information.</p>",
+    "PostedDate": "2010-08-03T15:49:31.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476181",
+    "ThreadId": "222024",
+    "Html": "<p>A DataGrid is typically a complex and powerful control.&nbsp; Very difficult to develop.&nbsp; Microsoft did not provide one for WPF until they released the WPF Toolkit DataGrid control, available for .NET 3.5 SP1.&nbsp; This same control got included in the .NET 4.0 release.&nbsp; Maybe there were some bugfixes/differences going from the WPF Toolkit version to the .NET 4.0 version, but who knows?&nbsp; Is it documented anywhere?&nbsp; I couldn't find such information.</p>\r\n<p>Meanwhile, other companies developed their own DataGrid controls.&nbsp; This is what I was talking about when I said &quot;commercial&quot;.&nbsp; There are free controls, like the ones that Microsoft provides, then there are commercial ones from other companies that you typically have to pay for.&nbsp; For more information, see the following (and be sure to also read the questions under &quot;Linked&quot; on the right):</p>\r\n<p><a href=\"http://stackoverflow.com/questions/144537/what-are-some-good-wpf-grid-controls\">http://stackoverflow.com/questions/144537/what-are-some-good-wpf-grid-controls</a></p>\r\n<p>You might be able to get better performance by using a different DataGrid control.&nbsp; Or you might just need to change how you're using the DataGrid control you're using right now.&nbsp; Or it might be easier to use a simpler control instead, even if you have to restructure your application code.&nbsp; In any case, it might be useful to find out in more detail why you're experiencing slowdowns.</p>",
+    "PostedDate": "2010-08-03T16:23:08.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476186",
+    "ThreadId": "222024",
+    "Html": "<p>That make sense.</p>\r\n<p>Maybe WinForm DataGridView would be a good choice, but I like WPF's other capabilities, in case my app. expands in the future. How about the WPF ListView? Is that a slow/complex control?</p>\r\n<p>Since my GUI is a stock ticker/monitor, it would require pretty fast updates. I would say as much as 20-30 updates per second or more.</p>",
+    "PostedDate": "2010-08-03T16:34:08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476190",
+    "ThreadId": "222024",
+    "Html": "<p>The WPF ListView control is probably a lot simpler than the DataGrid control.&nbsp; It's only focused on viewing, and I think it has a lot fewer features than DataGrid.&nbsp; I can't say for sure that it will be faster, only that simpler controls tend to be faster.&nbsp; Of course, it depends greatly on how they're implemented and how you use them.&nbsp; It's worth a try, anyway.&nbsp; Try a simple test program first if it's a lot of work to change your app.</p>\r\n<p>20-30 updates per second should be no problem in WPF if you (and the controls you're using) are doing things efficiently.</p>\r\n<p>By the way, some people debated ListView/ListBox vs. DataGrid a little bit in the questions linked to the question I linked to in my previous post.</p>",
+    "PostedDate": "2010-08-03T16:48:21.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478279",
+    "ThreadId": "222024",
+    "Html": "<p>Perhaps you could provide a screen shot how you'd like it to look. It would be easier to advice with that.</p>\r\n<p>Designing for good performance in WPF is not impossible but not always trivial due to its flexibility and powerful layout engine.</p>\r\n<p>It's hard to come up with a good list of guidelines but I guess I could make a try:</p>\r\n<p>0. Use the simplest possible visualizer (ie is ListBox good enough then it's probably performs better than DataGrid)</p>\r\n<p>1. Use virtualizing stackpanels if you have many (ie &gt;100) rows</p>\r\n<p>2. Use ObservableCollections and minimal rebuild of those</p>\r\n<p>3. Use DataTemplates (enables lazy build of visual tree)</p>\r\n<p>4. Avoid scrollviewers (as they are unbounded and thus instantiate visual objects that's outside the screen, the scrollviewers that's built into ListBox doesn't do this when using virtualizing stackpanel)</p>\r\n<p>5. Use Styles to simpify visual objects (if you have a visual object that's instansiated many times it can make sense to remove unused clutter using Styles)</p>\r\n<p>6. Use a tool to visualize the visual tree or build a simple function that dumps it for you (will help you identify where you have unnecessary complex objects)</p>\r\n<p>7. Use bitmap cache in .NET 4 / Silverlight (but use it smart, ie only on static content or mostly static content, its often possible to separate dynamic content into a static&nbsp;tree and a dynamic tree and cache the static tree)</p>\r\n<p>8. Sometimes the best thing you can do is to override OnRender</p>\r\n<p>There's more of course.</p>",
+    "PostedDate": "2010-08-09T13:58:39.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "152554",
+    "ThreadId": "45711",
+    "Html": "How do you change the Foreground color of an entire row in WPF DataGrid control via code?  Meaning,  I have found an item in datagrid by searching the item's ID ( or other column parameter ).  Now how do I change the row color the item is located in the datagrid?  Thanks in advance.\r\n",
+    "PostedDate": "2009-01-30T08:03:14.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153885",
+    "ThreadId": "45711",
+    "Html": "Anyone know the answer to this?\r\n",
+    "PostedDate": "2009-02-03T11:28:19.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153991",
+    "ThreadId": "45711",
+    "Html": "Hello shaggygi,<br>\r\n<br>\r\nYou can define a DataTrigger on the DataGridRow that will change the foreground color if a property has a specific value.         <br>\r\n<br>\r\n<pre><span>&lt;Style</span> <span>TargetType</span><span>=&quot;{x:Type dg:DataGridRow}&quot;</span> <span>&gt;</span>\r\n    <span>&lt;</span><span>Style.Triggers</span><span>&gt;</span>\r\n        <span>&lt;</span><span>DataTrigger</span> <span>Binding</span><span>=&quot;{Binding ToBeHighlighted}&quot;</span> <span>Value</span><span>=&quot;true&quot;</span><span>&gt;</span>\r\n            <span>&lt;</span><span>Setter</span> <span>Property</span><span>=&quot;Background&quot;</span> <span>Value</span><span>=&quot;LightYellow&quot;</span> <span>/&gt;</span>\r\n        <span>&lt;/</span><span>DataTrigger</span><span>&gt;</span>\r\n    <span>&lt;/</span><span>Style.Triggers</span><span>&gt;</span>\r\n<span>&lt;/</span><span>Style</span><span>&gt;</span></pre>\r\n",
+    "PostedDate": "2009-02-03T15:13:09.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154626",
+    "ThreadId": "45711",
+    "Html": "Thanks for the reply.  I'm new to the WPF DataGrid and a little confused on your solution.  Do you have a basic example to demo this?  I have my data bound to an ObservableCollection and would like to change the color of entire row where data was changed in the item.  Thanks again.\r\n",
+    "PostedDate": "2009-02-05T04:56:26.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154717",
+    "ThreadId": "45711",
+    "Html": "Hi,<br>\r\n<br>\r\nThe example which pikul gave uses a data trigger. These are triggers that enable style property setters based on some property of your object. See this codeproject article for a good tutorial of this technique:<br>\r\n<br>\r\n&lt;cite&gt;&lt;/cite&gt;http://www.codeproject.com/KB/WPF/HiliteListViewItemsInWPF.aspx<br>\r\n<br>\r\nYou want to highlight a row when the data has changed? In this case you will have to provide a property on your data objects to support this, i.e. a boolean IsChanged property that you can bind to in your data trigger.<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-02-05T08:30:32.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

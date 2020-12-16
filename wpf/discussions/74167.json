@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "253710",
+    "ThreadId": "74167",
+    "Html": "<p>Hi, I noticed that when styling a AreaDataPoint, the &quot;root&quot; grid's height/width seems to be overriden somewhere..... even if I change the height and width, whatever I place in that grid seems to be limited to 4x4..... Is this for a reason and how do I get around this limitation..... I'd like to add larger datapoints....</p>\r\n<p>Also, I added a pop-up control to that style and it does not show up, even when I set IsOpen=true?</p>\r\n<p>Thanks,</p>\r\n<p>Steve</p>",
+    "PostedDate": "2009-11-05T04:01:33.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "252207",
+    "ThreadId": "73757",
+    "Html": "<p>I wish I could attach screenshots to the post. &nbsp;I will do my best to describe the three issues.</p>\r\n<ol>\r\n<li style=\"margin-left:15px\">The default text &quot;Show Calendar&quot;, and it is centered in the text box vertically, and has a large padding from the left edge. &nbsp;When the box is is tall enough it shows fine, however it requires it to be bigger than other controls and doesn't fit in. &nbsp;When I have it auto size to the layout and size with the rest of the controls the bottom of this text get clipped. &nbsp;I tried to set the padding of the control but it changes nothing.</li>\r\n<li style=\"margin-left:15px\">When you select a date or type anything into the field the text is places in the upper left corner of the box the left padding is fine, however it should be centered vertically but isn't so it looks really bad.</li>\r\n<li style=\"margin-left:15px\">The button to show the calendar pop out is placed in the upper right corner. The right padding is fine, however it should either be centered vertically, or the image should&nbsp;stretch to fill the area with equal padding around it.</li>\r\n</ol>\r\n<p>There doesn't seem to be any settings to allow control over the padding of the controls used within the DatePicker, if these are not available I would think that it should follow basic rules like vertical centering of all the text, with the same padding on the left, with the icon also either vertical centered or stretched to fit with equal padd</p>",
+    "PostedDate": "2009-11-01T14:07:52.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

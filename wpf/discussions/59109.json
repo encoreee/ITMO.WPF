@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "200113",
+    "ThreadId": "59109",
+    "Html": "<p><span style=\"color:#30332d;white-space:pre-wrap\">Just an FYI.  I was working with defining a button to sit beside my row.  when the rowdetails are expanded for any given row... I wanted it to remain beside the row and not be centered on the Row + Row Details.  To do this, simple define a setter property in your RowHeaderStyle definition: </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#30332d;white-space:pre-wrap\">&lt;Style x:Key=&quot;RowHeaderStyle&quot; TargetType=&quot;{x:Type wpftoolkit:DataGridRowHeader}&quot;&gt; </span></p>\r\n<p style=\"padding-left:30px\"><span style=\"color:#30332d;white-space:pre-wrap\">&lt;Setter Property=&quot;Background&quot; Value=&quot;#A1A1A1&quot;/&gt; </span></p>\r\n<p style=\"padding-left:30px\"><span style=\"color:#30332d;white-space:pre-wrap\">&lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Top&quot;/&gt; </span></p>\r\n<p><span style=\"color:#30332d;white-space:pre-wrap\">&lt;/Style&gt; </span></p>",
+    "PostedDate": "2009-06-10T12:02:10.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

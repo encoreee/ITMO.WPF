@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "426193",
+    "ThreadId": "207979",
+    "Html": "<p>What property (in which event) enables me to view the contents of the datagrid cell being edited? My datagrid is bound to a data table and I know how to push the cell to the table before RowEditEnding but I how do I see the new data/cell contents before it is written to the data table?</p>",
+    "PostedDate": "2010-03-31T14:56:27.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427920",
+    "ThreadId": "207979",
+    "Html": "<p>I use ((cell.Content as TextBox).Text. Don't sure that there is good way, but it works for me.</p>",
+    "PostedDate": "2010-04-06T09:04:57.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

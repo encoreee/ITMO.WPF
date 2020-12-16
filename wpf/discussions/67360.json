@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "228919",
+    "ThreadId": "67360",
+    "Html": "<p>Hi,</p>\r\n<p>I am new to WPF. I have created a button&nbsp;control in WPF and I want to show the button only when i trigger&nbsp;another event. In XAML for button Visible property I have set the value as&nbsp;&quot;Hidden&quot; and when I set <em>btn.Visibility = &quot;Visible&quot;</em>&nbsp;thro C# code, I am getting the following error</p>\r\n<p><strong>Cannot convert type 'string' to 'System.Windows.Visibility'</strong></p>\r\n<p>Please help me on this. Thanks</p>",
+    "PostedDate": "2009-08-29T01:12:20-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228948",
+    "ThreadId": "67360",
+    "Html": "<p>Hi,</p>\r\n<p>You are trying to set the value as a string which is incorrect.&nbsp;</p>\r\n<p>You have to set it like this.</p>\r\n<p>btn.Visibility = Visibility.Visible</p>\r\n<p>no quotes around it.</p>",
+    "PostedDate": "2009-08-29T05:27:30.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

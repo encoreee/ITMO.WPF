@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We're testing an application built with the June 2009 WPF Toolkit.\nOn one tester's computer the following exception is thrown when a DataGrid is bound and displayed.\n \nSystem.ArgumentNullException: Value cannot be null.\nParameter name: key\n \nThe full stack trace is\nParameter name: key\n   at System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\n   at Microsoft.Windows.Automation.Peers.DataGridAutomationPeer.GetOrCreateItemPeer(Object item)\n   at Microsoft.Windows.Automation.Peers.DataGridCellAutomationPeer.UpdateEventSource()\n   at Microsoft.Windows.Automation.Peers.DataGridCellAutomationPeer..ctor(DataGridCell owner)\n   at Microsoft.Windows.Controls.DataGridCell.OnCreateAutomationPeer()\n   at System.Windows.UIElement.CreateAutomationPeer()\n   at System.Windows.Automation.Peers.UIElementAutomationPeer.CreatePeerForElement(UIElement element)\n   at Microsoft.Windows.Automation.Peers.DataGridCellItemAutomationPeer.get_OwningCellPeer()\n   at Microsoft.Windows.Automation.Peers.DataGridCellItemAutomationPeer.GetItemStatusCore()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree()\n   at System.Windows.ContextLayoutManager.fireAutomationEvents()\n   at System.Windows.ContextLayoutManager.UpdateLayout()\n   at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)\n   at System.Windows.Media.MediaContext.InvokeOnRenderCallback.DoWork()\n   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\n   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n   at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n   at System.Windows.Threading.DispatcherOperation.InvokeImpl()\n   at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)\n   at System.Threading.ExecutionContext.runTryCode(Object userData)\n   at System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\n   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n   at System.Windows.Threading.DispatcherOperation.Invoke()\n   at System.Windows.Threading.Dispatcher.ProcessQueue()\n   at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n   at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n   at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Boolean isSingleParameter)\n   at System.Windows.Threading.Dispatcher.Invoke(DispatcherPriority priority, Delegate method, Object arg)\n   at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\n   at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)\n   at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\n   at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)\n   at System.Windows.Threading.Dispatcher.Run()\n   at System.Windows.Application.RunDispatcher(Object ignore)\n   at System.Windows.Application.RunInternal(Window window)\n   at System.Windows.Application.Run(Window window)\n   at System.Windows.Application.Run()\n   at ThreeFifteen.Edcon.AssortmentPlanning.Client.App.Main()\n \nI'm not sure why this bug only happens to one user.",
+    "LastUpdatedDate": "2014-05-28T08:21:21.98-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-02-01T00:34:42.383-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid throws ArgumentNullException when bound and displayed.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11670
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello there\r\nWe have hit the same issue and stumbled upon this post.\r\nWas there any resolution?",
+      "PostedDate": "2010-10-30T00:48:37.423-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Unfortunately not. The project was cancelled shortly after I created this issue. \r\nThe datagrid in .net 4.0 might not have this issue.",
+      "PostedDate": "2010-10-30T01:20:35.39-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-21T18:05:23.54-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "good,",
+      "PostedDate": "2012-08-21T19:14:13.043-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:45.427-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "What is the resolution for this issue?",
+      "PostedDate": "2014-05-28T08:21:21.98-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

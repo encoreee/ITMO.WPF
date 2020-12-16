@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "192826",
+    "ThreadId": "57067",
+    "Html": "<p>hello i am new to the WPF world but i am learning quickly, i am attempting (for $#!ts and Giggles) to recreate and outlook 2k7 navigation pane for an application, i have a restyled tabcontrol that looks good enough but i can figure out how to get it to change the TabItem Grid as well as a Second Grid used for the Main Content. any help would be greatly appreciated.</p>",
+    "PostedDate": "2009-05-21T08:25:29.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193076",
+    "ThreadId": "57067",
+    "Html": "<p>This hands-on-lab might be useful:&nbsp;<a href=\"http://www.microsoft.com/switzerland/msdn/de/presentationfinder/detail.mspx?id=104056\">http://www.microsoft.com/switzerland/msdn/de/presentationfinder/detail.mspx?id=104056</a></p>\r\n<p>They recreate the Outlook 2007 UI.</p>\r\n<p>Have fun!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-21T22:43:07.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193449",
+    "ThreadId": "57067",
+    "Html": "<p>thanks this was a good start, after researching further i managed to find the english version of this lab. <a href=\"http://blogs.msdn.com/tims/archive/2007/06/13/wpf-hands-on-lab-build-an-outlook-2007-ui-clone.aspx\">http://blogs.msdn.com/tims/archive/2007/06/13/wpf-hands-on-lab-build-an-outlook-2007-ui-clone.aspx</a>&nbsp;just in case someone is interestied.</p>",
+    "PostedDate": "2009-05-22T20:00:45.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193999",
+    "ThreadId": "57067",
+    "Html": "<p>this lib may contain what you are searching</p>\r\n<p>http://www.codeplex.com/odyssey (OutlookBar)</p>",
+    "PostedDate": "2009-05-25T13:25:17.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

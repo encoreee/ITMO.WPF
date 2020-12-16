@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "137246",
+    "ThreadId": "41378",
+    "Html": "<p>How can i make following column:<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&nbsp;</p>\r\n<p>&lt;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">Controls</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGridTextColumn</span><span style=\"font-size:13px;color:#ff0000\"> Header</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Text&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Binding</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> MessageText</span><span style=\"font-size:13px;color:#0000ff\">}&quot;</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#ff0000\">Width</span><span style=\"font-size:13px;color:#0000ff\">=&quot;*&quot;</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Name</span><span style=\"font-size:13px;color:#0000ff\">=&quot;textcolumn&quot; /&gt;</span><br>\r\n<br>\r\ndisplay the text in the cell in multiple lines?<br>\r\nI am sure it is trivial, but I can't figure it out. </p>\r\n",
+    "PostedDate": "2008-12-03T06:06:49.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137278",
+    "ThreadId": "41378",
+    "Html": "I can't see any obvious, trivial way of doing this since there isn't a TextWrapping or other similarly named property on the DataGridTextColumn.<br>\r\n<br>\r\nYou could try applying a style to the column, either by defining a new style by scratch or by extracting the default style at runtime or using something like Expression Blend if you have it.<br>\r\n<br>\r\nYou could also try using the DataGridTemplateColumn rather than the DataGridTextColumn, although I'm not sure what the benefits are of using the template column, since any other column type can have a custom template applied anyway.  <br>\r\n<br>\r\nI've only just started using the DataGrid myself so I don't really know much about it yet. \r\n",
+    "PostedDate": "2008-12-03T07:38:42.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137335",
+    "ThreadId": "41378",
+    "Html": "<div>Maybe something like this?</div><div><br></div><div><span style=\"white-space:pre\">\t\t</span>&lt;Controls:DataGridTextColumn Header=&quot;Text&quot; Binding=&quot;{Binding MessageText}&quot; Width=&quot;*&quot; x:Name=&quot;textcolumn&quot;&gt;<br></div><div>                    &lt;Controls:DataGridTextColumn.ElementStyle&gt;</div><div>                        &lt;Style TargetType=&quot;TextBlock&quot;&gt;</div><div>                            &lt;Setter Property=&quot;TextWrapping&quot; Value=&quot;Wrap&quot;/&gt;</div><div>                            &lt;Setter Property=&quot;Margin&quot; Value=&quot;3&quot;/&gt;</div><div>                        &lt;/Style&gt;</div><div>                    &lt;/Controls:DataGridTextColumn.ElementStyle&gt;</div><div>                    &lt;Controls:DataGridTextColumn.EditingElementStyle&gt;</div><div>                        &lt;Style TargetType=&quot;TextBox&quot;&gt;</div><div>                            &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Blue&quot;/&gt;</div><div>                            &lt;Setter Property=&quot;TextWrapping&quot; Value=&quot;Wrap&quot;/&gt;</div><div>                            &lt;Setter Property=&quot;Margin&quot; Value=&quot;3&quot;/&gt;</div><div>                        &lt;/Style&gt;</div><div>                    &lt;/Controls:DataGridTextColumn.EditingElementStyle&gt;</div><div>                &lt;/Controls:DataGridTextColumn&gt;</div>",
+    "PostedDate": "2008-12-03T09:57:23.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

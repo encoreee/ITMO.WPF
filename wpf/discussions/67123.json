@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "228198",
+    "ThreadId": "67123",
+    "Html": "<p>I was hoping to combine my converter class with validation so that, if successful, the data only had to be converted once. My converter does data validation from a database, so I do not want to have to call into the database twice (once for a validation pass and once for a conversion).</p>\r\n<p>I created:<br>public class FixNameDataTypeConverter : <span style=\"background:yellow\">ValidationRule,</span> IMultiValueConverter</p>\r\n<p>I have gotten my multivalueconverter to work, so I know that it is solid. I have gotten the validation rule to fire. However, I suspect that my xaml is wrong because the textbox never turns red. Has anyone ever tried this? If so, what would the xaml look like?</p>\r\n<p>THANKS SO MUCH!!!</p>",
+    "PostedDate": "2009-08-26T18:53:04.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "203376",
+    "ThreadId": "60087",
+    "Html": "<p>Hello,<br>I have a datagrid and I want to columns to size so I can see the whole content: <span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\">Width</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;SizeToCells&quot;<br></span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">Problem is that I have an empty&nbsp;comboBox in wich the&nbsp;user still has to make a selection.<br> As long as the column is empty, the size of the column is very small and almost invisible for the user.</span></span></p>\r\n<p><span style=\"color:#0000ff\">If I set:&nbsp;<span style=\"color:#ff0000\"> </span>Width<span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;SizeToheader&quot; the size is to small if the users makes a selection.</span></span></span></p>\r\n<p><span style=\"color:#0000ff\">So what I want is: make the size of the column &quot;SizeToCells&quot;, but if this is smaller than the width of the header I want it to be =&quot;SizeToheader&quot; .</span></p>\r\n<p><span style=\"color:#0000ff\">Is this possible?</span></p>\r\n<p><span style=\"color:#0000ff\">Thanks in advance,\r\n<p><span style=\"font-size:x-small\"></span></p>\r\n</span></p>",
+    "PostedDate": "2009-06-19T08:28:19.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203487",
+    "ThreadId": "60087",
+    "Html": "<p>Doesn't it automatically resize? Try without and width specifier.</p>",
+    "PostedDate": "2009-06-19T12:20:14.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "484916",
+    "ThreadId": "60087",
+    "Html": "<p>Just set Width to &quot;SizeToCells&quot; and use the MinWidth property to specify the width that makes the header readable (use a split between design and xaml to see what the vales should be when you edit the numbers). It's not verry user friendly to set up, but it does exactly what you want it to do.</p>",
+    "PostedDate": "2010-08-25T18:13:03.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

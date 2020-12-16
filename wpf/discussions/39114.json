@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "129733",
+    "ThreadId": "39114",
+    "Html": "Can anyone please tell me whether it is possible to provide Autocomplete or autosuggest support fro the Combobox column in the DataGrid v1.\r\n",
+    "PostedDate": "2008-11-03T11:12:58.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130201",
+    "ThreadId": "39114",
+    "Html": "See this thread, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39115\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39115</a>.\r\n",
+    "PostedDate": "2008-11-05T06:24:00.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "198567",
+    "ThreadId": "58653",
+    "Html": "<p>Hi I am new to WPF. How can i enable inline data editing in wpf datagrid? I have tried with CellEndEdting event with no success. It does give me the current editing row but with the old binded values. These is my datagrid xaml markup.&nbsp;</p>\r\n<p>\r\n<p>&lt;toolkit:DataGrid x:Name=&quot;monthGrid&quot; ItemsSource=&quot;{Binding}&quot; Height=&quot;450&quot;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BorderThickness=&quot;1&quot; CellEditEnding=&quot;monthGrid_CellEditEnding&quot;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RowBackground=&quot;CadetBlue&quot; AlternatingRowBackground=&quot;BurlyWood&quot;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;FontSize=&quot;15&quot; /&gt;</p>\r\n<p>At the code behind:</p>\r\n<p>\r\n<p>private void monthGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)&nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DataRow row = (e.Row.DataContext as DataRowView).Row;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DataRow row2 = (e.EditingElement.DataContext as DataRowView).Row;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DataRow row3 = (monthGrid.SelectedItem as DataRowView).Row;</p>\r\n<p>}</p>\r\n<p>As you can see i have tried 3 ways but none of them gives me the expected result. Whatever I am typing in the grid cell is not catching by this event. It comes with initial value binding.&nbsp;Am i missing something?&nbsp;</p>\r\n</p>\r\n</p>",
+    "PostedDate": "2009-06-06T10:13:08.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "198973",
+    "ThreadId": "58653",
+    "Html": "<p>RowEditEnding fires as the row edit is ending, not after it has ended. I have found row validation rules to be the easiest way to accomplish what I believe you are trying to do. Those also allow you to react to the data and indicate to the user if there is an error at the record level.</p>",
+    "PostedDate": "2009-06-08T04:32:05.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "523607",
+    "ThreadId": "58653",
+    "Html": "\r\n<p>Hi Hassan,</p>\r\n<p>We have a free downloadable dynamic inline editable grid which may be of some use to you. Have a look and see what you think - http://www.mokom.com.au/services-solutions.aspx</p>\r\n",
+    "PostedDate": "2010-11-17T20:47:09.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

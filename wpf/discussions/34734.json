@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "115326",
+    "ThreadId": "34734",
+    "Html": "Hi,<br>\r\nI still feel a lack of samples for the datagrid. Only too few available on internet. Does Microsoft plan to provide a reference sample ? Some article on MSDN maybe ? <br>\r\nThanks<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-02T04:38:50.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115491",
+    "ThreadId": "34734",
+    "Html": "Hi Wonderliza,<br>\r\n<br>\r\nThere will be official DataGrid documentation available on MSDN with our .NET 4.0 release, and until that time the team will work on creating more samples and making them available on the internet through blogs,&nbsp;MSDN,&nbsp;and <a href=\"http://www.windowsclient.net\">www.windowsclient.net</a>.&nbsp; If there are any particular scenarios which you are interested in, please let us know and we can work on creating samples for those scenarios.<br>\r\n<br>\r\nThank you!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-09-02T15:25:19.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115589",
+    "ThreadId": "34734",
+    "Html": "Thanks for your answer. In fact, i found nothing about the events like&nbsp;\r\n<li>PreparingCellForEdit\r\n<li>BeginningEdit\r\n<li>CommitingEdit\r\n<li>CancelingEdit\r\n<p>All the samples are quite simple. <br>\r\nI also found nothing about when should be called the update of the database : which event should be used ?<br>\r\nRegards,</p>\r\n</li>\r\n",
+    "PostedDate": "2008-09-03T02:18:54.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115646",
+    "ThreadId": "34734",
+    "Html": "For the&nbsp;database scenario you have access to the DataTable.RowChanged event.&nbsp; Once the row is committed from the DataGrid, that event will fire which should give you the chance to update the database.&nbsp; DataTable.RowChanged will handle adding rows as well.\r\n",
+    "PostedDate": "2008-09-03T06:41:39.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115652",
+    "ThreadId": "34734",
+    "Html": "Thanks,<br>\r\nDo you have a code that shows how to attach DataTable.RowChanged event ? <br>\r\nI only declared my datagrid this way :<br>\r\n<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x:Name=&quot;dgPics&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;False&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;<br>\r\n<br>\r\nThen, i found no easy way to define the event you talk about.<br>\r\n",
+    "PostedDate": "2008-09-03T06:57:57.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115811",
+    "ThreadId": "34734",
+    "Html": "Here is one way of attaching a DataTable.RowChanged event:<br>\r\n<br>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _employeeDataSet = DBAccess.GetEmployees();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (_employeeDataSet != null)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _employeeDateTable = _employeeDataSet.Tables[&quot;Employees&quot;];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _employeeDateTable.RowChanged += new DataRowChangeEventHandler(employee_RowChanged);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid_Standard.ItemsSource = _employeeDateTable.DefaultView;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n<br>\r\nThis code is coming from a button click event that I have on my UI.&nbsp; From your code snippet, it looks like your binding is coming from a higher data context.&nbsp; Assuming your DataContext is a DataView you can attached it there.</p>\r\n",
+    "PostedDate": "2008-09-03T13:44:38.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

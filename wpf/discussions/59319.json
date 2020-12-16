@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "200821",
+    "ThreadId": "59319",
+    "Html": "<p>I have tried looking at the source and I've even used google, but I can find no example for deferred scrolling.</p>\r\n<p>I realize the scrollview has a IsDeferredScrollingEnabled property, but what about the datagrid?</p>",
+    "PostedDate": "2009-06-12T06:55:27.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200860",
+    "ThreadId": "59319",
+    "Html": "<p>See this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/05/22/wpf-3-5-sp1-feature-non-live-scrolling.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/05/22/wpf-3-5-sp1-feature-non-live-scrolling.aspx</a>.&nbsp; While the example shows a ListView, the same should hold with DataGrid.</p>",
+    "PostedDate": "2009-06-12T08:36:28.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200878",
+    "ThreadId": "59319",
+    "Html": "<p>Thanks! It works like a charm now.</p>\r\n<p>Good that you mentioned the part about control templates. I have some more digging to do. :)</p>",
+    "PostedDate": "2009-06-12T09:06:43.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "444987",
+    "ThreadId": "213182",
+    "Html": "<p>Has anyone got any insight into how to get multiple (hierarchical) header rows for a WPF GridView implementation that retains the functionality of adjusting the columns widths by dragging the column dividers in the header row. Effectively the header rows would be somewhat like a horizontal tree view bound to a hierarchical data object for the items source. I have seen (and tried to extend from it) a sample (<a title=\"Embedded ListView Columns (Columns Within Columns)\" href=\"http://www.designerwpf.com/2008/01/25/embedded-listview-columns-columns-within-columns/\">http://www.designerwpf.com/2008/01/25/embedded-listview-columns-columns-within-columns/</a>) that gets 2 header rows but no more than that... I am trying to create a dynamic number of header rows where that number is driven by the number of levels in the hierarchical data object.</p>\r\n<p>Appreciate all great minds!</p>",
+    "PostedDate": "2010-05-19T09:33:17.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I fill the ItemsSource property of the box like this:\n---- XAML ----\nItemsSource=\"{Binding Path=Detail}\" ValueMemberBinding=\"{Binding Title}\"\n \n---- C# Object Code ----\npublic class Detail\n{\n\tpublic int ID { get; set; }\n\tpublic string Title { get; set; }\n}\n \nNow I create a list of two Detail objects whit the same identical title but different IDs and bind it to the AutoCompleteBox.\nIn this scenario, when I select an item from the combo of the AutoCompleteBox, I always get the same object (the same ID) when I try to read the property \"SelectedItem\".",
+    "LastUpdatedDate": "2015-02-02T07:14:50.583-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-06-04T03:29:14.68-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AutoCompleteBox always return the same selected item",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 13448
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4721,
+      "FileName": "AutoCompleteBox.cs",
+      "DownloadUrl": ".\\4721"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "The problem is into UpdateTextCompletion ,becouse it select always the first find with same text. \r\nI'm rosolved add new bool parametrs to UpdateTextCompletion ,then determinate that item is selected from DropDown list.",
+      "PostedDate": "2010-08-07T01:22:59.54-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I still have the same Problem with the current WPF Toolkit. \r\nIs there any solution or a newer version of the control?",
+      "PostedDate": "2011-05-18T04:51:40.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-18T04:51:52.17-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-15T14:04:10.407-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:31.487-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-07T08:58:41.85-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-02-02T07:14:50.583-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "at System.Windows.Controls.VirtualizingStackPanel.InsertContainer(Int32 childIndex, UIElement container, Boolean isRecycled)\n   at System.Windows.Controls.VirtualizingStackPanel.AddContainerFromGenerator(Int32 childIndex, UIElement child, Boolean newlyRealized)\n   at System.Windows.Controls.VirtualizingStackPanel.BringIndexIntoView(Int32 index)\n   at Microsoft.Windows.Controls.Primitives.DataGridRowsPresenter.InternalBringIndexIntoView(Int32 index) in C:\\\\dd\\\\WPF_1\\\\src\\\\wpf\\\\src\\\\ControlsPack\\\\WPFToolkit\\\\DataGrid\\\\Microsoft\\\\Windows\\\\Controls\\\\Primitives\\\\DataGridRowsPresenter.cs:line 48\n   at Microsoft.Windows.Controls.DataGrid.ScrollRowIntoView(Object item) in C:\\\\dd\\\\WPF_1\\\\src\\\\wpf\\\\src\\\\ControlsPack\\\\WPFToolkit\\\\DataGrid\\\\Microsoft\\\\Windows\\\\Controls\\\\DataGrid.cs:line 1617\n   at Microsoft.Windows.Controls.DataGrid.ScrollIntoView(Object item) in C:\\\\dd\\\\WPF_1\\\\src\\\\wpf\\\\src\\\\ControlsPack\\\\WPFToolkit\\\\DataGrid\\\\Microsoft\\\\Windows\\\\Controls\\\\DataGrid.cs:line 1506\n \nHere is what I am doing...I have a Datagrid whose ItemsSource is set to the DefaultView of a DataTable.  I  have a method that returns a DataRowView (again from the DefaultView of the DataTable) by searching through the Default View.  The match is found based on the Identity column in the DataTable so I'm not doing any filtering to find the DataRowView.  The method returns the DataRowView found.  I first set DataGrid.SelectedItem to the DataRowView returned.  I then call the DataGrid.ScrollIntoView(DataGrid.SelectedItem).  That is when the exception is thrown.  If I ignore the exception, the DataGrid has the correct row selected, but because of the exception, it is not visible.  You have to manually scroll to find the selected row.\n \nDebugging into the WPFToolkit code.  Line 1597 in DataGrid.cs is returning a null value for FrameworkElement when it should be a DataGridRow\n            FrameworkElement element = ItemContainerGenerator.ContainerFromItem(item) as FrameworkElement;",
+    "LastUpdatedDate": "2013-02-21T18:41:03.54-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-02T08:23:20.46-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Exception thrown in DataGrid.ScrollIntoView",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 10381
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Can you please provide us a small repro app for this.",
+      "PostedDate": "2009-08-28T13:22:28.563-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-17T04:52:52.917-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-29T12:25:24.39-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-14T09:25:41.127-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-15T08:15:39.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-14T06:45:25.893-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I ran into the same issue.  This article here discussed a workaround that fixed the problem for me.  http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/f651812c-95db-436e-a98e-d5eeccb779e5",
+      "PostedDate": "2010-03-31T14:59:17.737-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-12-29T12:59:19.84-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:03.54-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

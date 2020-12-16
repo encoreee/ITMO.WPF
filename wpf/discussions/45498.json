@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "151805",
+    "ThreadId": "45498",
+    "Html": "I have a TargetUpdated event triggered when any cells in my DataGrid is updated. In that event handler I would like to find out what was the row index of the cell being edited. That is, if the user edits the cell in row 5 and column 1, I would like to find out that it was row 5.<br>\r\n<br>\r\nDoes anyone have any suggestions on how to find this out?<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nGeoff\r\n",
+    "PostedDate": "2009-01-28T07:42:04.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154517",
+    "ThreadId": "45498",
+    "Html": "If you listen to DataGrid.BeginningEdit you'll get access to the current row and column that is being edited.\r\n",
+    "PostedDate": "2009-02-04T19:30:42.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "429128",
+    "ThreadId": "208798",
+    "Html": "<p>I have both a Column Series and a Line series in my WPF Data Visualization chart. The Column series shows the sum of Sale Orders, and the Line Series shows the count of Sale Orders. However, since the sum is much higher than the count, the line series does not show up. Is there a way to offset the line series so that both of these are displayed?</p>",
+    "PostedDate": "2010-04-09T00:15:33.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434584",
+    "ThreadId": "208798",
+    "Html": "<p>It sounds to me if they both use the same Y-Axis (Dependent Axis) ... you should use to different one and than they should scale correct.</p>\r\n<p>Also LinearAxis have the Properties ExtendRangeToOrigin and Minimum which could help with your problem.</p>",
+    "PostedDate": "2010-04-23T05:28:49.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

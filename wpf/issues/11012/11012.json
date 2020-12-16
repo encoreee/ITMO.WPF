@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I spent so much time getting to the point where I encountered this error (which is a blocking error for me)....  If the DGCBC was a person I'd rip off his arm and beat him to death with it.\n \nHow to repro:\n \nCreate a L2S entity 'X' with a public property called Parent of type X.\n \nDrop a bunch of these in an ObservableCollection<X> called Items within a type called ViewModel.  Set this as the DataContext of the DataGrid on a Window.\n \nSet the ItemsSource of the DG to {Binding Items}.  Drop in a DGCBC.  Set the SelectedValueBinding to {Binding Parent}, ItemsSource to DataContext.Items of the window (RelativeSource etc).  Set the SelectedItemBinding to {Binding Parent}.\n \nEverything is hooked up and looks as expected.  But when attempting to change the Parent using the dropdown you get the exception:\n \n\"'DeferRefresh' is not allowed during an AddNew or EditItem transaction.\"\n \nI've tried to figure out a workaround (removing SelectedItemBinding, changing the UpdateSourceTrigger to LostFocus, etc), but nothing works.\n \nNow, the culprit is the CollectionView (its trying to defer refresh).  However, I'd think this isn't some insane corner case situation and perhaps things could be done differently to prevent this from happening.",
+    "LastUpdatedDate": "2013-02-21T18:40:51.11-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-27T13:51:40.143-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Linq to Sql entity + DataGridComboBoxColumn = \"'DeferRefresh' is not allowed during an AddNew or EditItem transaction.\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11012
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

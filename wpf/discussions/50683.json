@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "169925",
+    "ThreadId": "50683",
+    "Html": "Okay so oddly enough there is no MyDataGrid.Rows property or any other way that I can find to get to the rows in a WPF datagrid.  So I resulted to traversing the visual tree to find the DataGridRows so that I could determine which rows are selected and record the selected indexes.  This seems to work pretty well.  However, for some odd reason it doesn't return all of the rows?  I have 9 rows in my datagrid.  When I run the code below, it only hits the break point 5 times(every other row).  Any help would be greatly appreciated.<br>\r\n<br>\r\nJason <br>\r\n<br>\r\n FindSelectedRows(0, MyDatagrid)<br>\r\n<br>\r\n    Private Sub SelectRows(ByVal depth As Integer, ByVal obj As Object)<br>\r\n<br>\r\n         If (TypeOf obj Is Microsoft.Windows.Controls.DataGridRow) Then<br>\r\n              'Perform logic to record index.<br>\r\n        End If<br>\r\n<br>\r\n            For i As Integer = 0 To VisualTreeHelper.GetChildrenCount(obj) - 1<br>\r\n                FindSelectedRows(depth + 1, VisualTreeHelper.GetChild(obj, i))<br>\r\n                i = i + 1<br>\r\n            Next<br>\r\n<br>\r\n    End Sub ' End  FindSelectedRows\r\n",
+    "PostedDate": "2009-03-19T10:56:56.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170123",
+    "ThreadId": "50683",
+    "Html": "How about something like this? (Untested/pseudo) C# because C# is what I am accustomed to, but should be easy to translate to VB.NET.<br>\r\n<br>\r\nint n = 0; // number of selected rows found<br>\r\nint selectedIndexes[dataGrid.SelectedItems.Count]; // 0-based array<br>\r\nforeach (object item in dataGrid.SelectedItems)<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; selectedIndexes[n] = dataGrid.Items.IndexOf(item); // find this<br>\r\n&nbsp;&nbsp;&nbsp; n = n + 1;<br>\r\n}<br>\r\n<br>\r\nThe code above might not be terribly efficient with large numbers of items and selected items, but it should certainly be a lot better than traversing the visual tree just to get the indexes for the currently selected rows.<br>\r\n",
+    "PostedDate": "2009-03-20T00:42:29.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170178",
+    "ThreadId": "50683",
+    "Html": "Awesome thank you very much!  That worked.  I had one more question for you.  I want to rebind my datagrid and then after the fact reselect certain rows.  How do you reselect rows in a WPF datagrid.  <br>\r\n<br>\r\nAny help would be greatly appreciated.<br>\r\n<br>\r\nJason\r\n",
+    "PostedDate": "2009-03-20T06:09:24.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

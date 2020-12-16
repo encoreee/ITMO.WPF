@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "210830",
+    "ThreadId": "62112",
+    "Html": "<p>using expression blend 2 with the WPF Toolkit June 09 Release.&nbsp; i add a chart to the application, and when i add a databinding lineseries the visual state manager crashes ... assembly cant be found ??? any idea's ?</p>",
+    "PostedDate": "2009-07-10T07:05:40.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210976",
+    "ThreadId": "62112",
+    "Html": "<p>Are you also adding a project reference to WPFToolkit.dll? If not, that's probably the issue. Charting has a dependency on the VSM in the WPF Toolkit and the tools don't currently add a reference to the dependent assembly - so you need to do it manually.</p>\r\n<p>Sorry for the trouble - I wish this were automatic, too. :)</p>",
+    "PostedDate": "2009-07-10T13:59:56.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211024",
+    "ThreadId": "62112",
+    "Html": "<p>i have added&nbsp;</p>\r\n<p style=\"margin:0in;font-family:Calibri;font-size:11pt\"><span>&nbsp;</span><span style=\"color:blue\">xmlns:toolkit=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot; to the top of my xaml ? is there more i have to add???<br></span></p>",
+    "PostedDate": "2009-07-10T19:59:04.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211417",
+    "ThreadId": "62112",
+    "Html": "<p>To do what I'm suggesting, please add a project reference to WPFToolkit.dll - in Visual Studio, this is done by going to the Solution Explorer, right clicking the References entry for your project, choosing &quot;Add Reference...&quot;, and picking the WPFToolkit.dll assembly that lives right beside the DataVisualization DLL you picked when you originally did this. When you expand the References node, you should now see a WPFToolkit at the bottom.</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-07-13T11:30:37.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "227239",
+    "ThreadId": "66845",
+    "Html": "<p>I'm using the RibbonControlsLibrary, and trying to add a pull right menu to an existing RibbonMenuItem object in order to achieve the typical cascading pull right menu behavior you'd expect in a menu system.</p>\r\n<p>Starting with a RibbonDropDownButton as the top most control, I add to it a collection of RibbonMenuItem objects.</p>\r\n<p>For some of these items, I then create additional RibbonMenuItem objects, and add them to each item's Items collection.</p>\r\n<p>And this works, kind of.&nbsp;&nbsp; The problems I am seeing are:</p>\r\n<p>1) The RibbonMenuItems with child items do not have any sort of right arrow icon type indicator, showing that this item has an additional menu associated.</p>\r\n<p>2) When a parent RibbonMenuItem is clicked, the child menu appears below (or above) it, rather than to the right (or left) of it. It is functional, but exactly not the user experience I'm looking for.</p>\r\n<p>Are these things that can be controlled?&nbsp; If so, how?<br><br>Thanks</p>\r\n<p>roger</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T15:19:25.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227649",
+    "ThreadId": "66845",
+    "Html": "<p>Hi Roger,</p>\r\n<p>Could you send us a screenshot of what you're seeing?&nbsp; This is sounding to me like it's likely a result of bugs in the RibbonMenuItemTemplate, so you may be able to workaround this by retemplating RibbonMenuItem.&nbsp; That said, we have some major design changes planned for all of the drop-down Ribbon controls (RibbonMenuItem, RibbonDropDownButton, RibbonSplitButton, and RibbonComboBox) in the next CTP which should address these issues, so if you can deal with the sub-optimal behavior for now, you may just want to wait for the next update.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-08-25T13:53:52.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227761",
+    "ThreadId": "66845",
+    "Html": "Attached, hopefully, is the screen shot.<br>Can you tell me when the next CTP might be?<br>Thanks<br><br><br><br>On Tue, Aug 25, 2009 at 1:54 PM, samanthamsft&lt;notifications@codeplex.com&gt; wrote:<br>&gt; From: samanthamsft<br>&gt;<br>&gt; Hi Roger,<br>&gt;<br>&gt; Could you send us a screenshot of what you're seeing?  This is sounding to<br>&gt; me like it's likely a result of bugs in the RibbonMenuItemTemplate, so you<br>&gt; may be able to workaround this by retemplating RibbonMenuItem.  That said,<br>&gt; we have some major design changes planned for all of the drop-down Ribbon<br>&gt; controls (RibbonMenuItem, RibbonDropDownButton, RibbonSplitButton, and<br>&gt; RibbonComboBox) in the next CTP which should address these issues, so if you<br>&gt; can deal with the sub-optimal behavior for now, you may just want to wait<br>&gt; for the next update.<br>&gt;<br>&gt; Thanks!<br>&gt; Samantha<br>&gt;<br>&gt; Read the full discussion online.<br>&gt;<br>&gt; To add a post to this discussion, reply to this email<br>&gt; ([email removed])<br>&gt;<br>&gt; To start a new discussion for this project, email<br>&gt; [email removed]<br>&gt;<br>&gt; You are receiving this email because you subscribed to this discussion on<br>&gt; CodePlex. You can unsubscribe on codePlex.com.<br>&gt;<br>&gt; Please note: Images and attachments will be removed from emails. Any posts<br>&gt; to this discussion will also be available online at codeplex.com",
+    "PostedDate": "2009-08-25T21:58:31.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228002",
+    "ThreadId": "66845",
+    "Html": "<p>Well, I tried, but the attachment didn't come through when I emailed to this forum. I don't see any way here to attach an image. Probably I'm missing something obvious.&nbsp; How can I send a screen shot?</p>",
+    "PostedDate": "2009-08-26T08:48:55.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228158",
+    "ThreadId": "66845",
+    "Html": "<p>Unfortunately you can't attach to a Discussion post. &nbsp;:-(&nbsp;&nbsp; You have to either create an Issue in the Issue Tracker or just post the photo elsewhere (Flickr or whatever) and send a hyperlink in the Discussion thread.&nbsp; Thanks!</p>",
+    "PostedDate": "2009-08-26T15:18:22.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

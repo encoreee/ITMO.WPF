@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "182806",
+    "ThreadId": "54260",
+    "Html": "Hi,<br>\r\n<br>\r\nI have come across a problem which requires only the month and day to be shown for picking and thus I need to eliminate the year being shown or the header appearing at all.  I don't suppose this is at all possible, is it?<br>\r\n<br>\r\nI have everything else in place but am open to suggestions!<br>\r\n<br>\r\nThanks in advance,<br>\r\n<br>\r\nKieran\r\n",
+    "PostedDate": "2009-04-23T07:31:30.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184923",
+    "ThreadId": "54260",
+    "Html": "Unfortunately, to get this done you'll have to do a bit of work.  You'll have to gain access to the header button, &quot;PART_HeaderButton&quot;.  You can do that by retreiving it from the visual tree once the Calendar layout is complete or retemplating CalendarItem.  With access to the header button you can setup a binidng for Visibility and IsEnabled to not show when in Year mode.\r\n",
+    "PostedDate": "2009-04-29T05:10:31.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187099",
+    "ThreadId": "54260",
+    "Html": "Hi Kieran - <br>\r\n<br>\r\nI would retemplate the Calendar with a new CalendarItem based on the contents of generic.xaml. In the ControlTemplate you will find &quot;PART_HeaderButton&quot;, which you can modify (its contents) or make Hidden. The problem that remains is that keyboard shortcuts will still function properly. To address this you would have to subclass the Control and override OnKeyDown and add some logic to &quot;ignore&quot; the keyboard shortcuts that bring the user to the views you want to block. I would check out the ProcessCalendarKey function for some tips on how to do so. Without the header button or keyboard shortcuts users won't be able to access the other modes of the Calendar you wish to block.<br>\r\n<br>\r\n-Eric, MSFT\r\n",
+    "PostedDate": "2009-05-05T13:55:20.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

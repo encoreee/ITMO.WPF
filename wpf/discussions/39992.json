@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "132745",
+    "ThreadId": "39992",
+    "Html": "I'd like to commit changes to my database whenever a row is added, updated or deleted in the DataGrid. What's the best way to do that? I was looking for something equivalent to the XamDataGrid's RecordAdding/ed, RecordUpdating/ed and RecordsDeleting/ed events ... The closest I could find was RowEditEnding. It looks like that might work for adds and updates, but not deletes. Should I be using that? Would anyone be willing to post a code sample?<br>\r\n<br>\r\nThanks!<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-14T15:03:54.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132780",
+    "ThreadId": "39992",
+    "Html": "Just thought of another related question: When a user tries to delete a row in the DataGrid, which event would allow me to throw up a MessageBox to confirm the action?<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-14T20:29:15.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132781",
+    "ThreadId": "39992",
+    "Html": "It looks like the RowEditEnding event may not be exactly what I want. It seems like it fires whenever any cell in a row is leaving edit mode ... so if a user is tabbing through the cells in a row and editing values, the event will fire every time focus moves to another cell. What I'm looking for is a simple way to know when the user is done editing the entire row.<br>\r\n",
+    "PostedDate": "2008-11-14T20:48:29.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133086",
+    "ThreadId": "39992",
+    "Html": "RowEditEnding is the event you want.  It is fired when committing and cancelling so you'll want to check the parameter e.EditAction for a commit action.  It should not fire multiple times when tabbing unless you have columns that are readonly.  If you are using ADO.net, you also have the RowChanged event that you could use to commit back to the database.<br>\r\n<br>\r\nFor the delete functionality, you either need to listen for the Delete command through the command manager and do the work there or listen for the Delete keydown and do the work there.\r\n",
+    "PostedDate": "2008-11-17T05:52:32.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133090",
+    "ThreadId": "39992",
+    "Html": "Hi Peter,<br>\r\n<br>\r\nYou might be interested in this article which has a complete example of binding a DataGrid to a DataSet:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx<br>\r\n<br>\r\nThe RowChanged and RowDeleted events (as Vincent mentioned) from the DataTable are used to sycnhronise the database state.<br>\r\n<br>\r\nColin E. <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-11-17T05:58:40.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133124",
+    "ThreadId": "39992",
+    "Html": "Thank you both for your help.<br>\r\n<br>\r\nIt looks like my mistake with RowEditEnding was not to have the objects in my collection implement IEditableObject. When they don't implement that interface, RowEditEnding seems to fire on every cell. When they do, everything works as expected. Hopefully by posting this to the forum I'll save someone else from banging their head against the wall for a couple hours. :)<br>\r\n<br>\r\nIt looks like there are a number of options for handling deletes: hooking up to the DataGrid's KeyDown, using the CommandManager or, as Colin suggested on a thread at CodeProject, handling the CollectionChanged event on the underlying ObservableCollection (or ICollectionView, too, I guess).<br>\r\n<br>\r\nThanks again.<br>\r\n<br>\r\nBest,<br>\r\nPeter<br>\r\n",
+    "PostedDate": "2008-11-17T07:30:25.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189329",
+    "ThreadId": "39992",
+    "Html": "<p>If anybody else was looking for an example on how to confirm the delete operation with a message box by:</p>\r\n<p style=\"padding-left:30px\">&quot;listen for the Delete command through the command manager&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>Add this to your window constructor:</p>\r\n<p style=\"padding-left:30px\">CommandManager.AddPreviewExecutedHandler(myDataGrid, new ExecutedRoutedEventHandler(MyPreviewDeleteCommandHandler));</p>\r\n<p>And define your command handler:</p>\r\n<p style=\"padding-left:30px\">private void MyPreviewDeleteCommandHandler(object sender, ExecutedRoutedEventArgs e)<br>{<br>&nbsp;&nbsp;&nbsp; if (e.Command == DataGrid.DeleteCommand)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!(MessageBox.Show(&quot;Are you sure?&quot;, &quot;Confirm&quot;, MessageBoxButton.OKCancel) == MessageBoxResult.OK))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.Handled = true; // Mark the command as handled to suppress the real command handler<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; }<br>}</p>",
+    "PostedDate": "2009-05-12T08:09:11.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

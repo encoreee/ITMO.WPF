@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "196824",
+    "ThreadId": "58207",
+    "Html": "<p>Hi guys.</p>\r\n<p>Thanks for WPFToolkit, really usefull in most of my projects. Anyway I encounter au problem, everything is in the title : How can I change the color of a specific row ?</p>\r\n<p>What I want to do is simple : I'd like, by using a Context Menu, to allow the user to select a color and then the Selected Row's Background in the Datagrid changes to the selected color.</p>\r\n<p>Two problems :</p>\r\n<p>- how to access to the selected row (and not item ...) ?</p>\r\n<p>- how to change this color ?</p>\r\n<p>Thank you for your help.</p>\r\n<p>MB.</p>",
+    "PostedDate": "2009-06-02T06:48:51.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196993",
+    "ThreadId": "58207",
+    "Html": "<p>This is not trivial due to row virtualization (actually container recycling).<br><br>To get the selected DataGridRow you can use DataGrid.ItemContainerGenerator.ContainerFromItem(SelectedItem).&nbsp; Now you can set the Background property to a SolidColorBrush to change the color, but you're not done yet.&nbsp; If the user scrolls the DataGrid we will recycle the row containers &amp; random rows will have the new backround.</p>\r\n<p>To deal with this you can hook DataGrid.LoadingRow and DataGrid.UnloadingRow to reset the Background poperty, but you'll have to manage the set of rows which require a special color yourself.&nbsp;</p>",
+    "PostedDate": "2009-06-02T13:55:30.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "197270",
+    "ThreadId": "58207",
+    "Html": "<p>Thanks for your answer. It works.</p>\r\n<p>Of course I have to manage this problem : when the user sorts the Datagrid oar does anything else, the background color changes back to white.</p>",
+    "PostedDate": "2009-06-03T07:30:25.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "197466",
+    "ThreadId": "58207",
+    "Html": "<p>Hi,</p>\r\n<p>I have a very similar issue.&nbsp; I have DataGridTemplateColumn that contains just a ContentPresenter in the DataTemplate.&nbsp; In response to an event from the UI, I am programmatically replacing the content with one of a few different visuals (a storyboard animation, an image, a border, etc).&nbsp; This works fine, except when the grid is sorted (by clicking a column header) all of my visuals are lost.&nbsp; Hooking up to DataGrid.LoadingRow is technically possible to recreate all of visuals based on the state of the data, but this seems horribly inefficient.</p>\r\n<p>The real solution to this seems be to set the displayed visual using a DataTrigger with data binding.&nbsp; Here is a simplified example of what I'm trying to do:</p>\r\n<p>&lt;dg:DataGrid x:Name=&quot;MyGrid&quot; ... &gt;<br>&nbsp;&nbsp; &nbsp;... other columns ...<br>&nbsp;&nbsp; &nbsp;&lt;dg:DataGridTemplateColumn Header=&quot;Sent&quot; Width=&quot;Auto&quot; &gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ContentPresenter Name=&quot;SentPresenter&quot;&gt;&lt;/ContentPresenter&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate.Triggers&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTrigger Binding=&quot;{Binding Path=ProcessingState}&quot; Value=&quot;1&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter TargetName=&quot;SentPresenter&quot; Property=&quot;Content&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter.Value&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Rectangle Width=&quot;10&quot; Height=&quot;10&quot; Fill=&quot;Red&quot;&gt;&lt;/Rectangle&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Setter.Value&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Setter&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTrigger&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;DataTrigger Binding=&quot;{Binding Path=ProcessingState}&quot; Value=&quot;2&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter TargetName=&quot;SentPresenter&quot; Property=&quot;Content&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter.Value&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Image Source=&quot;Images\\v2_successIcon.jpg&quot; Width=&quot;25&quot; Height=&quot;22&quot;&gt;&lt;/Image&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Setter.Value&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Setter&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTrigger&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate.Triggers&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp; &nbsp;&lt;/dg:DataGridTemplateColumn&gt;<br>&lt;/dg:DataGrid x:Name=&quot;MyGrid&quot;&gt;</p>\r\n<p>But when I run this I get an exception like: &quot;'System.Windows.Shapes.Rectangle' is not a valid value for 'Setter.Value'; values derived from Visual or ContentElement are not supported.&quot;</p>\r\n<p>Any help would be greatly appreciated.</p>\r\n<p>Thanks,<br>Jad Startin</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-03T15:10:52.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "198258",
+    "ThreadId": "58207",
+    "Html": "<p>Thanks for the post.</p>\r\n<p>useful.</p>",
+    "PostedDate": "2009-06-05T07:54:36.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

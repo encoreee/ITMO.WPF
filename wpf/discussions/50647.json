@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "169845",
+    "ThreadId": "50647",
+    "Html": "Hi,<div><br></div><div> I populate a wpf grid with data from a List.</div><div> The column <strong>Name </strong>contains string values, I edit one value and type in a longer string, the column size adjustes to my new lenght,</div><div> but when I modify the value again with a shorter string the column does not change it's size.</div><div><br></div><div>Any clues on this one ?</div><div>Regards,</div>",
+    "PostedDate": "2009-03-19T07:09:39.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

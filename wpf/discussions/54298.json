@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "182942",
+    "ThreadId": "54298",
+    "Html": "I'm getting an error whenever I refer to a DataGrid in a XAML. XAML header contains lines<br>\r\n<br>\r\nxmlns=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</a>&quot;<br>\r\nxmlns:toolkit=&quot;<a href=\"http://schemas.microsoft.com/wpf/2008/toolkit\">http://schemas.microsoft.com/wpf/2008/toolkit</a>&quot;<br>\r\n<br>\r\nthe referring line is like<br>\r\n<br>\r\n&lt;toolkit:DataGrid x:Name=&quot;dg1&quot; Width=&quot;200&quot; /&gt;<br>\r\n<br>\r\nand the compiler says:<br>\r\n<br>\r\nerrors in directory c:\\program<br>\r\nc:\\program\\10&gt;c:\\program\\subdir1\\file1.xaml(9,14) : error MC1000: Unknown build error, 'Could not load type 'System.<br>\r\nWindows.Controls.Primitives.MultiSelector' from assembly 'PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. Line 9 Position 14.'<br>\r\n<br>\r\nThe error goes away as soon as I comment out the DataGrid reference (the only reference to<br>\r\nWPFToolkit library).\r\n",
+    "PostedDate": "2009-04-23T11:57:50.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183010",
+    "ThreadId": "54298",
+    "Html": "And I do believe I have .NET 3.0 SP 1 on my machine.\r\n",
+    "PostedDate": "2009-04-23T14:10:44.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183019",
+    "ThreadId": "54298",
+    "Html": "Check your .csproj file.  Are you targeting .net 3.5?  \r\n",
+    "PostedDate": "2009-04-23T14:36:11.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183021",
+    "ThreadId": "54298",
+    "Html": "Sorry, I meant I do believe I have .NET 3.5 SP 1 on my machine. AFAIK, WPFToolkit requires that.\r\n",
+    "PostedDate": "2009-04-23T14:37:05.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183050",
+    "ThreadId": "54298",
+    "Html": "What I'm asking is actually different.  You can have 3.5 sp1 on your machine but target a different version of the framework.\r\n",
+    "PostedDate": "2009-04-23T15:48:39.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

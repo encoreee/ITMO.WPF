@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "216904",
+    "ThreadId": "63787",
+    "Html": "<p>Hi ,</p>\r\n<p>Im facing problem with datagrid grouping.Im having button in XAML,User clicks on Button for grouping on particular description(PropertyGroupDescription),I could see grouping happening but there is column alignment problem.</p>\r\n<p>GroupColumnHeader doesnot get display,so there is problem in column alignment of datagrid.</p>\r\n<p>&nbsp;</p>\r\n<p>can any1 provide is solution<span style=\"white-space:pre\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"white-space:pre\">W</span>ith Regards,</p>\r\n<p>Mahender</p>",
+    "PostedDate": "2009-07-28T11:06:23.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

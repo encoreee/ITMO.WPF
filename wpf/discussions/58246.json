@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "196924",
+    "ThreadId": "58246",
+    "Html": "<p>I was considering trying to right a DataGrid behavior (using attached properties and the like) to create a DataForm (kind of like the one in Silverlight and WinForms). The one issue I see (and this is very early on) is how to produce a panel which only shows one item at a time. Can anyone provide any guidance on this (is this as simple as using the Z-Index along with a Grid)?</p>\r\n<p>Any help would be appreciated.</p>",
+    "PostedDate": "2009-06-02T10:32:01.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196973",
+    "ThreadId": "58246",
+    "Html": "<p>I'm not clear on what exactly your scenario is, but this sounds similar to TabControl.&nbsp; You may be able to get away with using a Grid &amp; Z index as you described, however all the items will still be in the visual tree, so you may not have the performance you require without managing the VisualTree like TabControl does.</p>",
+    "PostedDate": "2009-06-02T13:13:03.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "197022",
+    "ThreadId": "58246",
+    "Html": "<p>I didn't even think of the TabControl, but that is precisely the kind of behavior I would need. Here is basically what I would need and why I am thinking of starting from a DataGrid and then applying a style, behavior (using attached properties i.e. &lt;DataGrid DataFormBehavior.IsDataForm=&quot;True&quot; /&gt;), or subclassing:</p>\r\n<ol>\r\n<li>I need to be able to generate fields either automatically or by specifying them (The DataGrid does this)</li>\r\n<li>I need to display this one record at a time (I'll supply arrows to navigate)</li>\r\n<li>I need to be able to edit these records</li>\r\n</ol>\r\n<p>I've looked into what I'd need to do to implement my own DataForm, and I've kind of done it to an extent, but when I look at the objects I end up with they look a whole lot like the classes used in a Datagrid. So my basic thought is to be able to swap my grid to use a differnt panel which displays a single item at a time.</p>\r\n<p>Is there a special panel for the TabControl (i.e. TabPanel ... I guess I'll look this up), does this panel perform virtualization?</p>\r\n<p>Thanks for the response. I'm hoping to try out these ideas shortly. This may be a more successful alternative than attempting to recomple the Silverlight DataForm for WPF (which I have also considered).</p>",
+    "PostedDate": "2009-06-02T15:23:56.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

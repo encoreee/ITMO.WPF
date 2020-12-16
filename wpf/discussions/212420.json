@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "442045",
+    "ThreadId": "212420",
+    "Html": "<p>Hi,</p>\r\n<p>We create a chart which has one ColumnSeries and one LineSeries. It also has two LInearAxis.</p>\r\n<p>How could I make the ColumnSeries to be draw againt the axes on the left and the LineSeries drawn againt the axes on the right.</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-05-12T06:56:21.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442239",
+    "ThreadId": "212420",
+    "Html": "Use the LinearAxis have a Location Property. Set the LinearAxis used for the ColumnSeries to Left the otherone to Right.",
+    "PostedDate": "2010-05-12T13:14:36.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

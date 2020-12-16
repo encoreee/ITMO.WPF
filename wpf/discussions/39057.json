@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "129572",
+    "ThreadId": "39057",
+    "Html": "Hi,<br>\r\nI want to hide certain columns based on some checkbox checked/unchecked.<br>\r\n&lt;dg:DataGridTextColumn Header=&quot;Order&quot; Visibility =&quot;{Binding ElementName=chkAutoOrders, Path=IsChecked, Converter={StaticResource BoolToVisibility}}&quot; /&gt;<br>\r\n<br>\r\nunfortunately, it doesn't work.... :(<br>\r\nwhat am I doing wrong? Please help<br>\r\n<br>\r\n<br>\r\nBoris<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-02T21:26:42.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129638",
+    "ThreadId": "39057",
+    "Html": "It could possibly be in your converter.  See the sample on this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx</a>, which provides an example of how to bind each column's Visibility property to a combobox where you can show or hide the column.\r\n",
+    "PostedDate": "2008-11-03T05:26:13.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129704",
+    "ThreadId": "39057",
+    "Html": "<p style=\"margin:0in 0in 0pt\">You could do same thing in XAML code, in Trigger on container that contains this check box, check the property Is Checked on your checkbox, and if it’s true or false, set Visibility on element to whatever you want to.  </p>\r\n<p style=\"margin:0in 0in 0pt\">                                                                                                          Thank You. Lena</p>\r\n",
+    "PostedDate": "2008-11-03T08:51:45.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130108",
+    "ThreadId": "39057",
+    "Html": "Hi Lena,<br>\r\nYou suggestion seems quite interesting. I suppose EventTrigger with RoutedEvent=&quot;CheckBox.Checked&quot; is required. But how can I set Visibility of some column in the DataGrid from there?<br>\r\n<br>\r\nBoris<br>\r\n",
+    "PostedDate": "2008-11-04T18:17:36.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

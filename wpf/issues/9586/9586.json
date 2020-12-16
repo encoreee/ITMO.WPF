@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If a cell is in edit mode, clicking outside of the datagrid raises a LostKeyboardFocus event for the editor textbox but no LostKeyboardFocus for the DataGridCell. \nTo reproduce:\n1. Click on a cell to select it - the DataGridCell takes keyboard focus \n2. Click on the cell again to put it into edit mode - the DataGridCell loses keyboard focus and the textbox used for editing gets focus.\n3. Click outside of the wpf datagrid - a LostKeyboardFocus event is raised notifying that the textbox lost keyboard focus and the DataGridCell got keyboard focus, however no LostKeyboardFocus event is raised notifying that the DataGridCell lost keyboard focus and the clicked item got keyboard focus.",
+    "LastUpdatedDate": "2013-02-21T18:41:24.757-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-23T07:31:23.257-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LostKeyboardFocus event not raised when in edit mode",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9586
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've reproed this & it looks like a bug.  If you hit enter while editing it works fine, but if you click on another cell while editing it never loses focus.",
+      "PostedDate": "2009-03-24T13:04:22.983-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T13:04:23.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:44:26.773-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-27T13:31:53.75-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:24.757-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

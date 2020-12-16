@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you are editing a cell, and click any other cell of the data grid outside, the edit is cancelled. If you click on a control outside the data grid, the edit is cancelled. But if you click, say, _below_ the last row (but still  inside the data grid), the edit is _not_ cancelled. IMO, it should be.",
+    "LastUpdatedDate": "2013-02-21T18:41:50.1-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-09-14T06:22:12.193-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Clicking outside the data grid should cancel edit",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 7590
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi petterh,\r\n\r\nWe agree that this is a bug. We're filing a bug in our internal database to track this and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T13:39:23.98-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:39:35.387-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-19T10:50:39.9-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-14T14:44:16.783-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:00:53.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:50.1-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

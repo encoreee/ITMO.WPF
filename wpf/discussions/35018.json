@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "116371",
+    "ThreadId": "35018",
+    "Html": "How may I supply a custom format provider for cells of a given column in the DataGrid?<br>\r\n<br>\r\nRelated question: I have found DataFieldBindng.StringFormat is used to apply formatting to cell values (for types that implement IFormattable apparently).&nbsp; Will this be the the format supplied to&nbsp;a custom formatter?<br>\r\n<br>\r\nThank you very much.\r\n",
+    "PostedDate": "2008-09-05T10:08:22.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116924",
+    "ThreadId": "35018",
+    "Html": "Binding.StringFormat will be the format used on the binding.&nbsp; When you say &quot;Will this be the the format supplied to&nbsp;a custom formatter?&quot;, is the custom formatter like a converter that you are using?<br>\r\n<br>\r\nFor more info in StringFormat you can look here,&nbsp;<a href=\"http://blogs.msdn.com/vinsibal/archive/2008/05/16/new-wpf-sp1-feature-data-formatting.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/05/16/new-wpf-sp1-feature-data-formatting.aspx</a>.\r\n",
+    "PostedDate": "2008-09-08T09:22:36.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117364",
+    "ThreadId": "35018",
+    "Html": "Actually, I'm not refering to a value converter.&nbsp;&nbsp;I'm referring to a type that implements IFormatProvider which provides an object of type ICustomFormatter (usually the same instance).<br>\r\n<br>\r\nFor example, I have a column (in a winforms) DataGridView bound to a TimeSpan type object.&nbsp; Since TimeSpan doesn't implement IFormattable itself, I supply a custom format provider and formatter as explained here:&nbsp;<a href=\"http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=22446&SiteID=1\">http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=22446&amp;SiteID=1</a>.<br>\r\n<br>\r\nHow can I supply this same formatter to the new WPF grid so that I don't have to create a value converter and can use what I've already coded up?&nbsp; I guess I'm expecting your wpf 'DataGridBoundColumn.DataFieldBinding' to have the same capabilities as the current System.Windows.Forms.Binding in that you can give it a FormatProvider as well as&nbsp;specify the&nbsp;FormatString.<br>\r\n<br>\r\n(I should clarify myself regarding the Binding type because there are known defects that cause it to not always apply the formatting of the format provider, but we work&nbsp;around this by extending the Binding class&nbsp;and applying the custom formatting in the 'OnFormat' override.)<br>\r\n<br>\r\nAnd thanks for the link to new StringFormat info.&nbsp; Cool new feature.&nbsp; Will this work similarly in the&nbsp;'DataGridBoundColumn.DataFieldBinding'?\r\n",
+    "PostedDate": "2008-09-09T14:36:58.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117603",
+    "ThreadId": "35018",
+    "Html": "With the current implementation of BindingBase you will have to use a value converter to supply your custom format.&nbsp; <br>\r\n<br>\r\nDataGridBoundColumn.DataFieldBinding is of type BindingBase so it will work.\r\n",
+    "PostedDate": "2008-09-10T10:27:09.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117993",
+    "ThreadId": "35018",
+    "Html": "Ok, thanks for your help.<br>\r\n<br>\r\nIt feels like the MS direction with WPF is to move from FormatProviders and CustomFormatters to ValueConverters that convert to and from a custom type (or TimeSpan for example) to a string type.&nbsp; I think its a good direction as value converters feel more intuitive and straightforward, and its a model that applies to converting to other types besides strings.<br>\r\n<br>\r\nSo to confirm, if have a value converter that also did custom formatting based on the object parameter available on&nbsp;the convert methods, will the value in Binding.StringFormat you mentioned be passed in so I can customize presentation formats with the same converter, and declaratively in XAML?<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-11T16:22:30.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119604",
+    "ThreadId": "35018",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">The value in Binding.StringFormat is <span style=\"text-decoration:underline\">not</span> passed in to the Convert (or ConvertBack) method of a value converter.</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">&nbsp;</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">When a binding has both a converter and a StringFormat, the source value is first sent through the converter:</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value = converter.Convert(value, targetPropertyType, binding.ConverterParameter, culture)</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">Then if the target property expects a string, the result is passed through String.Format:</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value = String.Format(culture, binding.StringFormat, value)</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">&nbsp;</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'Calibri','sans-serif'\">If you want to pass some kind of format string into a converter, use the ConverterParameter.</span></p>\r\n",
+    "PostedDate": "2008-09-19T09:13:25.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

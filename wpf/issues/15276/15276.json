@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Look at this minimal example:\n \n<Window x:Class=\"GraphingToolkitTest.MainWindow\"\n        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n        Title=\"MainWindow\" Height=\"350\" Width=\"525\"\n        \n         xmlns:charting=\"clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit\"\n        >\n    <DockPanel LastChildFill=\"True\">\n        <Button DockPanel.Dock=\"Bottom\" Click=\"Button_Click\" Content=\"Add Data\"/>\n        <charting:Chart DockPanel.Dock=\"Top\" Title=\"Test\" Name=\"TheChart\">\n            <charting:Chart.Axes>\n                <charting:DateTimeAxis Orientation=\"X\" Minimum=\"2011-02-01\" Maximum=\"2011-02-07\"/>\n                <charting:LinearAxis Orientation=\"Y\" />\n            </charting:Chart.Axes>\n        </charting:Chart>\n    </DockPanel>\n</Window>\n \n \nusing System.Windows.Controls.DataVisualization.Charting;\nusing System.Windows;\nusing System;\nusing System.Collections.Generic;\nusing System.Windows.Data;\n \nnamespace GraphingToolkitTest\n{\n    public partial class MainWindow : Window\n    {\n        public MainWindow()\n        {\n            InitializeComponent();\n        }\n \n        private void Button_Click(object sender, RoutedEventArgs e)\n        {\n            List<Tuple<DateTime, int>> data = new List<Tuple<DateTime, int>>();\n            data.Add(new Tuple<DateTime, int>(new DateTime(2011,2,1), 1));\n            // data.Add(new Tuple<DateTime, int>(new DateTime(2011,2,2), 2));\n \n            ColumnSeries s = new ColumnSeries()\n            {\n                ItemsSource = data,\n                IndependentValueBinding = new Binding(\"Item1\"),\n                DependentValueBinding = new Binding(\"Item2\")\n            };\n \n            TheChart.Series.Add(s);\n        }\n    }\n}\n \n \nIf you click the button, the series appears in the legend, but no bars are rendered. If you uncomment the second data item and re-run, both bars are rendered.\n \nThis sample shows another issue: rendering doesn't take the width of the bars into account, so bars on extreme values are not completely visible.",
+    "LastUpdatedDate": "2013-02-21T18:40:14.903-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-02-09T08:31:18.467-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "If just one item is rendered on a DateTimeAxis, nothing is displayed.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 15276
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I found a \"fix\" - this has been tested only for my specific scenario, so use at your own risk. Change the implementation of CalculateDataPointLength() to:\r\n\r\n        protected void CalculateDataPointLength()\r\n        {\r\n            if (!(ActualIndependentAxis is ICategoryAxis))\r\n            {\r\n                IEnumerable<UnitValue> values =\r\n                    ActiveDataPoints\r\n                        .Select(dataPoint => ActualIndependentAxis.GetPlotAreaCoordinate(dataPoint.ActualIndependentValue))\r\n                        .Where(value => ValueHelper.CanGraph(value.Value))\r\n                        .OrderBy(value => value.Value)\r\n                        .ToList();\r\n\r\n                if (values.Count() == 1)\r\n                {\r\n                    // With just one data point, we can't calculate distances between points.\r\n                    // Look at our independent axis and calculate the distance of an interval.\r\n                    DataPoint dp = ActiveDataPoints.First();\r\n                    DateTimeAxis dta = ActualIndependentAxis as DateTimeAxis;\r\n                    if (dta != null)\r\n                    {\r\n                        TimeSpan timeInterval;\r\n                        switch (dta.IntervalType)\r\n                        {\r\n                            default:\r\n                            case DateTimeIntervalType.Days: timeInterval = TimeSpan.FromDays(dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Hours: timeInterval = TimeSpan.FromHours(dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Milliseconds: timeInterval = TimeSpan.FromMilliseconds(dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Minutes: timeInterval = TimeSpan.FromMinutes(dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Months: timeInterval = TimeSpan.FromDays(30 * dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Seconds: timeInterval = TimeSpan.FromSeconds(dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Weeks: timeInterval = TimeSpan.FromDays(7 * dta.ActualInterval); break;\r\n                            case DateTimeIntervalType.Years: timeInterval = TimeSpan.FromDays(365 * dta.ActualInterval); break;\r\n                        }\r\n                        _dataPointlength = ActualIndependentAxis.GetPlotAreaCoordinate(dta.ActualMinimum + timeInterval).Value - ActualIndependentAxis.GetPlotAreaCoordinate(dta.ActualMinimum).Value;\r\n                    }\r\n                }\r\n                else\r\n                {\r\n\r\n                    _dataPointlength =\r\n                        EnumerableFunctions.Zip(\r\n                            values,\r\n                            values.Skip(1),\r\n                            (left, right) => new Range<double>(left.Value, right.Value))\r\n                            .Select(range => range.Maximum - range.Minimum)\r\n                            .MinOrNullable();\r\n                }\r\n            }\r\n        }\r\n",
+      "PostedDate": "2011-02-10T04:08:49.53-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-26T19:52:33.11-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:14.903-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

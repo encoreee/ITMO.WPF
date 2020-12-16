@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "712961",
+    "ThreadId": "283151",
+    "Html": "\r\n<p>hello,&nbsp;</p>\r\n<p>I have UI issue with windows theme. I have dynamic generated UI throug code the control are&nbsp;properly&nbsp;visible on windows aero theme but not in classic any suggestions ?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks</p>\r\n",
+    "PostedDate": "2011-12-15T15:14:43.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "713317",
+    "ThreadId": "283151",
+    "Html": "<p>found solution it was due on onapplytemplate() called after update of control.&nbsp;</p>",
+    "PostedDate": "2011-12-16T10:32:56.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

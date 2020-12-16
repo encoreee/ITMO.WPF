@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "984520",
+    "ThreadId": "429031",
+    "Html": "\r\n<p><span style=\"color:black; font-size:10pt\">We have a WPF Application (w/ Prism & Unity)&nbsp;and we also have a legacy WinForms application. The WinForms application&nbsp;primarily functions as a client side process that listens on a port.</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">Confirm/Comment on the following:</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">-<span style=\"font:7pt 'Times New Roman'\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n</span></span><span style=\"color:black; font-size:10pt\">We can add the WinForms Windows Application project into our WPF solution.\r\n</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">-<span style=\"font:7pt 'Times New Roman'\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n</span></span><span style=\"color:black; font-size:10pt\">Add a reference to it from our WPF shell project.</span></p>\r\n<ul>\r\n<li><span style=\"color:black; font-size:10pt\">o<span style=\"font:7pt 'Times New Roman'\">&nbsp;&nbsp;&nbsp;\r\n</span></span></li></ul>\r\n<p><span style=\"color:black; font-size:10pt\">-<span style=\"font:7pt 'Times New Roman'\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n</span></span><span style=\"color:black; font-size:10pt\">Bring in the prism assemblies to allow communication between the WinForms assembly and our WPF Shell and Module assemblies.</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">-<span style=\"font:7pt 'Times New Roman'\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n</span></span><span style=\"color:black; font-size:10pt\">Runtime we will execute in a single client side process with the ability to leverage the listening functionality of the WinForms project/assembly via Prism &#43; IEventAggregator.</span></p>\r\n",
+    "PostedDate": "2013-01-09T08:09:02.563-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

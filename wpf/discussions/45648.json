@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "152349",
+    "ThreadId": "45648",
+    "Html": "I'd like to prevent double-clicking from initiating an edit action on the cell that was double clicked.&nbsp; I'd prefer that only F2 initiates editing.&nbsp; Ideally, I would like to set this option only on certain columns.<br>\r\n<br>\r\nI can't find a property on DataGridColumn for this; is there a setting elsewhere?<br>\r\n",
+    "PostedDate": "2009-01-29T15:21:34.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153324",
+    "ThreadId": "45648",
+    "Html": "I haven't tried it, but you could probably use the PreviewMouseDoubleClick event, figure out which column is selected (see http://www.scottlogic.co.uk/blog/wpf/2008/12/wpf-datagrid-detecting-clicked-cell-and-row/ for an example of how to do this), and set e.Handled accordingly.<br>\r\n",
+    "PostedDate": "2009-02-02T06:42:34.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153591",
+    "ThreadId": "45648",
+    "Html": "In conjunction with mikj's suggestion, you can also listen to the DataGrid.BeginningEdit event and stop editing from happenning there as well.\r\n",
+    "PostedDate": "2009-02-02T22:00:48.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

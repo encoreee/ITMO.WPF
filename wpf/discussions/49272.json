@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "164739",
+    "ThreadId": "49272",
+    "Html": "<p>Hi! I am trying to implement a custom editor for dates to use it in a propertygrid.<br>\r\nMy DatePickerEditor worked fine until I tried to set the IsEnabled state through binding:</p>\r\n<p>&lt;TK:DatePicker x:Name=&quot;PART_editor&quot;<br>\r\n                       SelectedDate=&quot;{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}&quot;<br>\r\n                       IsEnabled=&quot;{Binding IsEditable}&quot; /&gt;</p>\r\n<p>Did that for a custom string editor as well and there it worked without problems. But for the Datepicker I am getting an exeption I don't really understand:<br>\r\nThe Name &quot;PART_DisabledVisual&quot; could not be found in namespace &quot;System.Windows.Controls.Grid&quot;.<br>\r\nWhy is he trying to use grid there? </p>\r\n",
+    "PostedDate": "2009-03-05T03:24:53.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

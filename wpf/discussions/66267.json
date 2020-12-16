@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "225083",
+    "ThreadId": "66267",
+    "Html": "<p>Hi all,</p>\r\n<p>I'm having an issue with row &amp; cell validation on newly inserted rows. I have a DataGrid with a DataErrorValidationRule for RowValidations, and a TextColumn with a DataErrorValidationRule. The grid is bound to a collection of IDateErrorInfo objects.</p>\r\n<p><br>Everything works as expected with &quot;normal records&quot; (ie ones that exist initially). If I enter in an invalid string, the error styles show up; if I change an invalid string to a valid one, the error clears up.</p>\r\n<p>When I insert a new row, (that is initially invalid), the error appears. However, when I modify the new record's string to a valid one, the error never clears up?</p>\r\n<p>I've even (slightly) modified Vincent's <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">DataGrid </a>sample to show the problem as well. I simply made it so that new rows are bound to a new EditablePerson that does not have their last name set.</p>\r\n<p>Any ideas or work-arounds?</p>",
+    "PostedDate": "2009-08-18T11:56:03.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228570",
+    "ThreadId": "66267",
+    "Html": "<p>Anyone?</p>",
+    "PostedDate": "2009-08-27T19:40:00.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

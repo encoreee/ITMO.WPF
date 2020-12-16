@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "130807",
+    "ThreadId": "39426",
+    "Html": "How could you change, in your code, the style of a single cell?<br>\r\nFor example the background colour of a cell.<br>\r\n",
+    "PostedDate": "2008-11-07T07:05:10.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130833",
+    "ThreadId": "39426",
+    "Html": "How about this:<br>\r\n<br>\r\n            Style style = new Style(typeof(DataGridCell), DataGrid_Standard.CellStyle);<br>\r\n            Setter setter = new Setter(DataGridCell.BackgroundProperty, Brushes.LightGreen);<br>\r\n            style.Setters.Add(setter);<br>\r\n            Helper.GetCell(DataGrid_Standard, 0, 3).Style = style;\r\n",
+    "PostedDate": "2008-11-07T08:17:17.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130929",
+    "ThreadId": "39426",
+    "Html": "This last line seems to be using an unexisting class and an unexisting method.<br>\r\nHelper.GetCell(DataGrid_Standard, 0, 3).Style = style; <br>\r\n<br>\r\nThis all look very good but what/where is a Helper?<br>\r\nThere is all kind of helper functions but they all seem to be private.<br>\r\n<br>\r\nI also do not see anything which returns a DataGridCell.<br>\r\n<br>\r\nI cannot find  any GetCell function either<br>\r\n<br>\r\nAlso I gather the cell maybe virtualize which I do not currently understand but I will read what I can find about this.<br>\r\n<br>\r\nAndre\r\n",
+    "PostedDate": "2008-11-07T13:25:46.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130945",
+    "ThreadId": "39426",
+    "Html": "It is actually a custom implementation.  See this thread, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065</a>.\r\n",
+    "PostedDate": "2008-11-07T14:23:23.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131016",
+    "ThreadId": "39426",
+    "Html": "<p>There is some problems with cell style<br>\r\n<br>\r\nBelow is a simplified version, used in this example, with virtualization removed.<br>\r\nI have an Datagrid named  SourceProgram with 100 rows and 4 columns<br>\r\nI execute the following ( note: i == 0 )<span style=\"font-size:13px\"> <br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">    <br>\r\n    Style</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#030003\">style</span><span style=\"font-size:13px\"> = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Style</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#0000ff\">typeof</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">DataGridCell</span><span style=\"font-size:13px\">), </span><span style=\"font-size:13px;color:#030003\">SourceProgram</span><span style=\"font-size:13px\">.</span><span style=\"font-size:13px;color:#030003\">CellStyle</span><span style=\"font-size:13px\">);<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">    Setter</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#030003\">setter</span><span style=\"font-size:13px\"> = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Setter</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">DataGridCell</span><span style=\"font-size:13px\">.</span><span style=\"font-size:13px;color:#030003\">BackgroundProperty</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#2b91af\">Brushes</span><span style=\"font-size:13px\">.</span><span style=\"font-size:13px;color:#030003\">LightGreen</span><span style=\"font-size:13px\">);<br>\r\n</span><span style=\"font-size:13px;color:#030003\">    style</span><span style=\"font-size:13px\">.</span><span style=\"font-size:13px;color:#030003\">Setters</span><span style=\"font-size:13px\">.</span><span style=\"font-size:13px;color:#030003\">Add</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#030003\">setter</span><span style=\"font-size:13px\">);<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">    DataGridCell</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#030003\">cell</span><span style=\"font-size:13px\"> = </span><span style=\"font-size:13px;color:#030003\">GetCell</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#030003\">i</span><span style=\"font-size:13px\">, 2);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    if</span><span style=\"font-size:13px\"> (</span><span style=\"font-size:13px;color:#030003\">cell</span><span style=\"font-size:13px\"> != </span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)<br>\r\n</span><span style=\"font-size:13px;color:#030003\">        cell</span><span style=\"font-size:13px\">.</span><span style=\"font-size:13px;color:#030003\">Style</span><span style=\"font-size:13px\"> = </span><span style=\"font-size:13px;color:#030003\">style</span><span style=\"font-size:13px\">;</span><span style=\"font-size:13px\"> <blockquote dir=ltr style=\"margin-right:0px\">\r\n<p dir=ltr>&nbsp;</p>\r\n</blockquote></span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p dir=ltr>After this code is executed -----------------<br>\r\nrow 0 cell 2 is coloured and so are <br>\r\nrow 29 cell 2<br>\r\nrow 63 cell 2<br>\r\nrow 97 cell 2 seen by scrolling (This vary depending on the size of the grid)<br>\r\n<br>\r\nWhen I scroll back row 0 cell 2 is back to the default or maybe coloured<br>\r\nthe others seem to stay coloured.<br>\r\n<br>\r\n--------------------------------------------------------------------------------------------------------code<br>\r\n       public static T GetVisualChild&lt;T&gt;(Visual parent) where T : Visual<br>\r\n        {<br>\r\n            T child = default(T);<br>\r\n            int numVisuals = VisualTreeHelper.GetChildrenCount(parent);<br>\r\n            for (int i = 0; i &lt; numVisuals; i++)<br>\r\n            {<br>\r\n                Visual v = (Visual)VisualTreeHelper.GetChild(parent, i);<br>\r\n                child = v as T;<br>\r\n                if (child == null)<br>\r\n                {<br>\r\n                    child = GetVisualChild&lt;T&gt;(v);<br>\r\n                }<br>\r\n                if (child != null)<br>\r\n                {<br>\r\n                    break;<br>\r\n                }<br>\r\n            }<br>\r\n            return child;<br>\r\n        }</p>\r\n</blockquote>\r\n<p>        public DataGridCell GetCell(int row, int column)<br>\r\n        {<br>\r\n            DataGridRow rowContainer = GetRow(row);</p>\r\n<p>            if (rowContainer != null)<br>\r\n            {<br>\r\n                DataGridCellsPresenter presenter = GetVisualChild&lt;DataGridCellsPresenter&gt;(rowContainer);<br>\r\n                DataGridCell cell = null;</p>\r\n<p>                // try to get the cell but it may possibly be virtualized<br>\r\n                try<br>\r\n                {<br>\r\n                    cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(column);<br>\r\n                }<br>\r\n                catch (System.Exception)<br>\r\n                {<br>\r\n                }<br>\r\n                return cell;<br>\r\n            }<br>\r\n            return null;<br>\r\n        }</p>\r\n<p>        public DataGridRow GetRow(int index)<br>\r\n        {<br>\r\n            DataGridRow row = (DataGridRow)SourceProgram.ItemContainerGenerator.ContainerFromIndex(index);<br>\r\n            return row;<br>\r\n        }</p>\r\n",
+    "PostedDate": "2008-11-08T06:24:59.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131019",
+    "ThreadId": "39426",
+    "Html": "If virtualization is enable there is an obvious problem with\r\n<pre>        \r\n        public DataGridRow GetRow(int index)\r\n        {\r\n            DataGridRow row = (DataGridRow)SourceProgram.ItemContainerGenerator.ContainerFromIndex(index);\r\n            if (row == null)\r\n            {\r\n                // may be virtualized, bring into view and try again\r\n                SourceProgram.ScrollIntoView(SourceProgram.Items[index]);\r\n                row = (DataGridRow)SourceProgram.ItemContainerGenerator.ContainerFromIndex(index);\r\n            }\r\n            return row;\r\n        }\r\n\r\n</pre>\r\n<br>\r\nthe datagrid scroll unexpectedly. Virtualization  is extremely hard to do.<br>\r\n<br>\r\nAndre \r\n",
+    "PostedDate": "2008-11-08T07:28:49.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228322",
+    "ThreadId": "39426",
+    "Html": "<p>Hi this is sarath chandra.</p>\r\n<p>I have same requirement to apply background color cell in&nbsp;wpf datagrid. I done by using above code. Its working very fine untill i scroll down the grid. When scroll down the cell values are changing.</p>\r\n<p>Can u give solution for this.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-27T03:20:01.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "905021",
+    "ThreadId": "39426",
+    "Html": "<p>Ok..this is straightforward solution and &nbsp;it works until your DataGrid updated. ( for e.g. if you have treeview-like column and you try to expand/collapse nodes)&nbsp;</p>\r\n<p>the style is dropped to Column.CellStyle. If you know a general technique for solving this issue it would be really great!! =)</p>",
+    "PostedDate": "2012-08-28T03:49:32.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

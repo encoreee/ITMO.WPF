@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "133050",
+    "ThreadId": "40093",
+    "Html": "<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\">Hi,<br>\r\n<br>\r\nI'm still having problems to select a new row or capturing a click into a cell when the cell has HorizontalAlignment=Right. In that case the textbox inside the cell has not the width of the column and I need to click directly at the content of the cell.\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\"> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\">Unfortunately I could not find an appropreate event to handle that situation or how to get the width of the column.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\"> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\">I tried the DataGrid_PreviewMouseLeftButtonDown event and the DataGridCell_PreviewMouseLeftButtonDown but I could not find the correct properties.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\"> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\">Does anyone has an approach to solve this problem?</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\"> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\">Many thanks in advance.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\">WorstCase.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:arial\"> </span></p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-11-17T03:31:43.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133202",
+    "ThreadId": "40093",
+    "Html": "WPF is tricky...and I still claim to be a beginner. That being said...<br>\r\n<br>\r\nWhat it sounds like you're trying to do is have a textbox fill the width of a column, and then whenever the cell is clicked, switch into editing mode?<br>\r\n<br>\r\nIn that case, might the HorizontalContentAlignment=&quot;Stretch&quot; property on the textbox come in handy?<br>\r\nAs well as this article: <a href=\"http://www.codeplex.com/wpf/Wiki/View.aspx?title=Single-Click Editing&referringTitle=Tips %26 Tricks\">http://www.codeplex.com/wpf/Wiki/View.aspx?title=Single-Click%20Editing&amp;referringTitle=Tips%20%26%20Tricks</a><br>\r\nAs to finding the width of the column, I believe you can use the ActualWidth property.<br>\r\n<br>\r\nI don't know if these will work at all, but maybe it'll give you a place to start? Good luck!\r\n",
+    "PostedDate": "2008-11-17T10:39:30.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133242",
+    "ThreadId": "40093",
+    "Html": "Hi rschoenrock,<br>\r\nThank you for your tip.<br>\r\n<br>\r\nUnfortunately this: <span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;HorizontalContentAlignment&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Stretch&quot; /&gt; </span>also does not work for the cellStyle I'm using, cannot see any changes.<br>\r\n<br>\r\nWhat I wanted to say is, that the selection of the row does not work correctly in case of <span style=\"font-family:arial\">HorizontalAlignment=Right or <span style=\"font-family:arial\">HorizontalContentAlignment=Right and the other is 'Stretch'</span>.<br>\r\nWhen I click into the 'empty' area of the cell, the row has not be selected but the event DataGridCell_PreviewMouseLeftButtonDown has fired.<br>\r\n<br>\r\nI'm using the single-click-editing-approach for checkboxes and comboboxes. This works fine when clicking into these kind of cells.<br>\r\n<br>\r\nWorstCase<br>\r\n</span>\r\n",
+    "PostedDate": "2008-11-17T13:26:44.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

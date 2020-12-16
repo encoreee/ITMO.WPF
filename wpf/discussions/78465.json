@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "268552",
+    "ThreadId": "78465",
+    "Html": "<p>I have a project that requires a gantt chart and I'd like to use the WPF Toolkit. &nbsp; Can anyone tell me does the BarSeries chart support this or is there another way? &nbsp; If anyone has any information about this I would really appreciate it. &nbsp;Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>Johnny Mack</p>",
+    "PostedDate": "2009-12-17T09:32:05.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268730",
+    "ThreadId": "78465",
+    "Html": "<p>If you are using VS2008 the Forms chart controls work like any other forms control in WPF. I have successfully used them.</p>\r\n<p><a href=\"http://www.microsoft.com/downloads/details.aspx?FamilyId=1D69CE13-E1E5-4315-825C-F14D33A303E9&displaylang=en\">http://www.microsoft.com/downloads/details.aspx?FamilyId=1D69CE13-E1E5-4315-825C-F14D33A303E9&amp;displaylang=en</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-17T18:09:00.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

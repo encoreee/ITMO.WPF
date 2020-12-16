@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "170819",
+    "ThreadId": "50972",
+    "Html": "Hi,<div><br></div><div>Can Any1 provide code for WPF ComboBox databinding .Actually Im Binding my datagrid with one itemsource says I1 where I1 is observablecollection&lt;t&gt;.Now I want to bind comboboxcolumn with different set of itemsource .can any1 provide me solution </div><div><br></div><div><div>&lt;my:DataGridComboBoxColumn.EditingElementStyle&gt;</div><div><br></div><div>&lt;Style TargetType=&quot;{x:Type ComboBox}&quot;&gt;</div><div><br></div><div>&lt;Setter Property=&quot;ItemsSource&quot; Value=&quot;{Binding Path=T1}&quot; /&gt;</div><div><br></div><div>&lt;Setter Property=&quot;IsEditable&quot; Value=&quot;True&quot; /&gt;</div><div><br></div><div>&lt;Setter Property=&quot;StaysOpenOnEdit&quot; Value=&quot;True&quot; /&gt;</div><div><br></div><div>&lt;/Style&gt;</div><div><br></div><div>&lt;/my:DataGridComboBoxColumn.EditingElementStyle&gt;</div><div><br></div><div>&lt;my:DataGridComboBoxColumn.ElementStyle&gt;</div><div><br></div><div>&lt;Style TargetType=&quot;{x:Type ComboBox}&quot;&gt;</div><div><br></div><div>&lt;Setter Property=&quot;ItemsSource&quot; Value=&quot;{Binding Path=T1}&quot; /&gt;</div><div><br></div><div>&lt;/Style&gt;</div><div><br></div><div>&lt;/my:DataGridComboBoxColumn.ElementStyle&gt;</div><div><br></div><div>Here T1 is obsrvablecollection .</div><div><br></div><div>With regards,</div><div>nannu</div><div><br></div></div>",
+    "PostedDate": "2009-03-23T05:43:35.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170820",
+    "ThreadId": "50972",
+    "Html": "How abt using ObjectDataProvider key in our combo box<div><br></div><div><br></div>",
+    "PostedDate": "2009-03-23T05:44:08.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

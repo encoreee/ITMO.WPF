@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-05-26T13:25:30.963-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In states and transitions, one uses Storyboards.\n \nIf I put the Storyboard.TargetName attribute on my animation tags, everything works fine. \nShould I try to put it on the Storyboard tag itself, so that every animation shares the same target, I get a NullReferenceException at runtime when calling VisualStateManager.GoToState.",
+    "LastUpdatedDate": "2013-05-16T05:31:06.613-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-13T12:32:24.07-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "VSM crash when using Storyboard.TargetName on the Storyboard element",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9972
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I get the same error. The NullReferenceException is thrown from TimelineDataToken.GetHashCode method. This means that either _targetName or _targetProperty field is null. I found that this was happening for the animation where I only set the Storyboard.TargetProperty but didn't set Storyboard.TargetName. The storyaboard wasn't working properly anyway but it would be nice to get more descreptive exception early on - possibly when Timelines are registered. ",
+      "PostedDate": "2009-05-25T23:49:22.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-25T23:49:58.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for bringing this up; the behavior is by design, you need to either set the Target and TargetProperty or TargetName and TargetProperty or you will see an exception.\r\n\r\nAlexis",
+      "PostedDate": "2009-05-26T13:25:19.387-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-26T13:25:30.963-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please reconsider this. This is definitively not a \"design\", just a shortcoming of your implementation.\r\nI've looked into the code, for each animation you have to grab the TargetProperty and TargetName to find out what's being manually animated and what needs an automatic transition.\r\n\r\nIt would not be much harder to add a step to look for an inherited TargetName in the parent Storyboard(s) when there's no TargetName on the animation itself. That way the full WPF use case is supported.\r\n\r\nAnyway, you could _at least_ check for nulls in TargetName and TargetProperty and report a insightful error (e.g. InvalidOperationException(\"TargetName and TargetProperty have to be set on each animation\")) rather than letting the code continue with no check at all and ending up in an obscure NullReferenceException... Took me a little bit of time to figure out what was happening.\r\n\r\nThis is totally unintuitive and certainly not dev-friendly.",
+      "PostedDate": "2009-05-27T01:11:04.467-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "jdu thanks for covering this throughfuly, thats exactly what I meant in my comment.\r\n\r\nI understand that this will be soon part of WPF4.0 but still many of us already uses WPFToolkit on daily basis so we would appreciate some support.\r\n\r\nI hope you would reconsider fixing this issue. ",
+      "PostedDate": "2009-05-27T07:11:35.797-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:16.837-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:06.613-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "227917",
+    "ThreadId": "67046",
+    "Html": "<p>Error&nbsp;1&nbsp;The type or namespace name 'IProvideAttributeTable' could not be found (are you missing a using directive or an assembly reference?)&nbsp;D:\\WPFToolkitBinariesAndSource\\WPFToolkitBinariesAndSource\\Toolkit-release\\DataVisualization.Design\\MetadataRegistration.cs&nbsp;22&nbsp;67&nbsp;Controls.DataVisualization.Toolkit.Design</p>\r\n<p>Error&nbsp;2&nbsp;The type or namespace name 'ProvideMetadata' could not be found (are you missing a using directive or an assembly reference?)&nbsp;D:\\WPFToolkitBinariesAndSource\\WPFToolkitBinariesAndSource\\Toolkit-release\\DataVisualization.Design\\MetadataRegistration.cs&nbsp;15&nbsp;12&nbsp;Controls.DataVisualization.Toolkit.Design<br><br></p>",
+    "PostedDate": "2009-08-26T05:39:26.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229684",
+    "ThreadId": "67046",
+    "Html": "<p>Hi Srini,</p>\r\n<p>I am also facing the same problem as mentioned above If you have any findings please reply.</p>",
+    "PostedDate": "2009-09-01T05:47:43.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229931",
+    "ThreadId": "67046",
+    "Html": "<p>Hi,</p>\r\n<p>I don't recall the specific details right now, but the problem you're hitting sounds very much like what I discuss in my blog post:</p>\r\n<p><span style=\"color:black;font-size:10pt\"><a href=\"http://blogs.msdn.com/delay/archive/2009/06/25/wpf-charting-it-s-official-june-2009-release-of-the-wpf-toolkit-is-now-available.aspx\">http://blogs.msdn.com/delay/archive/2009/06/25/wpf-charting-it-s-official-june-2009-release-of-the-wpf-toolkit-is-now-available.aspx</a></span></p>\r\n<p><span style=\"color:black;font-size:10pt\">Specifically:</span></p>\r\n<p><strong><span style=\"text-decoration:underline\"><em>Build Notes</em></span></strong></p>\r\n<p><em>If you plan to recompile the WPF Toolkit from source, please be aware that two of the three Charting <strong>design-time</strong> assemblies reference Blend 3 DLLs <code>Microsoft.Windows.Design.Extensibility.dll</code> and <code>Microsoft.Windows.Design.Interaction.dll</code>. Unlike their Visual Studio counterparts, these design-time assemblies are <strong>not</strong> automatically found by the build and their absence causes 84 build errors in the <code>Controls.DataVisualization.Toolkit.Design</code> and <code>Controls.DataVisualization.Toolkit.Expression.Design</code> projects. :(</em></p>\r\n<p><em>Most people won't care about building the <strong>Blend-specific design-time</strong> assemblies and can simply right-click the two failing projects in Visual Studio and choose &quot;Unload Project&quot;. After that, everything builds successfully.</em></p>\r\n<p><em>Alternatively, users with Blend installed can update these projects' references to both assemblies and then everything (including the Blend design-time assemblies!) builds successfully. The default location of the Blend assemblies is something like <code>C:\\Program Files (x86)\\Microsoft Expression\\Blend 3 Beta</code>. (If you're on a 32-bit OS, remove the &quot;<code> x86</code>&quot;; once Blend releases, remove the &quot;<code> Beta</code>&quot;.</em></p>\r\n<p><em>Sorry for the inconvenience - we didn't want to ship pre-release Blend components with the WPF Toolkit.</em></p>",
+    "PostedDate": "2009-09-01T15:39:28.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454333",
+    "ThreadId": "67046",
+    "Html": "<p>I've got Visual Studio 2008 SP1 and 2010, I've got Blend 3 (Release version). And I'm using Feb'2010 toolkit sources.</p>\r\n<p>Still getting errors :-(</p>\r\n<p><span style=\"color:#800000\">The type 'Microsoft.Windows.Design.Metadata.<strong>AttributeTableBuilder</strong>'</span><br><span style=\"color:#800000\">&nbsp; exists in both</span><br><br><span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp; 'c:\\Program Files (x86)\\Microsoft Expression\\<strong>Blend 3</strong>\\Microsoft.Windows.Design.Extensibility\\Microsoft.Windows.Design.Extensibility.dll'</span><br><br><span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and</span><br><br><span style=\"color:#800000\">&nbsp;&nbsp;&nbsp; 'c:\\Program Files (x86)\\<strong>Microsoft Visual Studio 9.0</strong>\\Common7\\IDE\\PublicAssemblies\\Microsoft.Windows.Design.dll'</span></p>\r\n<p>In order to fix I need to randomly flip VS/Blend references in different projects, it's quite unstable and bound to break for others, even within my own team I'm likely to see it biting me back.</p>\r\n<p>Can you please take care of that, I mean it's not that some pre-release components stopping you anymore, is it?</p>",
+    "PostedDate": "2010-06-11T02:30:16.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

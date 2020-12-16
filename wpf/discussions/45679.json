@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "152451",
+    "ThreadId": "45679",
+    "Html": "Hello,<br>\r\n<br>\r\ni want that every Row get his own DataGridRowHeader. Because i want list in the DataGridRowHeader.Content the Daynames <br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Style TargetType=&quot;{x:Type dg:DataGridRowHeader}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Content&quot; Value=&quot;Monday&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Background&quot; Value=&quot;{DynamicResource DataGridHeaderBackgroundBrush}&quot;&gt;&lt;/Setter&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Style&gt;<br>\r\n<br>\r\nWhit this Code every DataGridRowHeader will named to Monday. I want something like this:<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Column1 | Column2 ...<br>\r\nMonday Row....<br>\r\nTuesday Row...<br>\r\nWednesday Row..<br>\r\n<br>\r\nIs this possibel and how?<br>\r\n",
+    "PostedDate": "2009-01-30T02:05:30.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152493",
+    "ThreadId": "45679",
+    "Html": "You can bind Content to a property on your data item.  Of course if you want it to repeat you will have to implement that functionality yourself.\r\n",
+    "PostedDate": "2009-01-30T05:16:19.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

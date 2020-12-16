@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "203454",
+    "ThreadId": "60102",
+    "Html": "<p>If I bind a DataGrid to a collection of a class containing 3 properties I get 3 columns on the grid. But when I resize the grid stretching it, I can see a 4th empty column. How can I make it so that when I strech the grid, the 3rd column get stretched to fill up the space?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-06-19T11:17:58.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203471",
+    "ThreadId": "60102",
+    "Html": "<p>You need to set the width of the last column to * or specify the maximum width of the datagrid itself</p>",
+    "PostedDate": "2009-06-19T11:48:30.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203480",
+    "ThreadId": "60102",
+    "Html": "<p>Thanks cheapsaket. In case I don't have column definitions, I assume I cannot set the width of the last column to *. It would make sense if this would be the defult width for the last generated column.</p>",
+    "PostedDate": "2009-06-19T12:06:50.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208344",
+    "ThreadId": "60102",
+    "Html": "<p>I think i had the same problem. I had the problem, that I set my datagrid to a fixed width (so when only two columns are added, it does not look so skinny). But then it looked like if i had an extra empty column (took me a while to realize that it was not really a column) :)</p>\r\n<p>Here is how I fixed the problem. The answer above is right, but when adding the columns programatically, try the following:</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:x-small\">&lt;font size=&quot;2&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">int</span></span><span style=\"font-size:x-small\"> i=1;&lt;font size=&quot;2&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">foreach</span></span><span style=\"font-size:x-small\"> (</span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">DataGridColumn</span></span><span style=\"font-size:x-small\"> col </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">in</span></span><span style=\"font-size:x-small\"> datagrid.Columns)</span></p>\r\n<p><span style=\"font-size:x-small\">{&lt;font size=&quot;2&quot;&gt;\r\n<p>col.Width =</p>\r\n&lt;/font&gt;</span></p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">new</span></span><span style=\"font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">DataGridLength</span></span><span style=\"font-size:x-small\">(i, </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">DataGridLengthUnitType</span></span><span style=\"font-size:x-small\">.Star);</span></p>\r\n<p><span style=\"font-size:x-small\">}</span></p>\r\n<p><span style=\"font-size:x-small\">this sets the column with to &quot;1*&quot;.</span></p>\r\n<p><span style=\"font-size:x-small\">Then the columns spanned the whole grid and I did not see an artificial empty column.</span></p>\r\n<p>&nbsp;</p>\r\n</p>",
+    "PostedDate": "2009-07-03T07:54:07.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

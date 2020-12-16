@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Calendar",
+      "DisplayName": "Calendar"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you set the parents DataContext to for example a long string, that string ends up inside the DayTitleTemplate's TextBlock. The internal structure of the Calendar control can then become wider than the ActualWidth of the Calendar control and gets clipped.\n \nRepro steps:\n1) place a Calendar control on Window1 and set it's DisplayMode to \"Year\" or \"Decade\" (and optionally set HorizontalAlignment to \"Center\").\n2) In code, set the window's DataContext to for example \"This is a long string\".\n \nAlthough the MonthView is hidden when DisplayMode is Year/Decade, you can find the TextBlocks for the daytitles with Snoop and see that the text property contains the long string.\n \nI fixed it by setting the DataContext of PART_MonthView to Null, inside the CalendarItem's triggers for DisplayMode \"Year\" and \"Decade\", but that's just a quick fix.",
+    "LastUpdatedDate": "2013-02-21T18:41:28.77-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-06T04:17:42.557-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Parent's DataContext can mess up the Calendar control when initial displaymode other than Month",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9442
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Or set the DataContext of the Calendar control to {x:Null} whenever you use it.",
+      "PostedDate": "2009-03-06T04:29:52.767-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Don't follow my last comment from Mar 6 at 12:29 PM, if you rely on the DataContext to provide you with the dates for DisplayDate and SelectedDate :-)",
+      "PostedDate": "2009-03-12T03:41:13.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for reporting this issue. We have filed a bug for this issue. ",
+      "PostedDate": "2009-03-23T10:36:03.643-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-23T10:36:05.127-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-23T12:46:29.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-10-19T08:11:29.79-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-01T00:16:08.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:28.77-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1246593",
+    "ThreadId": "545689",
+    "Html": "I am trying to draw a spiral/circle using wpf toolkit line chart.\r<br />\nThe problem is that the control connects the points from left to right (by the x value order) instead of in the order of the points in the list.\r<br />\nDoes anyone know how to solve this problem ?\r<br />\n<br />\nThanks,\r<br />\nItamar<br />\n",
+    "PostedDate": "2014-05-18T01:37:21.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

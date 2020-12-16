@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "1. I can't set styles on DataGrid's button \"Select All\". Workaround:\n \n    public sealed class DataGridStyleBehaviour\n    {\n        public static ControlTemplate GetSelectAllButtonTemplate(DataGrid obj)\n        {            \n            return (ControlTemplate)obj.GetValue(SelectAllButtonTemplateProperty);\n        }\n \n        public static void SetSelectAllButtonTemplate(DataGrid obj, ControlTemplate value)\n        {\n            obj.SetValue(SelectAllButtonTemplateProperty, value);\n        }        \n \n        public static readonly DependencyProperty SelectAllButtonTemplateProperty =\n            DependencyProperty.RegisterAttached(\"SelectAllButtonTemplate\",\n            typeof(ControlTemplate), typeof(DataGridStyleBehaviour),\n            new UIPropertyMetadata(null, OnSelectAllButtonTemplateChanged));\n \n        private static void OnSelectAllButtonTemplateChanged(\n            DependencyObject depObj, DependencyPropertyChangedEventArgs e)\n        {            \n            var grid = depObj as DataGrid;\n            if (grid == null) return;\n \n            grid.Loaded -= OnGridLoaded;\n            grid.Loaded += OnGridLoaded;\n        }\n \n        private static void OnGridLoaded(object sender, RoutedEventArgs e)\n        {\n            var grid = sender as DataGrid;\n            if (grid == null) return;\n \n            var bt = UIHelper.GetChildByType<Button>(grid);            \n            if (bt != null) bt.Template = GetSelectAllButtonTemplate(grid);\n        }\n    }\n \n<ControlTemplate x:Key=\"SelectAllButtonTemplate\" TargetType=\"{x:Type Button}\">\n<Grid>\n    <Rectangle x:Name=\"Border\"\n               Fill=\"{StaticResource ExpressionPieDataPointBrush1}\"\n               SnapsToDevicePixels=\"True\"/>\n    <Polygon x:Name=\"Arrow\" HorizontalAlignment=\"Right\"\n             VerticalAlignment=\"Bottom\" Margin=\"8,8,3,3\"\n             Opacity=\"0.15\" Fill=\"{StaticResource TextBrush}\" Stretch=\"Uniform\"\n             Points=\"0,10 10,10 10,0\"/>\n</Grid>\n</ControlTemplate>\n \n<Style TargetType=\"basic:DataGrid\">\n    <Setter Property=\"utils:DataGridStyleBehaviour.SelectAllButtonTemplate\" Value=\"{StaticResource SelectAllButtonTemplate}\"/>\n</Style>\n \n \n2. There are no row numbers. Workaround:\n \n    public sealed class DataGridRowExtender\n    {\n        public static int GetIndex(DataGridRow obj)\n        {\n            return (int)obj.GetValue(IndexProperty);\n        }\n \n        public static void SetIndex(DataGridRow obj, int value)\n        {\n            obj.SetValue(IndexProperty, value);\n        }\n \n        public static readonly DependencyProperty IndexProperty =\n            DependencyProperty.RegisterAttached(\"Index\", typeof(int), typeof(DataGridRowExtender),\n            new UIPropertyMetadata(new PropertyChangedCallback(OnIndexChanged)));\n \n        private static void OnIndexChanged(\n            DependencyObject dpo, DependencyPropertyChangedEventArgs e)\n        {\n            var row = dpo as DataGridRow;\n            if (row == null) return;\n            var grid = UIHelper.GetParentByType<DataGrid>(row);\n            if (grid == null) return;\n \n            grid.LoadingRow -= OnLoaded;\n            grid.LoadingRow += OnLoaded;\n        }\n \n        private static void OnLoaded(object sender, DataGridRowEventArgs e)\n        {\n            SetIndex(e.Row, e.Row.GetIndex() + 1);\n        }\n    }\n \n<!-- DataGridRow -->\n<Style TargetType=\"{x:Type basic:DataGridRow}\">\n    <Setter Property=\"utils:DataGridRowExtender.Index\" Value=\"-1\"/>\n</Style><!-- DataGridRowHeader -->    \n<Style TargetType=\"{x:Type primitives:DataGridRowHeader}\">\n  <Setter Property=\"Template\">\n        <Setter.Value>\n            <ControlTemplate TargetType=\"primitives:DataGridRowHeader\">\n               <CheckBox VerticalAlignment=\"Center\"\n                         IsChecked=\"{Binding Path=IsSelected, Mode=TwoWay,\n                            RelativeSource={RelativeSource FindAncestor,\n                            AncestorType={x:Type basic:DataGridRow}}}\"                                    \n                            Content=\"{Binding Path=(utils:DataGridRowExtender.Index),  Mode=TwoWay, RelativeSource={RelativeSource FindAncestor,\n                                AncestorType={x:Type basic:DataGridRow}}}\"/>                            \n            </ControlTemplate>\n        </Setter.Value>\n    </Setter>\n</Style>\n \n \n3. There are no tooltips for DataGridCells.\n \n4. There are no grid filter comboboxes (ok, it is a new feature).",
+    "LastUpdatedDate": "2013-02-21T18:41:29.877-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-27T17:15:53.773-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Styles",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9371
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "1) A much simpler workaround would be\r\n<dg:DataGrid ...>\r\n    <dg:DataGrid.Resources>\r\n        <Style TargetType={x:Type Button}>\r\n            <!-- whatever style -->\r\n        </Style>\r\n    </dg:DataGrid.Resources>\r\n</dg:DataGrid>\r\n\r\nIf you have no Template Columns which has buttons in them, this work around should work fine.\r\n\r\n2) Having no row numbers is by design. We think that it should be more data driven and decided by app developer. Something like following should work...\r\n<Style TargetType={x:Type dg:DataGridRowHeader}>\r\n    <Setter Property=\"Content\" Value=\"{Binding Id}\" />\r\n</Style>\r\n\r\n3) Tooltips on DataGridCells can be easily set using CellStyle, ElementStyle and EditingElementStyle properties.\r\n\r\n4) Filtering as a feature is supported on DataGrid. Adding filter comboxes should be as simple as re-templating DataGridColumnHeader (to include Filter combo boxes) and applying filter on DataGrid appropriately based on selected value of the filter combobox.",
+      "PostedDate": "2009-03-02T15:53:17.297-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, but I'm using a custom control template for DataGrid's button:\r\nhttps://mfwekg.bay.livefilestore.com/y1mDKXntsimYedRD_zapRFioRhCaOeOlb-_RMtnDP5Xmtpx5meibVUaluBbLf5teyWO-UF-a11aoQa_GO6snABsYPlTP1FgRDLP0qvtKyyJ5KapNorLy59O6Zo4STsApcUCTP-9dc5gWnA/image[11].png\r\n\r\nThese are base features. I don't want to use templates and styles for all the base services.",
+      "PostedDate": "2009-03-03T05:10:00.777-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You can set template of the button in the style itself.\r\n\r\nThanks!! Although some of them are conceptually against our design (like ToolTip for DataGridCell, there is no better way of solving this than with styles), we made a note of others in our user scenario database to be supported in future.",
+      "PostedDate": "2009-03-03T10:05:25.503-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-03T10:11:02.407-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:42:38.757-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:29.877-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

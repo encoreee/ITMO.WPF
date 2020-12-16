@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Create a DataGrid with a DataGridTemplateColumn that includes a TextBlock within the DataTemplate.  Then when running the application and using UI Spy to view the DataGridCell the TextBlock is not available.  \n \nFor example, using Vincent Sibal's Stock and Template Column Demo at http://blogs.msdn.com/vinsibal/archive/2008/08/19/wpf-datagrid-stock-and-template-columns.aspx, I added the following Template Column to the DataGridBasicSample_Demo2:\n \n                <dg:DataGridTemplateColumn Header=\"Custom Last Name\" >\n                    <dg:DataGridTemplateColumn.CellTemplate>\n                        <DataTemplate>\n                            <StackPanel>\n                                <TextBlock Text=\"{Binding Path=LastName}\" AutomationProperties.AutomationId=\"TextBlock\"/>\n                                <Label Content=\"{Binding Path=LastName}\" AutomationProperties.AutomationId=\"Label\"/>\n                            </StackPanel>\n                        </DataTemplate>\n                    </dg:DataGridTemplateColumn.CellTemplate>\n                </dg:DataGridTemplateColumn>\n \nIn UI Spy the only Automation Element visible is the Label based on AutomationIDs.  Upon investigation and trial and error through Reflector and UI Spy I determined the TextBlockAutomationPeer overrides the IsControlElementCore() method and returns false because it's TemplatedParent is valid, not null.  What I don't understand is why TextBlock's Automation Peer is one of the only AutomationPeers that cares that its TemplatedParent is valid which prevents it from being accessible from UI Automation when part of a TemplatedColumn.  \n \nA workaround that appears to work is to extend the TextBlock class and override the OnCreateAutomationPeer.  In this method return a custom AutomationPeer that extends TextBlockAutomationPeer, but overrides the IsControlElementCore and always returns true.",
+    "LastUpdatedDate": "2013-02-21T18:40:50.557-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-12-02T10:03:36.657-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "TextBlocks contained in a DataGridTemplateColumn are not available in UI Automation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11027
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "You are right, TextBlock does not appear in UI Automation tree. However this is not specific to DataGrid itself, its prevalent in any WPF application. When TextBlock is part of a DataTemplate, it doesnt appear in UIA tree. This is done intentionally because TextBlock is a widely used control and hence WPF hides TextBlock in UIA tree in order to improve performance. \r\nThe suggested workaround is the best approach if your application needs the TextBlock for UIAutomation. ",
+      "PostedDate": "2010-03-03T11:01:18.02-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:50.557-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

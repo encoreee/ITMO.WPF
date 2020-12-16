@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "172229",
+    "ThreadId": "51376",
+    "Html": "Hello,<br>\r\n<br>\r\nWhen pressing the enter-key the datagrid changes the selection to the next row. There is the focus of my problem. I want to evaluate the value of the selected cell when the enter-key is pressed.<br>\r\nWhich event can give me the right row or cell?\r\n",
+    "PostedDate": "2009-03-26T03:29:31.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172727",
+    "ThreadId": "51376",
+    "Html": "If you mean you want to evaluate the value of a row/cell that is being edited and commited after an 'enter' key press, you can listen to the RowEditEnding event.  You can also use row validation (BindingGroup implementation for DataGrid), <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/08/11/wpf-3-5-sp1-feature-bindinggroups-with-item-level-validation.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/08/11/wpf-3-5-sp1-feature-bindinggroups-with-item-level-validation.aspx</a>. \r\n",
+    "PostedDate": "2009-03-27T05:39:38.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172768",
+    "ThreadId": "51376",
+    "Html": "Hi vinsibal, thanks for your answer, but the occurrence of the problem is not in the case of editting a cell.<br>\r\n<br>\r\nI have to select and extract the data of a &quot;DataRow&quot; when someone presses the enter-key. If I use the spacebar as the selector-key, the proplem not occures, because the selection stays on the same row. By using the enter-key, the selection changes to the next row and if I read the selectetItem-property of the DataGrid it returns the new selected row, which is the wrong one.<br>\r\n<br>\r\nI have also testet the &quot;keyDown&quot;-event, but that way does not work, because the enter-Key does not fire a &quot;keyDown&quot;-event.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-27T07:31:02.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172833",
+    "ThreadId": "51376",
+    "Html": "So the functionality you want is:  When a user selects a row and presses enter, you want to do something with that row's data correct?<br>\r\n<br>\r\nHave you tried the PreviewKeyDown event?\r\n",
+    "PostedDate": "2009-03-27T09:48:25.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172837",
+    "ThreadId": "51376",
+    "Html": "Yes, correct, that's the solution for my problem.<br>\r\n<br>\r\nThanks a lot!<br>\r\n",
+    "PostedDate": "2009-03-27T10:01:38.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

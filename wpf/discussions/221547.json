@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "473133",
+    "ThreadId": "221547",
+    "Html": "<p>How can I get a graph to dynamically stretch vertically to fit the area its in? &nbsp;For example within a StackPanel (VerticalAlignment=Stretch) that is part of grid (for which the grid row itself, with MaxHeight=Infinity).</p>\r\n<p>It seems like at the moment for me stretching occurs for the graph OK in the horizontal direction, however it's in the vertical direction I'm having the issue.</p>\r\n<p>&nbsp;</p>\r\n<p>thanks</p>",
+    "PostedDate": "2010-07-27T04:50:11.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

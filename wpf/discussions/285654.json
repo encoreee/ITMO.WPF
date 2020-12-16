@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "723202",
+    "ThreadId": "285654",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I'm stucked with the datagrid because if a single cell of the datagrid is not valid, the whole datagrid is blocked and I cannot enter a value to another cell. First I have to correct the wrong value in order to be able to edit other cells in the datagrid.</p>\r\n<p>It's possible to allow the edition of other cells although one value of the data grid is wrong? (with wrong I mean, not valid using IDataErrorInfo).</p>\r\n<p>Thanks in advance!</p>\r\n<p>P.S.: I observed that a similar question reamain still unanswered on the following address: http://wpf.codeplex.com/discussions/209410 .</p>\r\n",
+    "PostedDate": "2012-01-10T08:30:19.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "801634",
+    "ThreadId": "285654",
+    "Html": "<p>I'd like to add, that, when the faulty row with the cell in question gets deleted - you are pretty much stuck with cells, which you can't edit. ( and the last resort is to tamper with the validation flag inside of the datagrid control ). It is possible to turn off editing blocking, but what if you want to keep the blocking mechanism working...</p>",
+    "PostedDate": "2012-02-27T00:17:41.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

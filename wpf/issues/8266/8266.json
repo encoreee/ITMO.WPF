@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "Fixed in the June Toolkit Release",
+    "ClosedDate": "2009-06-22T17:41:35.04-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have decided to submit this as an issue as i have made a post in the discussion board which hasnt had any replys and i dont want this overlooked\n \nhttp://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=40468\n \n \nWhen trying to save the state of users columns in an app i built using the wpf tookit i found that in some circumstances i would get an index out of range error when ordering columns a certain way\n \nI have included an example\n \n<Window x:Class=\"Window1\" xmlns=http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:x=http://schemas.microsoft.com/winfx/2006/xaml Title=\"Window1\" Height=\"300\" Width=\"300\" xmlns:my=\"http://schemas.microsoft.com/wpf/2008/toolkit\">\n<Grid>\n    <my:DataGrid Margin=\"12\" Name=\"DataGrid1\">\n        <my:DataGrid.Columns>\n            <my:DataGridTextColumn Header=\"Column1\" x:Name=\"dgcColumn1\" /> \n            <my:DataGridTextColumn Header=\"Column2\" x:Name=\"dgcColumn2\" />\n            <my:DataGridTextColumn Header=\"Column3\" x:Name=\"dgcColumn3\" />\n            <my:DataGridTextColumn Header=\"Column4\" x:Name=\"dgcColumn4\" />\n        </my:DataGrid.Columns>\n    </my:DataGrid>\n</Grid>\n</Window>   \n \n     Private Sub Window1_Initialized(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Initialized\n        dgcColumn1.DisplayIndex = 2\n        dgcColumn2.DisplayIndex = 1\n        dgcColumn3.DisplayIndex = 0\n    End Sub \n \nI have also attached a solution that show the problem happening - wiht 4 columns it will error with an index out of range - with 3 columns the datagrid only shows column 3 when it has loaded",
+    "LastUpdatedDate": "2013-06-03T03:05:16.403-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-11-25T08:26:37.903-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid Column DisplayIndex Bug",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 8266
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2331,
+      "FileName": "DataGridBroke.zip",
+      "DownloadUrl": ".\\2331"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi alexhughes,\r\n\r\nWe agree that this is a bug. We're filing a bug in our internal database to track this and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T16:43:54.287-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:44:13.193-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-19T13:16:23.55-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-28T02:02:58.743-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-28T02:16:49.113-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-29T05:44:08.253-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-22T17:41:35.04-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:42.95-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:15.663-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I am using WPF Extended toolkit. and In MVVM project my binding is \n<SmiSmartBaseControls:DataGridTextColumn Header=\"Name\" Binding=\"{Binding FullName, Mode=TwoWay}\" IsReadOnly=\"True\" Width=\"Auto\"  DisplayIndex=\"{Binding PayerSearch_Name, Mode=TwoWay}\"/>\r\n\r\nBut still i am getting below exception..\r\n\r\nThe DisplayIndex for the DataGridColumn with Header 'Name' is out of range.  DisplayIndex must be greater than or equal to 0 and less than Columns.Count.\nParameter name: displayIndex\nActual value was -1.\r\n\r\nCan anybody please give an idea to how to resolve it.",
+      "PostedDate": "2013-06-03T03:05:16.403-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

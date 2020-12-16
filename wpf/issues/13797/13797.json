@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Most computers that run our app are fine, but we have a problem on some that the font in the ribbon seems to be scrambled.\nSee the attached file.  Note that the WPF screen's default font is fine, but the default font in the Ribbon control shows up as boxes.\nWhat can we do?",
+    "LastUpdatedDate": "2013-02-21T18:40:26.893-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-07-28T05:32:22.2-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon Default Font Scrambled",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13797
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4682,
+      "FileName": "RibbonFontProblem.gif",
+      "DownloadUrl": ".\\4682"
+    }
+  ],
+  "Comments": []
+}

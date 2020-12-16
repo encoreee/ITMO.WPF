@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The problem is user can't handle the Enter key pressed event in this control. It is because this key is used in this control to choose the element in the dropped list. However, user may need to handle this key when the list isn't dropped down. For instance, I need to implement behaviour like AutoCompleteBox in Google's page where enter means \"start searching\".\nIt is easy to fix this problem - you just need to change the code in AutoCompleteBox.cs, line 2705 this way:\n \n                case Key.Enter:\n                    if (IsDropDownOpen)\n                    {\n                        OnAdapterSelectionComplete(this, new RoutedEventArgs());\n                        e.Handled = true;\n                    }\n                    break;\n \nAny way I added patch for this issue.",
+    "LastUpdatedDate": "2016-12-20T12:05:34.69-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-02-21T23:20:44.19-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Key.Enter handling in AutoCompleteBox",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15389
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I know it is very late. I used PreviewKeyDown event handler to capture the Enter key.",
+      "PostedDate": "2016-12-20T12:05:34.69-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

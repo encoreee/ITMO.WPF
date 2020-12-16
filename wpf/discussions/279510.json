@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "698386",
+    "ThreadId": "279510",
+    "Html": "\r\n<p>Using the latest WPF Toolkit release to build a WPF app, I have a Chart with two LineSeries. The dependent axis is displaying 64-bit ints (i.e., &quot;long&quot;s). At this point, I only have one data point that is in excess of 4,000,000,000, but I have others that\r\n are relatively large, and it would make things much easier if I were able to use the Binding.StringFormat, and specify that format as &quot;N&quot; - a standard numeric format that includes the current-culture's separator character. so that the number above would display\r\n as I typed it, i.e., with separator characters.</p>\r\n<p>I have tried three approaches:</p>\r\n<ol>\r\n<li>Using the LineSeries DependentValueBinding={Binding NumericElement, StringFormat=N} and other variants of that including ones with escaped &quot;{&quot; and &quot;}&quot; characters and the custom numeric formatting characters #,#.\r\n<ol>\r\n<li>This does nothing, i.e., the values show in the axis, however, they are not formatted.\r\n</li></ol>\r\n</li><li>Using a converter that returns a properly formatted string.\r\n<ol>\r\n<li>This throws an exception that states the right axis type cannot be found. </li></ol>\r\n</li><li>Using a Style to set a template and the StringFormat property for a LinearAxis in the &quot;Y&quot; orientation.\r\n<ol>\r\n<li>Using the custom format characters #,# in that approach throws an &quot;unexpected character&quot; exception.\r\n</li><li>Using the custom format characters 0:0.## displays the number without formatting.\r\n</li><li>And if I am not mistaken, one variant of this also produced the exception that the proper axis type cannot be found.\r\n</li></ol>\r\n</li></ol>\r\n<p>Is there a means to format the numbers on a linear axis with separator characters?</p>\r\n<p>Thanks in advance!</p>\r\n",
+    "PostedDate": "2011-11-15T06:18:41.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

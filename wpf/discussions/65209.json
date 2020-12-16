@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "222105",
+    "ThreadId": "65209",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;&nbsp; &nbsp;I have two scenarios. For the first scenario, I need to display a datagrid with a set of columns and rows. Each row must have a checkbox associated with it so that users can select multiple rows.</p>\r\n<p>&nbsp;&nbsp; &nbsp;In the second scenario, I will have to display a set of rows and columns. Each row should have a radio button associated with it so that users can select only one row at a time.</p>\r\n<p>&nbsp;&nbsp; How can I get this done using the wpf toolkit datagrid. Also, it would be great if there is an example of how to do this using the MVVM model.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Ranjith</p>",
+    "PostedDate": "2009-08-11T10:44:47.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222346",
+    "ThreadId": "65209",
+    "Html": "<p>Adjusting the RowHeaderTemplate and setting SelectionMode appropriately should allow you to do what you want.</p>\r\n<p>Colin Eberhardt has a good write-up on this at <a title=\"http://www.scottlogic.co.uk/blog/wpf/2008/11/multiselect-datagrid-with-checkboxes/\" href=\"http://www.scottlogic.co.uk/blog/wpf/2008/11/multiselect-datagrid-with-checkboxes/\">http://www.scottlogic.co.uk/blog/wpf/2008/11/multiselect-datagrid-with-checkboxes/</a>. It deals with multiple selections with checkboxes, but the exact same principle should apply just as well to radiobuttons and single item selection mode.</p>",
+    "PostedDate": "2009-08-11T23:16:48.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

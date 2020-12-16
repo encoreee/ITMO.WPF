@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "363126",
+    "ThreadId": "155478",
+    "Html": "<p>I just downloaded the ZIP with sources for the feb 2010 updates.</p>\r\n<p>It would also be nice if the SVN repository was updated. It is easier to see what is new in the source code that way.</p>\r\n<p>(In the zip files there are a number of files and directories that should perhaps not be included such as obj, bin, *.sou and *.user)</p>",
+    "PostedDate": "2010-02-23T04:36:48.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "363146",
+    "ThreadId": "155478",
+    "Html": "<p>Hmm. Something is fishy here. When I look at the SVN log, it looks like it is updated, but I do not get any updates. Possibly a local problem here. Perhaps there is some strange timeout issue with Tortoise, because it is painfully slow.</p>",
+    "PostedDate": "2010-02-23T05:51:22.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

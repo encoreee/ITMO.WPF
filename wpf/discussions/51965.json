@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "174340",
+    "ThreadId": "51965",
+    "Html": "I just got back from a week's vacation.&nbsp; I am new to all the xaml stuff.&nbsp; But things that I remember working before vacation aren't working anymore.&nbsp; Maybe I'm just not remembering it right.<br>\r\n<br>\r\nSo if I open up a xaml file in the Visual Studio 2008 Shell, isn't intellisense supposed to work in there?&nbsp; For instance, if I'm in the &lt;window and I type in &quot;xmlns:crap=&quot;, shouldn't it give me a list to choose from?&nbsp; It doesn't.<br>\r\n<br>\r\nAnd if I type &lt;button, shouldn't it show me the tags for the button?&nbsp; Isn't Ctrl-SpaceBar the hot key to get intellisense to give a list?<br>\r\n<br>\r\nIt seems to work in my source code editor.&nbsp; I happen to be using Delphi Prism.<br>\r\n<br>\r\nThe last thing I remember doing was to add the DevExpress dxcore plugin.&nbsp; Could that be goofing up the intellisense somehow?<br>\r\n<br>\r\nAs a noobie, I need intellisense.&nbsp; Anybody have any suggestions?&nbsp; <br>\r\n",
+    "PostedDate": "2009-04-01T07:20:45.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174351",
+    "ThreadId": "51965",
+    "Html": "When I go into Tools|Options and then go to TextEditor for Xaml, the &quot;Statement Completion&quot; options are grayed out.&nbsp; Is that normal?&nbsp; If not, how do I &quot;ungray&quot; them?<br>\r\n",
+    "PostedDate": "2009-04-01T07:45:58.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174505",
+    "ThreadId": "51965",
+    "Html": "I finally uninstalled all the Silverlight 2 pieces/parts I had installed.&nbsp; Then I downloaded the SilverLight 3 beta stuff (I might as well try using the new stuff).&nbsp; That seemed to fix the Intellisense.&nbsp; Go figure...<br>\r\n",
+    "PostedDate": "2009-04-01T13:48:53.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

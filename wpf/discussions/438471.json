@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1023025",
+    "ThreadId": "438471",
+    "Html": "Hi,\r<br />\nI need to know how to implement filtering of multiple columns in a DataGrid, where every column has  its own filter using MVVM and no code behind.<br />\n",
+    "PostedDate": "2013-03-29T13:14:36.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060628",
+    "ThreadId": "438471",
+    "Html": "Implement you own ListCollectionView\r<br />\nIMultipleFilterListColllectionView and provide a AddFilters, RemoveFilters and ClearFilters methods\r<br />\n<br />\ndummy codes \r<br />\nvoid AddFilters(List&lt;Predicate&gt; filters)\r<br />\n{\r<br />\n_filters.AddRange(filters)\r<br />\nbase.Filter = Filter;\r<br />\n}\r<br />\n<br />\nprivate bool Filter(object o)\r<br />\n{\r<br />\nforeach(filter in _filters)\r<br />\n{\r<br />\nvar result = filter.Invoke(o);\r<br />\nif (!result) {return false}\r<br />\n<br />\nreturn true;\r<br />\n}\r<br />\n}<br />\n",
+    "PostedDate": "2013-06-24T16:51:31.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

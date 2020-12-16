@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "181703",
+    "ThreadId": "53951",
+    "Html": "Hi Guys,<br>\r\n<br>\r\nCan someone help me to simulate the same header look and feel that is available for other non-template columns of the data grid such as (Text\\Combo\\Check box) as I need to simulate sorting by clicking headers of template columns. (so it should be like a header button having lower orange border on mouseover and showing me up/down traingle arrow as sorting takes place) <br>\r\n<br>\r\nCan you guide me \\ hint me towards the desired effect.<br>\r\n<br>\r\nThx very much,<br>\r\nVinit Sankhe.\r\n",
+    "PostedDate": "2009-04-21T03:42:17.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181727",
+    "ThreadId": "53951",
+    "Html": "You can set the SortMemberPath property on the DataGridTemplateColumn which will give you the same sorting ability as the other columns.\r\n",
+    "PostedDate": "2009-04-21T05:00:24.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

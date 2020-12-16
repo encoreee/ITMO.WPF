@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "535421",
+    "ThreadId": "238283",
+    "Html": "\r\n<p>Hi. Two things:</p>\r\n<p>&nbsp;</p>\r\n<p>1) I've noticed the installer for the Ribbon control for WPF, on the download page title says 'October 2010' and the properties of the installer say</p>\r\n<p>&quot;Microsoft Ribbon for WPF October 2010 (Version 4.0.0.11019)&quot;</p>\r\n<p>But when you install it is is actually an earlier version (July 2010 version 3.5.40729.1) - apparently for .net 3.5?</p>\r\n<p>I'm guessing this is the latest one then? I was just a bit confused by the title on the download page as:</p>\r\n<h2 id=\"x_DownloadName\">&quot;Microsoft Ribbon for WPF October 2010&quot;</h2>\r\n<p>&nbsp;</p>\r\n<p>2) the other thing is regarding the Ribbon control itself.</p>\r\n<p>I am understanding that it will not let a user change the WindowStyle to None (to hide the minimize/maximize/close buttons).</p>\r\n<p>Is there any way around this? I really want to use the Ribbon control but I want it to not allow users to close my application -- I want to make a ribbon in 'kiosk' mode so to speak...</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n",
+    "PostedDate": "2010-12-14T01:44:45.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "535591",
+    "ThreadId": "238283",
+    "Html": "\r\n<p>Just in case it helps someone else - I found the answers on my own.</p>\r\n<p>&nbsp;</p>\r\n<p>1) apparently the latest version number was rolled back</p>\r\n<p><a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=81732\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=81732</a></p>\r\n<p>&nbsp;</p>\r\n<p>2) there is no easy way to do this, when i tried to 'retemplate' the Ribbon it didn't work. Another article customizing the assembly for the WPF ribbon itself to have a property to allow the Window Title buttons to be hidden but</p>\r\n<p>I couldn't get that to work either. In the end a simple overlay of a rectangle (thereby hiding the buttons) worked for me. It's a shame though that I'd have to take this approach though... anyway here's the xaml.</p>\r\n<p>&nbsp;&lt;Rectangle DockPanel.Dock=&quot;Top&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name=&quot;RectangleToHideButtons&quot;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Fill=&quot;{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}&quot;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Width=&quot;{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=mynamespace:MyParentRibbonWindow}}&quot;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Height=&quot;23&quot; <br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; HorizontalAlignment=&quot;Right&quot;\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visibility=&quot;Visible&quot;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>To use this please adjust it for your use...</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-14T07:30:36.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

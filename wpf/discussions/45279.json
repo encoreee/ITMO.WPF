@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "150979",
+    "ThreadId": "45279",
+    "Html": "<p>Hi,</p>\r\n<p>I have jumped into the world of WPF and am facing a small problem. I want to\r\nset the Row Header of a DataGrid&nbsp;with some text. There can be different number of rows with each having its own header. I also have a column head on the same grid.</p>\r\n<p>I have tried a lot but&nbsp;was not\r\nable to do so.</p>\r\n<p>Please&nbsp;help.</p>\r\n<p>Regards,</p>\r\n",
+    "PostedDate": "2009-01-26T08:37:44.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151042",
+    "ThreadId": "45279",
+    "Html": "Try something like:<br>\r\n      &lt;my:DataGrid.RowHeaderStyle&gt;<br>\r\n        &lt;Style TargetType=&quot;{x:Type my:DataGridRowHeader}&quot;&gt;<br>\r\n          &lt;Setter Property=&quot;Content&quot; Value=&quot;{Binding}&quot; /&gt;<br>\r\n        &lt;/Style&gt;<br>\r\n      &lt;/my:DataGrid.RowHeaderStyle&gt;<br>\r\n<br>\r\nwhere &quot;my&quot; is the namespace in which the Toolkit is specified.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-01-26T11:33:08.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

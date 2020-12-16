@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "228460",
+    "ThreadId": "67210",
+    "Html": "<p>I am getting this error: 'EditItem' is not allowed for this view.</p>\r\n<p>It goes to the parent Window right there: dialog.ShowDialog();</p>\r\n<p>It happens when I try to filter an ObservableCollection:</p>\r\n<p>contractApartments.ItemsSource = contractApartmentCollecion.Where(w =&gt; w.Dorm.Equals((dormsGrid.SelectedItem as SelectedDorm).Dorm));</p>\r\n<p>It is fine when I just do this:</p>\r\n<p>contractApartments.ItemsSource = contractApartmentCollecion;</p>\r\n<p>The same happens if I try to use OrderBy.</p>\r\n<p>I appreciate your help.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-08-27T09:49:26.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262049",
+    "ThreadId": "67210",
+    "Html": "<p>I've been getting this error too. Convert the query to a list and it should solve the error.</p>\r\n<p>(contractApartmentCollecion.Where(w =&gt;  w.Dorm.Equals((dormsGrid.SelectedItem as SelectedDorm).Dorm))).ToList();</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-30T14:51:22.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

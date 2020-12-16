@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "182265",
+    "ThreadId": "54114",
+    "Html": "<p>Hey,</p>\r\n<p>I just updated a project to the latest tookit version however I'm running into a problem with my grids.  I have it bound to a BindingList&lt;T&gt; and it's displaying the data loaded into that list from db fine.  However when I edit the blank/new row at the bottom and hit enter it creates a new row which is highlighted in blue/selected, if I type some more it edits the line I was just editing instead of the new highlighted row.  Now both rows are highlighted and even though the top row has the blackbox around an item I can't hit the down arrow on the keyboard to move down to the just created row.  If I single click on the new row then it creates a new row below it, and clicking on this 3rd row highlights it and the second row.</p>\r\n<p>What in the world is going on?</p>\r\n<p></p>\r\n<p></p>\r\n<p></p>\r\n<pre lang=\"x-c#\">                &lt;tk:datagrid grid.row=&quot;0&quot; itemssource=&quot;{Binding Employees}&quot; autogeneratecolumns=&quot;False&quot;&gt;\r\n                    &lt;tk:datagrid&gt;\r\n                        &lt;tk:datagridtextcolumn header=&quot;Employee Name&quot; width=&quot;*&quot; binding=&quot;{Binding Path=Name}&quot;&gt;&lt;/tk:datagridtextcolumn&gt;\r\n                    &lt;/tk:datagrid&gt;\r\n                &lt;/tk:datagrid&gt;\r\n</pre>\r\nThat's an example of one of the grids running into this problem.\r\n",
+    "PostedDate": "2009-04-22T05:04:00.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182300",
+    "ThreadId": "54114",
+    "Html": "OK well I narrowed my problem down, albeit not resolved yet.  It appears it's a result of the classes Equals function being overriden as nhibernate is being used as the DAL backend.\r\n",
+    "PostedDate": "2009-04-22T06:01:01.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

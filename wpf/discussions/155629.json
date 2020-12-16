@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "363664",
+    "ThreadId": "155629",
+    "Html": "<p>Hello Everyone,</p>\r\n<p>I would like to be able to group DataGridTextColumn's.</p>\r\n<p>For example:</p>\r\n<p><a href=\"http://tinypic.com\"><img src=\"http://i47.tinypic.com/23llfvd.png\" border=0 alt=\"Image and video hosting by TinyPic\"></a></p>\r\n<p>Basically Monday, Tuesday, Wednesday is a master column, then under those you have 1, 2, 3 columns. &nbsp;The D1, D2, D3, etc would be the data.</p>\r\n<p>I do not need any type of sorting ability or rearranging abilities. &nbsp;All I would like to do is make it easier for the people to read the data.</p>\r\n<p>Any help is greatly appreciated!</p>\r\n<p>&nbsp;</p>\r\n<p>Carsten</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-24T05:56:10.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "406703",
+    "ThreadId": "155629",
+    "Html": "<p>I had a similar problem and I ended up creating the master columns outside of the datagrid aligning them with their columns in width a syncing the scrollbars...</p>\r\n<p>Had hoped for a nicer solution but since you can't (?) make a ColumnHeaderStyle that encloses more than one column I don't see any other way....</p>",
+    "PostedDate": "2010-02-25T13:41:58.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "406709",
+    "ThreadId": "155629",
+    "Html": "<p>Can you post an example?</p>\r\n<p>&nbsp;</p>\r\n<p>Not sure how you would create a master coulmn and keep the same visual styling.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-02-25T13:43:35.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "408154",
+    "ThreadId": "155629",
+    "Html": "<p>Well you are right - I can't keep the same visual styling... that did not matter in my case since the column headers needed to be interactive and - well look different than the rest of the table anyway ;)</p>\r\n<p>&nbsp;</p>\r\n<p>Sorry I can't post an example because I don't have it here... and it's quite bloated for an example... but I will have a look in the next few days if I find something good to demonstrate...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-26T03:18:03.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

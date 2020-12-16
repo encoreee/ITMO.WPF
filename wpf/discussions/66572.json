@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "226177",
+    "ThreadId": "66572",
+    "Html": "<p>I am tryting to configure Ribbon's SplitButton. Following is my markup:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonSplitButton</span> <span style=\"color:Red\">x:Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">btnQuickSearch</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Command</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{StaticResource rcmdQuickSearchBtn}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br>                        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonSplitButton.Items</span><span style=\"color:Blue\">&gt;</span><br>                            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonButton</span> <span style=\"color:Red\">x:Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">btnTitleSearch</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Command</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{StaticResource rcmdTitleSearchBtn}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span><br>                            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonSeparator</span> <span style=\"color:Blue\">/&gt;</span><br>                            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonButton</span> <span style=\"color:Blue\">/&gt;</span><br>                        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonSplitButton.Items</span><span style=\"color:Blue\">&gt;</span><br>                    <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">r</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">RibbonSplitButton</span><span style=\"color:Blue\">&gt;</span><br><br><br>I am having 2 problems here:<br>1) What items should I put in the SplitButton's Items collection?? When I put RibbonLabel, they are NOT clickable. On putting RibbonButton, the list does not collapse when any button is clicked.<br>  Neither could I find any Method on SplitButton to collapse it manually in an Event handler.<br>2) I do not want any Image in the Dropdown list of Buttons in the SplitButton. However, setting IsImageVisible on the Button's SizeDefinition gives an Exception saying Images are required on Large Ribbon items.<br><br>Please help. My questions regarding the Office UI are not being answered. Neither is there any documentation available.</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-20T23:45:34.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226453",
+    "ThreadId": "66572",
+    "Html": "<p>Hi r_honey,</p>\r\n<p>RibbonSplitButton is design to take RibbonMenuItems or standard MenuItems, not other RibbonControls, like so:</p>\r\n<p>&nbsp;&lt;r:RibbonSplitButton Command=&quot;{StaticResource myCommand}&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;r:RibbonSplitButton.Items&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;r:RibbonMenuItem Command=&quot;{StaticResource myCommand1}&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;r:RibbonMenuItem Command=&quot;{StaticResource myCommand2}&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;r:RibbonMenuItem Command=&quot;{StaticResource myCommand3}&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;MenuItem Header=&quot;MenuItem1&quot;/&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/r:RibbonSplitButton.Items&gt;<br>&lt;/r:RibbonSplitButton&gt;</p>\r\n<p>Thanks,<br>Samantha</p>",
+    "PostedDate": "2009-08-21T11:14:49.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226765",
+    "ThreadId": "66572",
+    "Html": "<p>Thanx Samantha. That worked. I never tried RibbonMenuItem. The Items collection in RibbonSplitButton accepts any Object. It would have been<br>useful if it was of a specific type making it ealier to figure out what actually needs to be put there.</p>\r\n<p>It would be useful if you can take time out and answer my other thread related to Office UI:<br>http://wpf.codeplex.com/Thread/View.aspx?ThreadId=66461<br><br></p>",
+    "PostedDate": "2009-08-22T23:31:25.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

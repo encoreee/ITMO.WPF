@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "140475",
+    "ThreadId": "42300",
+    "Html": "I have a wpf datagrid where I have multi-select option for selecting rows.<br>\r\nNow i want to bind the SelectedItems property to a variable in my ViewModel to get the selections.<br>\r\nHowever there seems to be only a SelectedItem property on the grid which according to http://msdn.microsoft.com/en-us/library/system.windows.controls.primitives.selector.selecteditem.aspx<br>\r\ngives only the first item in case of multiple selection.<br>\r\n<br>\r\nHow do I get the multiple selections via databinding?<br>\r\n",
+    "PostedDate": "2008-12-14T22:31:08.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140497",
+    "ThreadId": "42300",
+    "Html": "Hi,<br>\r\n<br>\r\nWith multi-select DataGrids each DatGridRow has an IsSelected property which can be used to determine the current selection state. You can bind to this using a RelativeSource binding. See teh following example:<br>\r\n<br>\r\nhttp://wpfadventures.wordpress.com/2008/11/26/multiselect-datagrid-with-checkboxes/<br>\r\n<br>\r\nRegards,<br>\r\nColin E. \r\n",
+    "PostedDate": "2008-12-15T00:41:24.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

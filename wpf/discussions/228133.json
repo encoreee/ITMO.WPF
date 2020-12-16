@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "496930",
+    "ThreadId": "228133",
+    "Html": "<p>Hi All,</p>\r\n<p>I'd appreciate a pointer in the direction of some documentation to deal with CRUD operations like this against a list of objects.</p>\r\n<p>I've set the itemssource of my datagrid to an observablecollection of objects. If there is at least one object already in this list, the datagrid will let me add new ones to the bottom, creating a new row as a tab off the end of the last one (aside: perversly setting the selection not to the next new row, but back at the top of the grid!!).</p>\r\n<p>However, if my list is empty (that is, not null, but has zero items in it) then the grid appears with one row. Now when I tab off the end of the row, the grid does not create a new row! Why not? Is this something I need to handle?</p>\r\n<p>Regards</p>\r\n<p>Nick</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-22T04:14:02.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

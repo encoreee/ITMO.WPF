@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1042216",
+    "ThreadId": "443334",
+    "Html": "How can I get the DatePicker Control from selected DataGridRow from dg1(DataGrid Control)?\r<br />\nI need this, because I want to get the SelectedDate.Value, from DatePicker control, and then, to modify in the database in the same time(when SelectedDateChanged Event was occurred).\r<br />\n<br />\nAlso, for the Rating Control too. How to get which row (from dg1) was clicked, and then what cell in that row, and finally, what value(rating from 0 to 5), have that cell (Rating Control Template).\r<br />\n<br />\nSome code without using binding, will be much appreciated!\r<br />\n<br />\nThanks in advance!<br />\n",
+    "PostedDate": "2013-05-11T04:18:57.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042422",
+    "ThreadId": "443334",
+    "Html": "I don't need help anymore! I always work alone! :)\r<br />\nAfter some tries, I realized that the DatePicker Control have some bugs, because when I say:\r<br />\n<br />\nDatePicker dp = (sender as DatePicker); // the sender is from DatePicker_SelectedDateChanged event\r<br />\n<br />\n, the dp is null.\r<br />\n<br />\nSo, I replaced the DatePicker control from WPFToolkit, with DatePicker from System.Windows.Controls (native control).\r<br />\n<br />\nAnd for the RatingsControl, just I added (in the xaml), the RatingsControl_MouseLeftButtonUp event, and in the code behind,\r<br />\nI get the rating value = (sender as RatingsControl).Rating.\r<br />\n<br />\nAnd then, the updating to db...\r<br />\n<br />\nWho needs more help, just ask :)\r<br />\n<br />\nStay safe!<br />\n",
+    "PostedDate": "2013-05-12T05:07:39.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

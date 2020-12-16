@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "190865",
+    "ThreadId": "56482",
+    "Html": "<p>Hi, Is there a way (other than&nbsp;using&nbsp;&nbsp;this code to hook it up for ALL classes</p>\r\n<p><span style=\"font-size:x-small;color:#008000\"><span style=\"font-size:x-small;color:#008000\">EventManager.RegisterClassHandler(typeof(DataGridCell),&nbsp; </span></span><span style=\"font-size:x-small;color:#008000\"><span style=\"font-size:x-small;color:#008000\">DataGridCell.GotFocusEvent, new RoutedEventHandler</span></span><span style=\"font-size:x-small;color:#008000\"><span style=\"font-size:x-small;color:#008000\">&nbsp;(GotFocusHandler));&lt;font size=&quot;2&quot; color=&quot;#008000&quot;&gt;&lt;font size=&quot;2&quot; color=&quot;#008000&quot;&gt;\r\n<p>\r\n<p>\r\n<p>&nbsp;</p>\r\n</p>\r\n</p>\r\n&lt;/font&gt;&lt;/font&gt;</span>&lt;font size=&quot;2&quot; color=&quot;#008000&quot;&gt;\r\n<p>\r\n<p>\r\n<p>&nbsp;</p>\r\n</p>\r\n</p>\r\n&lt;/font&gt;</span></p>\r\n<p>\r\n<p>\r\n<p>&nbsp;&nbsp; ) to hook up events when a cell is clicked on, and when the user leaves a DataGrid cell?</p>\r\n<p>I need to handle something in an event when the cell is clicked on (GotFocus?) on a datagrid cell, as well as when the user has completed their typing / changes in the cell, and are leaving the cell and moving onto the next field.</p>\r\n<p>&nbsp;</p>\r\n<p>Also, one other requirement is that I need to be able to add and remove the event in the codebehind, not in the XAML (or at least I need to be able to remove the event handler in the codebehind...)</p>\r\n<p>How can I do this?</p>\r\n<p>Thanks,<br>Chris</p>\r\n</p>\r\n</p>",
+    "PostedDate": "2009-05-15T13:58:21.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

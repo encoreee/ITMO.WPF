@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "230395",
+    "ThreadId": "67786",
+    "Html": "<p>I have an expander control that displays a grid control which has several textboxes with validation errors. Consequently their borders are red.&nbsp; When I collapse the expander control, the red borders are still visible so now I have big red boxes showing through.&nbsp; I have tried varying the opacity of the expander which has no affect on the drawing of the red border.</p>\r\n<p>Interestingly, I have other expander controls that house WPF Datagrids. When their cells have validation erros and their expander controls&nbsp;are collapsed, I do not have an issue.&nbsp;</p>\r\n<p>I tried to attach a screen shot, but was unable to paste it as a word or text document.&nbsp; Are there any known issues/workarounds for this?</p>\r\n<p>I am using the WPF Toolkit from June 2009...</p>",
+    "PostedDate": "2009-09-02T13:12:18.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230494",
+    "ThreadId": "67786",
+    "Html": "<p>I figured it out. This is not a bug. When you have controls such as textboxes that can have validation errors (and therefore a red border), if they live in an expander control or a tab control, you need to use <span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">&lt;</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">AdornerDecorator</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">&gt; </span></span></p>\r\n<p><span style=\"color:#0000ff\">Here is the article: <a href=\"http://karlshifflett.wordpress.com/2008/02/19/wpf-validation-errors-disappear-inside-tabcontrol-when-switching-tabitems/\">http://karlshifflett.wordpress.com/2008/02/19/wpf-validation-errors-disappear-inside-tabcontrol-when-switching-tabitems/</a></span></p>",
+    "PostedDate": "2009-09-02T20:31:15.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

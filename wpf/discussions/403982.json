@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "944706",
+    "ThreadId": "403982",
+    "Html": "\r\n<p>When I Use LineSeries, Memory Leak Occured!!!</p>\r\n<p>What i want to do is :</p>\r\n<p>1. Use several LineSeries in a chart&nbsp;</p>\r\n<p>2. every Lineseries .itemssource = ***** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// refresh every 3 seconds&nbsp;</p>\r\n<p><span style=\"color:#ff0000\">But memory usage incremently all the time ...</span></p>\r\n",
+    "PostedDate": "2012-11-20T10:03:47.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

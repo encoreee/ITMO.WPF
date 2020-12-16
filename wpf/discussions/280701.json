@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "702861",
+    "ThreadId": "280701",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>I&acute;ve just stumbled upon the WPF toolkit Autocompletetextbox which seems great. I have a problem with it though. In my WPF application i use a Window as a container for various usercontrols. So when a user clicks a button, this usercontrol is hosted\r\n in this &quot;ContainerWindow&quot;. This works fine, but when I put the WPF toolkit Autocompletetextbox in my usercontrol, the dropdownlist with suggestions isnt well-formatted, it is not as long as it should be, and there is no margin on the text results.</p>\r\n<p>This image illustrates the problem: <img src=\"http://www.larssommer.dk/autocomplete.jpg\" alt=\"\"></p>\r\n<p>Do you have any idea how I could workaround this problem?</p>\r\n<p>Thanks alot for your help :)</p>\r\n<p>Kind regards,</p>\r\n<p>Lars</p>\r\n",
+    "PostedDate": "2011-11-24T02:50:51.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

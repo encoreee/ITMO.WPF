@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "137237",
+    "ThreadId": "41375",
+    "Html": "Hi,<br>\r\n<br>\r\nIt seems that when I use a RibbonWindow instead of Window for my root element the background of the window is turned Black. Remove the RibbonWindow and it reverts back to the System Windows color. Is this by design?<br>\r\n<br>\r\nFYI, I an using a DockPanel as the layout panel in my window and the Ribbon is docked to the top.<br>\r\n<br>\r\nThanks for your help.<br>\r\n<br>\r\nGraham\r\n",
+    "PostedDate": "2008-12-03T05:54:02.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137498",
+    "ThreadId": "41375",
+    "Html": "Hi Graham,<br>\r\n<br>\r\nI believe this is due to some of the interop code which we used to allow the RibbonWindow to integrate with the title bar.  A super easy workaround is to just set the Background on the Window to White and it should look as expected.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-12-03T17:14:11.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "415962",
+    "ThreadId": "41375",
+    "Html": "<p>Hi Samantha</p>\r\n<p>The White Background works for the window but when it is maximized the title bar goes black and the control boxes disapear</p>\r\n<p>This is on Windows 7 64 bit</p>\r\n<p>Any Ideas?</p>\r\n<p>Regards,</p>\r\n<p>Dean</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-09T08:03:56.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "415972",
+    "ThreadId": "41375",
+    "Html": "<p>Hi Samantha</p>\r\n<p>If seems to be the Aero theme that is causing this behaviour</p>\r\n<p>Regards,</p>\r\n<p>Dean</p>",
+    "PostedDate": "2010-03-09T08:34:06.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470485",
+    "ThreadId": "41375",
+    "Html": "<p>Did anyone figure this one out?&nbsp; This is a bad bug that customers will not like.&nbsp;</p>",
+    "PostedDate": "2010-07-21T10:23:41.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470503",
+    "ThreadId": "41375",
+    "Html": "<p>Check this out So hopefully it will be sorted soon</p>\r\n<p><a href=\"http://wpf.codeplex.com/wikipage?title=WPF Ribbon Preview&ProjectName=wpf\">http://wpf.codeplex.com/wikipage?title=WPF%20Ribbon%20Preview&amp;ProjectName=wpf</a></p>\r\n<p>SaiedKhanahmadi Jun 17 at 5:14 PM @tonyeka, sorry for the late reply. Our WPF Ribbon will not compile and run on Silverlight out-of-the-box. However, we are working on the scenario for Ribbon in XBAPs. The Silverlight team has also had a number of requests to implement a Ribbon so they're trying to prioritize that request and see how it fits in their schedule. @zappoo, a new Ribbon was promised a while ago but due to competing priorities (.NET 4, VS2010), Ribbon did not get much attention. We've been working on a new release and also our licensing approach. We will have an update towards the end of July 2010. @dgennetten, we will have an update towards the end of July 2010. But please note that the new release will be based on .NET 3.5 and not .NET 4. Having said that, one of our scenarios is to ensure that it can work with WPF4 applications as well. -Saied SaiedKhanahmadi Jun 17 at 5:16 PM</p>\r\n<p>&nbsp;</p>\r\n<p>@DwhiteR1, we've addressed the RibbonWindow issues regarding minimize, maximize, dual-screen, and others for the upcoming release.</p>",
+    "PostedDate": "2010-07-21T10:36:55.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470523",
+    "ThreadId": "41375",
+    "Html": "Thanks for the news.  Good to hear they are still working on it, and that a release should be out soon.",
+    "PostedDate": "2010-07-21T11:22:52.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

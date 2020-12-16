@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "240423",
+    "ThreadId": "70589",
+    "Html": "<div>\r\n<p>Hi,</p>\r\n<p>I would like to change the styling of the first row (only) in a WPF Datagrid but haven't found how to do it. I wondered about creating a trigger, something like this:</p>\r\n<pre><code><span>&lt;</span><span>Style</span><span> </span><span>TargetType</span><span>=</span><span>&quot;{x:Type dg:DataGridRow}&quot;</span><span>&gt;</span><span><br>&nbsp; &nbsp; </span><span>&lt;</span><span>Style</span><span>.</span><span>Triggers</span><span>&gt;</span><span><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>Trigger</span><span> </span><span>Property</span><span>=</span><span>&quot;SelectedIndex&quot;</span><span> </span><span>Value</span><span>=</span><span>&quot;0&quot;</span><span>&gt;</span><span><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>Setter</span><span> </span><span>Property</span><span>=</span><span>&quot;Background&quot;</span><span> </span><span>Value</span><span>=</span><span>&quot;Red&quot;</span><span>/&gt;</span><span><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;/</span><span>Trigger</span><span>&gt;</span><span><br>&nbsp; &nbsp; </span><span>&lt;/</span><span>Style</span><span>.</span><span>Triggers</span><span>&gt;</span><span><br></span><span>&lt;/</span><span>Style</span><span>&gt;</span><span><br></span></code></pre>\r\n<p>But of course this doesn't work since there is no 'SelectedIndex' property on DataGridRow. I have also had some attempts at doing this in my code behind but couldn't get it to work.</p>\r\n<p>It seems like something that out to be fairly simple but I haven't managed it, so any advice would be most appreciated.</p>\r\n<p>Thanks, Will</p>\r\n</div>",
+    "PostedDate": "2009-09-30T07:12:35.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

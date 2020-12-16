@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "170144",
+    "ThreadId": "50745",
+    "Html": "Hi<br>\r\nHas anyone been able to style the calendar control? Ive been going round in circles trying to achieve this.  WindowsClient.net suggests this is easy by using blend to edit the control templates but I have not been able to do this successfully. Ultimately Im trying to achieve a similar look to the Expresion Dark style for the calendar used in the silverlight toolkit.<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-20T03:37:18.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171269",
+    "ThreadId": "50745",
+    "Html": "Still no one any ideas?<br>\r\n<br>\r\nIve tried to fully style the calendar using blend but I recieve an exception when trying to edit the control part PART_CalendarItem.  When i take the generic style from the toolkit an modify it, the changes are not shown in the control itself. If i add an x:Key to the Calendar and CalendarItem styles i can modifiy these but i am struggling to get anything to work with CalendarDayButton and CalendarButton styles.<br>\r\n<br>\r\nAny help whatsoever would be appreciated.<br>\r\n",
+    "PostedDate": "2009-03-24T04:26:52.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171356",
+    "ThreadId": "50745",
+    "Html": "I'm having exactly the same problem. I have worked out how to change the Calendar itself (the background color and border), but not any of the internal elements. I've been trying in VS mainly, but had a go at doing it in Blend. I have copied the generic style into my resources and added the various xml name spaces to both that and my window, but still no luck. Like you say WindowsClient shows an example, and just brushes over the fact that there is a designer for VS and Blend. I cannot find anywhere on the web about how to style the calendar control, or how to integrate the designer Dales to use them.<br>\r\n<br>\r\nI just thought I'd show a little solidarity rather than just waiting for someone to reply to your thread. Also hopefully the more people who are having this problem, the more likely its going to get answered.\r\n",
+    "PostedDate": "2009-03-24T08:35:17.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171378",
+    "ThreadId": "50745",
+    "Html": "Cheers for the support dpgregory. Fingers crossed on someone being able to give some insight into this.<br>\r\n<br>\r\nIf you add a front end to the WPFToolkit source and change the generic.xaml theme you can get a peek of what your calendar control could look like. How frustrating!<br>\r\n",
+    "PostedDate": "2009-03-24T09:07:09.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171614",
+    "ThreadId": "50745",
+    "Html": "Hi devman81 &amp; dpgregory - <br>\r\n<br>\r\nI would be more than happy to help you both with your Styling issues. First off, Blend will not get you as far as you would like in this instance because of how the Control was designed. You will have to use the Style Properties exposed by the Controls rather applying implicit Styles. If you copy all the Styles from the Toolkit source (in generic.xaml) and modify them however you please then assign them each an  x:key, you can assign the Styles to the Style Properties of the Control.<br>\r\nFor example: <span style=\"font-size:13px;color:#0000ff\"> <br>\r\n<br>\r\n&lt;ms:Calendar <br>\r\nStyle=&quot;{StaticResource BlueCal}&quot; <br>\r\nCalendarItemStyle=&quot;{StaticResource RedCalItem}&quot; <br>\r\nCalendarDayButtonStyle=&quot;{StaticResource GreenCalDayButton}&quot;<br>\r\nCalendarButtonStyle=&quot;{StaticResource PurpleCalButton}&quot;/&gt; <br>\r\n<br>\r\n</span>Hopefully this response proves helpfull. Please let us know if you have any further difficulties - we want to make you can Style these Controls :-)<br>\r\n<br>\r\n-Eric, MSFT\r\n",
+    "PostedDate": "2009-03-24T16:32:53.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171738",
+    "ThreadId": "50745",
+    "Html": "I had figured this out after emailing Samantha which i guess is sods law, then codeplex was down so i couldn't post. I am delighted to receive such quick response from Samanth and yourself Eric, much appreciated. <br>\r\n<br>\r\nI achieved the same result with something similar which would be applied to all calendar controls with the following<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">  </span> </span><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Toolkit:Calendar&quot;&gt;  <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;CalendarDayButtonStyle&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">StaticResource</span><span style=\"font-size:13px;color:#ff0000\"> DayButtonStyle</span><span style=\"font-size:13px;color:#0000ff\">}&quot;/&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;CalendarButtonStyle&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">StaticResource</span><span style=\"font-size:13px;color:#ff0000\"> ButtonStyle</span><span style=\"font-size:13px;color:#0000ff\">}&quot;/&gt;<br>\r\n         .............<br>\r\n    &lt;/Style&gt;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>\r\n<p>I just couldnt find a way of hooking in the button styles as these style properties are not set in calendar style in generic.xaml <br>\r\n<br>\r\nOnce again many thanks for your assistance.<br>\r\nDevman81 </p>\r\n</p>\r\n",
+    "PostedDate": "2009-03-25T02:12:19.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "414367",
+    "ThreadId": "50745",
+    "Html": "<p>I was able to copy the styles over but in Blend I get an exception when I try to view the style template:</p>\r\n<p>The animation(s) applied to the 'Visibility' property calculate a current value of 'Collapsed', which is not a valid value of the property.</p>\r\n<p>(also why can't I copy and paste an error message in Blend, am I missing something or is it just a UI limitation?)</p>\r\n<p>Funny enough the link below seems to imply styling the datepicker is a piece of cake (though without actually explaining it):</p>\r\n<p>http://windowsclient.net/wpf/wpf35/wpf-35sp1-toolkit-calendar-datepicker-walkthrough.aspx#styling</p>\r\n<div id=\"_mcePaste\" style=\"overflow:hidden;left:-10000px;top:0px;width:1px;height:1px\">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;VisualState x:Name=&quot;CalendarButtonUnfocused&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Storyboard&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;ObjectAnimationUsingKeyFrames Duration=&quot;0&quot; Storyboard.TargetName=&quot;FocusVisual&quot; Storyboard.TargetProperty=&quot;Visibility&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;DiscreteObjectKeyFrame KeyTime=&quot;0&quot; Value=&quot;Collapsed&quot;/&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/ObjectAnimationUsingKeyFrames&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/Storyboard&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/VisualState&gt;</div>",
+    "PostedDate": "2010-03-04T14:29:29.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "414687",
+    "ThreadId": "50745",
+    "Html": "<p>I was finally able to get this working.&nbsp; It was a bit tricky but as long as you are just applying the CalendarStyle template it works without too much problem.&nbsp; I still can't edit any of the other templates in a WPF project, but that is ok I only wanted to specify the default template.&nbsp; The reason for that is when using the datepicker in XP, by default the calendar popup looks different depending on the user's theme, with the Classic and Standard themes the date button along the top is exceptionally hard to read.&nbsp; By bringing in the default style for the calendar and setting it explicitly it forces it to look the same in all situations.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-05T10:10:26.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436603",
+    "ThreadId": "50745",
+    "Html": "<p>Does anyone have a full working example of this?&nbsp; I try to pull in the default style of the calendar in a ResourceDictionary but get all types of errors regarding the VisualStateManager when I go to run it.</p>",
+    "PostedDate": "2010-04-28T09:08:46.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

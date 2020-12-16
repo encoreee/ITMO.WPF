@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "236845",
+    "ThreadId": "69584",
+    "Html": "<p>Hi,</p>\r\n<p>I want to create a wpf project having animated text (scroll from&nbsp;right to left) and fadeout after some time. I found few samples using DoubleAnimation but I could not able to find out how to control the scrolling speed of the text. Since the speed is too high for my application.</p>\r\n<p>COuld you please help me on</p>\r\n<p>1) How to control the speed of the scrolling text (I want slowly)</p>\r\n<p>2) If u have any better samples for scrolling and fadeout of text please share with me. I want a word from right to left and another word from left to right to scroll. After few seconds,, I want to apply fade out for both text.</p>\r\n<p>3) The TextBlock content i am making animation&nbsp;needs to be&nbsp;trigger when I click on a button. For this scenario what I need to specify in TextBlock EventTrigger?</p>\r\n<p>Please help on this.</p>\r\n<p>Thanks in Advance.</p>",
+    "PostedDate": "2009-09-21T04:27:31.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

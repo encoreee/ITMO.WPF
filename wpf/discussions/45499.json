@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "151809",
+    "ThreadId": "45499",
+    "Html": "Hi,<br>\r\n<br>\r\nI just ran into a strange error using the RibbonComboBox. I am binding a list of ClassA objects to the DataContext of my RibbonComboBox. ClassA has two properties Id (int) and DisplayName (string). The binding seems to work correct. The combo box contains the correct amount of items and displays the correct data.<br>\r\n<br>\r\nNow my problem:<br>\r\nEverytime I try to select another element in the RibbonComboBox, my app throws an InvalidCasException (&quot;Unable to cast object of type 'ClassA' to type 'Microsoft.Windows.Controls.Ribbon.RibbonComboBoxItem'.&quot;).<br>\r\nI've wired up the SelectionChanged event, which is executed correctly. If I check the SelectedValue (contains the Id field of ClassA) and SelectedItem (contains the ClassA object) property in my SelectionChanged event handler, they contain the expected values. After my event handler was executed the InvalidCastException suddenly appears.<br>\r\n<br>\r\nMy XAML definition:<br>\r\n<span style=\"color:#0000ff;font-size:13px\"><span style=\"color:#0000ff;font-size:13px\"> &lt;</span> </span><span style=\"color:#a31515;font-size:13px\">r</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">RibbonComboBox</span><span style=\"color:#ff0000;font-size:13px\"> Name</span><span style=\"color:#0000ff;font-size:13px\">=&quot;cbxTerms&quot;</span><span style=\"color:#ff0000;font-size:13px\"> ItemsSource</span><span style=\"color:#0000ff;font-size:13px\">=&quot;{</span><span style=\"color:#a31515;font-size:13px\">Binding</span><span style=\"color:#0000ff;font-size:13px\">}&quot;</span><span style=\"color:#ff0000;font-size:13px\"> SelectionChanged</span><span style=\"color:#0000ff;font-size:13px\">=&quot;cbxTerms_SelectionChanged&quot; </span><span style=\"color:#ff0000;font-size:13px\">DisplayMemberPath</span><span style=\"color:#0000ff;font-size:13px\">=&quot;DisplayName&quot;</span><span style=\"color:#ff0000;font-size:13px\"> SelectedValuePath</span><span style=\"color:#0000ff;font-size:13px\">=&quot;Id&quot; </span><span style=\"color:#ff0000;font-size:13px\">Width</span><span style=\"color:#0000ff;font-size:13px\">=&quot;100&quot;</span><span style=\"font-size:13px\"> </span><span style=\"color:#ff0000;font-size:13px\">Text</span><span style=\"color:#0000ff;font-size:13px\">=&quot;{</span><span style=\"color:#a31515;font-size:13px\">Binding</span><span style=\"color:#ff0000;font-size:13px\"> ElementName</span><span style=\"color:#0000ff;font-size:13px\">=cbxTerms,</span><span style=\"color:#ff0000;font-size:13px\"> Path</span><span style=\"color:#0000ff;font-size:13px\">=SelectedItem.Content}&quot; /&gt;<br>\r\n</span><br>\r\nDo I miss something?<br>\r\n<br>\r\nIf I bind a list of RibbonComboBoxItems (Content = DisplayName of ClassA) to the ItemsSource property the selection change works properly. But then I have to find the Id of ClassA in code again. Instead of just taking the SelectedItem with the Id-value in it.<br>\r\nIs it possible at all to bind other objects then RibbonComboBoxItem to a RibbonComboBox?<br>\r\n<br>\r\nThanks for your answers.<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-28T07:50:41.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154596",
+    "ThreadId": "45499",
+    "Html": "Does nobody have a any ideas?",
+    "PostedDate": "2009-02-05T02:46:03.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155764",
+    "ThreadId": "45499",
+    "Html": "Hi strauchdieb,<br>\r\n<br>\r\nI run into the very same problem and I have posted a thread on it.<br>\r\nLet's pray together for an answer.<br>\r\n",
+    "PostedDate": "2009-02-09T05:53:46.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155766",
+    "ThreadId": "45499",
+    "Html": "I fact, the answer is here:<br>\r\n<br>\r\nhttp://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=40365<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-02-09T05:59:10.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155788",
+    "ThreadId": "45499",
+    "Html": "Hi Roubachof<br>\r\n<br>\r\nThanks for your answer. <br>\r\nIt seems that we have to live with the RibbonComboBoxItem for now. I hope they'll release a fix soon. \r\n",
+    "PostedDate": "2009-02-09T07:03:35.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

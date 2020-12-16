@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "249641",
+    "ThreadId": "73065",
+    "Html": "<p>Hello,</p>\r\n<p>I have a datagrid that is bound to an observerable collection. When I add a new element to the list I'd like to select the new row in the datagrid and set focus in one of it's cells.</p>\r\n<p>I can find the new row in the observablecollection (a new row has id=0) but how can I find that row in the datagrid??</p>\r\n<p>The datagrid can be sorted in various ways by pressing the headers.</p>",
+    "PostedDate": "2009-10-26T02:29:39.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251190",
+    "ThreadId": "73065",
+    "Html": "<p>I've managed to select the new row but can't get it to start the editing in my column, any ideas?</p>\r\n<p>&quot;topic&quot; is my new row and &quot;dgTopics&quot; is my DataGrid.</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> topic = <span style=\"color:Blue\">new</span> Topic();\r\n\r\ndgTopics.Focus();\r\ndgTopics.SelectedItem = topic;\r\ndgTopics.CurrentColumn = dgTopics.Columns[1];\r\ndgTopics.UpdateLayout();\r\ndgTopics.ScrollIntoView(dgTopics.SelectedItem, <span style=\"color:Blue\">this</span>.dgTopics.Columns[1]);\r\ndgTopics.BeginEdit();\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2009-10-29T07:41:46.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

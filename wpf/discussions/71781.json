@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "244951",
+    "ThreadId": "71781",
+    "Html": "<p>Hi,</p>\r\n<p>The DataGrid control is a very great control. When I use it ,&nbsp;I encounter a problem while adding a new row.</p>\r\n<p>Normally, to add a new row, we have to double click the New Row, type&nbsp;some data and move the focus to other controls.&nbsp;As a result, &nbsp;a new row is added to the grid. But how to handle the following&nbsp;situation? When adding a person, there are two text boxes for peron's names, ideally, if the user doesn't type any names, a new row won't be added.&nbsp;&nbsp;I have tried several times, but the data grid always added a new row with empty names.</p>\r\n<p>How can I&nbsp;cancel adding?&nbsp;Any help is appreciated. Thanks.</p>",
+    "PostedDate": "2009-10-13T01:12:33.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245510",
+    "ThreadId": "71781",
+    "Html": "<p>\r\n<p>\r\n<p><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">&lt;font size=&quot;2&quot; color=&quot;#0000ff&quot;&gt;&lt;font size=&quot;2&quot; color=&quot;#0000ff&quot;&gt;\r\n<p>&lt;</p>\r\n&lt;/font&gt;&lt;/font&gt;</span>&lt;font size=&quot;2&quot; color=&quot;#0000ff&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">wpf</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">:</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">DataGrid</span></span></p>\r\n&lt;font size=&quot;2&quot; color=&quot;#ff0000&quot;&gt;&lt;font size=&quot;2&quot; color=&quot;#ff0000&quot;&gt;\r\n<p>\r\n<p>CanUserAddRows</p>\r\n</p>\r\n&lt;/font&gt;&lt;/font&gt;</span>&lt;font size=&quot;2&quot; color=&quot;#ff0000&quot;&gt;\r\n<p>\r\n<p>&nbsp;</p>\r\n</p>\r\n&lt;/font&gt;</span>\r\n<p>\r\n<p><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">=&quot;False&quot;</span></span></p>\r\n<p><span style=\"color:#0000ff\">.</span></p>\r\n<p><span style=\"color:#0000ff\">.</span></p>\r\n<p><span style=\"color:#0000ff\">.</span></p>\r\n</p>\r\n</p>\r\n</p>\r\n</p>",
+    "PostedDate": "2009-10-14T04:15:38.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245511",
+    "ThreadId": "71781",
+    "Html": "<p>&lt;wpf:DataGrid Name=&quot;......&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp; CanUserAddRows=&quot;False&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp; .<br>&nbsp;&nbsp;&nbsp;&nbsp; .<br>&nbsp;&nbsp;&nbsp;&nbsp; .</p>",
+    "PostedDate": "2009-10-14T04:17:16.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

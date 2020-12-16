@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "172771",
+    "ThreadId": "51512",
+    "Html": "I'm trying to restyle the column headers in a data grid so that the contents will be displayed vertically rather than horizontally. I've looked at a few examples of applying a new style to the column header and they all use DataGridColumnHeader. However, it seems in the latest release that DataGridColumnHeader doesn't exist! I checked the source code and it's not there. What happened? And what target type do I use for my column header style?<br>\r\n",
+    "PostedDate": "2009-03-27T07:34:40.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172780",
+    "ThreadId": "51512",
+    "Html": "Ok, now I see it. It's in Microsoft.Windows.Controls.Primitives instead of Microsoft.Windows.Controls<br>\r\n",
+    "PostedDate": "2009-03-27T07:44:54.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

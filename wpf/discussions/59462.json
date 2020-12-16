@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "201298",
+    "ThreadId": "59462",
+    "Html": "<p>hello,<br><br>I have a datagrid with a couple of records. When I call: tableadapterManager.updateAll() the changes are send to the database.<br>When I delete a record in my dataset and I get an error back; no changes are made.<br><br>At this moment I want to show the dataset, INCLUDING&nbsp;the record I (tried to) delete earlier.<br>So I set: tableadaptermanager.BackUpDataSetBeforeUpdate = true; just before the call to tableadapterManager.UpdateAll()&nbsp;<br><br>But how can I get acces to this backup-dataset ??<br></p>",
+    "PostedDate": "2009-06-14T06:39:58.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204332",
+    "ThreadId": "59462",
+    "Html": "<p>What exactly is tableadaptermanager?&nbsp;</p>",
+    "PostedDate": "2009-06-22T21:33:50.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204367",
+    "ThreadId": "59462",
+    "Html": "<p>&nbsp;</p>\r\n<p>&nbsp;Hello Vinsibal,</p>\r\n<p>In the datagrid I have records from the table: CT_VERDEELSLEUTELS. This is the code:</p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">private</span></span><span style=\"color:#000000;font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">CT_VERDEELSLEUTELSTableAdapter</span></span><span style=\"color:#000000;font-size:x-small\"> taVrds = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">new</span></span><span style=\"color:#000000;font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">CT_VERDEELSLEUTELSTableAdapter</span></span><span style=\"font-size:x-small\"><span style=\"color:#000000\">();<br></span></span>private</span></span><span style=\"font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">TableAdapterManager</span></span><span style=\"font-size:x-small\"> taManager</span><span style=\"font-size:x-small\">;<br>...<br></span><span style=\"font-size:x-small\"><span style=\"font-size:x-small\">taManager = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">new</span></span><span style=\"font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">TableAdapterManager</span></span><span style=\"font-size:x-small\">();<br></span><span style=\"font-size:x-small\"><span style=\"font-size:x-small\">taManager.CT_VERDEELSLEUTELSTableAdapter = taVrds;<br>....<br><span style=\"font-size:x-small\">taManager.BackupDataSetBeforeUpdate</span></span></span></span></p>\r\n<p><span style=\"font-size:x-small\"><span style=\"font-size:x-small\"><span style=\"font-size:x-small\"><span style=\"font-size:x-small\">Thank you</span></span></span></span>&nbsp;</p>",
+    "PostedDate": "2009-06-23T00:07:40.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229374",
+    "ThreadId": "59462",
+    "Html": "<p><span style=\"font-size:x-small\"><span style=\"font-size:x-small\"><span style=\"font-size:x-small\"><span style=\"font-size:x-small\">BackupDataSetBeforeUpdate is a boolean property.&nbsp; Set it to true.&nbsp; If there is an error your dataset will be reset to the way it was before the update.</span></span></span></span></p>\r\n<p>&nbsp;</p>\r\n<p><a href=\"http://msdn.microsoft.com/en-us/library/bb384567.aspx\">Help Documentation</a></p>",
+    "PostedDate": "2009-08-31T09:00:34.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

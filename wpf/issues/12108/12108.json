@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello\ni have around 30 coulmns to display and half of it are of type DataGridComboboxColumn that are bound to different ItemsSources. Columns are generated dynamically. Even for 100 records, it takes more than 5/10sec to render data on screen.\nWhile debug, i could see data fetch and column generation happens quickly but screen shows blank rows for around 5/10secs(rendering) and then displays data. During render process, CPU utilization is 100% and app gets into not responding state.\nAny solution to this?\n \nThanks\nShailendra",
+    "LastUpdatedDate": "2013-07-19T03:15:33.66-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-17T11:50:31.15-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid rendering performance issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 12108
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

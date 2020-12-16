@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If DatePicker is changing the IsEnabled Property it has no effect to switch VisualState to \"Normal\" or to \"Disabled\". \n \nI have inserted the following line in \"private static void OnVisualStatePropertyChanged(DatePicker dp)\" to fix the problem.\n \nVisualStateManager.GoToState(dp, dp.IsEnabled ? VisualStates.StateNormal : VisualStates.StateDisabled, true);",
+    "LastUpdatedDate": "2013-02-21T18:40:42.63-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-04T01:02:43.6-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker IsEnabled Property",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 12006
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm not sure if my comment is basically the same as above, but I noticed that if I set IsEnabled to false, resetting it to true does not restore the control's normal color.",
+      "PostedDate": "2010-03-11T05:06:08.14-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Lito,\r\n\r\nit is the same problem. This is produced by this error.",
+      "PostedDate": "2010-03-11T10:47:41.81-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-18T07:41:25.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-25T03:25:19.693-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-25T10:55:42.657-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks funcorner! Now it works like it should.",
+      "PostedDate": "2010-05-25T11:42:09.833-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-15T09:08:16.593-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please include this in the next release...",
+      "PostedDate": "2010-11-15T09:09:02.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:42.63-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

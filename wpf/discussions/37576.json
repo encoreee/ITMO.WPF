@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "124651",
+    "ThreadId": "37576",
+    "Html": "I have a DataGridTextColumn in a DataGrid. I would like to manipulate the local value of the DataGridCell from code behind. I do not want to propagate the value to the property of the bound object. I want the actual commit of the value change to take place whenever IsEditing changes on the cell.<br>\r\n<br>\r\nHere is my scenario. There's a field in which the user has to input a value that is dictated by a list of valid values. To aid the user, there's the possibility to popup a dialog in which the valid values are presented. The user chooses one of the valid values, and the value in the cell is changed accordingly. When the user tabs out of the cell, the value is commited.<br>\r\n<br>\r\nThe DataGridCell.Content gets the visual tree of the cell, either a TextBlock or a TextBox depending on whether the cell is in edit mode or not. I've tried to set the value on the TextBlock and on the TextBox (i.e. switched between IsEditing=True|False and set the value on the current FrameworkElement), but the local value of the cell stays unchanged.<br>\r\n<br>\r\nSetting the new value to the DataGridCell.Content as proposed at:<br>\r\n<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065</a><br>\r\ndoesn't work either, as would be expected.\r\n",
+    "PostedDate": "2008-10-13T00:53:03.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "124975",
+    "ThreadId": "37576",
+    "Html": "For your scenario, how is this different than the current behavior?&nbsp; When tabbing out, that is when the cell is committed.\r\n",
+    "PostedDate": "2008-10-14T06:19:26.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125055",
+    "ThreadId": "37576",
+    "Html": "Like I said, I would like to manipulate the <em>local</em> value of the cell, and let the user decide on whether to accept the proposed value that has been set from code behind. <br>\r\n<br>\r\nTo clarify, I want to know how to set the value of the cell as it would be set if the user typed it, but from code behind.\r\n",
+    "PostedDate": "2008-10-14T10:45:37.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125274",
+    "ThreadId": "37576",
+    "Html": "Usually setting the value on the TextBlock of the DataGridCell.Content will do it.&nbsp; If you were to try that normally without doing this special kind of editing, does it work?&nbsp; I'm guessing that it could be the lost of focus&nbsp;due to&nbsp;your popup.&nbsp; Anytime there is a lost of focus, the row will commit all it's data.&nbsp; So maybe when the user selects the value and tabs they are already out of edit mode so it doesn't commit.&nbsp; Let me know if this is the possible issue.\r\n",
+    "PostedDate": "2008-10-15T05:43:45.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125825",
+    "ThreadId": "37576",
+    "Html": "Actually, as I explained in original post, I've tried setting the value in both the TextBlock.Text and TextBox.Text properties to no avail (both when the cell is IsEditing=false and IsEditing=true.<br>\r\n<br>\r\nHere's&nbsp;a code&nbsp;example&nbsp; to illuminate what I'm trying to do. The effect is that no value is propagated to my business object and no value is changed in the cell. There may be something obvious I'm missing here.<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>\r\n<p><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\"></span><span style=\"font-size:13px;color:#2b91af\">MyDialogWindow</span><span style=\"font-size:13px\">&nbsp;window = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\">&nbsp;</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">MyDialogWindow</span></span><span style=\"font-size:13px\">();<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">bool</span><span style=\"font-size:13px\">? result = window.ShowDialog();<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">if</span><span style=\"font-size:13px\"> (result.Value ==&nbsp;<span style=\"font-size:13px;color:#0000ff\">true</span>)<br>\r\n{<br>\r\n</span><span style=\"font-size:13px\">&nbsp;&nbsp;&nbsp;&nbsp;cell.Focus();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;cell.IsEditing = </span><span style=\"font-size:13px;color:#0000ff\">true</span><span style=\"font-size:13px\">;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;textBox = cell.Content </span><span style=\"font-size:13px;color:#0000ff\">as</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">TextBox</span><span style=\"font-size:13px\">;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;textBox.Text = window.ValueSelectedByTheUser;<br>\r\n</span><span style=\"font-size:13px\">&nbsp;&nbsp;&nbsp;&nbsp;textBox.SelectAll();<br>\r\n}</span>\r\n",
+    "PostedDate": "2008-10-17T03:50:48.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126504",
+    "ThreadId": "37576",
+    "Html": "The issue is with the way you are entering edit mode.&nbsp; Replace &quot;cell.IsEditing = true;&quot; with &quot;MyDataGrid.BeginEdit();&quot;.&nbsp;\r\n",
+    "PostedDate": "2008-10-21T05:41:14.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

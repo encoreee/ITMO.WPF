@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "136904",
+    "ThreadId": "41261",
+    "Html": "I am trying to impose same column widths on two grids. However it does seem to ignore the binding (no errors are reported in the output). Here is the definition of the column with Width being bound to another column in anothe grid.<br>\r\n<br>\r\n<span style=\"font-size:10px;color:#a31515\"></span>\r\n<p><span style=\"font-size:10px;color:#0000ff\">&lt;</span><span style=\"font-size:10px;color:#a31515\">toolkit</span><span style=\"font-size:10px;color:#0000ff\">:</span><span style=\"font-size:10px;color:#a31515\">DataGridTextColumn</span><span style=\"font-size:10px;color:#ff0000\"> Width</span><span style=\"font-size:10px;color:#0000ff\">=&quot;{</span><span style=\"font-size:10px;color:#a31515\">Binding</span><span style=\"font-size:10px;color:#ff0000\"> Path</span><span style=\"font-size:10px;color:#0000ff\">=Columns[</span><span style=\"font-size:10px\">2</span><span style=\"font-size:10px;color:#0000ff\">].Width,</span><span style=\"font-size:10px;color:#ff0000\"> ElementName</span><span style=\"font-size:10px;color:#0000ff\">=Results}&quot;</span><span style=\"font-size:10px;color:#ff0000\"> IsReadOnly</span><span style=\"font-size:10px;color:#0000ff\">=&quot;True&quot;/&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:10px;color:#0000ff\"></span>\r\n",
+    "PostedDate": "2008-12-02T05:05:41.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

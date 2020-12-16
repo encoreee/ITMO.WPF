@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We have a project that is showing realtime evaluation of various devices in our data centers.  We are using the toolkit Chart to display the graph.\nThe graph is updated every 30 seconds.  The values and the trendline is displayed simultaneously with seperate LineSeries incorporated on a single Chart.\nWe found that memory kept increasing until the application crashed due to Out of Memory exception.  I then ran ANTS Profiler against my application to find out where I missed something.  It showed that the Elipse object was the cause of it.  Which is the dot used in the chart graph for each point.  Apparently this GDI resource is never released.",
+    "LastUpdatedDate": "2013-02-21T18:40:28.1-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-07-06T11:03:03.26-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LineSeries is leaking memory",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 13680
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Upvoted this by mistake - thought it was a different issue. Sorry.",
+      "PostedDate": "2010-07-13T00:03:28.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-03T04:48:17.62-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-10T00:27:40.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We also have the same exact problem, some partial solutions can be found:\r\nhttp://wpf.codeplex.com/discussions/216609\r\nbut does not resolve all the memory-leaks issues...",
+      "PostedDate": "2012-05-10T00:29:26.627-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:28.1-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

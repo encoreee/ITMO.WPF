@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "500637",
+    "ThreadId": "229186",
+    "Html": "<p>Hi.. i have imported a excel in to datatable which contains 5 columns and some thousand rows.</p>\r\n<p>I have to do two level validation.&nbsp;</p>\r\n<p>First i have to check whether the column belongs to specific datatype.&nbsp;</p>\r\n<p>If so, then i need to check each and every cell in that column for the constraints.&nbsp;</p>\r\n<p>How can i achieve this using wpf c#?</p>\r\n<p>&nbsp;</p>\r\n<pre>Example:\r\n\r\nName   No   Num   Value\r\napple    1      3       10.9\r\nruby     10    3        4.5\r\njohn      4    11       2.5\r\n\r\n<br></pre>\r\n<pre>i have to find the datatype first and here the second colum contains No which is of datatype 'int'&nbsp;</pre>\r\n<pre>and the constraints are 0 - 9. As in second row it has value 10 in it, i want to find that value</pre>\r\n<pre>and replace it with null value. Any cell out of the constraint property should be replaced with null values<br></pre>\r\n<pre>Please help me ...</pre>\r\n<pre><br></pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-30T11:14:10.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

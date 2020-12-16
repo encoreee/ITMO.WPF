@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "199006",
+    "ThreadId": "58761",
+    "Html": "<p>I want a solution to speed up the binding of data in to data grid view in WPF application. Now i used i-list to bind data to grid, when we are try to display a huge amount of data like 10,000 object it will take more time. Is there any solution for speed up these porcess? Can u pls specify any methode to bind data to grid instead of i-list in WPF.</p>",
+    "PostedDate": "2009-06-08T06:15:10.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\n \nI have a datagrid that binds to a dataview property on my view model class.\n \nThe first time is set the dataview property to an instance of dataview, the control display properly (it is not very fast but OK).\n \nHowever, when I set the property to a new instance of a dataview and raise the property changed event, it takes for ages to update the view. \n \nAny ideas?",
+    "LastUpdatedDate": "2013-02-21T18:40:44.743-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-02-22T09:55:30.687-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid really slow when changing binded dataview",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11876
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have made extra test. The issue comes from the fact that the datagrid is displayed in a popup. As a matter of fact, this make the datagrid very very very slow.\r\n\r\nRegards",
+      "PostedDate": "2010-02-23T09:25:17.547-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:44.743-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

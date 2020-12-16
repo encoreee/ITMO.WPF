@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "240390",
+    "ThreadId": "70574",
+    "Html": "<p>Hi,</p>\r\n<p>I would like to add the capability to rename (via contextmenu) the a column header of a datagrid with a binding to a Dataset.</p>\r\n<p>I tried to modify the style of the column header to have a textbox but was unable to bind it in a two way mode. Apparently it is not binding to the DataColumn of the dataset.</p>\r\n<p>Has someone done this?</p>\r\n<p>Cheers</p>",
+    "PostedDate": "2009-09-30T06:10:54.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

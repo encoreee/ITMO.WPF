@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "221575",
+    "ThreadId": "65069",
+    "Html": "<p>Hi,</p>\r\n<p>is there any possiblity to style the DataGridColumnHeader element without losing functionality, because if i use a style with the targettype datagridcolumnheader and the style has a setter which set's the background i can't see the sortdirection icon any more.</p>",
+    "PostedDate": "2009-08-10T09:28:16.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246277",
+    "ThreadId": "65069",
+    "Html": "<p>I'm having this exact same problem. Can anyone help?</p>\r\n<p>Note: I posted about this on StackOverflow (<a title=\"click here to view\" href=\"http://stackoverflow.com/questions/1568589/need-help-with-a-custom-style-in-wpf\">http://stackoverflow.com/questions/1568589/need-help-with-a-custom-style-in-wpf</a>).</p>",
+    "PostedDate": "2009-10-15T15:26:38.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246289",
+    "ThreadId": "65069",
+    "Html": "<p>Follow-up:</p>\r\n<p>Okay, so it turns out this is a bug in the framework (<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625</a>).</p>\r\n<p>If you follow that thread to the end, you'll come to this thread: <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625</a></p>\r\n<p>The last answer in that thread doesn't work, but the second-last one provides a legitimate working example.</p>\r\n<p>Hope that helps!</p>",
+    "PostedDate": "2009-10-15T15:57:04.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

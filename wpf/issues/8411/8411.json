@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using the Ribbon preview in conjunction with Composite Application for WPF framework.  I'm can load RibbonTabs from the Composite Modules, however, they are always added to the end of the Ribbon.  I would like to be able to Insert the RibbonTab between existing Tabs.  If I use the Tabs.Insert() it works fine before the Ribbon is initially displays (i.e. in the Shell constructor), but once the Ribbon displays, the Tabs are always added to the end, even when Inserting into the Collection.  \nIs there anyway to achieve this?",
+    "LastUpdatedDate": "2013-02-21T18:41:42.1-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-04T12:42:05.15-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPFRibbon - Can't control the RibbonTab order after initial display",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 8411
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2393,
+      "FileName": "RibbonWindowRepro.zip",
+      "DownloadUrl": ".\\2393"
+    },
+    {
+      "FileId": 2395,
+      "FileName": "final.zip",
+      "DownloadUrl": ".\\2395"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi Turntwo,\r\n\r\nThanks for reporting the issue. \r\nNot sure if I understand the issue correctly, I am not able to repro the bug that you described.  I attached a simple project that shows we are able to add a new tab in the middle of tabs.  If you can still repro the bug, could you attach a simple repro?\r\n\r\nThanks,\r\nWilliam ",
+      "PostedDate": "2008-12-05T08:47:40.263-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-05T08:47:42.187-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The problem only occurs if you Insert the tab after the initial display of the Ribbon.  I've attached a modification to the demo CheckbookManager app that demostrates the problem.  If you click on the Calculator button, a new Tab is Inserted at index 0.  But it displays at the end of the Tabs on the UI.  ",
+      "PostedDate": "2008-12-05T16:56:39.71-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-05T16:56:42.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks Turntwo!  I can repro the problem, and I filed a bug to track this issue.\r\n\r\n",
+      "PostedDate": "2008-12-05T22:47:07.973-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:41:47.193-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:24:18.6-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:42.1-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

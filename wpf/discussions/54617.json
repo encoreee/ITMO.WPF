@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "184146",
+    "ThreadId": "54617",
+    "Html": "I have the need to have a button in the header of a single column of my datagrid.  <div><br></div><div>Is this possible?</div><div><br></div><div>Thanks,</div><div>Tracy</div>",
+    "PostedDate": "2009-04-27T10:11:07.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184356",
+    "ThreadId": "54617",
+    "Html": "&lt;tk:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Binding=&quot;{Binding}&quot;&gt;<br>\r\n<strong>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn.Header&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button Content=&quot;Header Button&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGridTextColumn.Header&gt;<br>\r\n</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGridTextColumn&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid.Columns&gt;<br>\r\n&lt;/tk:DataGrid&gt;<br>\r\n",
+    "PostedDate": "2009-04-27T22:55:28.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184531",
+    "ThreadId": "54617",
+    "Html": "This worked like a charm.<div><br></div><div>Is is possible to add the onClick event delegate in the code behind instead of in the XAML?  I am concerned on the implicite delegates and possible memory leaks.</div><div><br></div><div>Thanks!</div>",
+    "PostedDate": "2009-04-28T07:05:14.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184830",
+    "ThreadId": "54617",
+    "Html": "You can set up event handlers in code-behind in the same way regardless of where in the visual tree the control happens to be.<br>\r\n",
+    "PostedDate": "2009-04-28T23:19:33.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184890",
+    "ThreadId": "54617",
+    "Html": "Could you give me a short sample?  If my columns are defined in the XAML, like shown above, how do I gain access to them easily from the &quot;code behind&quot;.  <div><br></div><div><div><br></div><div>I've been able to accomplish this for named elements at the outer level (like a named button or a named textbox) but not for inner elements like the columns.</div><div><br></div><div><br></div><div><div>e.g. </div><div>this.myDataGrid.event += eventhandler etc</div><div>or </div><div>this.myButton.someevent += ...</div><div><br></div></div><div><br></div><div>Thanks</div></div>",
+    "PostedDate": "2009-04-29T02:38:24.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184925",
+    "ThreadId": "54617",
+    "Html": "You just need to give each element that you want to be able to access easily from code-behind a name. Look at x:Name.<br>\r\n",
+    "PostedDate": "2009-04-29T05:13:04.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184934",
+    "ThreadId": "54617",
+    "Html": "OK.  <div><br></div><div>I'll give it a try and post back.</div><div><br></div><div>Thanks!</div><div><br></div><div><br></div>",
+    "PostedDate": "2009-04-29T05:37:12.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184961",
+    "ThreadId": "54617",
+    "Html": "<div>Perfect!  Here is a snippet for others in the future:</div><div><br></div><div>&lt;my:DataGridTextColumn.Header&gt;</div><div>                        &lt;StackPanel&gt;</div><div>                            &lt;TextBlock&gt;TEXT&lt;/TextBlock&gt;</div><div>                            &lt;Button Content=&quot;Header Button&quot; x:Name=&quot;HeaderButton&quot; /&gt;</div><div>                        &lt;/StackPanel&gt;<br></div><div>                &lt;/my:DataGridTextColumn.Header&gt;</div><div><br></div><div><br></div><div><br></div><div><div>public GridSampleView()</div><div>        {</div><div>            InitializeComponent();</div><div><br></div><div>            //add button click delegate to the headerbutton</div><div>            this.HeaderButton.Click += new RoutedEventHandler(HeaderButton_Click);</div><div>        }</div></div>",
+    "PostedDate": "2009-04-29T06:30:40.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

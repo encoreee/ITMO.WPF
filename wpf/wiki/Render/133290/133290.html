@@ -1,0 +1,12 @@
+<div class="wikidoc"><h1>Ribbon V1 Roadmap</h1>
+The WPF controls team is currently hard at work completing V1 of the Ribbon control.  In addition to the features already completed in the CTP, V1 will include new features and design changes, such as: (please note that the following list is subject to change)<br />
+<ul><li>RibbonCommand design change.  
+<ul><li>Due to difficulties with reusing existing ICommands with RibbonCommand and limited tooling support for Commands, in V1 RibbonCommand will be removed from the RibbonControlsLibrary.  All of the properties which were previously associated with RibbonCommand (LabelTitle, SmallImageSource, ToolTipTitle, etc.) will be moved onto the individual Ribbon controls (RibbonButton, RibbonCheckBox, RibbonApplicationMenuItem, etc.).  The commanding and styling models will then be more similar to traditional WPF controls.  Developers will be able to apply the same Style to multiple controls to create &quot;clones&quot; of the same control in multiple places on the Ribbon (such as within a Group and also in the QuickAccessToolbar), and Ribbon controls will be able to use existing ICommands.</li></ul></li>
+<li>New Ribbon controls, including:
+<ul><li>Gallery</li>
+<li>SplitButton</li>
+<li>Spinner</li></ul></li>
+<li>Additional Ribbon features, including:
+<ul><li>KeyTips</li></ul></li>
+<li>And more!</li></ul>
+<br />If there are other features or changes which you&#39;d like to see in V1, please create posts on the <a href="http://www.codeplex.com/wpf/Thread/List.aspx">Discussions</a> forum to communicate this to the Ribbon team.</div><div class="ClearBoth"></div>

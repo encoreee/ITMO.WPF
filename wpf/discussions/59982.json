@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "203046",
+    "ThreadId": "59982",
+    "Html": "<p>I am trying to use the datepicker in the datagrid and need to display my dates in uk format dd/mm/yyyy.&nbsp;</p>\r\n<p>By default the datepicker is showing in en-us format mm/dd/yyyy. Based on a suggestion to use xml:lang setting, I have tried that but it is not showing any difference.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre> <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">my</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DatePicker</span> <span style=\"color:Red\">xml:lang</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">en-GB</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">SelectedDate</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Path=date}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">SelectedDateFormat</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Short</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Is there some other way the locale has to be set for the datepicker to properly format based on it?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-18T11:47:42.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

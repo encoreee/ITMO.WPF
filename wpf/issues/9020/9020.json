@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed - This feature is in the works and will be available in Ribbon V1.",
+    "ClosedDate": "2009-02-18T11:10:10.84-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am unable to add shortcut key to groups item in ribbon control.\ncan u provide any solution",
+    "LastUpdatedDate": "2013-05-16T05:31:12.38-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-23T06:02:58.053-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to add shortcut keys to ribbon control",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9020
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi, the feature you're looking for is KeyTips.  This is not included in the CTP, but will be available in V1.  I'm not sure if there's a good workaround in the meantime.  My recommendation would be to wait for the official solution in V1.",
+      "PostedDate": "2009-01-23T14:27:13.243-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Can u give me date when the V1 is officially release.\r\nIf already released please give me download link.\r\n\r\nThank you.",
+      "PostedDate": "2009-02-03T05:19:08.507-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "V1 will be available in mid-2009.  That's as specific a date as I can give at this point.  We'll post an update to this site (likely under the Ribbon wiki page: http://www.codeplex.com/wpf/Wiki/View.aspx?title=WPF%20Ribbon%20Preview) as soon as we have an exact date.",
+      "PostedDate": "2009-02-03T18:40:05.993-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T11:10:10.84-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:35.767-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:12.38-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed",
+    "ClosedDate": "2009-03-12T09:42:55.95-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Calendar always show the current month, even if the selected date is set to a day in another month. If I navigate to the correct month, the correct day has the background highlight, but the first of the month has the highlight border???",
+    "LastUpdatedDate": "2013-05-16T05:31:09.433-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-09T09:25:12.71-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Calendar does not respect SelectedDate",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9470
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Traditionally there has always been a separate property (DisplayDate or similar) for what is displayed vs what is selected. Is this the case with this control, perhaps?",
+      "PostedDate": "2009-03-09T11:36:47.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Divelements, that is correct.\r\n\r\n-Eric Fabricant, MSFT",
+      "PostedDate": "2009-03-11T13:45:06.65-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Then I guess it's the DisplayDate that needs a fix, because when I bind that one a certain date, the Calendar always shows January, 001. This also happens when I set both SelectedDate and DisplayDate.",
+      "PostedDate": "2009-03-12T02:48:02.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry, my mistake <shame on me!>. Because of this issue (http://wpf.codeplex.com/WorkItem/View.aspx?WorkItemId=9442) I added DataContext=\"{x:Null}\" to all my Calendar tests and later switched to a different kind of binding which relies on inherited datacontext. No wonder it showed January, 0001 :-)\r\n\r\nCan someone please remove this issue, because it's too embarrassing to keep it public ;-)",
+      "PostedDate": "2009-03-12T03:18:33.72-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Haha, no reason to be embarassed. :-)  I'll close it down for you.",
+      "PostedDate": "2009-03-12T09:40:55.17-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-12T09:42:55.95-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:28.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:09.433-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

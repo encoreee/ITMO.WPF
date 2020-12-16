@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "127821",
+    "ThreadId": "38532",
+    "Html": "hello everyone<br>\r\nwe think maybe we are wrong or&nbsp; something in DataGrid is wrong....<br>\r\nwe use CTP datagrid. Our users need select a cell within row for that we use &quot;DataGridSelectionUnit.CellOrRowHeader&quot;&nbsp; &quot;SelectionUnit&quot;<br>\r\nproperty. but when a cell is selected the Row that cell is in not selected.<br>\r\n&nbsp;we use grid for LOB application and we use parent child relation between grids in a Form for that we develop a BindingSource control&nbsp; for manage row change. we bind itemssource of grid to a &quot;BindingListCollectionView&quot; and need if a row selected(with select a cell)<br>\r\nCurrentChanged event of &quot;BindingListCollectionView&quot; be raised for refresh child grid.<br>\r\nIs there any&nbsp; Recommendation for us?&nbsp; is there a way when a cell&nbsp; selected a row that&nbsp; contains cell&nbsp; be selected? <br>\r\n<br>\r\nthanks for your help.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-26T05:44:50.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128154",
+    "ThreadId": "38532",
+    "Html": "Hi, I was facing the same issue when I use &quot;DataGridSelectionUnit.CellOrRowHeader&quot;. <br>\r\n<br>\r\nSo, for getting the Item for the cell that is selected, I am using something like &quot;myDataGrid.CurrentCell.Item&quot;.<br>\r\n<br>\r\nMay be this will help you as well!<br>\r\n<br>\r\nHariOm<br>\r\n",
+    "PostedDate": "2008-10-27T17:04:44.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128816",
+    "ThreadId": "38532",
+    "Html": "Hi<br>\r\nThanks HariOm<br>\r\nwe saw that but we use current selected row for sync child and parent grid and this can not help us. maybe we have to change <br>\r\nour solution. but i guess it is a need feature for grid that can monitor selected row an cell ..<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-30T00:27:24.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "530464",
+    "ThreadId": "236960",
+    "Html": "\r\n<p>I am working on a pivot table implementation linking three DataGrids together on a screen. &nbsp;In certain configuration of the pivot, the table can be very large (10k x 50 or 50 x 10k if you flipped the axes). &nbsp;I've been working on this problem all\r\n week and I've tried a lot of ways to interact with the pivot and I'm running into some severe problems.</p>\r\n<p>Right now the biggest issue is that for the column pivot and the details pivot in a 10k x 50 configuration, I have to currently call .Columns.Add(new&nbsp;DataGridTextColumn()) with a binding to the underlying formatted cell text (to be retrieved when the\r\n cell is virtualized. &nbsp;So I have to add 20k columns whenever a user flips the table, and I have to do it in the UI thread, causing real headaches with trying to keep the application responsive to the user. &nbsp;In the release notes for the grid there's\r\n this quote &quot;For DataGrid, this means that performance in scenarios with hundreds or thousands of columns will be greatly improved.&quot; &nbsp;I have been unable to find any additional information. &nbsp;Please advise.</p>\r\n<p>Currently I create dynamic types with get properties C0 .. CN which are then reached by binding. &nbsp;One issue right now is that I have to create differently named dynamic types for each configuration of the pivot since the properties have to change. &nbsp;Ideally\r\n I'd tell the control # of columns and have it request data via a callback with the row object and the column index requested, at which point I could create/retrieve the underlying data cell's data and pipe it over to a singleton data template. &nbsp;</p>\r\n<p>Let me know if you'd like further details or code.</p>\r\n",
+    "PostedDate": "2010-12-02T20:27:30.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

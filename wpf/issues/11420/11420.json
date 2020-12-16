@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When trying to run a DLL loaded into ArcMap (www.esri.com), the following exception is thrown.  The reference in the csproj is from the GAC.  I'm a .Net noob, so please forgive if this question is really dumb.  Thanks\n \nBindingFailure was detected\nMessage: The assembly with display name 'WPFToolkit' failed to load in the 'Load' binding context of the AppDomain with ID 1. The cause of the failure was: System.IO.FileNotFoundException: Could not load file or assembly 'WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.\nFile name: 'WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35'\n \n=== Pre-bind state information ===\nLOG: User = Me\nLOG: DisplayName = WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35\n (Fully-specified)\nLOG: Appbase = file:///C:/Program Files/ArcGIS/bin/\nLOG: Initial PrivatePath = NULL\nCalling assembly : ZoningHistoryViewer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=67c30038066deb76.\n===\nLOG: This bind starts in default load context.\nLOG: Using application configuration file: C:\\Program Files\\ArcGIS\\bin\\ArcMap.exe.config\nLOG: Using machine configuration file from c:\\WINDOWS\\Microsoft.NET\\Framework\\v2.0.50727\\config\\machine.config.\nLOG: Post-policy reference: WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35\nLOG: The same bind was seen before, and was failed with hr = 0x80070002.",
+    "LastUpdatedDate": "2013-02-21T18:40:48.47-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-01-05T15:19:09.85-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker throws MDA exception",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11420
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

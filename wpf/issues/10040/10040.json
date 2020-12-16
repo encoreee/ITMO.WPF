@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "when resizing my ribbon window so that the buttons changes size/form the window stops responding for long periods of time, and starts using large amounts of memory (sometimes i also get an \"out of memory\" exception)\n \nI'm using windows xp as operating system",
+    "LastUpdatedDate": "2013-02-21T18:41:15.563-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-26T06:59:43.673-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Resize of ribbon window",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 10040
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Mortefos, We would like to investigate this, can you attach a repro of the problem?\r\n\r\nThanks!\r\n\r\nAlexis",
+      "PostedDate": "2009-05-26T13:14:12.83-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think my issue may be related.  I get an ArgumentOutOfRange exception.  Appears to be related to resizing the Groups.  Here is the exception call stack.\r\n\r\nSystem.ArgumentOutOfRangeException was unhandled\r\n  Message=\"Index was out of range. Must be non-negative and less than the size of the collection.\\r\\nParameter name: index\"\r\n  Source=\"mscorlib\"\r\n  ParamName=\"index\"\r\n  StackTrace:\r\n       at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)\r\n       at System.ThrowHelper.ThrowArgumentOutOfRangeException()\r\n       at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n       at System.Collections.ObjectModel.Collection`1.get_Item(Int32 index)\r\n       at Microsoft.Windows.Controls.Ribbon.RibbonTab.IncreaseNextGroupSize()\r\n       at Microsoft.Windows.Controls.Ribbon.RibbonGroupsContainer.MeasureOverride(Size constraint)\r\n       at System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r\n       at System.Windows.UIElement.Measure(Size availableSize)\r\n       at System.Windows.ContextLayoutManager.UpdateLayout()\r\n       at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)\r\n       at System.Windows.Media.MediaContext.InvokeOnRenderCallback.DoWork()\r\n       at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\r\n       at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\r\n       at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\r\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\r\n       at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\r\n       at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\r\n       at System.Windows.Threading.DispatcherOperation.InvokeImpl()\r\n       at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)\r\n       at System.Threading.ExecutionContext.runTryCode(Object userData)\r\n       at System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)\r\n       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n       at System.Windows.Threading.DispatcherOperation.Invoke()\r\n       at System.Windows.Threading.Dispatcher.ProcessQueue()\r\n       at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\r\n       at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\r\n       at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\r\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\r\n       at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\r\n       at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\r\n       at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Boolean isSingleParameter)\r\n       at System.Windows.Threading.Dispatcher.Invoke(DispatcherPriority priority, Delegate method, Object arg)\r\n       at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\r\n       at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)\r\n       at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\r\n       at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)\r\n       at System.Windows.Threading.Dispatcher.Run()\r\n       at System.Windows.Application.RunDispatcher(Object ignore)\r\n       at System.Windows.Application.RunInternal(Window window)\r\n       at System.Windows.Application.Run(Window window)\r\n       at System.Windows.Application.Run()\r\n       at RibbonPrototype.App.Main() in C:\\Documents and Settings\\kevin.noreus\\Local Settings\\Temporary Internet Files\\Content.Outlook\\94FPGPVB\\Ribbon View-Model Prototype Only (2)\\Ribbon View-Model Prototype\\obj\\Debug\\App.g.cs:line 0\r\n       at System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)\r\n       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\r\n       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\r\n       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)\r\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n       at System.Threading.ThreadHelper.ThreadStart()\r\n  InnerException: \r\n",
+      "PostedDate": "2009-07-01T08:27:05.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-01T08:27:20.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-28T01:55:55.613-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-07T13:07:40.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have similar kind of issue,  when I start to resize the window the ribbon menu throws an ArgumentOutOfRange exception , see the stack trace \r\n\r\n  at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)\r\n   at System.ThrowHelper.ThrowArgumentOutOfRangeException()\r\n   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at Microsoft.Windows.Controls.Ribbon.RibbonTabPanel.CalculateMaxTabWidth(Double clipWidth, Collection`1 tabs)\r\n   at Microsoft.Windows.Controls.Ribbon.RibbonTabPanel.MeasureOverride(Size constraint)\r\n   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r\n   at System.Windows.UIElement.Measure(Size availableSize)\r\n   at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)\r\n   at System.Windows.Controls.ScrollContentPresenter.MeasureOverride(Size constraint)\r\n   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r\n   at System.Windows.UIElement.Measure(Size availableSize)\r\n   at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)\r\n   at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)\r\n   at System.Windows.Controls.Grid.MeasureOverride(Size constraint)\r\n   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r\n   at System.Windows.UIElement.Measure(Size availableSize)\r\n   at System.Windows.Controls.ScrollViewer.MeasureOverride(Size constraint)\r\n   at System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r\n\r\n",
+      "PostedDate": "2012-05-07T13:11:44.907-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:15.563-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

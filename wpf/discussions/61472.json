@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "208545",
+    "ThreadId": "61472",
+    "Html": "<p>\r\n<div>I am working with xceed datagrid with cardview.</div>\r\n<div>i wanted to give the option of inserting a new insertion row in the cardview .that is done through the following code:</div>\r\n<div></div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;private void Window_Loaded(object sender, RoutedEventArgs e)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Connection con = new Connection();</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;con.OpenConnection();</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DataSet ds = new DataSet();</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ds = con.ProcessSelectQuery(&quot;select * from studentinfo&quot;);</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//ds = con.ProcessSelectQuery(&quot;select stdinfo_regid as RegId,stdinfo_fname as [First Name],stdinfo_lname as [Last Name],batch_degree as Degree,batch_sem as Semester from studentinfo s,batch b where s.batch_id=b.batch_id &nbsp;and stdinfo_regid&gt;0&quot;);</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;con.CloseConnection();</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dataGridControl1.ItemsSource = ds.Tables[0].DefaultView;</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DataTemplate template = new DataTemplate();</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;template.VisualTree = new FrameworkElementFactory(typeof(InsertionRow));</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;template.Seal();</div>\r\n<div></div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dataGridControl1.View.Headers.Add(template);</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div>&nbsp;</div>\r\n<div>the problem is when i type in the data in the new row and press enter ..&nbsp;&nbsp;</div>\r\n<div>The error i get is :</div>\r\n<div><span>invalid operation exception</span>&nbsp;</div>\r\n<div><span>Cannot change or check the contents or Current position of CollectionView while Refresh is being deferred.</span>&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div>Please help me .. i want to learn .. and i am new to all this ... :(&nbsp;</div>\r\n</p>",
+    "PostedDate": "2009-07-04T11:35:02.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209659",
+    "ThreadId": "61472",
+    "Html": "<p>Hi, this forum is for the Microsoft WPF DataGrid.&nbsp; If you have questions about the Xceed DataGrid, you should visit the Xceed forums: <a href=\"http://xceed.com/CS/forums/35/ShowForum.aspx\">http://xceed.com/CS/forums/35/ShowForum.aspx</a></p>",
+    "PostedDate": "2009-07-07T13:56:34.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

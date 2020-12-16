@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "177830",
+    "ThreadId": "52862",
+    "Html": "Thanks to Colin,  I've had great luck in using heirarchical business entites with the DataGrid using the RowDetail functionality.<div><br></div><div>I have a frustrating requirement from my stakeholders.   Using a grid, I need to display 4 levels of heirarchical business entities in 3 levels. </div><div><br></div><div>A simple example would be like this (using 3 levels)</div><div>Customer has a collection of orders</div><div><span style=\"white-space:pre\">\t</span>Each Order has a collection of Order Details.</div><div><span style=\"white-space:pre\">\t</span>OrderDetails has a sum total attribute</div><div><br></div><div>I need to display it in a data grid like this:</div><div><br></div><div>ROW:   Customer.attribute1 | Customer.attribute2 |</div><div>ROW:   Customer.attribute1 | Customer.attribute2 |<br></div><div><span style=\"white-space:pre\">\t</span>    RowLevelDetails: Order.attribute1 |Order.attribute1 | Orderdetail[0].SumTotal  | Orderdetail[1].SumTotal  | Orderdetail[2].SumTotal  | <br></div><div><span style=\"white-space:pre\">\t</span>    RowLevelDetails: Order.attribute1 |Order.attribute1 | Orderdetail[0].SumTotal  | Orderdetail[1].SumTotal  | Orderdetail[2].SumTotal  | <br></div><div><span style=\"white-space:pre\">\t</span>    RowLevelDetails: Order.attribute1 |Order.attribute1 | Orderdetail[0].SumTotal  | Orderdetail[1].SumTotal  | Orderdetail[2].SumTotal  | <br></div><div><br></div><div>The RowlevelDetails are sort-of a mashup.  I do know that there are a fixed number of OrderDetails so it is not variable.</div><div><br></div><div><span style=\"white-space:pre\">\t\t</span><br></div><div>Is there a way to do this without &quot;muddying&quot; my business entities with extra attributes (e.g. I don't want to add three SumTotal attributes to the Order entity).</div><div><br></div><div>Regards,</div><div>Tracy</div><div><br></div><div><br></div><div><br></div>",
+    "PostedDate": "2009-04-09T19:17:24.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179158",
+    "ThreadId": "52862",
+    "Html": "<div>I was able to write a vaue convetor that provided me display...but I couldn't translate from the cell back to the child attribute... I was passing in the entire OrderDetails collection to the value convertor and returning the value of Orderdetail[x].SumTotal.  I provide a convertor parameter that tells which orderDetails object to pull the value from  (e.g. what is &quot;x&quot;).</div><div><br></div><div>Does anyone have any recommendations for how I can accomplish this? (Custom bindings? Value convertors? Bind to a Function or Method?)</div><div><br></div><div>Any help is welcome...</div><div>Tracy</div>",
+    "PostedDate": "2009-04-14T11:33:07.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

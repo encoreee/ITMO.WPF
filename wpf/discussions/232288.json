@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "512443",
+    "ThreadId": "232288",
+    "Html": "\r\n<p>I need an &quot;editable&quot; chart to graphically manipulate tabular data. Specifically, I'd like to visualize the data as a chart with one or more line series and drag and drop the data points vertically to change the dependent values. Any thoughts on how I might\r\n accomplish this with the WPF Toolkit charts?</p>\r\n<p>Thanks!<br>\r\nRyan</p>\r\n",
+    "PostedDate": "2010-10-25T16:22:12.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "934367",
+    "ThreadId": "232288",
+    "Html": "\r\n<p>Hi Ryan, did you manage to find an editable chart? I need the same functionaliy. It seems to be quite complex to implement. However, I have to do it, if I cannot find any other solution. Any help or idea is appretiated.</p>\r\n<p>Thanks! Daniel</p>\r\n",
+    "PostedDate": "2012-10-30T12:19:48.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

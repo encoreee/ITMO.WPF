@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "440393",
+    "ThreadId": "211936",
+    "Html": "<p>How to get width of column in charting ColumnSeries. I have not DataPointStyle. It takes the default</p>\r\n<p>I have set the itemssource to</p>\r\n<p>col.ItemsSource = new KeyValuePair[]{ new KeyValuePair(DateTime.Now.AddMonths(1), 100), new KeyValuePair(DateTime.Now.AddMonths(2), 200), new KeyValuePair(DateTime.Now.AddMonths(3), 300), new KeyValuePair(DateTime.Now.AddMonths(4), 400) };</p>\r\n<p>I get 4 column with some even width. How to I print its value .... its taking it by default ...</p>\r\n<p>&nbsp;</p>\r\n<p>eventually I want to bind this width to a lineseries &nbsp;in the same graph .... something likw hybrid chart ...</p>\r\n<p>thank you.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-07T08:59:20.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

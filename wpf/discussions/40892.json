@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "135667",
+    "ThreadId": "40892",
+    "Html": "I can get the Grid height and RowHeight<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>grid.ActualHeight<br>\r\n<span style=\"font-size:13px;color:#2b91af\">DataGridRow</span><span style=\"font-size:13px\"> dr = (</span><span style=\"font-size:13px;color:#2b91af\">DataGridRow</span><span style=\"font-size:13px\">)grid.ItemContainerGenerator.ContainerFromItem(grid.Items[0]);<br>\r\n<span style=\"font-size:13px\">dr.ActualHeight;<br>\r\n<br>\r\nBut how do I get the Header &amp; ScrollBar Height?<br>\r\n<br>\r\nThese both return null<br>\r\n<br>\r\n<span style=\"font-size:13px\">grid.Template.FindName(</span><span style=\"font-size:13px;color:#a31515\">&quot;PART_ColumnHeadersPresenter&quot;</span><span style=\"font-size:13px\">, grid);<br>\r\n</span><span style=\"font-size:13px\">grid.Template.FindName(</span><span style=\"font-size:13px;color:#a31515\">&quot;PART_ScrollContentPresenter&quot;</span><span style=\"font-size:13px\">, grid);\r\n<p> </p>\r\n</span></span></span></p>\r\n<p>&nbsp;</p>\r\n<p> </p>\r\n</span>\r\n",
+    "PostedDate": "2008-11-26T11:44:52.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135739",
+    "ThreadId": "40892",
+    "Html": "grid.Template.FindName(&quot;PART_ColumnHeadersPresenter&quot;, grid);<br>\r\ngrid.Template.FindName(&quot;PART_ScrollContentPresenter&quot;, grid); <br>\r\n<br>\r\nwould return null because these are not directly inside the template DataGrid. The template of DataGrid has only a ScrollViewer which itself is retemplated to contain all of these.<br>\r\n<br>\r\nFollowing code should work for you....<br>\r\n<br>\r\n                    DataGridColumnHeadersPresenter chp = null;<br>\r\n                    Control sv = dataGrid.Template.FindName(&quot;DG_ScrollViewer&quot;, dataGrid) as Control;<br>\r\n                    if (sv != null)<br>\r\n                    {<br>\r\n                        chp = sv.Template.FindName(&quot;PART_ColumnHeadersPresenter&quot;, sv) as DataGridColumnHeadersPresenter;<br>\r\n                    }<br>\r\n<br>\r\nand similar code for scroll content presenter too.\r\n",
+    "PostedDate": "2008-11-26T18:26:41.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135924",
+    "ThreadId": "40892",
+    "Html": "Thankyou!!! <br>\r\n<br>\r\nThat worked great! <br>\r\n<br>\r\nTurns out all I needed was the PART_ScrollContentPresenter, but here are the others in case someone else needs them. <br>\r\n<br>\r\nDataGridColumnHeadersPresenter chp = null; <br>\r\nScrollContentPresenter                   scp = null; <br>\r\nScrollBar                                          hsb = null; <br>\r\nControl sv = grid.Template.FindName(&quot;DG_ScrollViewer&quot;, grid) as Control; <br>\r\nif (sv != null) <br>\r\n  { <br>\r\n  scp = sv.Template.FindName(&quot;PART_ScrollContentPresenter&quot;, sv) as ScrollContentPresenter; <br>\r\n  chp = sv.Template.FindName(&quot;PART_ColumnHeadersPresenter&quot;, sv) as DataGridColumnHeadersPresenter; <br>\r\n  hsb = sv.Template.FindName(&quot;PART_HorizontalScrollBar&quot;, sv) as ScrollBar; <br>\r\n  } \r\n",
+    "PostedDate": "2008-11-27T11:07:14.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

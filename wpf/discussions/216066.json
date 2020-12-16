@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "455588",
+    "ThreadId": "216066",
+    "Html": "<p>I have used wpftoolkit Datagrid control. In RowDetailsTemplate of parent datagrid i used another child datagrid. Now am Selecting on of the child datagrid record. after that am selecting different parent grid record. <br><br>But while doing this last selected of child record is not unselected. its status selected only. I want once parent is changed child datagrid record to unselect if selected.</p>",
+    "PostedDate": "2010-06-15T04:15:46.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

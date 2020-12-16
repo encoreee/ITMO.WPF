@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "128932",
+    "ThreadId": "38868",
+    "Html": "Hi<br>\r\n<br>\r\nI have some questions on V1<br>\r\n1) It seems that Cell validation using IDataErrorInfo is broken in V1. Is there a patch planed for the near future? Or any workaround?<br>\r\n2) What is your supposed way of doing validation? Is there any example (specific to the datagrid) out there?<br>\r\n3) Is there a documentation for the V1 version (planed?, when available)<br>\r\n<br>\r\nRegards<br>\r\nKlaus \r\n",
+    "PostedDate": "2008-10-30T07:44:48.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129155",
+    "ThreadId": "38868",
+    "Html": "See this link on validation known issues, <a href=\"http://www.codeplex.com/wpf/Wiki/View.aspx?title=Validation&referringTitle=Tips %26 Tricks\">http://www.codeplex.com/wpf/Wiki/View.aspx?title=Validation&amp;referringTitle=Tips%20%26%20Tricks</a>.\r\n",
+    "PostedDate": "2008-10-31T06:10:22.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129215",
+    "ThreadId": "38868",
+    "Html": "\r\n\r\n\r\n<p><span lang=de>Vinsibal</span>\r\n</p>\r\n\r\n<p><span lang=de>Thanks for the link.</span>\r\n</p>\r\n\r\n<p><span lang=de>I already found this by myself, but it really does not help me</span>\r\n</p>\r\n\r\n<p><span lang=de>Can you hint me in some documentation for </span>\r\n\r\n<br><span lang=de>- ValidationStep</span>\r\n\r\n<br><span lang=de>- RawProposed or ConvertedProposed </span>\r\n\r\n<br><span lang=de>I really can not find anything on this !</span>\r\n</p>\r\n\r\n<p><span lang=de>So is there an alternative? Maybe I can use the IDataErrorInfo that I use in my business objects in any other way?</span>\r\n</p>\r\n\r\n<p><span lang=de>Best would be an example of how validation should be done in V1 datagrid</span>\r\n</p>\r\n<br>\r\n\r\n<p><span lang=de>Regards</span>\r\n\r\n<br><span lang=de>Klaus</span>\r\n</p>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-10-31T09:21:19.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129227",
+    "ThreadId": "38868",
+    "Html": "Documentation for ValidationStep can be found here, <a href=\"http://msdn.microsoft.com/en-us/library/system.windows.controls.validationrule.validationstep.aspx\">http://msdn.microsoft.com/en-us/library/system.windows.controls.validationrule.validationstep.aspx</a>.<br>\r\n<br>\r\nExample of validation can be found in the sample of this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx</a>.<br>\r\n<br>\r\nThe bug with IDataErrorInfo will be fixed in the next release for WPF and unfortunately there is no work around.  \r\n",
+    "PostedDate": "2008-10-31T09:51:58.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129229",
+    "ThreadId": "38868",
+    "Html": "\r\n\r\n\r\n<p><span lang=de>Vinsibal</span>\r\n</p>\r\n\r\n<p><span lang=en-us>Thanks for your quick answer</span>\r\n</p>\r\n\r\n<p><span lang=en-us>Is there already a planed date for this patch? </span>\r\n\r\n<br><span lang=en-us>Or a rough &quot;not before ...&quot;?</span>\r\n</p>\r\n\r\n<p><span lang=en-us>Regards</span>\r\n\r\n<br><span lang=en-us>Klaus</span>\r\n</p>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-10-31T10:01:22.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

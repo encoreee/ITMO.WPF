@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "271327",
+    "ThreadId": "79242",
+    "Html": "<p><img src=\"http://fhsqow.bay.livefilestore.com/y1pQxsqCRNu7x3Bv8mUpXKH7midoRFTKkSVnRKKcZUMoAAJtpZtpv8vRQgolLtFjta8T3YqM2L_HhIKFo8zEE4zHJ9bOLl5PKd6/Capture.PNG\" alt=\"\"></p>\r\n<p>I just hard-code the margin of the text block in group item template. &nbsp;It won't align with column after resize column header.</p>\r\n<p><strong>anybody help?</strong></p>",
+    "PostedDate": "2009-12-28T21:17:59.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271683",
+    "ThreadId": "79242",
+    "Html": "<p>Well, I don't know if it will work, but we did something semilar &quot;as footer&quot;</p>\r\n<p>In the group expander/header section</p>\r\n<p>put a stack panel&nbsp;&nbsp;and add 3 labels</p>\r\n<p>your first &quot;label&quot; should be width data binding to a property of the grid that &quot;calculate the width of all 8 first columns&quot;</p>\r\n<p>the 2 others labels should width data binding to their&nbsp;column width</p>\r\n<p>the amount should be calculated using some kind of linq based on the &quot;groups items&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>Also don't forget that you should include in the first label width calculation the fact that the grid might scroll</p>\r\n<p>and don't forget to avoid the user to rearrange the columns order</p>\r\n<p>&nbsp;</p>\r\n<p>Hope that could help to start...</p>",
+    "PostedDate": "2009-12-30T04:56:14.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

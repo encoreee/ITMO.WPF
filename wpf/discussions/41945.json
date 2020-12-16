@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "139230",
+    "ThreadId": "41945",
+    "Html": "I know that DataGrid is made up by a 3x3 grid.<br>\r\nI want to how to change the backround color of the part at the right side of Column headers and the above of vertical Scrollbar, which is at location Grid.Row 0, Grid.Column 2.<br>\r\nThat's it, the part at the top right part of DataGrid when the vertical scrollbar is displayed as following images shows.<br>\r\n<a href=\"http://blogs.msdn.com/blogfiles/vinsibal/WindowsLiveWriter/WPFDataGridDissectingtheVisualLayout_6B39/DataGridVisual_2.jpg\">http://blogs.msdn.com/blogfiles/vinsibal/WindowsLiveWriter/WPFDataGridDissectingtheVisualLayout_6B39/DataGridVisual_2.jpg</a><br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-10T02:46:08.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139257",
+    "ThreadId": "41945",
+    "Html": "Hi,<div><br></div><div> I subscribe to this, </div><div><br></div><div>Thank you,</div><div>Calin</div>",
+    "PostedDate": "2008-12-10T05:21:02.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139458",
+    "ThreadId": "41945",
+    "Html": "Hi,<br>\r\n<br>\r\n(Column 2, Row 0), (Column 0, Row 2) and (Column 2, Row 2) are empty in the default template of the DataGrid. Which means they have the same Background of its parent control because Grid by itself is transparent. One way of setting background color on them is to set Background on DataGrid....<br>\r\n<br>\r\n    &lt;dg:DataGrid Background=&quot;Red&quot; ... /&gt;<br>\r\n<br>\r\nNote: This affects all the above mentioned three regions. <br>\r\n<br>\r\nIf the above solution is not satisfactory then the only way seems to be to retemplate DataGrid, put some controls in these grid areas and set Backgrounds on those controls appropriately.\r\n",
+    "PostedDate": "2008-12-10T13:34:28.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139568",
+    "ThreadId": "41945",
+    "Html": "Thank you.<br>\r\n",
+    "PostedDate": "2008-12-10T22:06:51.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

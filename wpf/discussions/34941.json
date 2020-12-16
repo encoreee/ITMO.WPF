@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "116083",
+    "ThreadId": "34941",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:24px\"><span style=\"font-family:Consolas\">I have an application where the datagrid's data may be several pages long.&nbsp;When a new row is added programitically&nbsp;the data is re-sorted in the grid.&nbsp; This makes the row easy to find alphabetically (if the user knows the sort method), but very difficult to locate in many displayed&nbsp;pages. One cloumn in my grid data is a boolean called LastCluster, it's true when the row(s) is the most recently added or edited.<br>\r\n&nbsp;<br>\r\nTo assist the user in locating the row(s), I use the boolean to overide the alternating colors in one column and set the background to a distintive color on rows that contain &quot;True&quot; in the LastCluster value.<br>\r\n<br>\r\nStill - - &nbsp;it is difficult for the user to quickly find the most recent data.&nbsp; So, I would like to move the first row that has a true value in the LastCluster column so that it is the third row from the top in the viewable area of the datagrid. (the third row allows the user to see the new data in perspective to the data rows that preceeded it).&nbsp; Could you suggest a code snippet that would allow a Boolean value in a row to move the Vertical Scroll Bar to&nbsp;position the new (or changed) data in the viewable area of the datagrid.<br>\r\n</span></span></p>\r\n<p style=\"margin:0in 0in 0pt\">&nbsp;</p>\r\n",
+    "PostedDate": "2008-09-04T10:16:26.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116940",
+    "ThreadId": "34941",
+    "Html": "You can possibly use DataGrid.ScrollIntoView(rowItem).&nbsp; If you want it to be the third one down you can just subtract it like this, DataGrid.ScrollIntoView(DataGrid.Items[index -3]).&nbsp; Of course you will need to handle the case for the bounds.&nbsp; Hope that helps.\r\n",
+    "PostedDate": "2008-09-08T10:43:55.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117911",
+    "ThreadId": "34941",
+    "Html": "Vince,<br>\r\n<br>\r\nI am not sure what you mean by handleing the case for bounds. Perhaps a snippet would help.<br>\r\n<br>\r\nBTW- Today I loaded the DataGrid with some rather large files and found a fairly significant performance problem. Page Scrolling is terribly slow.&nbsp; In additon if you attempt to move the thumb of the scroll bar by click and drag, it is so slow that at first I thought that it was not working.&nbsp; Everything was fine in small files but scrolling is downright awful in large files.<br>\r\nIf need be I will be happy to&nbsp;post this as a seperate item because it really needs attention.<br>\r\n<br>\r\nBob\r\n",
+    "PostedDate": "2008-09-11T12:00:20.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117923",
+    "ThreadId": "34941",
+    "Html": "I just mean the bounds of the index.&nbsp; For example DataGrid.Items[-1] would throw an exception.\r\n",
+    "PostedDate": "2008-09-11T12:55:36.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

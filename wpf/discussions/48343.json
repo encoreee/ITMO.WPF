@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "161329",
+    "ThreadId": "48343",
+    "Html": "Is it somehow possible to set DataGrid's Columns property through style? Columns property doesn't have a setter, so setting columns directly isn't an option. Is there any other way to do this?\r\n",
+    "PostedDate": "2009-02-24T02:00:39.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "215928",
+    "ThreadId": "63497",
+    "Html": "<p>Hi,</p>\r\n<p>I saw several threads related to the TreeView Mode in DataGrid. It seems that it is a feature needed by the community on which you were working on. Is there anything like this concerning the new release?</p>\r\n<p>I guess it is possible to implement something like this with the rowdetails but is there any default feature to have the TreeView mode?</p>\r\n<p>If not does anyone has to share a project in this direction?</p>\r\n<p>Thanks,</p>\r\n<p>Kamel</p>",
+    "PostedDate": "2009-07-24T20:08:00.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251069",
+    "ThreadId": "63497",
+    "Html": "<p>This is a central control in our application. I even think it is central control in every Financial application.&nbsp;It is shocking that such control not exists in WPF. No surprize that WPF is not popular enough in Financial applications. Every third party ui component provider are making useless carusels and all-in-one-grids that can make coffee. But there is no single provider that anounced TreeGrid.</p>\r\n<p>Daniel</p>\r\n<p>P.S. does anyone know other way of showing financial statements other than in TreeGrid?</p>",
+    "PostedDate": "2009-10-29T01:19:08.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

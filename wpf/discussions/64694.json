@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "220287",
+    "ThreadId": "64694",
+    "Html": "<p>Hello</p>\r\n<p>Greate work on wpf data grid control.</p>\r\n<p>Is there any way we can place grid vertically. Means all the column headers are on left staked vertically and alos the rows.</p>\r\n<table border=1 cellspacing=0 cellpadding=0>\r\n<tbody>\r\n<tr>\r\n<td width=65 valign=top>\r\n<p>Header1</p>\r\n</td>\r\n<td width=96 valign=top>\r\n<p>Row1</p>\r\n</td>\r\n<td width=66 valign=top>\r\n<p>Row2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=65 valign=top>\r\n<p>Header2</p>\r\n</td>\r\n<td width=96 valign=top>\r\n<p>Row1</p>\r\n</td>\r\n<td width=66 valign=top>\r\n<p>Row2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=65 valign=top>\r\n<p>Header3</p>\r\n</td>\r\n<td width=96 valign=top>\r\n<p>Row1</p>\r\n</td>\r\n<td width=66 valign=top>\r\n<p>Row2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=65 valign=top>\r\n<p>Header4</p>\r\n</td>\r\n<td width=96 valign=top>\r\n<p>Row1</p>\r\n</td>\r\n<td width=66 valign=top>\r\n<p>Row2</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>I was going through current version data grid's control template and looks like its going to be very difficult to customize.</p>\r\n<p>Is team working on this? Any ETA?</p>\r\n<p>Thanks again</p>\r\n<p>Shailendra</p>",
+    "PostedDate": "2009-08-06T04:09:32.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "220300",
+    "ThreadId": "64694",
+    "Html": "<p>I'm fairly sure I have seen a trick for how to do this posted, but can't find it with a quick look through my archives. It's not supported natively AFAIK, but there is a workaround involving rotating the grid 90 degrees and then rotating each cell -90 degrees. This can be done using layout transforms.</p>\r\n<p>Hopefully this helps at least a little.</p>",
+    "PostedDate": "2009-08-06T04:44:35.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

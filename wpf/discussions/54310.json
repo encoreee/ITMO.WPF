@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "182990",
+    "ThreadId": "54310",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a requirement where a check is done when a user leaves (lostFocus?) a cell on a datagrid. The check could be something like making sure they input a number, or call some special business rule.<br>\r\n<br>\r\nThe question I have is, I don't want this event to fire if they're leaving the normal viewing cell in the grid, I only want this to fire when they leave the textbox-type control inthe grid (after they've entered their value).<br>\r\n<br>\r\nWhat's the best way to do this?<br>\r\n<br>\r\nThanks,<br>\r\nChris\r\n",
+    "PostedDate": "2009-04-23T13:28:59.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183017",
+    "ThreadId": "54310",
+    "Html": "What if you just set validation rules on just the bindings of the DataGridTextColumns?  Are you already familiar with the binding validation framework?\r\n",
+    "PostedDate": "2009-04-23T14:31:43.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183023",
+    "ThreadId": "54310",
+    "Html": "Hi Vinsibal, <br>\r\n<br>\r\nI am not familiar with the binding validation framework, do you have an example? I've got our own 'custom' business validation rule objects that I'm using elsewhere, but maybe I can plug these in here.<br>\r\n<br>\r\n<br>\r\nThanks,<br>\r\nChris\r\n",
+    "PostedDate": "2009-04-23T14:39:39.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183054",
+    "ThreadId": "54310",
+    "Html": "This shows examples of item level validation and binding validation, <a href=\"http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#validation\">http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#validation</a>.\r\n",
+    "PostedDate": "2009-04-23T15:51:28.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Calendar",
+      "DisplayName": "Calendar"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We do not seem to have access to many aspects of the CalendarItem's look and feel.  For example, I'd like to be able to Change/alter:\n \n- Font Sizes and Family\n- Today's Day Background & Font color/size/weight\n- Selected Day's Background & Font color/size/weight\n- etc...\n \nThanks,\nJeff",
+    "LastUpdatedDate": "2013-02-21T18:41:33.45-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-10T15:05:59.24-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "CalendarItem Needs More Templating Control",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9222
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Jeff,\r\n\r\nWe agree that this is a bug.  We're filing a bug in our internal database to track this and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T10:28:08.763-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T10:28:20.107-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-19T10:48:21.663-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Samantha,\r\nI agree with jeff, there is a supplement.\r\n(1) the text color of calendardaybutton control\r\n(2) the text color of the days which are not in the current month\r\n",
+      "PostedDate": "2009-03-22T20:44:39.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-09T06:43:15.097-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:14:18.073-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:33.45-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

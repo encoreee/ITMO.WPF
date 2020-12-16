@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using the WPF Toolkit released March 21 2009\n \nTo replicate this problem first create a datagrid with a checkbox in the RowHeaderTemplate. Then bind data to the datagrid so that there are enough rows for a scroll bar to appear. The issue occurs when the user checks off any checkbox in view, then scrolls the grid until the checked items are out of view. When this happens, it seems almost at random the check boxes randomly uncheck and check. Even the ones that were not checked before.\n \nThe same actually occurs with buttons or images within the RowHeaderTemplate that change content or image url. For example, say there is a button with '+' as its content, if clicked and becomes '-' from code behind. When scrolling, the content randomly show up as + and - for the buttons.",
+    "LastUpdatedDate": "2013-02-21T18:41:18.097-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-30T11:34:49.23-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid RowHeaderTemplate CheckBox issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9900
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

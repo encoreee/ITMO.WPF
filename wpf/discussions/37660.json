@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "124873",
+    "ThreadId": "37660",
+    "Html": "Hi,<br>\r\n<br>\r\nI am using TemplateColumn of dataGrid and I am putting Textblock in CellTemplate and Textbox in CellEditingTemplate.<br>\r\n<br>\r\nCode snippet....<br>\r\n<br>\r\n&lt;dg:DataGridTemplateColumn Width=&quot;80&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBlock Text=&quot;{Binding Path=Name}&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn.CellEditingTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBox&nbsp; Text=&quot;{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}&quot; TextChanged=&quot;OnNameChanged&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn.CellEditingTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn&gt;<br>\r\n<br>\r\nprivate void OnNameChanged(object sender, TextChangedEventArgs e)<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; TextBox textBox = sender as TextBox;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Code for validating entered string.<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nIts fires the &quot;OnNameChanged&quot; event one time more than it should. e.g. if I typed &quot;h&quot;, it fires the event first time with text=&quot;h&quot; but again it fires with text=&quot;&quot;. <br>\r\n<br>\r\nAnd because of this, it fails my validation.<br>\r\n<br>\r\nWhy its firing twice?<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-10-13T21:10:25.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "124980",
+    "ThreadId": "37660",
+    "Html": "The text = &quot;&quot; occurs when you commit the cell.&nbsp; This is an affect of switching out the TextBox with the TextBlock.&nbsp; For validation purposes, I suggest using a ValidationRule on the binding instead.&nbsp; It will be called everytime the text changes but will not validate the text = &quot;&quot; when the cell is committed.\r\n",
+    "PostedDate": "2008-10-14T06:39:41.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125168",
+    "ThreadId": "37660",
+    "Html": "Do you have any example of validationRule?... I was trying to do something like http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34776 , but it doesn't work for me (see the my last post). May be I am doing something wrong!! Do u have any idea?<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-14T17:56:54.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129174",
+    "ThreadId": "37660",
+    "Html": "The sample on this blog post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx</a>, has an example of using row validation.\r\n",
+    "PostedDate": "2008-10-31T07:15:49.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

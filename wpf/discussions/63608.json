@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "216307",
+    "ThreadId": "63608",
+    "Html": "<p>I'm having a problem with my WPF app when handling the KeyUp event on a DataGrid.&nbsp; In the KeyUp event handler I am displaying a modal dialog (our own&nbsp;implementation of a message box) asking the user a question with a simple yes/no answer.&nbsp; However, if I use the enter key on the message box to select the &quot;No&quot; button, the DataGrid still receives the KeyUp event and displays the prompt again.</p>\r\n<p>I thought that if I just checked that the DataGrid had focus in the event handler that this would do the trick, but it doesn't.&nbsp; Whenever the DataGrid receives the KeyUp event, it seems that the IsKeyboardFocused property on the DataGrid is set to false.&nbsp; How can the control receive a keyboard event when it doesn't have keyboard focus?</p>\r\n<p>Has anyone else had this problem or have any idea how to fix it?&nbsp; I'm getting ready to scrap my DataGrid altogether and use a standard ListView / GridView, which seems a shame, but if it's the only way I can get this to work then that's what I'll have to do.</p>\r\n<p>This is my event handler,&nbsp;OpenCustomerForMaintenance() simply displays the message box and fires off a command if the user selects &quot;Yes&quot;</p>\r\n<p><span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> CustomerSearchResultsDataGrid_KeyUp(<span style=\"color:Blue\">object</span> sender, KeyEventArgs e)<br>{<br>&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">if</span> (CustomerSearchResultsDataGrid.IsKeyboardFocused &amp;&amp; (e.Key == Key.Return || e.Key == Key.Enter))<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OpenCustomerForMaintenance();<br>&nbsp;&nbsp;&nbsp; }<br>}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-07-27T02:13:01.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216316",
+    "ThreadId": "63608",
+    "Html": "<p>I've tried replacing my DataGrid with a standard GridView / ListView combo and still get the same problem.&nbsp; Also, replacing my dialog with a standard WPF MessageBox doesn't make any difference.</p>\r\n<p>Another problem I'm having with this is that when I hit the enter key with a row selected, the selected row jumps down to the next row, so rather than opening the first customer in the list, it tries to open the second one.&nbsp; I'm only having these problems when using keyboard navigation, everything works fine with the mouse events.</p>\r\n<p>I tried handling the KeyDown event rather than the KeyUp event, but the KeyDown event isn't raised for the enter or return keys, so is completely useless for what I want (why would it even by implemented that way, surely it's up to the developer to decide which keys they want&nbsp;to respond to???)</p>\r\n<p>&nbsp;</p>\r\n<p>I'm really starting to hate WPF, it's things like this that make it seem really flaky.&nbsp; It wasn't my decision to use it, so I'm stuck with it for now&nbsp; :-(</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-27T03:02:57.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216650",
+    "ThreadId": "63608",
+    "Html": "<p>Try handling PreviewKeyUp instead of KeyUp, and set e.Handled = true inside your if block.</p>",
+    "PostedDate": "2009-07-27T23:19:38.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216686",
+    "ThreadId": "63608",
+    "Html": "<p>It turns out that the problem is with the Button on the MessageBox - WPF Buttons respond to the KeyDown event, leaving the following KeyUp event to be handled (or not) elsewhere, which means that it's getting handled by the DataGrid when it really shouldn't be.&nbsp; Setting e.Handled to true won't fix the problem unfortunately, as I do need the DataGrid to respond to the KeyUp event.</p>\r\n<p>I just can't believe how the Button has been implemented, surely it should be waiting for the KeyUp event to occur rather than just dismissing the MessageBox upon receiving the KeyDown event?&nbsp;</p>",
+    "PostedDate": "2009-07-28T01:37:41.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

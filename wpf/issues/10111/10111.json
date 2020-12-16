@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed per poster&#39;s request.",
+    "ClosedDate": "2009-06-10T15:28:40.62-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Maybe I am doing this wrong, but.... I am trying to do a \"flyout\" window, similart to the dockable stuff in Visual Studio.  In the dockable window I am adding a datagrid, with both width and height set to auto.\n \nTo implement the \"unpinned\" mode (where the docking window flies out), I am setting the height and width of the datagrid's parent window (the flyout control I created) to zero.  When I \"fly out\" the control with the datagrid, I set the height and width of the flyout window to my correct height and width, but the datagrid's height only becomes the height of the headers NOT the height of the headers and the data in the control.\n \nThis seems to be a bug in the datagrid, but maybe I just don't have something set in the xaml correct.  Below is the xaml\n \n<UserControl x:Class=\"LogViewer.Views.SearchResults\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n    xmlns:data=\"clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit\"\n    xmlns:views=\"clr-namespace:LogViewer.Views\"\n    xmlns:viewmodel=\"clr-namespace:LogViewer.ViewModels\"\n    >\n<data:DataGrid Grid.Row=\"0\" SelectedItem=\"{Binding Mode=TwoWay, Path=SelectedItem}\" ItemsSource=\"{Binding Path=Results}\" VerticalAlignment=\"Stretch\" HorizontalAlignment=\"Stretch\" AutoGenerateColumns=\"False\" AreRowDetailsFrozen=\"False\" SelectionMode=\"Single\" IsReadOnly=\"True\" >\n  <data:DataGrid.RowStyle>\n    <Style>\n      <Setter Property=\"views:MouseBehaviors.OnDoubleClick\" Value=\"viewmodel:LogViewerCommands.OpenLogFile\" />\n    </Style>\n  </data:DataGrid.RowStyle>\n  <data:DataGrid.Columns>\n    <data:DataGridTextColumn Header=\"Machine\" Width=\"115\" Binding=\"{Binding Converter={StaticResource LogFilePathConverter}, ConverterParameter=Machine, Path=FullPath}\"/>\n    <data:DataGridTextColumn Header=\"Day\" Width=\"65\" Binding=\"{Binding Converter={StaticResource LogFilePathConverter}, ConverterParameter=Weekday, Path=FullPath}\"/>\n    <data:DataGridTextColumn Header=\"Brand\" Width=\"50\" Binding=\"{Binding Path=BrandId}\"/>\n    <data:DataGridTextColumn Header=\"User Number\" Width=\"85\" Binding=\"{Binding Path=UserNumber}\"/>\n    <data:DataGridTextColumn Header=\"Client Id\" Width=\"225\" Binding=\"{Binding Path=ClientIdentifier}\"/>\n    <data:DataGridTextColumn Header=\"PID\" Width=\"40\" Binding=\"{Binding Path=ProcessId}\"/>\n    <data:DataGridTextColumn Header=\"Created\" Width=\"125\" Binding=\"{Binding Path=CreatedTime}\"/>\n    <data:DataGridTextColumn Header=\"File Size\" Width=\"75\" Binding=\"{Binding Path=FileSize}\"/>\n     <data:DataGridTextColumn Header=\"Last Updated\" Width=\"125\" Binding=\"{Binding Path=LastModifiedTime}\"/>\n  </data:DataGrid.Columns>\n</data:DataGrid>\n</UserControl>",
+    "LastUpdatedDate": "2013-05-16T05:31:05.49-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-06-09T10:53:11.87-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid height does not reset correctly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10111
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I could not repro this. I took your XAML from above, removed SelectedItem binding, ItemsSource binding and RowStyle (which i assume wouldnt affect). Put this UserControl in StackPanel and switched its width/height from 0 to 100 and back to 0 (many times) and it didnt repro. It would be great if you could attach a repro project.",
+      "PostedDate": "2009-06-09T14:51:20.28-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Question?  How did  you repro without items in the datagrid (since you removed the binding).  Did you add them in code?  \r\n\r\nI am wondering if it is the binding, because using ItemSource means that the adding/removing of items has to be done differently (or you get an exception).  I will test by removing the binding and manually adding items.\r\n",
+      "PostedDate": "2009-06-10T04:30:42.17-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I just tested this.  It works correctly when I call datagrid.Items.Add(item), but if I databind to the datagrid, it does not work.\r\n\r\nIt seems to be a problem only with databound items.  I will try and create a repro.\r\n\r\nchad",
+      "PostedDate": "2009-06-10T08:48:07.167-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ok,\r\n\r\nIt turns out is is an issue with the parent windows datacontext getting changed.  I couldn't recreate it with a test app, but could in the real one.\r\n\r\nThis will be closed as working.",
+      "PostedDate": "2009-06-10T10:01:20.747-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-10T15:28:40.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:12.82-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:05.49-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

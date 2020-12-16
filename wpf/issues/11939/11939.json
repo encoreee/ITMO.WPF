@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi. \n \nWhen opening a page with DataGrid control in it, I get misterious white cells (see attachment). They shouldn't be showed according to my code. Code excerpt is below.\n \n                    <Custom:DataGrid x:Name=\"UlaganjaDataGrid\" ItemsSource=\"{Binding Ulaganja}\" DockPanel.Dock=\"Right\" \n                                     AutoGenerateColumns=\"False\" Margin=\"10,0,0,0\" Style=\"{DynamicResource DataGridDemoStyle}\">\n                        <Custom:DataGrid.Columns>\n                            <Custom:DataGridTextColumn Header=\"Godina\" Binding=\"{Binding Godina}\" IsReadOnly=\"True\" Width=\"60\" />\n                            <Custom:DataGridTextColumn Header=\"Institucija\" Binding=\"{Binding NazivInstitucije}\" IsReadOnly=\"True\" Width=\"Auto\" />\n                            <Custom:DataGridTextColumn Header=\"Objekt\" Binding=\"{Binding NazivObjekta}\" Width=\"Auto\" IsReadOnly=\"True\"  />\n \t\t\t\t\t\t\t<Custom:DataGridTextColumn Header=\"Izvođač\" Binding=\"{Binding Izvodjac}\" Width=\"Auto\" IsReadOnly=\"True\"  />\t\t\t\t\t\t\t\n                            <Custom:DataGridTextColumn Header=\"Opis\" Binding=\"{Binding OpisRadova}\" Width=\"Auto\" />\n                            <Custom:DataGridTextColumn Header=\"Iznos [kn]\" Binding=\"{Binding UlozenaSredstva, StringFormat=\\{0:0\\,0.00\\}}\" Width=\"100\" >\n                                <Custom:DataGridTextColumn.CellStyle>\n                                    <Style>\n                                        <Setter Property=\"FrameworkElement.HorizontalAlignment\" Value=\"Right\"/>\n                                    </Style>\n                                </Custom:DataGridTextColumn.CellStyle>\n                            </Custom:DataGridTextColumn>\n                        </Custom:DataGrid.Columns>\n                    </Custom:DataGrid>",
+    "LastUpdatedDate": "2013-02-21T18:40:43.637-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-01T01:05:38.62-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Misterious white cells",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 11939
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3933,
+      "FileName": "misterious_cells.png",
+      "DownloadUrl": ".\\3933"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I am facing the same issue. I think the white cells are row headers that are randomly visible for some rows.",
+      "PostedDate": "2010-03-08T13:56:32.65-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-13T13:56:22-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-05T08:36:56.613-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:43.637-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi I am hoping someone may be able to assist with this issue.  It would appear that i need to disconnect or clear references to the main grid but I am unsure where this would be done or how it would be done.\nI am developing an app using WPF that has a major control that has a grid upon it.  It is an information gathering install app.  I would like to change the content of a cell within the grid with user controls.  eg I have a user control that gathers SQL DB install information, another that gathers Administrator login information etc.  If I run the program and step through in  the standard steps it works fine and all information is collected and used as required.  If I step back to a previous screen and then try to go forward to the next screen again, I get the message in the title.  The error is thrown up within the XAML of the usercontrol(child element).  I have tried clearing the grid, checking for null, changing the name of the user control grid where the exception occurs but to no avail.  The higher level error is XMLParseException Set property 'System.Windows.Controls.ContentControl.Content' threw an exception.  The XAML file for the usercontrol is (in part)\n<UserControl\n\txmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n\txmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n\txmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"\n\txmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"\n\tmc:Ignorable=\"d\"\n\tx:Class=\"KingFisherInstall.InstallAdministratorInfoControl\"\n\tx:Name=\"UserControl\"\n\td:DesignWidth=\"440\" d:DesignHeight=\"240\" Background=\"White\">\n\t<Border CornerRadius=\"6\" BorderBrush=\"{StaticResource BorderColorBrush}\" BorderThickness=\"2\" Padding=\"2\" Margin=\"3\"> \n \n\t<Grid Name=\"AdminGrid\">\n\t\t<Grid.RowDefinitions> **!!The error is thrown here!!**\n \n<RowDefinition Height=\"0.115*\"/>\n\t\t\t<RowDefinition Height=\"0.589*\"/>\n\t\t\t<RowDefinition Height=\"0.296*\"/>\n\t\t</Grid.RowDefinitions>\n \nThe XAML for the Parent Control (in part) is\n<Window\n\t\txmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n\t\txmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n\t\txmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" mc:Ignorable=\"d\" x:Class=\"KingFisherInstall.InstallStepsForm\"\n\t\txmlns:dtt=\"clr-namespace:DTT.TX360Enterprise.Administration.SystemUpdate;assembly=InstallUtilities_1_1\"\n\t\tTitle=\"Thomson Reuters Global Tax Solutions Install\" Background=\"White \"\n    FocusManager.FocusedElement=\"{Binding ElementName=nextButton}\" Height=\"380\" Width=\"530\" Icon=\"/KingfisherInstall;component/Images/icons_16x16.ico\">\n \n<DockPanel HorizontalAlignment=\"Left\" LastChildFill=\"True\">\n\t<Image Source=\"Images/NABLELogo.Image.gif\" Width=\"75\" DockPanel.Dock=\"Left\"/>\n\t<Grid Name=\"MainGrid\" Width=\"447\">\n\t\t<Grid.RowDefinitions>\n\t\t\t<RowDefinition Height=\"0.189*\"/>\n\t\t\t<RowDefinition Height=\"240\"/>\n\t\t\t<RowDefinition Height=\"0.119*\"/>\n\t\t</Grid.RowDefinitions>\nThe actual code that I am using to run is:\nTo initialise the form:\n  public InstallStepsForm()\n        {\n            \n            InitializeComponent();\n            initializeInstallParameters();\n \n            installGeneralInfo = new InstallGeneralInfoControl();\n            MainGrid.Children.Add(installGeneralInfo);\n            Grid.SetRow(installGeneralInfo, 1);\n            \n            if (installSQLInfo == null)\n            {\n                installSQLInfo = new InstallSQLInfoControl(); //the variable installSQLInfo is declared prior to using here, as are the other variables\n            }\n \n            if (installAdminInfo == null)\n            {\n                installAdminInfo = new InstallAdministratorInfoControl(); // this is where the crash occurs on the rerun through of the program\n            }\n \n            if (installDatabaseInfo == null)\n            {\n                installDatabaseInfo = new InstallDatabaseAdminInfoControl();\n            }\n \n            if (installProgress == null)\n            {\n                installProgress = new InstallProgressControl();\n            }\n            install = new Install();\n            install.InstallActionProgressUpdate += new InstallProgressUpdateHandler(install_InstallActionProgressUpdate);\n            install.InstallStepProgressUpdate += new InstallProgressUpdateHandler(install_InstallStepProgressUpdate);\n            install.InstallError += new InstallErrorHandler(install_InstallError);\n \n            installGeneralInfo.Visibility = Visibility.Visible;\n \n        }\nCode that hides and displays the various user controls within the main grid of the main form private void nextButton_Click(object sender, RoutedEventArgs e)\n        {   \n            installInformationLabel.Foreground = greybrush;     \n \n            switch (currentSelection)\n            {\n                case CurrentSelection.InstallStep1:\n                    {\n                        previousButton.IsEnabled = true;\n                        string errorText = \"\";\n                        if (checkGeneralInfo(out errorText))\n                        {\n                            installGeneralInfo.Visibility = Visibility.Hidden;          //hide (now probably obsolete with remove)\n                            MainGrid.Children.Remove(installGeneralInfo);         //remove from the grid\n \n                            MainGrid.Children.Add(installSQLInfo);          // add next usercontrol\n                            Grid.SetRow(installSQLInfo, 1);                     //place into the grid\n                            installSQLInfo.Visibility = Visibility.Visible;     //make visible\n                            installInformationLabel.Text = step2Label;\n                        }\n                        else\n                        {\n                            ErrorsFound(errorText);\n                        }\n                        break;\n                    }\n                case CurrentSelection.InstallStep2:\n                    {\n                        string errorText = \"\";\n                        if (checkSQLInfo(out errorText))\n                        {\n                            installSQLInfo.Visibility = Visibility.Hidden;\n                            MainGrid.Children.Remove(installSQLInfo);\n \n                            MainGrid.Children.Add(installAdminInfo);\n                            Grid.SetRow(installAdminInfo, 1);\n                            installAdminInfo.Visibility = Visibility.Visible;\n                            installInformationLabel.Text = step3Label;\n                        }\n                        else\n                        {\n                            ErrorsFound(errorText);\n                        }\n                        break;\n                    }\ncase CurrentSelection.InstallStep3:\n                    {\n                        string errorText = \"\";\n                        if (checkAdministratorInfo(out errorText))\n                        {\n                            installAdminInfo.Visibility = Visibility.Hidden;\n                            MainGrid.Children.Remove(installAdminInfo);\n \n                            MainGrid.Children.Add(installDatabaseInfo);\n                            Grid.SetRow(installDatabaseInfo, 1);\n                            installDatabaseInfo.Visibility = Visibility.Visible;\n                            installInformationLabel.Text = step4Label;\n                        }\n                        else\n                        {\n                            ErrorsFound(errorText);\n                        }\n                        break;\n                    }\netc",
+    "LastUpdatedDate": "2013-02-21T18:40:20.49-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-11-01T17:52:45.943-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Specified element is already the logical child of another element. Disconnect it first",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14592
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It appears that the forms are getting destroyed on exit and recreated again.  It is on the recreate that the issue occurs.  The first user control gets created OK but then the next one causes the error.  I can comment the next one out and then the error moves to the next userform.  I think I need to ensure they are destroyed properly but I am not sure.",
+      "PostedDate": "2010-11-01T18:36:50.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:20.49-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

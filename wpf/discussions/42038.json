@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "139612",
+    "ThreadId": "42038",
+    "Html": "Hi, all,<br>\r\n<br>\r\nNow I can implement textwrapping for <span style=\"font-size:13px;color:#a31515\">DataGridTextColumn by setting the <span style=\"font-size:13px;color:#a31515\">\r\n<p>ElementStyle for TextBlock, but it doesn't work for the Hyperlink column and comboBox column,<br>\r\n<br>\r\nand for the comboBox column, the element for the ElementStyle is a <span style=\"font-size:13px;color:#008000\">DataGridComboBoxColumn.TextBlockComboBox,<br>\r\n<br>\r\nwhich doen't have the TextWrapping property, how to achieve that?<br>\r\n<br>\r\nThanks.\r\n<p>&nbsp;</p>\r\n</span></p>\r\n</span></span>\r\n",
+    "PostedDate": "2008-12-11T01:40:48.327-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

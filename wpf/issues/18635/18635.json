@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When entering data to a DataGridTextColumn in the DataGrid control and accept the changes with pressing Enter there occurs a NullReferenceException with following stacktrace (german version, \"bei\" means \"at\"):\n \n   bei System.Windows.Controls.VirtualizingStackPanel.InsertContainer(Int32 childIndex, UIElement container, Boolean isRecycled)\n   bei System.Windows.Controls.VirtualizingStackPanel.AddContainerFromGenerator(Int32 childIndex, UIElement child, Boolean newlyRealized)\n   bei System.Windows.Controls.VirtualizingStackPanel.BringIndexIntoView(Int32 index)\n   bei Microsoft.Windows.Controls.Primitives.DataGridRowsPresenter.InternalBringIndexIntoView(Int32 index)\n   bei Microsoft.Windows.Controls.DataGrid.ScrollRowIntoView(Object item)\n   bei Microsoft.Windows.Controls.DataGrid.ScrollCellIntoView(Object item, DataGridColumn column)\n   bei Microsoft.Windows.Controls.DataGrid.ScrollIntoView(Object item, DataGridColumn column)\n   bei Microsoft.Windows.Controls.DataGrid.OnEnterKeyDown(KeyEventArgs e)\n   bei Microsoft.Windows.Controls.DataGrid.OnKeyDown(KeyEventArgs e)\n   bei System.Windows.UIElement.OnKeyDownThunk(Object sender, KeyEventArgs e)\n   bei System.Windows.Input.KeyEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)\n   bei System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)\n   bei System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n   bei System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n   bei System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)\n   bei System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)\n   bei System.Windows.Input.InputManager.ProcessStagingArea()\n   bei System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)\n   bei System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)\n   bei System.Windows.Interop.HwndKeyboardInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawKeyboardActions actions, Int32 scanCode, Boolean isExtendedKey, Boolean isSystemKey, Int32 virtualKey)\n   bei System.Windows.Interop.HwndKeyboardInputProvider.ProcessKeyAction(MSG& msg, Boolean& handled)\n   bei System.Windows.Interop.HwndSource.CriticalTranslateAccelerator(MSG& msg, ModifierKeys modifiers)\n   bei System.Windows.Interop.HwndSource.OnPreprocessMessage(Object param)\n   bei System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n   bei System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)",
+    "LastUpdatedDate": "2013-02-21T18:40:05.66-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2012-09-14T01:32:43.873-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid Exception when pressing Enter",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18635
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "corrected column type name",
+      "PostedDate": "2012-09-14T01:33:27.717-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:05.66-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

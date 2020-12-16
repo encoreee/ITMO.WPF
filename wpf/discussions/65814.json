@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "223899",
+    "ThreadId": "65814",
+    "Html": "<p>What is the best solution for displaying row values based on foreign keys?&nbsp; I am not entering data in this particular datagrid, so a combobox isn't being used.</p>",
+    "PostedDate": "2009-08-15T12:44:35.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224019",
+    "ThreadId": "65814",
+    "Html": "<p>I have the same problem.<br>Is it possible to display the classic situation &quot;Orders&quot; and &quot;CustomersName&quot; via foreign key?<br>The DataGrid is bound directly to a table of a strongly typed DataSet.</p>",
+    "PostedDate": "2009-08-16T06:42:52.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224023",
+    "ThreadId": "65814",
+    "Html": "<p>ironically I went back to thinking at the lower lvl and figured out a solution was to have my business layer to provide the means to translate into the values through some looping, not elegant enough for me and it wasn't very pretty nor a good means of performance, 2 for loops == bad form..&nbsp; I thought about IValueConverter ( to expensive for database calls).&nbsp; Then I thought even lower...&nbsp; SPROCs... I can write the SPROC to pull the exact data I need while translating at the server lvl...&nbsp;&nbsp; Ah ha!!!...</p>\r\n<p>SO in the end I used the database to do the work of presenting the correct data without having extra overhead to make the datagrid show no more than I needed!&nbsp; And modified my datamodel accordingly.&nbsp;</p>\r\n<p>Also I am doing this via MVVM pattern and using a framework that Sacha Barber developed.</p>",
+    "PostedDate": "2009-08-16T07:26:29.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

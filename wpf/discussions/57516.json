@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "194409",
+    "ThreadId": "57516",
+    "Html": "<p>Hi there.</p>\r\n<p>I have another post where I've gotten a ton of good advice on how to programmatically build a column header. &nbsp;</p>\r\n<p>I do have one issue, how to a set the height of the column header row programmatically?</p>\r\n<p>I build a column, then a stack panel with my &nbsp;header contents. Then I assign the stackpanel to the new Column's header. &nbsp;This works but I cannot seem to set the size fo the column header to automatically scale to the new height of the header stack panel.</p>\r\n<p><span style=\"white-space:pre\"> </span>headerStackPanel.Height = double.NaN;</p>\r\n<p><span style=\"white-space:pre\"> </span>newColumn1.Header = headerStackPanel;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>dataGridParent.Columns.Add(newColumn1);</p>\r\n<p>&nbsp;</p>\r\n<p>I'm sure I am missing something simple,</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-05-26T11:25:09.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219119",
+    "ThreadId": "57516",
+    "Html": "<p>i have the same problem</p>",
+    "PostedDate": "2009-08-04T00:29:17.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219143",
+    "ThreadId": "57516",
+    "Html": "<p><span style=\"font-size:small\">\r\n<p>so&nbsp;easy</p>\r\n<p>Microsoft::Windows::Controls::Primitives::DataGridColumnHeadersPresenter^ hdr</p>\r\n<p>= WpfGuiHelpers::LogicalTreeHelper::FindVisualChild&lt;Microsoft::Windows::Controls::Primitives::DataGridColumnHeadersPresenter&gt;(this);</p>\r\n<p>hdr-&gt;Height = 22;</p>\r\n<p>only problem this will change column header height only = if you have any text inside header it will stay too down = partly invisible even there is enough empty room over it</p>\r\n</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-04T01:44:23.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

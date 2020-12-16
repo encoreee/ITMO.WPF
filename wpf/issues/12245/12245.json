@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "You guys should really look at implementing this as a opt in feature of the box. The current behavior is no good when you want to open another window when the selection changes. http://www.jeff.wilcox.name/2009/01/acb-selecteditem-on-commit-only/",
+    "LastUpdatedDate": "2013-02-21T18:40:40.48-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-24T10:52:48.96-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AutoCompleteBox SelectedItem changes on arrow down.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 12245
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello\r\nThis is a performance killer. We have Business-Logic behind the setter and for each typed key\r\nthe Business-Logic is called... therefore, the GUI with AutoCompleteBox is bumpy.\r\n\r\nPlease change the impact, because it makes the AutoCompleteBox unusable for bigger lists\r\nwith business logic behind.\r\n\r\nThanks a lot & kind regards,\r\nThomas",
+      "PostedDate": "2010-06-22T07:35:50.553-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Just a small comment: \r\nthe problem happens on key up/down, but also on each pressed alphanumeric key, \r\nbecause AutoCompleteBox tries to find a matching item and then sets the selected item.\r\nAs the user continues typing, AutoCompleteBox always updates the selected item.",
+      "PostedDate": "2010-06-22T08:36:34.44-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-01T13:12:11.223-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-25T01:13:03.49-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Agreed, this is one of the issues with the AutoCompleteBox that I've encountered. One workaround to this is to subclass the control and use a custom template which sets up a custom SelectionAdapter. But really, this should be a flag which could be set on the stock AutoCompleteBox.",
+      "PostedDate": "2011-03-25T01:14:01.747-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-04T10:23:03.353-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:40.48-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "Id": "262718",
+    "ThreadId": "76835",
+    "Html": "<p>I put this question on the WindowsClient Forum to try and get a response, as well.&nbsp; So...</p>\r\n<p><br>Where is the WPF Toolkit Love we have been hearing about for months now?&nbsp; I would like to think we would have had an update regarding the toolkit project and a better roadmap ( Especially around PDC09 timeframe ).<br><br>Scott Guthrie released a blog about WPF Bag O' Tricks.... Not seen it yet.<br>There were talks of releasing a new WPF Ribbon CTP around VS2010 B2.... Not seen it yet.<br>No new updates on MVVM&nbsp;templates or other controls ( except for adding the Datagrid, Calendar, etc. to WPF 4 ).<br>Will there a be any&nbsp;releases of controls&nbsp;that were released in Silverlight Toolkit?<br><br>I understand there is much to do to get the bits out for VS2010 RTM, but can someone from the team PLEASE, PLEASE give us an update regarding the project and what to look out for?<br><br>Thanks in advance.<br><br></p>",
+    "PostedDate": "2009-12-02T05:41:40.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263141",
+    "ThreadId": "76835",
+    "Html": "<p>No love there either I see.&nbsp; &lt;grin&gt;</p>\r\n<p>Oh well, WPF, while having more features, just doesnt have the &quot;It&quot; factor that silverlight does for some reason.&nbsp;&nbsp;While I am sure they are&nbsp;working hard behind the scene, to the outside world, support and new stuff appears to lag behind silverlight.</p>\r\n<p>And please guys, this is not criticism of WPF, just a bit of jealousy.&nbsp; I know there are wonderous improvements with .net 4.0, the new&nbsp;text rendering stack alone is a massive change that is welcomed.&nbsp; But as we see with Silverlight, sexy sells, and currently all of the sex appeal is going into Silverlight, not neat features that show the stuff that WPF can do that no other platform can.&nbsp; We need something that helps us sell WPF.&nbsp; Where are all of the 3d controls?&nbsp; WPF has an amazing 3D stack, and I cant think of one MS Control that takes the least bit of advantage of it.&nbsp; There are all of the normal advantages of a thick client over a silverlight client, but thats plumbing.&nbsp; And plumbing is hard to demo.&nbsp; The WPF toolkit is all about UI and neat features at that level.</p>\r\n<p>We need something in this toolkit that makes people want to use WPF over Silverlight.&nbsp; Where/What is it?&nbsp; Parity is nice, but Silverlight needs to be trying to keep&nbsp;up with WPF, not the other way around.</p>\r\n<p>Just my opinion</p>\r\n<p>Paul</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-03T04:47:55.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263154",
+    "ThreadId": "76835",
+    "Html": "<p>Interesting read, similar topic.</p>\r\n<p><a href=\"http://groups.google.com/group/wpf-disciples/browse_thread/thread/8610883b3bc846f0/ee1a5218ff59b0ce\">http://groups.google.com/group/wpf-disciples/browse_thread/thread/8610883b3bc846f0/ee1a5218ff59b0ce</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-03T05:06:43.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263210",
+    "ThreadId": "76835",
+    "Html": "<p>Found this one, too.&nbsp; From Pete Brown</p>\r\n<p><a href=\"http://community.irritatedvowel.com/blogs/pete_browns_blog/archive/2009/12/01/The-Future-of-Client-App-Dev-_3A00_-WPF-and-Silverlight-Convergence.aspx\">http://community.irritatedvowel.com/blogs/pete_browns_blog/archive/2009/12/01/The-Future-of-Client-App-Dev-_3A00_-WPF-and-Silverlight-Convergence.aspx</a></p>",
+    "PostedDate": "2009-12-03T07:06:35.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263223",
+    "ThreadId": "76835",
+    "Html": "<p>Saw that one.&nbsp; which also references this one in its comments <a href=\"http://www.keithelder.net/blog/archive/2009/11/30/.net-4.0-start-reading-between-the-lines-ndash-learn.aspx\">http://www.keithelder.net/blog/archive/2009/11/30/.net-4.0-start-reading-between-the-lines-ndash-learn.aspx</a></p>\r\n<p>If they realize it or not, WPF and Silverlight are competing.&nbsp; I only have so many hours&nbsp;to spend in learning curve.&nbsp; I have to make a decision where those go.&nbsp; They have to go where I think I will be able to best use that knowledge to get work and produce product.&nbsp;</p>\r\n<p>They need to start some friendly competition between the Silverlight Tookit group and the WPF Toolkit group.&nbsp; WPF can do so many things.&nbsp; And yes, the things the WPF core team&nbsp;have done for .net 4.0 are very very usefull and badly needed.&nbsp; But we need some fluff for WPF.&nbsp; &lt;grin&gt;&nbsp; Allow the WPF Tooklit&nbsp;guys to strut their stuff a bit and do some things that the silverlight toolkit team can only aspire to.&nbsp; Or is the Silverlight Toolkit team composed of better programmers?&nbsp; Hmmm.&nbsp; Could it be?</p>",
+    "PostedDate": "2009-12-03T07:41:30.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281833",
+    "ThreadId": "76835",
+    "Html": "<p>Okay, its almost been 2 months and no responses from MS or the WPF Toolkit Team.&nbsp; Yes there were a bunch of holidays in between, and thats why I have at least waited till now.&nbsp;</p>\r\n<p>There have been rumblings, but nothing concrete.&nbsp; Can we get some ammo to use against the people we have to argue this point with?&nbsp; At least put up a &quot;Watch this Space&quot; sign somewhere.&nbsp; Start some hype, do something.&nbsp;&nbsp; The WPF Toolkit last had a release in June.&nbsp; JUNE!!!!!!!&nbsp;&nbsp; Are you assuming that&nbsp;a .net 4.0 release is the same thing as a toolkit release?&nbsp; If so, then the perception of what this toolkit is verses what the .net main stream releases are is skewed and needs to get addresesd.&nbsp;</p>\r\n<p>When was the last Silverlight Toolkit Release?&nbsp;&nbsp; When is the next?&nbsp;</p>\r\n<p>Come on guys/gals.&nbsp; All of the funding and direction for development for the next year within many major corporations is being discussed now.&nbsp; The argument of which way to go, Silverlight or WPF, is being argued by using&nbsp;the perception of long term support for the&nbsp;various platforms.&nbsp; MS needs to get in front of this now.&nbsp; As stupid as it is,&nbsp; many of these decisions are being made by people who stick their fingers in the air and see which way the wind is blowing, regardless of the technical merits of the platforms.&nbsp; Currently that wind is blowing towards Silverlight.&nbsp; Not towards WPF.&nbsp; They point at the performance issues and short term delays of VS2010 as proof that even MS is having problems with WPF.&nbsp;</p>\r\n<p>Guys, we need some marketing/perception help.&nbsp;&nbsp;&nbsp; Please.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-26T05:50:19.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281853",
+    "ThreadId": "76835",
+    "Html": "<p>I'm with you bro!&nbsp; I really don't think you'll see any love for this toolkit until after VS10 and .NET 4.0 RTM, though.&nbsp; I finally emailed ScottGu directly around Xmas.&nbsp;&nbsp; He replied and forwarded my questions to Ian Ellison-Taylor ( I believe&nbsp;Ian manages SL and WPF ).&nbsp; Ian replied with a little comfort, but nothing detailed.&nbsp; Just the same old &quot;it's coming soon&quot;.</p>\r\n<p>I asked where the love was for this toolkit.... New controls, new Ribbon CPT, new MVVM templates/tutorials, etc.&nbsp; I also asked and have not seen the new WPF Bag O' Tricks ScottGu mentioned in a blog a few months back.&nbsp; There is a Bag O' Tricks site, but it's not updated for the controls Scott mentioned.</p>\r\n<p>All I can say is be patient like the rest of us.&nbsp; I appreciate what the team has done, but they do need to provide a better roadmap.&nbsp;</p>\r\n<p>I believe we will see more in the next 6 months.&nbsp; Looks like SL is getting priority, but I think it is for the better.&nbsp; Only my assumption, but think of this..... If they are working on getting the bugs out of the SL controls then they should role up into this toolkit easier ( Now that SL and WPF assemblies compile better since SL4B was released @ PDC09 ).&nbsp; Hopefully, this means new controls like Ribbon, DockManager, SL toolkit ( Accordion, DataForm, etc. ), etc.... will release with the same controls with faster releases???&nbsp; Just an assumption though.</p>\r\n<p>With that said...... Someone on the WPF Toolkit please ( And I said PLEASE )&nbsp;give us an update.&nbsp; Thanks.</p>",
+    "PostedDate": "2010-01-26T06:39:30.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281881",
+    "ThreadId": "76835",
+    "Html": "<p>All good comments.</p>\r\n<p>My problem is that the WPF toolkit team is waiting for the Silverlight toolkit team to innovate and then &quot;maybe&quot; following the leader.&nbsp; Why cant the WPF Toolkit&nbsp;team Lead?&nbsp; If we are always lagging then we are second class citizens and always coding to the least common denominator, and that is wrong IMO for the toolkits.&nbsp; They should be the places where the technologies should be showcased.&nbsp;</p>\r\n<p>Or am I getting this all wrong?&nbsp; I draw a sharp distinction between the base WPF .net team and the toolkit team.&nbsp; The inovations and advancements that the base wpf team are making with the .net 4.0 stack are huge and are welcome.&nbsp; But all of that gets lost in the noise of&nbsp;a larger .Net 4.0 release.&nbsp;</p>\r\n<p>The Toolkit is where the futures and the &quot;risky&quot; stuff should show up.&nbsp; We aint getting any of that at the moment IMO.&nbsp; And havent since June.&nbsp; But the Silverlight toolkit team doesnt seem to be under any restrictions.&nbsp; They are full steam ahead.</p>\r\n<p>Or at least get some teasers up here somewhere.&nbsp; &lt;grin&gt;</p>\r\n<p>Paul</p>",
+    "PostedDate": "2010-01-26T08:09:36.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430122",
+    "ThreadId": "76835",
+    "Html": "<p>ok, .Net 4.0 has hit the streets, VS2010 is out, Silverlight 4 is out later this week.&nbsp; The parties should soon be over and everybody should soon be back at work.&nbsp; Its our turn now.&nbsp; &lt;grin&gt;&nbsp;</p>\r\n<p>So, what are the plans for the WPF Toolkit?&nbsp; Does it go away?&nbsp; Does it get some love finally?&nbsp; Either put this thing out of it misery, or grow and support it.&nbsp; It's time to make a decision and get to work.</p>\r\n<p>Paul</p>",
+    "PostedDate": "2010-04-12T11:10:00.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430127",
+    "ThreadId": "76835",
+    "Html": "<p>I'm with ya!&nbsp; Hopefully some news SOON.&nbsp; This week please?&nbsp; I did see the video that Surface Toolkit for Windows Touch was released today on Channel 9.</p>\r\n<p><a href=\"http://channel9.msdn.com/posts/LarryLarsen/Surface-Toolkit-for-Windows-Touch/\">http://channel9.msdn.com/posts/LarryLarsen/Surface-Toolkit-for-Windows-Touch/</a></p>\r\n<p>Hope to see Ribbon news and WPF Toolkit love in the near future.</p>\r\n<p>Don't forget... ScottGu will be on Channel 9 live after keynote tomorrow.&nbsp; Try and tweet comments about&nbsp;this to get answers from the man himself :)</p>",
+    "PostedDate": "2010-04-12T11:25:05.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432517",
+    "ThreadId": "76835",
+    "Html": "<p>Crickets.................</p>",
+    "PostedDate": "2010-04-18T17:28:49.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432803",
+    "ThreadId": "76835",
+    "Html": "<p><span style=\"color:black;font-size:10pt\">Hi, first off I'd like to thank you guys for all the supporting comments.&nbsp; I realize that there hasn't been much traffic here on Codeplex, we've just been heads-down with the new release of .NET 4 and ensuring the success of VS2010 that as you know&nbsp;is based on WPF 4.&nbsp; So this release was a big challenge for us and consequently consumed a lot of our time and resources.&nbsp; We've recently updated the toolkit (Feb 10) with a large number of bug fixes (~50 bugs) and 3 new controls.&nbsp; That being said,&nbsp;we continue to work on the toolkit and we're currently working hard to re-release the WPF Ribbon in&nbsp;the next 2-3 months with more controls, better customizability,&nbsp;higher quality, and a better licensing story.</span></p>\r\n<p>Thanks,</p>\r\n<p>Saied K</p>",
+    "PostedDate": "2010-04-19T11:03:06.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432866",
+    "ThreadId": "76835",
+    "Html": "<p>Thank you for the response.</p>\r\n<p>We look forward to any and all additions to the toolkit that are in the pipeline.&nbsp; And we understand that the .net 4.0 was the primary focus.&nbsp;</p>\r\n<p>We ( at least I ) look at the WPF toolkit slightly differently than MS it seems.&nbsp; I view the toolkit as a playground for controls that may never make it into the .Net proper.&nbsp; Things like the Path Panel in Blend 4.0 should be here.&nbsp; Things that you had to create to make VS2010 the quality product that it is, should be here if possible.&nbsp; Things like Deep Zoom, 3D controls, fun stuff.&nbsp;</p>\r\n<p>And most of all, at least have a presence.&nbsp; Dont do hit and runs that stretch many months between any MS presence posting in the discusions, or on the home page.&nbsp; Thats all I ask.&nbsp; Provide some hope that this project will rival the silverlight one at some point in the future and I am happy.&nbsp; Heck, lie to me, and I will be happy for a while. &lt;grin&gt;&nbsp;</p>\r\n<p>Thanks again,</p>\r\n<p>Paul</p>",
+    "PostedDate": "2010-04-19T13:39:52.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432901",
+    "ThreadId": "76835",
+    "Html": "<p>I think pmont is right.&nbsp; The toolkit should be have a special namespace that is flagged 'use at own risk' - for work in progress controls.&nbsp; Stuff that will make it to the runtime eventually.</p>\r\n<p>The big issue right now are features in Silverlight that are not in WPF.&nbsp; This is hurting development.&nbsp; For example - LayoutStates are currently in Silverlight but not WPF.&nbsp; Can we get some sort of committment to use the Toolkit to bring WPF up to parity with Silverlight.&nbsp; Plus also to port over controls from the SL Toolkit into the WPF Toolkit?</p>",
+    "PostedDate": "2010-04-19T14:44:49.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432912",
+    "ThreadId": "76835",
+    "Html": "<p>I agree with @pmont.&nbsp; I was holding off until VS 2010 and .NET 4&nbsp; was released.&nbsp; I just hope there is more info provided on what's going on with the WPF Toolkit similar to SL Toolkit.&nbsp; I'm looking forward to what is released ( especially the Ribbon ) over the next few months.&nbsp; The only thing in addition to this is..... where in the world is the WPF Bag O' Tricks Scott Gu mentioned in his WPF 4 blog.&nbsp; I know I'm not the only one that saw this.&nbsp; And yes, there is a link to a WPF Bag O' Tricks but it is out dated and does not include the controls he mentioned.&nbsp; Please give an update for this.&nbsp; Thanks again.&nbsp; I know the focus that was put into the platform and what's to come in this toolkit will be an awesome story.</p>\r\n<p>BTW, here is the link and description of what&nbsp;was stated&nbsp;in Scott Gu's blog...&nbsp; <a href=\"http://weblogs.asp.net/scottgu/archive/2009/10/26/wpf-4-vs-2010-and-net-4-0-series.aspx\">http://weblogs.asp.net/scottgu/archive/2009/10/26/wpf-4-vs-2010-and-net-4-0-series.aspx</a></p>\r\n<p><strong>&quot;Bag O'Tricks is back</strong></p>\r\n<p>We are also releasing an out-of-band collection of eight controls called the WPF Bag O&rsquo; Tricks download.&nbsp; It includes the following controls: AnimatingTilePanel, ColorPicker, InfoTextBox, ListPager, NumericUpDown, Reveal, TransitionsPresenter, TreeMapPanel.&quot;</p>",
+    "PostedDate": "2010-04-19T15:11:01.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432920",
+    "ThreadId": "76835",
+    "Html": "<p>I think the others agree, we would love to have an equivalent set of controls to the Silverlight toolkit.&nbsp;I dont care if they ever make it into&nbsp;.net proper.</p>\r\n<p>I would also&nbsp;love an out of band set of controls that rival anything the Silverlight team is able to create.&nbsp;&nbsp; WPF is the big brother, it has 3d, it has access to the gpu, it can jump tall buildings at a single bound.&nbsp;&nbsp;&nbsp; Use this toolkit to showcase that.&nbsp;</p>\r\n<p>But above all, to me, make sure that there are MS people on here answering questions for the controls that you do have here.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>And a simple question, why is the WPF toolkit team part of the team building .net 4.0 or vs2010?  Why isnt it a separate team dedicated to only this?  I think that is a major part of the problem.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again.</p>\r\n<p>Paul</p>",
+    "PostedDate": "2010-04-19T15:28:15.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434385",
+    "ThreadId": "76835",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>SaiedKhanahmadi wrote:</strong><br>\r\n<p><span style=\"color:black;font-size:10pt\">&nbsp;<span style=\"color:#ff0000\">we're currently working hard to re-release the WPF Ribbon in&nbsp;the next 2-3 months with more controls, better customizability,&nbsp;higher quality, and a better licensing story.</span></span></p>\r\n</blockquote>\r\n<p>&nbsp;Saied K, this is good news - is there an updated WPF Ribbon road map?&nbsp;</p>\r\n<p>Thanks<br>Alex</p>",
+    "PostedDate": "2010-04-22T16:00:54.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "437021",
+    "ThreadId": "76835",
+    "Html": "<p><em>&quot;And most of all, at least have a presence.&nbsp; Dont do hit and runs that stretch many months between any MS presence posting in the discusions, or on the home page.&nbsp; Thats all I ask.&nbsp; Provide some hope that this project will rival the silverlight one at some point in the future and I am happy.&nbsp; Heck, lie to me, and I will be happy for a while. &lt;grin&gt;&nbsp;</em>&quot;</p>\r\n<p>Crickets again....</p>\r\n<p>Oh well, call me when someone at microsoft actually cares about this site.&nbsp;</p>",
+    "PostedDate": "2010-04-29T04:58:17.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

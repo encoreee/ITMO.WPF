@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "138459",
+    "ThreadId": "41711",
+    "Html": "How can I hide the drop down buttons of a ribbonsplitbutton after it has been clicked?&nbsp; Currently it only happens after a lose focus.<br>\r\n<br>\r\nThanks in advance.<br>\r\n",
+    "PostedDate": "2008-12-07T16:38:09.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138707",
+    "ThreadId": "41711",
+    "Html": "Try to clear RibbonSplitButton.Items.  Thanks.\r\n",
+    "PostedDate": "2008-12-08T12:19:17.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139218",
+    "ThreadId": "41711",
+    "Html": "Hi willhan,<br>\r\n<br>\r\nIf I RibbonSplitButton.Items.Clear() this will remove the items from the list so I no longer have the buttons later.&nbsp; So the code will get messy to manage reloading the buttons.<br>\r\n<br>\r\nWhen version 1.O  is released, can hideList() be added to the API?<br>\r\n<br>\r\nCheers<br>\r\n-Ruairi<br>\r\n",
+    "PostedDate": "2008-12-10T01:33:41.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139880",
+    "ThreadId": "41711",
+    "Html": "Hi Ruairi,<br>\r\n<br>\r\nWe've recorded your request, but we'd like to understand your scenario better.  Could you explain your scenario to help us to understand why you want it?<br>\r\n<br>\r\nThanks,<br>\r\nWilliam\r\n",
+    "PostedDate": "2008-12-11T15:47:49.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

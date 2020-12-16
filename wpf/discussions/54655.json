@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "184303",
+    "ThreadId": "54655",
+    "Html": "Problem is that , after  the datagrid is binded with one datatable,<br>\r\n every time the datagrid is rendered, <br>\r\ni want to show one special datagridrow on top to show the filter selector for user to choose.<br>\r\n<br>\r\nI have studied the wpftookit source code for one day ,but still don't know how to get through that?<br>\r\nit bothers me a lot now.<br>\r\n<br>\r\nSo, any help or advice will be greatly appreciated , thanks ~\r\n",
+    "PostedDate": "2009-04-27T18:52:19.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191911",
+    "ThreadId": "54655",
+    "Html": "<p>I'm very interesting too&nbsp;to this possible feature. Every third-party grid have it.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-19T07:07:20.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192069",
+    "ThreadId": "54655",
+    "Html": "<p>I'm not sure what you want your final UI to look like, but have you considered customizing the column header to provide the filter UI? There are a variety of ways to customize the header, such as the Header property or&nbsp;HeaderTemplate property on DataGridColumn. There is also a DataGrid.ColumnHeaderStyle property.</p>\r\n<p>Ben</p>",
+    "PostedDate": "2009-05-19T13:28:45.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194261",
+    "ThreadId": "54655",
+    "Html": "<p>Hi all,</p>\r\n<p>me too very intersted in this discussion.</p>\r\n<p>Is there any way to shift a row(or a group of rows) to the top of the grid.</p>\r\n<p>&nbsp;</p>\r\n<p>I want to move my selected rows &nbsp;to the top.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance..</p>\r\n<p>Subin.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-26T06:09:16.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

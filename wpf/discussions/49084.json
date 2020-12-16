@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "163966",
+    "ThreadId": "49084",
+    "Html": "<br>\r\nHi,<br>\r\n<br>\r\nI'm using the WPF toolkit Datagrid with a context menu.. The point is: when I left click on top of a row the context menu appears (with a menu item) and I click on an option that allows me to edit all the data on a new Window...<br>\r\n<br>\r\nI've been able to do everything except obtaining the clicked row in order to know wich data to ind to the form..<br>\r\n<br>\r\nIs there a way to obtain it? ... The &quot;e&quot; parameter of the &quot;menuitem&quot; clicked doesn't provide access to the selected row?<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2009-03-03T10:16:45.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164256",
+    "ThreadId": "49084",
+    "Html": "Colin Eberhardt has done a nice write-up that is probably helpful to you.<br>\r\n<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/2008/12/wpf-datagrid-detecting-clicked-cell-and-row/\r\n",
+    "PostedDate": "2009-03-04T04:02:22.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

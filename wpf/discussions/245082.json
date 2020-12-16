@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "562462",
+    "ThreadId": "245082",
+    "Html": "\r\n<div>\r\n<div>\r\n<p>hello,</p>\r\n<p>&nbsp;</p>\r\n<p>i'm looking for a way how to bind a hierarchical structure to an wpf toolkit accordion control.</p>\r\n<p>in the end, the accordion needs to have 3 levels... like this:<br>\r\n<br>\r\nlevel 1<br>\r\n&nbsp;&nbsp; -----&gt; level 2<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&gt; level 3</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [some content]<br>\r\n..<br>\r\nlevel n</p>\r\n<p>&nbsp;&nbsp; -----&gt; level n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&gt; level n</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [some content]</p>\r\n<p>&nbsp;</p>\r\n<p>thanks for any help</p>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2011-02-08T01:27:20.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

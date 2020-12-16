@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "879544",
+    "ThreadId": "378970",
+    "Html": "\r\n<p>I have create a Window with Ribbons (2010 -&nbsp;<code>Microsoft.Windows.Controls.Ribbon</code>).</p>\r\n<p>It looks like that:</p>\r\n<p><img src=\"http://i.stack.imgur.com/B7fZI.png\" alt=\"enter image description here\"></p>\r\n<p>Now, is there a border over the tabs (between the tabs and the title). This is very ugly.</p>\r\n<p>It should looks like Microsoft Office Word:</p>\r\n<p><img src=\"http://i.stack.imgur.com/KD3xv.png\" alt=\"enter image description here\"></p>\r\n<p>What can I do, that there is no border between the tabs and the titlebar?</p>\r\n<p>(The RibbonWindow is used)</p>\r\n",
+    "PostedDate": "2012-07-20T03:51:44.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

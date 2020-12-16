@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "199083",
+    "ThreadId": "58783",
+    "Html": "<p>hi</p>\r\n<p>i am using a datagrid with a detail view</p>\r\n<p>the input is transfered to a hibernate session and then saved in the Database.</p>\r\n<p>My Problem is, that the programm saves every input, even empty rows.</p>\r\n<p>the check wather the input is empty or not, isn't a problem, but if the programm doesn't add anything to the datagrid, thedetail view goes buggy.</p>\r\n<p>(When i activate the detail view, it jumps to the first entry in the grid and shows me its details)</p>\r\n<p>&nbsp;</p>\r\n<p>without the input check, it seems to work but keeps adding empty entrys to the list and the db , which causes troubles (null pointer exceptions) later on.</p>\r\n<p>did anyone have a similiar problem or knows a workaround?</p>\r\n<p>&nbsp;</p>\r\n<p>thank you for your help</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-08T08:38:34.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

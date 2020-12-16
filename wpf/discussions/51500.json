@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "172722",
+    "ThreadId": "51500",
+    "Html": "Hi All,<br>\r\nI'm new to WPF. I'm using the datagrid control from WPF toolkit.<br>\r\n<br>\r\nI've an SP which gives me the list of tasks and the amount of time spent on each task by a person for 1 week. The binding to datagrid is all done. The datagrid looking like,<br>\r\n<br>\r\n<span style=\"background-color:#cccccc\">Activity    Monday(Time spent hrs)    Tuesday    wednedday    thursday    Friday<br>\r\n</span>Activity1    10                                    10           10                    10              10           <br>\r\nactivity2    8                                        8             8                    8                  8<br>\r\n<br>\r\nNow i want to display the row wise total as well as the column wise total of the effort spent.<br>\r\nlike this,<br>\r\n<br>\r\n<span style=\"background-color:#cccccc\">Activity    Monday(Time spent hrs)    Tuesday    wednedday    thursday    Friday    </span><strong><span style=\"background-color:#cccccc\">Total<br>\r\n</span></strong>Activity1    10                                    10           10                    10              10           <span style=\"background-color:#ffcc00\"><strong>50</strong><br>\r\n</span>activity2    8                                        8             8                    8                  8            <span style=\"background-color:#ffcc00\"><strong>40</strong><br>\r\n</span><strong><span style=\"background-color:#ffcc00\">Total          18                                    18            18                    18            18            90</span></strong>  <br>\r\n<br>\r\n1. I want to do on press of TAB key after editing the effort in a cell. <br>\r\n2. And also, There is an option to add rows to the datagrid. I'm able to add rows at the end. But i would like to have the Total row always be the last in the grid. <br>\r\n<br>\r\nCan anyone please tell me how can i do these things.?<br>\r\n<br>\r\nThanks in advance.<br>\r\n",
+    "PostedDate": "2009-03-27T05:11:21.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172920",
+    "ThreadId": "51500",
+    "Html": "<a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=44358\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=44358</a> It is not exactly the same but it might help.\r\n",
+    "PostedDate": "2009-03-27T13:34:21.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

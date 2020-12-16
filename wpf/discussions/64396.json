@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "219154",
+    "ThreadId": "64396",
+    "Html": "<p>Hi there,</p>\r\n<p>in the WPF Datagrid then content is bound to a specific Class which implements the different properties for the datagrid items.</p>\r\n<p>If i want to change those data i can do it this way:</p>\r\n<p>MyDatagrid.Rows(i).MyProperty = &quot;testing&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>But how can i edit the regular Properties of a Common DataGridRow like Background, IsSelected State, Tag Information an so on?</p>",
+    "PostedDate": "2009-08-04T02:20:24.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219164",
+    "ThreadId": "64396",
+    "Html": "<p>I don't recall the exact function name, but there is a function GetContainerFromItem() or something like that, which should be helpful in your scenario.</p>",
+    "PostedDate": "2009-08-04T02:53:41.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

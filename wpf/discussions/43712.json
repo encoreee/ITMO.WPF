@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "145403",
+    "ThreadId": "43712",
+    "Html": "<p>Hi!<br>\r\n<br>\r\nI'm unable to figure out how to show the RowDetails when a given cell is selected. <br>\r\n<br>\r\nI need to keep the<br>\r\n<span style=\"font-size:13px;color:#ff0000\">SelectionUnit</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;Cell&quot;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>But that conflicts with <br>\r\n<span style=\"font-size:13px;color:#ff0000\">RowDetailsVisibilityMode</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;VisibleWhenSelected&quot;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>Any idea on how to do this? <br>\r\n<br>\r\nRegards<br>\r\n<br>\r\nLarsi<br>\r\n</p>\r\n",
+    "PostedDate": "2009-01-08T06:26:18.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146525",
+    "ThreadId": "43712",
+    "Html": "Does SelectionUnit.CellOrRowHeader not meet your needs?\r\n",
+    "PostedDate": "2009-01-12T18:44:20.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

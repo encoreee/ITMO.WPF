@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "157353",
+    "ThreadId": "47047",
+    "Html": "I have set the DataGrid.HeadersVisibility to &quot;Column&quot; and it seems to be working fine at first. The problem is that sometimes when I scroll, or maximize the window, one or two rows suddenly get a row header (which makes them look &quot;unaligned&quot;). The row headers disappear when I scroll them out of view, but may reappear at different places if I keep scrolling up and down.<br>\r\n<br>\r\nAny ideas about this one?\r\n",
+    "PostedDate": "2009-02-13T02:16:35.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159319",
+    "ThreadId": "47047",
+    "Html": "I never found out what was causing this, but if anyone else runs into the same problem I &quot;solved&quot; it by removing the control template for the DataGridRowHeader. Like this:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">Type</span><span style=\"font-size:13px;color:#ff0000\"> dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">DataGridRowHeader</span><span style=\"font-size:13px;color:#0000ff\">}&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Template&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter.Value</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">            &lt;</span><span style=\"font-size:13px;color:#a31515\">ControlTemplate</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;dg:DataGridRowHeader&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;/</span><span style=\"font-size:13px;color:#a31515\">Setter.Value</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;/</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#0000ff\">&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-02-19T02:08:44.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159810",
+    "ThreadId": "47047",
+    "Html": "Hi xyph,<br>\r\n<br>\r\nThis sounds like it could be due to a bug in our container recycling, though I'm not sure why removing the template would fix it.  Also, I'm not able to reproduce this with any of our test apps.  Could you post a small app which repros the problem?<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-19T10:37:31.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160060",
+    "ThreadId": "47047",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nI created a small dummy-app which is able to reproduce the behavior. I uploaded it here:<br>\r\n<a href=\"http://rapidshare.com/files/200278556/DataGridRowHeaderBug.zip.html\">http://rapidshare.com/files/200278556/DataGridRowHeaderBug.zip.html</a><br>\r\n<br>\r\nI also made a screenshot:<br>\r\n<a href=\"http://sv.tinypic.com/view.php?pic=t6702e&s=5\">http://sv.tinypic.com/view.php?pic=t6702e&amp;s=5</a><br>\r\n<br>\r\nMy idea was that removing the control template would prevent it from showing up visually, though I am sure it's &quot;still there&quot;.\r\n",
+    "PostedDate": "2009-02-20T00:44:55.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162522",
+    "ThreadId": "47047",
+    "Html": "Thanks so much for sending along the repro, xyph.  I'm not sure what's going on, but I've noticed that it only happens when row virtualization is turned on and SelectionMode=Extended.  I've filed a bug in our internal database to track this and see if we can figure out what exactly is causing the problem.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-26T15:37:50.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173820",
+    "ThreadId": "47047",
+    "Html": "Sorry to awaken an old thread but I just discovered that this bug also affects column resizing. If I resize a column and scroll down some of the rows may still have the old width, and look unaligned.<br>\r\n<br>\r\nLike this:<br>\r\n<a href=\"http://sv.tinypic.com/view.php?pic=5y86c2&s=5\">http://sv.tinypic.com/view.php?pic=5y86c2&amp;s=5</a><br>\r\n<br>\r\nAny ideas about a work-around for this one?\r\n",
+    "PostedDate": "2009-03-31T02:37:22.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288439",
+    "ThreadId": "47047",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>samanthamsft wrote:</strong><br>Thanks so much for sending along the repro, xyph.&nbsp; I'm not sure what's going on, but I've noticed that it only happens when row virtualization is turned on and SelectionMode=Extended.&nbsp; I've filed a bug in our internal database to track this and see if we can figure out what exactly is causing the problem.<br> <br> Thanks!<br> Samantha</blockquote>\r\n<p>Any Update on the Bug?</p>\r\n<p>Is this fixed in .Net 4 (VS 2010)?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-02-10T12:54:43.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452338",
+    "ThreadId": "47047",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>samanthamsft wrote:</strong><br>Thanks so much for sending along the repro, xyph.&nbsp; I'm not sure what's going on, but I've noticed that it only happens when row virtualization is turned on and SelectionMode=Extended.&nbsp; I've filed a bug in our internal database to track this and see if we can figure out what exactly is causing the problem.<br><br>Thanks!<br>Samantha</blockquote>\r\n<p>&nbsp;Hey, just found it's not resolved int .Net4.0, so I am wondering if there are any fix?</p>\r\n<p>And what's going on for wtf toolkit, seems not updated for a long time.</p>",
+    "PostedDate": "2010-06-07T01:12:12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "553437",
+    "ThreadId": "47047",
+    "Html": "\r\n<p>I have the same problem, even with SelectionMode=&quot;Single&quot;.&nbsp; The only fix I've found is to set HeadersVisibility=&quot;All&quot;&nbsp;and RowHeaderWidth=&quot;0&quot;.</p>\r\n",
+    "PostedDate": "2011-01-21T13:17:08.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "640486",
+    "ThreadId": "47047",
+    "Html": "<p>Until the bug has been resolved, here's a possible workaround that did solve the issues in my case. You might have to repeat the solution for other parts of the source code which did not happen to be problematic for me.</p>\n<p>I encountered the following data binding errors:</p>\n<div style=\"background-color: white; color: black;\">\n<pre>System.Windows.Data Error: 4 : Cannot find source for binding with reference 'RelativeSource FindAncestor, AncestorType='System.Windows.Controls.DataGrid', AncestorLevel='1''. BindingExpression:Path=AreRowDetailsFrozen; DataItem=null; target element is 'DataGridDetailsPresenter' (Name=''); target property is 'SelectiveScrollingOrientation' (type 'SelectiveScrollingOrientation') </pre>\n<pre>System.Windows.Data Error: 4 : Cannot find source for binding with reference 'RelativeSource FindAncestor, AncestorType='System.Windows.Controls.DataGrid', AncestorLevel='1''. BindingExpression:Path=HeadersVisibility; DataItem=null; target element is 'DataGridRowHeader' (Name=''); target property is 'Visibility' (type 'Visibility') \r\n</pre>\n</div>\n<p>After doing some research, I discovered that the databinding engine is not always able to find the owning DataGrid via the 'RelativeSource FindAncestor' mechanism&nbsp;when it is using&nbsp;virtualization (which is the default behavior). These bindings are part of the control template of the DataGridRow. It seems like the bindings are evaluated before the DataGridRow is actually added to the VisualTree or had its parent set (and thus the FindAncestor is not able to find the owning DataGrid).</p>\n<p>In virtualized mode, a DataGridRow 'knows' the concept of preparation (and recycling). Although the source code would suggest that DataGridRows are not tighlty coupled to a DataGrid, in practice they are. There is even an Diagnostic.Assert check present in the DataGrid's source code that validates that the DataGrid for which the row is prepared is the same as for which it has been used. The owning DataGrid is also available als internal property.</p>\n<p>With this knowledge, I altered the control template of the DataGridRow not to use the 'RelativeSource FindAncestor' mechanism but directly bind to the DataGridOwner property of the DataGridRow This removes all of the data binding errors mentioned:</p>\n<ul>\n<li>I changed the accessability of the existing DataGridOwner property of the <em>DataGridRow</em> from internal to public. </li>\n<li>I modified the bindings of following section of the control template of the <em>DataGridRow</em> style in Generic.xaml in the following way: </li>\n</ul>\n<p style=\"padding-left: 60px;\"><strong>Original</strong></p>\n<p style=\"padding-left: 60px;\"><strong>&nbsp;</strong></p>\n<div style=\"background-color: white; color: black;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">dgp</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">DataGridDetailsPresenter</span> <span style=\"color: red;\">dgp:SelectiveScrollingGrid.SelectiveScrollingOrientation</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{Binding RelativeSource={RelativeSource AncestorType={x:Type dg:DataGrid}}, Path=AreRowDetailsFrozen, Converter={x:Static dg:DataGrid.RowDetailsScrollingConverter}, ConverterParameter={x:Static dg:SelectiveScrollingOrientation.Vertical}}</span><span style=\"color: black;\">\"</span>\r\n                                            <span style=\"color: red;\">Grid.Column</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">1</span><span style=\"color: black;\">\"</span> <span style=\"color: red;\">Grid.Row</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">1</span><span style=\"color: black;\">\"</span>\r\n                                            <span style=\"color: red;\">Visibility</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{TemplateBinding DetailsVisibility}</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span>\r\n              \r\n<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">dgp</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">DataGridRowHeader</span> <span style=\"color: red;\">dgp:SelectiveScrollingGrid.SelectiveScrollingOrientation</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Vertical</span><span style=\"color: black;\">\"</span>  <span style=\"color: red;\">Grid.RowSpan</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">2</span><span style=\"color: black;\">\"</span>\r\n                                    <span style=\"color: red;\">Visibility</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{Binding RelativeSource={RelativeSource AncestorType={x:Type dg:DataGrid}}, Path=HeadersVisibility, Converter={x:Static dg:DataGrid.HeadersVisibilityConverter}, ConverterParameter={x:Static dg:DataGridHeadersVisibility.Row}}</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">/&gt;</span>\r\n</pre>\n</div>\n<p style=\"padding-left: 60px;\"><strong>Modified</strong>&nbsp;</p>\n<p><span style=\"color: red;\">\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">dgp</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">DataGridDetailsPresenter</span> <span style=\"color: red;\">dgp:SelectiveScrollingGrid.SelectiveScrollingOrientation</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{Binding Path=DataGridOwner.AreRowDetailsFrozen, Converter={x:Static dg:DataGrid.RowDetailsScrollingConverter}, ConverterParameter={x:Static dg:SelectiveScrollingOrientation.Vertical}}</span><span style=\"color: black;\">\"</span>\r\n                                            <span style=\"color: red;\">Grid.Column</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">1</span><span style=\"color: black;\">\"</span> <span style=\"color: red;\">Grid.Row</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">1</span><span style=\"color: black;\">\"</span>\r\n                                            <span style=\"color: red;\">Visibility</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{TemplateBinding DetailsVisibility}</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span>\r\n              \r\n<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">dgp</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">DataGridRowHeader</span> <span style=\"color: red;\">dgp:SelectiveScrollingGrid.SelectiveScrollingOrientation</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Vertical</span><span style=\"color: black;\">\"</span>  <span style=\"color: red;\">Grid.RowSpan</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">2</span><span style=\"color: black;\">\"</span>\r\n                                    <span style=\"color: red;\">Visibility</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dg:DataGridRow}}, Path=DataGridOwner.HeadersVisibility, Converter={x:Static dg:DataGrid.HeadersVisibilityConverter}, ConverterParameter={x:Static dg:DataGridHeadersVisibility.Row}}</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">/&gt;</span>\r\n</pre>\n</div>\n</span></p>\n<p>&nbsp;</p>\n<p>I hope this helps some of you.&nbsp;</p>",
+    "PostedDate": "2011-07-11T08:32:56.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "706380",
+    "ThreadId": "47047",
+    "Html": "<p>I've the same problem, as workaround I've created a global DataGrid style with this trigger:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">Style.Triggers</span><span style=\"color: blue;\">&gt;</span>\r\n     <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">Trigger</span>\r\n        <span style=\"color: red;\">Property</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">HeadersVisibility</span><span style=\"color: black;\">\"</span>\r\n        <span style=\"color: red;\">Value</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Column</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>         \r\n          <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">Setter</span>\r\n             <span style=\"color: red;\">Property</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">RowHeaderWidth</span><span style=\"color: black;\">\"</span>\r\n             <span style=\"color: red;\">Value</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">0</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span>\r\n     <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">Trigger</span><span style=\"color: blue;\">&gt;</span>\r\n<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">Style.Triggers</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-12-02T03:24:49.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "814189",
+    "ThreadId": "47047",
+    "Html": "<p><a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/jdebekker\">@jdebekker:</a></p>\n<p>I couldn't get that solution to work for me precisely with the .Net 4.0 DataGrid.&nbsp; I had to do the following for the second binding (though now it is inexplicably a hack):</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">DataGridRowHeader</span> <span style=\"color: red;\">SelectiveScrollingGrid.SelectiveScrollingOrientation</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Vertical</span><span style=\"color: black;\">\"</span>\n                                               <span style=\"color: red;\">Grid.RowSpan</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">2</span><span style=\"color: black;\">\"</span>\n                                               <span style=\"color: red;\">Visibility</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{Binding RelativeSource={RelativeSource Self}, Path=Parent.Parent.Parent.DataGridOwner.HeadersVisibility, Converter={x:Static DataGrid.HeadersVisibilityConverter}, ConverterParameter={x:Static DataGridHeadersVisibility.Row}}</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span><br /></pre>\n</div>\n<p>To be precise, the binding wasn't finding the DataGridOwner property on DataGridRow if I used the below (I have no idea why)</p>\n<pre><span style=\"color: blue;\">AncestorType={x:Type dg:DataGridRow}<br /><br /></span></pre>\n<p>&nbsp;</p>\n<hr />\n<p>&nbsp;</p>\n<p>Feel free to use this posted code for anything, just don't blame me.</p>",
+    "PostedDate": "2012-03-22T10:55:22.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "814630",
+    "ThreadId": "47047",
+    "Html": "<p>@<a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/skybluecodeflier\">skybluecodeflier</a></p>\r\n<p>Regretfully, my solution was targeting .NET 3.5 SP1 in combination with the DataGrid from the WPFToolkit. Until&nbsp;today I haven't used the DataGrid from .NET 4.0...At least you have found a workaround yourself :)</p>",
+    "PostedDate": "2012-03-23T06:41:53.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820542",
+    "ThreadId": "47047",
+    "Html": "<p>@skybluecodeflier:</p>\r\n<p>Can you please give me some more details of your workaround?&nbsp; I am running into this binding error (and occasional row header flicker) with the .NET 4.0 DataGrid and since that means I don't have direct access to the source for the DataGrid I'm not sure how to fix this.&nbsp; I tried the other solutions suggested (style that sets controltemplate to nothing, setting RowHeaderWidth to 0, etc.) but I am still getting the error.&nbsp; In my case I am using a grid to display the contents of a file, and I get the error if the file I load has enough in it to cause the grid to scroll.</p>\r\n<p>For what it's worth, there are a lot of RelativeSource bindings in the WPF default styles and templates that fail frequently (like ComboBoxItem, ListBoxItem, etc.).&nbsp; It would be great if Microsoft could eliminate those from the defaults.&nbsp; Some of them I can get around with styles that include OverridesDefaultStyle = True, but some of them I've had to derive custom controls to fix.&nbsp; The official answer of \"they're transient, ignore them\" is unsatisfying.&nbsp; If it's not an error, it shouldn't be an error ever.</p>",
+    "PostedDate": "2012-04-05T13:00:06.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

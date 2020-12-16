@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "127850",
+    "ThreadId": "38545",
+    "Html": "Hi DevTeam,<br>\r\n<br>\r\nthe DataGrid works fine, thank you!<br>\r\n<br>\r\nMy wish: I want to get the marked record, i.e. for Calculations. I think, I should use the CollectionView.CurrentPosition for this job:<br>\r\n<br>\r\nprivate void Window_Loaded(object sender, RoutedEventArgs e)<br>\r\n{<br>\r\n<blockquote>NorthwindDataGrid.ItemsSource = this.dc.Customers.ToList();<br>\r\nNorthwindDataGrid.DataContext = this.dc.Customers;<br>\r\nmyGrid.DataContext = this.dc.Customers;<br>\r\n// Does not work:<br>\r\nthis.cv = CollectionViewSource.GetDefaultView(this.NorthwindDataGrid.ItemsSource) as CollectionView;<br>\r\n// does not work also:<br>\r\nthis.cv = CollectionViewSource.GetDefaultView(this.NorthwindDataGrid.DataContext) as CollectionView;<br>\r\n<br>\r\nthis.cv.CurrentChanged += new EventHandler(cv_CurrentChanged);<br>\r\n</blockquote>}<br>\r\n<br>\r\nMy problem: the CollectionView.CurrentChanged does not fire, if I change the row position of the DataGrid. Regardless of binding the CollectionView on DataGrid.ItemsSource or DataGrid.DataContext.<br>\r\n<br>\r\nMy question: what goes wrong?<br>\r\n<br>\r\n-christoph\r\n",
+    "PostedDate": "2008-10-26T09:57:52.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128890",
+    "ThreadId": "38545",
+    "Html": "Have you tried using DataGrid.CurrentItem?  You also have DataGrid.CurrentCellChanged and you can listen the CurrentItemProperty changed using the DependencyPropertyDescriptor technique.\r\n",
+    "PostedDate": "2008-10-30T05:46:04.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129275",
+    "ThreadId": "38545",
+    "Html": "Hi vinsibal,<br>\r\n<br>\r\nthanks for your tip!<br>\r\n<br>\r\nThe solution is not the DataGrid to the Table (Customers) to bind but to the CollectionView.<br>\r\nThe CollectionView has methods to navigate, and my problem ist solved in one (!) line:<br>\r\n<br>\r\nvoid NorthwindDataGrid_CurrentCellChanged(object sender, EventArgs e)<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; this.cv.MoveCurrentTo(NorthwindDataGrid.CurrentItem);<br>\r\n}<br>\r\n<br>\r\nSee also: <a href=\"http://msdn.microsoft.com/en-us/library/ms754244.aspx\">How to: Navigate Through the Objects in a Data CollectionView</a>.<br>\r\n<br>\r\nbest Regards,<br>\r\n-christoph<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-31T13:30:36.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

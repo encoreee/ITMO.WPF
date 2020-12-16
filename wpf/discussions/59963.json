@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "202988",
+    "ThreadId": "59963",
+    "Html": "<p>Hi</p>\r\n<p>I have created a window which basicallty does this:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">Dim</span> dt <span style=\"color:Blue\">As</span> <span style=\"color:Blue\">New</span> System.Data.DataTable\r\n        dt.Columns.Add(<span style=\"color:#A31515\">&quot;name&quot;</span>)\r\n        dt.Columns.Add(<span style=\"color:#A31515\">&quot;Number 1&quot;</span>)\r\n        dt.Columns.Add(<span style=\"color:#A31515\">&quot;Number 2&quot;</span>)\r\n        dt.Columns.Add(<span style=\"color:#A31515\">&quot;Result&quot;</span>)\r\n        <span style=\"color:Blue\">For</span> i <span style=\"color:Blue\">As</span> <span style=\"color:Blue\">Integer</span> = 0 <span style=\"color:Blue\">To</span> 3\r\n            <span style=\"color:Blue\">Dim</span> rad <span style=\"color:Blue\">As</span> System.Data.DataRow = dt.NewRow()\r\n            rad.Item(0) = <span style=\"color:#A31515\">&quot;Name &quot;</span> &amp; i\r\n            rad.Item(1) = i\r\n            rad.Item(2) = 3\r\n            rad.Item(3) = <span style=\"color:Blue\">CDbl</span>(rad.Item(1)) + <span style=\"color:Blue\">CDbl</span>(rad.Item(2))\r\n            dt.Rows.Add(rad)\r\n        <span style=\"color:Blue\">Next</span>\r\n\r\n        dg1.ItemsSource = dt.DefaultView\r\n</pre>\r\n</div>\r\n<p>Now for the tricky part. When the data initilizes i whant the datagrid to behave like an Excel work sheet. I.e. when i change a value in the datagrid, it will automatically update the result in column nr 4.</p>\r\n<p>This is what i had to do:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>    <span style=\"color:Blue\">Private</span> <span style=\"color:Blue\">Sub</span> dg1_DataContextChanged(<span style=\"color:Blue\">ByVal</span> sender <span style=\"color:Blue\">As</span> System.Object, <span style=\"color:Blue\">ByVal</span> e <span style=\"color:Blue\">As</span> System.Windows.DependencyPropertyChangedEventArgs)\r\n        <span style=\"color:Blue\">For</span> i <span style=\"color:Blue\">As</span> <span style=\"color:Blue\">Integer</span> = 0 <span style=\"color:Blue\">To</span> 3\r\n            dt.Rows(i).Item(3) = <span style=\"color:Blue\">CDbl</span>(dt.Rows(i).Item(1)) + <span style=\"color:Blue\">CDbl</span>(dt.Rows(i).Item(2))\r\n        <span style=\"color:Blue\">Next</span>\r\n    <span style=\"color:Blue\">End</span> <span style=\"color:Blue\">Sub</span>\r\n\r\n    <span style=\"color:Blue\">Private</span> <span style=\"color:Blue\">Sub</span> dg1_CurrentCellChanged(<span style=\"color:Blue\">ByVal</span> sender <span style=\"color:Blue\">As</span> System.Object, <span style=\"color:Blue\">ByVal</span> e <span style=\"color:Blue\">As</span> System.EventArgs)\r\n        <span style=\"color:Blue\">For</span> i <span style=\"color:Blue\">As</span> <span style=\"color:Blue\">Integer</span> = 0 <span style=\"color:Blue\">To</span> 3\r\n            dt.Rows(i).Item(3) = <span style=\"color:Blue\">CDbl</span>(dt.Rows(i).Item(1)) + <span style=\"color:Blue\">CDbl</span>(dt.Rows(i).Item(2))\r\n        <span style=\"color:Blue\">Next</span>\r\n    <span style=\"color:Blue\">End</span> <span style=\"color:Blue\">Sub</span>\r\n</pre>\r\n</div>\r\n<p>&nbsp;My question is, is there a simpler way than this or Im I stuck whith this solution?`</p>\r\n<p>&nbsp;</p>\r\n<p>Regards Kenneth</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-18T08:47:31.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204326",
+    "ThreadId": "59963",
+    "Html": "<p>You can create a layer between the DataTable and the UI, essentially a business layer, where you can bind with the UI.&nbsp; There you can do the calculated values instead of in your UI.</p>",
+    "PostedDate": "2009-06-22T21:24:34.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204428",
+    "ThreadId": "59963",
+    "Html": "<p>Hi</p>\r\n<p>Not that experienced with programming to know what you mean with a buisness layer. Could you give me a short excample?</p>\r\n<p>Kenneth</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-23T04:15:43.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206248",
+    "ThreadId": "59963",
+    "Html": "<p>Why don't you just add an expression column?</p>\r\n<p>for your third column try</p>\r\n<p>dc = new DataColumn(&quot;Result&quot;)<br>dc.Expression = &quot;[Number 1] + [Number 2]&quot;</p>\r\n<p>dt.Columns.Add(dc)</p>\r\n<p>For all the options check the msdn documentation - in the index go to DataColumn.Expressions.</p>\r\n<p>Jeremy</p>",
+    "PostedDate": "2009-06-27T13:50:49.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206252",
+    "ThreadId": "59963",
+    "Html": "<p>Hmm</p>\r\n<p>&nbsp;</p>\r\n<p>Im calculating standard deviation average value and numbers of data in the previous colums in my original application... This seems a little difficult to do by Expression</p>\r\n<p>&nbsp;</p>\r\n<p>Kenneth</p>",
+    "PostedDate": "2009-06-27T14:13:21.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

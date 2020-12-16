@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "123545",
+    "ThreadId": "37230",
+    "Html": "Will there be support for column filtering based on unique values in the column?&nbsp; Similar to Excel where the column header has a combo box that drops down a list of unique values, and when you select an item it filters the list.<br>\r\n<br>\r\nI started implementing this using a HeaderTemplate, but I'm hoping I won't have to struggle through it and this functionality will be supplied to us in Version 1.<br>\r\n<br>\r\nHere's hoping!<br>\r\n<br>\r\n-Larry<br>\r\n",
+    "PostedDate": "2008-10-07T11:21:00.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123558",
+    "ThreadId": "37230",
+    "Html": "Hi Larry,<br>\r\n<br>\r\nUnfortunately I don't think we will be able to get this feature into v1 (sorry!) but we will certainly consider it for v2.<br>\r\n<br>\r\nThank you!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-10-07T12:10:23.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123562",
+    "ThreadId": "37230",
+    "Html": "OK, and thanks for the quick reply!<br>\r\n",
+    "PostedDate": "2008-10-07T12:16:33.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

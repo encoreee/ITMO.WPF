@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "454780",
+    "ThreadId": "215818",
+    "Html": "<p>Hi,</p>\r\n<p>i have a CollectionView bound to a datagrid.</p>\r\n<p>I created a GroupStyle.HeaderTemplate and everything works fine.  Now i would like to hide 2 of 3 Group Expandern.  I don't have a clue how todo that :(  I tried unsuccessfully  to find the Expandern objects...</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-06-12T09:13:26.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454918",
+    "ThreadId": "215818",
+    "Html": "<p>Can someone help me please...?</p>\r\n<p>Why its not possible to travel down the logic tree?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; void WalkDownLogicalTree(object current)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;stu(current);<br><br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;DependencyObject depObj = current as DependencyObject;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (depObj != null)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;foreach(object logicalChild in LogicalTreeHelper.GetChildren(depObj))<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;WalkDownLogicalTree(logicalChild);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;void stu(object current) <br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;MessageBox.Show(current.ToString());<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-13T06:19:36.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

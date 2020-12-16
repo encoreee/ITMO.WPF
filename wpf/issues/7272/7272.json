@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have installed the templates and the included MSI. I did a restart of VS2008 and created a new ShaderEffect. At this point I cannot find the \"Effect\" build action in the property grid.",
+    "LastUpdatedDate": "2013-02-21T18:41:51.663-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-08-11T12:14:13.743-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Unable to see \"Effect\" build action in VS",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7272
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Note that you have to first create a \"WPF Shader Effect Library\" project (which should be available once you installed the templates).  After you've done that, you should be able to add Shader Effect items.  It's the Library project that provides the Effect build action.",
+      "PostedDate": "2008-08-12T16:31:01.373-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I would really like to add some wpf hardware effects to an existing project.  Any suggestions?\r\n",
+      "PostedDate": "2008-08-12T22:51:45.107-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is it possible to take an existing project and add the \"WPF Shader Effect Library\" stuff to it?\r\nI've tried to take the bits that look \"special\" in the generated project and add them to an existing project, and it still didn't let me select \"Effect\" as a \"Build Action\"\r\n\r\nBits I copied over:\r\n\"UsingTask\" element\r\n\"EffectCompile\" target\r\n\"PrepareResourcesDependsOn\" modification\r\n\"Service Include=\"{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}\"\" - This is the one bit I really don't know anything about. Do I need it?\r\n",
+      "PostedDate": "2009-02-09T09:54:47.453-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, I think I might have been being stupid, and I'd clicked the \"Open for browsing\" button on the warning dialog instead of \"Open normally\".\r\nOTOH, I still had a few problems. I've got a feeling you *might* not see \"Effect\" in the Build Action list until it's been used once in that project already. Easy workaround: find the fx file in the csproj file, and change the xml element name from \"None\" to \"Effect\".",
+      "PostedDate": "2009-02-10T09:17:22.63-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It is possible, but you'll have to edit the msbuild project file manually.  If you're unsure how to do this, simply create a WPF Shader Effect Library & look at what that does in the csproj file.  You can always do the same thing to an existing project.",
+      "PostedDate": "2009-04-03T13:17:25.27-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:51.663-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

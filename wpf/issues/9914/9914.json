@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When you create a column that is either Hidden or Collapsed, the column prevents resizing of the  visible column directly to the right of the hidden column. In the XAML below, when one mouses over the C and attempts the resize, it fails. One can resize from the A column.        \n \n<Controls:DataGrid>\n            <Controls:DataGrid.Columns>\n                <Controls:DataGridTextColumn Binding=\"{Binding A}\"\n                                             Header=\"S\" />\n                <Controls:DataGridTextColumn Binding=\"{Binding B}\"\n                                             Header=\"B\"\n                                             Visibility=\"Collapsed\" />\n                <Controls:DataGridTextColumn Binding=\"{Binding C}\"\n                                             Header=\"C\" />\n     </Controlls:DataGrid>",
+    "LastUpdatedDate": "2013-02-21T18:41:17.733-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-02T12:05:10.677-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid DataGridTextColumn.Visibility Interferes With Column Resizing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9914
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We've confirmed this is a bug and will fix it in a future release.",
+      "PostedDate": "2009-05-05T14:01:52.29-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-05T14:01:53.803-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:17.733-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

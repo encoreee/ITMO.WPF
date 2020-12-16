@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "200870",
+    "ThreadId": "59336",
+    "Html": "<p>Hi,<br><br>I am using datagrid and displaying the data dynamically by using the property ItemSource. Data are displaying correctly, but an issue is first column of any row in the datagrid result is shifting (one space is adding). If you scroll vertically, other row of the first column is shifting randomly (Last shifted column is displaying correctly). Please provide me a solution. XAML looks like,</p>\r\n<p>&lt;Grid&gt; <br>&lt;dg:DataGrid<br>x:Name=&quot;lsvResults&quot;<br>Margin=&quot;5,5,5,5&quot;<br>AutoGenerateColumns=&quot;True&quot; <br>SelectionMode=&quot;Extended&quot;<br>IsReadOnly=&quot;True&quot;<br>GridLinesVisibility=&quot;Vertical&quot; <br>CanUserReorderColumns=&quot;False&quot;<br>CanUserResizeColumns=&quot;False&quot;<br>HeadersVisibility=&quot;Column&quot;<br>VerticalGridLinesBrush=&quot;DarkGray&quot;<br>HorizontalGridLinesBrush=&quot;#FFADD8E6&quot;<br>SelectionUnit=&quot;FullRow&quot; ItemsSource=&quot;{Binding}&quot;/&gt; <br>&lt;TextBlock x:Name=&quot;txtNoItems&quot; Margin=&quot;5,45,5,5&quot; <br>Text=&quot;No items found in selected list.&quot; FontSize=&quot;12&quot; Visibility=&quot;Collapsed&quot; /&gt;<br>&lt;/Grid&gt;<br><br>Thanks,<br>Mani</p>",
+    "PostedDate": "2009-06-12T08:56:47.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200997",
+    "ThreadId": "59336",
+    "Html": "<p>Hi Mani,</p>\r\n<p>I think this is the same issue which was encountered in this thread: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=47047\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=47047</a>.&nbsp; We do have a bug tracking this internally and will fix it in a future release.&nbsp;</p>\r\n<p>Thanks,<br>Samantha</p>",
+    "PostedDate": "2009-06-12T14:00:24.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

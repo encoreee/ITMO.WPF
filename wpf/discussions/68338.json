@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "232409",
+    "ThreadId": "68338",
+    "Html": "<p>I've implemented a filtering mechanism where the user can pull down a menu from a column header and type in some text to filter the items. The problem I'm having is if they are specifying a filter value on a column that is beyond the initial view, ie: where they had to scroll to see the column, and they choose a value that produces no results, the scrollbars disappear and the grid scrolls itself back to the beginning. These 2 features combined make it impossible for the user to then choose that column and remove or choose a valid value because they can't scroll to see the column anymore. Is there a workaround or is this planned to be fixed?</p>",
+    "PostedDate": "2009-09-08T14:28:50.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290127",
+    "ThreadId": "68338",
+    "Html": "<p>I'm facing the same issue, did you find a solution for this problem?</p>",
+    "PostedDate": "2010-02-12T07:26:22.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290128",
+    "ThreadId": "68338",
+    "Html": "<p>&nbsp;Not really, I just added a toolbar button that disables all of my filters if the users get into that situation, totally a sub-optimal solution, but wasn't really any other option that I found.</p>",
+    "PostedDate": "2010-02-12T07:28:25.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

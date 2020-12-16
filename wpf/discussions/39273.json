@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "130309",
+    "ThreadId": "39273",
+    "Html": "Hi,<br>\r\nCreating and Binding at runtime or code behind is possible with DatGridColumn together with DatGridBoundColumn.<br>\r\nI would like to create and bind to a <span style=\"font-size:10pt;color:#a31515;font-family:'courier new'\">DataGridTemplateColumn </span>at runtime or code behind.<br>\r\nThe control I want to bind to is a DatePicker.<br>\r\n<br>\r\nPlease help.<br>\r\nWorstCase<br>\r\n",
+    "PostedDate": "2008-11-05T12:30:04.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130320",
+    "ThreadId": "39273",
+    "Html": "Here is an example:<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">\r\n<p>DataGridTemplateColumn</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> templateColumn = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataGridTemplateColumn</span><span style=\"font-size:13px\">();<br>\r\ntemplateColumn.Header = </span><span style=\"font-size:13px;color:#a31515\">&quot;Date&quot;</span><span style=\"font-size:13px\">;<br>\r\n<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">DataTemplate</span><span style=\"font-size:13px\"> cellTemplate = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataTemplate</span><span style=\"font-size:13px\">();<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">FrameworkElementFactory</span><span style=\"font-size:13px\"> cellTemplateFactory = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">FrameworkElementFactory</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#0000ff\">typeof</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">TextBlock</span><span style=\"font-size:13px\">));<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\"> binding = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#a31515\">&quot;Date&quot;</span><span style=\"font-size:13px\">);<br>\r\nbinding.StringFormat = </span><span style=\"font-size:13px;color:#a31515\">&quot;d&quot;</span><span style=\"font-size:13px\">;<br>\r\ncellTemplateFactory.SetBinding(</span><span style=\"font-size:13px;color:#2b91af\">TextBlock</span><span style=\"font-size:13px\">.TextProperty, binding);<br>\r\ncellTemplate.VisualTree = cellTemplateFactory;<br>\r\ncellTemplate.Seal();<br>\r\ntemplateColumn.CellTemplate = cellTemplate;<br>\r\n<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">DataTemplate</span><span style=\"font-size:13px\"> cellEditingTemplate = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataTemplate</span><span style=\"font-size:13px\">();<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">FrameworkElementFactory</span><span style=\"font-size:13px\"> cellEditingTemplateFactory = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">FrameworkElementFactory</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#0000ff\">typeof</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">DatePicker</span><span style=\"font-size:13px\">));<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\"> binding2 = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#a31515\">&quot;Date&quot;</span><span style=\"font-size:13px\">);<br>\r\nbinding2.Mode = </span><span style=\"font-size:13px;color:#2b91af\">BindingMode</span><span style=\"font-size:13px\">.TwoWay;<br>\r\nbinding2.UpdateSourceTrigger = </span><span style=\"font-size:13px;color:#2b91af\">UpdateSourceTrigger</span><span style=\"font-size:13px\">.PropertyChanged;<br>\r\ncellEditingTemplateFactory.SetBinding(</span><span style=\"font-size:13px;color:#2b91af\">DatePicker</span><span style=\"font-size:13px\">.SelectedDateProperty, binding2);<br>\r\ncellEditingTemplate.VisualTree = cellEditingTemplateFactory;<br>\r\ncellEditingTemplate.Seal();<br>\r\ntemplateColumn.CellEditingTemplate = cellEditingTemplate;<br>\r\n<br>\r\nDataGrid_Standard.Columns.Add(templateColumn);<br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-11-05T13:34:06.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130349",
+    "ThreadId": "39273",
+    "Html": "Thank you very much, Vinsibal.<br>\r\nNow it is working as exspected. I don't use the TextBox CellTemplate so I see the DatePicker directly. Should I use that TextBox CellTemplate anyway?<br>\r\n<br>\r\nStill some problems with <span style=\"font-size:13px;color:#a31515\">DataGrid.RowValidationRules.<br>\r\nWill read some more samples of your blog first before asking for that again.<br>\r\nThank you.<br>\r\nWorstCase<br>\r\n</span>\r\n",
+    "PostedDate": "2008-11-05T14:50:42.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130492",
+    "ThreadId": "39273",
+    "Html": "You don't have to use a TextBlock.  It is up to you.\r\n",
+    "PostedDate": "2008-11-06T06:02:47.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

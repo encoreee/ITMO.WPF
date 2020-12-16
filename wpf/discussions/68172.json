@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "231844",
+    "ThreadId": "68172",
+    "Html": "<p>Hi!</p>\r\n<p>When you set the DateTimePicker's property IsEnabled to false, the control's presentation does not change. The effect reminds me more of TextBox.IsReadOnly=true then TextBox.IsEnabled=false. Is there a way to let the DateTimePicker look &quot;more disabled&quot;?</p>\r\n<p>Best Regards,<br>Oliver Hanappi</p>",
+    "PostedDate": "2009-09-07T08:06:03.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

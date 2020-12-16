@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When creating a simple pie chart, similar to the examples one would find online, one gets BindingExpression errors on the output window:\n \nSystem.Windows.Data Error: BindingExpression path error: 'ActualLegendItemStyle' property not found on 'System.Windows.Controls.DataVisualization.Charting.PieSeries' 'System.Windows.Controls.DataVisualization.Charting.PieSeries' (HashCode=24163637). BindingExpression: Path='ActualLegendItemStyle' DataItem='System.Windows.Controls.DataVisualization.Charting.PieSeries' (HashCode=24163637); target element is 'System.Windows.Controls.DataVisualization.Charting.LegendItem' (Name=''); target property is 'Style' (type 'System.Windows.Style')\n \nThe sample code to generate the chart looks like this:\n    <chartingToolkit:Chart>\n            <chartingToolkit:Chart.Series>\n                <chartingToolkit:PieSeries>\n                    <chartingToolkit:PieSeries.ItemsSource>\n                        <controls:ObjectCollection>\n                            <sys:Double>1</sys:Double>\n                            <sys:Double>2.3</sys:Double>\n                            <sys:Double>3.5</sys:Double>\n                            <sys:Double>5</sys:Double>\n                        </controls:ObjectCollection>\n                    </chartingToolkit:PieSeries.ItemsSource>\n                </chartingToolkit:PieSeries>\n            </chartingToolkit:Chart.Series>\n        </chartingToolkit:Chart>\n \nThis has also been reported with the Silverlight version with the charts:\nhttp://forums.silverlight.net/forums/t/153144.aspx",
+    "LastUpdatedDate": "2014-06-11T01:51:41.943-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-12-07T09:52:11.18-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Chart with pie series: BindingExpression error with ActualLegendItemStyle",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 14840
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

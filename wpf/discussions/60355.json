@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "204406",
+    "ThreadId": "60355",
+    "Html": "<p>Dear all,<br> <br> I am working on a LOB project where we are using Wpf and I cannot understand the behaviour of the DataGrid. I have put together a <a title=\"sample project\" href=\"http://cid-e7302c0a153ae5bb.skydrive.live.com/self.aspx/.Public/WpfGridValidation.zip\">sample project</a> using various recommendations. <br> <br> Here are some notes about the project:<br> 1) All business objects implement <a title=IEditableObject href=\"http://msdn.microsoft.com/en-us/library/system.componentmodel.ieditableobject.aspx\">IEditableObject</a> , <a title=IDataErrorInfo href=\"http://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx\">IDataErrorInfo</a> &nbsp; and <a title=INotifyPropertyChanged href=\"http://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.propertychanged.aspx\">INotifyPropertyChanged</a> interfaces.<br> 2) The validation rules of the DataGrid is bound to IDataErrorInfo using the technique described in this <a title=article href=\"http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#errorinfo\">article</a> .</p>\r\n<p>EDIT: I have removed the long code listing, if you want to see my code please go <a title=here href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/90e71120-c09f-4519-ab74-5dedb16e88e5\">here</a> or download the <a title=\"sample project\" href=\"http://cid-e7302c0a153ae5bb.skydrive.live.com/self.aspx/.Public/WpfGridValidation.zip\">sample project</a>.</p>\r\n<p>Here are my questions/problems:<br> <br> 1) Where the grid loads it should display a validation problem for the one person who does not have an age set, do can I achieve this?<br> 2) If I enter something incorrect and tab out of the field pressing Esc will not fire CancelEdit, how come? Even if I go back into the field pressing Esc will not fire CancelEdit but the value still change back, but the underlying property is not changed.<br> 3) If I enter something incorrect in Age and tab out of the field and return, F2 will not allow me to correct the value.<br> 4) If I enter something incorrect then I cannot change any other field before the validation problem is corrected, how can I allow this?<br> 5) Try the following<br> &nbsp;&nbsp; a) enter -5 in age (you should get a validation error indication)<br> &nbsp;&nbsp; b) tab out of the field<br> &nbsp;&nbsp; c) tab back into the field and enter 500<br> &nbsp;&nbsp; e) tab out of the field<br> &nbsp;&nbsp; f) tab back into the field and hit Esc - why does the validation indication disappear but the value 500 remains?</p>",
+    "PostedDate": "2009-06-23T02:30:08.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204657",
+    "ThreadId": "60355",
+    "Html": "<p>Hi Pawaw,</p>\r\n<p>1) If you want your validation rule to be applied from the beginning of the application run (and not when you try to update values) change ValidationStep to &quot;RawProposedValue&quot; (right now it is set to &quot;UpdatedValue&quot;).</p>\r\n<p>3) This is likely a bug -- we will investigate.</p>\r\n<p>4) This is by design; you will need to change your rules&nbsp;so they don't return an error.</p>\r\n<p>5) Pressing esc causes the DataGrid to intentionally not apply the validation rule.</p>\r\n<p>Hope some of this helps!</p>\r\n<p>Alexis</p>",
+    "PostedDate": "2009-06-23T13:57:07.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204860",
+    "ThreadId": "60355",
+    "Html": "<p>Hi Alexis,</p>\r\n<p>Thank you for you guidance.</p>\r\n<p>Do you know of a way for me to override the grid behaviour mentioned in 4)? Imagine you have an object with StartData and EndDate (and validation implements that StartDate must be prior to EndDate), lets say that the default value of StartDate is 1 Jan 2009 and for EndDate 3 Jan 2009, now if the user wants to correct the StartDate to 5 Jan 2009 and EndDate to 7 Jan 2009 he must change the EndDate before the StartDate due to this design.</p>\r\n<p>To solve my edit problem in 2) and 5) I have made the following interface</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>    <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">interface</span><span style=\"color:MediumTurquoise\"> IEditableObjectProperty\r\n    </span>{\r\n        <span style=\"color:Blue\">void</span> CancelEdit(String propertyName);\r\n    }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>This interface allows an object to support cancellation of user inputs to a specific property. In the DataGrid I then subscribe to the CellEditEnding event:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">void</span> dataGrid_CellEditEnding(<span style=\"color:Blue\">object</span> sender, Microsoft.Windows.Controls.DataGridCellEditEndingEventArgs e)\r\n        {\r\n            <span style=\"color:Blue\">if</span> (e.EditAction == DataGridEditAction.Cancel)\r\n            {\r\n                IEditableObjectProperty obj = e.Row.Item <span style=\"color:Blue\">as</span> IEditableObjectProperty;\r\n                String property = ((Binding)e.Column.ClipboardContentBinding).Path.Path;\r\n                obj.CancelEdit(property);\r\n            }\r\n        }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>In my person class <span style=\"color:MediumTurquoise\">IEditableObjectProperty</span> is implement like this:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">void</span> CancelEdit(<span style=\"color:Blue\">string</span> propertyName)\r\n        {\r\n            <span style=\"color:Blue\">if</span> (inTxn)\r\n            {\r\n                PropertyInfo pi = <span style=\"color:Blue\">this</span>.GetType().GetProperty(propertyName);\r\n                <span style=\"color:Blue\">object</span> backupValue = pi.GetValue(backupData, <span style=\"color:Blue\">null</span>);\r\n                pi.SetValue(<span style=\"color:Blue\">this</span>, backupValue, <span style=\"color:Blue\">null</span>);\r\n            }\r\n        }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>If anybody is interested here is the new full <a title=\"project code\" href=\"http://cid-e7302c0a153ae5bb.skydrive.live.com/self.aspx/.Public/WpfGridValidation.zip\">project code</a>.</p>",
+    "PostedDate": "2009-06-24T01:31:00.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605941",
+    "ThreadId": "60355",
+    "Html": "<p>Hi Pawaw,&nbsp;</p>\r\n<p>Do you know how to put your example working on .net Framework 4? because I tried to migrate your code but It seems that the post validation after the 2nd ESC is not getting called. :(</p>",
+    "PostedDate": "2011-05-02T09:14:09.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "686273",
+    "ThreadId": "60355",
+    "Html": "<p>As for the second issue of dates, I would solve this by updating the  end date in the code behind/view model after the start date is changed.  Here's an example for what the property would look like in the view  model:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>        <span style=\"color: blue;\">private</span> DateTime _startDate;\r\n        <span style=\"color: blue;\">public</span> DateTime StartDate\r\n        {\r\n            <span style=\"color: blue;\">get</span> { <span style=\"color: blue;\">return</span> _startDate; }\r\n            <span style=\"color: blue;\">set</span>\r\n            {\r\n                _startDate = value;\r\n                <span style=\"color: blue;\">this</span>.UpdateEndDate();\r\n                <span style=\"color: blue;\">this</span>.OnPropertyChanged(<span style=\"color: #a31515;\">\"StartDate\"</span>);\r\n            }\r\n        }\r\n\r\n        <span style=\"color: blue;\">private</span> DateTime _endDate;\r\n        <span style=\"color: blue;\">public</span> DateTime EndDate\r\n        {\r\n            <span style=\"color: blue;\">get</span> { <span style=\"color: blue;\">return</span> _endDate; }\r\n            <span style=\"color: blue;\">set</span>\r\n            {\r\n                _endDate = value;\r\n                <span style=\"color: blue;\">this</span>.OnPropertyChanged(<span style=\"color: #a31515;\">\"EndDate\"</span>);\r\n            }\r\n        }\r\n\r\n        <span style=\"color: blue;\">private</span> <span style=\"color: blue;\">void</span> UpdateEndDate()\r\n        {\r\n            <span style=\"color: blue;\">this</span>.EndDate = <span style=\"color: blue;\">this</span>.StartDate.AddDays(1);\r\n        }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Then I would simply have the property on the grid bound to this, and the end date should always be set past the start date when the start date is changed. If you don't like this, you could also use a code behind with a cell value changed event that would also update the end date.</p>\r\n<p>That's just my first thought. But there might also be other ways around it.</p>",
+    "PostedDate": "2011-10-19T04:14:32.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "982643",
+    "ThreadId": "60355",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>The BeginEdit is called twice. And I have to hit ESC two times to invoke CancelEdit. Any idea how to get over that bug ?</p>\r\n<p>http://stackoverflow.com/questions/4450878/wpf-datagrid-calls-beginedit-on-an-ieditableobject-two-times</p>\r\n",
+    "PostedDate": "2013-01-03T05:28:52.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1421893",
+    "ThreadId": "60355",
+    "Html": "Following the note 5) if we use UpdateSourceTrigger=&quot;PropertyChanged&quot; the validation indication won't disappear. The value is reverted due the implementation of the IEditableObject but the validation indication never disappear following the steps in note 5)<br />\n",
+    "PostedDate": "2015-04-30T13:52:53.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

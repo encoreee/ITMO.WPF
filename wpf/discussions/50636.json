@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "169815",
+    "ThreadId": "50636",
+    "Html": "Hi,<br>\r\n<br>\r\nIn the current implementation of the Ribbon control, I found no way to use a single RibbonCommand with differents LabelTitle.<br>\r\n<br>\r\nI have to define and bind a specific RibbonCommand only for customize LabelTitle.<br>\r\nNevertheless, the business logic is the same and depends just of the CommandParameter.<br>\r\n<br>\r\nPerhaps the title, tooltip and image properties should be be available with RibbonButton instead of the underlying Command...<br>\r\n<br>\r\nSo, how can I do to not have to define a RibbonCommand when the business logic is the same? Only LabelTitle, and of course, CommandParameter must be changed.<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2009-03-19T05:13:53.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169819",
+    "ThreadId": "50636",
+    "Html": "It's a bit of a hack, but one way to do it could be to make each RibbonCommand a simple wrapper around underlying functionality that implements the actual business logic. Then, you could effectively have multiple RibbonCommands perform the exact same action, or the same action with some variance based on how it is invoked.<br>\r\n",
+    "PostedDate": "2009-03-19T05:26:00.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169829",
+    "ThreadId": "50636",
+    "Html": "Thanks for you response.<br>\r\nBut with your solution, I always have to define one CommandRibbon for each RibbonControl. That represents an unnecessary work overload and is not elegant.<br>\r\nWhat is the position of the Ribbon control developpers?<br>\r\n",
+    "PostedDate": "2009-03-19T06:23:36.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170052",
+    "ThreadId": "50636",
+    "Html": "Hi Cyber-Sinh,<br>\r\n<br>\r\nIn Ribbon V1 we're doing away with the RibbonCommand class, and as you suggest LabelTitle will be on the RibbonButton (and other controls) instead of on the Command.  This way you'll be able to assign the same command to multiple controls and give them all a unique title.  I don't believe there is a workaround for this in the CTP.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-03-19T17:52:16.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

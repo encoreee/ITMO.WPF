@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "153296",
+    "ThreadId": "45930",
+    "Html": "Hello,<br>\r\n<br>\r\ni build a datatemplate for my own type.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;DataTemplate&nbsp; DataType=&quot;{x:Type local:GoList+Go}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;StackPanel&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBlock Background=&quot;{DynamicResource DataGridHeaderBackgroundBrush}&quot; Text=&quot;{Binding Path=Day}&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBlock Text=&quot;{Binding Path=Text}&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/StackPanel&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n<br>\r\nIf my own type is in the datagridcell he dont use the datatemplate of my type. It only shows me the output of the ToString() Methode from my Type.<br>\r\n<br>\r\nIf i put my type into a ItemsControl he use my datatemplate. So my question... have i to build my own datatemplate <br>\r\nfor the DataGridCell because the DataGridCell cant assume my DataTemplate from my own typ? I hope i explained my problem well. If you have any question ask me :)<br>\r\n<br>\r\nbest regards<br>\r\n<br>\r\nmartin\r\n",
+    "PostedDate": "2009-02-02T04:53:23.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153592",
+    "ThreadId": "45930",
+    "Html": "Try putting it in a DataGridTemplateColumn.CellTemplate.\r\n",
+    "PostedDate": "2009-02-02T22:02:24.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

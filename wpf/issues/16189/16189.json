@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have ribbon with quick access toolbar and data bound ContextualTabGroupsSource and ItemsSource. So tabs are generated dynamically and that works perfectly. But after contextual tab group is added and tab with this group set to ContextualTabGroupHeader ribbon cannot properly meusure and/or arrange controls in RibbonTitlePanel.\n \nThis occurs only sometimes when there is not enough space for all controls in RibbonTitlePanel. Sometimes quick access toolbar is blinking, whole UI freezes and all actions are nearly impossible.",
+    "LastUpdatedDate": "2013-02-21T18:40:11.197-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-06-29T03:06:15.32-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon quick access toolbar and contextual tab groups coexistence measure/arrange bad behavior",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 16189
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

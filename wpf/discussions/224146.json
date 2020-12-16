@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "482452",
+    "ThreadId": "224146",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to use Blend3/4 to make visual changes to one of my project that make use of Accordion that is included in the Feb release(this is .NET 3.5 target).</p>\r\n<p>However, both&nbsp;would come out with 'object reference not set to an instance of an object' error when it tried to load the AccordionItem control.</p>\r\n<p>I have isolated that to be something about the mix between Blend and AccordionItem as a blank WPFApplication created where I just drag an Accordion then AccordionItem into it would result in the exact same issue.</p>\r\n<p>Does anyone know how I can style AccordionItem in Blend 3/4 ?</p>",
+    "PostedDate": "2010-08-19T12:27:18.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "482568",
+    "ThreadId": "224146",
+    "Html": "<p>Looks like a bug in the AccordionItem some where that expects thing in a sequence that is not present when being loaded in Blend.</p>\r\n<p>The only work around I can find is to click on those 'null pointer exceptions' one by one and make trivial change to the XAML(any random thing to invalidate the XAML then change it back)&nbsp;and some how the error would go away.</p>\r\n<p>This means I need to have both VS 2008 and Blend(3 in this case) opened and never close Blend. Just save the changes, let VS 2008 pickup and recompile ...</p>\r\n<p>Frustrating and seems to be a bug being there for quite a while.</p>",
+    "PostedDate": "2010-08-19T19:07:11.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

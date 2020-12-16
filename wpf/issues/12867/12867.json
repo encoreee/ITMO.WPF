@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am using the datepicker control in an xbap application running under partial trust - internet zone, this way i do not need to issue certificates.\nwhen browsing throught the datepicker and ultimately selecting a date, I get an ui permission error.\nIf the UIPermission is changes to \"All windows and Events\", it works, but now i need to sign it and issue certificates.\n \nThey previous release of the toolkit did not have this issue.\n \nAny ideas?",
+    "LastUpdatedDate": "2013-02-21T18:40:37.06-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-04-28T01:27:36.363-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "datepicker - xbap - uipermission error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 12867
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have the same issue with WPFToolkit 3.5.40128.1",
+      "PostedDate": "2010-06-09T14:56:45.41-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Personally, I consider this issue as a showstopper. We publish applications in internet and can't elevate permissions.\r\n\r\nI haven't seen it with previous versions of WPFToolkit.",
+      "PostedDate": "2010-06-09T15:06:25.53-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-10T06:29:02.68-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-02T01:46:02.827-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:37.06-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

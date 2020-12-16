@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "133040",
+    "ThreadId": "40089",
+    "Html": "By reference to Josh Smith's 'Drag and Drop Items in a WPF ListView'(http://www.codeproject.com/KB/WPF/ListViewDragDropManager.aspx),<br>\r\nI implement my version of DataGridDragDropManager, makes DataGrid support draging one DataGridRow from one row to another row.<br>\r\n<br>\r\nAnyone who want make datagrid support row drag and drop can refernce to Josh Smith's code. <br>\r\nOnly a few modification need be made to port it from for ListView to for DataGrid.<br>\r\n<br>\r\nI hope DataGrid can support reorder row by drag and drop in future.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-17T02:57:30.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

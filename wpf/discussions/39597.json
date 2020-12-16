@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "131381",
+    "ThreadId": "39597",
+    "Html": "Hi again,<br>\r\n<br>\r\nMaybe I'm going blind or something but I've looked everywhere (or what seemed to be) for a sample of somebody applying the sample themes used on the wpf grid samples (seen on <a href=\"http://windowsclient.net/wpf/wpf35/wpf-35sp1-toolkit-datagrid-feature-walkthrough.aspx?CommentPosted=true#commentmessage\">this page</a>) but I can't find some sample code anywhere. On that page, there are two column header styles (the orange and the blue/green ones), does anybody know how to apply these styles to a grid? once i have a bit of sample code on that i'll be well on my way.<br>\r\n<br>\r\nthanks a million!!<br>\r\nsean<br>\r\n",
+    "PostedDate": "2008-11-10T07:40:15.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131438",
+    "ThreadId": "39597",
+    "Html": "If you want to see the code for what is on that page you can take a look at the hand's on lab, <a href=\"http://windowsclient.net/downloads/folders/hands-on-labs/entry76491.aspx\">http://windowsclient.net/downloads/folders/hands-on-labs/entry76491.aspx</a>.\r\n",
+    "PostedDate": "2008-11-10T10:13:22.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140167",
+    "ThreadId": "39597",
+    "Html": "I too was looking forever. Here you go:<br>\r\n<br>\r\n&lt;Application x:Class=&quot;DHPredictions.Wpf.App&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp;&nbsp; StartupUri=&quot;PopNavigator.xaml&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Application.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ResourceDictionary&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ResourceDictionary.MergedDictionaries&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- makes all of the controls in your app look Aero, be sure to include PresentationFramework.Aero as a reference to this project--&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ResourceDictionary Source=&quot;/PresentationFramework.Aero;component/themes/Aero.normalcolor.xaml&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- makes the DataGrid have aero-ish headers --&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ResourceDictionary Source=&quot;/WPFToolkit;V3.5.31016.1;component/DataGrid/Themes/Aero.NormalColor.xaml&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ResourceDictionary.MergedDictionaries&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ResourceDictionary&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Application.Resources&gt;<br>\r\n&lt;/Application&gt;<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-12T13:23:19.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140170",
+    "ThreadId": "39597",
+    "Html": "These links look interesting too<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/wpfskins.aspx<br>\r\nhttp://dotnet.org.za/rudi/archive/2008/11/06/wpf-themes-released.aspx<br>\r\nhttp://dotnet.org.za/rudi/archive/2008/11/07/wpf-themes-update.aspx<br>\r\nhttp://www.codeplex.com/wpfthemes <br>\r\n<br>\r\n<br>\r\n<br>\r\nhttp://dotnet.org.za/rudi/archive/2008/11/07/wpf-themes-update.aspx<br>\r\n<br>\r\nhttp://dotnet.org.za/rudi/archive/2008/11/06/wpf-themes-released.aspx\r\n",
+    "PostedDate": "2008-12-12T13:25:50.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

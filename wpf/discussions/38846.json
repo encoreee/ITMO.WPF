@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "128858",
+    "ThreadId": "38846",
+    "Html": "Hi<br>\r\nI'm using the new DataGrid to build a view of users. <br>\r\nAll the column is in ReadOnly mode (I set IsReadOnly=&quot;True&quot; in the XAML)<br>\r\nOn every row I add a button called &quot;Modify&quot;  (it is in a TemplateColumn).<br>\r\nI would like that when the user press the Modify button, one the cells get the focus and enter in Edit mode.<br>\r\n<br>\r\n(I try to create a classic edit grid with Modify, Delete, Cancel button like an ASP.NET GridView)<br>\r\n<br>\r\nIs it possible? How? <br>\r\n<br>\r\nThanks<br>\r\nemanuele<br>\r\n",
+    "PostedDate": "2008-10-30T04:04:41.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128875",
+    "ThreadId": "38846",
+    "Html": "dabbling around the new WPF datagrid (part 1,2,3)&nbsp; <br>\r\nhttp://blogs.msdn.com/jaimer/archive/2008/08/11/dabbling-around-the-new-wpf-datagrid-part-1.aspx<br>\r\n",
+    "PostedDate": "2008-10-30T05:03:48.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128894",
+    "ThreadId": "38846",
+    "Html": "There is another sample here as well, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx</a>.\r\n",
+    "PostedDate": "2008-10-30T05:53:44.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

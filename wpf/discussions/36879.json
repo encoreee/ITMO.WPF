@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "122344",
+    "ThreadId": "36879",
+    "Html": "I have seen the ItemsSource property bound to an ObjectDataProvider in XAML, but I have yet to see how to do it in code.<br>\r\n<br>\r\nAs the DataGridComboBoxColumn does not derive from Control - there is no SetBinding() method available.<br>\r\n<br>\r\nIs there a workaround for this?<br>\r\n",
+    "PostedDate": "2008-10-02T04:41:26.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122352",
+    "ThreadId": "36879",
+    "Html": "<p>It is just the same as in xaml where you just set the ItemSource in code.&nbsp; For example,<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\"><br>\r\nDataGridComboBoxColumn</span></span><span style=\"font-size:13px\"> comboBoxColumn = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span></span><span style=\"font-size:13px\">();<br>\r\ncomboBoxColumn.ItemsSource = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">IEnumerable</span></span><span style=\"font-size:13px\">&lt;T&gt;();\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>where you replace IEnumerable&lt;T&gt; with the collection that you want to set for the combobox.</p>\r\n",
+    "PostedDate": "2008-10-02T05:29:50.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122357",
+    "ThreadId": "36879",
+    "Html": "The problem is that my collection will change run-time - that is why I use the ObjectDataProvider.<br>\r\n<br>\r\nWith a regular ComboBox, I do this:<br>\r\nComboBox _comboBox = new ComboBox();<br>\r\nBinding _binding = new Binding(){Source = someObjectProvider};<br>\r\n_comboBox.SetBinding(ComboBox.ItemsSourceProperty, _binding);<br>\r\n<br>\r\nThis is not possible, when the DataGridComboBox does not derive from Control.<br>\r\n",
+    "PostedDate": "2008-10-02T05:39:44.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122375",
+    "ThreadId": "36879",
+    "Html": "It is still possible using the BindingOperations class.<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">\r\n<p>DataGridComboBoxColumn</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> comboBoxColumn = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span></span><span style=\"font-size:13px\">();<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">Binding</span></span><span style=\"font-size:13px\"> binding = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">Binding</span></span><span style=\"font-size:13px\"> { Source =&nbsp;someObjectProvider</span><span style=\"font-size:13px\"> };<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">BindingOperations</span></span><span style=\"font-size:13px\">.SetBinding(comboBoxColumn, </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span></span><span style=\"font-size:13px\">.ItemsSourceProperty, binding);\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-10-02T06:54:57.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122428",
+    "ThreadId": "36879",
+    "Html": "Exactly what I was looking for - thank you very much!<br>\r\n",
+    "PostedDate": "2008-10-02T10:32:41.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

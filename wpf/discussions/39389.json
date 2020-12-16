@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130676",
+    "ThreadId": "39389",
+    "Html": "I am fairly new to WPF, and I'm trying to migrate an existing Winforms App and I'm having trouble with the DataGrid. My Grid is dynamically bound to a DataTable. I have auto generating columns turned on. I know some of the fields will always be returned and I need to update a cell based on some of the other cell values, but there doesn't seem to be a Row cell's collection like the Winforms DataGrid. I am trying to do this using the datagrid's LoadingRow event and I can get the values, but I don't have access to the cell I'm trying to set the style to. Any ideas? <br>\r\n<br>\r\nAlso, I am not trying to change the cell's value - I am trying to change the style to be a different color and add an icon based on the other cells in the row.\r\n",
+    "PostedDate": "2008-11-06T15:54:52.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130830",
+    "ThreadId": "39389",
+    "Html": "This post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/09/16/wpf-datagrid-styling-rows-and-columns-based-on-header-conditions-and-other-properties.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/09/16/wpf-datagrid-styling-rows-and-columns-based-on-header-conditions-and-other-properties.aspx</a>, shows how to style rows and columns based on particular properties.  It may be able to help you out for your scenario.\r\n",
+    "PostedDate": "2008-11-07T08:05:44.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

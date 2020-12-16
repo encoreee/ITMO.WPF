@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "The memory leak was fixed in the January 2009 release.",
+    "ClosedDate": "2009-02-18T16:26:55.317-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I think there's a memory leak in the DatePicker of WPF Toolkit (October 2008 Release).\n \nI've attached a simple WPF application project (using VS2008SP1) to demonstrate this problem. Further, a profiler is needed to see what's going on inside (I'm using .NET Memory Profiler 3.1).\n \nBasically, in the application there are two windows: Window1 and ChildWindow1. In the Window1, there's a Button to open ChildWindow1. In the ChildWindow1, there's a DatePicker. Everytime ChildWindow1 is opened and closed (using the Window1's Button), its instances remain in the memory (indicates a memory leak) since there's always a reference that hold to the DatePicker. If I remove the DatePicker from the ChildWindow1, the ChildWindow1 is released appropriately. Also, when I open the ChildWindow1 for the first time, it shows up a little bit longer than I expected (compared to other simple controls). I presume there's also a performance issue in it.",
+    "LastUpdatedDate": "2013-05-16T05:31:14.803-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-06T09:07:05.537-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker's Memory Leak and (A Bit) Display Performance Issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8425
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2398,
+      "FileName": "SimpleWpfApplication.zip",
+      "DownloadUrl": ".\\2398"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "The bug is probably the one I reported about the VSM - http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7906 - which the DataGrid and DateTimePicker/Calendar use.",
+      "PostedDate": "2008-12-08T06:01:31.353-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yes, I've just known if it's related to mine and it's just published here: http://www.codeplex.com/wpf/Wiki/View.aspx?title=VSM%20Memory%20Leak.\r\n\r\nThanks!",
+      "PostedDate": "2009-01-09T10:54:49.457-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yes this does look like the earlier reported issue and it will be fixed in the v1 release.\r\nThanks for your report.",
+      "PostedDate": "2009-01-12T11:06:09.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:26:55.317-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:41.057-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:14.803-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

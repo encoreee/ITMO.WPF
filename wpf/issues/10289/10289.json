@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When a Button on a form has IsDefault set to true, it's Click Handler is fired when the 'Enter' key is pressed. Very good. (Standard WPF behavior)\nWhen a DatePicker control is on the form AND it has focus, the above mentioned functionality no longer works.\n \nIt appears the Enter Key keystroke is being consumed by the DatePicker.\n \nI quickly looked at the code, and it appears that this is in fact happening. (In the TextBox_KeyDown  handler (in the ProcessDatePickerKey() routine)\nThis just seems wrong. Is this this expected behavior? Is this a bug ?\n \nJust to be sure , I changed the code so Handled is not set to true when Enter is pressed, and the control behaves as I expect it to.\n \nThanks",
+    "LastUpdatedDate": "2013-02-21T18:41:06.03-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-09T09:10:32.41-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker : IsDefault Button functionality broken when DatePicker Control has focus",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 10289
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is extremely annoying.  I worked around this by deriving from the datepicker and using my own datepicker in my code.  In my picker I added a handler to get the routed event even it was handled already (an option that you can set), and then in the handler I reset handled to false.\r\n\r\n    public class ExtendedDatePicker : DatePicker\r\n    {\r\n        protected override void OnRender(System.Windows.Media.DrawingContext drawingContext)\r\n        {\r\nRawDatePickerTextBox.AddHandler(KeyDownEvent, new KeyEventHandler(HandleDatePickerKeyDown), true);\r\n}\r\n\r\n        private static void HandleDatePickerKeyDown(object sender, KeyEventArgs e)\r\n        {\r\n            if (e.Key == Key.Enter)\r\n            {\r\n                e.Handled = false;\r\n            }\r\n        }\r\n..................\r\n\r\n        private DatePickerTextBox RawDatePickerTextBox\r\n        {\r\n            get\r\n            {\r\n                FieldInfo fiTextBox = typeof(DatePicker).GetField(\"_textBox\", BindingFlags.Instance | BindingFlags.NonPublic);\r\n                return (DatePickerTextBox)fiTextBox.GetValue(this);\r\n            }\r\n        }",
+      "PostedDate": "2009-07-28T12:38:35.663-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-22T21:15:12.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-02-04T02:32:43.77-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@JonProactiveLogic Thanks!\r\n\r\nThis little trick still works on the official DatePicker that's shipped with .NET 4. (It's unfortunate that it's still needed though!)",
+      "PostedDate": "2011-02-04T03:07:01.317-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-12T07:27:34.953-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:06.03-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

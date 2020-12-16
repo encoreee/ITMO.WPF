@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "when in runtime you add new row en press enter key,the BringIndexIntoView calling in DataGridRowsPresenter.InternalBringIndexIntoView generated NullReferenceException .\n \nI am investigate on the problem, and i find which\nthe problem is generated of the VirtualizingStackPanel.InsertContainer, because the private filed _realizedChildren is null.\n \nI find a solution calling MeasureOverride before BringIndexIntoView ;",
+    "LastUpdatedDate": "2013-02-21T18:41:46.553-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-10-31T07:26:06.97-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NullReferenceException when add now row e press enter key",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 7932
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2235,
+      "FileName": "DataGridRowsPresenter.cs",
+      "DownloadUrl": ".\\2235"
+    },
+    {
+      "FileId": 2240,
+      "FileName": "TestDataGrid.zip",
+      "DownloadUrl": ".\\2240"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I am not able to repro the issue.  Could you provide a repro solution?",
+      "PostedDate": "2008-10-31T11:24:51.22-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I send test project.",
+      "PostedDate": "2008-11-03T03:56:02.377-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-03T03:56:05.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-21T01:30:52.23-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The same error happens when I try deleting a row from a WPF datagrid that has more than one rows. If the datagrid has only one row, then delete works fine. The workaround proposed here solved the issue.",
+      "PostedDate": "2008-11-21T01:34:39.4-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We were able to reproduce the issue with TestDataGrid.zip. If you make ListEntity derive from ObservableCollection instead of MultiThreadingObservableCollection, then the application does not produce the exception. The issue likely arises due to the asynchronous reporting of collection changes, which is causing confusion within the control because the data is in one state while the visual containers are in another.",
+      "PostedDate": "2009-02-18T16:12:16.343-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:12:17.06-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:46.553-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

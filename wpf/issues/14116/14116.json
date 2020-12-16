@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "My client would like to see values to three decimal places on the chart Y Axis (e.g. 0.001), but these get truncated to two decimal places and I can find no way to set the precision through properties.\n \nWould be nice to have the ability to work with axis values more precise than two decimal places without having to use different units of measure (e.g. I want to be able to display 0.001 metres, and not have to multiply the values by 1,000 and display the scale in millimeters)",
+    "LastUpdatedDate": "2013-02-21T18:40:23.59-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-27T07:26:25.543-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LinearAxis Precision - truncates values to two decimal places",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14116
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

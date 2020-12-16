@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello everyone\n \nWhen maximizing a ribbonwindow or other window, the icon and the title would normally be placed lower when the window is maximized.\nThis doesn't happen with the ribbonwindow. To see this, maximize a ribbonwindow, for example one of the samples and compare it to al normal window.\n \nThank you.",
+    "LastUpdatedDate": "2013-06-14T00:35:35.303-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-06T10:34:05.283-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Icon, title and qatoolbar are outlined uncorrectly when a ribbonwindow is maximized.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 13929
+  },
+  "FileAttachments": [
+    {
+      "FileId": 5287,
+      "FileName": "RibbonRenderingProblem.jpg",
+      "DownloadUrl": ".\\5287"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thanks for pointing out the issue. We will resolve it soon. ",
+      "PostedDate": "2010-08-13T14:25:25.133-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-13T14:25:36.843-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I tested this with the October 2010 release of the ribbon and it is still broken for the title of the window.",
+      "PostedDate": "2010-10-24T11:54:37.153-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-19T09:35:08.823-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I got the latest version linked from MS's download site.  When using a background in tandem with the RibbonWindow it still draws up into the title bar, sometimes rendering over the maximize/minimize/close window buttons (though those can still be clicked on).  I'm attaching a screenshot of it.  All the window is doing is putting a gradient background in Grid.Background and then changing WindowState.",
+      "PostedDate": "2011-01-19T09:35:13.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is still an issue for us as well. We will work on getting this fixed some time in future, perhaps our next release. Thanks for letting us know!\r\n\r\n-Troy at Microsoft",
+      "PostedDate": "2011-01-19T11:53:42.733-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:25.833-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:02.52-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:02.913-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:35:35.303-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

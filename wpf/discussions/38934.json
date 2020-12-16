@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "129203",
+    "ThreadId": "38934",
+    "Html": "<div>Hi,</div><div><br></div><div>First, thank you for a very promising control!</div><div><br></div><div>We have a scenario where the number of columns in a datagrid is unknown at designtime and may be very large (1000+). Because of this we dynamically add new DataGridTemplateColumns runtime (with a DataTemplate as CellTemplate), either by building XAML-strings and parsing them with XamlReader or alternatively by using FrameworkElementFactory to build the datatemplates.</div><div><br></div><div>We also set EnableColumnVirtualization to true, but do not know the consequences of this.</div><div><br></div><div><span style=\"text-decoration:underline\">Our problem</span> is that when the number of columns reach 250, the hit on performance is quite unacceptable (10 seconds+ just to build the columns). Populating an already built grid with new rows is not a problem.</div><div><br></div><div>Any ideas on alternative solutions?</div><div><br></div><div><br></div>",
+    "PostedDate": "2008-10-31T08:47:36.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

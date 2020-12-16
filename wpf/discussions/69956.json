@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "238222",
+    "ThreadId": "69956",
+    "Html": "<p>Hi,</p>\r\n<p>I wanted to add a RibbonTextBlock to my ribbon bar but ran into a slight problem - there isn't one! I briefly looked into RibbonLabel, however it lacks the Command field that I use on the majority of other ribbon controls and which I would like to use for this control.</p>\r\n<p>My aim is to create some text&nbsp;as an item&nbsp;within a RibbonDropDownButton that tells the user&nbsp;there are no clickable options, should there be none. I would also like it to have a tooltip title and tooltip description, like other ribbon controls, to explain why there are no clickable options.</p>\r\n<p>I guess as an alternative I could disable the RibbonDropDownButton and modify its tooltip to explain why it no longer works, however I am still curious if my original plan can be achieved (and why there is no RibbonTextBlock!)</p>\r\n<p>Thanks in advance.</p>",
+    "PostedDate": "2009-09-24T03:30:04.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

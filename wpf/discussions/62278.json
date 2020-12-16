@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "211373",
+    "ThreadId": "62278",
+    "Html": "<p>Hi,</p>\r\n<p>Im having requirement that i need to visually notify user that following datagrid row are &nbsp;been modify.For this checking rows are modified or not ,i using one property in domain object called as isDirty.Whenever datagridrow gets modified ,IsDirty sets to true and corresponding row gets modified .I had written Convertor which takes isDirty property of datagridrow datacontext and convert corresponding background colour .</p>\r\n<p>&nbsp;</p>\r\n<p>Though isDirty gets changed to true &nbsp;,corresponding convertor doesnot get called ,upon change in isdirty property.</p>\r\n<p>&nbsp;</p>\r\n<p>I have one more doubt ,let me know &nbsp; UpdateSourceTrigger=&quot;PropertyChanged&quot; &nbsp;NotifyOnSourceUpdated=&quot;True&quot;.According me my understanding is whenever there is change in source ,It will shown in target.</p>\r\n<p>will converter gets called whenever there is change in source property.</p>\r\n<p>&nbsp;</p>\r\n<p>With Regards,</p>\r\n<p>Mahens</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-13T08:56:16.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

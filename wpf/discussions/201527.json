@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "410517",
+    "ThreadId": "201527",
+    "Html": "<div><img title=\"You cannot vote on your own post\" src=\"http://i1.social.microsoft.com/Forums/resources/images/trans.gif?cver=2.10.0075.0\" alt=\"You cannot vote on your own post\">\r\n<div>Hi,<br>I'm working with vs2010 release candidate and I have a gridview.<br>I applied styling.</div>\r\n<div>Doesn't work like it does&nbsp;with the toolkit datagrid.</div>\r\n<div>Specifically, no AlternationIndexso no alternating colours.</div>\r\n<div>(actually no styling on the grid rows because the datatriggers just don't fire ).<br>I gather that the datagrid in vs2010 is an earlier version than in the toolkit.</div>\r\n<div>Between now and full release I need datagrids styled with alternating rows.</div>\r\n<div>I was thinking that this is likely to be a fairly common issue that otheres have encountered.</div>\r\n<div>Anyhow my thinking.</div>\r\n<div>Add the toolkit DLL to my project.</div>\r\n<div>Refer to that temporarily.</div>\r\n<div>Once full release is available, remove the reference and change the code to use the datagrid in vs2010.</div>\r\n<div>Is this a good idea?</div>\r\n<div>Is the release version of the datagrid going to be the same as the toolkit version or will my code break?</div>\r\n</div>",
+    "PostedDate": "2010-02-27T03:54:03.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410571",
+    "ThreadId": "201527",
+    "Html": "<p>Fixed.</p>",
+    "PostedDate": "2010-02-27T05:13:10.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

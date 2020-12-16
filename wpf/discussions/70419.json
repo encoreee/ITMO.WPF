@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "239867",
+    "ThreadId": "70419",
+    "Html": "I can't move a RibbonWindow.\r\nIs it normal ?",
+    "PostedDate": "2009-09-29T00:02:52.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "240280",
+    "ThreadId": "70419",
+    "Html": "<p>I haven't had this problem, but with &quot;can't move&quot; have you tried to Right-Click on the window in the taskbar and select 'Move' and using your arrow-keys move the Window?</p>",
+    "PostedDate": "2009-09-30T00:24:23.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280926",
+    "ThreadId": "70419",
+    "Html": "<p>I am also having this problem. Resizing/minimizing and maximizing work, but there is no way to move the window. Even using the Move command hidden in de window's contextmenu doesn't move it for a bit.<br>Weird isn't it?</p>\r\n<p>I'm using version 3.5.31016.1 of the RibbonControlsLibrary, and have screened both the XAML and code but cannot find a property that changes this annoying behaviour.</p>\r\n<p>Any idea's?</p>\r\n<p>Thanks in advance,</p>\r\n<p>Peter Vrenken</p>",
+    "PostedDate": "2010-01-23T11:50:42.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284035",
+    "ThreadId": "70419",
+    "Html": "<p>Is there anyone that knows more about this problem?</p>\r\n<p>Thanks,</p>\r\n<p>Peter Vrenken</p>",
+    "PostedDate": "2010-01-31T14:07:41.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "406919",
+    "ThreadId": "70419",
+    "Html": "<p>Nobody?</p>\r\n<p>&nbsp;</p>\r\n<p>Damn, this means i cannot use the RibbonControlsLibrary...</p>\r\n<p>:-(</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-25T15:05:23.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "412323",
+    "ThreadId": "70419",
+    "Html": "<p>Use <a href=\"http://fluent.codeplex.com\">Fluent Ribbon Control Suite</a> instead ;-)</p>",
+    "PostedDate": "2010-02-27T21:26:00.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "141516",
+    "ThreadId": "42574",
+    "Html": "<span style=\"font-family:verdana;font-size:12px;line-height:15px\">Hi friends,<br><br>I have one query regarding the DataGrid Columns Dependencies... <br><br>In a DataGrid, i have <br>DataGridTemplateColumn -&gt; CellTemplate -&gt; DataTemplate -&gt; ComboBox Column<br>and <br>DataGridTemplateColumn -&gt; CellTemplate -&gt; DataTemplate -&gt; TextBox Column<br><br>the requirement here is,<br>Only for certain selection made on the ComboBox, the TextChanged Event of the TextBox in the same row should trigger... and for the other selectedIndex of comboBox, the TextChanged event should not trigger...<br><br>please help me out with this issue...<br><br>Thanks in Advance...</span>",
+    "PostedDate": "2008-12-17T23:11:58.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

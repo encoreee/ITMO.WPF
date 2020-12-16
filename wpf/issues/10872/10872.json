@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Debug.Assert(_owner == owningDataGrid, \"_owner should be the same as the DataGrid that is clearing the row.\");\n \n_owner is null !!!!!!!!!!!!!!!!!!!!!!!!\n \nAfter error application is very slow. DataGrids views is bad.",
+    "LastUpdatedDate": "2013-02-21T18:40:52.767-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-02T01:48:16.73-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGridRow.ClearRow(DataGrid owningDataGrid) Error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10872
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3488,
+      "FileName": "Képkivágás1.JPG",
+      "DownloadUrl": ".\\3488"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I made a simple sample which show 2 crash case..\nUnfortunately I'm trying to show a 3rd crash case but it's hidden by the other crahs sample..\n \nAnyway here we go",
+    "LastUpdatedDate": "2013-02-21T18:41:36.99-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-06T17:33:56.497-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Grouping cause many crashes...",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 8832
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2598,
+      "FileName": "Window2.xaml",
+      "DownloadUrl": ".\\2598"
+    },
+    {
+      "FileId": 2599,
+      "FileName": "RibbonTests.zip",
+      "DownloadUrl": ".\\2599"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Oops, had not finished the description....\r\n\r\nThe attached sample, when run against the 2008 - 10 - 27 release will crash when you click on the bug button.\r\n\r\nAlso, if you add in the datagrix XAML:\r\n\t\t\tCanUserAddRows=\"False\"\r\nand then expand 1 group (but not the other), it will also crash when the bug button is pressed",
+      "PostedDate": "2009-01-06T17:39:08.527-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-06T17:39:09.167-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-18T17:09:25.44-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:09:26.61-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:25:15.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:36.99-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

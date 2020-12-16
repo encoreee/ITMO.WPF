@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "120055",
+    "ThreadId": "36198",
+    "Html": "Hi,<br>\r\n<br>\r\nI'm investigating the datagrid to see if we can use it in an existing product in place of another 3rd party grid.&nbsp; What I can't see is how I catch the deletion of a row.&nbsp; I see events for Begin_Edit etc but no Deleting/Deleted events that I can catch to do some important updating before/after the object is deleted.<br>\r\n<br>\r\nAm I missing something?<br>\r\n<br>\r\nThanks<br>\r\n<br>\r\nJohn<br>\r\n",
+    "PostedDate": "2008-09-22T07:51:04.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120110",
+    "ThreadId": "36198",
+    "Html": "DataGrid.DeleteCommand will be executed when the user chooses to delete a row. You can prevent it from occurring by handling the CommandManager.CanExecute event, checking that the command is DeleteCommand, and setting the CanExecute property on the event arguments to false. To just be notified, then you would need to hookup an CommandManager.Executed event handler and check that the command is DeleteCommand. It is important not to mark this event as handled or the DataGrid will not receive the event.<br>\r\n<br>\r\nThis could benefit from a Deleting/Deleted event pair to simplify what you want to do. I will suggest this to the team.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2008-09-22T11:16:26.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120313",
+    "ThreadId": "36198",
+    "Html": "Glad I'm not going mad - couldn't find the events and thought I was just not seeing them.&nbsp; I'll try out the command manager idea as we already handle commands in the app and see where I get to.&nbsp; <br>\r\n<br>\r\nWhat about new row(s)?&nbsp; It would be nice if... there were events for: AddingNewRow/AddedNewRow as well.&nbsp; Then it is easier to distinguish between editing an existing row and creating a new one.<br>\r\n<br>\r\nI found the BeginEdit/CancelEdit/CommitEdit events which are good for when you are editing existing rows.<br>\r\n<br>\r\n<br>\r\nJohn<br>\r\n",
+    "PostedDate": "2008-09-23T02:13:09.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120433",
+    "ThreadId": "36198",
+    "Html": "Yes, if delete events were added, then events for AddNewRow would also be added as well.<br>\r\n<br>\r\nAt present, you can also listen for the InitializingNewItem event, which is called when a new item is created and allows you to set properties on the new item to values other than the object's default values.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2008-09-23T11:09:56.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120523",
+    "ThreadId": "36198",
+    "Html": "Hi,<br>\r\n<br>\r\nI am trying to get notification when&nbsp;a row is being deleted and I am having trouble using the CommandManager.Executed event handler.&nbsp; Do you mind posting some code as to has this can be achieved?&nbsp; Also, I am trying to provide some custom bindings and one of them was to use the delete key for my own purpose but it never get fired?&nbsp; Please advise.<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nMatt\r\n",
+    "PostedDate": "2008-09-23T21:05:37.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120824",
+    "ThreadId": "36198",
+    "Html": "Here is an example of attaching to the CommandManager.CanExecuteEvent and disabling the DeleteCommand under some condition.&nbsp; The condition in this example is trivial and only to show that the DeleteCommand can be disabled under a condition that I define.<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p><span style=\"font-size:13px\">_handler = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">new</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">CanExecuteRoutedEventHandler</span></span><span style=\"font-size:13px\">(OnCanExecuteRoutedEventHandler);<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">EventManager</span></span><span style=\"font-size:13px\">.RegisterClassHandler(</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">typeof</span></span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGrid</span></span><span style=\"font-size:13px\">), </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">CommandManager</span></span><span style=\"font-size:13px\">.CanExecuteEvent, _handler);</span><br>\r\n<br>\r\nvoid</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> OnCanExecuteRoutedEventHandler(</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">object</span></span><span style=\"font-size:13px\"> sender, </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">CanExecuteRoutedEventArgs</span></span><span style=\"font-size:13px\"> e)<br>\r\n{<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;RoutedCommand</span></span><span style=\"font-size:13px\"> routedCommand = (e.Command </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">as</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">RoutedCommand</span></span><span style=\"font-size:13px\">);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;if</span></span><span style=\"font-size:13px\"> (routedCommand != </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">null</span></span><span style=\"font-size:13px\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span></span><span style=\"font-size:13px\"> (routedCommand.Name == </span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">&quot;Delete&quot;</span></span><span style=\"font-size:13px\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.CanExecute = DataGrid_Standard.CanUserResizeColumns;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span></span><span style=\"font-size:13px\">(!e.CanExecute)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Handled = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">true</span></span><span style=\"font-size:13px\">;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n}\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-09-24T19:33:06.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "127102",
+    "ThreadId": "36198",
+    "Html": "Hi, <br>\r\n<br>\r\nHow can I unregistered the delete command handler (shown in above blog)?<br>\r\n<br>\r\nI am using this concept to validate and display some message before deleting the row. So, when first time I press delete it calls the handler (where command = &quot;Delete&quot;) only one time. But when close that page and open the that page again without closing whole application, it call the delete handler (with command=&quot;Delete&quot;) twice.... and so on...<br>\r\n<br>\r\nSo, I played around to find a way to unregistered this handler but I failed.<br>\r\n<br>\r\nCan anybody help me in this?<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-10-22T22:18:08.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "127576",
+    "ThreadId": "36198",
+    "Html": "<p>You cannot unregister from class handlers. Use instance handlers instead.</p>\r\n<p>element.AddHandler(CommandManager.CanExecuteEvent, handler);</p>\r\n<p>element.RemoveHandler(CommandManager.CanExecuteEvent, handler);<br>\r\n<br>\r\nBen</p>\r\n",
+    "PostedDate": "2008-10-24T13:43:48.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "127918",
+    "ThreadId": "36198",
+    "Html": "Hi Ben,<br>\r\n<br>\r\nThanks for your reply. I did try the way you suggest me (adding and removing the handler). But, its not working for me. My code snippet is like...<br>\r\n<br>\r\n1&nbsp; myClass{<br>\r\n<br>\r\n3&nbsp; private CanExecuteRoutedEventHandler DeleteHandler;<br>\r\n<br>\r\n5&nbsp; myClass(){<br>\r\n<br>\r\n6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DeleteHandler = OnCanExecuteRoutedEventHandler;<br>\r\n<br>\r\n7 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //EventManager.RegisterClassHandler(typeof(Microsoft.Windows.Controls.DataGrid), CommandManager.CanExecuteEvent, DeleteHandler );<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>\r\n<br>\r\nmyClassLoaded{<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myDataGrid.AddHandler(CommandManager.CanExecuteEvent, DeleteHandler);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nmyClassUnLoaded{<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myDataGrid.RemoveHandler(CommandManager.CanExecuteEvent, DeleteHandler);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n<br>\r\nprivate static void OnCanExecuteRoutedEventHandler(object sender, CanExecuteRoutedEventArgs e)<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;RoutedCommand routedCommand = (e.Command as RoutedCommand);<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (routedCommand != null)<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (routedCommand.Name == &quot;Delete&quot;)<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;MessageBoxResult result = MessageBox.Show(&quot;Are you sure, you want to delete?&quot;, &quot;Delete Items&quot;, MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (result == MessageBoxResult.No)<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;e.CanExecute = false;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;e.Handled = true;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//e.CanExecute = false;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//if (!e.CanExecute)<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//&nbsp;&nbsp;&nbsp; e.Handled = true;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n<br>\r\n<br>\r\n}<br>\r\n<br>\r\n<br>\r\nIts not event calling the handler. Than I did try registering the class (uncommenting line 7) but than the same problem as before. May be I am doing something wrong as I am new to MicroSoft and Wpf stuff.<br>\r\n<br>\r\nAny help?<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-10-26T18:48:40.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "127935",
+    "ThreadId": "36198",
+    "Html": "Hi Ben, Its working now. I found the problem that I need to add handler in contructor rather than pageLoad event and may be I need to put true as third argument.<br>\r\n<br>\r\nmyDataGrid.AddHandler(CommandManager.CanExecuteEvent, new CanExecuteRoutedEventHandler(DeleteHandler), true);<br>\r\n<br>\r\nand I don't need remove handler (I don't know why?).<br>\r\n<br>\r\nNow, but the problem is that, even if I select the single cell and not the row, it calls the handler. any idea why?<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-10-26T22:36:21.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128048",
+    "ThreadId": "36198",
+    "Html": "CanExecute is used to determine whether a command is enabled or not. However, you are confusing that with whether the end-user wishes a command that has been executed to complete. You should handle the move the code you currently have for CanExecute to an Executed event handler instead. You also might consider subclassing DataGrid and overriding OnExecutedBeginEdit instead.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2008-10-27T10:21:32.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162800",
+    "ThreadId": "36198",
+    "Html": "Just a side note for anyone trying this: <br>\r\n<br>\r\nIf you use an instance handler for the Delete Command via element.AddHandler() you need to use the overload to signal that you want handledEventsToo, otherwise your handler will not fire for the Delete Command because it will be handled already and will not continue routing.\r\n",
+    "PostedDate": "2009-02-27T08:56:23.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

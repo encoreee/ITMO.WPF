@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a Line Series chart with Line data points in it. how do i clear the old data points when i bind it new data.\n\nmy Code is \n                            <chartingToolkit:Chart Name=\"LowCusumChart\" >\n                                <chartingToolkit:Chart.Resources>\n                                    <Style x:Key=\"LCuRules\" TargetType=\"{x:Type chartingToolkit:LineDataPoint}\">\n                                        <Setter Property=\"Template\" >\n                                            <Setter.Value>\n                                                <ControlTemplate x:Name=\"LCTemplate\" TargetType=\"{x:Type chartingToolkit:LineDataPoint}\">\n                                                    <Canvas x:Name=\"LNPlotArea\" Margin=\"0,5,0,5\" >\n                                                        <Border BorderBrush=\"Purple\" BorderThickness=\"2\" Visibility=\"{Binding Path= CRules, Converter={StaticResource NullVisibility}}\">\n                                                            <Label  Foreground=\"Purple\"  Content=\"{Binding Path=CRules}\"  />\n                                                        </Border>\n\n                                                    </Canvas>\n                                                </ControlTemplate>\n                                            </Setter.Value>\n                                        </Setter>\n                                        <Setter Property=\"Background\" Value=\"Black\" />\n                                    </Style>\n\n                                </chartingToolkit:Chart.Resources>\n                                <chartingToolkit:Chart.Series>                                      \n                                    <chartingToolkit:LineSeries Name=\"LowCusumSeries\" Title=\"Cusum\" IndependentValueBinding=\"{Binding Path= EntryDate}\" DependentValueBinding=\"{Binding Path=Cusum}\"  >                                           \n                                    </chartingToolkit:LineSeries>\n\npublic class CusumChart \n{\n    public string EntryDate { get; set; }\n    public double? Cusum { get; set; }\n    public string CRules { get; set; }.\n    public bool CsrVisible { get; set; }\n\n}\n\nObservableCollection<CusumChart> Values {get;set;}\n\nValues.Add(new CusumChart {EntryDate=\"28/03/2017\", Cusum=3.2,CRules=\"CsrRule\",CsrVisible=true});",
+    "LastUpdatedDate": "2017-03-28T18:18:11.307-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2017-03-28T18:18:11.307-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Charting - How to remove line data points",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 22516
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

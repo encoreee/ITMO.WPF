@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In an application following the methods described in the \"Multiple Windows, Multiple Threads\" section of msdn (http://msdn.microsoft.com/en-us/library/ms741870.aspx), the AutoCompleteBox will throw an exception when it is being loaded.  It appears that it's trying to access the Application's \"Windows\" property.  The dispatcher for the AutoCompleteBox is not necessarily the same as the Application's dispatcher, which is required to access the Windows property, so it crashes.\n \nat System.Windows.Threading.Dispatcher.VerifyAccess()\n   at System.Windows.Application.get_Windows()\n   at System.Windows.Controls.PopupHelper.Arrange() in C:\\dd\\WPF_1\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\Input\\AutoCompleteBox\\System\\Windows\\Controls\\PopupHelper.cs:line 283\n   at System.Windows.Controls.AutoCompleteBox.ArrangeOverride(Size finalSize) in C:\\dd\\WPF_1\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\Input\\AutoCompleteBox\\System\\Windows\\Controls\\AutoCompleteBox.cs:line 1385",
+    "LastUpdatedDate": "2013-02-21T18:40:06.58-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2012-06-22T13:15:13.557-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AutoCompleteBox throws exception in Multiple UI Thread application",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18264
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

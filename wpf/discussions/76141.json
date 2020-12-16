@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "260421",
+    "ThreadId": "76141",
+    "Html": "<p>Is it possible to show animation when a row or a column being added/removed from DataGrid.&nbsp;</p>",
+    "PostedDate": "2009-11-24T15:52:57.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273244",
+    "ThreadId": "76141",
+    "Html": "<p>I ended up animating DataGridColumn.Width manually. Doesn't seem to be very effective as it needs to measure/arrange items again.</p>",
+    "PostedDate": "2010-01-05T03:36:16.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "181812",
+    "ThreadId": "53990",
+    "Html": "I posted this same question on stack overflow:&nbsp; http://stackoverflow.com/questions/773082/is-there-a-way-in-the-wpf-toolkit-datagrid-to-have-a-header-below-the-column-head<br>\r\n<br>\r\nHi,\r\n<div>\r\n<p>I looking for a way to create an area that indicates a user is at\r\nthe top row of the WPF Toolkit datagrid. (Showing the scrollbar\r\nscrolled down is not enough for the user). I need something that sticks\r\nout and says &quot;this is the top row&quot; basically. Messing with the entities\r\nthat that the grid is bound to will not work for me because I have\r\nseveral grids with different filters over the same collection of\r\nentities. Also this underlying collections is changing while the app is\r\nrunning.</p>\r\n<p>Is there a way to add a control of some sort between the column\r\nheaders and the first row of the datagrid? Maybe a separator of some\r\nsort?</p>\r\n<p>Thanks!\r\nJon</p>\r\n</div>\r\n<br>\r\n",
+    "PostedDate": "2009-04-21T08:21:07.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182002",
+    "ThreadId": "53990",
+    "Html": "Hi Jon,<br>\r\n<br>\r\nThere are a few things you can do but all are fairly involved -- this is not a mainstream DataGrid scenario.  You could create a new class that inherits DataGridRowsPresenter and override OnCleanupVirtualizedItem (be sure to call the base first!) to not recycle the row if it is the first one.  Then make your DataGrid's ItemPanel point to your custom DataGridRowsPresenter.  Then style your first row in a way that makes it stand out when the window is loaded.<br>\r\n<br>\r\nIf you wanted to add a separator you would need to retemplate the DataGrid.<br>\r\n<br>\r\nGood luck!<br>\r\nAlexis  \r\n",
+    "PostedDate": "2009-04-21T13:42:36.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185307",
+    "ThreadId": "53990",
+    "Html": "alexir this is cool, thanks!<br>\r\n<br>\r\nFor discussion, what is the simplest and most effective way to show a user is at the top of a wpf datagrid?&nbsp; That is the main goal of mine.&nbsp; Basically I have a real time app and if a user is scrolled down, it needs to &quot;HIT THEM IN THE FACE&quot; that they are not at the top of the grid as the data at the top is the most important.&nbsp; My grid is always updating from a background thread posting to the UI thread.&nbsp; Row numbering of the grid might have been ok, but I saw another post in this forum that row numbering could possibly be done on row add, but since I have a collection that is always updated in various orders, I think the row numbers would get out of whack.<br>\r\n<br>\r\nI know it seems odd for most apps but is very important for this app to get this concept built in.&nbsp; Even if I had a control outside of the grid, it might be acceptable if I could bind it to some kind of dependency property like an &quot;isscrolled&quot; or &quot;scrollpositionY&quot; or anythng that I can show the user &quot;DUDE THERE IS MORE INFO AT THE TOP AND YOU ARE SCOLLED&quot;.<br>\r\n<br>\r\nMaybe styling the scroll ar would be acceptable - even though still not the greatest solution.<br>\r\n<br>\r\nAny ideas?<br>\r\n<br>\r\nThanks,<br>\r\nJon<br>\r\n",
+    "PostedDate": "2009-04-29T21:12:08.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

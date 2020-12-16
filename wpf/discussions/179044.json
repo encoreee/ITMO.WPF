@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "387400",
+    "ThreadId": "179044",
+    "Html": "<p>Hi,</p>\r\n<p>I would like to group my data on for example a column chart.</p>\r\n<p>This is a pretty good example of what I want to do:</p>\r\n<p><img src=\"http://z.about.com/d/spreadsheets/1/0/Z/3/-/-/column_chart.jpg\" alt=\"\"></p>\r\n<p>&nbsp;</p>\r\n<p>I would like to know how I could make something like this with the chart component.</p>\r\n<p>I define the color myself in the ViewModel so the coloring was easy with Databinding.</p>\r\n<p>The two Issues that I'm facing is the shared label on the axis and the different positioning.</p>\r\n<p>My current idea for a solution is, for the label is to make a style that hides (in this example) two of the three grouped items on the category axis.</p>\r\n<p>For the additional gap between groups I could just insert blank objects with no or zero value.</p>\r\n<p>But both solutions are kind of dirty - so is there a proper way to do this?</p>\r\n<p>&nbsp;</p>\r\n<p>ernii</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-25T04:52:08.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "519318",
+    "ThreadId": "234015",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I have just added a QAT to the ribbon, by default it appears at the top of the ribbon. The QAT has already a 'in-built' context menu that allows users to display the QAT below the ribbon.</p>\r\n<p>Could anyone point me to how I can raise that event in code, thus by default, i display the QAT below the ribbon? Any help will be greatly appreciate it.</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2010-11-09T05:36:26.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

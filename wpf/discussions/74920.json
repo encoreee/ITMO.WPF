@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "256425",
+    "ThreadId": "74920",
+    "Html": "<p>I have a datagrid with its own data source (via Datacontext) and one of the columns on this grid is a combo box column. I am unable to find an example of code where the combobox has its own set of data. The datacontext method does not exist in this column and I think I'm stuck. Can someone please point me to an example like the one here?<span style=\"white-space:pre\"> </span></p>",
+    "PostedDate": "2009-11-12T10:32:38.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256992",
+    "ThreadId": "74920",
+    "Html": "<p>Vincent's blog has a pretty good run down on how to use DataGridComboBoxColumn.&nbsp; <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-datagridcomboboxcolumn-v1-intro.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-datagridcomboboxcolumn-v1-intro.aspx</a></p>\r\n<p>While that is specifically about the V1 datagrid there shouldn't be any big changes needed.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-11-13T16:44:40.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

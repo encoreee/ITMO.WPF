@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "223606",
+    "ThreadId": "65726",
+    "Html": "<p>Is there a way when double clicking to verify that the double click was performed on a row?</p>\r\n<p>The double click event fires when a double click occurs anywhere on the grid. I don't want the edit dialog to pop up when a user double clicks on a column header or empty space. Is there some kind of Hit Test that can be performed?</p>",
+    "PostedDate": "2009-08-14T10:42:00.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224184",
+    "ThreadId": "65726",
+    "Html": "<p>You could check to see if SelectedItem!=null, but that isn't optimal (the user could, for example, select a row and then double-click on an empty space, and it will act the same as if the double-click was on the selected row). Also, a not-null check should be performed anyway before doing anything with the SelectedItem property, as there are numerous situations in which it can be null.  I, too, would be interested in a better solution.</p>",
+    "PostedDate": "2009-08-17T01:49:34.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224574",
+    "ThreadId": "65726",
+    "Html": "<p>I do not know if it is the best way, but here is what I am doing:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre> <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> myGrid_MouseDoubleClick(<span style=\"color:Blue\">object</span> sender, MouseButtonEventArgs e)\r\n        {\r\n            \r\n\r\n                FrameworkElement element = myGrid.InputHitTest(e.GetPosition(myGrid)) <span style=\"color:Blue\">as</span> FrameworkElement;\r\n                <span style=\"color:Blue\">if</span> (element != <span style=\"color:Blue\">null</span>)\r\n                {\r\n                    <span style=\"color:Blue\">if</span> (element.Parent <span style=\"color:Blue\">is</span> DataGridCell)\r\n                    {\r\n</pre>\r\n<pre>                        <span style=\"color:Green\">// Do Work here</span>\r\n</pre>\r\n<pre>                    }\r\n                }\r\n                  \r\n            \r\n        }</pre>\r\n</div>\r\n<p>I have to check if the element.Parent is DataGridCell because the hit test actually returns the TextBlock inside of the cell.&nbsp;I assue this would again get more complicated depending on what was added to the DataGridCell if you were using a Control Template or Data Template, but I haven't gotten that far into my app yet.</p>\r\n<p>So far it seems to work ok, but I just assumed there would be a built in way to tell if the double click was on a record. The grid I have used the most previously was the Dev Express grid for VCL. With those products, there was a hit test that could tell you which portion of the grid you clicked on (Header, cell, etc.).</p>",
+    "PostedDate": "2009-08-17T11:36:05.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

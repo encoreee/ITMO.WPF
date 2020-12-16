@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "134773",
+    "ThreadId": "40636",
+    "Html": "First, thank you WPF Team for the DataGrid.&nbsp; It's fantastic.<br>\r\n<br>\r\nNow, please open it up.&nbsp; It's fine for simple applications, but once you want to do anything really special it's a pain.&nbsp; Let binding be optional (allow rows to be added manually).&nbsp; Actually, I think you can just take away a lot of functionality.&nbsp; It would make my life (and I think many people's lives who use it) much easier.<br>\r\n",
+    "PostedDate": "2008-11-24T07:07:55.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

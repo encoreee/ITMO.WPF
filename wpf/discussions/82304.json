@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "282776",
+    "ThreadId": "82304",
+    "Html": "<p>Hi</p>\r\n<p>I have a grid with a customized usercontrol. when my datagrid has few rows everything works perfect, the problem is when the datagrid has more rows and when the scrollbar appears.. when I scroll down and up my usercontrol that show ellipses with different color it seems isnot refreshing and is using the display of the other user control in cache.. or something like that..</p>\r\n<p>please tell me if I am clear..</p>",
+    "PostedDate": "2010-01-28T07:47:57.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282780",
+    "ThreadId": "82304",
+    "Html": "<p>Problem solved with EnableRowVirtualization = false, Can anyone explainme why? and what can be the consecuences of that??</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-28T07:55:16.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

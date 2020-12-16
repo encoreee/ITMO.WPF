@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "155796",
+    "ThreadId": "46627",
+    "Html": "Hi there,<br>\r\n<br>\r\nPerhaps I'm doing something stupid, but I cannot get a simple editable\r\nDataGridComboBoxColumn to work. Basically, the combo side of things\r\nworks OK, but once the focus is lost it loses the text. I have tried\r\nbinding both Text in both the ElementStyle and EditableElementStyle to\r\nno avail.<br>\r\n<br>\r\nAre there any samples for this? I can email a small sample that shows the problem if needs be.<br>\r\n<br>\r\nThanks,<br>\r\nKent<br>\r\n<br>\r\nPS. sorry for double post. I got an error and assumed it didn't work.<br>\r\n",
+    "PostedDate": "2009-02-09T07:23:30.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156590",
+    "ThreadId": "46627",
+    "Html": "*bump* Anybody?<br>\r\n",
+    "PostedDate": "2009-02-11T02:56:53.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156613",
+    "ThreadId": "46627",
+    "Html": "How is your ItemsSource on the DataGridComboBoxColumn instantiated?\r\n",
+    "PostedDate": "2009-02-11T05:05:08.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156653",
+    "ThreadId": "46627",
+    "Html": "Here's the XAML for my Window:<br>\r\n<br>\r\n&lt;Window x:Class=&quot;EditableComboBoxRepro.Window1&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp; &nbsp;xmlns:wpf=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;<br>\r\n&nbsp;&nbsp; &nbsp;xmlns:sys=&quot;clr-namespace:System;assembly=mscorlib&quot;<br>\r\n&nbsp;&nbsp; &nbsp;xmlns:col=&quot;clr-namespace:System.Collections;assembly=mscorlib&quot;<br>\r\n&nbsp;&nbsp;&nbsp; Title=&quot;Editable ComboBox Repro&quot;<br>\r\n&nbsp;&nbsp; &nbsp;DataContext=&quot;{Binding RelativeSource={RelativeSource Self}}&quot;&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;Window.Resources&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;col:ArrayList x:Key=&quot;Values&quot;&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;sys:String&gt;1&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;sys:String&gt;5&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;sys:String&gt;10&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;sys:String&gt;-1&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;sys:String&gt;-5&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;sys:String&gt;-10&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/col:ArrayList&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;/Window.Resources&gt;<br>\r\n&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;wpf:DataGrid ItemsSource=&quot;{Binding NameValuePairs}&quot; AutoGenerateColumns=&quot;False&quot; CanUserAddRows=&quot;False&quot;&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;wpf:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;wpf:DataGridTextColumn Header=&quot;Name&quot; Binding=&quot;{Binding Name}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;wpf:DataGridComboBoxColumn Header=&quot;Value (Setting Properties in Styles)&quot;&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;wpf:DataGridComboBoxColumn.ElementStyle&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Style TargetType=&quot;ComboBox&quot;&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;Background&quot; Value=&quot;{Binding Background}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;Text&quot; Value=&quot;{Binding Value}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;IsEditable&quot; Value=&quot;True&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;ItemsSource&quot; Value=&quot;{Binding Source={StaticResource Values}}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/Style&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/wpf:DataGridComboBoxColumn.ElementStyle&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;wpf:DataGridComboBoxColumn.EditingElementStyle&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Style TargetType=&quot;ComboBox&quot;&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;Background&quot; Value=&quot;{Binding Background}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;IsEditable&quot; Value=&quot;True&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;ItemsSource&quot; Value=&quot;{Binding Source={StaticResource Values}}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;Setter Property=&quot;Text&quot; Value=&quot;{Binding Value}&quot;/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/Style&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/wpf:DataGridComboBoxColumn.EditingElementStyle&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/wpf:DataGridComboBoxColumn&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/wpf:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;/wpf:DataGrid&gt;<br>\r\n&lt;/Window&gt;<br>\r\n<br>\r\nAs you can see, I have tried different approaches to get it to work. No dice.<br>\r\n<br>\r\nBest,<br>\r\nKent<br>\r\n",
+    "PostedDate": "2009-02-11T06:54:44.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156759",
+    "ThreadId": "46627",
+    "Html": "I'm not sure what the issue is from just looking at that but have you also tried setting TextBinding on DataGridComboBoxColumn?  \r\n",
+    "PostedDate": "2009-02-11T11:53:28.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156790",
+    "ThreadId": "46627",
+    "Html": "Yes, that's the first thing I tried :)<br>\r\n<br>\r\nIt looks to me as though the bindings are being cleared or something, but I haven't had time to debug through the code to verify.<br>\r\n<br>\r\nIs there somewhere I can email my repro?<br>\r\n<br>\r\nThanks,<br>\r\nKent<br>\r\n",
+    "PostedDate": "2009-02-11T13:18:45.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163847",
+    "ThreadId": "46627",
+    "Html": "I have the same problem.<br>\r\nDoes anybody know how to solve this?<br>\r\n<br>\r\nThanks in advance.\r\n",
+    "PostedDate": "2009-03-03T06:14:39.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163911",
+    "ThreadId": "46627",
+    "Html": "hello,<br>\r\n<br>\r\nI think I found the solution:<br>\r\nyou have to add: <span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&lt;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;IsSynchronizedWithCurrentItem&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;False&quot; /&gt;<br>\r\n<br>\r\nThis works for me.\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-03-03T08:06:01.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164211",
+    "ThreadId": "46627",
+    "Html": "afva,<br>\r\n<br>\r\nUnfortunately, your workaround seems to do nothing for me.<br>\r\n<br>\r\nBest,<br>\r\nKent<br>\r\n",
+    "PostedDate": "2009-03-04T01:26:25.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242090",
+    "ThreadId": "46627",
+    "Html": "<p>hello,</p>\r\n<p>is there a solution for this issue? Because I have the same problem right now.</p>\r\n<p>Greetings</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-05T02:49:31.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245535",
+    "ThreadId": "46627",
+    "Html": "<p>Hi I had problems with this issue al well. I did find a working example. I searched to find any differences with my code&nbsp;and&nbsp;I found out that it worked if you set the SelectedValueBinding and SelectedValuePath properties as well (as the SelectedItemBinding).</p>\r\n<p>So this</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridComboBoxColumn</span> <span style=\"color:Red\">DisplayMemberPath</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;DisplayName&quot;</span>\r\n                                 <span style=\"color:Red\">Header</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;Truck&quot;</span> <span style=\"color:Red\">Width</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;200&quot;</span> \r\n                                 <span style=\"color:Red\">SelectedItemBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding SelectedTruck }&quot;</span>\r\n                                 <span style=\"color:Blue\">&gt;</span>\r\n    &lt;Controls:DataGridComboBoxColumn.ElementStyle&gt;\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ComboBox&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;IsSynchronizedWithCurrentItem&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;False&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ItemsSource&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding Path=Trucks}&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style</span><span style=\"color:Blue\">&gt;</span>\r\n    &lt;/Controls:DataGridComboBoxColumn.ElementStyle&gt;\r\n    &lt;Controls:DataGridComboBoxColumn.EditingElementStyle&gt;\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ComboBox&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ItemsSource&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding Path=Trucks}&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;IsDropDownOpen&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;True&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style</span><span style=\"color:Blue\">&gt;</span>\r\n    &lt;/Controls:DataGridComboBoxColumn.EditingElementStyle&gt;\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridComboBoxColumn</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n<pre>&nbsp;</pre>\r\n<pre>does <strong>not</strong> work but this</pre>\r\n<pre>&nbsp;</pre>\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridComboBoxColumn</span> <span style=\"color:Red\">DisplayMemberPath</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;DisplayName&quot;</span>\r\n                                 <span style=\"color:Red\">Header</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;Truck&quot;</span> <span style=\"color:Red\">Width</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;200&quot;</span> \r\n                                 <span style=\"color:Red\">SelectedValueBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding SelectedTruck.Key}&quot;</span>\r\n                                 <span style=\"color:Red\">SelectedValuePath</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;Key&quot;</span>\r\n                                 <span style=\"color:Red\">SelectedItemBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding SelectedTruck }&quot;</span>\r\n                                 <span style=\"color:Blue\">&gt;</span>\r\n    &lt;Controls:DataGridComboBoxColumn.ElementStyle&gt;\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ComboBox&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;IsSynchronizedWithCurrentItem&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;False&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ItemsSource&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding Path=Trucks}&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style</span><span style=\"color:Blue\">&gt;</span>\r\n    &lt;/Controls:DataGridComboBoxColumn.ElementStyle&gt;\r\n    &lt;Controls:DataGridComboBoxColumn.EditingElementStyle&gt;\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ComboBox&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;ItemsSource&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;{Binding Path=Trucks}&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;IsDropDownOpen&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;True&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style</span><span style=\"color:Blue\">&gt;</span>\r\n    &lt;/Controls:DataGridComboBoxColumn.EditingElementStyle&gt;\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridComboBoxColumn</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n<pre style=\"color:Black;background-color:White\">does work and doesn't loses the selected item when focus is lost.</pre>\r\n<pre style=\"color:Black;background-color:White\">I am not 100% sure why this is ... Maybe someone can elaborate ?</pre>\r\n</div>",
+    "PostedDate": "2009-10-14T05:20:52.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261606",
+    "ThreadId": "46627",
+    "Html": "<p>hi, Beretta1979. I also have this problem. Help me, please</p>\r\n<p>What is&nbsp;</p>\r\n<pre><span style=\"color:Blue\">SelectedTruck<br><span style=\"color:#000000\"><br>in your code?<br><br>Thank you!</span></span></pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-29T09:48:14.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261800",
+    "ThreadId": "46627",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>_tanusha_ wrote:</strong><br>\r\n<p>hi, Beretta1979. I also have this problem. Help me, please</p>\r\n<p>What is&nbsp;</p>\r\n<pre><span style=\"color:Blue\">SelectedTruck<br><span style=\"color:#000000\"><br>in your code?<br><br>Thank you!</span></span></pre>\r\n<p>&nbsp;</p>\r\n</blockquote>\r\n<p>&nbsp;That is just a property&nbsp;of my viewmodel representing a truck object. (the selected one in the combobox out of the list of trucks)</p>",
+    "PostedDate": "2009-11-30T02:39:21.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "735311",
+    "ThreadId": "46627",
+    "Html": "<p>Your not doing anything stupid, the amount of work it takes to get a&nbsp;DataGridComboBoxColumn working is absolutely staggering</p>",
+    "PostedDate": "2012-02-01T13:06:03.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "735538",
+    "ThreadId": "46627",
+    "Html": "<p>Best resource on&nbsp;<strong>DataGridComboBoxColumn&nbsp;</strong>I found is the <strong>example </strong>here:</p>\r\n<p>http://msdn.microsoft.com/en-us/library/system.windows.controls.datagridcomboboxcolumn.aspx</p>\r\n<pre class=\"default prettyprint\"><span style=\"font-family: monospace;\"><br /></span></pre>",
+    "PostedDate": "2012-02-01T15:35:02.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

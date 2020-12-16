@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a control that uses a D3DImage control to render Direct3D a scene into an Image control in the application window. If I have the window derived from the classic Window class, it behaves correctly. When I use RibbonWindow instead of a Window class, the first window maximization is OK but when I restore and maximize the window again, the title bar turns black and the Close, Minimize and Restore buttons are not displayed (although they work if you click on place where they are supposed to be). It happens on the primary monitor only.\nSome places of the RibbonWindow that are not covered with any control are black too.\nI have reproduced the bug on Windows 7 64-bit, Windows Vista 32 and 64bit, the graphics card ATI Mobility Radeon x1900 and also nVidia GeForce GT 240M. \nI attach the sample project file - if you change the RibbonWindow to Window in the sample project, it behaves correctly. With the RibbonWindow the bug occurs. SlimDX has to be installed in order to run the attached sample (www.slimdx.org).",
+    "LastUpdatedDate": "2013-02-21T18:40:48.273-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-01-06T08:27:54.39-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RibbonWindow bug with D3DImage",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11427
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3671,
+      "FileName": "SlimDXWPFTest.zip",
+      "DownloadUrl": ".\\3671"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This is happening with Windows 7 as well, and I cannot use the RibbonWindow because of this problem.  The SouthRidge example has the same problem.  This is a show stopper...",
+      "PostedDate": "2010-03-22T09:56:18.333-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:48.273-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

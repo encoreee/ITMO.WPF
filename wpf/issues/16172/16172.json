@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When i set AutoCompleteBox.SelectedItem on Button.Click all works fine(AutoCompleteBox.SelectedItem and AutoCompleteBox.Text changed), but if i set AutoCompleteBox.SelectedItem on Window.Loaded (AutoCompleteBox.Text is empty).\n \n<DataTemplate x:Key=\"AutoCompletePartnerTemplate\">\n      <TextBlock Text=\"{Binding Path=DirName}\"/>\n    </DataTemplate>\n \n<my:AutoCompleteBox Name=\"AutoCompleteBox1\" ItemTemplate=\"{StaticResource AutoCompletePartnerTemplate}\" ItemsSource=\"{StaticResource Dir11}\" ValueMemberBinding=\"{Binding DirName}\" FilterMode=\"Contains\" IsTextCompletionEnabled=\"True\" />\n \n      var q = (IEnumerable<Dir1>)(AutoCompleteBox1.ItemsSource).AsQueryable();\n      var tDir = q.FirstOrDefault<Dir1>(q1 => q1.DirId.Equals(OwnerId));\n      AutoCompleteBox1.SelectedItem = tDir;\n \nhttp://social.msdn.microsoft.com/Forums/en-US/wpf/thread/e2cfb956-1cdb-403f-a47d-81128cb3bc07",
+    "LastUpdatedDate": "2013-02-21T18:40:11.547-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-06-26T20:00:52.223-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect set AutoCompleteBox.SelectedItem on Window.Loaded",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 16172
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi,\nSame for me...\nAny workaround about it? I've been googling and digging for some days,\nand nothing's pretty clean to make it work. It becomes annoying.\nAny chance to get it fixed some day, or to get any pretty clean work around?\nThank you.",
+      "PostedDate": "2012-12-11T05:15:34.95-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:11.547-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

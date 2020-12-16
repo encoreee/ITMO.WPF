@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "135444",
+    "ThreadId": "40845",
+    "Html": "I am working on a project that uses the new DataGrid WPF control to display and allow the user to edit various tables. Previously, I have used the combination of ListView and GridView that allows me to handle column header right-button clicks differently from right-button clicks in the content area, which works very well in the scenario I am developing for. However, I cannot seem to find a way to do the same thing with the V1 DataGrid. Even simply setting the column header context menu differently from that of the content area (as is done in e.g. the Windows XP and Windows 2008 &quot;Windows Explorer&quot; details view) would do very well.<br>\r\n<br>\r\nHas anyone managed to do something like this and if so, how? An example XAML snippet would be great, but pointers in the right direction could be a good start. I would prefer to not have to dig too deeply into the DataGrid source code.<br>\r\n",
+    "PostedDate": "2008-11-26T01:51:42.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135469",
+    "ThreadId": "40845",
+    "Html": "Hi,<br>\r\n<br>\r\nHow about the following:<br>\r\n<br>\r\nHandle the mouse event for your DataGrid<br>\r\n<br>\r\n&lt;dg:DataGrid Name=&quot;dataGrid&quot;&nbsp; ... MouseRightButtonUp=&quot;dataGrid_MouseRightButtonUp&quot;&gt;<br>\r\n<br>\r\nThis event will tunnel (or is it bubble?!!) from the clicked element to your DataGrid. The e.OriginalSource will be the element that was clicked on. You can then navigate the visual tree to see if this item is within a cell or the column header.<br>\r\n<br>\r\nprivate void dataGrid_MouseRightButtonUp(object sender, MouseButtonEventArgs e)<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; DependencyObject dep = (DependencyObject)e.OriginalSource;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; while ((dep != null) &amp;&amp; !(dep is DataGridCell) &amp;&amp; !(dep is DataGridColumnHeader))<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dep = VisualTreeHelper.GetParent(dep);<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; if (dep == null)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; if (dep is DataGridColumnHeader)<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // do something<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; if (dep is DataGridCell)<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // do something else - possibly navigate to the row.<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n}<br>\r\n<br>\r\nHope that helps,<br>\r\nColin E. \r\n",
+    "PostedDate": "2008-11-26T02:53:56.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135548",
+    "ThreadId": "40845",
+    "Html": "Yes, this works great! I was hoping for something doable purely in XAML but it is definitely good enough unless someone else comes up with something.<br>\r\n<br>\r\nMany thanks, Colin.<br>\r\n",
+    "PostedDate": "2008-11-26T05:58:05.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135552",
+    "ThreadId": "40845",
+    "Html": "Hi,<br>\r\n<br>\r\nGlad it worked :-) I would not get too hung about about doing everything in XAML. I know that doing everything in XAML makes you look like a super-cool WPF coder, but really it does not make sense for everything. <br>\r\n<br>\r\nI am pretty sure that what you are asking is not possible in pure - XAML. <br>\r\n<br>\r\nColin E. \r\n",
+    "PostedDate": "2008-11-26T06:08:15.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

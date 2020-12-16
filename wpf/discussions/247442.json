@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "571603",
+    "ThreadId": "247442",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm doing cell editing in a WPF datagrid.&nbsp; In my CellEditEnding handler, I'm setting the DataGridCellEditEndingEventArgs.Cancel property to true under certain circumstances.&nbsp; According to the docs, the cell is supposed to remain in edit mode as\r\n a result of this.&nbsp; It is essentially having no effect at all for me; the cell edit is ending and focus is moving to a different cell.</p>\r\n<p>Is there some thing else I have to do to achieve this?</p>\r\n<p>&nbsp;&nbsp; Thanks,</p>\r\n<p>&nbsp;&nbsp; Mike</p>\r\n",
+    "PostedDate": "2011-02-24T09:14:44.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

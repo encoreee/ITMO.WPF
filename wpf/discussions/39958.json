@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "132616",
+    "ThreadId": "39958",
+    "Html": "Is there a event that is fired when the user selects to Maximize or Minimize the Ribbon in the RibbonQuickAccessToolBar?<br>\r\n",
+    "PostedDate": "2008-11-14T07:31:36.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132747",
+    "ThreadId": "39958",
+    "Html": "Hi ashlar64,<br>\r\n<br>\r\nThere are no built in Maximize or Minimize events, but as a workaround you can listen for the Opened &amp; Closed events on the popup part (PART_SELECTEDGROUPSPOPUP) which displays the Ribbon when it's in the minimize mode.<br>\r\n<br>\r\nIf you don't mind, can I ask what you're using these events for?  The reason we didn't include them was because we couldn't think of a strong enough real-world scenario for needing them, so if you have a scenario, we'd love to hear about it.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-14T15:16:58.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133088",
+    "ThreadId": "39958",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nWell I am making a app with a DataGrid on it.&nbsp; I figured that instead of having a empty space between the datagrid and the minimized Ribbon I would just increase the DataGrids size and utilize that empty space.&nbsp; For instance Word 2007 does something similar.&nbsp; I am still a bit new with C# perhaps there is a better way to do this then with a event?&nbsp; Some sort of databinding perhaps?<br>\r\n",
+    "PostedDate": "2008-11-17T05:55:58.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133467",
+    "ThreadId": "39958",
+    "Html": "Ok, I see.  The way I usually do this is that I structure my app so that the Ribbon and DataGrid are both contained in a Grid.  I give the top row of the Grid (which contains Ribbon) a Height of Auto and the second row (which contains DataGrid) a Height of *.  I also don't set an explicit Height or Width on DataGrid.  The XAML look something like this (and you should also be able to do the same thing in code):<br>\r\n<br>\r\n&lt;Grid&gt;<br>\r\n    &lt;Grid.RowDefinitions&gt;<br>\r\n        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;<br>\r\n        &lt;RowDefinition Height=&quot;*&quot;/&gt;<br>\r\n    &lt;/Grid.RowDefinitions&gt;<br>\r\n<br>\r\n    &lt;r:Ribbon Grid.Row=&quot;0&quot;/&gt;<br>\r\n<br>\r\n    &lt;dg:DataGrid Grid.Row=&quot;1&quot;/&gt;<br>\r\n<br>\r\n&lt;/Grid&gt;<br>\r\n<br>\r\nI find that when my app is structured in this way, when the Ribbon is minimized, the top row of the Grid automatically collapses when Ribbon is minimized and the second row grows so that DataGrid fills all of the remaining space.  Does something like that work for you?<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-18T11:59:23.653-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224827",
+    "ThreadId": "39958",
+    "Html": "<p>Hi Samantha,</p>\r\n<p>I've got a question about minimizing a ribbon. How I do minimize it using code? Like calling some method or setting some property to true/false. I want that ribbon initialy was collapsed and cant figure out how to do this.</p>\r\n<p>&nbsp;</p>\r\n<p>With regards Sergiy</p>",
+    "PostedDate": "2009-08-18T02:27:08.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "225060",
+    "ThreadId": "39958",
+    "Html": "<p>Hi Sergiy,</p>\r\n<p>You just have to set the Ribbon's IsMinimized property to true.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-08-18T10:54:58.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "225331",
+    "ThreadId": "39958",
+    "Html": "<p>Thanks a lot Samantha. Works great.</p>",
+    "PostedDate": "2009-08-19T01:56:07.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "585219",
+    "ThreadId": "39958",
+    "Html": "<p>How would I go about using PART_SELECTEDGROUPSPOPUP? Would this be the same procedure for the new version of the WPF Ribbon released at the end of 2010?</p>\n<p>I'm using the most recent release of the WPF ribbon from MS. I  utilize a MVVM pattern thats very similar to the samples that were  included. When I minimize the ribbon window via the context menu, it  appears to work correctly, but when I click it again to  redisplay it (right clicking on the empty space to the right of the tab  header), the ribbon control reappears, but the tab headers are blank.</p>\n<p>I performed a simple test. I added a button to my program and in it I  loop through each view model object for the tabs and call my  OnPropertyChanged(..) function for the Header property. When the tab  headers become blank, and I click the button, they reappear...  so something is not firing to redisplay the tab headers.</p>\n<p>&nbsp;</p>\n<p>I also posted the same question here http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/aa5b97ea-eb2a-419e-a8aa-78df135539ba</p>",
+    "PostedDate": "2011-03-23T11:33:59.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "815528",
+    "ThreadId": "39958",
+    "Html": "<p>Hi!&nbsp;</p>\r\n<p>Scenario:</p>\r\n<p>Ribbon group is disabled when I start application.</p>\r\n<p>In tooltip of ribbon I click \"minimize ribbon\"</p>\r\n<p>Then I set property \"IsEnabled\" (by binding from VM) in true, but it's no effect and it's in disabled mode.</p>\r\n<p>So it is bug, but if this events exists I could reset binding :)</p>\r\n<h6></h6>",
+    "PostedDate": "2012-03-26T05:08:58.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

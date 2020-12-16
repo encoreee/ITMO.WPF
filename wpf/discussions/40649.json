@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "134800",
+    "ThreadId": "40649",
+    "Html": "Should I be able to bind a DatePicker to a Nullable Date property of a class?<br>\r\n<br>\r\nSuch as:<br>\r\n<br>\r\n<pre style=\"color:#0000ff\">Public Class <span style=\"color:#000000\">Person</span>\r\n    Private <span style=\"color:#000000\">_BirthDate</span> As Date<span style=\"color:#000000\">?</span>\r\n\r\n    Public Property <span style=\"color:#000000\">BirthDate()</span> As Date<span style=\"color:#000000\">?</span>\r\n        Get \r\n            Return <span style=\"color:#000000\">_BirthDate</span>    \r\n        End Get \r\n        Set(ByVal <span style=\"color:#000000\">value</span> As Date<span style=\"color:#000000\">?</span>) \r\n            <span style=\"color:#000000\">_BirthDate = value</span>\r\n        End Set\r\n    End Property\r\nEnd Class\r\n</pre>\r\n<br>\r\nand:<br>\r\n<br>\r\n<pre style=\"color:#ff0000\"><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#a31515\">my</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">DatePicker</span> SelectedDate<span style=\"color:#0000ff\">=&quot;{</span><span style=\"color:#a31515\">Binding</span> Path<span style=\"color:#0000ff\">='BirthDate'}&quot; /&gt;</span></pre>\r\nAt runtime, after changing the date in the DatePicker, a breakpoint in Birthday's Set code shows value = Nothing.\r\n",
+    "PostedDate": "2008-11-24T08:14:53.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134986",
+    "ThreadId": "40649",
+    "Html": "Well, the DateTime for SelectedDate in DatePicker is Nullable so a null value should be fine. As for your your binding issue, try making the BindingMode explicitly TwoWay in your XAML with<br>\r\n <br>\r\n<span style=\"color:#0000ff\">&lt;</span><span style=\"color:#a31515\">my</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">DatePicker</span> SelectedDate<span style=\"color:#0000ff\">=&quot;{</span><span style=\"color:#a31515\">Binding</span> Path<span style=\"color:#0000ff\">=BirthDate, <span style=\"color:#000000\">Mode </span>=TwoWay}&quot; /&gt;</span><br>\r\n<br>\r\nDoes this fix your issue?<br>\r\n<br>\r\n-Eric Fabricant, MSFT \r\n",
+    "PostedDate": "2008-11-24T20:32:55.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135668",
+    "ThreadId": "40649",
+    "Html": "Thank you very much!!<br>\r\n<br>\r\nI tried a simple example project based on the sample code above, without two-way binding, and noticed that after setting a date, the Set method was not called, but in my larger project, Birthdate's Set was being called without two-way binding.  The call was actually coming from my &quot;SetProperties&quot; procedure that updates the object based on the values in it's bound Clone when I hit the &quot;Save&quot; button on the control.  Neither the SetProperties procedure or Save button, or the fact that I actually bind a MemberwiseClone of the object and later update all of it's properties were included in the example.<br>\r\n<br>\r\nSo without Two-Way Binding, the date was changed on the UI side, without affecting the bound object. With Two-Way Binding, changing the date Does affect the bound object.  Either way, all of the writable properties were being changed by my SetProperties procedure that didn't make its way over to my example.<br>\r\n<br>\r\nSorry and Thanks,<br>\r\nPatrick Halisey\r\n",
+    "PostedDate": "2008-11-26T11:48:51.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

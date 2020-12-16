@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "264681",
+    "ThreadId": "77411",
+    "Html": "<p>Is there a limitation on form width? I notice that if I resize the window to be smaller than 350 pixels in width, the ribbon toolbar will disappear. Is there a workaround to make it work with small window?</p>",
+    "PostedDate": "2009-12-07T16:20:08.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264828",
+    "ThreadId": "77411",
+    "Html": "<p>That's just the way ribbons work. Office is the same.</p>",
+    "PostedDate": "2009-12-08T01:48:11.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273247",
+    "ThreadId": "77411",
+    "Html": "<p>Thanks. Well, Office 2007 seems to show the ribbon menus when the width is larger than 250px which is much better.</p>",
+    "PostedDate": "2010-01-05T03:39:59.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

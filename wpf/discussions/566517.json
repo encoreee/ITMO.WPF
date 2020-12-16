@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1301887",
+    "ThreadId": "566517",
+    "Html": "Hi all,\r<br />\n<br />\nDoes anyone meet this issue that when the selection list of AutoCompleteBox has 2 entries with same value, everytime I choose the second one it will return the first one to me.\r<br />\n<br />\nLet me give an example to illustrate. Here is the name list shown in AutoCompleteBox when I type 'A' in AutoCompleteBox\r<br />\n<br />\nAlex\r<br />\nAlice\r<br />\nAlex\r<br />\n<br />\nProperties of these 3 persons. The itemsource of AutoCompleteBox is an ObservableCollection&lt;Person&gt;\r<br />\n<br />\n&lt;Person&gt; object with Name and Id properties.\r<br />\n<br />\nName         Id\r<br />\nAlex             1\r<br />\nAlice            2\r<br />\nAlex             3\r<br />\n<br />\nWhen I choose the first Alex or Alice, it returns me Id 1 and 2 as expected. However, When I choose the second Alex (3rd option), it still returns me Id 1. \r<br />\n<br />\nI am confused why it always return the first Alex even I chose the second Alex. Any forks know it is a bug or AutoCompleteBox does not allow selection list have 2 options with the same value ?\r<br />\n<br />\nThanks very much.<br />\n",
+    "PostedDate": "2014-09-06T21:09:45.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1347621",
+    "ThreadId": "566517",
+    "Html": "Hi there,\r<br />\nI am experiencing the same issue. How did you resolve this issue?\r<br />\n<br />\nThanks\r<br />\nKS<br />\n",
+    "PostedDate": "2015-01-30T10:50:56.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360588",
+    "ThreadId": "566517",
+    "Html": "\r\n<div dir=\"ltr\">Hi KS,\r\n<div><br>\r\n</div>\r\n<div>Just come across your query now. Have you found a solution via the internet ?</div>\r\n<div><br>\r\n</div>\r\n<div><br>\r\n</div>\r\n</div>\r\n<div><br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2015-03-06T21:43:03.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "229279",
+    "ThreadId": "67462",
+    "Html": "<p>I have a Datagrid bind to a IList dynamically. In the grid I have a column of DateTime type. I need to replace all DateTime.MinValue in DateTime column with empty values. I cannot replace values in List as DateTime cannot store null or empty values. I have to use Converter class. <br><br>I am binding grid with the list and generating columns dynamically. How can I bind converter dynamically?</p>",
+    "PostedDate": "2009-08-31T04:33:50.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

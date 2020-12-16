@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "VSM",
+      "DisplayName": "VSM"
+    },
+    "ClosedComment": "Please report this issue again and include a repro app if you are still blocked by it.",
+    "ClosedDate": "2009-04-07T13:19:49.33-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "States keep on disappearing from the state viewer after closing and reopening the project. All states are still in the XAML and work fine, but they do not show up in the viewer anymnore and would not be able to change or add states.",
+    "LastUpdatedDate": "2013-05-16T05:31:14.667-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-06T11:30:48.613-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "States Disappearing from the State viewer",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8428
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "What state viewer are you using? Are you using Expression Blend, Visual Studio, or another application?",
+      "PostedDate": "2009-02-18T16:30:25.233-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:30:26-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-07T13:19:49.33-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:40.903-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:14.667-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

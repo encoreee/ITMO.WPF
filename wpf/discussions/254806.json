@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "600951",
+    "ThreadId": "254806",
+    "Html": "\r\n<div style=\"background-color:white; color:black\">\r\n<pre>My understanding is that the .NET 4.0 has fixed databinding of radiobuttons. This has been a sinkhole in terms of time. Can someone</pre>\r\n<pre>please show me how to databind two radiobuttons to a bool using 4.0...I have tried so many different permutations (some work for awhile but eventually stop).</pre>\r\n<pre>I have tried giving them different groupnames, but giving them the same BindingGroupName in the Binding statement...Doesn't fly...I would</pre>\r\n<pre>really appeciate some help! Thanks!!!!  </pre>\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">RadioButton</span>                      \r\n                <span style=\"color:red\">Content</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">General</span><span style=\"color:black\">&quot;</span>\r\n                <span style=\"color:red\">GroupName</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Foo</span><span style=\"color:black\">&quot;</span>\r\n                <span style=\"color:red\">IsChecked</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=IsDirectedTask, Converter={StaticResource OppositeBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}</span><span style=\"color:black\">&quot;</span>                 \r\n                <span style=\"color:blue\">/&gt;</span>\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">RadioButton</span>                                                      \r\n                <span style=\"color:red\">Content</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Direct</span><span style=\"color:black\">&quot;</span>\r\n                <span style=\"color:red\">GroupName</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Foo2</span><span style=\"color:black\">&quot;</span>\r\n                <span style=\"color:red\">IsChecked</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=IsDirectedTask, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}</span><span style=\"color:black\">&quot;</span> \r\n                <span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-04-21T06:15:39.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601314",
+    "ThreadId": "254806",
+    "Html": "<p>Why aren't you using a checkbox?&nbsp; RadioButtons are for mutually exclusive enums.</p>",
+    "PostedDate": "2011-04-21T15:40:19.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601337",
+    "ThreadId": "254806",
+    "Html": "<p>The short answer...because that is what the customer wants.&nbsp; If he wants radio buttons and he is paying for it, he gets radio buttons.</p>\r\n<p>There are legitimate situations where two radio buttons provide more information to the end user than a checkbox because you can visually see what the opposite is.&nbsp; To a novice end user, this creates a better experience.</p>\r\n<p>I can make it an enum with two fields instead of a boolean, if need be. It is just a shame because the UI should not be driving that type of decision.</p>",
+    "PostedDate": "2011-04-21T18:04:59.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

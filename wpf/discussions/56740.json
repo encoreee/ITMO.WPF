@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "191796",
+    "ThreadId": "56740",
+    "Html": "<p>I have a WPF Datagrid, with a combination of Templatecolumns and Text columns.&nbsp;</p>\r\n<p>My Template columns have both CellTemplate and CellEditingTemplate defined.</p>\r\n<p>By default the Editing Tempalte is only displayed for the current cell.</p>\r\n<p>Is it possible to display the CellEditingTemplate for EVERY column in the row being edited?</p>",
+    "PostedDate": "2009-05-19T01:32:12.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192086",
+    "ThreadId": "56740",
+    "Html": "<p>I have added this scenario to our list of customer requests. I don't think we have a way to do this in the current code.</p>\r\n<p>Ben</p>",
+    "PostedDate": "2009-05-19T13:53:45.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

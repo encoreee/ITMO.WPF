@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "526029",
+    "ThreadId": "235765",
+    "Html": "\r\n<p>I have this issue with my RibbonApplicationMenu because i have few items in main men&ugrave;. So child panel is litle and i can see only two menu item.<br>\r\nThe problem is like this:<br>\r\n<a href=\"http://www.chakkaradeep.com/category/WPF.aspx\">http://www.chakkaradeep.com/category/WPF.aspx</a><br>\r\n<a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=38991\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=38991</a><br>\r\n<br>\r\nbut workaround proposed doesn't work with this wpf ribbon release. <br>\r\n<br>\r\nHow can be solved this problem in actual Ribbon ToolBar release?<br>\r\n<br>\r\nThankyou</p>\r\n",
+    "PostedDate": "2010-11-23T11:41:46.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

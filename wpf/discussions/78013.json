@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "266822",
+    "ThreadId": "78013",
+    "Html": "<p>I am creating a WPF Chart with several AreaSeries.&nbsp; By default, the GridLines appear behind the data and are difficult to see.</p>\r\n<p>Can I force the GridLines to always display on top of the data?&nbsp; Is there a control where the attached property Panel.ZIndex&nbsp; (or Canvas.ZIndex) can be set to specify where the GridLines appear?</p>\r\n<p>Thanks,</p>",
+    "PostedDate": "2009-12-13T13:59:26.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

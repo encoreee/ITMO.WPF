@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "478359",
+    "ThreadId": "223000",
+    "Html": "<p>Hi,</p>\r\n<p>Looking at the Wpf Toolkit assemblies in Reflector I can see the AccordionAutomationPeer and the AccordionItemAutomationPeer, but when I run my application and spy into it (using Visual UI Automation Verify) the items in the accordion don't support the Patterns defined on AccordionItemAutomationPeer. I noticed there is another class, AccordionItemWrapperAutomationPeer, and am suspicious that this is what is presented to Automation by the Accordion control.</p>\r\n<p>Can anyone confirm that this is the case and the Accordion's UI Automation is a bit buggy, or can they shed some light on why I can't access the ExpandCollapse pattern which looks like it should be available on the Items?</p>\r\n<p>Thanks,</p>\r\n<p>Graeme</p>",
+    "PostedDate": "2010-08-09T18:57:54.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

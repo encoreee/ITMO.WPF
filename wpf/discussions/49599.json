@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "165992",
+    "ThreadId": "49599",
+    "Html": "Hi,<br>\r\n<br>\r\nI am new to suing Datagrid control of WPF toolkit. I have a list collection and i am setting itemsource property of my datagrid to that listcollection.<br>\r\nI have set <span style=\"font-size:13px;color:#ff0000\">CanUserAddRows</span><span style=\"font-size:13px;color:#0000ff\">=&quot;False&quot; so as to avoid getting extra row in the grid.<br>\r\n<br>\r\nI am adding items to the list collection on a click event of button and again setting that listcollection as an item source to datagrid. But new items does not gets added to datagrid. It displays old collection of items only.<br>\r\n<br>\r\nI am not sure where am i doing wrong over here. My collection contains old items as well as new item. Then datagrid should display new collection of data.<br>\r\n<br>\r\nPlease help me out to figure out the issue.</span> \r\n",
+    "PostedDate": "2009-03-09T02:20:26.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166019",
+    "ThreadId": "49599",
+    "Html": "Hi,<br>\r\n<br>\r\nLet me see if I can help.<br>\r\n<br>\r\nThe fist part sounds good, creating a List and setting it as the ItemsSource of your DataGrid. <br>\r\n<br>\r\nSo, you are adding new items to you list in code-behind and want the DataGrid, which is a view on this list, to update accordingly. The best way to do this is to use a List collection type that raises events when items are added or removed. ObservableCollection is a good candidate for your needs (See the CollectionChanged event - this is raised when items are added / removed).<br>\r\n<br>\r\nSo, if you add your objects to an ObsrvableCollection, your DataGrid should update automatically as items are added / removed.<br>\r\n<br>\r\nFor a more detailed example see the following:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#layered<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-03-09T04:30:55.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167219",
+    "ThreadId": "49599",
+    "Html": "Hi thanks for the reply,<br>\r\n<br>\r\nI tried setting datagrid.itemsource =  null and then resetting new collection as itemsource. It worked for me :)<br>\r\n<br>\r\nthanks\r\n",
+    "PostedDate": "2009-03-11T23:54:00.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

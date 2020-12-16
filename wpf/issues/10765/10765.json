@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, I'm using the data grid control in the WPF Toolkit for DEV. The cell can enter the editing mode if the user click on the cell. So the content control of the cell is changed during the editing mode changes. For example, in non editing mode, the control of the cell is a \"TextBlock\", but in editing mode, the control of the cell should be a \"ComboBox\". \nBut from the UI spy, I can't see the changes. The children elements of the cell element is never get updated even if I press F5 to refresh view in the UISpy. \n \nAs I downloaded the source code of the WPF ToolKit, so I did some debugging on my machine. I made some small changes in the GetChildrenCore method of DataGridCellItemAutomationPeer class. I called the ResetChildrenCache to force the peer to update the children, and it seems resolve the problem that I observed. This solution should works, and maybe there are some other ways to resolve this problem. But I just paste it here for your reference. Please see the following code:\n \n        protected override List<AutomationPeer> GetChildrenCore()\n        {\n            if (this.OwningCellPeer == null) return null;\n \n            this.OwningCellPeer.ResetChildrenCache();\n            return this.OwningCellPeer.GetChildren();\n        }\n \n \nI hope we can get a newer release that doesn't has this problem soon.",
+    "LastUpdatedDate": "2013-02-21T18:40:54.887-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-10-15T01:33:37.757-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AutomationElement for cell in DataGrid is not correctly updated.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10765
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "If I insertone new row in the first position of the grid, the row and cell automation elements are also not correctly updated. You can use the UISpy tool to find this issue.",
+      "PostedDate": "2009-10-16T00:18:44.14-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:54.887-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

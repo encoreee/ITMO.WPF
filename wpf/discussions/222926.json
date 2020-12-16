@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "478080",
+    "ThreadId": "222926",
+    "Html": "<p>Hi, guys</p>\r\n<p>Recently, I encoutered a situation&nbsp;that that the OnApplyTemplate() method will be called before Loaded event, especially when I add some control to a window(something like that). Does someone know why will this happen? It's a pity that I cannot show this in my own demo, so I can just describe it, in hoping that someone may have encountered either or have something to tell.</p>\r\n<p>Appreciate for your help.</p>",
+    "PostedDate": "2010-08-09T06:35:03.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

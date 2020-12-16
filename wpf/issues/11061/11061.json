@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Why Handled is set to true for Enter??\nNo additional InputBinding for Enter is possible...\n(The TextBox does not accept Enter, so bubbelíng should not be stopped)\n \n        private bool ProcessDatePickerKey(KeyEventArgs e)\n        {\n            switch (e.Key)\n            {\n                case Key.System:\n                {\n                    switch (e.SystemKey)\n                    {\n                        case Key.Down:\n                        {\n                            if ((Keyboard.Modifiers & ModifierKeys.Alt) == ModifierKeys.Alt)\n                            {\n                                TogglePopUp();\n                                return true;\n                            }\n \n                            break;\n                        }\n                    }\n \n                    break;\n                }\n \n                case Key.Enter:\n                {\n                    SetSelectedDate();\n                    return true;\n                }\n            }\n \n            return false;\n        }",
+    "LastUpdatedDate": "2013-02-21T18:40:50.39-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-12-07T01:07:17.693-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker consumes Enter, why",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11061
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This just stung me too. I have a DatePicker on a UserControl, and the host page is handling the PreviewKeyDown event on the UserControl. If the DatePicker has focus and I hit Enter, the event is not bubbling up to the UserControl and my event handler is never called. Annoying!",
+      "PostedDate": "2010-06-14T21:49:29.833-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Oops, it's the KeyDown event on the UserControl that I'm handling. PreviewKeyDown does show me the Enter key, but it fires before I get a chance to catch it on the individual controls, so I need to use KeyDown. Regardless, this is a bug that needs to be fixed.",
+      "PostedDate": "2010-06-14T21:55:05.603-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:50.39-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

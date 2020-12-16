@@ -1,0 +1,101 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a WPF application with a page that hosts the DataGrid. I'm hitting an exception (details below) whenever I navigate to the page and the datagrid has an item that breaks a validation rule. The exception occurs during page creation (within InitializeComponent). \n \nOutside of not using validation, is there some behavior I can change which might prevent this? Alternatively, is there a code change I can make in the DataGrid that will solve this (or at least workaround it)?\n \nThanks,\n \n-Craig\n \nMessage=\"'System.Windows.Data.BindingExpression' value cannot be assigned to property 'ItemsSource' of object 'Rigel.DataGrid'. 'DeferRefresh' is not allowed during an AddNew or EditItem transaction.  Error at object 'System.Windows.Data.Binding' in markup file 'Rigel;component/attributepage.xaml' Line 264 Position 25.\"\n  Source=\"PresentationFramework\"\n  LineNumber=264\n  LinePosition=25\n  StackTrace:\n      at System.Windows.Markup.XamlParseException.ThrowException(String message, Exception innerException, Int32 lineNumber, Int32 linePosition, Uri baseUri, XamlObjectIds currentXamlObjectIds, XamlObjectIds contextXamlObjectIds, Type objectType)\n      at System.Windows.Markup.XamlParseException.ThrowException(ParserContext parserContext, Int32 lineNumber, Int32 linePosition, String message, Exception innerException)\n      at System.Windows.Markup.BamlRecordReader.CreateInstanceFromType(Type type, Int16 typeId, Boolean throwOnFail)\n      at System.Windows.Markup.BamlRecordReader.GetElementAndFlags(BamlElementStartRecord bamlElementStartRecord, Object& element, ReaderFlags& flags, Type& delayCreatedType, Int16& delayCreatedTypeId)\n      at System.Windows.Markup.BamlRecordReader.BaseReadElementStartRecord(BamlElementStartRecord bamlElementRecord)\n      at System.Windows.Markup.BamlRecordReader.ReadElementStartRecord(BamlElementStartRecord bamlElementRecord)\n      at System.Windows.Markup.BamlRecordReader.ReadRecord(BamlRecord bamlRecord)\n      at System.Windows.Markup.BamlRecordReader.Read(Boolean singleRecord)\n      at System.Windows.Markup.TreeBuilderBamlTranslator.ParseFragment()\n      at System.Windows.Markup.TreeBuilder.Parse()\n      at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)\n      at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)\n      at MS.Internal.AppModel.AppModelKnownContentFactory.BamlConverter(Stream stream, Uri baseUri, Boolean canUseTopLevelBrowser, Boolean sandboxExternalContent, Boolean allowAsync, Boolean isJournalNavigation, XamlReader& asyncObjectConverter)\n      at MS.Internal.AppModel.MimeObjectFactory.GetObjectAndCloseStream(Stream s, ContentType contentType, Uri baseUri, Boolean canUseTopLevelBrowser, Boolean sandboxExternalContent, Boolean allowAsync, Boolean isJournalNavigation, XamlReader& asyncObjectConverter)\n      at System.Windows.Navigation.NavigationService.GetObjectFromResponse(WebRequest request, WebResponse response, Uri destinationUri, Object navState)\n      at System.Windows.Navigation.NavigationService.DoNavigate(Uri source, NavigationMode f, Object navState)\n      at System.Windows.Navigation.NavigateQueueItem.Dispatch(Object obj)\n      at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n      at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n      at System.Windows.Threading.DispatcherOperation.InvokeImpl()\n      at System.Threading.ExecutionContext.runTryCode(Object userData)\n      at System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)\n      at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n      at System.Windows.Threading.DispatcherOperation.Invoke()\n      at System.Windows.Threading.Dispatcher.ProcessQueue()\n      at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n      at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n      at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n      at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n      at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n      at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Boolean isSingleParameter)\n      at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\n      at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)\n      at System.Windows.Threading.Dispatcher.TranslateAndDispatchMessage(MSG& msg)\n      at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\n      at System.Windows.Application.RunInternal(Window window)\n      at Rigel.App.Main() in C:\\varigence\\trunk\\Rigel\\Rigel\\obj\\Debug\\App.g.cs:line 0\n      at System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)\n      at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\n      at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n      at System.Threading.ThreadHelper.ThreadStart()\n  InnerException: System.InvalidOperationException\n      Message=\"'DeferRefresh' is not allowed during an AddNew or EditItem transaction.\"\n      Source=\"PresentationFramework\"\n      StackTrace:\n            at System.Windows.Data.CollectionView.DeferRefresh()\n            at System.Windows.Controls.ItemCollection.SetCollectionView(CollectionView view)\n            at System.Windows.Controls.ItemsControl.OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)\n            at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)\n            at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)\n            at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)\n            at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, OperationType operationType)\n            at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, OperationType operationType, Boolean isInternal)\n            at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)\n            at System.Windows.Markup.BamlRecordReader.SetDependencyValueCore(DependencyObject dependencyObject, DependencyProperty dependencyProperty, Object value)\n            at System.Windows.Markup.BamlRecordReader.SetDependencyComplexProperty(Object currentTarget, BamlAttributeInfoRecord attribInfo, Object o)\n      InnerException:",
+    "LastUpdatedDate": "2013-02-21T18:41:39.053-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-15T10:50:15.263-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Navigating to a DataGrid using validation rules causes an exception.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 8549
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2442,
+      "FileName": "DataGridValidation.zip",
+      "DownloadUrl": ".\\2442"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi Graig,\r\n\r\nI filed a bug to track the issue.\r\n\r\nThanks,\r\nWilliam",
+      "PostedDate": "2008-12-16T19:30:16.927-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "In general, System.Windows.Markup.XamlParseException doesn’t have useful StackTrace information. The root cause is the InnerException, the StackTrace points at System.Windows.Data.CollectionView.DeferRefresh(). I use Reflector to look at the DeferRefresh method.\r\npublic virtual IDisposable DeferRefresh()\r\n{\r\n    IEditableCollectionView view = this as IEditableCollectionView;\r\n    if ((view != null) && (view.IsAddingNew || view.IsEditingItem))\r\n    {\r\n        throw new InvalidOperationException(SR.Get(\"MemberNotAllowedDuringAddOrEdit\", new object[] { \"DeferRefresh\" }));\r\n    }\r\n    this._deferLevel++;\r\n    return new DeferHelper(this);\r\n}\r\n\r\nIt seems like the DeferRefresh will throw when view is in adding new or editing mode. I don’t know an easy workaround for the problem. One thing that you may do is adding a white space to the empty cell(s) before you navigate to page2.\r\nOur datagrid developer is investigating the issue to see if we can handle it better in the future. \r\n\r\nThanks,\r\nWilliam\r\n",
+      "PostedDate": "2008-12-18T12:18:39.933-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:50:13.08-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-28T06:40:23.163-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Here's a suggested workaround:  \r\n\r\nThe problem here is that the app is trying to navigate away from a DataGrid that has an error and hence is in editing mode. To work around the exception, the app will need to either cancel or commit the changes before navigating away. We have verified that in the repro application, calling ((IEditableCollectionView)dataGrid).CommitEdit() in the button handler just before navigating to Page2.xaml works correctly.  \r\n\r\nIdeally, probably what you’d want to do is cancel the edit, but we were unable to call CancelEdit because the underlying object doesn’t implement IEditableObject and hence doesn’t support cancelling. We will fix this as part of the bug fix in the future.\r\n",
+      "PostedDate": "2009-08-04T16:42:54.203-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you Samantha for your information. As you noted, what I'd like to do in this situation is CancelEdit.\r\n\r\nMy application is MVVM style, and the general setup is like this:\r\n\r\n1. GridView is the default page. It has a DataGrid on it. When an item is edited, it launches FormView, passing the selected item (view model) to the form to use as data context.\r\n2. FormView also contains a DataGrid for \"line-item-like\" child data (a collection property on its view model). If the user edits a grid column, regardless of changing values it seems to put the grid in edit mode.\r\n3. User cancels the form via a button, and it closes the view, returning to GridView.\r\n4. Now if a user removes a filter on the GridView grid, the exception is thrown somewhere in the process.\r\n\r\nWhere I am confused is:\r\n(1) is this the FormView or GridView's grid that is \"in edit\" and causing the problem? Is there a debugging trick I you might know to discern? (Sorry if that is an amateur question).\r\n     (a) my assumption is that it is the FormView that someone canceled out, as this seems to be the trigger. \r\n(2) the grids exist only in the view layer, so would this trick have to be done in the code-behind of the view? Or can it be handled in the view model where all my logic is?\r\n\r\nMy apologies if there was a more appropriate place for posting this. This seemed to be the most directly related to my problem.\r\n-Trey\r\n\r\n\r\nAny new information on this bug?\r\n\r\n",
+      "PostedDate": "2009-12-07T13:47:06.703-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "So the solution (work-around) I found for this was to:\r\n\r\n1. On FormView, handle Cancel button's click event, with the following code:\r\n\r\n// Note, the ItemsSource below is an ObservableCollection<ViewModel>\r\nIEditableCollectionView iecv = (ListCollectionView)CollectionViewSource.GetDefaultView(dg.ItemsSource);\r\nif (iecv.IsEditingItem)\r\n     iecv.CancelEdit();\r\n\r\n2. The issue here was that my ViewModel did not implement IEO. So I made it implement IEO, with empty methods.\r\n\r\nBeginEdit(){}\r\nCancelEdit(){}\r\nEndEdit(){}\r\n\r\nIt ensures the grid's collection view is canceled before returning to the main view, and thus prevents the exception discussed from throwing... but it seems like a silly way to do it. Since now I have \"ghost methods\" in one of my view models that do nothing.\r\n\r\nThoughts?\r\n\r\nThank you.\r\n-T",
+      "PostedDate": "2009-12-07T15:20:13.25-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-02-07T17:34:31.99-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi.\r\n\r\nI faced this problem too and solved it by doing the following:\r\n\r\n            IEditableCollectionView collView = (ListCollectionView)CollectionViewSource.GetDefaultView(source);\r\n            if (collView.IsEditingItem) collView.CommitEdit();\r\n            if (collView.IsAddingNew) collView.CommitNew();\r\n\r\nAfter that I can safely bind my source. I saw other solutions where people cancelled the current edit/add.. but actually committing it made more sense to me.",
+      "PostedDate": "2010-03-29T00:59:23.043-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-07-26T13:05:38.547-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:39.053-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

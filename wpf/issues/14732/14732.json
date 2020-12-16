@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi!\n \nI have found a bug in the RibbonWindow. Scenario:\n \n1. Windows 7, Aero Glass enabled\n2. I have an application which uses the RibbonWindow in the main Window. \n3. When I click a button, a new RibbonWindow openes. \n4. Close the (sub-)RibbonWindow \n5. Disable Aero Glass (here I start OCS screen sharing, so Aero Glass is disabled temporarily)\n6. Application crashes (2 of 3 times). \n \nI get the following ObjectDisposedException (sorry, its in German, but I think you can understand it): \n \nDer Zugriff auf die verworfene \"HwndSource\" ist nicht möglich.\nat\n   bei System.Windows.Interop.HwndSource.CheckDisposed(Boolean verifyAccess)\n   bei System.Windows.Interop.HwndSource.AddHook(HwndSourceHook hook)\n   bei Microsoft.Windows.Shell.WindowChromeWorker._ApplyNewCustomChrome() in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\WindowChromeWorker.cs:Zeile 238.\n   bei Microsoft.Windows.Shell.WindowChromeWorker.SetWindowChrome(WindowChrome newChrome) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\WindowChromeWorker.cs:Zeile 104.\n   bei Microsoft.Windows.Shell.WindowChrome._OnChromeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\WindowChrome.cs:Zeile 83.\n   bei System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)\n   bei System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)\n   bei System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)\n   bei System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)\n   bei System.Windows.DependencyObject.InvalidateProperty(DependencyProperty dp)\n   bei System.Windows.StyleHelper.InvalidateDependents(Style ownerStyle, FrameworkTemplate frameworkTemplate, DependencyObject container, DependencyProperty dp, FrugalStructList`1& dependents, Boolean invalidateOnlyContainer)\n   bei System.Windows.StyleHelper.OnBindingValueInThemeStyleChanged(Object sender, BindingValueChangedEventArgs e)\n   bei System.Windows.Data.BindingExpressionBase.ChangeValue(Object newValue, Boolean notify)\n   bei System.Windows.Data.BindingExpression.TransferValue(Object newValue, Boolean isASubPropertyChange)\n   bei System.Windows.Data.BindingExpression.ScheduleTransfer(Boolean isASubPropertyChange)\n   bei MS.Internal.Data.ClrBindingWorker.NewValueAvailable(Boolean dependencySourcesChanged, Boolean initialValue, Boolean isASubPropertyChange)\n   bei MS.Internal.Data.PropertyPathWorker.UpdateSourceValueState(Int32 k, ICollectionView collectionView, Object newValue, Boolean isASubPropertyChange)\n   bei MS.Internal.Data.ClrBindingWorker.OnSourcePropertyChanged(Object o, String propName)\n   bei MS.Internal.Data.PropertyPathWorker.System.Windows.IWeakEventListener.ReceiveWeakEvent(Type managerType, Object sender, EventArgs e)\n   bei System.Windows.WeakEventManager.DeliverEventToList(Object sender, EventArgs args, ListenerList list)\n   bei System.ComponentModel.PropertyChangedEventManager.OnPropertyChanged(Object sender, PropertyChangedEventArgs args)\n   bei Microsoft.Windows.Shell.SystemParameters2._NotifyPropertyChanged(String propertyName) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\SystemParameters2.cs:Zeile 548.\n   bei Microsoft.Windows.Shell.SystemParameters2.set_IsGlassEnabled(Boolean value) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\SystemParameters2.cs:Zeile 386.\n   bei Microsoft.Windows.Shell.SystemParameters2._InitializeIsGlassEnabled() in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\SystemParameters2.cs:Zeile 49.\n   bei Microsoft.Windows.Shell.SystemParameters2._UpdateIsGlassEnabled(IntPtr wParam, IntPtr lParam) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\SystemParameters2.cs:Zeile 55.\n   bei Microsoft.Windows.Shell.SystemParameters2._WndProc(IntPtr hwnd, WM msg, IntPtr wParam, IntPtr lParam) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\SystemParameters2.cs:Zeile 364.\n   bei Standard.MessageWindow._WndProc(IntPtr hwnd, WM msg, IntPtr wParam, IntPtr lParam) in e:\\dd\\WPFOOB\\src\\wpfoob\\WindowChrome\\Microsoft.Windows.Shell\\Standard\\MessageWindow.cs:Zeile 146.\n   bei MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)\n   bei System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\n   bei System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)\n   bei System.Windows.Threading.Dispatcher.Run()\n   bei System.Windows.Application.RunDispatcher(Object ignore)\n   bei System.Windows.Application.RunInternal(Window window)\n   bei System.Windows.Application.Run(Window window)\n   bei System.Windows.Application.Run()\n   bei WpfRibbonApplication3.App.Main() in c:\\users\\juergen.schmitz\\documents\\visual studio 2010\\Projects\\WpfRibbonApplication3\\obj\\x86\\Debug\\App.g.cs:Zeile 0.\n   bei System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)\n   bei System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\n   bei Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\n   bei System.Threading.ThreadHelper.ThreadStart_Context(Object state)\n   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx)\n   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n   bei System.Threading.ThreadHelper.ThreadStart()\n \nI have attached a sample project.\n \nHope this helps.\n \nThanks\nJus",
+    "LastUpdatedDate": "2013-02-21T18:40:18.847-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-11-22T00:32:47.367-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ObjectDisposedException in RibbonWindow",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14732
+  },
+  "FileAttachments": [
+    {
+      "FileId": 5157,
+      "FileName": "WpfRibbonApplication3.zip",
+      "DownloadUrl": ".\\5157"
+    }
+  ],
+  "Comments": []
+}

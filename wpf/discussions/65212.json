@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "222113",
+    "ThreadId": "65212",
+    "Html": "<p>As i understand it the current DataGrid does not support grouping<br>Anybody know if a future realease may support this</p>",
+    "PostedDate": "2009-08-11T10:52:46.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223455",
+    "ThreadId": "65212",
+    "Html": "<p>The current DataGrid does support grouping.&nbsp; What it doesn't support is virtualization while grouping.</p>",
+    "PostedDate": "2009-08-14T05:33:16.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244855",
+    "ThreadId": "65212",
+    "Html": "<p>With Grouping, does the DataGrid allow the adding of a new row?</p>\r\n<p>I appear to be having issues with this.</p>\r\n<p>If I have a DataGrid that is grouping, and is pre-populated with data.&nbsp;</p>\r\n<p>I then delete the existing rows until there are none left, except&nbsp;the NewRow.</p>\r\n<p>Clicking on the NewRow to add new data throws an exception on line 3450 of the DataGrid.cs</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>EditableItems.CancelNew();\r\n</pre>\r\n</div>\r\n<pre>Index was out of range.  Must be non-negative and less than the size of the collection.\r\nParameter name: index</pre>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-12T16:30:54.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244883",
+    "ThreadId": "65212",
+    "Html": "<p>Hi vinsibal,</p>\r\n<p>Is there any plan to support virtualization while grouping in the future?</p>\r\n<p>Best Regards,</p>\r\n<p>Tony</p>",
+    "PostedDate": "2009-10-12T19:01:47.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245011",
+    "ThreadId": "65212",
+    "Html": "<p>You can't support virtualization with grouping enabled. The two features are incompatible.</p>",
+    "PostedDate": "2009-10-13T04:22:15.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

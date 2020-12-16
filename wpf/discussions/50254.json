@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "168255",
+    "ThreadId": "50254",
+    "Html": "<p>In Vincent Sibal's V1 compatible (january 2009) &quot;DataGridCTPSample&quot;  (*), in the file &quot;DataGridBasicSample_Demo2.xaml&quot;, I duplicated the column &quot;Last Name&quot; as follows :</p>\r\n<p>                &lt;dg:DataGridTextColumn Width=&quot;Auto&quot; Header=&quot;Last Name&quot; Binding=&quot;{Binding Path=LastName}&quot; /&gt;<br>\r\n                &lt;dg:DataGridTemplateColumn Width=&quot;Auto&quot; Header=&quot;Last Name&quot; CanUserSort=&quot;True&quot;&gt;<br>\r\n                    &lt;dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n                        &lt;DataTemplate&gt;<br>\r\n                            &lt;TextBlock Text=&quot;{Binding Path=LastName}&quot;/&gt;<br>\r\n                        &lt;/DataTemplate&gt;<br>\r\n                    &lt;/dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n                &lt;/dg:DataGridTemplateColumn&gt;</p>\r\n<p>Outcome : the first column &quot;Last Name&quot; accepts &quot;sort&quot; (click on header), the second one apparently does not. Any reason ?</p>\r\n<p>Thanks,</p>\r\n<p>Julie</p>\r\n<p>(*) ZIP attached to <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/08/19/wpf-datagrid-stock-and-template-columns.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/08/19/wpf-datagrid-stock-and-template-columns.aspx</a></p>\r\n",
+    "PostedDate": "2009-03-15T05:33:00.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168388",
+    "ThreadId": "50254",
+    "Html": "For DataGridTemplateColumn you need to set the SortMemberPath DP explicitly.\r\n",
+    "PostedDate": "2009-03-15T19:22:55.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168440",
+    "ThreadId": "50254",
+    "Html": "<p>The following works indeed : SortMemberPath=&quot;LastName&quot; with CanUserSort=&quot;True&quot; being superfluous.</p>\r\n<p>Vincent, thanks,</p>\r\n<p>Julie</p>\r\n",
+    "PostedDate": "2009-03-16T00:42:24.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

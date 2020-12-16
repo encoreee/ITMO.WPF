@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed - feature not implemented yet",
+    "ClosedDate": "2009-02-23T12:41:40.833-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I don't know if it is an issue or a feature request, but it would be important to have a full UIAutomation for the RibbonWindow\nFor example, I would like to invoke a click on a RibbonTab using UIAutomation, but the RibbonTab is not accessible.\n(When using UI Spy or VisualUIAVerify there is no AutomationElement for the ribbon tabs)\n \nThanks\nPatrice",
+    "LastUpdatedDate": "2013-05-16T05:31:10.14-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-23T12:07:51.19-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RibbonWindow does not support UI Automation.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9330
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Patrice,\r\n\r\nWe haven't implemented automation on any of the Ribbon components in the CTP (including RibbonWindow), but this will be available in V1.  I'm going to close the issue for now, and if you find automation issues with RibbonWindow or other Ribbon parts after we release that feature, please create new issues.\r\n\r\nThanks!\r\nSamantha",
+      "PostedDate": "2009-02-23T12:41:23.223-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-23T12:41:40.833-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:30.597-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:10.14-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

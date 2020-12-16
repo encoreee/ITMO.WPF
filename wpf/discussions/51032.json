@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "171021",
+    "ThreadId": "51032",
+    "Html": "If I haven't specified a MaxWidth, I get a nasty design time exception, and at run time the columns grow beyond what the grid is contained to.<div><br></div><div>If I sepcify two columns with &quot;*&quot; length, there is a scroll bar at the bottom until I click on it.</div><div><br></div><div>I can make screen shots if needed.</div><div><br></div><div>Thanks, </div><div>Evan</div>",
+    "PostedDate": "2009-03-23T14:03:15.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

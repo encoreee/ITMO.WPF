@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "See this link for a complete description: \n \nhttp://social.msdn.microsoft.com/Forums/en/wpf/thread/35eb2607-6f3e-4823-a0ff-52da0f0fe1f2\n \nA small project is joined in attachment.\n \nProblem description summary:\n \n1) ValidationRlue:\n \n- if Mode=TwoWay: Validate() is called 4 times when a binding is modified, with the new value in argument; then the binded property is finally set to this value (if the validation fails, Validate() is only called once);\n- if Mode=Default: Validate() is called 2 times when a binding is modified, with the new value in argument, then the binded property is finally set to this value (if the validation fails, Validate() is only called once).\n \nWe would expect the Validate() method to be called once only, this is not efficient and might have side-effects. It is very strange that the behaviour depends on the Mode property.\n \n2) IDataErrorInfo:\n \n- if Mode=TwoWay: the setter of this[string columnName] is called 4 times when a binding is modified - 2 times with the old value in argument and 2 times with the new value; then the binded property is finally set to the new value;\n- if Mode=TwoWay: this[string columnName] is called 9 times (!) when a binding is modified - 5 times with the old value in argument and 4 times with the new value; then the binded property is finally set to the new value.\n \nWe would expect the property setter of this[string columnName] to be only called once, with the new value.",
+    "LastUpdatedDate": "2013-02-21T18:40:23.937-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-26T08:21:52.96-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid ValidationRule or IDataErrorInfo validation code called multiple times for each data change",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 14097
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4795,
+      "FileName": "DataGridTest.zip",
+      "DownloadUrl": ".\\4795"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "The test has been done on Windows 7, with .NET 4.0.30319.",
+      "PostedDate": "2010-08-26T08:32:56.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-11T08:23:22.027-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:23.937-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

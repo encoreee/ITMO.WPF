@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "269757",
+    "ThreadId": "78798",
+    "Html": "<p>I'm trying to make the text in my datagrid cells to ellipsis'ize .</p>\r\n<p><br>Is there anyway to do this with styles?</p>",
+    "PostedDate": "2009-12-21T18:20:57.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270048",
+    "ThreadId": "78798",
+    "Html": "<p>&lt;<span style=\"color:#a31515;font-size:10pt\">dg</span><span style=\"color:blue;font-size:10pt\">:</span><span style=\"color:#a31515;font-size:10pt\">DataGridTextColumn.ElementStyle</span><span style=\"color:blue;font-size:10pt\">&gt;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">&nbsp;&nbsp;&nbsp; &lt;</span><span style=\"color:#a31515;font-size:10pt\">Style</span><span style=\"color:red;font-size:10pt\"> TargetType</span><span style=\"color:blue;font-size:10pt\">=&quot;TextBlock&quot;&gt;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;</span><span style=\"color:#a31515;font-size:10pt\">Setter</span><span style=\"color:red;font-size:10pt\"> Property</span><span style=\"color:blue;font-size:10pt\">=&quot;<span style=\"color:#ff0000\">TextWrapping</span>&quot;</span><span style=\"color:red;font-size:10pt\"> Value</span><span style=\"color:blue;font-size:10pt\">=&quot;<span style=\"color:#0000ff\">NoWrap</span>&quot; /&gt;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;</span><span style=\"color:#a31515;font-size:10pt\">Setter</span><span style=\"color:red;font-size:10pt\"> Property</span><span style=\"color:blue;font-size:10pt\">=&quot;<span style=\"color:#ff0000\">TextTrimming</span>&quot;</span><span style=\"color:red;font-size:10pt\"> Value</span><span style=\"color:blue;font-size:10pt\">=&quot;WordEllipsis&quot; /&gt;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">&nbsp;&nbsp;&nbsp; &lt;/</span><span style=\"color:#a31515;font-size:10pt\">Style</span><span style=\"color:blue;font-size:10pt\">&gt;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">&nbsp; &lt;/</span><span style=\"color:#a31515;font-size:10pt\">dg</span><span style=\"color:blue;font-size:10pt\">:</span><span style=\"color:#a31515;font-size:10pt\">DataGridTextColumn.ElementStyle</span><span style=\"color:blue;font-size:10pt\">&gt;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">&nbsp;</span></p>\r\n<p><span style=\"color:blue;font-size:10pt\">This code would set the Style for the TextBlock within a DataGridCell for a TextColumn. </span></p>",
+    "PostedDate": "2009-12-22T13:37:10.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270091",
+    "ThreadId": "78798",
+    "Html": "<p>Thank you, this works great.</p>\r\n<p>How do I do add ellipsis&nbsp; for the ColumnHeaders now?</p>",
+    "PostedDate": "2009-12-22T16:13:52.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

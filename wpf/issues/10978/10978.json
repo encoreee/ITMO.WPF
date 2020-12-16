@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, \nI have tried to set different row heights from code behind when I noticed a very strange behavior.\nHere is my code:\n<Window x:Class=\"WpfApplication24.MainWindow\"\n        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n        Title=\"MainWindow\" Height=\"350\" Width=\"525\">\n    <Grid>\n        <Grid.RowDefinitions>\n            <RowDefinition Height=\"254*\" />\n            <RowDefinition Height=\"33*\" />\n            <RowDefinition Height=\"24*\" />\n        </Grid.RowDefinitions>\n        <DataGrid x:Name=\"dataGrid1\" AutoGenerateColumns=\"True\" Margin=\"0,1,0,0\" CanUserSortColumns=\"False\" EnableRowVirtualization=\"False\" CanUserResizeRows=\"True\" CanUserDeleteRows=\"False\"  />\n        <Button Content=\"Button1\" Grid.Row=\"1\" Name=\"button1\" Click=\"button1_Click\" />\n        <Button Content=\"Button1\" Grid.Row=\"2\" Height=\"23\" HorizontalAlignment=\"Left\" Name=\"button2\" VerticalAlignment=\"Top\" Width=\"503\" Click=\"button2_Click\" />\n    </Grid>\n</Window>\n \nusing System.Collections.Generic;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Documents;\n \nnamespace WpfApplication24\n{\n    /// <summary>\n    /// Interaction logic for MainWindow.xaml\n    /// </summary>\n    public partial class MainWindow : Window\n    {\n        public MainWindow()\n        {\n            InitializeComponent();\n        }\n \n        private void button1_Click(object sender, RoutedEventArgs e)\n        {\n            List<Person> someItems = new List<Person>();\n            someItems.Add(new Person(\"name 1\", \"address 1\"));\n            someItems.Add(new Person(\"name 2\", \"address 2\"));\n            someItems.Add(new Person(\"name 3\", \"address 3\"));\n            someItems.Add(new Person(\"name 4\", \"address 4\"));\n            someItems.Add(new Person(\"name 5\", \"address 5\"));\n            someItems.Add(new Person(\"name 6\", \"address 6\"));\n            dataGrid1.ItemsSource = someItems;   \n        }\n \n        public class Person\n        {\n            public Person(string name, string address)\n            {\n                this.Name = name;\n                this.Address = address;\n            }\n \n            public string Name { get; set; }\n \n            public string Address { get; private set; }\n        }\n \n        private void button2_Click(object sender, RoutedEventArgs e)\n        {\n            DataGridRow someRow = dataGrid1.ItemContainerGenerator.ContainerFromIndex(1) as DataGridRow;\n            someRow.Height = 100;\n        }\n    }\n}\n \nSteps to reproduce:\n1. Press Button1 to load some data into the datagrid.\n2. Press Button2 to set the height of the 2nd row to 100.\n3. Try to resize the 2nd row using the mouse.\n \nI am attaching the project and a snapshot also.\n \nI have tried (and reproduced) this with both the DataGrid from the WPFToolkit and the DataGrid which comes with VisualStudio2010 Beta2.\n \nIs there another way that I could set the height of a certain row from code behind?\n \nThanks, \nCristian",
+    "LastUpdatedDate": "2013-02-21T18:40:51.29-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-20T08:38:28.14-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF DataGrid: Problem resizing the rows from code behind.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10978
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3553,
+      "FileName": "RowResizeProblem.zip",
+      "DownloadUrl": ".\\3553"
+    }
+  ],
+  "Comments": []
+}

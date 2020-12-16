@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "424379",
+    "ThreadId": "207495",
+    "Html": "<p>Hello<br>I change my cell's forgrownd when&nbsp;I add&nbsp;a row or change &nbsp;a cell <br>But when I click on header to sort the column the forgrownd change to the basic color&nbsp;<br>what should I do?<br>note: I use toolkit datagrid<br><br>mycode:<br>void BaseGrid_InitializingNewItem(.....)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.loadingRow+=new EventHandler&lt;DataGridRowEventArg&gt;(BaseGrid_LoadinRow);<br>}<br><br>void BaseGrid_LoadingRow(....)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.Row.forgrownd=Brushes.Green;<br>}<br><br>&nbsp;private void datagrid_CellEditEnding(....)<br>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;</strong> DataGridCell cell = DataGridHelper.GetCell(e.Row, e.Column.DisplayIndex);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cell.Background = Brushes.Red;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.loadingRow-=new EventHandler&lt;DataGridRowEventArg&gt;(BaseGrid_LoadinRow);<br><br>}</p>",
+    "PostedDate": "2010-03-27T00:35:20.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424582",
+    "ThreadId": "207495",
+    "Html": "<p>I am waiting...</p>",
+    "PostedDate": "2010-03-28T01:23:47.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

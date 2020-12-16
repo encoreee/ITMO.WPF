@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "185001",
+    "ThreadId": "54836",
+    "Html": "Hi<br>\r\n<br>\r\nafter my datagrid is loaded I add some additional controls in my datagridcolumheaders to enable filtering<br>\r\n<br>\r\nAll works fine but the additional controls disappear when I call some functions which have nothing to do with grid operations<br>\r\n<br>\r\nNow my question: which event of the grid may be responsible for this? How can I find the source of this behaviour?<br>\r\n<br>\r\nRegards<br>\r\nKlaus<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-29T07:42:28.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

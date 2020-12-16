@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "131699",
+    "ThreadId": "39682",
+    "Html": "Hi,<br>\r\n<br>\r\nIs there a property that I can set for a datagrid row so that the text has equal padding on the top and bottom?&nbsp; <br>\r\n<br>\r\nI tried applying TextBlock.padding to the style for the DataGridCell but that did not work.<br>\r\n<br>\r\nAny ideas?<br>\r\n<br>\r\nThanks,<br>\r\nJon<br>\r\n",
+    "PostedDate": "2008-11-11T08:22:28.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132006",
+    "ThreadId": "39682",
+    "Html": "What about applying the style on DataGridColumn.ElementStyle and EditingElementStyle? \r\n",
+    "PostedDate": "2008-11-12T06:35:59.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

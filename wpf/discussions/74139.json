@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "253589",
+    "ThreadId": "74139",
+    "Html": "<p>Hi,</p>\r\n<p>Does anyone know how to get the last item of a WPF data grid. Also I want to get the selected row number.</p>\r\n<p>Thanks,</p>\r\n<p>+Dushantha</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-04T20:15:03.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259261",
+    "ThreadId": "74139",
+    "Html": "<p>&nbsp;</p>\r\n<p>Hi,</p>\r\n<p><em>To get the index of the last item in the grid:&nbsp; </em><strong>int lastIdx = myDataGrid.Items.Count - 1;</strong></p>\r\n<p><em>To get the last item, depending on how the datagrid is bound, (mine is to a list of business objects)</em></p>\r\n<p><strong>myObject gridItem = myDataGrid.Items[lastIdx] as myObject; </strong></p>\r\n<p>That should do it</p>\r\n<p>Ron</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-20T17:00:52.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

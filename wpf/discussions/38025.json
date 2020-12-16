@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "126146",
+    "ThreadId": "38025",
+    "Html": "Somehow I can not make the DataGrid to show the ScrollBar. Funnily, in another window the ScrollBar works just fine. In the former case DataGrid sits in the window grid, while in the latter it is in the TabItem.$0$0$0$0what can be a problem here?$0",
+    "PostedDate": "2008-10-19T09:16:16.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126200",
+    "ThreadId": "38025",
+    "Html": "Hi, snovik<br>\r\n<br>\r\nAs long as I know, we need to fix the size of the DataGrid to get the scrollbar. Just make sure, may be another problem!<br>\r\n",
+    "PostedDate": "2008-10-19T18:09:15.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126245",
+    "ThreadId": "38025",
+    "Html": "for the time being I am using MaxHeight which is not supergood but gives me time to wait until the release\r\n",
+    "PostedDate": "2008-10-20T02:23:09.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126398",
+    "ThreadId": "38025",
+    "Html": "The appearance of scrollbars (or lack thereof) can often&nbsp; be a result of the layout choices you have made in other parts of the UI and how those elements relate to the data grid and/or its parents.&nbsp; If you have a &quot;proper&quot; layout the automatic scroll bar visibility settings (the default settings) do work.&nbsp; If you always want the scroll bars you can explicitly set the visibility to Visible.&nbsp; Or you can post your layout and someone can help you figure out why the DataGrid does not know how large its container is.&nbsp; <br>\r\n<br>\r\nSet the visibility manually:<br>\r\n<br>\r\n&lt;dg:DataGrid VerticalScrollBarVisibility=&quot;Visible&quot; HorizontalScrollBarVisibility=&quot;Hidden&quot; &gt;<br>\r\n...<br>\r\n&lt;/dg:DataGrid&gt;<br>\r\n<br>\r\nDefault settings are:<br>\r\n<br>\r\n&lt;dg:DataGrid VerticalScrollBarVisibility=&quot;Auto&quot; HorizontalScrollBarVisibility=&quot;Auto&quot; &gt;<br>\r\n...<br>\r\n&lt;/dg:DataGrid&gt;<br>\r\n",
+    "PostedDate": "2008-10-20T14:53:50.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126430",
+    "ThreadId": "38025",
+    "Html": "well, I tripple checked. I have a bunch of windows with some textblocks and textbox on top and datagrid at the bottom. The master element in the window is grid without any settings. window can be set both to sizetocontent or fixed height or size to width - does not matter. in all cases datagrid goes way below the size of the window.",
+    "PostedDate": "2008-10-20T19:43:38.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126678",
+    "ThreadId": "38025",
+    "Html": "I would suggest using row/column definitions in your main grid and making use of the special dynamic size settings (&quot;*&quot; and &quot;Auto&quot;).&nbsp; The &quot;Auto&quot; operator means that the row/column will be as large as it needs to be to accommodate the tallest/widest element in it.&nbsp; The &quot;*&quot; operator means that the row/column will take up the remaining vertical/horizontal space in the grid.&nbsp; You can further modify the &quot;*&quot; operator to give it a fixed percentage of the height/width or combine multiple &quot;*&quot; operators to have them share space equally. You can also use max and min values in conjunction with the &quot;*&quot; operator to get all kinds of interesting behavior.&nbsp;&nbsp; I would highly suggest playing around with these settings until you find the desired behavior for your application.&nbsp; <br>\r\n<br>\r\nIn the example below the DataGrid should be as tall as the grid that contains it minus the space occupied by the first and third rows.&nbsp; If the DataGrid is too large it will automatically show the scroll bars and give you the behavior you're seeking without pushing the third row out of view.&nbsp; Understanding how these special sizes work and separating your UI into smaller parts should allow you to get a layout that looks good even when the windows change size and uses minimal manual size settings.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;Grid.RowDefinitions&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;RowDefinition Height=&quot;Auto&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;RowDefinition Height=&quot;*&quot; MinHeight=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;RowDefinition Height=&quot;Auto&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/Grid.RowDefinitions&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;StackPanel Grid.Row=&quot;0&quot; &gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;TextBlock Text=&quot;Put stuff here.&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/StackPanel&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;dg:DataGrid Grid.Row=&quot;1&quot; &gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;TextBlock Grid.Row=&quot;2&quot; Text=&quot;This is a footer.&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-21T14:52:15.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126815",
+    "ThreadId": "38025",
+    "Html": "surely I tried all of options.&nbsp; I could post a screenshot if I could. The grid simply goes under the window which also has a MaxHeight set.<br>\r\n<br>\r\nIn any case without auto or * the grid's rows and columns have equal sizes which should not prevent DataGrid from showing scroll bar in particular when the main window size is fixed\r\n",
+    "PostedDate": "2008-10-22T02:09:40.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "126995",
+    "ThreadId": "38025",
+    "Html": "I can assure you that the problem is a result of how you are laying out the window and not anything specific to the datagrid.&nbsp; Again if you want someone to help fix your layout you would need to provide what you have so far.&nbsp; Also I'm not sure what you mean about grids.&nbsp; Without any row or column definitions in the grid there is only one row and one column that will contain all child elements of the grid in a big pile.&nbsp; One of the fundamentals of UI design is to create regions that will host your controls.&nbsp; That is exactly what the grid is for and the direction I'm trying to convey.&nbsp; Get a basic layout that works first then add your controls and code.&nbsp; Hope that helps...<br>\r\n",
+    "PostedDate": "2008-10-22T12:07:50.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189493",
+    "ThreadId": "38025",
+    "Html": "<p>I noticed that when my grid is into a StackPanel scroll is missing but if I replace a StackPanel with Border scroll bars work well. Is that behavior normal?</p>",
+    "PostedDate": "2009-05-12T14:06:00.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208976",
+    "ThreadId": "38025",
+    "Html": "<p>12055, your suggestion about using&nbsp;Row/Col definitions works&nbsp;</p>",
+    "PostedDate": "2009-07-06T08:30:48.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

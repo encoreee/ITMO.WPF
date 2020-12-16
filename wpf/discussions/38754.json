@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "128565",
+    "ThreadId": "38754",
+    "Html": "I noticed that the calender control has a fixed width and height.<br>\r\nWhy has that code has no effect ?? or how can is set the height and width? (i don't like to write a complete control template for the calender, or have i?)<br>\r\n<span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">c</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">Calendar</span><span style=\"font-size:13px;color:#ff0000\"> Height</span><span style=\"font-size:13px;color:#0000ff\">=&quot;500&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Width</span><span style=\"font-size:13px;color:#0000ff\">=&quot;500&quot;</span><span style=\"font-size:13px;color:#ff0000\"> </span><br>\r\n<span style=\"font-size:13px;color:#ff0000\"><br>\r\n<br>\r\n<p>&nbsp;</p>\r\n</span>\r\n",
+    "PostedDate": "2008-10-29T04:38:05.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130042",
+    "ThreadId": "38754",
+    "Html": "<p style=\"margin:0in 0in 0pt\">Did you download WPF Toolkit Source and Binaries? If you open the solution, in Solution Explorer, under the Calendar Folder, in Themes folder, in file Generic.xaml you can find styles for all the elements of Calendar, and you can copy it and in your solution modify those styles as you want to.  <br>\r\n                                                                                                                                           Thanks. Lena</p>\r\n",
+    "PostedDate": "2008-11-04T12:39:21.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

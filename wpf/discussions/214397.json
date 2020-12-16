@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "449380",
+    "ThreadId": "214397",
+    "Html": "<p>Hi all.<br><br>I have just a simple question : will the MVVM Toolkit be available for Visual Studio 2010. For the moment, if we try to use the current version with VS2010, we get an error message.</p>\r\n<p>PS : for those who want to use the MVVM Toolkit, you can follow these step for the moment :</p>\r\n<ol>\r\n<li>Create a new project in Visual Studio 2008 and save it;</li>\r\n<li>Open it with Visual Studio 2010 and migrate it so it can be launch with Visual Studio 2010;</li>\r\n<li>Go on the Project properties (Menu --&gt; Project --&gt; Properties of &lt;Name of your project&gt;) and change the target .NET framework to Framework .NET 4;</li>\r\n<li>You can now use the MVVM Toolkit with Visual Studio 2010 and the Framework .NET 4</li>\r\n</ol>\r\n<p><br>Regards, <br>Tuttu</p>",
+    "PostedDate": "2010-05-30T13:15:09.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

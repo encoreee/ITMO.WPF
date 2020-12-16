@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI'm upgrading my project from .NET 3.5 to .NET 4.\nOne of my projects use WPFToolkit to use VisualStateManager. After changing the framework version I got error that the class VisualStateManager exist in both WpfToolkit and .NET 4.\n \nI've currently resolve the problem by removing the WPF Toolkit since I only needed it for the VisualStateManager but that might be a problem in the future.\n \nAre you going to release .NET 4 compatible library?\n \nThank you,\nIdo.",
+    "LastUpdatedDate": "2013-02-21T18:40:11.377-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-06-28T06:00:25.86-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "VisualStateManager collide with .NET 4",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 16184
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am resorting to downgrading to 3.5 as workaround with aliasing just yields other issues now...",
+      "PostedDate": "2011-08-31T00:44:47.523-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I just uploaded a patch that upgrades the entire solution to .NET 4.0. This includes removing redundant classes and fixing all build errors.",
+      "PostedDate": "2011-10-21T16:14:40.2-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-07-12T04:40:47.127-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:11.377-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

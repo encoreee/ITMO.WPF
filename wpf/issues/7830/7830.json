@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "Please see the comments.",
+    "ClosedDate": "2009-02-18T13:50:11.55-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Background process is updating WPF DataGid. I have crated readonly coloumns for this grid using datatemplate \n <DataTemplate x:Key=\"ReadonlySerialNumber\">\n            <TextBlock  Text=\"{Binding Path=SerialNumber}\" TextAlignment=\"Center\"></TextBlock>\n        </DataTemplate>\n \nwhile background process is udating grid, row by row, if user double click on any of the row datagrid, it throws following exception\n 'Defer Refresh' is not allowed during an AddNew or Edit Item transaction.",
+    "LastUpdatedDate": "2013-05-16T05:31:18.277-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-10-16T01:14:04.85-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPFDataGrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 7830
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Bump",
+      "PostedDate": "2009-01-07T14:35:10.803-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is a behavior of the WPF CollectionView. It does not support various memebers, such as DeferRefresh, during an AddNew or EditItem transaction. If you cast the collection view to IEditableCollectionView, you can check the current status of IsAddingNew and IsEditingItem to determine if it is safe to call the method. If you are using multiple threads, you will want to protect access to the collection with a lock.",
+      "PostedDate": "2009-02-18T11:22:41.05-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T11:22:41.877-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T11:32:27.073-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:50:11.55-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:48.993-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:18.277-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

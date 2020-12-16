@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "140127",
+    "ThreadId": "42168",
+    "Html": "Hi,<br>\r\n<br>\r\nHow can I put an entire RibbonGroup in the Quick Access Toolbar, as shown in the Office Fluent UI Licensing Guidelines?<br>\r\n<br>\r\nThanks,<br>\r\nAlex\r\n",
+    "PostedDate": "2008-12-12T10:49:05.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140189",
+    "ThreadId": "42168",
+    "Html": "This is currently not fully implemented.<br>\r\nThe QuickAccessToolbar is an Items control so putting the RibbonGroup in the QAT works.  However it doesn't become a drop down like the UI Guidelines says it should.  It's something that is being looked at and we plan to have included in the future.\r\n",
+    "PostedDate": "2008-12-12T14:52:29.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

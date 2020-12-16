@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "247852",
+    "ThreadId": "72582",
+    "Html": "<p>I am receiving a number of compiler errors, starting with this one:</p>\r\n<p>Error&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp; &nbsp;The type or namespace name 'IProvideAttributeTable' could not be found (are you missing a using directive or an assembly reference?)&nbsp;&nbsp; &nbsp;C:\\WPF Toolkit\\Toolkit-release\\DataVisualization.Design\\MetadataRegistration.cs&nbsp;&nbsp; &nbsp;22&nbsp;&nbsp; &nbsp;67&nbsp;&nbsp; &nbsp;Controls.DataVisualization.Toolkit.Design</p>\r\n<p>Where can I find compiling directions?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-20T13:06:06.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251345",
+    "ThreadId": "72582",
+    "Html": "<p>I ran into a similiar issue - it actually started with the error you show above.&nbsp;&nbsp; I thought it was because of an ambiguous reference so I prefixed it with the MetaData (from &quot;using MetaData = &quot; statement above) and it stopped complaining that it was missing a reference.&nbsp;&nbsp; I ended up doing this (painful) process throughout the entire application and in the end was greeted with 75 of the following errors:</p>\r\n<p>Error&nbsp;1&nbsp;The type 'Microsoft.Windows.Design.Metadata.AttributeTableBuilder' exists in both 'c:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\PublicAssemblies\\Microsoft.Windows.Design.dll' and 'c:\\Program Files\\Microsoft Expression\\Blend 3\\Microsoft.Windows.Design.Extensibility\\Microsoft.Windows.Design.Extensibility.dll'&nbsp;C:\\_Drive\\Downloads\\WPFToolkitBinariesAndSource\\WPFToolkitBinariesAndSource\\Toolkit-release\\DataVisualization.Design\\RangeAxisMetadata.cs&nbsp;17&nbsp;40&nbsp;Controls.DataVisualization.Toolkit.VisualStudio.Design</p>\r\n<p>I deleted everything and started over within the above context&nbsp;and I found that all of the projects will compile with the exception of <strong>Controls.DataVisualization.Toolkit.VisualStudio.Design</strong> - I unloaded it&nbsp;and the solution successfully compiled.&nbsp;&nbsp; I&nbsp; reloaded the VisualStudio.Design project and found the following mismatch of references:</p>\r\n<p>C:\\Program Files\\Microsoft<strong> Visual Studio 9.0</strong>\\Common7\\IDE\\PublicAssemblies\\Microsoft.Windows.Design.dll<br>c:\\Program Files\\Microsoft Expression\\<strong>Blend 3</strong>\\Microsoft.Windows.Design.Extensibility\\Microsoft.Windows.Design.Extensibility.dll</p>\r\n<p>I deleted the&nbsp;Microsoft.Windows.Design.Extensibility dll reference and&nbsp;replaced&nbsp;it with the following reference:</p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\PublicAssemblies\\Microsoft.Windows.Design.Extensibility.dll</p>\r\n<p>And my solution compiles without errors or warnings.</p>\r\n<p>Hope this helps your compile issues.</p>",
+    "PostedDate": "2009-10-29T13:08:00.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454332",
+    "ThreadId": "72582",
+    "Html": "<p>What's the official view on this?</p>\r\n<p>I've got Visual Studio and Blend and getting this error anyway.</p>",
+    "PostedDate": "2010-06-11T02:26:53.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "717844",
+    "ThreadId": "72582",
+    "Html": "<p>Delete all such kind of dlls from the project</p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\PublicAssemblies\\<strong>Microsoft.Windows.Design.<span style=\"color: #ff0000;\">*</span>.dll and replace it with </strong></p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\PublicAssemblies\\<strong>Microsoft.Windows.Design.<span style=\"color: #ff0000;\">*</span>.dll</strong></p>\r\n<p><strong>&nbsp;</strong></p>\r\n<p><strong>And build you solution it will work fine.</strong></p>",
+    "PostedDate": "2011-12-28T05:28:20.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "857380",
+    "ThreadId": "72582",
+    "Html": "<p>What <em>bpoojary </em>means is remove references to</p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio <strong>9.0</strong>\\Common7\\IDE\\PublicAssemblies\\<strong>Microsoft.Windows.Design.<span>*</span>.dll </strong></p>\r\n<p><strong>and replace it with</strong></p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio <strong>10.0</strong>\\Common7\\IDE\\PublicAssemblies\\<strong>Microsoft.Windows.Design.<span>*</span>.dll</strong></p>\r\n<p>&nbsp;</p>\r\n<p>That fixed these issues in my case.</p>",
+    "PostedDate": "2012-07-04T07:02:35.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "858004",
+    "ThreadId": "72582",
+    "Html": "Thanks UeberBoss . My fault copy paste issue.\r\n<div><br>\r\n</div>\r\n<div>Regards,</div>\r\n<div>Bhushan Poojary<br>\r\n<br>\r\n<div>On Wed, Jul 4, 2012 at 7:32 PM, UeberBoss <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\" target=\"_blank\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: <u>UeberBoss</u></p>\r\n<div>\r\n<p>What <em>bpoojary </em>means is remove references to</p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio <strong>9.0</strong>\\Common7\\IDE\\PublicAssemblies\\<strong>Microsoft.Windows.Design.<span>*</span>.dll\r\n</strong></p>\r\n<p><strong>and replace it with</strong></p>\r\n<p>C:\\Program Files\\Microsoft Visual Studio <strong>10.0</strong>\\Common7\\IDE\\PublicAssemblies\\<strong>Microsoft.Windows.Design.<span>*</span>.dll</strong></p>\r\n<p></p>\r\n<p>That fixed these issues in my case.</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://wpf.codeplex.com/discussions/72582#post857380\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:wpf@discussions.codeplex.com?subject=[wpf:72582]\" target=\"_blank\">wpf@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:wpf@discussions.codeplex.com\" target=\"_blank\">\r\nwpf@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://wpf.codeplex.com/discussions/72582/unsubscribe/\" target=\"_blank\">\r\nunsubscribe</a> on CodePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com</p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2012-07-05T11:46:45.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

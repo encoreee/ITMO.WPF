@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The background of the header displaying the month and the arrows now takes the color of SystemColors.ActiveCaptionColorKey and SystemColors.WindowColorKey. But the Forground color is fixed on black (#FF333333). Since on XP the deafult CaptionColor is dark blue it is impossible to read the header. On Vista and 7 there is no (less) problem as the default color is light blue. The change from the juli version in the februari version is not backwards compatible with no easy workaround.\n \nProposition is to make the foreground color also a SystemColor and so that it can be overriden (like the background color). \n \nCopying the template and/or style to override it in ones own project is impossible as VisualStateManager.VisualStateGroups is internal (why)?",
+    "LastUpdatedDate": "2013-02-21T18:40:35.89-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-05-10T13:42:28.007-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Calendar control header color issue in Windows XP",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12980
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

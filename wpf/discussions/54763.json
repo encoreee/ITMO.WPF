@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "184669",
+    "ThreadId": "54763",
+    "Html": "I know this discussion topic has none to do with the toolkit itself, but it is very relative to WPF. Hopefully no one finds it inappropriate for these discussion boards.<br>\r\n<br>\r\nI am trying to figure out how to encrypt/decrypt the connection string within my WPF application's app.config file. I am most familiar with the methods used for ASP.Net applications, and it seems the libraries are available in .Net itself, but I cannot find an example that works for WPF as aspnet_regiis.exe doesn't seem to apply.<br>\r\n<br>\r\nIn app.config I have the following:<br>\r\n<br>\r\n&lt;configuration&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;connectionStrings&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;add name=&quot;ConnectionString&quot; connectionString=&quot;<em>WHATEVER DATA HERE</em>&quot; providerName=&quot;Oracle.DataAccess.Client&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/connectionStrings&gt;<br>\r\n&lt;/configuration&gt;<br>\r\n<br>\r\nDoes anyone know a best practice method for getting this done on the WPF platform?<br>\r\n",
+    "PostedDate": "2009-04-28T12:38:02.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184689",
+    "ThreadId": "54763",
+    "Html": "I'm not sure where the best place to ask this question is since app.config is a general mechanism of the .NET Framework and not WPF specific. You might try asking in the &quot;Where is the Forum For&quot; forum: <a href=\"http://social.msdn.microsoft.com/Forums/en-US/whatforum/threads\">http://social.msdn.microsoft.com/Forums/en-US/whatforum/threads</a><br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-04-28T13:21:53.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184691",
+    "ThreadId": "54763",
+    "Html": "My apologies; I thought I'd try here because most of the examples either pertain to ASP.Net tools, or the Enterprise Library methodology, and I am sure there is a way to do this without using either of those methods. Not to mention, none of them address compatibility issues or considerations for ClickOnce deployment. <br>\r\n<br>\r\nI'll try there, I guess.<br>\r\n",
+    "PostedDate": "2009-04-28T13:26:34.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

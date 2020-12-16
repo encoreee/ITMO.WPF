@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "195353",
+    "ThreadId": "57784",
+    "Html": "<p>I have a business entitiy object that is databound to my grid. &nbsp; It is bound to&nbsp;&nbsp;DataGridText Column. &nbsp;&nbsp;I want to trigger some calculations on my business entity after the user enters the value into the DataGridTextColumn. &nbsp;</p>\r\n<p>I was able to do this using&nbsp;DataGridTemplateColumn &nbsp;and tying into the&nbsp;LostFocus &nbsp;event however, &nbsp;if I change to using a&nbsp;DataGridText Column, there does not appear to be a LostFocus event.</p>\r\n<p>I'd like to keep as skinny as possible so am hoping to stay away from&nbsp;DataGridTemplateColumn &nbsp; whereever possible.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Tying to the grid's CellEditEnding event is not helpful because if fires before the data is transfered to the business object (it is an &quot;Ending&quot; event and not an &quot;Ended&quot;) event.</p>\r\n<p>Is there a similiar event I can use such as a CellEditEnded or a CellLostFocus when using the DataGridText Column?</p>\r\n<p>I''ve got a looming deadline ...any help is welcome!</p>",
+    "PostedDate": "2009-05-28T11:51:34.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195572",
+    "ThreadId": "57784",
+    "Html": "<p>Isn't this sort of thing better accomplished in a UI-independent way, such as inside your business object? Whatever mutator logic you have could do those calculations and update the other properties as well. If you are implementing INotifyPropertyChanged, any consumer of the object will then visualize the updates in whatever way is appropriate for that control.</p>",
+    "PostedDate": "2009-05-28T23:36:34.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

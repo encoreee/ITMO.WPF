@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "292790",
+    "ThreadId": "86005",
+    "Html": "<p>I have a ListBox where the built-in scrollbar must not be shown.&nbsp; As a result, I need to be able to scroll&nbsp;the ListBox using a scrollbar located elsewhere on the control; this scrollbar must behave in all respects as the internal scrollbar (update thumb, etc. as items are added to the ListBox).&nbsp; How can this be achieved?</p>",
+    "PostedDate": "2010-02-19T11:31:37.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

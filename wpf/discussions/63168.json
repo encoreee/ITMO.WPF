@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "214667",
+    "ThreadId": "63168",
+    "Html": "<p>Hi!</p>\r\n<p>We are currently trying to implement a save mechanism for our Data. We have&nbsp;very large Itemssource, because of this we do not save the whole set. It would take too much time to send it to the server and get it back. Therefore we are trying to save single instances. The instance that should be saved is send to the server and we get back a new instance. In a demo project we simulated this:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp;save and get the new&nbsp;instance <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Test.DataObject newObj = <span style=\"color:Blue\">new</span> Test.DataObject() { Id = 2, Name = <span style=\"color:#A31515\">&quot;Data2&quot;</span>, Description = <span style=\"color:#A31515\">&quot;DataDesc2&quot;</span>, Timestamp = Environment.TickCount };<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // chnaging the third instance within the itemssource collection of the grid <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; viewModel.Data[2] = newObj;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>The Problem with this is that at the moment we change the instance the selection state is screwed up. The MultiSelektor is trying to remove the  old insance and not adding a new instance.<br>Because of this the row we saved is still selected but not correctly. In fact it is only visually selected, but not contained in the selecteditems. <br>What can we do to get the right new instance selected after the save?</pre>\r\n</div>",
+    "PostedDate": "2009-07-22T01:02:56.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

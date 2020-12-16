@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "145491",
+    "ThreadId": "43743",
+    "Html": "I've got a datagrid that has row headers bound using<br>\r\n<br>\r\n&lt;dg:DataGrid.RowStyle&gt;<br>\r\n&nbsp; &lt;Style TargetType=&quot;dg:DataGridRow&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Header&quot; Value=&quot;{Binding Path=MonthLabel}&quot;/&gt;<br>\r\n&nbsp; &lt;/Style&gt;<br>\r\n&lt;/dg:DataGrid.RowStyle&gt;<br>\r\n<br>\r\nwhich works fine initially, but the headers simply refuse to update (my row object implements INotifyPropertyChanged).&nbsp; It looks like DataGridRow.Header is getting set to the correct value, but the DataGridRowHeader isn't paying attention.&nbsp; How can I force a refresh?<br>\r\n",
+    "PostedDate": "2009-01-08T11:20:11.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147358",
+    "ThreadId": "43743",
+    "Html": "Try setting the binding's UpdateSourceTrigger to PropertyChanged.\r\n",
+    "PostedDate": "2009-01-15T05:42:49.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147440",
+    "ThreadId": "43743",
+    "Html": "Thanks for the response, but the DataGridRow object is already updating the Header property correctly.&nbsp; From what I can gather, the problem lies with the (lack of) communication between the DataGridRow and the Primitives.DataGridRowHeader (the actual visual element).<br>\r\n",
+    "PostedDate": "2009-01-15T10:28:07.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149254",
+    "ThreadId": "43743",
+    "Html": "That is correct.  This is a bug with the notifications between DataGridRow and DataGridRowHeader.  It has been logged and will be fixed in future release.\r\n",
+    "PostedDate": "2009-01-21T06:54:29.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "146780",
+    "ThreadId": "44117",
+    "Html": "I'm using the DataGrid's default blue color to highlight the current row, but my hyperlinks are a bit difficult to read since they are blue as well (although light blue).  I'd like to reverse the hyperlink's foreground color from light blue to white for the currently selected row, but can't quite get the XAML right.<br>\r\n<br>\r\nI'm trying something like this:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGridHyperlinkColumn</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Name</span><span style=\"font-size:13px;color:#0000ff\">=&quot;linkDocNum&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Width</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Auto&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Header</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Document #&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Binding</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> Path</span><span style=\"font-size:13px;color:#0000ff\">=DocumentNum}&quot;&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGridHyperlinkColumn.ElementStyle</span><span style=\"font-size:13px;color:#0000ff\">&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;TextBlock&quot;&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">            &lt;</span><span style=\"font-size:13px;color:#a31515\">EventSetter</span><span style=\"font-size:13px;color:#ff0000\"> Event</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Hyperlink.Click&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Handler</span><span style=\"font-size:13px;color:#0000ff\">=&quot;DocumentNum_Click&quot; /&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">            &lt;</span><span style=\"font-size:13px;color:#a31515\">Style.Triggers</span><span style=\"font-size:13px;color:#0000ff\">&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">                &lt;</span><span style=\"font-size:13px;color:#a31515\">Trigger</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;dg:DataGridRow.IsSelected&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;True&quot;&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">                    &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Foreground&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;White&quot;/&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">                &lt;/</span><span style=\"font-size:13px;color:#a31515\">Trigger</span><span style=\"font-size:13px;color:#0000ff\">&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">            &lt;/</span><span style=\"font-size:13px;color:#a31515\">Style.Triggers</span><span style=\"font-size:13px;color:#0000ff\">&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;/</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#0000ff\">&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;/</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGridHyperlinkColumn.ElementStyle</span><span style=\"font-size:13px;color:#0000ff\">&gt; <br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGridHyperlinkColumn</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<br>\r\nThe markup compiles, and I don't get a runtime error, but the foreground color of the hyperlink column doesn't change to white when the row is selected.<br>\r\n<p>Any help is appreciated.<br>\r\n<br>\r\nThanks!<br>\r\n-Larry</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n</span>\r\n",
+    "PostedDate": "2009-01-13T11:53:49.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146916",
+    "ThreadId": "44117",
+    "Html": "I haven't looked at the source, or even used the DataGridHyperlinkColumn, but are you sure that you should restyle TextBlock? My guess would be that you want to set the style's TargetType to Hyperlink instead - have you tried that?<br>\r\n",
+    "PostedDate": "2009-01-13T23:09:42.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147827",
+    "ThreadId": "44117",
+    "Html": "Thanks for the reply, but not sure how / if I can do that.<br>\r\n<br>\r\nAre there any other approaches I can take for this, or anybody have an example for the above suggestion?<br>\r\n<br>\r\n-Larry<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-16T12:27:36.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153866",
+    "ThreadId": "44117",
+    "Html": "Sorry to bring this up again, but I'm hoping someone can help me out with this.<br>\r\n<br>\r\nAny takers?<br>\r\n<br>\r\n-Larry<br>\r\n",
+    "PostedDate": "2009-02-03T10:41:52.563-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173533",
+    "ThreadId": "44117",
+    "Html": "<p>Well I added a style for the Hyperlink type, and that at least changed the color of the text displayed by DataGridHyperlinkColumn:</p>\r\n<span style=\"font-size:13px;color:#0000ff\">\r\n<p>&lt;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#800000\">Style</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Hyperlink&quot;&gt;<br>\r\n  &lt;</span><span style=\"font-size:13px;color:#800000\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Foreground&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Black&quot; /&gt;<br>\r\n&lt;/</span><span style=\"font-size:13px;color:#800000\">Style</span><span style=\"font-size:13px;color:#0000ff\">&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>But I can't seem to get the text to change color when the row is selected. I know I need some sort of a trigger, but what do I tie it to?</p>\r\n<p>-Larry</p>\r\n",
+    "PostedDate": "2009-03-30T09:48:15.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173609",
+    "ThreadId": "44117",
+    "Html": "Does something like this not work for you:<br>\r\n<span style=\"font-size:13px;color:#0000ff\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#a31515\">&lt;Style</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">Type</span><span style=\"font-size:13px;color:#ff0000\"> Hyperlink</span><span style=\"font-size:13px;color:#0000ff\">}&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">Style.Triggers</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;</span><span style=\"font-size:13px;color:#a31515\">Trigger</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;IsMouseOver&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;True&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">            &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Foreground&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;DarkSlateBlue&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">        &lt;/</span><span style=\"font-size:13px;color:#a31515\">Trigger</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;/</span><span style=\"font-size:13px;color:#a31515\">Style.Triggers</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Foreground&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;LightGreen&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#0000ff\">&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-03-30T12:41:44.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173613",
+    "ThreadId": "44117",
+    "Html": "That does work, but only when the mouse is over the hyperlink itself.  But I'd still like the text color to change when the grid row is selected; i.e. the user will not necessarily move the mouse over the hyperlink just yet.<br>\r\n",
+    "PostedDate": "2009-03-30T12:47:37.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431380",
+    "ThreadId": "44117",
+    "Html": "<p>I've just come across this thread because I was trying to do the same thing. This works for me:</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">x:Key</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">DataGridHyperlinkStyle</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{x:Type Hyperlink}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style.Triggers</span><span style=\"color:Blue\">&gt;</span>\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">DataTrigger</span> <span style=\"color:Red\">Binding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Custom:DataGridRow}}, Path=IsSelected}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">true</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n            <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Foreground</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">White</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">DataTrigger</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style.Triggers</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style</span><span style=\"color:Blue\">&gt;</span>\r\n \r\n</pre>\r\n</div>\r\n</pre>",
+    "PostedDate": "2010-04-15T04:34:43.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431910",
+    "ThreadId": "44117",
+    "Html": "<p>That did the trick!&nbsp; Brilliant!!&nbsp; :-)</p>\r\n<p>A data trigger makes perfect sense.&nbsp; Thank you very much!!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-16T06:16:37.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

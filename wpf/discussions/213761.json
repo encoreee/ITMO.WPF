@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "447074",
+    "ThreadId": "213761",
+    "Html": "Hi,\r\n<br><br>\r\nI'm trying to create my own custom chart Series & DataPoint types. Namely, the CandlestickSeries and the CandlestickDataPoint, which will inherit from DataPointSingleSeriesWithAxes and DataPoint respectively. \r\n<br><br>\r\nI am essentially implementing the idea done by someone with the Silverlight Toolkit:<br>\r\nhttp://www.codeproject.com/KB/silverlight/SLTCandlestickChart2.aspx\r\n<br><br>\r\nHowever, I wish to implement this from my project without changing the WPF Toolkit library.\r\n<br><br>\r\nThe first problem I encountered was being unable to access the internal properties and functions of the toolkit library. For example, the DataPoint has a [TemplateVisualState(Name = DataPoint.StateCommonNormal, GroupName = DataPoint.GroupCommonStates)] which refers to the internal StateCommonNormal or DataPoint that I cannot access from my project.\r\n<br><br>\r\nAnd then secondly, if I just ignore these VSM states by commenting them out the project will compile and the application seems to run fine but I don't see any actual datapoints being graphed so I'm pretty sure that I absolutely need these states? \r\n<br><br>\r\nIs it by design that new series and datapoints can't be added from other projects?\r\nIs there any suggestion to get around this or some best practices / steps when implementing new Series & DataPoint types? \r\n<br><br>\r\nThanks!\r\n<br><br>\r\n",
+    "PostedDate": "2010-05-25T06:26:55.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

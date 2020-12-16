@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When you have a DataGrid within a Popup and the Popup StaysOpen is set to false, when you resize the grid column or click on the column header to sort (and maybe other mouse events from the DataGrid), the mouse capture stays with the DataGrid and never returned back to the Popup. This means that when you click anywhere outside of the popup, the popup does not automatically close anymore.\n \nTo reproduce:\n1. Build and Run the attached solution\n2. Click the Show Popup button\n3. Resize / click one of the DataGrid columns\n4. Click anywhere outside of the popup\n \nI think this is a bug?",
+    "LastUpdatedDate": "2013-02-21T18:40:39.447-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-04-08T21:24:54.517-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid within Popup mouse capture problem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12558
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4148,
+      "FileName": "DataGridBugs.zip",
+      "DownloadUrl": ".\\4148"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "For now, my workaround is as follow:\r\n\r\n                void FixDataGridWithinPopupMouseCapture()\r\n\t\t{\r\n\t\t\tMyDataGrid.GotMouseCapture += delegate\r\n\t\t\t{\r\n\t\t\t\tMyDataGrid.MouseLeave -= MyDataGrid_MouseLeave;\r\n\t\t\t\tMyDataGrid.MouseLeave += MyDataGrid_MouseLeave;\r\n\t\t\t};\r\n\t\t}\r\n\t\t\r\n\t\tvoid MyDataGrid_MouseLeave(object sender, MouseEventArgs e)\r\n\t\t{\r\n\t\t\ttypeof(Popup).GetMethod(\"EstablishPopupCapture\", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(MyPopup, null);\r\n\t\t\tMyDataGrid.MouseLeave -= MyDataGrid_MouseLeave;\r\n\t\t}",
+      "PostedDate": "2010-04-08T22:50:47.44-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:39.447-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

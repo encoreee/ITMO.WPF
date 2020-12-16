@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "245449",
+    "ThreadId": "71908",
+    "Html": "<p>Hello!</p>\r\n<p>There is an interesting behavior in my windows forms app. I created a WPF window, added the DataGrid, and presented the window from my windows forms application.This case the cell editor does not work, you cannot type letters in the cell, only spaces, and delete the content. This is strange. I could solve this by creating a UserControl xaml, adding the data grid to the control, and I added the user control to a windows forms window. This way it works. Has anybody faced similar issues? I am using the latest WPF toolkit, latest Visual Studio, latest service pack, latest upgrades... etc.</p>\r\n<p>&nbsp;</p>\r\n<p>Cheers,</p>\r\n<p>Marton</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-14T01:47:42.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251413",
+    "ThreadId": "71908",
+    "Html": "<p>Hello!</p>\r\n<p>I came across the same issue. It took me days to find out that this wasn't my fault (=&gt; wpf beginner).</p>\r\n<p>Interestingly, the ComboBoxColumn does work in some cases (values can be changed). I'll try your workaround right away.</p>\r\n<p>Cheers, Markus</p>\r\n<p>Edit: Works!</p>",
+    "PostedDate": "2009-10-29T16:21:30.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

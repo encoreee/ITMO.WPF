@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "137984",
+    "ThreadId": "41581",
+    "Html": "In this great article<br>\r\n<br>\r\n<a href=\"http://blogs.msdn.com/jgoldb/archive/2008/08/26/improving-microsoft-datagrid-ctp-sorting-performance.aspx\">http://blogs.msdn.com/jgoldb/archive/2008/08/26/improving-microsoft-datagrid-ctp-sorting-performance.aspx</a><br>\r\n<br>\r\nHe gives a way to speed up sorting performance, but it is at the expense of losing the Multi-column sorting capabilities of the grid.  ( Shift, header clicks ).  How is the Multi-Column sorting communucated to the developer and how can we support it but yet still use some of the techniques given in the link above? <br>\r\n<br>\r\nThanks<br>\r\nPaul\r\n",
+    "PostedDate": "2008-12-05T05:53:03.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138085",
+    "ThreadId": "41581",
+    "Html": "Hi Paul,<br>\r\n<br>\r\n    The default sort is able to do Multi-Column sort because it depends upon the SortDescriptions and one can get thier order from CollectionView's SortDescriptionCollection and use them for next sort. But this is not case with Custom Sort (in fact the perf improving factor of the custom sort from above link is not to use SortDescriptions). So technically since user (developer) has implemented the Sorting it would be his reponsibility to implement the MultiColumn Sort too.<br>\r\n<br>\r\nHaving said that, following is the approach....<br>\r\n<br>\r\n<ol>\r\n    <li>Create an Attached Property somewhere to track the order of sorts</li>\r\n</ol>\r\n<p>public static readonly DependencyProperty ColumnSortOrderProperty =<br>\r\n    DependencyProperty.RegisterAttached(&quot;ColumnSortOrder&quot;,typeof(List&lt;DataGridColumn&gt;),&lt;Your owning type&gt;);<br>\r\n<br>\r\npublic static List&lt;DataGridColumn&gt; GetColumnSortOrder(DataGrid dataGrid)<br>\r\n{<br>\r\n    if(dataGrid == null)<br>\r\n    {<br>\r\n        throw new ArgumentNullException(&quot;dataGrid&quot;);<br>\r\n    }<br>\r\n    (List&lt;DataGridColumn&gt;)dataGrid.GetValue(ColumnSortOrderProperty);<br>\r\n}<br>\r\n<br>\r\npublic static void SetColumnSortOrder(DataGrid dataGrid, List&lt;DataGridColumn&gt; value)<br>\r\n{<br>\r\n    if(dataGrid == null)<br>\r\n    {<br>\r\n        throw new ArgumentNullException(&quot;dataGrid&quot;);<br>\r\n    }<br>\r\n    dataGrid.SetValue(ColumnSortOrderProperty, value);<br>\r\n}</p>\r\n<p>    2.   Then modify your PerformCustomSort method and and MySort comparer such that they take advantage of this property accordingly. Some of the instructions of doing it would be...</p>\r\n<ul>\r\n    <ul>\r\n        <li>Create the list if it is null and is needed.</li>\r\n        <li>Clear the list on the start of every single sort (Sort without pressing shift)</li>\r\n        <li>Do not clear it on MultiSort.</li>\r\n        <li>Modify your comprarer such that it honors the previous sort in the order defined by the property in case of MultiSort.</li>\r\n        <li>Use the SortDirection property on DataGridColumn.</li>\r\n        <li>Add the column to the list after every sort (single or multi).</li>\r\n    </ul>\r\n</ul>\r\n",
+    "PostedDate": "2008-12-05T10:43:12.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139731",
+    "ThreadId": "41581",
+    "Html": "thanks. Off to visual studio to play.<br>\r\n<br>\r\nIs there any easy way to force a sort programattically?<br>\r\n<br>\r\nWithout using the custom sorting, just a regular datagrid, if the user has selected two columns for sorting and I have to reload the data, how do I re-apply the sort programmatically?<br>\r\n<br>\r\nWhen I reload the data, I lose the sorting.  Any clues?<br>\r\n<br>\r\nThanks<br>\r\nPaul\r\n",
+    "PostedDate": "2008-12-11T08:54:49.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139775",
+    "ThreadId": "41581",
+    "Html": "If you are using Custom Sort, you can just call your PerformCustomSort method to force a sort programatically.<br>\r\n<br>\r\nBy reloading data, do you mean changing the ItemsSource itself or modifying the collection tied to ItemsSource. If it is the latter, one shouldnt lose sorting (if not custom sorting). If it is the former then you willl lose sorting (the reason and suggestions are in <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=41312\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=41312</a>).\r\n",
+    "PostedDate": "2008-12-11T10:57:59.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139835",
+    "ThreadId": "41581",
+    "Html": "Thanks <br>\r\n<br>\r\nthe link helped.<br>\r\n<br>\r\nPaul\r\n",
+    "PostedDate": "2008-12-11T13:36:33.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

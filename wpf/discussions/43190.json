@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "143526",
+    "ThreadId": "43190",
+    "Html": "Hello,<br>\r\n<br>\r\nI've been trying out the Ribbon library (great work btw!). One of the common scenarios in my application is to load items for the RibbonSplitButton or RibbonDropDownButton at init in the context of a specific user. I've tried to add items using code behind just to see if it will work but they always become disabled. Am I missing something obvious?<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">\r\n<p>RibbonCommand</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> testCommand = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">RibbonCommand</span><span style=\"font-size:13px\">()\r\n<p>&nbsp;</p>\r\n<p>{</p>\r\n<p>LabelTitle = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;...&quot;</span><span style=\"font-size:13px\">,\r\n<p>&nbsp;</p>\r\n<p>LabelDescription = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;...&quot;</span><span style=\"font-size:13px\">,\r\n<p>&nbsp;</p>\r\n<p>ToolTipTitle = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;...&quot;</span><span style=\"font-size:13px\">,\r\n<p>&nbsp;</p>\r\n<p>ToolTipDescription = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;...&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>};</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">RibbonMenuItem</span><span style=\"font-size:13px\"> testMenuItem = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">RibbonMenuItem</span><span style=\"font-size:13px\">()\r\n<p>&nbsp;</p>\r\n<p>{</p>\r\n<p>Command = testCommand</p>\r\n<p>};</p>\r\n<p>testSplitButton.Items.Add(testMenuItem);<br>\r\n-----------------------------------------------------------</p>\r\n</span></p>\r\n<p><br>\r\nKind regards,<br>\r\nBart</p>\r\n",
+    "PostedDate": "2008-12-30T07:31:49.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143536",
+    "ThreadId": "43190",
+    "Html": "Hi Bart,<br>\r\n<br>\r\nI think you need to add a CommandBinding for your command.  Here is an example:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">\r\n<p>CommandBinding</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> commandBinding = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">CommandBinding</span><span style=\"font-size:13px\">(testCommand);\r\n<p>&nbsp;</p>\r\n<p>commandBinding.Executed += </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">ExecutedRoutedEventHandler</span><span style=\"font-size:13px\">(commandBinding_Executed);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.CommandBindings.Add(commandBinding);<br>\r\n<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#008000\"><span style=\"font-size:13px;color:#008000\">\r\n<p>&nbsp;</p>\r\n<p>// Event handler</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">private</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">void</span><span style=\"font-size:13px\"> commandBinding_Executed(</span><span style=\"font-size:13px;color:#0000ff\">object</span><span style=\"font-size:13px\"> sender, </span><span style=\"font-size:13px;color:#2b91af\">ExecutedRoutedEventArgs</span><span style=\"font-size:13px\"> e)\r\n<p>&nbsp;</p>\r\n<p>{</p>\r\n<p>}<br>\r\n<br>\r\nHope this helps,<br>\r\nAlex</p>\r\n</span></p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-12-30T08:58:49.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143545",
+    "ThreadId": "43190",
+    "Html": "Great! It does work! Thank you Alex!<br>\r\n<br>\r\nKind regards,<br>\r\nBart<br>\r\n",
+    "PostedDate": "2008-12-30T09:36:15.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

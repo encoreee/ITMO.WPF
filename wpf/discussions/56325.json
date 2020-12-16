@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "190269",
+    "ThreadId": "56325",
+    "Html": "<p>Hi.</p>\r\n<p>The data grid has a details template which gets displayed when a row is selected.</p>\r\n<p>What I want it to have is display all items in the grid occupying 2 rows each, so a custom data template (item template).&nbsp; Then when a user clicks on a row and enters edit mode or adds a new item, I want the row to be displayed as a grid with a total of 5 rows.</p>\r\n<p>I (could) provide this functionality with an ItemTemplate and EditItemTemplate (or template selector).&nbsp; Can this be done?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-05-14T08:10:44.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190279",
+    "ThreadId": "56325",
+    "Html": "<p>I should add that I dont want to display BOTH row and details when an item is being edited.&nbsp;</p>\r\n<p>during an edit (or a selected item not being edited) I just want the 5 row grid displayed.</p>",
+    "PostedDate": "2009-05-14T08:24:39.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

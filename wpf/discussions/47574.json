@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "159323",
+    "ThreadId": "47574",
+    "Html": "<br>\r\nCan any help with below issue<br>\r\n<br>\r\nDatePicker  not update value in DataGrid when using a RowDetailsTemplate, textboxes checkbox all seem ok but have problem when selected a date the value is not updated.<br>\r\n<br>\r\nBinidng to a object that holds name and date of birth, inside the template you can change the name with no issue but when selected a date or typing a date nothing happens, here is the xaml.<br>\r\n<br>\r\n<br>\r\n<p>  &lt;my:DataGrid.RowDetailsTemplate&gt;<br>\r\n                &lt;DataTemplate&gt;<br>\r\n                    &lt;Border Background=&quot;LightBlue&quot; CornerRadius=&quot;15&quot; Margin=&quot;10&quot;&gt; <br>\r\n                        &lt;Grid&gt;<br>\r\n                            &lt;Grid.ColumnDefinitions&gt;<br>\r\n                                &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;<br>\r\n                                &lt;ColumnDefinition Width=&quot;100&quot;/&gt;<br>\r\n                            &lt;/Grid.ColumnDefinitions&gt;</p>\r\n<p>                            &lt;StackPanel Grid.Column=&quot;0&quot;&gt;<br>\r\n                                &lt;Label&gt;Name&lt;/Label&gt;<br>\r\n                                &lt;Label&gt;Date Of Birth&lt;/Label&gt;<br>\r\n                                &lt;Label&gt;Been Good&lt;/Label&gt;<br>\r\n                            &lt;/StackPanel&gt;</p>\r\n<p>                            &lt;StackPanel Grid.Column=&quot;1&quot;&gt;<br>\r\n                                &lt;TextBox Text=&quot;{Binding Path=Name}&quot;/&gt;<br>\r\n                                &lt;my:DatePicker SelectedDate=&quot;{Binding Path=Dob}&quot; /&gt;<br>\r\n                                &lt;CheckBox IsChecked=&quot;{Binding Path=BeenGood}&quot;/&gt;<br>\r\n                            &lt;/StackPanel&gt;</p>\r\n<p>                        &lt;/Grid&gt;<br>\r\n                    &lt;/Border&gt;<br>\r\n                &lt;/DataTemplate&gt;<br>\r\n            &lt;/my:DataGrid.RowDetailsTemplate&gt;</p>\r\n",
+    "PostedDate": "2009-02-19T02:17:04.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159801",
+    "ThreadId": "47574",
+    "Html": "Hi alexjohnhill,<br>\r\n<br>\r\nThis sounds like it might be due to a bug in DatePicker where the binding on SelectedDate isn't TwoWay by default.  Try changing the SelectedDate binding to:<br>\r\n<br>\r\nSelectedDate=&quot;{Binding Path=Dob, Mode=TwoWay}&quot;<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-19T10:24:17.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159825",
+    "ThreadId": "47574",
+    "Html": "This bug will be fixed in the next release.\r\n",
+    "PostedDate": "2009-02-19T11:09:01.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159965",
+    "ThreadId": "47574",
+    "Html": "Thanks for the responses I was unaware of the default binding mode for the DateTimePicker. However I have tried setting the binding to 2 way in the DataGrid.RowDetailsTemplate and get the same result. What I have noticed is that the selection of a date in the DateTimePicker is being registered as a MouseDown / mouse LeftbuttonDown event on the DataGrid, with no selectedDateChange being fired for the DateTimePicker.<br>\r\n<br>\r\nbelow is simple example xaml with code that when run shows you can edit date in DataGrid Cell ok, but can't edit date in the RowDetailsTemplate<br>\r\n<br>\r\n<p>&lt;Window x:Class=&quot;WpfApplicationTestRowDetails2.Window1&quot;<br>\r\n    xmlns=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</a>&quot;<br>\r\n    xmlns:x=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml\">http://schemas.microsoft.com/winfx/2006/xaml</a>&quot;<br>\r\n    Title=&quot;Window1&quot; Height=&quot;378&quot; Width=&quot;520&quot; xmlns:my=&quot;<a href=\"http://schemas.microsoft.com/wpf/2008/toolkit\">http://schemas.microsoft.com/wpf/2008/toolkit</a>&quot;&gt;<br>\r\n    &lt;Grid&gt;<br>\r\n        &lt;my:DataGrid Margin=&quot;33,36,19,14&quot; Name=&quot;dataGrid1&quot; AutoGenerateColumns=&quot;True&quot;&gt;</p>\r\n<p>            &lt;my:DataGrid.Columns&gt;<br>\r\n                &lt;my:DataGridTextColumn Header=&quot;Name&quot; Binding=&quot;{Binding Path=Name}&quot;/&gt;<br>\r\n                &lt;my:DataGridTemplateColumn Header=&quot;Date Of Birth&quot;&gt;<br>\r\n                    &lt;my:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n                        &lt;DataTemplate&gt;<br>\r\n                            &lt;my:DatePicker SelectedDate=&quot;{Binding Path=Dob,Mode=TwoWay}&quot;/&gt;<br>\r\n                        &lt;/DataTemplate&gt;<br>\r\n                    &lt;/my:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n                &lt;/my:DataGridTemplateColumn&gt;<br>\r\n            &lt;/my:DataGrid.Columns&gt;</p>\r\n<p>            &lt;my:DataGrid.RowDetailsTemplate&gt;<br>\r\n                &lt;DataTemplate&gt;<br>\r\n                    &lt;Border Background=&quot;LightBlue&quot; CornerRadius=&quot;15&quot; Margin=&quot;10&quot;&gt;<br>\r\n                        &lt;Grid&gt;<br>\r\n                            &lt;Grid.ColumnDefinitions&gt;<br>\r\n                                &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;<br>\r\n                                &lt;ColumnDefinition Width=&quot;100&quot;/&gt;<br>\r\n                            &lt;/Grid.ColumnDefinitions&gt;</p>\r\n<p>                            &lt;StackPanel Grid.Column=&quot;0&quot;&gt;<br>\r\n                                &lt;Label&gt;Name&lt;/Label&gt;<br>\r\n                                &lt;Label&gt;Date Of Birth&lt;/Label&gt;<br>\r\n                            &lt;/StackPanel&gt;</p>\r\n<p>                            &lt;StackPanel Grid.Column=&quot;1&quot;&gt;<br>\r\n                                &lt;TextBox Text=&quot;{Binding Path=Name}&quot;/&gt;<br>\r\n                                &lt;my:DatePicker SelectedDate=&quot;{Binding Path=Dob,Mode=TwoWay}&quot;/&gt;<br>\r\n                            &lt;/StackPanel&gt;<br>\r\n                        &lt;/Grid&gt;<br>\r\n                    &lt;/Border&gt;<br>\r\n                &lt;/DataTemplate&gt;<br>\r\n            &lt;/my:DataGrid.RowDetailsTemplate&gt;<br>\r\n        &lt;/my:DataGrid&gt;<br>\r\n    &lt;/Grid&gt;<br>\r\n&lt;/Window&gt;<br>\r\n<br>\r\n<br>\r\n<br>\r\n</p>\r\n<p>using System;<br>\r\nusing System.Collections.Generic;<br>\r\nusing System.Linq;<br>\r\nusing System.Text;<br>\r\nusing System.Windows;<br>\r\nusing System.Windows.Controls;<br>\r\nusing System.Windows.Data;<br>\r\nusing System.Windows.Documents;<br>\r\nusing System.Windows.Input;<br>\r\nusing System.Windows.Media;<br>\r\nusing System.Windows.Media.Imaging;<br>\r\nusing System.Windows.Navigation;<br>\r\nusing System.Windows.Shapes;<br>\r\nusing Microsoft.Windows.Controls;</p>\r\n<p>namespace WpfApplicationTestRowDetails2<br>\r\n{<br>\r\n    /// &lt;summary&gt;<br>\r\n    /// Interaction logic for Window1.xaml<br>\r\n    /// &lt;/summary&gt;<br>\r\n    public partial class Window1 : Window<br>\r\n    {<br>\r\n        List&lt;Tester&gt; tests;</p>\r\n<p>        public Window1()<br>\r\n        {</p>\r\n<p>            tests = new List&lt;Tester&gt;();</p>\r\n<p>            tests.Add(new Tester(&quot;Alex Hill&quot;, DateTime.Now));<br>\r\n            tests.Add(new Tester(&quot;Jane Hill&quot;, new DateTime(1971, 7, 20)));<br>\r\n            tests.Add(new Tester(&quot;Lewis Hill&quot;, new DateTime(2005, 10, 8)));<br>\r\n            tests.Add(new Tester(&quot;Alicia Hill&quot;, new DateTime(2007, 9, 4)));</p>\r\n<p>            InitializeComponent();</p>\r\n<p>            dataGrid1.ItemsSource = tests;<br>\r\n        }<br>\r\n    }</p>\r\n<p>    public class Tester<br>\r\n    {<br>\r\n        private string name;<br>\r\n        private DateTime dob;</p>\r\n<p>        public Tester(string name, DateTime dob)<br>\r\n        {<br>\r\n            this.name = name;<br>\r\n            this.dob = dob;<br>\r\n        }</p>\r\n<p>        public string Name<br>\r\n        {<br>\r\n            get { return name; }<br>\r\n            set { name = value; }<br>\r\n        }</p>\r\n<p>        public DateTime Dob<br>\r\n        {<br>\r\n            get { return dob; }<br>\r\n            set { dob = value; }<br>\r\n        }<br>\r\n    }<br>\r\n}</p>\r\n<p><br>\r\n</p>\r\n",
+    "PostedDate": "2009-02-19T17:55:58.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160232",
+    "ThreadId": "47574",
+    "Html": "Hi alexjohnhill,<br>\r\n<br>\r\nAh, I see.  This sounds like it is due to a known bug in DataGrid, where when you click on any Popups in row details, the click goes through to the DataGrid and doesn't register on the Popup.  This will be fixed in our next release also.  In the meantime, I don't believe there's a workaround besides using a different control in your RowDetailsTemplate which doesn't have a popup.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-20T10:11:52.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160871",
+    "ThreadId": "47574",
+    "Html": "<br>\r\nSamantha,<br>\r\n<br>\r\nDo you know when the next release is planned ?\r\n",
+    "PostedDate": "2009-02-23T01:47:34.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161048",
+    "ThreadId": "47574",
+    "Html": "We've got one planned (with DataGrid and DatePicker bug fixes) within the next few weeks, but I don't have an exact date yet.  I think at the latest it will be a week or two after we release .NET 4.0 Beta 1, but we're hoping to get it out before then.\r\n",
+    "PostedDate": "2009-02-23T10:34:22.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

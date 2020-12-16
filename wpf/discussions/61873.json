@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "210022",
+    "ThreadId": "61873",
+    "Html": "<p>I am having trouble figuring out how to implement keyboard shortcuts in the ribbon.&nbsp; I see there is an InputGestureText property in RibbonApplicationMenuItem, but it does not seem to work.</p>\r\n<p>\r\n<p>\r\n<p><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">&lt;r</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">:</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">RibbonApplicationMenuItem</span></span><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#ff0000\"> InputGestureText</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">=&quot;Ctrl+S&quot;</span></span><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#ff0000\"> Command</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">=&quot;{</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">StaticResource</span></span><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#ff0000\"> SaveCommand</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">}&quot; /&gt;</span></span></p>\r\n</p>\r\n</p>\r\n<p>in the xaml example above, SaveCommand is a RibbonCommand.&nbsp; I thought maybe there was some way to set it up in the RibbonCommand, but I didn't see anything.</p>\r\n<p>What is the recommended way to do this?</p>",
+    "PostedDate": "2009-07-08T09:23:45.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210104",
+    "ThreadId": "61873",
+    "Html": "<p>Hi, the Ribbon CTP does not have keyboard shortcuts implemented yet.&nbsp; In V1, we will have the KeyTip feature which will allow you to specify keyboard shortcuts.&nbsp; Thanks!</p>",
+    "PostedDate": "2009-07-08T11:38:37.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

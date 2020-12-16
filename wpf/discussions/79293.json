@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "271464",
+    "ThreadId": "79293",
+    "Html": "<p>Hello,</p>\r\n<p>I want to know how can I programmatically interact with the DataGrid generated for showing the detail data of the Master Datagrid on RowDetailsTemplate. I want to be able to delete&nbsp;on this generated DataGrid, but I can't access by code</p>\r\n<p>thanks in advance</p>",
+    "PostedDate": "2009-12-29T08:43:59.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

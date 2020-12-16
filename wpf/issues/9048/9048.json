@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When we use the RowStyleSelector a small percentage of the rows don't get the style they should get.\nAfter making sure this was not a bug in our implementation, we guesses this might have to do with the Virtualization Recycling mode.\n \nSo we set the Virtualization Mode to Standard and the issue was resolved.\nPlaying back and forth between the two modes, we confirmed that the Recycling Virtualization Mode for the data grid does not work correctly with the\nRowStyleSelector.\n \nThis is a critical bug! As the RowStyleSelector must be a major feature for many data grid users.",
+    "LastUpdatedDate": "2013-02-21T18:41:35.59-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-26T14:36:41.487-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPFToolkit DataGrid RowStyleSelector - Virtualization Bug",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 9048
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-18T16:46:33.753-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:46:34.83-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-10T00:26:36.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-04T01:57:57.867-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-08T11:30:33.657-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:35.59-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

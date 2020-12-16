@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Im not able to add RibbonButton to quick bar if this button contains InputBindings like:\n<r:RibbonButton.InputBindings>\n        <MouseBinding Command=\"Copy\" Gesture=\"CTRL+RightClick\"\n</r:RibbonButton.InputBindings>",
+    "LastUpdatedDate": "2013-02-21T18:40:14.14-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-03-01T08:53:30.36-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Error when try add RibbonButton to auick toolbar",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15436
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

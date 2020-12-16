@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Received a null reference exception in OverrideDataRange in DateTimeAxis. The method GetMaxLeftAndRightOverlap can return null for either maxLeftOverlapValueMargin or maxRightOverlapValueMargin in edge cases and the condition of the \"while\" after the call does not check for this. The same is true in LinearAxis. \n \nA very simple fix is to change the condition in both cases to:\n \nwhile ((maxLeftOverlapValueMargin != null && maxRightOverlapValueMargin != null) && (maxLeftOverlapValueMargin.LeftOverlap > 0 || maxRightOverlapValueMargin.RightOverlap > 0))\n \nThis seems to resolve this.",
+    "LastUpdatedDate": "2013-02-21T18:41:02.827-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-07T04:46:36.967-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Exception in OverrideDataRange in DateTimeAxis",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10418
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "i am getting this error in my project and it's difficult to replicate.  i would like to see this make it in if it's as easy as you say.  thanks.",
+      "PostedDate": "2010-01-26T07:56:26.72-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "FYI, I've just checked in a fix for this.",
+      "PostedDate": "2010-03-25T15:52:28.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi davidans,\r\n  Did you really check in your fix for this? There's several people with this problem and the check-in history doesn't show this?\r\n  J",
+      "PostedDate": "2011-01-24T07:58:49.693-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-08-23T23:05:09.933-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:02.827-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

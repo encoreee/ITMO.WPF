@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "170537",
+    "ThreadId": "50890",
+    "Html": "<div><br></div><div><br></div><div>Hi,</div><div><br></div><div>Im Having requirement of providing tooltip for every datagrid cell.</div><div><br></div><div>can any1 post me style for datagrid row for tooltip</div><div><br></div><div>Im Using following style for tooltip</div><div><br></div><div> &lt;Style x:Key=&quot;defaultCellStyle&quot; TargetType=&quot;{x:Type dg:DataGridCell}&quot;&gt;</div><div>            &lt;Setter Property=&quot;ContentTemplate&quot;&gt;</div><div>                &lt;Setter.Value&gt;</div><div>                    &lt;DataTemplate&gt;</div><div>                        &lt;StackPanel&gt;</div><div>                              &lt;TextBlock Text=&quot;hisahifhidsf&quot; ToolTip=&quot;{Binding}&quot;  Background=&quot;Aqua&quot;/&gt;</div><div>                        &lt;/StackPanel&gt;</div><div>                    &lt;/DataTemplate&gt;</div><div>                &lt;/Setter.Value&gt;</div><div>            &lt;/Setter&gt;</div><div><br></div><div>        &lt;/Style&gt;</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div>With Regards,</div><div>Mahender</div>",
+    "PostedDate": "2009-03-22T05:52:49.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170603",
+    "ThreadId": "50890",
+    "Html": "<div style=\"padding-top:3px;padding-right:3px;padding-bottom:3px;padding-left:3px;background-image:none;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left;word-wrap:break-word\">Hi ,<div><br></div><div>Could able to provide tooltip but </div><div>like this &lt;style targettype=&quot;dg:datagridcell&quot;&gt;</div><div>&lt;setter property=&quot;tooltip&quot; value=&quot;Binding empid&quot;&gt;</div><div>&lt;/style&gt;</div><div><br></div><div>Here EMpId is given as Binding Path value,Now i want to provide tooltip for each datagrid cell depending upon contents in corresponding cell(wherever mouse over on particular cell)</div><div><br></div><div>I.e If user places cursor on cell @ (1,1) value @ (1,1) should be displayed has tooltip</div><div><br></div><div>With regards,</div><div>Mahender</div></div>",
+    "PostedDate": "2009-03-22T11:39:53.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

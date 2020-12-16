@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "158972",
+    "ThreadId": "47482",
+    "Html": "I am using the Jan 2009 wpftoolkit with Visual Studio 2008 Shell.&nbsp; I see pictures of people who right-click on the datagrid at design time and get a context menu with &quot;DataGrid&quot; as a choice just below &quot;Order&quot;.&nbsp; Mine doesn't do that.&nbsp; Is there something that has to be turned on to get that or is that something that has changed with the latest release?<br>\r\n<br>\r\nOr maybe it is because it is the Shell?<br>\r\n",
+    "PostedDate": "2009-02-18T06:29:53.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161410",
+    "ThreadId": "47482",
+    "Html": "You just need to have the two design.dlls in the same location as the wpftoolkit.dll that you reference.  Is that already the case?\r\n",
+    "PostedDate": "2009-02-24T05:40:40.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161423",
+    "ThreadId": "47482",
+    "Html": "I'm not sure.&nbsp; What do you mean by &quot;same location&quot;?&nbsp; Do you mean the files need to be in the same folder?&nbsp; In the same folder as the app?&nbsp; Same toolbox group?<br>\r\n<br>\r\nCould you elaborate?<br>\r\n",
+    "PostedDate": "2009-02-24T05:59:16.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161476",
+    "ThreadId": "47482",
+    "Html": "For example, by default the toolkit is install in this location:<br>\r\n<br>\r\n&quot;..\\Program Files\\WPF Toolkit\\v3.5.&lt;something&gt;\\&quot;<br>\r\n<br>\r\nIn that location wpftoolkit.design.dll and wpftoolkit.visualstudio.design.dll should be there.  Basically, putting those two dlls in the same dir as wpftoolkit.dll should enable the design scenario.\r\n",
+    "PostedDate": "2009-02-24T08:11:13.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161485",
+    "ThreadId": "47482",
+    "Html": "Apparently not.<br>\r\n<br>\r\nThey are all in C:\\Users\\mtiede\\Downloads\\WPF\\WPFToolkit\\Toolkit-release\\bin\\Debug and I rebuilt them yesterday.<br>\r\n",
+    "PostedDate": "2009-02-24T08:17:40.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161570",
+    "ThreadId": "47482",
+    "Html": "Any more ideas why the context menu isn't showing since it should be able to find all the toolkit assemblies?<br>\r\n",
+    "PostedDate": "2009-02-24T11:36:23.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162111",
+    "ThreadId": "47482",
+    "Html": "Try installing our MSI first. Then, if you want, copy the debug binaries that you build into the Program Files\\WPF Toolkit\\v3.5.xxxxx folder (don't create a new one, just overwrite the existing files). Then, make sure that your project references the version that now appears in the Toolbox. (you might want to start with a clean project first just to ensure that you see the context menu)<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-02-25T15:50:40.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162156",
+    "ThreadId": "47482",
+    "Html": "Hmmph!<br>\r\n<br>\r\nWell, I didn't have to do that.&nbsp; I just downloaded the latest Eco 5 beta and low and behold, the WPF datagrid has the right menu now.&nbsp; I'm guessing that uninstalling and reinstalling Eco forced Visual Studio 2009 Shell to reload something that managed to fix the context menu.&nbsp; <br>\r\n<br>\r\nSo now it works!&nbsp; Go figure. \r\n",
+    "PostedDate": "2009-02-25T21:07:19.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

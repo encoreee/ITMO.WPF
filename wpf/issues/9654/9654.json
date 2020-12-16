@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DatePicker",
+      "DisplayName": "DatePicker"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In addition to id# 9585.\nAlthough I just shortly work with WPF and my knowledge of it is still increasing, I made the following observation (and maybe not completely correct) :\n \nWhen the DatePicker looses focus, invalid data wil automatically be reset to the last date. Since it is it rather SelectedDate-based than Text-based. \nMaybe the user accidently 1-122-2009 instead of 1-12-2009. He can change his mistake by only removing this single character...\n... or instead I should do some key-previewing. \nAlso other controls tend to do this. You see this behaviour also in other software, so maybe I have to get used to it. \n \nIn my opinion the Binding should stay in a sort of errorstate where refreshing temporarily is froozen.\nBut you cannot change properties after binding. Why?\nAnd you can not inherit the Binding, other than like this: http://www.hardcodet.net/2008/04/wpf-custom-binding-class. Why?\nObject Orientation is not ment - I think - to seal so much off. After several years of experience I know that I cannot forsee everything, or how things will be used.\n \nGreetings Eric Gehring,\nwww.softex.nl",
+    "LastUpdatedDate": "2013-02-21T18:41:22.3-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-01T10:00:24.587-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker can not temporarily hold invalid date",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 9654
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I ofcourse ment: \"He can NOT change his mistake by only removing this single character...",
+      "PostedDate": "2009-04-01T10:02:22.477-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T14:10:48.67-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think you should be able to make a ValidationRule that checks for this invalid date.  If you do this, it may not commit the binding until it's valid, which would give the user a chance to fix the mistake.",
+      "PostedDate": "2009-04-03T13:14:05.867-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi SoftexNL,\r\n\r\nThanks for the feedback.  We are tracking this suggestion as a potential feature for a future release of DatePicker.\r\n\r\nAlexis ",
+      "PostedDate": "2009-04-07T13:12:18.773-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-07T13:12:43.823-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for considering this.",
+      "PostedDate": "2009-04-23T01:12:32.673-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-28T07:17:58.613-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-05T04:40:45.823-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-22T21:18:24.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:22.3-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

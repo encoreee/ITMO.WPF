@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "122068",
+    "ThreadId": "36796",
+    "Html": "I am trying to use the following DataTemplate to bind to my view model that exposes an ObservableCollection of Products:<br>\r\n<br>\r\n&lt;DataTemplate DataType=&quot;{x:Type local:ProductsPresentationModel}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid&nbsp; ItemsSource=&quot;{Binding Products}&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn DataFieldBinding=&quot;{Binding Id}&quot; Header=&quot;Product Id&quot;&gt;&lt;/dg:DataGridTextColumn&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn DataFieldBinding=&quot;{Binding Name}&quot; Header=&quot;Product Name&quot;&gt;&lt;/dg:DataGridTextColumn&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&lt;/DataTemplate&gt;<br>\r\n<br>\r\n<br>\r\nI get the error&nbsp;<strong>'DataGridTextColumn' object cannot be added to 'DataGrid'. Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.'<br>\r\n</strong>If I use a ListView and set the ItemsSource then I do not get this error and updating the Products collection causes the list to automatically be updated with the changes.:<br>\r\n<br>\r\n&lt;ListView ItemsSource=&quot;{Binding Products}&quot;&gt;<br>\r\n&nbsp;&lt;ListView.ItemTemplate&gt;<br>\r\n&nbsp;&nbsp;&lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&lt;TextBlock Text=&quot;{Binding Name}&quot; &gt;&lt;/TextBlock&gt;<br>\r\n&nbsp;&nbsp;&lt;/DataTemplate&gt;<br>\r\n&nbsp;&lt;/ListView.ItemTemplate&gt;<br>\r\n&lt;/ListView&gt;&nbsp;<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&nbsp;</p>\r\n</span></span></p>\r\n<br>\r\nCan anyone help me implement this with the DataGrid?<br>\r\nI am not using a code behind file as I am using the Model View View-Model pattern.</p>\r\n",
+    "PostedDate": "2008-10-01T04:05:20.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122128",
+    "ThreadId": "36796",
+    "Html": "<p>Hi DJM,<br>\r\n<br>\r\nI think the problem may just be that you forgot to put the columns in the DataGrid.Columns collection.&nbsp; Try this:</p>\r\n<p>&lt;DataTemplate DataType=&quot;{x:Type local:ProductsPresentationModel}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid&nbsp; ItemsSource=&quot;{Binding Products}&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dg:DataGridTextColumn DataFieldBinding=&quot;{Binding Id}&quot; Header=&quot;Product Id&quot;&gt;&lt;/dg:DataGridTextColumn&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dg:DataGridTextColumn DataFieldBinding=&quot;{Binding Name}&quot; Header=&quot;Product Name&quot;&gt;&lt;/dg:DataGridTextColumn&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid.Columns&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&lt;/DataTemplate&gt;<br>\r\n<br>\r\nLet me know if that fixes the issue or not.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha</p>\r\n",
+    "PostedDate": "2008-10-01T08:52:37.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122327",
+    "ThreadId": "36796",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nThat was indeed the error. It now works fine.<br>\r\n<br>\r\nMany thanks,<br>\r\n<br>\r\nDJM\r\n",
+    "PostedDate": "2008-10-02T02:54:30.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

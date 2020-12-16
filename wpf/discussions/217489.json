@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "460387",
+    "ThreadId": "217489",
+    "Html": "<p>Hi,</p>\r\n<p>I'm looking for good samples/tutorials that combine Prism and Ribbon in one application. I want to be able to create a Ribbon Window (that would work as a shell) with Ribbon tabs (which are not a module but rather a static element of a shell) and be able to load modules depending on the tab that is selected by the user. I wrote and application in prism, then tried to migrate it into an application using Ribbon but got all kind of errors. Is there a good example that could teach me how to do that properly?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for any help.</p>",
+    "PostedDate": "2010-06-27T11:48:47.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

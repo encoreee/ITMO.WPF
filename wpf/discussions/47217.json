@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "157989",
+    "ThreadId": "47217",
+    "Html": "Hi,<br>\r\nI am tring to override the ApplicationMenu of Ribbon control. That is, I don't need the popup of ApplicationMenu which comes with Ribbon control.<br>\r\n<br>\r\nI have designed a popup with my custom UserControl. Presently I am using the PreviewMouseLeftButtonDown event of RibbonApplicationMenu to popup my UserControl. Unfortunately, the Ribbon's ApplicationMenu also popping out. It would be great if I could get the toggle trigger of the ApplicationButton of the Ribbon control.<br>\r\n<br>\r\nRegards,<br>\r\nVenkatesh Mookkan.<br>\r\n",
+    "PostedDate": "2009-02-16T02:31:23.167-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157995",
+    "ThreadId": "47217",
+    "Html": "I wouldn't be surprised if someone will mention the Office UI license (I haven't even looked at it myself since I am not using the Ribbon control), but are you setting e.Handled=true in your event handler?<br>\r\n",
+    "PostedDate": "2009-02-16T02:52:10.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "158003",
+    "ThreadId": "47217",
+    "Html": "Thank you the reply.<br>\r\n<br>\r\nYes Mikj, Sounds like someone will do. I just went thru other discussions where most of it has mentioned the license part. If this going to violate the UI License, this control is totally waste for my application development which is not going to meet the basic requirement of my application.<br>\r\n<br>\r\nAnd I am not setting any e.Handled = true;<br>\r\n",
+    "PostedDate": "2009-02-16T03:08:31.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "158034",
+    "ThreadId": "47217",
+    "Html": "If you are not setting e.Handled appropriately, how should the control know that you have handled the event in question? Try adding that assignment after you display your custom UserControl in PreviewMouseLeftButtonDown and see if that resolves the technical issue you are seeing. (I won't comment further on the licensing issue - there are others here who are in a much better position than myself to do so.)<br>\r\n",
+    "PostedDate": "2009-02-16T05:08:45.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "158041",
+    "ThreadId": "47217",
+    "Html": "Mikj,<br>\r\nI tried it once you posted the previous post. And its resolved. Sorry for not mentioning immediately.<br>\r\n<br>\r\nI have to work with my Team Leader regarding this License issue.<br>\r\n<br>\r\nThank you very much.\r\n",
+    "PostedDate": "2009-02-16T05:22:29.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

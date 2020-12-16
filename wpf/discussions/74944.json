@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "256481",
+    "ThreadId": "74944",
+    "Html": "<p>I'm trying to detect a value change in my combo box. Note that the combo box is driven from a different dataset than the rest of my datagrid, so I need the granular code to get this to work. Unfortunately, it seems like the combo box column has limited event procedures.<span style=\"white-space:pre\"> </span></p>",
+    "PostedDate": "2009-11-12T13:39:11.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

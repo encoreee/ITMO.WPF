@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "516617",
+    "ThreadId": "233373",
+    "Html": "\r\n<p>I'm using a DataGridTemplateColumn with Textbox and I'm trying to set the focus from&nbsp;the code, but i couldn't get it to focus.&nbsp; I'm putting this code in dg_SelectionChanged event.&nbsp;</p>\r\n<p>I've tried many way including:</p>\r\n<p>&#65279;&#65279;DataGridRow dgr = (DataGridRow)dg.ItemContainerGenerator.ContainerFromItem(dg.SelectedItem);<br>\r\ndgr.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));</p>\r\n<p>and</p>\r\n<p>dg.CurrentCell = new DataGridCellInfo(dg.SelectedItem, dg.Columns[1]);<br>\r\ndg.BeginEdit();</p>\r\n<p>&#65279;Please advice.</p>\r\n",
+    "PostedDate": "2010-11-03T12:06:20.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "262867",
+    "ThreadId": "76886",
+    "Html": "<p>I have a simple data grid that I am binding to an ObservableCollection&lt;&gt; of objects. These objects have two string properties. I have defined and registered a type description provider, implemented a custom type descriptor, and custom property descriptor for these objects.</p>\r\n<p>At runtime, when I set AutoGenerateColumns=&quot;True&quot; it successfully calls the GetProperties() on my type descriptor and returns back a PropertyDescriptorCollection with 3 property descriptors (2 ReflectPropertyDescriptors for the 2 string properties defined on the class and 1 custom property descriptor that I added). So far so good - the columns do in fact get auto-generated and the column header properly reflects the property descriptor name.</p>\r\n<p>However, the GetValue() method on the custom property descriptor never gets called. Consequently, the column for the custom property descriptor has no data.</p>\r\n<p>Do I have to do something extra to get it to use the property descriptor's data?</p>\r\n<p>Thanks for any input or suggestions.</p>",
+    "PostedDate": "2009-12-02T11:28:59.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271608",
+    "ThreadId": "76886",
+    "Html": "<p>imapcgeek,</p>\r\n<p>I am having the same exact problem.&nbsp; I was able to get the datagrid to show the values, but at the cost of the correct column names which may point to the underlying problem in the datagrid.&nbsp; When I change my PropertyDescriptor to have a display name that equals the column number it displays the values.&nbsp; However my column headers are now 0,1,2 etc.&nbsp; I might poke around the source to see what the problem might be.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T20:01:24.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467964",
+    "ThreadId": "76886",
+    "Html": "<p>I had a similar issue, and the following post about &quot;Binding and Custom Type Descriptors&quot; (you have to scroll down a bit)&nbsp;helped me:&nbsp; <a href=\"http://blogs.msdn.com/b/jaimer/archive/2009/11/02/wpf-discussions-091101.aspx\">http://blogs.msdn.com/b/jaimer/archive/2009/11/02/wpf-discussions-091101.aspx</a>.&nbsp; Essentially, the solution that worked for me was to have my data object implement ICustomTypeDescriptor rather than registering a type description provider.&nbsp; The ICustomTypeDescriptor interface exposes a GetProperties() method that returns a PropertyDescriptorCollection object.&nbsp; By implementing this interface, you can return a PropertyDescriptorCollection object that contains your custom PropertyDescriptors, and WPF will use them.&nbsp; This behavior actually seems to be embedded in the WPF data binding framework rather than in the DataGrid itself.</p>",
+    "PostedDate": "2010-07-15T13:28:25.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

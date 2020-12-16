@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "123455",
+    "ThreadId": "37199",
+    "Html": "I have a grid bound to my business objects. When a user makes a change to record and then tries to navigate away from the record I need to do the following:<br>\r\n<br>\r\n<ol>\r\n    <li>Check to make sure the object is valid</li>\r\n    <li>If it is valid then automatically save, otherwise force them to stay on the currently selected record.</li>\r\n</ol>\r\n<p>When I'm not using a datagrid I have no problem doing this. I have a Record Navigator (VCR) control that I uses the CollectionView (CollectionViewSource.GetDefaultView) of my DataContext (ObservableCollection in this case) and handle the RecordChanging event. If the object isnot valid then I do not allow navigation to the next record. The problem is, that DataGrid does not honor this. <br>\r\n<br>\r\nFirst of all, I'm assuming that the grid is binding to the collection with a view OTHER THAN the default view. I can tap into the RecordChanging event via myGrid.Items.RecordChanging, but setting CurrentChangingEventArgs.Cancel = True does not stop the grid from selecting a different row. <br>\r\n<br>\r\nWhat is the proper way of handling this?<br>\r\n<br>\r\nThanks!</p>\r\n",
+    "PostedDate": "2008-10-07T06:22:46.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123512",
+    "ThreadId": "37199",
+    "Html": "Row validation will be in the final release which will solve your first problem.&nbsp; For the second issue, it will be fixed in the final release.&nbsp; The behavior will be such that editing stays on the current invalid record and you cannot edit any other records until it is corrected either by cancelling or changing it to the correct value(s).<br>\r\n<br>\r\nAs far as your assumption, it is using a CollectionView just like all other ItemsControls.&nbsp; The type of view just depends on the type of data source you give it.&nbsp; For example, if you set the ItemsSource to be a DataView then the default collection view will be a BindingListCollectionView.&nbsp; By the way, is&nbsp;Record Navigator your own implemented collection view control?&nbsp; I'm not sure what CurrentChangingEventArgs.Cancel is but in the DataGrid.CurrentCellChanging, you cannot cancel the operations like some other events on the DataGrid.\r\n",
+    "PostedDate": "2008-10-07T09:07:25.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141117",
+    "ThreadId": "37199",
+    "Html": "Hello Vincent !<br>\r\nI have exactly the same problem of <a href=\"http://www.codeplex.com/site/users/view/micahlmartin\" id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_UserNameLink\"><span style=\"color:#3e62a6\">micahlmartin</span></a> and I think It is a classic problem<br>\r\nI Need to validate my DataItem and I will go to use CurrentChanging Event of ICollectionView<br>\r\nI just begin try to change source code Of datagrid to do this (the last version of November) (for exemple add code in DataGridCell just before Focus calls in differents places in the code but I think I will go in a bad and very hard way ...<br>\r\n<br>\r\nIn fact, I think the problem exists on each control derivated from Selector Control, Nothing seems construct to be cancelable when I want change the current Item in CollectionView by UI component like List, ComboBox and .... DataGrid too !!!!<br>\r\n<br>\r\nExample : a simple List control on simple List&lt;MyItem&gt; control, If I clic on second Item (the current is the first) and Return Cancel=True in CurrentChanging event of CollectionView of my List (obtains by GetDefaultViewSource) &gt;&gt;&gt; Ok, the current item of CollectionView don't change BUT the selected Item of List is the second  item !!! List and CollectionView is desynchronized !!!!!<br>\r\n<br>\r\nIt is a very big problem for us ... I don't know how can I construct a Input Data Framework with this issue ... I Search ... <br>\r\n<br>\r\ncould you help us or give us a another way to work<br>\r\n<br>\r\nthanks a lot<br>\r\n<br>\r\nBests regards<br>\r\n<br>\r\nThibaud\r\n",
+    "PostedDate": "2008-12-16T15:00:28.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141685",
+    "ThreadId": "37199",
+    "Html": "As I've told micahlmartin, row validation (BindingGroup) may be able to help with this problem or is validation how you want it and it's the navigation that you are having problems with?\r\n",
+    "PostedDate": "2008-12-18T13:08:37.17-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144862",
+    "ThreadId": "37199",
+    "Html": "Hello !<br>\r\n<br>\r\nI am apologize for the delay, I Just see your answer ... I forgotten to check the EMail notification .. oups ....<br>\r\n<br>\r\nIn Fact, I build a Generic Input Framework for my company witch create Business application ...<br>\r\nAnd so, I develop, for example, a VCR control like <a href=\"http://www.codeplex.com/site/users/view/micahlmartin\" id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_UserNameLink\"><span style=\"color:#3e62a6\">micahlmartin</span></a>, this control is &quot;Binded&quot; on current Datacontext, and so, If Curent DataContext is a Enumerable Object, I search associated ICollectionView component and call for example MoveCurrentToNext()<br>\r\n<br>\r\nIf I Do this, No problem occur when ICollectionView.CurrentChanging return false by CurrentChangingEventArgs.Cancel .... Of course, the CurrentItem does not change, and so all UI control is binded on the same item ...<br>\r\n<br>\r\nBUT if CurrentItem of ICollectionView (no matter of the concret class under ICollectionView (BindingListCollectionView, ListCollectionView, etc ...) is changing by Selector control (ListBox or .... Datagrid) with IsSynchronizedWithCurrentItem=True<br>\r\n(For example, If A User clic on another Item in listBox), I have the problem wich explained in my first post !!!!!!<br>\r\n<br>\r\nso, My problem is, I think, a navigation problem<br>\r\n<br>\r\nThe only way I found since my first post, is to change the code Of DataGrid to add a check of CurrentChanging Event of IcollectionView of my selector control ...<br>\r\n(I do nothing for ListBox ... I need search the good way ...)<br>\r\n<br>\r\nI use this type of code (not very beautiful code .... :-(  and I am sure lot of user's scenarii is not cover ... It Is just an experimentation )<br>\r\n<br>\r\nDataGrid.Cs .....<br>\r\n<p>        private void MakeFullRowSelection(object dataItem, bool allowsExtendSelect, bool allowsMinimalSelect)<br>\r\n        {<br>\r\n            if (!OKToChange(dataItem))<br>\r\n                return;<br>\r\n        ...<br>\r\n<br>\r\n        public bool OKToChange(object newItem)<br>\r\n        {<br>\r\n            if (this.CurrentCell.Item != newItem)<br>\r\n                return Isagri.Windows.Data.Internal.CollectionViewHelper<br>\r\n                      .OKToChangeCurrent(this.Items);<br>\r\n            else<br>\r\n                return true;<br>\r\n        }<br>\r\n<br>\r\nHelper.cs :<br>\r\n<br>\r\n        private static MethodInfo _miOKToChangeCurrent = null;<br>\r\n        private static PropertyInfo _piCollectionViewOnItemsCollection = null;<br>\r\n        static CollectionViewHelper()<br>\r\n        {<br>\r\n            _miOKToChangeCurrent = typeof(CollectionView).GetMethod(&quot;OKToChangeCurrent&quot;, BindingFlags.NonPublic | BindingFlags.Instance);<br>\r\n            _piCollectionViewOnItemsCollection = typeof(System.Windows.Controls.ItemCollection).GetProperty(&quot;CollectionView&quot;, BindingFlags.NonPublic | BindingFlags.Instance);</p>\r\n<p>        }<br>\r\n        public static bool OKToChangeCurrent(CollectionView cv)<br>\r\n        {<br>\r\n            if (cv is System.Windows.Controls.ItemCollection)<br>\r\n                cv = _piCollectionViewOnItemsCollection.GetValue(cv, null) as CollectionView;<br>\r\n            return (bool)_miOKToChangeCurrent.Invoke(cv, null);<br>\r\n        }</p>\r\n",
+    "PostedDate": "2009-01-06T14:06:32.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203632",
+    "ThreadId": "37199",
+    "Html": "<p>Hello<br><br>We have developed a derivated Datagrid On Last version of Datagrid WPF ToolKit. This new class includes the previous approach to turn around the ItemsControl CurrentChanging bug.<br><br>My question :</p>\r\n<p><br><strong>Are what the bug on the desynchronization of ItemsControls (when the event &quot;CurrentChanging&quot; of the current CollectionView responds negatively) will be fixed in WPF 4.0?</strong><br><br>For us, It is very important ... If this bug will not be corrected, 2 possibility for us :</p>\r\n<p>* we keep WPF ToolKit source in our internal tools framework (and keep all cost to maintain it during several years :-( ) or</p>\r\n<p>* search to turn arround by another way (We know of no other solution to date)<br><br>Thanks a lot for your attention and your responses<br><br>Best regards</p>",
+    "PostedDate": "2009-06-20T02:21:06.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205342",
+    "ThreadId": "37199",
+    "Html": "<p>Hello</p>\r\n<p>I just do a test on CTP of Visual Studio 2010 ... with WPF 4.0</p>\r\n<p>The bug always occurs ...</p>",
+    "PostedDate": "2009-06-25T03:46:22.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

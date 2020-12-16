@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "259799",
+    "ThreadId": "75946",
+    "Html": "<p>When I am using the Bar graph control in the charting controls in WPF toolkit. I have noticed that the zero values are not displayed in the independent Axis.</p>\r\n<p>Is there a way to make the graph display the Zero values.</p>\r\n<p>&nbsp;</p>\r\n<p>thanks</p>",
+    "PostedDate": "2009-11-23T05:28:52.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

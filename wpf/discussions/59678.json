@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "202062",
+    "ThreadId": "59678",
+    "Html": "<p>I am having trouble getting a ScrollViewer width to behave as I expect. The height is working as desired.</p>\r\n<p>The ScrollViewer is the top level item in a control that has a stack panel with a bunch of expanders in it. Some of the expanders contain a datagrid. When the width of the datagrid exceeds the width of the window I expect the scrollbar to appear so I can scroll to the right. It does not appear. When I examine the Actualwidth value it is set to&nbsp; 5672.6166666667 which is very wide. If I run the application on a machine with 4 22&quot; monitors I can get to the far right of the datagrid and see the vertical scroll bar.</p>\r\n<p>This control gets placed in a TabItem which is in a TabControl which is in another StackPanel.</p>\r\n<p>How can I get the ScrollViewer Actualwidth to be set correctly. I have removed all the references to width I could find so I don't think I am setting it anywhere.</p>\r\n<p>Thanks</p>\r\n<p>Tom</p>",
+    "PostedDate": "2009-06-16T08:18:25.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202186",
+    "ThreadId": "59678",
+    "Html": "<p>Hi TomGroszko,</p>\r\n<p>A StackPanel will stretch itself to the width of its contents and hence you see the ScrollViewer ActualWidth as something big. If you use&nbsp;a Grid instead it will restrict itself. Hope this works.</p>\r\n<p>Thanks,</p>\r\n<p>Keerthi</p>",
+    "PostedDate": "2009-06-16T13:47:48.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202469",
+    "ThreadId": "59678",
+    "Html": "<p>I started with a grid and had several problems. At your suggestion I went back and tried it again and it is working as I would like now.</p>\r\n<p>Thanks for the explaination.</p>\r\n<p>&nbsp;</p>\r\n<p>Tom</p>",
+    "PostedDate": "2009-06-17T06:06:01.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

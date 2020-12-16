@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1084879",
+    "ThreadId": "454532",
+    "Html": "Hello\r<br />\nI am trying to draw a curved line series graph. The line series data has to be retrieved from back end. I am using WPF environment with .Net Framework 4.5 with the support of System.Windows.Controls.DataVisualization.Charting.\r<br />\nHere my major issue is that \r<br />\n.DataVisualization.Charting is supporting LineSeries chart. <br />\n<ol>\n<li>Is there any way to set a property for making it as curved lines using Setter Property?</li>\n<li>\nis there any way to plot the data in realtime cured line using DataVisualization.Charting?<br />\n</li>\n</ol>\nThanks in advance.<br />\n",
+    "PostedDate": "2013-08-26T05:07:33.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1246605",
+    "ThreadId": "454532",
+    "Html": "Did you get any answer ? do you have a solution for your problem ?\r<br />\nThanks.<br />\n",
+    "PostedDate": "2014-05-18T03:32:42.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

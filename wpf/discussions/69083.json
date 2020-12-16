@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "235067",
+    "ThreadId": "69083",
+    "Html": "Hi,\r\n\r\nI have a datagrid of which the ItemsSource is set to a collection of custom Person objects.\r\nThe Person class has a certain property (IsPreferent) which returns a boolean.\r\n\r\nWhat I try to achieve is to have a column in the datagrid which displays a certain icon only if the IsPreferent property returns True.\r\n\r\nI have set up a DataGridTemplateColumn with an Image element in the DataTemplate, but do not know how to achieve my desired behaviour.\r\nI have tried using a Style for the Image element and using a DataTrigger to determine the value of IsPreferent, and then setting the Visibility property accordingly.\r\nBut I have trouble setting up the Binding and can't make it work.\r\n\r\n\r\nAnyone have any ideas?\r\n\r\n\r\nThanks.\r\n\r\nP.\r\n\r\n",
+    "PostedDate": "2009-09-16T02:54:15.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236228",
+    "ThreadId": "69083",
+    "Html": "<p>Hi PeterMS,</p>\r\n<p>It seems like what you stated should work.&nbsp; Setting up a databinding to the bool on the Visibility property should accomplish this.&nbsp; Could you please post a code snippet so we have a better idea on what the issue could be?</p>\r\n<p>Thanks,</p>\r\n<p>Saied Khanahmadi</p>",
+    "PostedDate": "2009-09-18T13:54:43.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236352",
+    "ThreadId": "69083",
+    "Html": "Thanks for the reply.\r\n<br><br>\r\nI managed to solve it. I was not binding to the Visibility property but tried to use a DataTrigger. After reading more on WPF Databinding I found the answer. I now bind to the Visibility property of the image and use a converter to convert the bool from my IsPreferent property to a Visibility value. Works like a charm.\r\n<br><br>\r\nThanks,\r\n<br><br>\r\nPeter",
+    "PostedDate": "2009-09-18T23:20:22.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

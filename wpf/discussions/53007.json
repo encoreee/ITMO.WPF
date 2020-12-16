@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "178248",
+    "ThreadId": "53007",
+    "Html": "Using some examples, I have figured out how to make it so the PART_Pop for a WPF combobox will open a filtered datagrid with some more bells and whistles.  Now, I would like to be able to apply that to a combobox column type in the datagrid.  Not everyone, but specific ones.  I thought about using the templatecolumn type and just use my combobox.   But can you tell me how I can either make a new columntype that would do this or how I can edit the PART_Pop for the comboboxcolumn type.<br>\r\n",
+    "PostedDate": "2009-04-11T14:45:36.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

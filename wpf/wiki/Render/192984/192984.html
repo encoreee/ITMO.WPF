@@ -1,0 +1,16 @@
+<div class="wikidoc"><h1>WPF Themes</h1>
+An updated collection of seven themes replaces the original nine WPF Themes. Some of the issues with the original themes have been addressed in this update. Download the WPF Themes in the <a href="http://wpf.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=14962">WPF Futures</a> release.  This collection of themes can also be found in the <a href="http://silverlight.codeplex.com/Wiki/View.aspx?title=Silverlight%20Toolkit%20Overview%20Part%203">Silverlight Toolkit</a>. <br /><br /><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=84841" alt="WPFThemesV2.jpg" title="WPFThemesV2.jpg" /><br />
+<h2>How to Use the WPF Themes</h2>
+How to use the WPF Themes in your application:<br /><br /><b>Resource dictionary</b>  You can use the themes as a resource dictionary.  Add the xaml file of the desired theme to your project (in Visual Studio, right-click on the project in the Solution Explorer, choose Add --&gt; Existing File and select the appropriate .xaml file) and make sure your project also includes a reference to WPFToolkit.dll (the themes depend on VSM).  In App.xaml, add a reference to the desired theme to the Application.Resources.  For example,<br /><br /><pre>
+&lt;Application x:Class=&quot;ThemesSample.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    StartupUri=&quot;Window1.xaml&quot;&gt;
+    &lt;Application.Resources&gt;
+        &lt;ResourceDictionary Source=&quot;ExpressionDark.xaml&quot;/&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Application&gt;
+</pre>
+<h2>Themes Quick Reference</h2><table><tr><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62506" alt="Expression&#32;Dark&#32;Thumbnail" title="Expression&#32;Dark&#32;Thumbnail" /> </td><td> <b>Expression Dark</b> </td><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62507" alt="Expression&#32;Light&#32;Thumbnail" title="Expression&#32;Light&#32;Thumbnail" /> </td><td> <b>Expression Light</b> </td><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62509" alt="Whistler&#32;Blue&#32;Thumbnail" title="Whistler&#32;Blue&#32;Thumbnail" /> </td><td> <b>Whistler Blue</b> </td></tr>
+<tr><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62511" alt="Shiny&#32;Red&#32;Thumbnail" title="Shiny&#32;Red&#32;Thumbnail" /> </td><td> <b>Shiny Red</b> </td><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62508" alt="Shiny&#32;Blue&#32;Thumbnail" title="Shiny&#32;Blue&#32;Thumbnail" /> </td><td> <b>Shiny Blue</b> </td><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62502" alt="Bureau&#32;Blue&#32;Thumbnail" title="Bureau&#32;Blue&#32;Thumbnail" /> </td><td> <b>Bureau Blue</b> </td></tr>
+<tr><td> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=wpf&DownloadId=62503" alt="Bureau&#32;Black&#32;Thumbnail" title="Bureau&#32;Black&#32;Thumbnail" /> </td><td> <b>Bureau Black</b> </td></tr></table></div><div class="ClearBoth"></div>

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "131632",
+    "ThreadId": "39664",
+    "Html": "If I set SelectionUnit=FullRow, I can access SelectedItem and SelectedIndex.<br>\r\nIf I set SelectionUnit=Cell, then SelectedIndex is always -1, and SelectedItem is null.<br>\r\n<br>\r\nHow I can access item from current row when SelectionUnit=Cell?<br>\r\n",
+    "PostedDate": "2008-11-11T02:52:00.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131634",
+    "ThreadId": "39664",
+    "Html": "Now I see only one way:<br>\r\n<br>\r\n&nbsp;DataGridCellInfo cell = (DataGridCellInfo)myDataGrid1.SelectedCells[0];<br>\r\n<br>\r\n<strong>cell.Item</strong> is that to need<br>\r\n<br>\r\nbut maybe there is more elegant way?<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-11T03:05:56.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

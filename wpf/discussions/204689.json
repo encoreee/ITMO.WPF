@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "417150",
+    "ThreadId": "204689",
+    "Html": "<p>Hi,</p>\r\n<p>Can anyone please help me in how to get WPF DataGrid current row index, I tried with DataGrid.SelectedIndex but it always returns -1.</p>\r\n<p>Thanks,</p>\r\n<p>Sandeep</p>",
+    "PostedDate": "2010-03-11T13:14:17.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

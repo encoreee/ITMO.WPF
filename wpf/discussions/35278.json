@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "117251",
+    "ThreadId": "35278",
+    "Html": "<br>\r\nI have a use case where I bind the data grid to a customized ObservableCollection&lt;T&gt;<br>\r\nwhere T is an item called RowProxy.&nbsp;&nbsp; RowProxy talks to my real data model.<br>\r\n<br>\r\n1) I have large data sets.<br>\r\nAre so many RowProxy objects really a good idea?&nbsp; would it be a better thing to just implement IList&lt;T&gt;<br>\r\nwith<br>\r\nDataModelProxy : IList&lt; RowProxy&gt;<br>\r\nalong with the notification interface...<br>\r\n<br>\r\n2) this is a two way binding.<br>\r\nI need to allow users to add columns.<br>\r\nbut it seems that the data grid is using reflection on T to get the column definitions.<br>\r\nIs there anyway to make that dynamic?<br>\r\n<br>\r\nthanks<br>\r\nKarl<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-09T09:04:09.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "235057",
+    "ThreadId": "69081",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;&nbsp;I had the following scenario:</p>\r\n<p>&nbsp;- A collection of members of&nbsp;different&nbsp;types,</p>\r\n<p>&nbsp;- each type of member had a collection of subtypes and only 1 active subtype.</p>\r\n<p>When trying to populate this in a grid I wanted the subtypes to be populated in a ComboBoxColumn, but I soon realize that this was imposible using ItemsSource property.</p>\r\n<p>So I've update the code and created a property ItemsSourceBinding.</p>\r\n<p>ItemsSourceBinding is for ItemsSource, as SelectedValueBinding is for SelectedValue.</p>\r\n<p>Do you think my&nbsp;approach&nbsp;is the right one ? Any better ideas ?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>",
+    "PostedDate": "2009-09-16T02:04:24.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

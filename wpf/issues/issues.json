@@ -1,0 +1,2278 @@
+[
+  {
+    "Id": 7272,
+    "Title": "Unable to see \"Effect\" build action in VS"
+  },
+  {
+    "Id": 7286,
+    "Title": "Managed Wrapper for ID3DXEffectCompiler"
+  },
+  {
+    "Id": 7310,
+    "Title": "UI Freezes when Sorting by a column in the Data Grid"
+  },
+  {
+    "Id": 7329,
+    "Title": "DLL Not copied when sub-project referenced"
+  },
+  {
+    "Id": 7344,
+    "Title": "DataGrid theme on XP with merged resources"
+  },
+  {
+    "Id": 7379,
+    "Title": "Columns are still resizable when CanUserResizeColumns = false."
+  },
+  {
+    "Id": 7479,
+    "Title": "OnMouseDoubleClick throws exception on artificially created read-only cells."
+  },
+  {
+    "Id": 7529,
+    "Title": "InvalidOperationException when adding row to single selection DataGrid"
+  },
+  {
+    "Id": 7565,
+    "Title": "CanUserAddRows=\"False\" and CanUserDeleteRows=\"False\" are not respected and cause exceptions"
+  },
+  {
+    "Id": 7590,
+    "Title": "Clicking outside the data grid should cancel edit"
+  },
+  {
+    "Id": 7606,
+    "Title": "DataGrid does not work in partial trust xbap"
+  },
+  {
+    "Id": 7613,
+    "Title": "DataFieldBinding for DataGridTemplateColumn"
+  },
+  {
+    "Id": 7651,
+    "Title": "Custom column template edit mode not working the same as packaged columns"
+  },
+  {
+    "Id": 7747,
+    "Title": "WPF Datagrid compiler errors"
+  },
+  {
+    "Id": 7761,
+    "Title": "IsSyncronizedWithCurrentItem in combination with SelectionUnit=\"Cell\" throws an exception"
+  },
+  {
+    "Id": 7830,
+    "Title": "WPFDataGrid"
+  },
+  {
+    "Id": 7835,
+    "Title": "Is this Control Toolkit release contain Ribbon Control too?"
+  },
+  {
+    "Id": 7904,
+    "Title": "DatePicker does not support IsEnabled=False"
+  },
+  {
+    "Id": 7906,
+    "Title": "Memory Leak in VSM"
+  },
+  {
+    "Id": 7908,
+    "Title": "RibbonWindow disables ClearType when Aero Glass is enabled"
+  },
+  {
+    "Id": 7909,
+    "Title": "Ribbon on non-standard DPIs"
+  },
+  {
+    "Id": 7911,
+    "Title": "Ribbon Tablet PC"
+  },
+  {
+    "Id": 7915,
+    "Title": "Problems with the Ribbon and the Non-client area"
+  },
+  {
+    "Id": 7920,
+    "Title": "Using Xml namespace"
+  },
+  {
+    "Id": 7929,
+    "Title": "Client Profile Designer tool not installing"
+  },
+  {
+    "Id": 7930,
+    "Title": "Fixed Height and Width of Calender???"
+  },
+  {
+    "Id": 7932,
+    "Title": "NullReferenceException when add now row e press enter key"
+  },
+  {
+    "Id": 7938,
+    "Title": "Client Profile Configuration Designer Crashes on launch"
+  },
+  {
+    "Id": 7960,
+    "Title": "DataGrid: Missing New Row Placeholder When Bound To Empty Derived Collection"
+  },
+  {
+    "Id": 7961,
+    "Title": "DataGridComboBoxColumn: IsEditable Property"
+  },
+  {
+    "Id": 7966,
+    "Title": "Binding broken for DatePicker.SelectedDate property"
+  },
+  {
+    "Id": 7981,
+    "Title": "RibbonComboBox does not display the content of the selected RibbonComboBoxItem"
+  },
+  {
+    "Id": 7988,
+    "Title": "DatePicker Crashes on multi threading in 2 separate independent forms"
+  },
+  {
+    "Id": 7990,
+    "Title": "Application with DataGrid crashes during runtime"
+  },
+  {
+    "Id": 7999,
+    "Title": "ArgumentNullException if there is a null value in collection, assigned to ItemsSource of DataGrid"
+  },
+  {
+    "Id": 8001,
+    "Title": "Broken alignment in WPF DataGrid cells"
+  },
+  {
+    "Id": 8006,
+    "Title": "Exception on adding new items to displayed ObservableCollection"
+  },
+  {
+    "Id": 8021,
+    "Title": "Exception while resizing DataGrid column with Width=\"SizeToCells\" and no rows to display."
+  },
+  {
+    "Id": 8054,
+    "Title": "DatePicker steals Focus"
+  },
+  {
+    "Id": 8084,
+    "Title": "ScrollIntoView Exception"
+  },
+  {
+    "Id": 8085,
+    "Title": "WPFRibbon missing support for Resize with Grip"
+  },
+  {
+    "Id": 8086,
+    "Title": "WPFRibbon - MouseMove from ApplicationItem to SubItem"
+  },
+  {
+    "Id": 8101,
+    "Title": "Bug in NativeMethods.LOWORD/HIWORD"
+  },
+  {
+    "Id": 8153,
+    "Title": "WPF DataGrid: DataGridComboBoxColumn.ItemsSource doesn't work"
+  },
+  {
+    "Id": 8188,
+    "Title": "DatePicker IsEnabled error"
+  },
+  {
+    "Id": 8199,
+    "Title": "key for DataGridColumnHeader style doesn't work"
+  },
+  {
+    "Id": 8225,
+    "Title": "DataGrid swallows scroll events"
+  },
+  {
+    "Id": 8266,
+    "Title": "Datagrid Column DisplayIndex Bug"
+  },
+  {
+    "Id": 8294,
+    "Title": "Client Profile ClickOnceInstaller exception everytime"
+  },
+  {
+    "Id": 8295,
+    "Title": "Client Profile Bootstrapper not starting after a reboot"
+  },
+  {
+    "Id": 8348,
+    "Title": "DataGrid columns running away. A workaround to a known problem."
+  },
+  {
+    "Id": 8406,
+    "Title": "Bug in Tab Navigation with WPF Toolkit Datagrid"
+  },
+  {
+    "Id": 8411,
+    "Title": "WPFRibbon - Can't control the RibbonTab order after initial display"
+  },
+  {
+    "Id": 8413,
+    "Title": "WPFRibbon: RibbonGroup doesn't reflect changes in Controls collection"
+  },
+  {
+    "Id": 8415,
+    "Title": "DataGridComboBoxColumn must have IsSynchronizedWithCurrentItem to support CollectionViewSource"
+  },
+  {
+    "Id": 8416,
+    "Title": "DataGridColumn 'void OnInput(InputEventArgs e)' should be protected not internal"
+  },
+  {
+    "Id": 8417,
+    "Title": "IsSynchronizedWithCurrentItem Bug When CurrentChanging is cancelled"
+  },
+  {
+    "Id": 8424,
+    "Title": "BindingExpression path error with empty List<> as ItemsSource"
+  },
+  {
+    "Id": 8425,
+    "Title": "DatePicker's Memory Leak and (A Bit) Display Performance Issue"
+  },
+  {
+    "Id": 8428,
+    "Title": "States Disappearing from the State viewer"
+  },
+  {
+    "Id": 8445,
+    "Title": "DatePicker - Validator/Converter"
+  },
+  {
+    "Id": 8460,
+    "Title": "RibbonButton - Content property"
+  },
+  {
+    "Id": 8461,
+    "Title": "RibbonCommands - ExpressionBlend"
+  },
+  {
+    "Id": 8462,
+    "Title": "RibbonQuickAccessToolbar Placement attached property doesn't have Set method"
+  },
+  {
+    "Id": 8480,
+    "Title": "DatePicker is throwing an exception"
+  },
+  {
+    "Id": 8506,
+    "Title": "RibbonWindow fills whole monitor when maximized"
+  },
+  {
+    "Id": 8512,
+    "Title": "InvalidOperationException - Can't bind to readonly properties"
+  },
+  {
+    "Id": 8526,
+    "Title": "DatePicker sets bound data twice on change"
+  },
+  {
+    "Id": 8549,
+    "Title": "Navigating to a DataGrid using validation rules causes an exception."
+  },
+  {
+    "Id": 8562,
+    "Title": "WPF DataGrid: DataGridComboBoxColumn.ItemsSource Binding problems"
+  },
+  {
+    "Id": 8576,
+    "Title": "DataGrid, no default column sort and itemsource binding updates changes sorting"
+  },
+  {
+    "Id": 8585,
+    "Title": "OnPastingCellClipboardContent method not used !"
+  },
+  {
+    "Id": 8594,
+    "Title": "WPF Latest DataGrid: DataGridTemplate Column: Nested Usercontrol template with popup hide when used."
+  },
+  {
+    "Id": 8597,
+    "Title": "Problems binding Header"
+  },
+  {
+    "Id": 8751,
+    "Title": "Dependency Property -More details Please"
+  },
+  {
+    "Id": 8764,
+    "Title": "OneWay Binding"
+  },
+  {
+    "Id": 8768,
+    "Title": "DataGrid forward slash in Column name returns nothing"
+  },
+  {
+    "Id": 8815,
+    "Title": "ExecutionEngineException with DataGridTemplateColumn"
+  },
+  {
+    "Id": 8829,
+    "Title": "Add \"ScrollTo\" Methods To DataGrid"
+  },
+  {
+    "Id": 8832,
+    "Title": "Grouping cause many crashes..."
+  },
+  {
+    "Id": 8842,
+    "Title": "DataGrid Star Column Widths incorrect when DataGrid was loaded with its Visibility not Visibile"
+  },
+  {
+    "Id": 8917,
+    "Title": "DataGridCell Content Alginment"
+  },
+  {
+    "Id": 8922,
+    "Title": "Ribbon Menu Button steals focus"
+  },
+  {
+    "Id": 8923,
+    "Title": "XP Chrome Support is shocking"
+  },
+  {
+    "Id": 8927,
+    "Title": "SizeToContent Causes error on Width"
+  },
+  {
+    "Id": 9009,
+    "Title": "Decade Added or Substracted When Highest Or Lowest Year Is Selected In A Decade View"
+  },
+  {
+    "Id": 9020,
+    "Title": "How to add shortcut keys to ribbon control"
+  },
+  {
+    "Id": 9048,
+    "Title": "WPFToolkit DataGrid RowStyleSelector - Virtualization Bug"
+  },
+  {
+    "Id": 9056,
+    "Title": "Accelerator Keys Don't work with DataGridTextColumns"
+  },
+  {
+    "Id": 9057,
+    "Title": "Datagrid does not override OnAccessKey"
+  },
+  {
+    "Id": 9088,
+    "Title": "DataGrid eats the escape key"
+  },
+  {
+    "Id": 9111,
+    "Title": "DataGrid - ItemTemplateSelector property does nothing at all"
+  },
+  {
+    "Id": 9136,
+    "Title": "DatePicker Issue - Inside Custom Expander - 'PART_DisabledVisual'"
+  },
+  {
+    "Id": 9143,
+    "Title": "DataGrid ItemsPanel issue"
+  },
+  {
+    "Id": 9144,
+    "Title": "Issue setting HorizontalAlignment=Left on ScrollContentPresenter"
+  },
+  {
+    "Id": 9168,
+    "Title": "Locbaml and the Ribbon Control"
+  },
+  {
+    "Id": 9175,
+    "Title": "Sorting bug when replacing the default style for the datagrid"
+  },
+  {
+    "Id": 9193,
+    "Title": "Databinding inside the RowHeaderTemplate of a datagrid does not work."
+  },
+  {
+    "Id": 9221,
+    "Title": "CalendarItem's ControlTemplate Exceptions in Blend"
+  },
+  {
+    "Id": 9222,
+    "Title": "CalendarItem Needs More Templating Control"
+  },
+  {
+    "Id": 9240,
+    "Title": "DataGridTextColumn.CanUserReorder does not work?"
+  },
+  {
+    "Id": 9241,
+    "Title": "Tooltip is not working when we use Ribbon control in MDI form"
+  },
+  {
+    "Id": 9243,
+    "Title": "DataGrid row headers do not resize correctly"
+  },
+  {
+    "Id": 9252,
+    "Title": "DataGrid Copy Behavior is broken"
+  },
+  {
+    "Id": 9254,
+    "Title": "Data Grid Does not support the Cut command"
+  },
+  {
+    "Id": 9255,
+    "Title": "Bringin up the context menu for a DataGridTextColumn causes cell edit mode to be exited"
+  },
+  {
+    "Id": 9258,
+    "Title": "Right clicking on data grid row header changes selection"
+  },
+  {
+    "Id": 9259,
+    "Title": "DataGrid.DeleteCommand requires a \"current cell\""
+  },
+  {
+    "Id": 9268,
+    "Title": "This bug database is a black hole"
+  },
+  {
+    "Id": 9298,
+    "Title": "ColumnHeader title from DisplayNameAttribute"
+  },
+  {
+    "Id": 9303,
+    "Title": "Columns Disappear after drag and drop"
+  },
+  {
+    "Id": 9314,
+    "Title": "DatagridRow IsMouseOver Trigger Doesn´t work with an AlternatingRowBackground Brush"
+  },
+  {
+    "Id": 9328,
+    "Title": "Memory leak with VSM and DataGrid"
+  },
+  {
+    "Id": 9329,
+    "Title": "Bug with the RibbonWindow"
+  },
+  {
+    "Id": 9330,
+    "Title": "RibbonWindow does not support UI Automation."
+  },
+  {
+    "Id": 9352,
+    "Title": "Ribbon Truncates Second Line Text"
+  },
+  {
+    "Id": 9361,
+    "Title": "Unhandled Exeption when adding a group to a tab"
+  },
+  {
+    "Id": 9369,
+    "Title": "RibbonWindow Bug with Games"
+  },
+  {
+    "Id": 9371,
+    "Title": "Styles"
+  },
+  {
+    "Id": 9405,
+    "Title": "OnScreen Keyboard for Touch Screen"
+  },
+  {
+    "Id": 9406,
+    "Title": "Ribbon disables all ApplicationMenu commands"
+  },
+  {
+    "Id": 9409,
+    "Title": "DatePickerFormat.Short fix"
+  },
+  {
+    "Id": 9415,
+    "Title": "DatePicker should allow developers to set custom messages when no date is selected."
+  },
+  {
+    "Id": 9418,
+    "Title": "Adding margin space to a CalendarDayButton template causes Year and Decade modes to shrink"
+  },
+  {
+    "Id": 9442,
+    "Title": "Parent's DataContext can mess up the Calendar control when initial displaymode other than Month"
+  },
+  {
+    "Id": 9467,
+    "Title": "Problems when trying to use in Custom Property Editor"
+  },
+  {
+    "Id": 9468,
+    "Title": "DatePicker dropdown initially has incorrect day highlighted"
+  },
+  {
+    "Id": 9469,
+    "Title": "Calendar/DatePicker looks at CurrentCulture instead of CurrentUICulture?"
+  },
+  {
+    "Id": 9470,
+    "Title": "Calendar does not respect SelectedDate"
+  },
+  {
+    "Id": 9479,
+    "Title": "Calendar focus froblems for dates outside the current month view"
+  },
+  {
+    "Id": 9484,
+    "Title": "Change Default GridLinesBrush from Black to LightGray"
+  },
+  {
+    "Id": 9490,
+    "Title": "No access to Watermark property in new ControlTemplate for DatePickerTextBox"
+  },
+  {
+    "Id": 9493,
+    "Title": "Cannot focus DatePicker programmatically"
+  },
+  {
+    "Id": 9510,
+    "Title": "Memory leak when binding DataGrid to DependencyProperty"
+  },
+  {
+    "Id": 9523,
+    "Title": "Datagrid Exceptions when Scrolling"
+  },
+  {
+    "Id": 9532,
+    "Title": "DataGridTextColumn.ActualWidth wrong"
+  },
+  {
+    "Id": 9535,
+    "Title": "DatePicker SelectedDate and Text Property don't bind or don't return value..."
+  },
+  {
+    "Id": 9536,
+    "Title": "DatePicker SelectedDate and Text Property don't bind or don't return value..."
+  },
+  {
+    "Id": 9552,
+    "Title": "DataGrid.IsReadOnly not propagated correctly"
+  },
+  {
+    "Id": 9561,
+    "Title": "DataGrid Column Width=\"*\" strange sizing behaviour"
+  },
+  {
+    "Id": 9566,
+    "Title": "DataGridCheckboxColumn binding"
+  },
+  {
+    "Id": 9578,
+    "Title": "Calendar DisplayDateStart,DisplayDateEnd problem and MaxDate, MinDate support"
+  },
+  {
+    "Id": 9580,
+    "Title": "cannot install update without first uninstalling previous version"
+  },
+  {
+    "Id": 9582,
+    "Title": "RibbonWindow SizeToContent does not work"
+  },
+  {
+    "Id": 9583,
+    "Title": "DatePicker does not fully support TIME part of DateTime"
+  },
+  {
+    "Id": 9584,
+    "Title": "DatePickerTextBox's Watermark property is internal, making styling difficult"
+  },
+  {
+    "Id": 9585,
+    "Title": "Whitespace-only text in DatePicker should be treated as NULL value"
+  },
+  {
+    "Id": 9586,
+    "Title": "LostKeyboardFocus event not raised when in edit mode"
+  },
+  {
+    "Id": 9587,
+    "Title": "DatePicker 'dropdown button' should be ToggleButton instead of Button to follow ComboBox"
+  },
+  {
+    "Id": 9588,
+    "Title": "DataGrid column width size incorrent with Auto and 'star'"
+  },
+  {
+    "Id": 9591,
+    "Title": "Memory leak in datagrid"
+  },
+  {
+    "Id": 9606,
+    "Title": "How to fire an event when removing one row ?"
+  },
+  {
+    "Id": 9611,
+    "Title": "How do I change the template of an entire row, ItemTemplate does nothing"
+  },
+  {
+    "Id": 9617,
+    "Title": "NullReferenceException in DataGrid.ScrollIntoView"
+  },
+  {
+    "Id": 9618,
+    "Title": "Mousewheel on Hidden RibbonTabs"
+  },
+  {
+    "Id": 9634,
+    "Title": "Problem with UIA"
+  },
+  {
+    "Id": 9639,
+    "Title": "AssemblyVersion of the march release."
+  },
+  {
+    "Id": 9641,
+    "Title": "DatePicker IsEnabled=false does not gray out"
+  },
+  {
+    "Id": 9642,
+    "Title": "DataGrid SelectedValue doesn't work"
+  },
+  {
+    "Id": 9643,
+    "Title": "Ribbon dual monitor problems"
+  },
+  {
+    "Id": 9650,
+    "Title": "DataGrid.CancelCommand/CommitCommand require a current cell"
+  },
+  {
+    "Id": 9654,
+    "Title": "DatePicker can not temporarily hold invalid date"
+  },
+  {
+    "Id": 9670,
+    "Title": "DataGrid: Setting a Visual parent's IsEnabled property to False causes DataGridColumnHeader to disapear."
+  },
+  {
+    "Id": 9682,
+    "Title": "CheckBox initial state"
+  },
+  {
+    "Id": 9699,
+    "Title": "The specified Visual is not an ancestor of this Visual"
+  },
+  {
+    "Id": 9751,
+    "Title": "Incorrect Cancellation Behavior"
+  },
+  {
+    "Id": 9756,
+    "Title": "Can't Add New Items to an Empty List"
+  },
+  {
+    "Id": 9769,
+    "Title": "RichTextBox in DataGridRowDetailsTemplate throws Exception"
+  },
+  {
+    "Id": 9781,
+    "Title": "SelectedDateChanged double trigger"
+  },
+  {
+    "Id": 9785,
+    "Title": "Binding with DatePicker, Watermark doesn't dissapear"
+  },
+  {
+    "Id": 9803,
+    "Title": "Datagrid and TabControl focus problem"
+  },
+  {
+    "Id": 9826,
+    "Title": "Composite Collection and Shared ContextMenu Not Working On DataGrid"
+  },
+  {
+    "Id": 9829,
+    "Title": "Star width and tab control"
+  },
+  {
+    "Id": 9837,
+    "Title": "DataGrid: Using groups turns off RowVirtualization"
+  },
+  {
+    "Id": 9840,
+    "Title": "Very slow DataGrid row selection when items count >= 10000"
+  },
+  {
+    "Id": 9841,
+    "Title": "DataGrid Memory Leak"
+  },
+  {
+    "Id": 9851,
+    "Title": "Datagrid : 'current item' information after 'delete row' is invalid"
+  },
+  {
+    "Id": 9852,
+    "Title": "AutoGenerateColumns fails when column name contains a period"
+  },
+  {
+    "Id": 9857,
+    "Title": "DataGrid ItemsSource"
+  },
+  {
+    "Id": 9873,
+    "Title": "DataGrid RowHeader Template weird behaviour"
+  },
+  {
+    "Id": 9874,
+    "Title": "DataGrid Missing Row"
+  },
+  {
+    "Id": 9889,
+    "Title": "Datagrid : 'focus events' not reported when clicking on column header"
+  },
+  {
+    "Id": 9892,
+    "Title": "WeakHashTable error when navigating through different data sources in DataGrid"
+  },
+  {
+    "Id": 9900,
+    "Title": "DataGrid RowHeaderTemplate CheckBox issue"
+  },
+  {
+    "Id": 9907,
+    "Title": "WPF Datagrid new row issue"
+  },
+  {
+    "Id": 9914,
+    "Title": "DataGrid DataGridTextColumn.Visibility Interferes With Column Resizing"
+  },
+  {
+    "Id": 9948,
+    "Title": "OnUserDeleteRow event"
+  },
+  {
+    "Id": 9957,
+    "Title": "Column visibility problem when Header contains an image"
+  },
+  {
+    "Id": 9966,
+    "Title": "DataGrid hangs when non-keyed Styles used"
+  },
+  {
+    "Id": 9971,
+    "Title": "VSM Generated transitions are required but useless"
+  },
+  {
+    "Id": 9972,
+    "Title": "VSM crash when using Storyboard.TargetName on the Storyboard element"
+  },
+  {
+    "Id": 9977,
+    "Title": "Adding Hijri Calendar to DatePicker"
+  },
+  {
+    "Id": 9991,
+    "Title": "Datagrid : inconsistent MoveCurrentToFirst() feedback"
+  },
+  {
+    "Id": 9992,
+    "Title": "Datagrid : 'datagrid.CurrentItem' information disappears when focus outside datagrid"
+  },
+  {
+    "Id": 9993,
+    "Title": "M-V-VM: ViewModelBase should contain a better INotifyPropertyChanged implementation"
+  },
+  {
+    "Id": 10006,
+    "Title": "Cell Content Item Peers do not get created when Data Grid Scrolls"
+  },
+  {
+    "Id": 10008,
+    "Title": "DataGrid.AutoGenerateColumns ignores BrowsableAttribute"
+  },
+  {
+    "Id": 10040,
+    "Title": "Resize of ribbon window"
+  },
+  {
+    "Id": 10054,
+    "Title": "Datagrid : discrepancy between 'datagrid.CurrentItem' & 'datagrid.Items.CurrentItem' when datagrid acquires focus"
+  },
+  {
+    "Id": 10063,
+    "Title": "Datagrid : 100% CPU probably due to improper lost focus on cell edit"
+  },
+  {
+    "Id": 10065,
+    "Title": "DataGrid : TAB into shifts rows vertically"
+  },
+  {
+    "Id": 10066,
+    "Title": "DataGrid needs an \"Orientation=Horizontal\" Property, for the Transpose"
+  },
+  {
+    "Id": 10075,
+    "Title": "DataGrid: scrambled layout when column drag (and vertical scroll) while editing"
+  },
+  {
+    "Id": 10080,
+    "Title": "DataGrid : missing bottom-up ScrollIntoView (improvement)"
+  },
+  {
+    "Id": 10081,
+    "Title": "Combobox Mouse Wheel Behaviour  in the Ribbon"
+  },
+  {
+    "Id": 10087,
+    "Title": "Apply generic Windows style to focused cell"
+  },
+  {
+    "Id": 10090,
+    "Title": "Add ability to specify \"vertical\" alignment of a text inside the cell."
+  },
+  {
+    "Id": 10094,
+    "Title": "Serious bug in the majority of themes"
+  },
+  {
+    "Id": 10096,
+    "Title": "WPF Ribbon no support found for 'help' buttons"
+  },
+  {
+    "Id": 10099,
+    "Title": "DataGrid: 'IsSelected' row property and 'SelectedItems.Count' grid property"
+  },
+  {
+    "Id": 10108,
+    "Title": "Calendar/DatePicker strange parsing of + and - characters"
+  },
+  {
+    "Id": 10111,
+    "Title": "Datagrid height does not reset correctly"
+  },
+  {
+    "Id": 10121,
+    "Title": "Vertical Alignment of RowHeaderDetails"
+  },
+  {
+    "Id": 10124,
+    "Title": "RibbonWindow does not provide available size"
+  },
+  {
+    "Id": 10128,
+    "Title": "Calendar in DatePicker have upper-left day selected by default instead of SelectedDay"
+  },
+  {
+    "Id": 10129,
+    "Title": "ComboBox DisplayMemberPath binding is broken by Themes BureauBlue and WhistlerBlue"
+  },
+  {
+    "Id": 10153,
+    "Title": "WPF DataGrid: Horizontal scrolling causes an exception \"Specified element is already the logical child of another element. Disconnect it first\""
+  },
+  {
+    "Id": 10155,
+    "Title": "Expander in Theme pack is broken when used as a GroupItem"
+  },
+  {
+    "Id": 10177,
+    "Title": "Odd Datagrid issue with a few machines"
+  },
+  {
+    "Id": 10183,
+    "Title": "DataGrid: Sort does not refresh when data is modified."
+  },
+  {
+    "Id": 10186,
+    "Title": "DataGrid column header not obeying configured height"
+  },
+  {
+    "Id": 10196,
+    "Title": "DataGrid RowDetailTemplate will only adjust to width increase, not decrease"
+  },
+  {
+    "Id": 10197,
+    "Title": "Tabcontrol losses its selected tab when changing themes"
+  },
+  {
+    "Id": 10205,
+    "Title": "Use Setter for Button Margin cause Visual Studio freeze"
+  },
+  {
+    "Id": 10207,
+    "Title": "Xml Documentation"
+  },
+  {
+    "Id": 10210,
+    "Title": "DataGrid: Unhandled exception caused by DataGridDetailsPresenter"
+  },
+  {
+    "Id": 10211,
+    "Title": "Chart should support series binding."
+  },
+  {
+    "Id": 10222,
+    "Title": "Why the DataGrid doesn't support all PropertyDescriptor's features?"
+  },
+  {
+    "Id": 10225,
+    "Title": "June 2009 Release and ChangeSet 28036 Don't build for me from source. Is it just me?"
+  },
+  {
+    "Id": 10233,
+    "Title": "Setting the RowHeaderStyle of a DataGrid fails is the style contains a ControlTemplate"
+  },
+  {
+    "Id": 10240,
+    "Title": "Background thread exception: System.Windows.Documents.Run' is not a Visual or Visual3D"
+  },
+  {
+    "Id": 10241,
+    "Title": "Probleme with right click when isEnabled is false"
+  },
+  {
+    "Id": 10245,
+    "Title": "Display Member (Text) Alignment in ComboBox"
+  },
+  {
+    "Id": 10246,
+    "Title": "DataGrid: The ESC and Backspace key produces an unrecognized character"
+  },
+  {
+    "Id": 10249,
+    "Title": "DataGrid: Define new default ElementStyle and EditingElementStyle"
+  },
+  {
+    "Id": 10257,
+    "Title": "RibbonComboBox steals focus"
+  },
+  {
+    "Id": 10263,
+    "Title": "when create column with number type,when input wrod will delete automation"
+  },
+  {
+    "Id": 10265,
+    "Title": "DataGrid: DataGridCell.IsReadOnly doesn't provide a public setter"
+  },
+  {
+    "Id": 10277,
+    "Title": "Column Width set to *"
+  },
+  {
+    "Id": 10278,
+    "Title": "DataGridColumn 'void OnInput(InputEventArgs e)' should be protected not internal (reopen)"
+  },
+  {
+    "Id": 10279,
+    "Title": "DataGridComboBoxColumn: Text input should start the edit mode"
+  },
+  {
+    "Id": 10289,
+    "Title": "DatePicker : IsDefault Button functionality broken when DatePicker Control has focus"
+  },
+  {
+    "Id": 10290,
+    "Title": "Calendar: selection isn't updated when mouse is released outside the control"
+  },
+  {
+    "Id": 10294,
+    "Title": "The dataItem parameter of GenerateElement is wrong"
+  },
+  {
+    "Id": 10308,
+    "Title": "DataGrid: \"Extended\" selection mode difference with respect to Word and Excel"
+  },
+  {
+    "Id": 10309,
+    "Title": "DataGrid: initial Shift-select gives incorrect result"
+  },
+  {
+    "Id": 10311,
+    "Title": "WPFDataGrid: Some records are shifted (panned horizontally)"
+  },
+  {
+    "Id": 10328,
+    "Title": "selected index bug for using NewItemPlaceholderPosition.AtBeginning"
+  },
+  {
+    "Id": 10336,
+    "Title": "Make DatePicker white-mark bacground transparrent"
+  },
+  {
+    "Id": 10337,
+    "Title": "Ability to change white-mark text in DatePicker"
+  },
+  {
+    "Id": 10343,
+    "Title": "An issue when add GroupDescription into DataGrid's ItemsSource"
+  },
+  {
+    "Id": 10367,
+    "Title": "Column size not calculated correctly in an empty and grouped data grid"
+  },
+  {
+    "Id": 10374,
+    "Title": "Setting Focus to first cell in row causes infinite loop"
+  },
+  {
+    "Id": 10377,
+    "Title": "DataGrid Virtualization makes ComboBoxes change their SelectedValue while scrolling"
+  },
+  {
+    "Id": 10381,
+    "Title": "Exception thrown in DataGrid.ScrollIntoView"
+  },
+  {
+    "Id": 10384,
+    "Title": "Zero As Default Value For Long type Dependency Property Errors Out."
+  },
+  {
+    "Id": 10396,
+    "Title": "Grid scrolls slowly vertically when bound to large data table"
+  },
+  {
+    "Id": 10408,
+    "Title": "DataGrid: Made rows blink fine. But once vertically scrolled, a trouble began."
+  },
+  {
+    "Id": 10418,
+    "Title": "Exception in OverrideDataRange in DateTimeAxis"
+  },
+  {
+    "Id": 10430,
+    "Title": "Losing SelectedItems when opening a ContextMenu"
+  },
+  {
+    "Id": 10431,
+    "Title": "DataGrid SelectedItems is not dependency property"
+  },
+  {
+    "Id": 10435,
+    "Title": "Control Verifier 0.1 - Sorting on Value column in Test Case datagrid causes crash."
+  },
+  {
+    "Id": 10436,
+    "Title": "Control Verifier 0.1 - Testing the 'Window' control causes app crash"
+  },
+  {
+    "Id": 10438,
+    "Title": "Control Verifier 0.1 - DataContextTest should be more savvy of ItemsControls"
+  },
+  {
+    "Id": 10439,
+    "Title": "DataGrid - Grouping Can Cause Exception To Be Thrown When Laying Out Columns After ItemsSource Property Is Changed"
+  },
+  {
+    "Id": 10447,
+    "Title": "Calendar: selecting year in decade display mode"
+  },
+  {
+    "Id": 10460,
+    "Title": "Converter and cells don't walk synchronised when scrollbar is needed"
+  },
+  {
+    "Id": 10461,
+    "Title": "WPFDataGrid: UI problem - Comboboxes are rendered incorrectly and looks partly sinked in Classic theme on Win Vista"
+  },
+  {
+    "Id": 10470,
+    "Title": "custom control for datagridtextcolumn with a custom control like ssftextbox within datagridtextcolumn"
+  },
+  {
+    "Id": 10501,
+    "Title": "DatePicker - Error On DateValidation"
+  },
+  {
+    "Id": 10530,
+    "Title": "DataGrid crashes when setting CanUserAddRows to false"
+  },
+  {
+    "Id": 10533,
+    "Title": "Mouse Wheel Scrolling causes Overflow"
+  },
+  {
+    "Id": 10537,
+    "Title": "WPF Toolkit - June 2009 Release  unable to build the wpftoolkit solution"
+  },
+  {
+    "Id": 10539,
+    "Title": "DataGrid and 'DeferRefresh' is not allowed during an AddNew or EditItem transaction when quickly clicking"
+  },
+  {
+    "Id": 10542,
+    "Title": "Button Margin style with DataGrid hangs Visual Studio designer"
+  },
+  {
+    "Id": 10562,
+    "Title": "WPF Shader Effect Library Template"
+  },
+  {
+    "Id": 10572,
+    "Title": "Possible Bug in Calendar"
+  },
+  {
+    "Id": 10574,
+    "Title": "Custom handling of Enter in Datagrid"
+  },
+  {
+    "Id": 10580,
+    "Title": "Provide separate 32 bit and 64 bit binaries, or change \"Any CPU\" to \"x86\" in Build settings to avoid confusion"
+  },
+  {
+    "Id": 10595,
+    "Title": "DataGrid naming bug"
+  },
+  {
+    "Id": 10611,
+    "Title": "Binding Dictionary<T,S> to DataGrid doesn't generate columns"
+  },
+  {
+    "Id": 10624,
+    "Title": "Debug.Assert Fails with \"availableStarSpace is not valid\""
+  },
+  {
+    "Id": 10625,
+    "Title": "DataGrid and MouseDoubleClick"
+  },
+  {
+    "Id": 10658,
+    "Title": "Can't move/resize a window after moving a window while a popup appears"
+  },
+  {
+    "Id": 10659,
+    "Title": "DataGrid: on setting SelectedIndex programmatically it doesn't render the selected row correctly."
+  },
+  {
+    "Id": 10667,
+    "Title": "Calendar doesn't bind inside ItemsControl"
+  },
+  {
+    "Id": 10670,
+    "Title": "Grouping Breaks Selection in Extended mode"
+  },
+  {
+    "Id": 10677,
+    "Title": "Adding new rows in a DataGrid requires too many keystrokes"
+  },
+  {
+    "Id": 10686,
+    "Title": "Sorting in datagrid Bug with System.DBNull()"
+  },
+  {
+    "Id": 10691,
+    "Title": "UpdateDataPoint null reference"
+  },
+  {
+    "Id": 10699,
+    "Title": "Grouping breaks Row Virtualization"
+  },
+  {
+    "Id": 10707,
+    "Title": "DataGrid problem when a DataColumn name has trailing or leading whitespace"
+  },
+  {
+    "Id": 10712,
+    "Title": "Multibinding does not work with DataGridTextColumn"
+  },
+  {
+    "Id": 10741,
+    "Title": "Datagrid frozen columns and group header"
+  },
+  {
+    "Id": 10751,
+    "Title": "WPF Toolkit Data Grid DataGridTextColumn.IsReadOnly"
+  },
+  {
+    "Id": 10752,
+    "Title": "WPF Toolkit DataGrid DataGridTemplateColumn.BackGround"
+  },
+  {
+    "Id": 10758,
+    "Title": "DataGridBoundColumn.ElementStyle not applied at runtime"
+  },
+  {
+    "Id": 10762,
+    "Title": "Datagrid not rendering selected item if repopulated when selection changes"
+  },
+  {
+    "Id": 10764,
+    "Title": "DataGrid Grouping and row creation"
+  },
+  {
+    "Id": 10765,
+    "Title": "AutomationElement for cell in DataGrid is not correctly updated."
+  },
+  {
+    "Id": 10769,
+    "Title": "ComboBox DataGrid is not properly update"
+  },
+  {
+    "Id": 10771,
+    "Title": "Bug with DataContext Property of WPF TextBox Element - Data is not binding. Any suggestions?"
+  },
+  {
+    "Id": 10788,
+    "Title": "Calendar.SelectedDates.AddRange does not show the selection"
+  },
+  {
+    "Id": 10801,
+    "Title": "Add same Footer properties for DataGridColumn as Header"
+  },
+  {
+    "Id": 10808,
+    "Title": "Issue loading Ribbon dll"
+  },
+  {
+    "Id": 10815,
+    "Title": "DataGridTemplateColumn validation"
+  },
+  {
+    "Id": 10821,
+    "Title": "Suggested change for DataGridCellItemAutomationPeer"
+  },
+  {
+    "Id": 10822,
+    "Title": "ICollectionView.MoveCurrentToNext() moves selection to next row, but CurrentItem does not move"
+  },
+  {
+    "Id": 10827,
+    "Title": "DataGrid crash when itemsource changes and rows are virtualized because of nullpointer"
+  },
+  {
+    "Id": 10834,
+    "Title": "CurrentCell and focus is set to first cell when switched back within TabControl"
+  },
+  {
+    "Id": 10835,
+    "Title": "DataGrid handles CTRL+TAB key and thus TabControl cannot see it"
+  },
+  {
+    "Id": 10872,
+    "Title": "DataGridRow.ClearRow(DataGrid owningDataGrid) Error"
+  },
+  {
+    "Id": 10911,
+    "Title": "There is a bug when scrolling data on a DataGrid"
+  },
+  {
+    "Id": 10934,
+    "Title": "SharedSizeGroup GridSplitter Issue"
+  },
+  {
+    "Id": 10935,
+    "Title": "Chart DateTimeAxis: binding IntervalType freeze .Net and appli on Window.Show"
+  },
+  {
+    "Id": 10953,
+    "Title": "DataGrid : grouped items, editing cell TAB out of shifts rows vertically"
+  },
+  {
+    "Id": 10954,
+    "Title": "DataGrid: binding - clear - binding not grouping"
+  },
+  {
+    "Id": 10956,
+    "Title": "AttributeTableBuilder exists in two referenced assemblies"
+  },
+  {
+    "Id": 10967,
+    "Title": "Command with ElementName Binding doesn't wok in HeaderStyle and CellTemplate"
+  },
+  {
+    "Id": 10978,
+    "Title": "WPF DataGrid: Problem resizing the rows from code behind."
+  },
+  {
+    "Id": 11012,
+    "Title": "Linq to Sql entity + DataGridComboBoxColumn = \"'DeferRefresh' is not allowed during an AddNew or EditItem transaction.\""
+  },
+  {
+    "Id": 11015,
+    "Title": "SSCE provider exceptions in Windows Vista x64 and Windows 7 x64"
+  },
+  {
+    "Id": 11022,
+    "Title": "MVVM Sample: Tray Context Menu does not disappear. (Patch included)"
+  },
+  {
+    "Id": 11027,
+    "Title": "TextBlocks contained in a DataGridTemplateColumn are not available in UI Automation"
+  },
+  {
+    "Id": 11061,
+    "Title": "DatePicker consumes Enter, why"
+  },
+  {
+    "Id": 11077,
+    "Title": "DataGrid SelectionChanged event fired many times when scrolling"
+  },
+  {
+    "Id": 11096,
+    "Title": "Memory leak when sorting DataGrid with grouping"
+  },
+  {
+    "Id": 11121,
+    "Title": "DatePicker: DisplayDateStart and DisplayDateEnd gets modified"
+  },
+  {
+    "Id": 11142,
+    "Title": "Shader effect build task - crushes with NullReference exception"
+  },
+  {
+    "Id": 11166,
+    "Title": "Datagrid: InvalidOperationException"
+  },
+  {
+    "Id": 11167,
+    "Title": "'CommandConverter' is unable to convert 'Microsoft.Windows.Controls.Ribbon.RibbonCommand' to 'System.String'."
+  },
+  {
+    "Id": 11194,
+    "Title": "Calendar doesn't lose focus"
+  },
+  {
+    "Id": 11222,
+    "Title": "Grid doesn't display columns with \".\" in columnname"
+  },
+  {
+    "Id": 11230,
+    "Title": "Unable to set zero DataGridRowHeader padding"
+  },
+  {
+    "Id": 11259,
+    "Title": "Charts: Performance issues with charts on a tabbed interface"
+  },
+  {
+    "Id": 11420,
+    "Title": "DatePicker throws MDA exception"
+  },
+  {
+    "Id": 11427,
+    "Title": "RibbonWindow bug with D3DImage"
+  },
+  {
+    "Id": 11468,
+    "Title": "Combobox in RowDeatailsTemplate of a nested DataGrid"
+  },
+  {
+    "Id": 11484,
+    "Title": "DatePicker display glitch"
+  },
+  {
+    "Id": 11504,
+    "Title": "Expander in DataGrid does not retain state"
+  },
+  {
+    "Id": 11505,
+    "Title": "Datagrid single click editing"
+  },
+  {
+    "Id": 11558,
+    "Title": "DataGrid - Null Reference Exception"
+  },
+  {
+    "Id": 11559,
+    "Title": "Month Name drawing problem with DatePicker"
+  },
+  {
+    "Id": 11566,
+    "Title": "Using DataGrid with Magnifier tool causes NullReferenceException"
+  },
+  {
+    "Id": 11574,
+    "Title": "Autogenerated Checkbox Column (displaying bools) has serious performance issue"
+  },
+  {
+    "Id": 11577,
+    "Title": "Disappearing column bars"
+  },
+  {
+    "Id": 11580,
+    "Title": "Drag drop chart - Cannot determine the size of an axis without an orientation."
+  },
+  {
+    "Id": 11582,
+    "Title": "Datagrid group collapsing"
+  },
+  {
+    "Id": 11604,
+    "Title": "windows 7 installation issues"
+  },
+  {
+    "Id": 11617,
+    "Title": "DatePicker: Crash when changing ControlTemplate"
+  },
+  {
+    "Id": 11626,
+    "Title": "HELP- Datepicker ExpressionDark theme style definition"
+  },
+  {
+    "Id": 11644,
+    "Title": "DatePicker SelectedDate fails to update when using MVVM"
+  },
+  {
+    "Id": 11670,
+    "Title": "DataGrid throws ArgumentNullException when bound and displayed."
+  },
+  {
+    "Id": 11709,
+    "Title": "DataGrid.CellEditEnded event misses"
+  },
+  {
+    "Id": 11822,
+    "Title": "VisualStateManager cannot be used on a Window"
+  },
+  {
+    "Id": 11829,
+    "Title": "DataGridComboBoxColumn ItemsSource and MVVM"
+  },
+  {
+    "Id": 11876,
+    "Title": "DataGrid really slow when changing binded dataview"
+  },
+  {
+    "Id": 11915,
+    "Title": "Right-aligned content of DataGrid's RowDetails scrolls out of view when the grid is resized"
+  },
+  {
+    "Id": 11920,
+    "Title": "Wrong Assembly version"
+  },
+  {
+    "Id": 11924,
+    "Title": "AutoCompleteBox fails on CompositeCollections"
+  },
+  {
+    "Id": 11937,
+    "Title": "AutoCompleteBox: different semantics than the Silverlight control when populating ItemsSource with a list of objects (ToString() NOT called)"
+  },
+  {
+    "Id": 11939,
+    "Title": "Misterious white cells"
+  },
+  {
+    "Id": 11988,
+    "Title": "Datagird unselects all your rows when it is disabled."
+  },
+  {
+    "Id": 11997,
+    "Title": "ColumnSeries sets Visibility of DataPoint locally so Styles can not modify it anymore"
+  },
+  {
+    "Id": 12003,
+    "Title": "Small bugs in Accordion"
+  },
+  {
+    "Id": 12006,
+    "Title": "DatePicker IsEnabled Property"
+  },
+  {
+    "Id": 12052,
+    "Title": "AutoCompleteBox.Text doesn't update binding source."
+  },
+  {
+    "Id": 12054,
+    "Title": "AutoCompleteBox Text Property not the same as TextBox.Text property fix"
+  },
+  {
+    "Id": 12057,
+    "Title": "AutoCompleteBox.MaxLength????"
+  },
+  {
+    "Id": 12077,
+    "Title": "Bug in DataGrid: SystemArgumentException: {\"'{0}' is not a Visual or Visual3D.\"} INNER EXCEPTION: NULL"
+  },
+  {
+    "Id": 12080,
+    "Title": "Data don't show up when bind WPF DataGrid ItemsSource to a DataTable which contains '/' in  ColumnName"
+  },
+  {
+    "Id": 12100,
+    "Title": "Rating Control (Input.Toolkit) InvalidCastException in Blend."
+  },
+  {
+    "Id": 12108,
+    "Title": "DataGrid rendering performance issue"
+  },
+  {
+    "Id": 12109,
+    "Title": "Accordion Control"
+  },
+  {
+    "Id": 12181,
+    "Title": "Rating Control (Input.Toolkit) deselect not possible"
+  },
+  {
+    "Id": 12225,
+    "Title": "AutoCompleteBox: text not visible when setting SelectedItem on load"
+  },
+  {
+    "Id": 12245,
+    "Title": "AutoCompleteBox SelectedItem changes on arrow down."
+  },
+  {
+    "Id": 12256,
+    "Title": "Bug in WPF Media ToolKit"
+  },
+  {
+    "Id": 12340,
+    "Title": "Datagrid looses focus when clicking on CurrentCell if contained in a ScrollViewer"
+  },
+  {
+    "Id": 12357,
+    "Title": "Setting Margin Property On Default Button Style Causes DataGrid to Hang Indefinitely"
+  },
+  {
+    "Id": 12372,
+    "Title": "Can't Two-Way Bind to the Calendar's DisplayDate"
+  },
+  {
+    "Id": 12515,
+    "Title": "The ability to select columns via the column header"
+  },
+  {
+    "Id": 12558,
+    "Title": "DataGrid within Popup mouse capture problem"
+  },
+  {
+    "Id": 12559,
+    "Title": "DataGrid Binding Error with Visibility and SelectiveScrollingOrientation"
+  },
+  {
+    "Id": 12591,
+    "Title": "Internal property HasCellValidationError not reset properly on source change"
+  },
+  {
+    "Id": 12662,
+    "Title": "DataGrid Editing Mode UIA Problem"
+  },
+  {
+    "Id": 12695,
+    "Title": "Accordion VerticalAlignment=\"Stretch\" Does not respond to window state changes"
+  },
+  {
+    "Id": 12812,
+    "Title": "Accordion is crashed if DataContext is changed"
+  },
+  {
+    "Id": 12816,
+    "Title": "DateTimeAxis displays improperly when window is maximized"
+  },
+  {
+    "Id": 12832,
+    "Title": "Issue with WPF Datagrid SelectionMode"
+  },
+  {
+    "Id": 12857,
+    "Title": "Client Profile Configuration Designer for .NET Framework 4.0 Client Profile"
+  },
+  {
+    "Id": 12865,
+    "Title": "Charting: Bug in System.Windows.Controls.DataVisualization.LayoutTransformControl"
+  },
+  {
+    "Id": 12866,
+    "Title": "Afer apply a customized Datagrid Group Template, when I scroll datagrid, its column is not properly painted."
+  },
+  {
+    "Id": 12867,
+    "Title": "datepicker - xbap - uipermission error"
+  },
+  {
+    "Id": 12917,
+    "Title": "DataPoint/DataPointSeries Memory Leak"
+  },
+  {
+    "Id": 12944,
+    "Title": "DisplayIndex Binding throws error"
+  },
+  {
+    "Id": 12948,
+    "Title": "AutoCompleteBox has a conflict with the xamDockManager from Infragistics NetAdvantage"
+  },
+  {
+    "Id": 12955,
+    "Title": "DisplayAxis derived controls all have slow constructors"
+  },
+  {
+    "Id": 12960,
+    "Title": "DataGridColumn.OnInput should be protected internal, not internal"
+  },
+  {
+    "Id": 12979,
+    "Title": "DataGridAutomationPeer.GetItemPeers ArgumentException same key has already been added on Vista"
+  },
+  {
+    "Id": 12980,
+    "Title": "Calendar control header color issue in Windows XP"
+  },
+  {
+    "Id": 12981,
+    "Title": "DataGrid crash when applying ScaleTransform to DataGridCell (.NET 4)"
+  },
+  {
+    "Id": 12999,
+    "Title": "AutoCompleteBox doesn't populate dropdown properly when IsTextCompletionEnabled is True"
+  },
+  {
+    "Id": 13004,
+    "Title": "DataGrid Expands Forever When Button Margin > 0"
+  },
+  {
+    "Id": 13007,
+    "Title": "DataGrid Shared ItemsSource Issue"
+  },
+  {
+    "Id": 13008,
+    "Title": "DataGrid with enabled SpellCheck"
+  },
+  {
+    "Id": 13022,
+    "Title": "Datagrid's SelectedItem automatically set null when grid control is disabled"
+  },
+  {
+    "Id": 13140,
+    "Title": "DataGrid Data Virtualization"
+  },
+  {
+    "Id": 13147,
+    "Title": "Columnseries not displaying"
+  },
+  {
+    "Id": 13268,
+    "Title": "Combo box virtualization not working"
+  },
+  {
+    "Id": 13349,
+    "Title": "DatePicker IsEnabled=false is not working"
+  },
+  {
+    "Id": 13379,
+    "Title": "AutoCompleteBox fails to move the selection if a null item is present in the ItemsSource"
+  },
+  {
+    "Id": 13435,
+    "Title": "LinearAxis + double.NaN in data + autoscale = infinite loop"
+  },
+  {
+    "Id": 13443,
+    "Title": "Accordion crashes when clearing bound collection"
+  },
+  {
+    "Id": 13448,
+    "Title": "AutoCompleteBox always return the same selected item"
+  },
+  {
+    "Id": 13463,
+    "Title": "ListBox HorizontalContentAlignment not working in ExpressionDark"
+  },
+  {
+    "Id": 13476,
+    "Title": "Impossible to focus AutoCompleteBox programmatically"
+  },
+  {
+    "Id": 13543,
+    "Title": "How to unselect childgrid row when parentgrid selection is changed?"
+  },
+  {
+    "Id": 13567,
+    "Title": "snv-Source does not compile, build definition is missing in svn"
+  },
+  {
+    "Id": 13574,
+    "Title": "TextSearch do not work in DataGrid."
+  },
+  {
+    "Id": 13584,
+    "Title": "Build failed in VS Express 2010"
+  },
+  {
+    "Id": 13587,
+    "Title": "Charting - Freeze one axis, Scroll the other"
+  },
+  {
+    "Id": 13589,
+    "Title": "Hiding and Showing a column with a TextBlock as the header causes exception"
+  },
+  {
+    "Id": 13606,
+    "Title": "Click to an item in the AutocompleteBox DropDown Listbox does not select the item"
+  },
+  {
+    "Id": 13608,
+    "Title": "Charting hangs due to infinite loop"
+  },
+  {
+    "Id": 13638,
+    "Title": "Are top left coordinates of  AutoCompleteBox popup absolute?"
+  },
+  {
+    "Id": 13653,
+    "Title": "hidden column text between normal columns"
+  },
+  {
+    "Id": 13678,
+    "Title": "Bug on AccordionItem"
+  },
+  {
+    "Id": 13680,
+    "Title": "LineSeries is leaking memory"
+  },
+  {
+    "Id": 13734,
+    "Title": "AccordionItem VerticalAlignment = Stretch Bug"
+  },
+  {
+    "Id": 13754,
+    "Title": "Separator is shifted to the right (BureauBlack)"
+  },
+  {
+    "Id": 13770,
+    "Title": "application hangs (System.Windows.Controls.DataVisualization.Toolkit)"
+  },
+  {
+    "Id": 13782,
+    "Title": "Conflicting property registration for property ActualLegendItemStyleProperty"
+  },
+  {
+    "Id": 13785,
+    "Title": "Autocompletebox OnLostFocus Event"
+  },
+  {
+    "Id": 13797,
+    "Title": "Ribbon Default Font Scrambled"
+  },
+  {
+    "Id": 13836,
+    "Title": "ShouldRunStateStoryboard needs Try, Catch statement block"
+  },
+  {
+    "Id": 13903,
+    "Title": "Right-click on the window icon is handled wrong in a ribbonwindow with the august 02 release of the Micorosoft Ribbon for WPF"
+  },
+  {
+    "Id": 13908,
+    "Title": "AlternatingRowBackground Causes Ignoring of Row Background Triggers"
+  },
+  {
+    "Id": 13911,
+    "Title": "Scrolling Hogs Memory."
+  },
+  {
+    "Id": 13928,
+    "Title": "White glow on ribbonwindow title not shown in .net 4.0"
+  },
+  {
+    "Id": 13929,
+    "Title": "Icon, title and qatoolbar are outlined uncorrectly when a ribbonwindow is maximized."
+  },
+  {
+    "Id": 13950,
+    "Title": "Aug 2010 Ribbon display problem"
+  },
+  {
+    "Id": 13994,
+    "Title": "Aug 2010 Ribbon - IndexOutOfRangeException"
+  },
+  {
+    "Id": 13998,
+    "Title": "Restore button doesn't work when the ribbonwindow is docked to the whole screen in the aero basic theme."
+  },
+  {
+    "Id": 14044,
+    "Title": "DatePicker: Always throws an exception, when a valid date is encountered."
+  },
+  {
+    "Id": 14045,
+    "Title": "DatePicker: Always throws an exception, when an invalid date is encountered."
+  },
+  {
+    "Id": 14046,
+    "Title": "DataGrid bug with Button Styles"
+  },
+  {
+    "Id": 14055,
+    "Title": "DateTimeAxis with Orientation=X and Interval=1 crashes designer"
+  },
+  {
+    "Id": 14076,
+    "Title": "LargeImage in the RibbonSplitButton moves up on one half if property IsCheckable==True"
+  },
+  {
+    "Id": 14077,
+    "Title": "Image in the RibbonSplitButton moves up on one half if property IsCheckable==True"
+  },
+  {
+    "Id": 14078,
+    "Title": "Application freezes when closing a RibbonWindow with minimized Ribbon"
+  },
+  {
+    "Id": 14097,
+    "Title": "DataGrid ValidationRule or IDataErrorInfo validation code called multiple times for each data change"
+  },
+  {
+    "Id": 14106,
+    "Title": "Accordion control: design time exception in AccordionItem"
+  },
+  {
+    "Id": 14116,
+    "Title": "LinearAxis Precision - truncates values to two decimal places"
+  },
+  {
+    "Id": 14145,
+    "Title": "Xceed data grid columns not picking default styles"
+  },
+  {
+    "Id": 14147,
+    "Title": "DataGrid exception on validation failure (DeferRefresh is not allowed...)"
+  },
+  {
+    "Id": 14160,
+    "Title": "RibbonWindow"
+  },
+  {
+    "Id": 14174,
+    "Title": "\"Add to quick access toolbar\" throws exception"
+  },
+  {
+    "Id": 14190,
+    "Title": "THIS FORUM IS DEAD, ISN'T IT?"
+  },
+  {
+    "Id": 14214,
+    "Title": "RibbonWindow maximize hides the taskbar in windows XP"
+  },
+  {
+    "Id": 14228,
+    "Title": "Provision to change Title bar color in RibbonWindow"
+  },
+  {
+    "Id": 14255,
+    "Title": "NullReferenceException in Chart when xml:lang (FrameworkElement.Language) is set to something else than en-US"
+  },
+  {
+    "Id": 14273,
+    "Title": "DatePicker IsEnabled=true does not change the disable appearance of the control"
+  },
+  {
+    "Id": 14426,
+    "Title": "WPF Ribbon: RibbonApplicationMenuItem uses the small image source to render a 32x32 image."
+  },
+  {
+    "Id": 14427,
+    "Title": "WPF Ribbon: No way to use a large image source for a RibbonMenuItem."
+  },
+  {
+    "Id": 14428,
+    "Title": "WPF Ribbon: No way to use a large image source for a RibbonMenuItem."
+  },
+  {
+    "Id": 14430,
+    "Title": "WPF Ribbon: The group size reduction order does not apply when first initialized."
+  },
+  {
+    "Id": 14443,
+    "Title": "Datagrid binding to ObjectDataProvider works while debugging but not when running"
+  },
+  {
+    "Id": 14487,
+    "Title": "CopyingRowClipboardContent redundant as DataGridRowClipboardEventArgs is not editable"
+  },
+  {
+    "Id": 14538,
+    "Title": "if Interpolators property of the Tree Map is accidentally set to null we get a NullReferenceException"
+  },
+  {
+    "Id": 14546,
+    "Title": "WPF Ribbon application menu alignment problem."
+  },
+  {
+    "Id": 14592,
+    "Title": "Specified element is already the logical child of another element. Disconnect it first"
+  },
+  {
+    "Id": 14602,
+    "Title": "Data Grid Adding a Default Column Behind the Actual Columns with the Bound Data Source Type  Name"
+  },
+  {
+    "Id": 14623,
+    "Title": "Combo Box/Drop Down List not always selecting the item you click on."
+  },
+  {
+    "Id": 14628,
+    "Title": "RibbonComboBox lost ItemsSource after Group is collapsed"
+  },
+  {
+    "Id": 14663,
+    "Title": "calender control doesnt select multiple days properly"
+  },
+  {
+    "Id": 14686,
+    "Title": "DatePicker DropDown not dropping"
+  },
+  {
+    "Id": 14702,
+    "Title": "RibbonApplicationSplitMenuItem calls Command's Execute twice"
+  },
+  {
+    "Id": 14732,
+    "Title": "ObjectDisposedException in RibbonWindow"
+  },
+  {
+    "Id": 14742,
+    "Title": "StackedColumnSeries - Exception when data is removed from underlying collection"
+  },
+  {
+    "Id": 14779,
+    "Title": "Binding doesn't work for AutoCompleteBox.SelectedItem."
+  },
+  {
+    "Id": 14807,
+    "Title": "DesignerProperties.GetIsInDesignMode(...) assumes wrong"
+  },
+  {
+    "Id": 14840,
+    "Title": "Chart with pie series: BindingExpression error with ActualLegendItemStyle"
+  },
+  {
+    "Id": 14922,
+    "Title": "RibbonButton Visibility Dispatcher exception"
+  },
+  {
+    "Id": 14945,
+    "Title": "RibbonQuickAccessToolBar tries to set RibbonControl to be child of itself"
+  },
+  {
+    "Id": 14972,
+    "Title": "Ribbon control should derive from MultiSelector"
+  },
+  {
+    "Id": 15074,
+    "Title": "FolderBrowserDialog WPF alternative"
+  },
+  {
+    "Id": 15075,
+    "Title": "FolderBrowserDialog WPF alternative"
+  },
+  {
+    "Id": 15076,
+    "Title": "FolderBrowserDialog WPF alternative"
+  },
+  {
+    "Id": 15091,
+    "Title": "Unable to set AccordionItem.IsSelected"
+  },
+  {
+    "Id": 15092,
+    "Title": "Unable to set AccordionItem.IsSelected"
+  },
+  {
+    "Id": 15093,
+    "Title": "[Charting] Unable to align title on axis"
+  },
+  {
+    "Id": 15117,
+    "Title": "Tooltip does not display for RibbonSplitButton"
+  },
+  {
+    "Id": 15165,
+    "Title": "IsTabStop not working"
+  },
+  {
+    "Id": 15254,
+    "Title": "System.ExecutionEngineException was unhandled"
+  },
+  {
+    "Id": 15262,
+    "Title": "Cannot resolve symbol ..."
+  },
+  {
+    "Id": 15276,
+    "Title": "If just one item is rendered on a DateTimeAxis, nothing is displayed."
+  },
+  {
+    "Id": 15339,
+    "Title": "Accordion ExpandRight doesn't expand after collapse"
+  },
+  {
+    "Id": 15389,
+    "Title": "Key.Enter handling in AutoCompleteBox"
+  },
+  {
+    "Id": 15418,
+    "Title": "Accordion: Creating a template from a copy kills expression blend"
+  },
+  {
+    "Id": 15436,
+    "Title": "Error when try add RibbonButton to auick toolbar"
+  },
+  {
+    "Id": 15440,
+    "Title": "Unable to apply Input Mask"
+  },
+  {
+    "Id": 15490,
+    "Title": "RibbonApplicationMenu Bug ?"
+  },
+  {
+    "Id": 15494,
+    "Title": "wpftoolkit Autocompletebox can't handle the same font size as the textbox"
+  },
+  {
+    "Id": 15523,
+    "Title": "Ribbon tooltip does not work for Non-Ribbon controls."
+  },
+  {
+    "Id": 15565,
+    "Title": "[DataGRID] Header's row randomly displayed"
+  },
+  {
+    "Id": 15626,
+    "Title": "Copying from DataGrid to Excel"
+  },
+  {
+    "Id": 15630,
+    "Title": "Ribbon ContextualTabGroupsSource Binding Problem"
+  },
+  {
+    "Id": 15664,
+    "Title": "Missing SelectionChanging event for TabControl"
+  },
+  {
+    "Id": 15667,
+    "Title": "Background animation for ProgressBar eats CPU"
+  },
+  {
+    "Id": 15754,
+    "Title": "Expander doesn't display it's content in designer view"
+  },
+  {
+    "Id": 15812,
+    "Title": "Make WPFToolkit available at NuGet"
+  },
+  {
+    "Id": 15955,
+    "Title": "Add to Quick Access Toolbar throws StackOverflowException"
+  },
+  {
+    "Id": 16024,
+    "Title": "Why AutoCompleteBox not have DisplayMember property ?"
+  },
+  {
+    "Id": 16152,
+    "Title": "A RichTextBox with support for hyperlinks"
+  },
+  {
+    "Id": 16172,
+    "Title": "Incorrect set AutoCompleteBox.SelectedItem on Window.Loaded"
+  },
+  {
+    "Id": 16184,
+    "Title": "VisualStateManager collide with .NET 4"
+  },
+  {
+    "Id": 16189,
+    "Title": "Ribbon quick access toolbar and contextual tab groups coexistence measure/arrange bad behavior"
+  },
+  {
+    "Id": 16249,
+    "Title": "WPF Toolbox not showing Default tabs/tools, after Stepping Into .NET Source Code in Visual Studio 2008"
+  },
+  {
+    "Id": 16273,
+    "Title": "User controls are not working with Template Columns"
+  },
+  {
+    "Id": 16280,
+    "Title": "DataGrid with row headers turned off shows row header for some rows"
+  },
+  {
+    "Id": 16302,
+    "Title": "CategoryAxis GridLines do not line up with MajorTickMarks"
+  },
+  {
+    "Id": 16438,
+    "Title": "AutoCompleteBox Popup display bug with more that 15 items"
+  },
+  {
+    "Id": 16645,
+    "Title": "List of badcharacters for \"DataGrid problem when a DataColumn name has...\""
+  },
+  {
+    "Id": 16684,
+    "Title": "null reference error in chartingToolkit:ColumnSeries for dependent and independent values"
+  },
+  {
+    "Id": 16685,
+    "Title": "null reference error in chartingToolkit:ColumnSeries for dependent and independent values"
+  },
+  {
+    "Id": 16686,
+    "Title": "null reference error in chartingToolkit:ColumnSeries for dependent and independent values"
+  },
+  {
+    "Id": 16687,
+    "Title": "null reference error in chartingToolkit:ColumnSeries for dependent and independent values"
+  },
+  {
+    "Id": 16688,
+    "Title": "null reference error in chartingToolkit:ColumnSeries for dependent and independent values"
+  },
+  {
+    "Id": 16689,
+    "Title": "null reference error in chartingToolkit:ColumnSeries for dependent and independent values"
+  },
+  {
+    "Id": 16691,
+    "Title": "DropDownOpening event causing argument exception when adding handler"
+  },
+  {
+    "Id": 16692,
+    "Title": "DropDownOpening not triggered by setting IsDropDownOpen = true"
+  },
+  {
+    "Id": 16723,
+    "Title": "WPF Toolkit for Win8 .net 4.5"
+  },
+  {
+    "Id": 16778,
+    "Title": "Binding dies after RibbonGroup collapse"
+  },
+  {
+    "Id": 17304,
+    "Title": "Stacked chart availability in new version"
+  },
+  {
+    "Id": 17344,
+    "Title": "AutoCompleteBox Copy-Cut are always disabled"
+  },
+  {
+    "Id": 17436,
+    "Title": "Ribbon Contextual Tabs Measure Issue"
+  },
+  {
+    "Id": 18195,
+    "Title": "CommandReference does not hold strong reference to its handler for ICommand.CanExecuteChanged"
+  },
+  {
+    "Id": 18264,
+    "Title": "AutoCompleteBox throws exception in Multiple UI Thread application"
+  },
+  {
+    "Id": 18392,
+    "Title": "Inappropriate error: \"may be due to an unset Orientation...\""
+  },
+  {
+    "Id": 18412,
+    "Title": "RibbonWindows is not of Aero style under Windows 8 RP"
+  },
+  {
+    "Id": 18413,
+    "Title": "RibbonWindows is not of Aero style under Windows 8 RP"
+  },
+  {
+    "Id": 18445,
+    "Title": "WPFToolkit Calendar Controls Display Mode Navigation Issue"
+  },
+  {
+    "Id": 18635,
+    "Title": "DataGrid Exception when pressing Enter"
+  },
+  {
+    "Id": 18838,
+    "Title": "WPF Ribbon bug in Windows 8"
+  },
+  {
+    "Id": 19006,
+    "Title": "Charts: Gridlines display behind Columns after drill-down"
+  },
+  {
+    "Id": 19233,
+    "Title": "DataPointStyle not applyed"
+  },
+  {
+    "Id": 19654,
+    "Title": "Binding update adds news series to WPF Toolkit chart (instead of replacing/updating series)"
+  },
+  {
+    "Id": 19820,
+    "Title": "Charting Refresh Issue"
+  },
+  {
+    "Id": 19848,
+    "Title": "Can't Add LineSeries From Code"
+  },
+  {
+    "Id": 20275,
+    "Title": "Issue loading Assembly on Windows 8"
+  },
+  {
+    "Id": 20664,
+    "Title": "Cannot Access Downloaded Code"
+  },
+  {
+    "Id": 20800,
+    "Title": "Can you provide me Source code of this dll"
+  },
+  {
+    "Id": 20845,
+    "Title": "Can't resolve this issue \"Could not load file or assembly 'WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35'\".'\""
+  },
+  {
+    "Id": 21010,
+    "Title": "line graph connects points according to x order and not according to list order"
+  },
+  {
+    "Id": 21032,
+    "Title": "AutomationPeer crash"
+  },
+  {
+    "Id": 21156,
+    "Title": "multibinding not update source property"
+  },
+  {
+    "Id": 21323,
+    "Title": "Is WpfToolKit version 3.5.40128 is compatible for 4.5.2 VS project"
+  },
+  {
+    "Id": 21607,
+    "Title": "exception in wpf toolkit line chart usage"
+  },
+  {
+    "Id": 21675,
+    "Title": "Can't style DataGridTextColumn, DataGridComboBoxColumn, DataGridCheckBoxColumn and DataGridHyperlinkColumn"
+  },
+  {
+    "Id": 21804,
+    "Title": "[WPF] AutoCompleteBox: oblige the user to select only items"
+  },
+  {
+    "Id": 22240,
+    "Title": "WPF Toolkit Chart not clearing all points when context is changed."
+  },
+  {
+    "Id": 22336,
+    "Title": "How to bind the Dictionary to LineSeries..."
+  },
+  {
+    "Id": 22387,
+    "Title": "Line series swapping positions"
+  },
+  {
+    "Id": 22388,
+    "Title": "Chart legend items horizontally"
+  },
+  {
+    "Id": 22433,
+    "Title": "Mouse Selection is broken"
+  },
+  {
+    "Id": 22495,
+    "Title": "AccordionItem content is not expanding when clicked"
+  },
+  {
+    "Id": 22516,
+    "Title": "Charting - How to remove line data points"
+  },
+  {
+    "Id": 22558,
+    "Title": "No item selected after removal of currently selected TabItem in TabControl"
+  }
+]

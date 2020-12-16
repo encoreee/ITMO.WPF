@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The following binding is not working.  The work around is to create a template column that contains a text box; then the multi binding is working.\nIt is working only one way (from source to target) but it does not update the source when the target is modified.\n<Window x:Class=\"WpfApplication1.Window1\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n    xmlns:Test=\"clr-namespace:WpfApplication1\"\n    Title=\"Window1\" Height=\"300\" Width=\"300\" xmlns:my=\"http://schemas.microsoft.com/wpf/2008/toolkit\">\n    <Window.Resources>\n        <Test:TestConverter x:Key=\"TestConverter\" />\n    </Window.Resources>\n    <Grid>\n        <my:DataGrid AutoGenerateColumns=\"False\"  Name=\"dataGrid1\" ItemsSource=\"{Binding List}\" >\n            <my:DataGrid.Columns>\n                <my:DataGridTextColumn Header=\"Name\">\n                    <my:DataGridTextColumn.Binding>\n                        <MultiBinding Converter=\"{StaticResource TestConverter}\">\n                            <Binding Path=\".\"/>\n                            <Binding Path=\"Name\"/>\n                        </MultiBinding>\n                    </my:DataGridTextColumn.Binding>\n                </my:DataGridTextColumn>\n            </my:DataGrid.Columns>\n        </my:DataGrid>\n    </Grid>\n</Window>\n_______________ Code behind _______________\nusing System;\nusing System.Collections.Generic;\nusing System.Windows;\nusing System.Windows.Data;\n \nnamespace WpfApplication1\n{\n    /// <summary>\n    /// Interaction logic for Window1.xaml\n    /// </summary>\n    public partial class Window1 : Window\n    {\n        public List<TestClass> List { get; private set; }\n \n        public Window1()\n        {\n            InitializeComponent();\n \n            this.List = new List<TestClass>();\n            this.List.Add(new TestClass(\"aaa\"));\n            this.List.Add(new TestClass(\"bbb\"));\n            this.List.Add(new TestClass(\"ccc\"));\n \n            this.DataContext = this;\n        }\n    }\n \n    public class TestClass\n    {\n        public TestClass(string name)\n        {\n            this.Name = name;\n        }\n \n        public string Name { get; set;  }\n    }\n \n    public class TestConverter : IMultiValueConverter\n    {\n        #region IMultiValueConverter Members\n \n        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)\n        {\n            return values[1];\n        }\n \n        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)\n        {\n            return new Object[] { Binding.DoNothing, (string)value };\n        }\n \n        #endregion\n    }\n}",
+    "LastUpdatedDate": "2013-02-21T18:40:56.137-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-10-01T08:08:22.673-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Multibinding does not work with DataGridTextColumn",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 10712
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The reason that MultiBindings are not working is that DataGridHelper.UpdateSource uses GetBindingExpression and not GetBindingExpressionBase. If this is changed multi and priority bindings should work.\r\n\r\nMeanwhile, you can update the source yourself by registering a handler on the CellEditEnding event of the DataGrid.\r\nThe handler could look like this:\r\n\r\n        private void OnCellEditEnding(object sender, DataGridCellEditEndingEventArgs args)\r\n        {\r\n            TextBox editor = args.EditingElement as TextBox;\r\n\r\n            if (!args.Cancel &&\r\n                args.EditAction == DataGridEditAction.Commit &&\r\n                editor != null &&\r\n                !string.IsNullOrEmpty(editor.Text))\r\n            {\r\n                BindingExpressionBase binding = BindingOperations.GetBindingExpressionBase(editor, TextBox.TextProperty);\r\n                if (binding != null)\r\n                {\r\n                    binding.UpdateSource();\r\n                }\r\n\r\n                args.Cancel = true; // stop processing of the event\r\n            }\r\n        }\r\n\r\n\r\n",
+      "PostedDate": "2010-03-22T07:37:18.287-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-02T07:13:30.92-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:56.137-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

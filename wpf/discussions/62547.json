@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "212298",
+    "ThreadId": "62547",
+    "Html": "<p>I ask this question because upon coloring the cell background with the color I needed I noticed that something looked funny. The Borderbrush was not colored.&nbsp; So I said ok I'll just color it and change it individually each time I move from cell to cell but something is a miss.&nbsp; Once I color the Borderbrush the same as the background color you can't see it anymore.&nbsp; I know. Your saying duh.&nbsp; But really should it be that way?&nbsp; The borderbrush shouldn't really have it's own area from outside a cell.&nbsp; It's position should be inside the cell.&nbsp; Because of the way DataGrid is designed it doesn't look like coloring the Borderbrush seems to be a good idea.</p>\r\n<p>However.&nbsp; I still need to color my cells without a transparent Borderbrush that's actually visible due to the fact that you can see though it to the background.</p>\r\n<p>&nbsp;</p>\r\n<p>Any Ideas?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-15T13:29:02.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

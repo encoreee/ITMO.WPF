@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "169031",
+    "ThreadId": "50432",
+    "Html": "Col A is combo with datatype.  Col B is text column with decimals.  I have ElementStyle and EditingElementStyle that set Visibility of decimals column to Hidden when datatype is not &quot;Numeric&quot;.  Works fine initially with only Numeric rows showing Decimals.  When I change datatype for a row to &quot;Character&quot; nothing happens until I click on the decimals cell.  Then it hides the element as it should.  I am sending a PropertyChanged notification to the Decimals column but it won't update the style.  What am I doing wrong?<br>\r\n",
+    "PostedDate": "2009-03-17T08:09:42.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169576",
+    "ThreadId": "50432",
+    "Html": "There are 2 ways of doing this. <br>\r\n1) Implement a SelectionChanged event handler on the combobox to change the visibility of Col B. This will change visibility for the entire column and not just that row. (if thats what you wish to do)<br>\r\n2) Bind the Visibility property of Col B to the same property that is bound to cell of Col A, using a Converter. <br>\r\n<br>\r\nIf you want to update visibility of just the cell or disable the cell, option 2 would work. \r\n",
+    "PostedDate": "2009-03-18T13:31:12.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169957",
+    "ThreadId": "50432",
+    "Html": "Thanks.  I had failed  to notify the dependency property that was triggering the visibility of Col B.\r\n",
+    "PostedDate": "2009-03-19T12:17:19.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

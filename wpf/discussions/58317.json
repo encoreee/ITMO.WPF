@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "197229",
+    "ThreadId": "58317",
+    "Html": "<p>Can I use .NET framework 4 in VS2008? I installed .NET 4, but it is not appear in VS2008?</p>\r\n<p>Thanks,</p>",
+    "PostedDate": "2009-06-03T05:49:27.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199170",
+    "ThreadId": "58317",
+    "Html": "<p>I believe you need to use VS2010 Beta 1 with .NET 4.0 Beta 1, since VS2008 has not been updated to support .NET 4.0.</p>",
+    "PostedDate": "2009-06-08T11:27:20.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199300",
+    "ThreadId": "58317",
+    "Html": "<p>Thanks, Samantha.</p>",
+    "PostedDate": "2009-06-08T18:53:25.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

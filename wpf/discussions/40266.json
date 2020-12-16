@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "133612",
+    "ThreadId": "40266",
+    "Html": "I tried to implement a tree in DataGrid, following is the source and screen snapshot of current implementation.<br>\r\nI want to know whether there is a easy way to draw the line to connect the sibling nodes.<br>\r\nNow, some vertical lines are missing. <br>\r\n<a href=\"http://img511.imageshack.us/my.php?image=treeindatagridtq4.jpg\">http://img511.imageshack.us/my.php?image=treeindatagridtq4.jpg</a><br>\r\n<a href=\"http://www.box.net/shared/vcd86u0cmb\">http://www.box.net/shared/vcd86u0cmb</a><br>\r\n<br>\r\n<br>\r\n<br>\r\nFollowing is the code I referenced during development.<br>\r\nhttp://www.codeproject.com/KB/list/treelistview.aspx<br>\r\nhttp://social.msdn.microsoft.com/forums/en-US/wpf/thread/30cb182c-9419-40bd-946e-87971515fb95/ <br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-19T03:32:46.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165797",
+    "ThreadId": "40266",
+    "Html": "<span style=\"background-color:#cce8cf\">I cannot download the code from your link. Could you please do me a favor to send it to me?<br>\r\nAnd I think vertical lines are easy to implement using images and event trigger when they are sibling nodes.</span>\r\n",
+    "PostedDate": "2009-03-08T05:04:51.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165932",
+    "ThreadId": "40266",
+    "Html": "The link of the source code is updated.<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-08T22:15:44.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

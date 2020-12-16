@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "703452",
+    "ThreadId": "280855",
+    "Html": "\r\n<p>I was working recently on color/palette manipulation for my timeline project (timeline.codeplex.com), example of color wheel is here: http://asyrovprog.host22.com/colorwheel.html and now want to make it separate project or</p>\r\n<p>maybe put it into another, more generic project, like this one (though right now I have only silverlight version).</p>\r\n<p>My idea was to simplify control styling, from color perspective: if I try to style button or other control, blend generates default style template with lots of colors, but mostly they are just derivatives (lighter, darker, light-to-dark</p>\r\n<p>gradient) of small number of base colors. This led me to an idea that control styles could have them written in more generic way like this:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; Background=&quot;{Binding Source={StaticResource ColorManager}, Path=[ButtonBackground-LightDark]}&quot;</p>\r\n<p>The next question that I wanted to answer is what other function are there to manipulate or compare colors and create palettes and what is the good way to visualize palette creation.</p>\r\n<p>Any advice if this color manipulation function and color wheel control maybe added to this or similar projects?</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-11-25T10:31:13.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

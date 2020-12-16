@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "482516",
+    "ThreadId": "224161",
+    "Html": "<p>I'm using the latest release of the Ribbon Preview from MS Downloads (3.5.40729.1).</p>\r\n<p>I've included the proper assemblies, and I have a Ribbon up and running, but I'm trying to look at using commands now.</p>\r\n<p>Whenever I try and create a RibbonCommand in xaml or code, it can't find it.&nbsp; Has it been removed?&nbsp; What's the proper way to re-use objects and utilize the QAT now?</p>\r\n<p>I also just downloaded the&nbsp;Checkbook&nbsp;Example App which is also&nbsp;using the RibbonCommand and it won't compile now with the new version.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-19T15:08:14.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

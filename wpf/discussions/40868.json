@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "135550",
+    "ThreadId": "40868",
+    "Html": "In my code I am handling the ColumnDisplayIndexChanged event. Using the DisplayIndex property I can identify the new column index after the move. Is there a reliable way to figure out the old display index before the move? I am reluctant to analyze the header property to identity the column in the data model.<br>\r\n<br>\r\nPhilipp<span style=\"font-size:16px;color:#ffffff\">ColumnDisplayIndexChang</span> <span style=\"font-size:16px;color:#ffffff\">\r\n<p>ColumnDisplayIndexChang</p>\r\n</span>\r\n",
+    "PostedDate": "2008-11-26T06:05:26.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135651",
+    "ThreadId": "40868",
+    "Html": "Are you speaking of the end-user column reorder (by means of dragging the header)? If yes then you can use ColumnReordering and ColumnReordered events of DataGrid.\r\n",
+    "PostedDate": "2008-11-26T10:47:28.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

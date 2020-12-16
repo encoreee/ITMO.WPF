@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "131889",
+    "ThreadId": "39734",
+    "Html": "I have a DateTime value that I have bound to the SelectedDate value of a calendar control when the SelectedDate value changes the time portion of my DateTime value is overwritten.&nbsp; Is there any way to persist the time value?<br>\r\n<br>\r\nI have tried putting code in the SelectedDatesChanged event that masked out the time value when setting the value but the event gets called when the value changes from either side of the databinding which causes the calander to ignore the time value I am passing it.<br>\r\n<br>\r\nAnyone have any ideas?<br>\r\n",
+    "PostedDate": "2008-11-11T20:56:05.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132090",
+    "ThreadId": "39734",
+    "Html": "Well, this behavior is by design, but there are ways around it if you modify the source. This is just a hunch, but... in the DateTimeHelper class within the source there are two methods called DiscardTime(DateTime? d) and DiscardDayTime(DateTime d). If you comment out the values being returned and instead return the incoming parameters, that may fix your issue - let me know :-)<br>\r\n<br>\r\n-Eric Fabricant, MSFT\r\n",
+    "PostedDate": "2008-11-12T12:15:36.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132173",
+    "ThreadId": "39734",
+    "Html": "Thank you very much for your response,<br>\r\n<br>\r\nIt just so happens that I am changing the source code for another reason anyway so a solution along these lines would be acceptable.&nbsp; But the two functions that you mentioned, DiscardTime(DateTime? d) and DiscardDayTime(DateTime d), do not seem to be used to mask out the time value when it is returned, DiscardDayTime is used to move the DisplayDate to the first day of the current month, and DiscardTime is used in comparisons and marking ranges.<br>\r\n<br>\r\nChanging these functions does not preserve the time value, and probably has undesirable effects on other parts of the calender.<br>\r\n<br>\r\nAny other ideas?<br>\r\n",
+    "PostedDate": "2008-11-12T18:08:28.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132320",
+    "ThreadId": "39734",
+    "Html": "I have found a workaround, it is a little hackish for my tastes but maybe I can use this to move forward and find a better solution.<br>\r\n<br>\r\nIn the DatePicker's OnSelectedDateChanged it checks a flag in the calendar, DatePickerDisplayDateFlag, this flag is only set to true if the change comes from the Calender UI. Which means at this point I can insert some code to change the SelectedDate (here is where it gets hacky, I don't like changing the Dependency Property that launched the event that I am currently in.) and preserve the time value.&nbsp; I also set the above flag to false, in order to prevent an infinite loop, and halt the execution of the function as another instance of the event has fired and taken its place.<br>\r\n<br>\r\nhere is a snippet of code from the DatePicker.OnSelectedDateChanged function:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addedDate = (DateTime?)e.NewValue;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removedDate = (DateTime?)e.OldValue;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (dp.SelectedDate.HasValue)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DateTime day = dp.SelectedDate.Value;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dp.SetTextInternal(dp.DateTimeToString(day));<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // When DatePickerDisplayDateFlag is TRUE, the SelectedDate change is coming from the Calendar UI itself,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // so, we shouldn't change the DisplayDate since it will automatically be changed by the Calendar<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((day.Month != dp.DisplayDate.Month || day.Year != dp.DisplayDate.Year) &amp;&amp; !dp._calendar.DatePickerDisplayDateFlag)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dp.DisplayDate = day;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (dp._calendar.DatePickerDisplayDateFlag) <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ///When the change is coming form the Calendar UI, we want to change the selected date but we want to preserve the time.<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //addedDate = MergeDateTime(addedDate, removedDate);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dp._calendar.DatePickerDisplayDateFlag = false;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dp.SelectedDate = MergeDateTime(addedDate, removedDate);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dp._calendar.DatePickerDisplayDateFlag = false;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nThanks again<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-13T07:36:44.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132439",
+    "ThreadId": "39734",
+    "Html": "I looked around and found out why my suggestion didn't work out for you. First off, changing DateTimeHelper.DiscardDayTime(DateTime d) was a mistake, as it is used to determine first day of the month for the Calendar. Sorry about that one. Secondly, at the bottom of SetSelectedDate() there is a line that checks whether a DateTime that results from parsing the String representation of the DateTime (which doesn't account for time) equals the DateTime of the SelectedDate (which would have a time). When this condition fails, SelectedDate is reassigned to the value of the DateTime that resulted from parsing the String (which has no time). Commenting out this line seems to permit the time to remain intact though will not affect the DatePicker's String seen in the DatePickerTextBox.  You could use this approach if you feel its less hackish though it may not be the best idea if any circumstances arise that depend on this. After a bit of superficial testing, it does not appear that this line is used under normal circumstances and serves as a fail safe. Keep in mind though that any of these hacks could be broken by future bug fixes to the Calendar.<br>\r\n<br>\r\n-Eric Fabricant, MSFT \r\n",
+    "PostedDate": "2008-11-13T15:18:43.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

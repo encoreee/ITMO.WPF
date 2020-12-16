@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "138161",
+    "ThreadId": "41623",
+    "Html": "I have created a ribbon with the standard clipboard buttons Cut/Copy &amp; Paste.<br>\r\n<br>\r\nThere is also a TextBox control. The TextBox control knows about ApplicationCommands.<br>\r\n<br>\r\nWhen the TextBox control has focus, I would like the buttons on the ribbon to work.<br>\r\n<br>\r\nIs it possible to route ApplicationCommands instead of the RibbonCommands? \r\n",
+    "PostedDate": "2008-12-05T15:21:15.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138173",
+    "ThreadId": "41623",
+    "Html": "The ribbon should work fully when the TextBox has Focus.  I just tested it out and I got a RibbonCommand to properly route when I clicked on a button and I had focus in a TextBox.  What commands are you seeing that are not functioning properly?<br>\r\n<br>\r\nCurrently due to implementation the Ribbon and its controls us RibbonCommands.\r\n",
+    "PostedDate": "2008-12-05T16:34:04.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138556",
+    "ThreadId": "41623",
+    "Html": "Thanks for the reply.<br>\r\n<br>\r\nAn example of what we are trying to do:-<br>\r\n<br>\r\n&lt;r:RibbonWindow x:Class=&quot;WpfApplicationRouting.Window1&quot;<br>\r\n    xmlns=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</a>&quot;<br>\r\n    xmlns:x=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml\">http://schemas.microsoft.com/winfx/2006/xaml</a>&quot;<br>\r\n    xmlns:my=&quot;clr-namespace:WpfApplicationRouting&quot;<br>\r\n    xmlns:r=&quot;clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary&quot;<br>\r\n    Title=&quot;Window1&quot; Height=&quot;381&quot; Width=&quot;627&quot;  Background=&quot;White&quot;&gt;<br>\r\n &lt;StackPanel FocusManager.FocusedElement=&quot;{Binding ElementName=text}&quot;&gt;<br>\r\n  &lt;r:Ribbon&gt;<br>\r\n   &lt;r:Ribbon.Resources&gt;<br>\r\n    &lt;r:RibbonCommand x:Key=&quot;AppCommands.Cut&quot; x:Name=&quot;commandCut&quot; <br>\r\n                           LabelTitle=&quot;Cut&quot;<br>\r\n                           ToolTipTitle=&quot;Cut&quot;<br>\r\n                           ToolTipDescription=&quot;Cut selected object to the Clipboard.&quot; CanExecute=&quot;commandCut_CanExecute&quot; Executed=&quot;commandCut_Executed&quot;  /&gt;<br>\r\n   &lt;/r:Ribbon.Resources&gt;<br>\r\n   &lt;r:RibbonTab Label=&quot;Home&quot;&gt;<br>\r\n    &lt;r:RibbonGroup x:Name=&quot;clipboard&quot;&gt;<br>\r\n     &lt;r:RibbonButton Command=&quot;{StaticResource AppCommands.Cut}&quot;/&gt;<br>\r\n    &lt;/r:RibbonGroup&gt;<br>\r\n   &lt;/r:RibbonTab&gt;<br>\r\n  &lt;/r:Ribbon&gt;<br>\r\n  &lt;TextBox x:Name=&quot;text&quot;&gt;&lt;/TextBox&gt;<br>\r\n &lt;/StackPanel&gt;<br>\r\n&lt;/r:RibbonWindow&gt;<br>\r\n<br>\r\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>\r\n<br>\r\n<p>namespace WpfApplicationRouting<br>\r\n{<br>\r\n    /// &lt;summary&gt;<br>\r\n    /// Interaction logic for Window1.xaml<br>\r\n    /// &lt;/summary&gt;<br>\r\n    public partial class Window1 : RibbonWindow<br>\r\n    {<br>\r\n        public Window1()<br>\r\n        {<br>\r\n            InitializeComponent();<br>\r\n        }</p>\r\n<p>        private void commandCut_CanExecute(object sender, CanExecuteRoutedEventArgs e)<br>\r\n        {<br>\r\n            ICommand command = ApplicationCommands.Cut;</p>\r\n<p>            e.CanExecute = command.CanExecute(null);<br>\r\n        }</p>\r\n<p>        private void commandCut_Executed(object sender, ExecutedRoutedEventArgs e)<br>\r\n        {<br>\r\n            ICommand command = ApplicationCommands.Cut;</p>\r\n<p>            command.Execute(null);<br>\r\n        }</p>\r\n<p>     }<br>\r\n}</p>\r\n<br>\r\n------------------------------------------------------------------------------------------------------------------<br>\r\n<br>\r\ncommandCut_Executed does not get called. (When you click on the button the focus is lost...)<br>\r\n<br>\r\nThe key is that we want controls to respond to ApplicationCommands not commands derived from RibbonControl.<br>\r\n<br>\r\nThanks,<br>\r\n",
+    "PostedDate": "2008-12-08T04:35:17.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144485",
+    "ThreadId": "41623",
+    "Html": "<p>In order not to lose focus, you have to make the ribbon a FocusScope. All you need to do is set an attached property on the ribbon -  <span style=\"font-size:13px\"><span style=\"color:#ff0000\">FocusManager.IsFocusScope</span><span style=\"color:#0000ff\">=&quot;True&quot;  .<br>\r\n</span></span><span style=\"color:#0000ff;font-size:13px\"><br>\r\n&lt;</span><span style=\"color:#a31515;font-size:13px\">r</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">Ribbon</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#ff0000;font-size:13px\">x</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#ff0000;font-size:13px\">Name</span><span style=\"color:#0000ff;font-size:13px\">=&quot;ribbon1&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#ff0000;font-size:13px\">Height</span><span style=\"color:#0000ff;font-size:13px\">=&quot;Auto&quot;</span><span style=\"color:#ff0000;font-size:13px\"> Width</span><span style=\"color:#0000ff;font-size:13px\">=&quot;Auto&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#ff0000;font-size:13px\">DockPanel.Dock</span><span style=\"color:#0000ff;font-size:13px\">=&quot;Top&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#ff0000;font-size:13px\">Title</span><span style=\"color:#0000ff;font-size:13px\">=&quot;{</span><span style=\"color:#a31515;font-size:13px\">Binding</span><span style=\"color:#ff0000;font-size:13px\"> RelativeSource</span><span style=\"color:#0000ff;font-size:13px\">={</span><span style=\"color:#a31515;font-size:13px\">RelativeSource</span><span style=\"color:#ff0000;font-size:13px\"> FindAncestor</span><span style=\"color:#0000ff;font-size:13px\">,</span><span style=\"color:#ff0000;font-size:13px\">AncestorType</span><span style=\"color:#0000ff;font-size:13px\">={</span><span style=\"color:#a31515;font-size:13px\">x</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">Type</span><span style=\"color:#ff0000;font-size:13px\"> Window</span><span style=\"color:#0000ff;font-size:13px\">}},</span><span style=\"color:#ff0000;font-size:13px\">Path</span><span style=\"color:#0000ff;font-size:13px\">=Title}&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#ff0000;font-size:13px\">ShowQuickAccessToolbarOnTop</span><span style=\"color:#0000ff;font-size:13px\">=&quot;True&quot;</span><span style=\"color:#ff0000;font-size:13px\"> </span><span style=\"color:#0000ff;font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"color:#ff0000;font-size:13px\">FocusManager.IsFocusScope</span><span style=\"color:#0000ff;font-size:13px\"><span style=\"color:#0000ff;font-size:13px\">=&quot;True&quot;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#0000ff;font-size:13px\">&gt;<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-01-05T11:33:41.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145016",
+    "ThreadId": "41623",
+    "Html": "<p>Thank you for your reply.<br>\r\n<br>\r\nI tried setting the IsFocusScope to true. Now the behaviour has changed when I get the canexecute event.</p>\r\n<p>The originalsource is no longer the ribbon control.</p>\r\n<p>How do I find out the source of the command?</p>\r\n<p>Also after clicking on the buttton I want the focus to return back to where it was. Basically behave like a normal toolbar.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;</p>\r\n<p>John</p>\r\n",
+    "PostedDate": "2009-01-07T05:28:43.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145019",
+    "ThreadId": "41623",
+    "Html": "Yes, we can get RibbonCommands to route correctly.<br>\r\n<br>\r\nThe problem is that we want an applicationcommand to be routed instead.<br>\r\n<br>\r\nThe workaround so far is to handle the RibbonCommand and then raise a new ApplicationCommand instead.<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nJohn\r\n",
+    "PostedDate": "2009-01-07T05:36:27.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145076",
+    "ThreadId": "41623",
+    "Html": "I couldn't agree more. Using ApplicationCommands  or any routed commands is very clumsy at the moment ; you have to write dozens of little handlers that do nothing but redirect.  Very tedious and not elegant.  The whole point of routed commands was to reduce clutter .  I'll be disappointed if the ribbon ships with this architecture . \r\n",
+    "PostedDate": "2009-01-07T08:25:08.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194724",
+    "ThreadId": "41623",
+    "Html": "<p>I agree that it must be <span style=\"font-size:13px\"><span style=\"color:#ff0000\">FocusManager.IsFocusScope</span><span style=\"color:#0000ff\">=&quot;True&quot; <span style=\"color:#000000\">in order to keep focus on command target. </span></span></span>You can see at post ID 52089 how you can use RibbonCommand with DelegateCommand which is part of MVVM template. Look at post of daywalker. Declaration of CommandReference must be something like:</p>\r\n<p>&lt;commands:CommandReference x:Key=&quot;CutCommandReference&quot; Command=&quot;ApplicationCommands.Cut&quot;/&gt;</p>\r\n<p>I use it with my custom static commands like ApplicationCommands and all works well.</p>\r\n<p>Best regards!!!</p>",
+    "PostedDate": "2009-05-27T04:16:46.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218700",
+    "ThreadId": "41623",
+    "Html": "<p>Hi John</p>\r\n<p>I'm having problems getting the Cut, Copy, Paste Ribbon buttons to work. I've used the code you posted and the Cut button (for example)&nbsp;gets enabled when I select some text in&nbsp;the text box. But when I click the Cut ribbon button, the Cut ribbon button&nbsp;gets disabled and the Execute event is never raised.</p>\r\n<p>You said in your previous Email that you had a workaround. Can you please post the work around, so I can see how to do it.</p>\r\n<p>&nbsp;</p>\r\n<p>Many thanks</p>\r\n<p>Mark</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T03:24:25.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221050",
+    "ThreadId": "41623",
+    "Html": "<p>Hi Mark,</p>\r\n<p>I didn't look the code posted by John but as banko said you need to set <span style=\"font-size:13px\"><span style=\"color:#ff0000\">FocusManager.IsFocusScope</span><span style=\"color:#0000ff\">=&quot;True&quot; <span style=\"color:#000000\">for the Ribbon. This will keep input focus onto TextBox. Your Execute event is never raised because at the moment you click the button it will grab the focus and&nbsp;CanExecute&nbsp;for your Cut&nbsp;command will be false.&nbsp;I hope this help you. </span></span></span></p>",
+    "PostedDate": "2009-08-08T01:18:23.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "374666",
+    "ThreadId": "166484",
+    "Html": "<p>I keep getting this button in the header, I can click on the button to select all rows. This misaligns the data from the header. Any ideas?</p>\r\n<p><a rel=nofollow href=\"http://picasaweb.google.com/lh/photo/CahvlINknhL5ykIW2zCfIw?feat=directlink\">http://picasaweb.google.com/lh/photo/CahvlINknhL5ykIW2zCfIw?feat=directlink</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-24T13:10:49.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "412881",
+    "ThreadId": "166484",
+    "Html": "<p>I am having this problem too. &nbsp;Not sure what the problem is, but I am sure it is something stupid that I've overlooked. &nbsp;</p>\r\n<p>Anyone know what this is?</p>\r\n<p>&nbsp;</p>\r\n<p>Thank You</p>\r\n<p>MEF</p>",
+    "PostedDate": "2010-03-01T13:46:25.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "412908",
+    "ThreadId": "166484",
+    "Html": "<p>For me the problem was caused by the Margin setting on the default style for buttons.</p>\r\n<p>I solved it by starting with the code from this article:</p>\r\n<p><a href=\"http://sweux.com/blogs/smoura/index.php/wpf/2009/04/27/wpf-toolkit-datagrid-part-ii-custom-styling/\">http://sweux.com/blogs/smoura/index.php/wpf/2009/04/27/wpf-toolkit-datagrid-part-ii-custom-styling/</a></p>\r\n<p>For the section maked&nbsp;<span style=\"font-family:Consolas;color:#008000;font-size:x-small\"><span style=\"font-family:Consolas;color:#008000;font-size:x-small\"><span style=\"font-family:Consolas;color:#008000;font-size:x-small\">&lt;!--Left Column Header Corner --&gt; <span style=\"color:#000000\">in his sample resource dictionary I added [Margin=&quot;0&quot;] to the Button.</span></span></span></span></p>\r\n<p>Jonathan</p>",
+    "PostedDate": "2010-03-01T15:14:34.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

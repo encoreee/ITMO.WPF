@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\n \nI have a datagrid with 3 group descriptions. First and Second groups are not expanded, but the third one is expanded.\n \nWhenever there is one item in the second level group and the thrid level group and I click on an editable cell and click away from it, the second level group collapses.\n \nThis happens from the fact that the edited row is being removed and re added.\n \nI have been trying to solve this for the past two weeks. Any help will be very much appreciated.\n \n \n \nThanks\n \nAngelo",
+    "LastUpdatedDate": "2013-02-21T18:40:46.317-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-01-21T21:35:46.85-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid group collapsing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11582
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

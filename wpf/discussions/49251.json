@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "164651",
+    "ThreadId": "49251",
+    "Html": "<p>I'm new to WPF and newer still to the WPF DataGrid.  In a C# WinForms app. I added a DataSet to my project and then added several DataTables to that DataSet.  Neither the DataSet nor the DataTables are linked to a DataBase.  I have a DataGrid on my form that has its DataSource set to my DataSet and the DataMember set to one of my DataTables.  When I add data to my DataGrid and I want to save that data, I click a save button that simply writes the contents of my DataTable that is the DataMember of my DataGrid to an xml file like this: <span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&nbsp;</p>\r\n<p>private</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">void</span><span style=\"font-size:13px\"> btnSave_Click(</span><span style=\"font-size:13px;color:#0000ff\">object</span><span style=\"font-size:13px\"> sender, </span><span style=\"font-size:13px;color:#2b91af\">EventArgs</span><span style=\"font-size:13px\"> e)\r\n<p>&nbsp;</p>\r\n<p>{</p>\r\n<p>dataSet1.DataTable1.WriteXml(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;myData.xml&quot;</span><span style=\"font-size:13px\">);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>\r\n<p><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n}\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n</p>\r\n<p> Its very simple and works great.  So I decide I want to learn WPF and decide that I want to use the new WPF DataGrid in a test app. Well, I've managed to get a DataTable from my DataSet linked to a WPF DataGrid so I can see all the columns of the grid at design time.  However, I try writing the data to an xml file just like I did in my winforms project and nothing happens.  I can't tell if the underlying DataTable isn't getting data or if the DataTable has the data but isn't writing it to my xml file.  Can anyone please help me to understand how I can make this work?  Thank you!</p>\r\n",
+    "PostedDate": "2009-03-04T21:31:42.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164659",
+    "ThreadId": "49251",
+    "Html": "I would start with finding out whether or not the DataTable actually has your data. Assuming VS 2008, in debug mode, hover over the DataSet instance variable, then navigate to the DataTable (in the Tables collection) and further to non-public members, rowCollection, non-public members, list, Results View, then any DataRow, and finally ItemArray. That will tell you exactly what is in the DataTable itself. If you need to map between columns indexes and names, look at the DataTable's Columns collection.<br>\r\n",
+    "PostedDate": "2009-03-04T23:15:02.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

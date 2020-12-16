@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "417650",
+    "ThreadId": "204824",
+    "Html": "<p>Hello,</p>\r\n<p>I need to determine the value of a cell as the user clicks it.&nbsp; I am using C# VS2010 RC.&nbsp; For the life of me, I just can't seem to find out how.</p>\r\n<p>Any help would be greatly appreciated</p>",
+    "PostedDate": "2010-03-12T14:29:05.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "420201",
+    "ThreadId": "204824",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>kcwallace1996 wrote:</strong><br>\r\n<p>Hello,</p>\r\n<p>I need to determine the value of a cell as the user clicks it.&nbsp; I am using C# VS2010 RC.&nbsp; For the life of me, I just can't seem to find out how.</p>\r\n<p>Any help would be greatly appreciated</p>\r\n</blockquote>\r\n<p>int index = this.dgrYourGrid.SelectedIndex; &nbsp; &nbsp;&nbsp; //Datagrid Selected Row Number</p>\r\n<p>MessageBox.Show(&quot;Row: &quot; + index.ToString(), &quot;Index&quot;);&nbsp;&nbsp;&nbsp;&nbsp; //Show curent Row Number</p>\r\n<p>string colname = dgrYourGrid.CurrentColumn.Header.ToString();&nbsp; //Column Name</p>\r\n<p>MessageBox.Show(&quot;Columnname &quot; + colname, &quot;Column&quot;);&nbsp;&nbsp;&nbsp;&nbsp; //Show Column Name</p>\r\n<p>object value = (this.dgrYourGrid.Items[index] as DataRowView)[colname];&nbsp;&nbsp; //read Selectet Cell Content</p>\r\n<p>MessageBox.Show(&quot;the value is &quot; + value.ToString(), &quot;Result&quot;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Show Result</p>",
+    "PostedDate": "2010-03-19T04:30:04.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

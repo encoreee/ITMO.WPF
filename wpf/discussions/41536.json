@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "137837",
+    "ThreadId": "41536",
+    "Html": "What event do I want to fire when selecting a row in a WPF DataGrid to get at the SelectedItem for the row?<br>\r\n<br>\r\nTried <span style=\"font-size:13px\">PreviewMouseLeftButtonDown and <span style=\"font-size:13px\">MouseLeftButtonDown to do this, but each requires a double click to get the desired result. How do I get it working for a single click?<br>\r\n<br>\r\nI have SelectionUnit=&quot;CellOrRowHeader&quot; and SelectionMode=&quot;Single&quot; set for the grid.<br>\r\n<br>\r\nThanks\r\n<p>&nbsp;</p>\r\n</span></span>\r\n",
+    "PostedDate": "2008-12-04T15:21:41.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137975",
+    "ThreadId": "41536",
+    "Html": "What about listening to DataGrid.SelectionChanged?\r\n",
+    "PostedDate": "2008-12-05T05:35:53.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137982",
+    "ThreadId": "41536",
+    "Html": "I'm not sure if this is the best method, but you can listen for the DataGrid's SelectionChanged event and then access the DataGrid's CurrentItem property.<br>\r\n<br>\r\nPeter<br>\r\n",
+    "PostedDate": "2008-12-05T05:45:34.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138001",
+    "ThreadId": "41536",
+    "Html": "Thanks, I will give it a try.\r\n",
+    "PostedDate": "2008-12-05T06:35:36.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

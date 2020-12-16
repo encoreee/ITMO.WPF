@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "208324",
+    "ThreadId": "61412",
+    "Html": "<p>Hi,</p>\r\n<p>I'm new to wpf. Could anyone please tell me how am i supposed to  bind fields of a selected row to some control?</p>\r\n<p>To elaborate, I have selected a row in my datagrid and i want the value present in a particular column of that row to appear in a text block, say. Is there any way I could do this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance.</p>",
+    "PostedDate": "2009-07-03T06:36:16.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

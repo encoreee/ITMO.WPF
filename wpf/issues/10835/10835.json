@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When DataGrid is within TabControl, and when the keyboard focus is on the DataGrid, CTRL + TAB does not switch between tabs.\n \nIt works as expected when the focus is not on the DataGrid.",
+    "LastUpdatedDate": "2013-02-21T18:40:52.923-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-10-26T22:26:38.117-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid handles CTRL+TAB key and thus TabControl cannot see it",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10835
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3472,
+      "FileName": "WPFDataGrid.zip",
+      "DownloadUrl": ".\\3472"
+    }
+  ],
+  "Comments": []
+}

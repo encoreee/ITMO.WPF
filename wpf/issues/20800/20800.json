@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Can you please provide source code of this dll.I lost original source code of this dll and i am facing \"Recursive call to Automation Peer API is not valid\" error due to this dll and i wanna implement fix in this dll can you help me out?",
+    "LastUpdatedDate": "2014-06-16T16:08:44.003-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2014-03-06T21:36:58.307-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can you provide me Source code of this dll",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20800
+  },
+  "FileAttachments": [
+    {
+      "FileId": 7409,
+      "FileName": "WPFToolkit.dll",
+      "DownloadUrl": ".\\7409"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "There are many versions, along the years, of that DLL.\r\n\r\n",
+      "PostedDate": "2014-06-16T16:08:44.003-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

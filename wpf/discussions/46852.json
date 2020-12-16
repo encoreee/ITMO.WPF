@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "156717",
+    "ThreadId": "46852",
+    "Html": "<p>Maybe I'm missing it. Maybe it is right in front of my nose.<br>\r\n<br>\r\nMaybe it doesn't exist :-)<br>\r\n<br>\r\nCan anyone point me to the documentation for the WPF DataGrid 1.0?<br>\r\n<br>\r\nThanks,</p>\r\n<p>Peter</p>\r\n",
+    "PostedDate": "2009-02-11T09:54:44.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156738",
+    "ThreadId": "46852",
+    "Html": "Haha, hi Peter.<br>\r\n<br>\r\nNo, you're not crazy - &quot;official&quot; documentation for DataGrid doesn't exist it.  It will be available on MSDN when the DataGrid is rolled back into the framework in .NET 4.0.<br>\r\n<br>\r\nIn the meantime, we did post some some docs to help get you started:<br>\r\n<br>\r\n<ul>\r\n    <li><a href=\"http://windowsclient.net/wpf/wpf35/wpf-35sp1-toolkit-datagrid-feature-walkthrough.aspx\"><span style=\"color:#3e62a6\">DataGrid Feature Walkthrough<span></span></span></a><span style=\"color:#30332d\"> </span></li>\r\n    <li><a href=\"http://windowsclient.net/downloads/folders/hands-on-labs/entry76491.aspx\"><span style=\"color:#3e62a6\">Hands-on-Lab: &quot;What's coming in WPF: DataGrid, Ribbon, &amp; VSM&quot;<span></span></span></a><span style=\"color:#30332d\"> </span></li>\r\n    <li>Six-part <a href=\"http://www.codeplex.com/wpf/Wiki/View.aspx?title=Southridge Lab\"><span style=\"color:#3e62a6\">Southridge Lab</span></a> with sample application featuring DataGrid and Ribbon. </li>\r\n</ul>\r\n<p><span style=\"color:#30332d\">(BTW, you can find these links, along with others for the other Toolkit controls, on the Toolkit release page about halfway down: <a href=\"http://www.codeplex.com/wpf/Release/ProjectReleases.aspx?ReleaseId=22567\">http://www.codeplex.com/wpf/Release/ProjectReleases.aspx?ReleaseId=22567</a>).<br>\r\n<br>\r\nIf you're having specific issues/questions, your best resource right now is to search these forums to see if someone else has posted the same question, and if not, to post a new one.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha</span></p>\r\n",
+    "PostedDate": "2009-02-11T10:47:58.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156743",
+    "ThreadId": "46852",
+    "Html": "<p>Thanks Samantha for the quick reply!</p>\r\n<p>That's what I thought about the documentation. I did know about the walk through and also the hands on lab, but I wasn't aware of the Southridge Lab. I will have to check it out. I'll slog through the code and use Dotnet Reflector. Those will help too.</p>\r\n<p>The reason I'm so eager to use the Microsoft grid is that it is easy to deploy and has no restrictions about who can develop with it. I currently work on projects where the baton sometimes gets passed on to other developers. Making future developers buy a license to a commercial grid or even have to register for the &quot;free&quot; commercial grid doesn't work so well for my customers.</p>\r\n<p>Also, line of business apps don't work so well without a real grid.</p>\r\n<p>I'm hoping I can transition at least some of my business applications from winforms to wpf. WPF has excellent potential!</p>\r\n<p>--<br>\r\nPeter</p>\r\n",
+    "PostedDate": "2009-02-11T11:14:28.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

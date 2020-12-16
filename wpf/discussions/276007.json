@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "684664",
+    "ThreadId": "276007",
+    "Html": "\r\n<p>Thanks this WPF Charting Control included in WPF Toolkit published by Microsoft officially. Those chartings looks so cool and thanks for providing so amazing free toolkit for us.</p>\r\n<p>Now we are working on a SPC (Statistics Process Control) project and planning to go with WPF to take the rich UI benefit of it, easy to customize the layout. Since there is no such documentation of charting control on MSDN and CodePlex I cannot tell whether\r\n it will support the SPC scenarios. Please take a look at the samples from commercial WPF control product below.</p>\r\n<p>1.<span> </span>http://www.quinn-curtis.com/QCSPCC42.jpg<br>\r\nCan we use WPF charting control to draw more than one line on the chart? One with those green dots, the others don&rsquo;t have. Can users interact with those green dots? Like right click on it to show a context menu? Can users zoom-out partial chart by drawing\r\n a rectangle?</p>\r\n<p>2.<span> </span>http://www.quinn-curtis.com/QCSPCC66.jpg<br>\r\nhttp://www.quinn-curtis.com/QCSPCC68.jpg<br>\r\nCan we combine the different style of the chart like line and column? I am not sure where I can find those methods I can use to achieve our goal.</p>\r\n<p><br>\r\nIf anyone could help that will be much appreciated. Thanks in advance.</p>\r\n",
+    "PostedDate": "2011-10-15T08:37:54.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

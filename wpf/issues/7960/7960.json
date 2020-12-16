@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "We have recorded this information in our database of feature requests.",
+    "ClosedDate": "2009-02-18T16:15:31.56-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The DataGrid control does not display the new row placeholder when bound to an empty instance of a custom collection type that derives from ObservableCollection<T>.",
+    "LastUpdatedDate": "2013-05-16T05:31:16.93-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-11-02T05:16:13.863-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: Missing New Row Placeholder When Bound To Empty Derived Collection",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7960
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is by design.  See the comments starting with the 3 comment in this post, http://blogs.msdn.com/vinsibal/archive/2008/05/27/using-ieditablecollectionview-with-dynamically-generated-gridviewcolumns.aspx.",
+      "PostedDate": "2008-11-02T07:34:20.677-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for the reply.\r\n\r\nIt seems to me that the grid should know what concrete type to use based on the fact that the custom collection inherits an implementation of ICollection<T> from ObservableCollection<T>; the T in my case is a class.\r\n\r\nAt least we should be able to provide new objects by handling some event.  Consider that generic covariance will be supported in C# 4.0 so it's no longer safe to assume that our collections must always be homogenous; we need the ability to create a new object on-the-fly to enable scenarios where existing bound items are of one type and new items are of another, derived/implemented type.\r\n\r\nPlease consider this a feature request :)",
+      "PostedDate": "2008-11-02T19:27:56.7-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yes, this has definitely been brought up and will be considered in the next release.  Thanks for your feedback.",
+      "PostedDate": "2008-11-03T05:29:29.55-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:15:31.56-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If you have a custom collection that implements a INotifyCollectionChanged interface the same bug arises, so this is not only related to the ObservableCollection<T>.",
+      "PostedDate": "2009-02-20T09:46:19.29-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:46.21-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:16.93-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

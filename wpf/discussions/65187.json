@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "222006",
+    "ThreadId": "65187",
+    "Html": "<p>I am trying to split the datagrid classes out into their own assembly.&nbsp; I can get everything to build and run in a little test app, but when the app comes up, it's just a blank white window.&nbsp; This exact same app targeting the WPF toolkit DLL works fine.&nbsp; I have essentially copied over all the classes under DataGrid, DataGrid/Primitives, DataGrid/Automation, Themes, and Resources.&nbsp; Anyone have any pointers or tips?&nbsp; The key goal here is that we already target a WPFToolkit dll that is out of our control, and we don't want to add another one because everytime it updates we'll have to update it in keeping with the other one we already target.&nbsp; We just want to utilize the functionality of the datagrid and treat it as it's own control.&nbsp; Again,&nbsp; anyone know what I'm doing wrong?</p>",
+    "PostedDate": "2009-08-11T06:18:26.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222037",
+    "ThreadId": "65187",
+    "Html": "<p>Are you including the control styles in your custom build? Look at themes\\*.xaml.</p>",
+    "PostedDate": "2009-08-11T07:51:24.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222054",
+    "ThreadId": "65187",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>mikj wrote:</strong><br>\r\n<p>Are you including the control styles in your custom build? Look at themes\\*.xaml.</p>\r\n</blockquote>\r\n<p>Yes.&nbsp; I have both the WPFToolkit-level theme.xamls and the datagrid level theme.xamls.&nbsp; I edited the toolkit level ones to only look for the datagrid level ones and ignore calendar and datepicker, and as far as I can tell they find it just fine.&nbsp; I did notice that there is a call in DataGridHeaderBorder to &quot;DataGridHelper.GetTheme&quot; which, in my working app targeting the WPFToolkit DLL gets called fine, and in my identical app targeting the datagrid-only DLL, does not get called at all.&nbsp; I can't figure out where it's getting called from, somewhere in xaml.&nbsp; I'm going to continue investigating, but if this means anything to anyone more well versed in these classes, let me know :)</p>",
+    "PostedDate": "2009-08-11T08:23:46.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

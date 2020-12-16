@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Windows 8 cpt was officially published at september 2011.\nCTP != RTM and RTM will be no so soon as I wish, but \nI think that WPF Toolkit for Win8 .net 4.5 even in ctp mode will be very interesting thing.",
+    "LastUpdatedDate": "2013-05-09T15:29:48.02-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-10-11T08:46:04.607-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Toolkit for Win8 .net 4.5",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 16723
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I just uploaded a patch that upgrades it to support .NET 4.0, although it probably doesn't support .NET 4.5 Metro XAML.",
+      "PostedDate": "2011-10-21T16:13:56.85-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-12-20T04:10:59.163-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-16T14:56:15.197-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I attempted to update the Calendar control to be Metro, but it's too much effort for one person, not to mention the entire library. You are correct that it is not supported in Metro though, as many of the associated libraries have changed either namespaces or are not supported in Metro.",
+      "PostedDate": "2012-03-16T14:58:30.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-07T22:03:00.483-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-24T04:51:14.197-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:07.78-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-03-23T06:38:09.977-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-09T15:29:48.02-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

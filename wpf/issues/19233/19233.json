@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I tried to add a label on a ColumnDataPoint but when change template ColumnDataPoint , the column is not visible, but if modify ControlTemplate -> Border Opacity from 0 to 1 , the column is visble but color is the same for all series  (Orange ) that i add to chart.\n\n\nHow can i add label on top of column?",
+    "LastUpdatedDate": "2013-02-21T18:40:04.57-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2013-01-23T07:42:01.953-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataPointStyle not applyed",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19233
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

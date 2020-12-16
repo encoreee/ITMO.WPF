@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "181701",
+    "ThreadId": "53950",
+    "Html": "Hi Guys,<br>\r\n<br>\r\nI know we use CompositeCollection to merge context menus from the data grid to its individual row. <br>\r\n<br>\r\nBut I have this requirement <br>\r\n<br>\r\nMy Grid's Contextmenu needs should be specified with menu items without composite collection. (This is a client UI Requirement ... developer has no control on this) <br>\r\ne.g. <br>\r\nTest1<br>\r\nTest2<br>\r\n<br>\r\nBut the row context menu can be created based on a composite collection (as this is in the developer's hands) <br>\r\ne .g.<br>\r\nTest3<br>\r\nTest4<br>\r\n<br>\r\nNow I have to add a separator in row context menu. So how do I add separator and menu items from the parent grid's context menu into the composite collection of its individual row (preferrably using XAML Styles)?<br>\r\n<br>\r\nIn code behind I do this in Row Loading event and it seems to work for the first time <br>\r\ni.e. when I right click on a row it shows me this... <br>\r\nTest3<br>\r\nTest4<br>\r\n____<br>\r\nTest1<br>\r\nTest2<br>\r\n<br>\r\nBut then when I right click on grid header it shows me this...<br>\r\nTest1<br>\r\nTest2<br>\r\n<br>\r\nAnd after that, when I right click a row, Test1 and Test2 are not seen in the rows context menu... <br>\r\n<br>\r\nAll I see is this...<br>\r\nTest3<br>\r\nTest4<br>\r\n____<br>\r\n&lt;Blank&gt;<br>\r\n&lt;Blank&gt;<br>\r\n<br>\r\nIts a strange behavior... ideas anyone?<br>\r\n<br>\r\nThx.<br>\r\nVinit Sankhe. \r\n",
+    "PostedDate": "2009-04-21T03:29:46.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182150",
+    "ThreadId": "53950",
+    "Html": "Hi Guys <br>\r\n<br>\r\nany idea?<br>\r\n<br>\r\n:-(\r\n",
+    "PostedDate": "2009-04-21T23:00:59.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

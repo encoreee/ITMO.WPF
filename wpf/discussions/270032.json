@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "661894",
+    "ThreadId": "270032",
+    "Html": "\r\n<p>Application is having multiple user controls with tab, i have to disable all the controls in user control except grid for selected users, Is there any good way to acheive this in View model? Shall i have to create base class and pass the object of all view\r\n to that class and disable the controls thru visual tree helper?</p>\r\n<p>&nbsp;</p>\r\n<p>Suggest me good way to acheive this?</p>\r\n",
+    "PostedDate": "2011-08-22T21:39:13.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

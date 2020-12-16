@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "464143",
+    "ThreadId": "218567",
+    "Html": "<p>Hi all,<br>(C# 2010) I have to display and edit data on a Datagrid.<br>DataGrid's datasource&nbsp;is an ObservableCollection&lt;Class1&gt;.<br>Class1 has 4 properties: 3 are strings &amp;&nbsp;the fourth is a ObservableCollection&lt;Class2&gt;. Class2 has three properties: a double, a string and a boolean.</p>\r\n<p>In the DataGrid I need to create 3&nbsp;columns for the three Class1's properties, and many other columns as the number of items in the Class2 collection.<br>this code works</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; numberofcolumnstobecreated; i++)\r\n{\r\n   PropertyPath ppath0 = <span style=\"color:blue\">new</span> PropertyPath(<span style=\"color:#a31515\">&quot;.Class2[&quot;</span> + i.ToString() + <span style=\"color:#a31515\">&quot;].Class2doubleproperty&quot;</span>);\r\n\r\n   Binding bb0 = <span style=\"color:blue\">new</span> Binding();\r\n   bb0.Path = ppath0;\r\n   DataGridTextColumn col0 = <span style=\"color:blue\">new</span> DataGridTextColumn();\r\n   col0.Header = i.ToString();\r\n   col0.Binding = bb0;\r\n   DataGrid.Columns.Add(col0);\r\n}</pre>\r\n</div>\r\n<p>but I need to create columns that, based on Class2.TheBooleanProperty display an image (which path is stored in Class2.TheStringProp) or a textboxcolumn binded to Class2.TheDoubleProperty.</p>\r\n<p>Could someone point me in the right direction, or give sample? I'm trying to use templatedcolumns, with templateselectors with no succes...</p>\r\n<p>thanks</p>",
+    "PostedDate": "2010-07-07T02:29:08.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466427",
+    "ThreadId": "218567",
+    "Html": "Hi,\r\n\r\nI tried to reproduce the case, but I couldn't comprehend the case\r\n\r\nIt seems complicated when you summarize the case in this way?\r\n\r\nCould you please use realistic words instead of class1&2 and more clear sentences?",
+    "PostedDate": "2010-07-12T10:56:25.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

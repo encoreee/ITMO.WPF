@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "484821",
+    "ThreadId": "224829",
+    "Html": "<p>I've been stuck on a particular issue with RibbonComboBox for almost 8 hours now.&nbsp;</p>\r\n<p>I have a RibbonComboBox bound to an ObservableCollection of type RibbonMenuItem, and the list seems to be populating correctly.</p>\r\n<p>My problem is that I need the text of the selected object to be displayed in the RibbonComboBox (imagine selecting a font from a list).&nbsp;I bound the Text property to a string that is populated with any RibbonMenuItem is clicked, but no text was displayed.</p>\r\n<p>I tried manually entering a value in the Blend designer of &quot;Text Test&quot; for the Text, but no text was displayed.</p>\r\n<p>What do I have to do to get the actual box part of the RibbonComboBox to display a string?</p>",
+    "PostedDate": "2010-08-25T12:43:12.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

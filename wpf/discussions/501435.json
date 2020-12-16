@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1170510",
+    "ThreadId": "501435",
+    "Html": "I used wpftoolkit to depict a chart but after depicting when I close the window visual studio suspends.\r<br />\n<br />\ni debugged the program and it opens a window:\r<br />\n<br />\nno source available .\r<br />\n<br />\nand it then brings a window for openning DataPoints.cs:\r<br />\n<br />\nC:\\dd\\WPF_1\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataVisualization\\Charting\\DataPoint\\DataPoint.cs\r<br />\n<br />\nbut there is no such file there!\r<br />\n<br />\nwhat goes wrong??\r<br />\n<img src=\"http://i.stack.imgur.com/IsPlX.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2014-01-16T07:40:58.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

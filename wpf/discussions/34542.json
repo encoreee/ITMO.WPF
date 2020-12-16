@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "114689",
+    "ThreadId": "34542",
+    "Html": "I want to set focus on&nbsp;the first cell of the&nbsp;DataGrid when the window loads. I'm trying this...<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>personnelDataGrid.Focus(); <br>\r\npersonnelDataGrid.SelectedIndex = 0;<br>\r\n<br>\r\nThe selected index statement is working nicely and placing a highlight on the first row of the grid but I can't figure out why the user can't immediately arrow down the list using the keyboard.&nbsp;&nbsp;The user has to either press the tab key or use the mouse to get focus on the top row (or any cell of the top row).&nbsp;I guess it's because&nbsp;the grid has focus but the first cell does not. How do I get the grid to focus on the first cell of the top row when the window loads?<br>\r\n<br>\r\nThanks,<br>\r\nLee</p>\r\n</span><br>\r\n<br>\r\n",
+    "PostedDate": "2008-08-29T08:08:20.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114771",
+    "ThreadId": "34542",
+    "Html": "Try something like <br>\r\n<br>\r\nDataGridCell cell = GetCell(0,0);<br>\r\ncell.Focus();<br>\r\n<br>\r\nwhen the window is loaded.&nbsp; The implementation for this is on this thread,&nbsp;<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065</a>.\r\n",
+    "PostedDate": "2008-08-29T12:33:55.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114787",
+    "ThreadId": "34542",
+    "Html": "When I type&nbsp;DataGridCell it is not in scope. Do I need a using statement at the top of my C#?\r\n",
+    "PostedDate": "2008-08-29T13:03:29.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114809",
+    "ThreadId": "34542",
+    "Html": "DataGridCell has the same scope as DataGrid.&nbsp; I'm not sure why you cannot find it.&nbsp; The using statement should be:<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>using</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> Microsoft.Windows.Controls;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-08-29T13:59:13.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114820",
+    "ThreadId": "34542",
+    "Html": "<p><span id=UniqueID1220047484832>Adding that reference helped, thanks.<br>\r\n<br>\r\nWhen I try your example from the other thread I get an error from this line<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGridCellsPresenter</span></span><span style=\"font-size:13px\"> presenter = GetVisualChild&lt;</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">DataGridCellsPresenter</span></span><span style=\"font-size:13px\">&gt;(rowContainer);<br>\r\n<br>\r\nThe error I get is...\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&quot;The non-generic method 'System.Windows.FrameworkElement.GetVisualChild(int)' cannot be used with type arguments&quot;</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-08-29T15:00:33.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114827",
+    "ThreadId": "34542",
+    "Html": "GetVisualChild&lt;T&gt;() is actually a method that you are suppose to implement similar to this:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>public</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">static</span></span><span style=\"font-size:13px\"> T GetVisualChild&lt;T&gt;(</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">Visual</span></span><span style=\"font-size:13px\"> parent) </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">where</span></span><span style=\"font-size:13px\"> T : </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">Visual<br>\r\n</span></span><span style=\"font-size:13px\">{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;T child = </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">default</span></span><span style=\"font-size:13px\">(T);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;int</span></span><span style=\"font-size:13px\"> numVisuals = </span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">VisualTreeHelper</span></span><span style=\"font-size:13px\">.GetChildrenCount(parent);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;for</span></span><span style=\"font-size:13px\"> (</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">int</span></span><span style=\"font-size:13px\"> i = 0; i &lt; numVisuals; i++)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visual</span></span><span style=\"font-size:13px\"> v = (</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">Visual</span></span><span style=\"font-size:13px\">)</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">VisualTreeHelper</span></span><span style=\"font-size:13px\">.GetChild(parent, i);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child = v </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">as</span></span><span style=\"font-size:13px\"> T;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span></span><span style=\"font-size:13px\"> (child == </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">null</span></span><span style=\"font-size:13px\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child = GetVisualChild&lt;T&gt;(v);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span></span><span style=\"font-size:13px\"> (child != </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">null</span></span><span style=\"font-size:13px\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span></span><span style=\"font-size:13px\">;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;return</span></span><span style=\"font-size:13px\"> child;<br>\r\n}\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-08-29T15:42:23.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115025",
+    "ThreadId": "34542",
+    "Html": "<span style=\"font-size:13px\">\r\n<p>Ok thanks. This compiles now but when I step through&nbsp;the GetRow module on this line&nbsp;...<br>\r\n<br>\r\npersonnelDataGrid.ScrollIntoView(personnelDataGrid.Items[index]);<br>\r\n<br>\r\n... I get the following error...</p>\r\n</span>\r\n<p><br>\r\n&quot;Operation is not valid while ItemCollection has no inner collection. ItemCollection is uninitialized or binding on ItemsControl.ItemSource supplied null for collection.&quot;</p>\r\n",
+    "PostedDate": "2008-08-31T12:47:29.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115192",
+    "ThreadId": "34542",
+    "Html": "Have you set the personnelDataGrid.ItemsSource already before calling this code?\r\n",
+    "PostedDate": "2008-09-01T10:38:12.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "127476",
+    "ThreadId": "34542",
+    "Html": "Hi<br>\r\n<br>\r\nI do the following, BEUserGroup is my business object, the grid is already containing some rows, and I want to focus on a cell of a freshly added new item/row, which is added as first row by thre following code:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim oItem As New BE.BEUserGroup<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oItem.UserGrpName = &quot;&lt;Name&gt;&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oItem.Desc = &quot;&lt;Desc&gt;&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Call mltData.Add(oItem)<br>\r\n<br>\r\nNow I want to focus on a cell in this new row<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim oCell As DataGridCell = Helpers.GetCell(dgData, 0, 1)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oCell.Focus()<br>\r\n<br>\r\nThis dows not work, because GetCell, the presenter is nothing (rowcontainer has no visual children)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim presenter As DataGridCellsPresenter = GetVisualChild(Of DataGridCellsPresenter)(rowContainer)<br>\r\n<br>\r\nIs there a workaround for this? <br>\r\nRegards<br>\r\nKlaus<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-24T06:07:38.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128900",
+    "ThreadId": "34542",
+    "Html": "Have you tried a DataGrid.UpdateLayout() and DataGrid.ScrollIntoView()?\r\n",
+    "PostedDate": "2008-10-30T06:09:10.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128928",
+    "ThreadId": "34542",
+    "Html": "Vinsibal<br>\r\n<br>\r\nDataGrid.UpdateLayout allows the focus move, thanks for that.<br>\r\n<br>\r\nBut is there a way to set the focused cell into edit mode?<br>\r\nAfter the move focus I can start entering data, but the cursor is not blinking, so the user has no visual clue that he can start entering data.<br>\r\n<br>\r\nRegards<br>\r\nKlaus<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-30T07:37:43.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129175",
+    "ThreadId": "34542",
+    "Html": "After the focus, try calling DataGrid.BeginEdit().\r\n",
+    "PostedDate": "2008-10-31T07:19:52.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129180",
+    "ThreadId": "34542",
+    "Html": "\r\n\r\n\r\n<p><span lang=de>Vinsibal</span>\r\n</p>\r\n\r\n<p><span lang=de>Thanks for the link.</span>\r\n</p>\r\n\r\n<p><span lang=de>I already found this, but it really does not help me</span>\r\n</p>\r\n\r\n<p><span lang=de>Can you hint me in some documentation for </span>\r\n\r\n<br><span lang=de>- ValidationStep</span>\r\n\r\n<br><span lang=de>- RawProposed or ConvertedProposed </span>\r\n\r\n<br><span lang=de>So that I have an alternative? I really can not find anything on this!</span>\r\n</p>\r\n\r\n<p><span lang=de>Regards</span>\r\n\r\n<br><span lang=de>Klaus</span>\r\n</p>\r\n\r\n",
+    "PostedDate": "2008-10-31T07:32:39.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129210",
+    "ThreadId": "34542",
+    "Html": "Sorry, I'm a little confused about your question.  You were asking previously, &quot;But is there a way to set the focused cell into edit mode?&quot;.  Setting BeginEdit will do that.  What exactly does the ValidationStep have to do with beginning the edit?\r\n",
+    "PostedDate": "2008-10-31T09:11:47.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129211",
+    "ThreadId": "34542",
+    "Html": "\r\n\r\n\r\n<p><span lang=de>Vinsibal</span>\r\n</p>\r\n\r\n<p><span lang=en-us>I answered to the wrong mail, I will send the response again to you regarding V1 validation</span>\r\n</p>\r\n\r\n<p><span lang=en-us>Regarding SetFocus: BeginEdit does the job! Thank for your support</span>\r\n</p>\r\n\r\n<p><span lang=en-us>Best regards</span>\r\n\r\n<br><span lang=en-us>Klaus</span>\r\n</p>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-10-31T09:18:50.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

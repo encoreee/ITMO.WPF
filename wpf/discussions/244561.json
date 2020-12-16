@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "560370",
+    "ThreadId": "244561",
+    "Html": "\r\n<p>Hi, I'm a new WPF toolkit user. I'm using it mainly to implement charts in my WPF based application.</p>\r\n<p>I need your help for the DataVisualization.Charting.ColumnSeries. It's not clear to me whether it is possible or not to disable animations in case of data update.</p>\r\n<p>I need in fact to update an histrogram with a rate of few seconds so the animation effects are very annoying in this case. &nbsp;</p>\r\n<p>The enumeration AnimationSequence does not include a NoAnimation item.</p>\r\n<p>Looking into the source code it seems like the animation is always active ( DataPointSeries class,&nbsp;StaggeredStateChange function&nbsp;), so maybe I'm missing something.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance for your help.</p>\r\n",
+    "PostedDate": "2011-02-03T13:00:27.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

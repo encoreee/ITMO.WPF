@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "176147",
+    "ThreadId": "52421",
+    "Html": "I am new to programing.  I have downloaded the March 2009 release to the Program folder.  I have been programming in Visual Basic 2008.  How would I reference the binaries in my project.  <br>\r\n<br>\r\n<br>\r\nJim\r\n",
+    "PostedDate": "2009-04-06T08:00:01.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176247",
+    "ThreadId": "52421",
+    "Html": "Hi Jim,<div><br></div><div> Hope you don't take this the wrong way, but <a href=\"http://www.amazon.com/Pro-WPF-2008-Presentation-Professionals/dp/1590599551/ref=sr_1_1?ie=UTF8&s=books&qid=1239043615&sr=8-1\">http://www.amazon.com/Pro-WPF-2008-Presentation-Professionals/dp/1590599551/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1239043615&amp;sr=8-1</a> this book will give you a lot of insights about .net and WPF.</div><div><br></div><div>Regards,</div><div>Calin</div>",
+    "PostedDate": "2009-04-06T11:48:09.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

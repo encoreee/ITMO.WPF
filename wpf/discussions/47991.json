@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "160114",
+    "ThreadId": "47991",
+    "Html": "If it is in fact possible to do, can someone please provide an example of the following:<div><br></div><div>Programmatically:</div><div>create a datagrid</div><div>create a datagridtextcolumn</div><div>add the datagridtextcolumn to the datagrid</div><div>create a datagridrow</div><div>set the text of the datagridtextcolumn for the row to &quot;test&quot;</div><div>add the datagridrow to the datagrid</div><div><br></div><div>I would like to create a datagrid that is unbound. My reason is that i would like to create a template column with multiple controls of different types and numbers - 2 checkboxes, 4 radiobuttons, 5 checkboxes, etc. - which are dynamically added at runtime and since the type and number are unknown cannot think of a way to databind them. I am happy to work unbound.</div><div><br></div><div>Thank you in advance!</div>",
+    "PostedDate": "2009-02-20T04:50:53.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

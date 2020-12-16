@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "131298",
+    "ThreadId": "39570",
+    "Html": "Hello,<br>\r\nI am using the WPF Datagrid (from the WpfToolKit).<br>\r\n<br>\r\nThis grid has the capability to display multline text. If I bind it to a source contains text like<br>\r\n<br>\r\n&quot;this is line one&quot; + Environment.NewLine +&quot;this is line two&quot; + Environment.NewLine +&quot;this is line three&quot;;<br>\r\n<br>\r\nthe cell will display three lines of text, and the height of the row will be increased automatically to make the text fully visible.<br>\r\n<br>\r\nBut: when I click this cell, I cannot enter a NewLine. <br>\r\n<br>\r\nHow can I edit multiline text? I want to enter more lines, and while entering the text the cell (row) should increase it height automatically.<br>\r\n<br>\r\nRegards<br>\r\nNorbert Ruessmann\r\n",
+    "PostedDate": "2008-11-10T02:25:41.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131423",
+    "ThreadId": "39570",
+    "Html": "Something like the following should work for you.....<br>\r\n<br>\r\n&lt;toolkit:DataGridTextColumn .....&gt;<br>\r\n    &lt;toolkit:DataGridTextColumn.EditingElementStyle&gt;<br>\r\n        &lt;Style TargetType=&quot;{x:Type TextBox}&quot;&gt;<br>\r\n            &lt;Setter Property=''AcceptsReturn&quot; Value=&quot;True&quot; /&gt;<br>\r\n        &lt;/Style&gt;<br>\r\n    &lt;/toolkit:DataGridTextColumn.EditingElementStyle&gt;<br>\r\n&lt;/toolkit:DataGridTextColumn&gt;<br>\r\n<br>\r\nPlease note that this would work but the default behavior of 'enter' key (which is to commit the current editing cell and move focus to the cell of next row and same column) will not work with this column.\r\n",
+    "PostedDate": "2008-11-10T09:48:52.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456664",
+    "ThreadId": "39570",
+    "Html": "<p>I just ran into the same issue with the DataGrid in .NET 4.&nbsp; It should work like the resource editor in VS: enter commits, shift+enter inserts a newline.&nbsp; AcceptsReturn is not an acceptable solution because it leaves no way to commit using the keyboard.</p>\r\n<p>It shouldn't have been necessary to do this, but the following code seems to work well:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> dg_CellEditEnding(<span style=\"color:blue\">object</span> sender, DataGridCellEditEndingEventArgs e)\r\n{\r\n    <span style=\"color:blue\">if</span> (Keyboard.IsKeyDown(Key.Enter) &amp;&amp; \r\n        (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift)))\r\n    {\r\n        TextBox tb = e.EditingElement <span style=\"color:blue\">as</span> TextBox;\r\n        <span style=\"color:blue\">if</span> (tb != <span style=\"color:blue\">null</span>)\r\n        {\r\n            <span style=\"color:blue\">int</span> selectionStart = tb.SelectionStart;\r\n            <span style=\"color:blue\">string</span> newText = tb.Text.Remove(selectionStart, tb.SelectionLength);\r\n            tb.Text = newText.Insert(selectionStart, Environment.NewLine);\r\n            tb.Select(selectionStart + 1, 0);\r\n            e.Cancel = <span style=\"color:blue\">true</span>;\r\n        }\r\n    }\r\n}\r\n</pre>\r\n</div>\r\nHonestly I'm a little shocked that the necessary keys are registered in global state as being down at this point, especially enter.&nbsp; But it works.</p>",
+    "PostedDate": "2010-06-17T05:58:26.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

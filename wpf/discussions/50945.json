@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "170721",
+    "ThreadId": "50945",
+    "Html": "I created a sample project that generates a memory leak because of DataGrid data binding. CLRProfiler shows some DependencyProperties problems. Replacing DataGrid with a ListView solves the problem. Can I send it to someone to have a look?<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-22T21:48:27.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170927",
+    "ThreadId": "50945",
+    "Html": "Hi borlip,<br>\r\n<br>\r\nYes, please create an Issue and attach a repro to it.  Which Toolkit version are you using?  There was a memory leak in the October and January releases which we've fixed in the March release, and I'm wondering if it might be that issue.  Can you check if the leak repros using the latest bits?<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-03-23T10:08:11.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171071",
+    "ThreadId": "50945",
+    "Html": "Thanks Samantha for your reply.<br>\r\nI tried the march release as well. The same problem happens.<br>\r\n<br>\r\nI've created an issue. Please have a look and let me know as soon as you can, as I was forced to replace my fancy datagrid with a listview.<br>\r\n<br>\r\n<br>\r\nRegards,<br>\r\nBoris<br>\r\n",
+    "PostedDate": "2009-03-23T15:57:21.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488101",
+    "ThreadId": "50945",
+    "Html": "<p>Hi all,</p>\r\n<p>&nbsp;</p>\r\n<p>Has this issue ever been solved?</p>\r\n<p>Memory profiling clearly show a memory leak in:<br>DataGridHelper._propertyTransferEnabledMap<br><br>Issue still exists in the latest release;<br>Using the datagrid and refreshing the ItemsSource over and over again shows the issue.<br><br><br><br>Regards,<br>Koen</p>",
+    "PostedDate": "2010-09-02T02:38:23.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

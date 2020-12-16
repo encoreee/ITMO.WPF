@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "282349",
+    "ThreadId": "82182",
+    "Html": "<p>Hi,</p>\r\n<p>I started working with the chart control and there is a problem when I try to set the iIndependentAxis in a column series.</p>\r\n<p>I get an exception with the message: &quot;Assigned independent axis cannot be used. This may be due to an unset Orientation property for the axis.&quot;</p>\r\n<p>But the Orientation Property is set.</p>\r\n<p>Here is the code:</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>                    ObservableCollection&lt;KeyValuePair&lt;<span style=\"color:Blue\">string</span>, <span style=\"color:Blue\">double</span>&gt;&gt; data = <span style=\"color:Blue\">new</span> ObservableCollection&lt;KeyValuePair&lt;<span style=\"color:Blue\">string</span>, <span style=\"color:Blue\">double</span>&gt;&gt;();\r\n                    Random rand = <span style=\"color:Blue\">new</span> Random();\r\n                    <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> i = 0; i &lt; 10; i++)\r\n                    {\r\n                        KeyValuePair&lt;<span style=\"color:Blue\">string</span>, <span style=\"color:Blue\">double</span>&gt; column = <span style=\"color:Blue\">new</span> KeyValuePair&lt;<span style=\"color:Blue\">string</span>, <span style=\"color:Blue\">double</span>&gt;(<span style=\"color:#A31515\">&quot;value &quot;</span> + i, rand.Next(100));\r\n                        data.Add(column);\r\n                    }\r\n                    ColumnSeries series = <span style=\"color:Blue\">new</span> ColumnSeries();\r\n                    series.Title = <span style=\"color:#A31515\">&quot;series 1&quot;</span>;\r\n                    series.ItemsSource = data;\r\n                    series.IndependentValuePath = <span style=\"color:#A31515\">&quot;Key&quot;</span>;\r\n                    series.DependentValuePath = <span style=\"color:#A31515\">&quot;Value&quot;</span>;\r\n\r\n\r\n                    LinearAxis yAxis = <span style=\"color:Blue\">new</span> LinearAxis();\r\n                    yAxis.Title = <span style=\"color:#A31515\">&quot;values&quot;</span>;\r\n                    yAxis.Orientation = AxisOrientation.Y;\r\n                    series.DependentRangeAxis = yAxis;\r\n\r\n                    LinearAxis xAxis = <span style=\"color:Blue\">new</span> LinearAxis();\r\n                    xAxis.Title = <span style=\"color:#A31515\">&quot;categories&quot;</span>;\r\n                    xAxis.Orientation = AxisOrientation.X;\r\n                    series.IndependentAxis = xAxis;\r\n\r\n                    \r\n                    chart.Series.Add(series);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Does anyone what the problem is?</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you.</p>\r\n<p>ernii</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-27T07:14:35.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282392",
+    "ThreadId": "82182",
+    "Html": "<p>Okay I found that it seems that the Location Property also has to be set.</p>\r\n<p>Than it works :)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-27T08:46:43.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1136626",
+    "ThreadId": "82182",
+    "Html": "Hi i have same problem, can you tell me how did u set Location Property?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-12-16T02:34:06.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151790",
+    "ThreadId": "82182",
+    "Html": "<strong>Sejn wrote:</strong><br />\n<blockquote>\nHi i have same problem, can you tell me how did u set Location Property?<br />\n<br />\nThanks.<br />\n</blockquote>\nHi,\r<br />\n<br />\nI had the same problem. I just set the Location to Bottom for the X-Axis and Left for the Y-Axis. That was just enough. Maybe they need a set location. So Auto doesn't work...\r<br />\n<br />\nClemens<br />\n",
+    "PostedDate": "2014-01-10T07:20:29.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

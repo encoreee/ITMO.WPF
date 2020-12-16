@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "139596",
+    "ThreadId": "42030",
+    "Html": "The Arrow key Down cannot make focus move to the next row if there are some rows are hidden between current row and next visible row.<br>\r\nThe Arrow Key Up cannot make focus move to the above row if there some rows are hidden between current row and the above visible row.<br>\r\nThe Ctrl+Down does not work if the last row is hidden, the focus should be moved to the last visible row, but it does not work.<br>\r\n<br>\r\nI know this problem maybe can be solved by handling the keyboard event and judge the visibility of DataGridRows.<br>\r\nBut I think this maybe a bug of DataGrid.<br>\r\n<br>\r\nFollowing is the source code of my program, which try to implement the tree structure in DataGrid.<br>\r\nhttp://rapidshare.com/files/172307826/TreeInDataGridDemo2.zip.html<br>\r\n",
+    "PostedDate": "2008-12-11T00:19:38.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139768",
+    "ThreadId": "42030",
+    "Html": "Hi jetsun,<br>\r\n<br>\r\nIt seems that this is bug in DataGrid. The current implementation of Arrow Key down handler doesnt consider hidden rows. Yes, as you said handling keyboard event is the solution for this problem.\r\n",
+    "PostedDate": "2008-12-11T10:44:03.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

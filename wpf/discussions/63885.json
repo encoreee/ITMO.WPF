@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "217224",
+    "ThreadId": "63885",
+    "Html": "<p>Hi,<br><br>I am using the Calendar control from the WPF toolkit, to display events based on values in an MS Access Table.<br><br>I customised the method decribed in the RedLetterDay example in <a href=\"http://msdn.microsoft.com/en-us/magazine/dd882520.aspx\">this article</a>, by placing my Select staement in the IValueConverter.<br>As a result, the performance is very slow, as it is making a seperate db connection for each day rendered in the calendar.<br><br>I takes approx 25 seconds to load, how can I reduce this time?</p>\r\n<p>Is it possible to get the data&nbsp;once and then render the calendar?</p>\r\n<p>If so, can&nbsp;someone&nbsp;show me how?</p>\r\n<p><br>Thanks,<br><br>Glyn</p>",
+    "PostedDate": "2009-07-29T08:56:18.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217721",
+    "ThreadId": "63885",
+    "Html": "<p>Hi glyn123 -</p>\r\n<p>Perhaps you can subscribe to DisplayDateChanged (which gets fired when the users navigates the control to a new mode, month, year, or decade). In your event handler you can run your query for the newly viewable month and pass those results to you converter that you added to the CalendarDayButtons. This should speed up your app and cut down on the number of queries that has to be executed.</p>\r\n<p>In the event handler you may want to add some additional logic to avoid unecessary/redundant queries. This kind of situation can arise when a user changes the SelectedDate within a a month then changes the mode from Month to Year. Example logic:</p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">\r\n<p>if<span style=\"font-size:x-small\">(!e.RemovedDate.Value.Month.Equals(e.AddedDate.Value.Month) || !e.RemovedDate.Value.Year.Equals(e.AddedDate.Value.Year) ) {</span></p>\r\n<p>//e is the CalendarDateChangedEventArgs in you event handler</p>\r\n<p>//run query with e.AddedDate and pass results to the Converter</p>\r\n<p>&nbsp;}</p>\r\n</span></span></p>\r\n<p>&nbsp;Additionally, you *may*&nbsp;want to run your query on another thread or give it to the dispatcher to&nbsp;ensure that you aren't blocking the UI. This may help if you're unfamilair with these topics:</p>\r\n<p><a href=\"http://www.switchonthecode.com/tutorials/working-with-the-wpf-dispatcher\">http://www.switchonthecode.com/tutorials/working-with-the-wpf-dispatcher</a></p>\r\n<p>-Eric, MSFT</p>",
+    "PostedDate": "2009-07-30T12:18:56.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

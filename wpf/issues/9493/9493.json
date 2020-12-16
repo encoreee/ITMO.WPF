@@ -1,0 +1,100 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DatePicker",
+      "DisplayName": "DatePicker"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "More precise: I can if I set the Focusable property to true (which undoes the static setting of the default value in codebehind), but it's not the textbox that gets the focus and the text doesn't get selected. When using the Tab-key to get to the datepicker the text is correctly selected.",
+    "LastUpdatedDate": "2013-02-21T18:41:27.39-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-12T09:11:06.287-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot focus DatePicker programmatically",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 9493
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This looks like a bug in the DatePicker to me.\r\n\r\nI ran into the same issue with setting the Target property of a label with an accelerator key to a date picker. Hitting the accelerator key doesn't focus the control. Also calling .Focus() directly doesn't do it either.\r\n\r\nYou can fix the bug if you download the source code, and add the following code to DatePicker.cs\r\n\r\n    protected override void OnAccessKey(AccessKeyEventArgs e)\r\n    {\r\n        _textBox.Focus();\r\n    }",
+      "PostedDate": "2009-03-18T10:58:24.8-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We agree this is a bug and are tracking it internally to be fixed in a future release.",
+      "PostedDate": "2009-03-18T13:56:22.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-18T13:56:24.147-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T09:20:18.18-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:46:41.603-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The above fix (OnAccessKey) did not help me. The Focus() method of the DatePicker and also Keyboard.Focus() still do not work. I found another fix. You can overcome this problem with the following code in the Loaded event of the DatePicker:\r\n\r\n            datePicker.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));\r\n",
+      "PostedDate": "2010-02-22T02:06:23.23-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-22T21:27:28.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-30T20:43:11.93-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-27T00:48:56.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-18T09:45:34.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-21T08:22:06.067-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:27.39-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

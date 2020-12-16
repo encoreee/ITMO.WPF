@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The 'DisplayAxis' has a 'TitleStyle' property that can be used to assign a custom style. Unfortunately, it isn't possible to align the title. This is caused because the internal 'TitleLayoutTransformControl' is aligned in the center. It would be better to use 'Stretch' alignment (both horizontal and vertical) so the style can control the alignment. This can be fixed in DisplayAxis.cs (line 521 and 522).",
+    "LastUpdatedDate": "2013-02-21T18:40:15.84-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-01-13T03:10:27.073-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "[Charting] Unable to align title on axis",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15093
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

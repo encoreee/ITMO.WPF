@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've found that when setting the SelectedIndex value programmatically from a Visual C# code behind file after setting the DataContext to a DataTable, the grid doesn't highlight the selected row correctly.",
+    "LastUpdatedDate": "2013-02-21T18:40:57.643-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-09-18T08:07:24.02-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: on setting SelectedIndex programmatically it doesn't render the selected row correctly.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10659
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3396,
+      "FileName": "grid.JPG",
+      "DownloadUrl": ".\\3396"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "It works for us. Can you please provide us sample repro application.",
+      "PostedDate": "2009-09-18T13:29:28.947-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, here's my xaml and code-behind:\r\n\r\n<Window x:Class=\"WpfApplication5.Window1\"\r\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n    xmlns:Toolkit=\"clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit\"\r\n    Title=\"Window1\" Height=\"300\" Width=\"300\" Loaded=\"Window_Loaded\">\r\n    <Grid>\r\n        <StackPanel>\r\n            <Toolkit:DataGrid x:Name=\"MyDataGrid\" ItemsSource=\"{Binding}\" />\r\n        </StackPanel>\r\n    </Grid>\r\n</Window>\r\n\r\nCodeBehind:\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Windows;\r\nusing System.Windows.Controls;\r\nusing System.Windows.Data;\r\nusing System.Windows.Documents;\r\nusing System.Windows.Input;\r\nusing System.Windows.Media;\r\nusing System.Windows.Media.Imaging;\r\nusing System.Windows.Navigation;\r\nusing System.Windows.Shapes;\r\nusing System.Data;\r\n\r\nnamespace WpfApplication5\r\n{\r\n    /// <summary>\r\n    /// Interaction logic for Window1.xaml\r\n    /// </summary>\r\n    public partial class Window1 : Window\r\n    {\r\n        public Window1()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n        private void LoadData()\r\n        {\r\n            DataTable dt = new DataTable();\r\n            for (int c = 1; c < 6; c++)\r\n            {\r\n                dt.Columns.Add(new DataColumn(string.Format(\"Column {0}\", c.ToString())));\r\n            }\r\n\r\n            for (int d = 1; d < 6; d++)\r\n            {\r\n                string[] values = new string[5];\r\n                for (int c = 0; c < 5; c++)\r\n                {\r\n                    values[c] = string.Format(\"Row {0} Column {1}\", d.ToString(), c.ToString());\r\n                }\r\n                dt.Rows.Add(values);\r\n            }\r\n            MyDataGrid.DataContext = dt;\r\n        }\r\n\r\n        private void Window_Loaded(object sender, RoutedEventArgs e)\r\n        {\r\n            LoadData();\r\n            MyDataGrid.SelectedIndex = 2;\r\n        }\r\n    }\r\n}\r\n",
+      "PostedDate": "2009-09-21T02:17:31.937-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've added a screenshot on startup too, the discolouration I circled is the only clue to the selected item. Selecting using the mouse works fine. I also have a control inheriting off the datagrid that has it's SelectedIndex set by an external event, this also displays like this :s",
+      "PostedDate": "2009-09-21T02:26:49.937-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-21T02:26:54.093-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello? Any comment?",
+      "PostedDate": "2009-09-25T03:54:35.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-23T10:53:00.767-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I encounter the same issue with SelectedItem.",
+      "PostedDate": "2009-10-23T10:55:02.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:57.643-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "235494",
+    "ThreadId": "69211",
+    "Html": "<p>Hi all. Am using Datagrid in WPF Toolkit. i wanted to check a certain column in all the rows, then highlight a particular cell progrmmatically. Seems i cant find any way to do that. Does anyone here knows how to do it?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-17T01:46:50.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236214",
+    "ThreadId": "69211",
+    "Html": "<p>Hi ricpda,</p>\r\n<p>Please look at the DataGrid.SelectedCells property.&nbsp; You can use this to find the cells that are selected, and you can also&nbsp;use it programatically to select cells in your DataGrid.</p>\r\n<p>Thanks,</p>\r\n<p>Saied K</p>",
+    "PostedDate": "2009-09-18T13:26:08.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

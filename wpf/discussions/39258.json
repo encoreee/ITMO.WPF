@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130228",
+    "ThreadId": "39258",
+    "Html": "Hello,<br>\r\nI'm exploring the .Net data grid. I made a first sample (connecting our Oracle database) with &quot;Visual Web Developer 2008 Express Edition&quot; and it worked fine.<br>\r\nThen I tried to make the same using WPF for the Web. I installed Microsoft Visual C# 2008 Express Edition,  installed the WPF toolkit, made a new &quot;WPF Browser Application&quot; project, dropped the WPF DataGrid and now I would like to set the data source. But I can only add &quot;Access&quot; and &quot;SQL Server&quot; databases in the Database Explorer. Is it a limitation of the Express edition?<br>\r\nThanks in advance for your help!<br>\r\nAnyball \r\n",
+    "PostedDate": "2008-11-05T07:38:26.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130768",
+    "ThreadId": "39258",
+    "Html": "Ok, I apologize, it is indeed not a WPF issue, it is a &quot;Visual C# 2008 Express Edition&quot; issue. Anyway, here is the answer from &quot;ovidiur&quot; I found on another forum :<br>\r\n<br>\r\n<span style=\"font-size:13px;font-family:arial\">After searching more (search engines are best human friends ...), I found a message from Dan Fernandez himself (Lead Product Manager for Visual Studio Express):<br>\r\n&quot;...<span style=\"font-weight:bold;color:#0000ff\">the issue is that this feature is not enabled for Visual Basic, C#, C++, or J# Express as these products can only support connecting to local data sources</span></span><span style=\"font-family:arial\"><span style=\"font-size:13px\">. <span style=\"font-size:13px;font-family:arial\">It is, however, enabled in Visual Web Developer Express and Visual Studio Standard Edition or higher.</span>&quot;<br>\r\n[ </span><a href=\"http://www.bokebb.com/dev/english/1946/posts/194623680.shtml\" title=\"http://www.bokebb.com/dev/english/1946/posts/194623680.shtml\"><span style=\"font-size:13px\">the message</span></a><span style=\"font-size:13px\"> ] <br>\r\n</span></span>\r\n",
+    "PostedDate": "2008-11-07T03:04:42.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

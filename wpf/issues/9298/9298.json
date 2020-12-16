@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "I have added this as a feature request in our database.",
+    "ClosedDate": "2009-04-01T11:55:31.45-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nI use the datagrid control with auto generated columns. I bind a collection of objects. The properties in the objects are decorated with the [DisplayName(\"Name of the column\")] attribute from: System.ComponentModel.DisplayNameAttribute. I would expect that the name of the column would be the Displayname that came out of the attribute, but this doesn't work.\n \nIs this an issue, or am I wrong suggesting that this should work?\n \nThanks, Jeroen.",
+    "LastUpdatedDate": "2013-05-16T05:31:10.623-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-20T04:23:58.5-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ColumnHeader title from DisplayNameAttribute",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9298
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I managed to fix my issue subclassing the datagrid and handling the AutoGeneratingColumn event.\r\n\r\nJeroen.",
+      "PostedDate": "2009-03-05T06:50:20.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jeroen,\r\n\r\nYou need not sub-class DataGrid. Handling AutoGeneratingColumn event should be sufficient. AutoGeneratingColumnEventArgs has a object PropertyDescriptor property. The value of this could be an object of type PropertyDescriptor or PropertyInfo. Both of them have an Attributes collection property. You can iterate this collection to look for DisplayNameAttribute and if you find one, just use its value as the Header of column.",
+      "PostedDate": "2009-03-05T14:09:03.943-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:55:31.45-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:31.527-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:10.623-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

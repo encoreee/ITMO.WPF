@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "113903",
+    "ThreadId": "34320",
+    "Html": "Hi, I'm trying to do a drag and drop operation and would like to drop my item on a specific row. For this, I would need a HitTest method but cannot find any in the datagrid. <br>\r\nIs there, actually something that was created for it ? <br>\r\nThank you!<br>\r\n",
+    "PostedDate": "2008-08-26T12:22:46.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

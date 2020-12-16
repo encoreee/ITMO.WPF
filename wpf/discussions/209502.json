@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "431696",
+    "ThreadId": "209502",
+    "Html": "In My view I have the following constructor:\r\n\r\n\r\n    public MainView()\r\n    {   \r\n       InitializeComponent();\r\n       _vm = new MainViewModel();\r\n       DataContext = _vm;\r\n    }\r\n\r\n\r\nIn the XAML I have the following code for the AutoCompleteBox.  This seems to work fine for populating the AutoComplete values but I want the text to be bound to a _vm.Project property (Text=&quot;{Binding 'Project', ...), this doesn't seem to be updating the view model can anyone help please?\r\n\r\n&lt;toolkit:AutoCompleteBox Height=&quot;22&quot;  Text=&quot;{Binding 'Project', Mode=OneWay}&quot; Margin=&quot;0,0,30,0&quot; Width=&quot;200&quot; ItemsSource=&quot;{Binding Path=ProjectNames}&quot;&gt;&lt;/toolkit:AutoCompleteBox&gt;\r\n\r\n\r\nThanks in advance,\r\n\r\nBrendan",
+    "PostedDate": "2010-04-15T16:39:32.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441236",
+    "ThreadId": "209502",
+    "Html": "Text=&quot;{Binding 'Project', Mode=OneWay}\r\n\r\nThink that might have something to do with it?\r\n\r\ntry Mode=TwoWay",
+    "PostedDate": "2010-05-10T14:38:44.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

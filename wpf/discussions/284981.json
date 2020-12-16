@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "720421",
+    "ThreadId": "284981",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I'm trying to remove the gap between pie &quot;slices&quot;. By gap I mean the small white space that always appears in WPF pie charts. I want to remove this spacing completely.</p>\r\n<p>I tryed to use the PieDataPoint style, setting both BorderThickness and Margin, without sucess.</p>\r\n<p>&nbsp;</p>\r\n<p>Any hints/help on how to solve this?</p>\r\n<p>&nbsp;</p>\r\n<p>Much appreciated</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-01-04T11:09:35.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

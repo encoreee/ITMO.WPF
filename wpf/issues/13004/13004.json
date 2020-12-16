@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I use a style that targets buttons to set the margin to a value greater than 0, and that style gets applied to a WPF Toolkit DataGrid that has at least one column, the DataGrid width will expand forever while in design mode in the Visual Studio 2008 IDE. The only way to stop it is to end Visual Studio using the Task Manager.\n \nThis is probably because the column headers for the DataGrid are buttons (or so I am guessing) and the layout logic for the DataGrid makes some error that causes it to expand forever.\n \nI attached a solution that demonstrates the issue. The XAML has the margin set to \"0\". To see the issue, set the margin to \"1\".",
+    "LastUpdatedDate": "2013-02-21T18:40:35.127-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-05-11T21:14:36.493-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid Expands Forever When Button Margin > 0",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 13004
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4349,
+      "FileName": "TestDataGridHang.zip",
+      "DownloadUrl": ".\\4349"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I have the same problem in different project. Design mode is crashing in VS 2010 and Blend 4.",
+      "PostedDate": "2011-01-27T04:26:46.153-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:35.127-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

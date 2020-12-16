@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "488061",
+    "ThreadId": "225745",
+    "Html": "<p>I'm finding it difficult to get my head around the databinding requirements for a combo box</p>\r\n<p>I'd like to know if there's a simple tutorial or project I could compare.</p>\r\n<p>OK my problem is simple. 2 Related tables let's call them Customers and Orders</p>\r\n<p>I want a wpf form that edits the orders</p>\r\n<p>and allows me to change the customer with a combobox</p>\r\n<p>the combobox is populated with a list of all customers and it's current value is the currently selected orders customer.</p>\r\n<p>&nbsp;</p>\r\n<p>All the help i seem to find focuses on creating a Data entry form. In this case there is no need for the combobox to have a preselected value. The order doesn't exist yet.</p>\r\n<p>But I want to use an Edit form. The customerID is known for each Order.</p>\r\n<p>&nbsp;</p>\r\n<p>I also want to use combo boxes on an EDIT &nbsp;order form containing a datagrid. The column containing StockItemID needs to be a combo box that displays related data from a Stock Table field StockDescription</p>\r\n<p>&nbsp;</p>\r\n<p>thank you for your help. &nbsp;</p>",
+    "PostedDate": "2010-09-02T01:25:51.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515590",
+    "ThreadId": "225745",
+    "Html": "\r\n<p>Have you had any luck with this?&nbsp; I have the same issue</p>\r\n",
+    "PostedDate": "2010-11-01T14:08:49.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

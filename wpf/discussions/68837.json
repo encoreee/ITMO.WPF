@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "234238",
+    "ThreadId": "68837",
+    "Html": "<p>Hi</p>\r\n<p>I have a datagrid which is bound to a datatable, containing header records.</p>\r\n<p>I would like to display detail records from a second datatable which are belonging to each header record in the rowdetails section of the datagrid.</p>\r\n<p>I know how to read the table content into a List for headers containing a List of details structure, but I wonder if there is an easier way out of this?</p>\r\n<p>Simply binding the datatable of details to the rowdetails without preparing the List ?</p>\r\n<p>Any examples on this?</p>\r\n<p>Regards</p>\r\n<p>Klaus</p>",
+    "PostedDate": "2009-09-14T03:30:52.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

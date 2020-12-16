@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "166516",
+    "ThreadId": "49753",
+    "Html": "<p>I am configuring a WPF Ribbon Control (RibbonControlsLibrary.dll, Ver. 3.5.31016.1), and I would like to add a 'MyProgram Options' button and an 'Exit MyProgram' button to the body of the ApplicationMenu,  <a href=\"https://winservices.web.cern.ch/winservices/Help/Contents/Images/Applications/Office2007/OfficeDiagnosticsRibbon1.gif\" title=\"screenshot of MS Office Ribbon menu\">as is done in MS Office</a>. In Office, these commands are not part of the menu, but are separate buttons (see screen shot).</p>\r\n<p>I can't find any articles or blogs that show how to create these buttons. Can anyone provide a link, or the XAML needed to create these buttons? Thanks very much.</p>\r\n<p>David Veeneman<br>\r\nForesight Systems</p>\r\n",
+    "PostedDate": "2009-03-10T10:24:49.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166905",
+    "ThreadId": "49753",
+    "Html": "It sounds like you gave up searching too soon.&nbsp; You have to use the <span style=\"color:rgb(163, 21, 21);font-size:16px\">ApplicationMenu</span><span style=\"color:rgb(0, 0, 255);font-size:16px\"></span> footer.&nbsp; Here is a sample post.<br>\r\n<br>\r\nhttp://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39406<br>\r\n",
+    "PostedDate": "2009-03-11T08:23:23.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166911",
+    "ThreadId": "49753",
+    "Html": "Completely missed it--thanks\r\n",
+    "PostedDate": "2009-03-11T08:31:54.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

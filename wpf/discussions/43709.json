@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "145396",
+    "ThreadId": "43709",
+    "Html": "Hi,<br>\r\n<br>\r\nI need an editable ComboBoxColumn for my project.<br>\r\nTrying this:<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><br>\r\n&lt;tk:DataGridComboBoxColumn Header=&quot;Type&quot; Width=&quot;Auto&quot; x:Name=&quot;cbCustType&quot; SelectedItemBinding=&quot;{Binding Path=Typ}&quot;&gt;<br>\r\n                &lt;tk:DataGridComboBoxColumn.ItemsSource&gt;<br>\r\n                    &lt;col:ArrayList&gt;<br>\r\n                        &lt;sys:String&gt;Typ1&lt;/sys:String&gt;<br>\r\n                        &lt;sys:String&gt;Bellevue&lt;/sys:String&gt;<br>\r\n                        &lt;sys:String&gt;Seattle&lt;/sys:String&gt;<br>\r\n                        &lt;sys:String&gt;Renton&lt;/sys:String&gt;<br>\r\n                    &lt;/col:ArrayList&gt;<br>\r\n                &lt;/tk:DataGridComboBoxColumn.ItemsSource&gt;<br>\r\n                &lt;tk:DataGridComboBoxColumn.EditingElementStyle&gt;<br>\r\n                    &lt;Style TargetType=&quot;ComboBox&quot;&gt;<br>\r\n                        &lt;Setter Property=&quot;IsEditable&quot; Value=&quot;True&quot; /&gt;<br>\r\n                        &lt;Setter Property=&quot;IsReadOnly&quot; Value=&quot;False&quot; /&gt;<br>\r\n                    &lt;/Style&gt;<br>\r\n                &lt;/tk:DataGridComboBoxColumn.EditingElementStyle&gt;<br>\r\n            &lt;/tk:DataGridComboBoxColumn&gt;<br>\r\n<br>\r\n</span>This allows me to edit the combobox, the bound value will be updated, but if the cell is in non editing mode, there will be no text shown. <br>\r\nIf i select one of the items from the combobox, they will be shown in non editing mode.<br>\r\n<br>\r\nHas anyone a solution to that?<br>\r\n<br>\r\nThx<br>\r\nKlausf<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-08T05:48:53.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146570",
+    "ThreadId": "43709",
+    "Html": "Hi Klausf,<br>\r\n<br>\r\nI'm using the code below. OK, it is not Xaml but you can convert.<br>\r\n<span style=\"font-size:13px\">Might be that helps.<br>\r\n<br>\r\nWorstcase.<br>\r\n<br>\r\n</span><span style=\"font-size:13px;color:#008000\">// ComboBox Column<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span><span style=\"font-size:13px\"> dataGridComboBoxColumn = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span><span style=\"font-size:13px\"> ();<br>\r\ndataGridComboBoxColumn.Header = </span><span style=\"font-size:13px;color:#0000ff\">&quot;HeaderText&quot;</span><span style=\"font-size:13px\">;<br>\r\ndataGridComboBoxColumn.MinWidth = 100;<br>\r\ndataGridComboBoxColumn.ItemsSource = arraylist</span><span style=\"font-size:13px\">;<br>\r\nb = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\"> (</span><span style=\"font-size:13px;color:#a31515\">&quot;field1&quot;</span><span style=\"font-size:13px\">);<br>\r\nb.Mode = </span><span style=\"font-size:13px;color:#2b91af\">BindingMode</span><span style=\"font-size:13px\">.TwoWay;<br>\r\ndataGridComboBoxColumn.SelectedItemBinding = b;<br>\r\ndg.Columns.Add (dataGridComboBoxColumn);<br>\r\n</span>\r\n",
+    "PostedDate": "2009-01-12T23:02:16.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149125",
+    "ThreadId": "43709",
+    "Html": "Klausf,<br>\r\n<br>\r\nI have exactly the same problem... did you find a solution??<br>\r\n<br>\r\nTHX!!\r\n",
+    "PostedDate": "2009-01-21T02:27:12.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149263",
+    "ThreadId": "43709",
+    "Html": "Hi,<br>\r\n<br>\r\nI did it with a DataGridTemplateColumn:<br>\r\n<br>\r\n&lt;UserControl.Resources&gt;<br>\r\n        &lt;ResourceDictionary&gt;<br>\r\n            &lt;ResourceDictionary.MergedDictionaries&gt;<br>\r\n                &lt;ResourceDictionary&gt;<br>\r\n                    &lt;ObjectDataProvider x:Key=&quot;TypeList&quot;/&gt;                    <br>\r\n                &lt;/ResourceDictionary&gt;<br>\r\n            &lt;/ResourceDictionary.MergedDictionaries&gt;<br>\r\n        &lt;/ResourceDictionary&gt;      <br>\r\n &lt;/UserControl.Resources&gt;<br>\r\n<br>\r\n&lt;tk:DataGridTemplateColumn Header=&quot;TypeSelection&quot; CanUserResize=&quot;False&quot; Width=&quot;Auto&quot;&gt;<br>\r\n        &lt;tk:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n               &lt;DataTemplate&gt;<br>\r\n                      &lt;TextBlock Text=&quot;{Binding Path=Type}&quot;/&gt;<br>\r\n               &lt;/DataTemplate&gt;<br>\r\n        &lt;/tk:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n        &lt;tk:DataGridTemplateColumn.CellEditingTemplate&gt;<br>\r\n                &lt;DataTemplate&gt;<br>\r\n                      &lt;ComboBox IsEditable=&quot;True&quot; MaxWidth=&quot;120&quot;<br>\r\n                              Text=&quot;{Binding Path=Type}&quot; ItemsSource=&quot;{Binding Source={StaticResource TypeList}}&quot; &gt;<br>\r\n                      &lt;/ComboBox&gt;<br>\r\n                &lt;/DataTemplate&gt;<br>\r\n        &lt;/tk:DataGridTemplateColumn.CellEditingTemplate&gt;<br>\r\n&lt;/tk:DataGridTemplateColumn&gt;<br>\r\n<br>\r\nIn the UserControl Code I set the 'TypeList':<br>\r\nObjectDataProvider K = (ObjectDataProvider)FindResource(&quot;TypeList&quot;);<br>\r\nK.ObjectInstance = MyDynamicListOfTypes;\r\n",
+    "PostedDate": "2009-01-21T07:14:05.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

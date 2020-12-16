@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "128758",
+    "ThreadId": "38810",
+    "Html": "Hi<br>\r\n<br>\r\nhere is what I'd like to do...<br>\r\n<br>\r\nI have a datagrid with multiple columns. Let's say I click on a cell that belongs to the second row and second column.<br>\r\nIn response I would like to make the color of the second row rowheader  and the second column columnheader to change (this <br>\r\nis typical behavior in Excel) <br>\r\nI believe this could be done with DataTriggers but I just cannot figure out what properties I should bind to.<br>\r\nI have been studying vinsibal's blog on styling rows and columns but I simply can not apply it to my case.<br>\r\n<br>\r\n<br>\r\nCould someone post a quick example of how this could be done?<br>\r\n<br>\r\nThanks!<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-29T17:03:26.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

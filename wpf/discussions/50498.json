@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "169272",
+    "ThreadId": "50498",
+    "Html": "I want to show different images at the RowHeader of each row in DataGrid according to bind property. And I don't know how to write the style for the ControlRowHeader, any snippet code can help me?<br>\r\n<br>\r\nThanks<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">\r\n<p> </p>\r\n</span>\r\n",
+    "PostedDate": "2009-03-17T22:41:36.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169312",
+    "ThreadId": "50498",
+    "Html": "The Header property is of type object, so you can assign anything you want to it. I just tried setting it to an image I had handy in my project, and it works fine. The &quot;nstk&quot; namespace contains a control derived from the WPF Toolkit DataGrid, but it does not touch the Header property so that is fully inherited from the base control which is the official codebase.<br>\r\n<br>\r\n&lt;nstk:DataGridTextColumn Binding=&quot;{Binding}&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;nstk:DataGridTextColumn.Header&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Image Source=&quot;/Images/ToolbarButtons/home.gif&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/nstk:DataGridTextColumn.Header&gt;<br>\r\n&lt;/nstk:DataGridTextColumn&gt;<br>\r\n<br>\r\nHope this helps.<br>\r\n<br>\r\n<strong>Oops...</strong> I just re-read your post and realized I misread your question. Maybe the above will help anyway, maybe not. I'm leaving it in just in case.<br>\r\n",
+    "PostedDate": "2009-03-18T01:29:24.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169564",
+    "ThreadId": "50498",
+    "Html": "Here is a sample style that should show how to put an image in the RowHeader that is databound to the Item.<br>\r\n<br>\r\n     &lt;Style x:Key=&quot;rowHeaderStyle&quot; TargetType=&quot;{x:Type DataGridRowHeader}&quot;&gt;<br>\r\n        &lt;Setter Property=&quot;Template&quot;&gt;<br>\r\n            &lt;Setter.Value&gt;<br>\r\n                &lt;ContrtolTemplate&gt;<br>\r\n                    &lt;Image Source=&quot;{Binding ImagePropertyOnDataObject}&quot; /&gt;<br>\r\n                    &lt;/ControlTemplate&gt;<br>\r\n            &lt;/Setter.Value&gt;<br>\r\n        &lt;/Setter&gt;<br>\r\n    &lt;/Style&gt;<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-18T13:18:26.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169691",
+    "ThreadId": "50498",
+    "Html": "Thanks very much for all your reply!<br>\r\n<br>\r\nSorry I tried the code and but it doesn't show the image just be blank at the RowHeader<br>\r\n<br>\r\ndo I miss something? <br>\r\n<br>\r\nAnd I want to clarify what I want is RowHeader keep the button style with the image show on it? I think if we redefine the Template, the button style will go away. So I guess maybe I need use content template, but I don't know how to do it. So wish your help.<br>\r\n<br>\r\n        &lt;Style x:Key=&quot;ControlRowHeaders&quot; TargetType=&quot;{x:Type dg:DataGridRowHeader}&quot;&gt;<br>\r\n            &lt;!--&lt;Setter Property=&quot;Content&quot; Value=&quot;Resources\\folder.ico&quot;/&gt;--&gt;<br>\r\n            &lt;Setter Property=&quot;Template&quot;&gt;<br>\r\n                &lt;Setter.Value&gt;<br>\r\n                    &lt;ControlTemplate&gt;<br>\r\n                        &lt;Image Name=&quot;img&quot; Source=&quot;Resources\\folder.ico&quot; Width=&quot;16&quot; Height=&quot;16&quot;/&gt;<br>\r\n                     &lt;/ControlTemplate&gt;<br>\r\n                &lt;/Setter.Value&gt;<br>\r\n            &lt;/Setter&gt;<br>\r\n          &lt;/Style&gt; \r\n",
+    "PostedDate": "2009-03-18T18:57:20.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169790",
+    "ThreadId": "50498",
+    "Html": "Seems to me like just a typo. Replace the &lt;ContrtolTemplate&gt; opening tag in the XAML above with the correctly spelled &lt;ControlTemplate&gt;, and see if that helps.<br>\r\n",
+    "PostedDate": "2009-03-19T02:55:01.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169848",
+    "ThreadId": "50498",
+    "Html": "<div>Thanks. Actually I already fix the typo error, so it can pass build, but it still has no effect just show nothing at the RowHeader.</div>\r\n<div></div>\r\n<div></div>\r\n",
+    "PostedDate": "2009-03-19T07:13:23.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176923",
+    "ThreadId": "50498",
+    "Html": "I try to set image at header by its content, the code as following:<br>\r\n      &lt;dg:DataGrid.RowHeaderStyle&gt;<br>\r\n        &lt;Style TargetType=&quot;{x:Type dg:DataGridRowHeader}&quot;&gt;<br>\r\n            &lt;Setter Property=&quot;Content&quot;&gt;<br>\r\n                &lt;Setter.Value&gt;<br>\r\n                    &lt;Image Name=&quot;img&quot; Source=&quot;help.ico&quot; Width=&quot;16&quot; Height=&quot;16&quot;/&gt;<br>\r\n                &lt;/Setter.Value&gt;<br>\r\n            &lt;/Setter&gt;<br>\r\n        &lt;/Style&gt;<br>\r\n      &lt;/dg:DataGrid.RowHeaderStyle&gt;<br>\r\n<br>\r\nIt throw exception and told me: Cannot add content of type 'System.Windows.Controls.Image' to an object of type 'System.Object'. <br>\r\n<br>\r\nWhat should I do? Thanks very much.<br>\r\n<br>\r\nThe original way is OK:<br>\r\n      &lt;dg:DataGrid.RowHeaderStyle&gt;<br>\r\n        &lt;Style TargetType=&quot;{x:Type dg:DataGridRowHeader}&quot;&gt;<br>\r\n          &lt;Setter Property=&quot;Content&quot; Value=&quot;{Binding Id}&quot;/&gt;<br>\r\n        &lt;/Style&gt;<br>\r\n      &lt;/dg:DataGrid.RowHeaderStyle&gt;\r\n",
+    "PostedDate": "2009-04-07T19:21:32.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

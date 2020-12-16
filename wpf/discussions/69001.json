@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "234778",
+    "ThreadId": "69001",
+    "Html": "<p>I have the problem that the bars are not visible sometimes using the same data and code. The axis dimensions are right. Even the tooltips for each datapoint&nbsp;are shown with correct datapoint values. Only the bars&nbsp;are not shown. Sometimes&nbsp;they are shown, sometimes they are not shown ...</p>\r\n<p>Is there a timinig or a memory issue? Any null value problem? -&gt; But there is no exception!</p>\r\n<p>Any bugfix to avoid this behavoir?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-15T09:23:32.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

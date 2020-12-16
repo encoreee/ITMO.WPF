@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "170873",
+    "ThreadId": "50990",
+    "Html": "Is there a way to take a DatePicker out of Tab rotation?&nbsp; Setting the\r\nIsTabStop property to false is not doing it (the text box of the picker gains focus).&nbsp; I also tried\r\nKeyboardNavigation.IsTabStop=&quot;False&quot; which also does not work.\r\n",
+    "PostedDate": "2009-03-23T08:04:22.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

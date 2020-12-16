@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "131696",
+    "ThreadId": "39681",
+    "Html": "I'm trying to build the toolkit locally, and add a reference to that (so I can make changes later).  For some reason when I add a DatePicker to my window, the calendar popup shows Jan 1 0001 as the default date.  Here's what I did:<br>\r\n<br>\r\nUnzipped the project - and built it<br>\r\n<br>\r\nAdd a reference to the dlls in the debug folder<br>\r\n<br>\r\nAdded a reeference in XAML like this: <span style=\"font-size:13px;color:#ff0000\">xmlns</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">toolkit</span><span style=\"font-size:13px;color:#0000ff\">=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;</span><br>\r\n<br>\r\n<br>\r\n<br>\r\nI'm guessing it's the third step that's srewing it up.  Do I need to add my reference differently?  Is the local copy somehow conflicting with what's in the GAC?\r\n",
+    "PostedDate": "2008-11-11T08:15:52.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131787",
+    "ThreadId": "39681",
+    "Html": "If anyone sees this question, please ignore it, and feel free to come to OKC and give me a flogging for asking it.\r\n",
+    "PostedDate": "2008-11-11T12:31:49.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

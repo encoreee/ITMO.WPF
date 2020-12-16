@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "620601",
+    "ThreadId": "259603",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>Is there any way to limit the number of displayed items in the dropdown? I'm having performance issues when displaying large numbers of items (1000&#43;).</p>\r\n",
+    "PostedDate": "2011-05-31T01:09:42.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "621338",
+    "ThreadId": "259603",
+    "Html": "<div style=\"color: black; background-color: white;\">\r\n<pre>Eventually i figured this out by implementing a custom filter.</pre>\r\n<pre>    <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">partial</span> <span style=\"color: blue;\">class</span> TestView : UserControl\r\n    {\r\n        <span style=\"color: blue;\">public</span> TestView()\r\n        {\r\n            InitializeComponent();\r\n            MyAutoCompleteBox.FilterMode = AutoCompleteFilterMode.Custom;\r\n            MyAutoCompleteBox.TextChanged += <span style=\"color: blue;\">new</span> System.Windows.RoutedEventHandler(MyAutoCompleteBox_TextChanged);\r\n            MyAutoCompleteBox.ItemFilter = (text, item) =&gt;\r\n            {\r\n                <span style=\"color: blue;\">if</span> (count &gt; 10) <span style=\"color: blue;\">return</span> <span style=\"color: blue;\">false</span>;\r\n                <span style=\"color: blue;\">if</span>(item.ToString().StartsWith(text))\r\n                {\r\n                    count++;\r\n                    <span style=\"color: blue;\">return</span> <span style=\"color: blue;\">true</span>;\r\n                }\r\n                <span style=\"color: blue;\">return</span> <span style=\"color: blue;\">false</span>;\r\n            };\r\n        }\r\n\r\n        <span style=\"color: blue;\">void</span> MyAutoCompleteBox_TextChanged(<span style=\"color: blue;\">object</span> sender, System.Windows.RoutedEventArgs e)\r\n        {\r\n            count = 0;\r\n        }\r\n\r\n        <span style=\"color: blue;\">private</span> <span style=\"color: blue;\">int</span> count = 0;\r\n    }\r\n</pre>\r\n</div>\r\n<p>Hope this helps anyone else running into this. If there are any other better ways to do this, please share.</p>",
+    "PostedDate": "2011-06-01T05:39:35.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

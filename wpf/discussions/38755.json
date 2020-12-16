@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "128566",
+    "ThreadId": "38755",
+    "Html": "Hi! I wrote code in XAML (HireDate field in data)<br>\r\n&nbsp;&lt;dp:DatePicker&nbsp; SelectedDate=&quot;{Binding HireDate}&quot; SelectedDateFormat=&quot;Short&quot; /&gt;<br>\r\nit code view date, but choice new date in control &nbsp;DatePicker&nbsp;  don't persist in field &quot;HireDate&quot; How binding DatePicker&nbsp; with date?<br>\r\nI am sorry my bad Engleash :-)<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-29T04:41:48.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128583",
+    "ThreadId": "38755",
+    "Html": "In article <a href=\"http://windowsclient.net/wpf/wpf35/wpf-35sp1-toolkit-datagrid-feature-walkthrough.aspx\">DataGrid Feature</a>  <br>\r\nexample, a date column is created using the new DatePicker control as the CellEditingTemplate:\r\n<pre>    <span>&lt;</span><span>dg:DataGridTemplateColumn</span> <span>Header</span><span>=&quot;Date&quot;</span> <span>MinWidth</span><span>=&quot;100&quot;</span><span>&gt;</span>\r\n        <span>&lt;</span><span>dg:DataGridTemplateColumn.CellEditingTemplate</span><span>&gt;</span>\r\n            <span>&lt;</span><span>DataTemplate</span><span>&gt;</span>\r\n                <span>&lt;</span><span>dg:DatePicker</span> <span>SelectedDate</span><span>=&quot;{Binding Date}&quot;</span> <span>SelectedDateFormat</span><span>=&quot;Short&quot;</span> <span>/&gt;</span>\r\n            <span>&lt;/</span><span>DataTemplate</span><span>&gt;</span>\r\n        <span>&lt;/</span><span>dg:DataGridTemplateColumn.CellEditingTemplate</span><span>&gt;</span>\r\n        <span>&lt;</span><span>dg:DataGridTemplateColumn.CellTemplate</span><span>&gt;</span>\r\n            <span>&lt;</span><span>DataTemplate</span><span>&gt;</span>\r\n                <span>&lt;</span><span>TextBlock</span> <span>Text</span><span>=&quot;{Binding Date, StringFormat=d}&quot;</span> <span>/&gt;</span>\r\n            <span>&lt;/</span><span>DataTemplate</span><span>&gt;</span>\r\n        <span>&lt;/</span><span>dg:DataGridTemplateColumn.CellTemplate</span><span>&gt;</span>\r\n    <span>&lt;/</span><span>dg:DataGridTemplateColumn</span><span>&gt;</span>\r\n    <br>In with case new date don't save in field &quot;date&quot;!!! </pre>\r\n<br>\r\n",
+    "PostedDate": "2008-10-29T05:39:13.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128594",
+    "ThreadId": "38755",
+    "Html": "Сorrect ansver!!!<br>\r\n<br>\r\n&nbsp;&lt;dg:DatePicker SelectedDate=&quot;<span style=\"text-decoration:underline\"><strong>{Binding Path=BirthDay, Mode=TwoWay}</strong></span>&quot; SelectedDateFormat=&quot;Short&quot; /&gt;!\r\n",
+    "PostedDate": "2008-10-29T06:13:41.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

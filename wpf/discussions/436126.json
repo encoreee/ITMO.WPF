@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1013187",
+    "ThreadId": "436126",
+    "Html": "Hello!<br />\n<br />\nI periodically work with the project at the in VS 2012, and in the studio in VS 2010. <br />\n<br />\nDo not know why but when I try to bind my collection of objects (ObservableCollection) with the inclusion of auto-generated columns, I found that no columns are created with Visual VS 2010 and in VS 2012 are created with.<br />\n<br />\nDataGrid to debug the code in the function argument is DataGrid.GenerateColumns iItemProperties, it is a property ItemProperties  of its type ReadOnlyCollection &lt;ItemPropertyInfo&gt;, studio in 2010, this property null, so the columns are created. In 2012, this property contains a collection of properties, so there are created with the columns.<br />\n<br />\nWhile written some code that gets the object properties and working with this collection. <br />\nThe case may not be a studio can be a framework.<br />\n<br />\nWhere initialized iItemProperties.ItemProperties?<br />\n<br />\n<br />\nThe type of objects used in a collection (ObservableCollection), I generate a runtime using TypeBuilder and Emit functions.<br />\n",
+    "PostedDate": "2013-03-11T04:30:13.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

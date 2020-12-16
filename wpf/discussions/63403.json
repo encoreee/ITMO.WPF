@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "215605",
+    "ThreadId": "63403",
+    "Html": "<p>Hi!</p>\r\n<p>I have set the SelectionUnit to FullRow. This works fine, however I want the selection to extend over the whole row, including white spaces, when the columns do not fill up the whole control&nbsp;width.</p>\r\n<p>See the behaviour of the WinForms ListView Control.</p>\r\n<p>Is there a way to accomplish this?</p>\r\n<p>Thanks!</p>\r\n<p>Jus</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-23T22:47:43.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259652",
+    "ThreadId": "63403",
+    "Html": "<p>Hi,</p>\r\n<p>I have the same issue. It's inconsistent with the Silverlight Toolkit. The Silverlight Toolkit's DataGrid will&nbsp;do a Full row select consistent with a WinForms ListView control, but the WPF Toolkit's DataGrid will not, even with SelectionUnit=&quot;FullRow&quot;.</p>\r\n<p>As &quot;jus71&quot; has asked - Is there a way to accomplish this with the WPF DataGrid Toolkit?</p>\r\n<p>Thank-you</p>\r\n<p>Joe</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-22T16:13:16.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259659",
+    "ThreadId": "63403",
+    "Html": "<p>Hi,</p>\r\n<p>A &quot;workaround&quot; for this is to simply make at least one of the DataGrid's column Width=&quot;*&quot;. This will at least ensure the columns/cells (read: selectable parts of the row) spread the width of the DataGrid.</p>\r\n<p>An example of a Column declared within XAML:</p>\r\n<p><span style=\"color:#0000ff\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>&lt;data:DataGrid x:Name=<span style=\"color:#A31515\">&quot;GroupData&quot;</span> ItemsSource=<span style=\"color:#A31515\">&quot;{Binding Groups}&quot;</span> AutoGenerateColumns=<span style=\"color:#A31515\">&quot;False&quot;</span> IsReadOnly=<span style=\"color:#A31515\">&quot;True&quot;</span> SelectedItem=<span style=\"color:#A31515\">&quot;{Binding SelectedGroup, Mode=TwoWay}&quot;</span>&gt; \r\n     &lt;data:DataGrid.Columns&gt; \r\n       &lt;data:DataGridTextColumn x:Name=<span style=\"color:#A31515\">&quot;IDColumn&quot;</span> Header=<span style=\"color:#A31515\">&quot;ID&quot;</span> Binding=<span style=\"color:#A31515\">&quot;{Binding ID}&quot;</span> <strong>Width=<span style=\"color:#A31515\">&quot;*&quot;</span></strong>/&gt; \r\n    &lt;/data:DataGrid.Columns&gt; \r\n &lt;/data:DataGrid&gt;\r\n</pre>\r\n</div>\r\n</span></p>",
+    "PostedDate": "2009-11-22T16:35:08.977-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

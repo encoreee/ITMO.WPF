@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "419842",
+    "ThreadId": "205390",
+    "Html": "<p>I badly need to set one of my charts X-Axis marks frequency.. It tries to display every data point and even with Font=6 and stretch across 3 monitors doesnt let me read the lables!</p>",
+    "PostedDate": "2010-03-18T09:28:01.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422104",
+    "ThreadId": "205390",
+    "Html": "<p>If I understand you correctly you want to hide some of your datapoints?</p>\r\n<p>Like every second datapoint... of course depending on your available space and amount of datapoints.</p>\r\n<p>Sadly I don't think there's a feature build in the chartingtoolkit so you would have to write your own Style that does that...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-22T06:47:05.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422111",
+    "ThreadId": "205390",
+    "Html": "No I need to hide some of the marks (by marks I mean vertical lines with label on the end which tells the X value of data point). In Y-Axis you can set Interval property I believe to control this. In X-Axis I havent found anything....",
+    "PostedDate": "2010-03-22T07:00:18.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422125",
+    "ThreadId": "205390",
+    "Html": "<p>I guess your X-Axis is a category axis?</p>\r\n<p>Hiding the label is basically the same deal, you need somehow to decide which datapoints (I mean the labels of which datapoints) to hide, make a property for that in your ViewModel and make a Style for the AxisLabel control Binding to that...</p>\r\n<p>The mark itself is a bit more complicated, there is the MajorTickMarkStyle-Property on your Axis but it is the same for every label... I'm not quite sure how I would approach that.<br>But maybe it's okay to leave the marks itself.</p>\r\n<p>I've evaluated the usability another diagram which hid many of the label + marks and often the users tended to think that there's not more data available, so it should made be visible somehow that there's more data.</p>",
+    "PostedDate": "2010-03-22T07:42:17.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422131",
+    "ThreadId": "205390",
+    "Html": "<p>yes it is category axis... Ernii as long as you are in this business I really would recommend to look at existing graphing software. like Matlab or simpler like SierraCharts.com etc... Not diagramms.. the end-users are not programmers, they dont care about diagramms. they want something and this is already a common knowledge what they want.</p>\r\n<p>All things are already solved. No need to reinvent the wheel. get yourself a demo and play for half an hour.</p>\r\n<p>If you dont comply users will trun to another product very quick.</p>\r\n<p>Re: marks - axis must scale itself to accomodate marks in a fashion that all marks are readable. for that an axis must reduce number of marks as much as it takes. there is no other solution in the whole wide world.</p>\r\n<p>HTH</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-22T07:52:59.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

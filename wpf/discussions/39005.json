@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "129418",
+    "ThreadId": "39005",
+    "Html": "I am curious as to why the RibbonGroup is not an ItemsControl instead of a Control?  This seems to prevent creating the items in the group through data binding, something we would like to do in special circumstances.  Sticking an ItemsControl inside the RibbonGroup seems like a bad idea since it would probably ruin the resizing behavior.<br>\r\n",
+    "PostedDate": "2008-11-01T13:12:01.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

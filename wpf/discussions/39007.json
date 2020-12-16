@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "129427",
+    "ThreadId": "39007",
+    "Html": "Hi,<br>\r\n<br>\r\nDoes anybody know how to add a list of recently opened files to the Ribbon Application Menu?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-11-01T15:01:45.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137844",
+    "ThreadId": "39007",
+    "Html": "<p>This worked for me</p>\r\n<pre>        &lt;r:Ribbon \r\n             Title=&quot;{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}},Path=Title}&quot;&gt;\r\n            &lt;r:Ribbon.ApplicationMenu &gt;\r\n                &lt;r:RibbonApplicationMenu&gt;\r\n                    &lt;r:RibbonApplicationMenu.RecentItemList&gt;\r\n                        &lt;r:RibbonHighlightingList&gt;\r\n                            &lt;r:RibbonHighlightingListItem&gt;Thing 1&lt;/r:RibbonHighlightingListItem&gt;\r\n                            &lt;r:RibbonHighlightingListItem&gt;Thing 2&lt;/r:RibbonHighlightingListItem&gt;\r\n                            &lt;r:RibbonHighlightingListItem&gt;Thing 3&lt;/r:RibbonHighlightingListItem&gt;\r\n                            &lt;r:RibbonHighlightingListItem&gt;Thing 4&lt;/r:RibbonHighlightingListItem&gt;\r\n                            &lt;r:RibbonHighlightingListItem&gt;Thing 5&lt;/r:RibbonHighlightingListItem&gt;\r\n                        &lt;/r:RibbonHighlightingList&gt;\r\n                    &lt;/r:RibbonApplicationMenu.RecentItemList&gt;<br>                           .<br>                           .<br>                           .\r\n</pre>\r\n<p>Cheers,<br>\r\nRob</p>\r\n",
+    "PostedDate": "2008-12-04T15:48:49.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138732",
+    "ThreadId": "39007",
+    "Html": "Thanks Rob, I got some help in a different thread which showed me the same solution.<br>\r\n<br>\r\nI should have closed this out here.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-08T13:28:35.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

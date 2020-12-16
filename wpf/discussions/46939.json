@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "157000",
+    "ThreadId": "46939",
+    "Html": "How do you sort a WPF datagrid column in code?  Meaning, if I have two columns ( FirstName and LastName ) how could I sort the LastName column in code to update datagrid?  Thanks\r\n",
+    "PostedDate": "2009-02-12T05:46:20.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157340",
+    "ThreadId": "46939",
+    "Html": "Hi,<br>\r\n<br>\r\nThe DataGrid binds to a view of your data, an instance of ICollectionView. This class can be used to perform sorting:<br>\r\n<br>\r\nICollectionView view = CollectionViewSource.GetDefaultView(myDataGrid.ItemsSource);<br>\r\nview.SortDescriptions.Clear();<br>\r\nview.SortDescriptions.Add(new SortDescription(&quot;LastName&quot;, ListSortDirection.Descending));<br>\r\nview.Refresh();<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-02-13T01:30:42.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157435",
+    "ThreadId": "46939",
+    "Html": "That did it.  Thanks a bunch.\r\n",
+    "PostedDate": "2009-02-13T07:02:36.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266838",
+    "ThreadId": "46939",
+    "Html": "<p>And how do I do it with XAML?</p>",
+    "PostedDate": "2009-12-13T16:24:10.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

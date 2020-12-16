@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "283606",
+    "ThreadId": "82520",
+    "Html": "<p>Hi there,</p>\r\n<p>We have multiple project solution based on MS Prism in WPF. For ease of understanding lets take we have project shell, and project usercontrol. The usercontrol project has numerous views for various functions. We have a pop up window in shell project which is called from main shell window, what i want is to load different view into pop up window region manager based on requirement. Any help/suggestion through flow explanation or some code samples will be highly appreciable.</p>\r\n<p>Regards</p>",
+    "PostedDate": "2010-01-30T04:12:10.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

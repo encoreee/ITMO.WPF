@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "LOWORD and HIWORD must be fixed like this:\n \n        public static int LOWORD(int i)\n        {\n          return (short)(i & 0xFFFF);\n        }\n \n        public static int HIWORD(int i)\n        {\n            return (short) (i >> 16);\n        }\n \nto handle negative values correctly. Otherwise the mouse stops working for RibbonWindow if it is moved to a secondary display which is left or above of the primary display.",
+    "LastUpdatedDate": "2013-02-21T18:41:43.84-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-11-16T09:30:00.24-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in NativeMethods.LOWORD/HIWORD",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 8101
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Maybe I'm wrong, but it seems to be an issue with GET_X_LPARAM/GET_Y_LPARAM, not LOWORD/HIWORD themselves, 'cause WORD is unsigned by def.",
+      "PostedDate": "2008-11-19T05:48:21.613-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The point is that LOWORD/HIWORD returns a 32 bit signed integer, not a 16 bit unsigned integer as their C counterparts in windows.h.  My fix is just a hack that changes the minimum of existing code.\r\n\r\nAs a general and more correct solution I recommend changing the functions like this:\r\n\r\npublic static ushort HIWORD(uint i)\r\n\r\nThen do the right sign extending casts in GET_..._LPARAM:\r\n\r\n(int)(short)HIWORD(…)\r\n\r\nThe problem is that negative mouse pointer values are packed into a WORD. Without the correct casts negative values becomes integer values around 65000. ",
+      "PostedDate": "2008-11-25T16:05:49.68-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-18T13:18:34.963-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:18:35.917-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:23:14.93-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:43.84-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

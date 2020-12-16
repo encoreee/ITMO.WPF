@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "189771",
+    "ThreadId": "56178",
+    "Html": "<p>Hi All,<br><br>I am using the DateTimePicker in a UserControl and am trying to bind the FirstDayOfWeek property to a property in the code behind of the usercontrol, but just not managing to get it to work.</p>\r\n<p>Please assist if someone can...</p>\r\n<p>TIA<br><br>Code.....<br><br>XAML<br>&lt;shared:DateTimePicker Value=&quot;{Binding EffectiveDate, ValidatesOnDataErrors=True}&quot; FirstDayOfWeek=&quot;{Binding ElementName=this, Path=FirstDayOfWeek}&quot; &gt;&lt;/shared:DateTimePicker&gt;</p>\r\n<p>Code Behind</p>\r\n<p>public DayOfWeek FirstDayOfWeek<br>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp; get { return DayOfWeek.Monday; }<br>}</p>",
+    "PostedDate": "2009-05-13T07:31:23.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190091",
+    "ThreadId": "56178",
+    "Html": "<p>Anyone? Phuleeeez guys. Need some assistance on this one.</p>",
+    "PostedDate": "2009-05-14T00:27:21.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190596",
+    "ThreadId": "56178",
+    "Html": "<p>Hi,</p>\r\n<p>You are taking the right approach, however, there is a problem in your binding. Y9ou cannot use the 'this' keywords within XAML. ElementName bidings are used to bind to elements which have a name set via x:Name. To make your example work, give your UserControl a name using an x:Name attribute in teh XAML, then use that same name in your ElementName binding.</p>\r\n<p>Hope that helps!</p>\r\n<p>Regards,Colin E.</p>",
+    "PostedDate": "2009-05-15T00:49:11.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190660",
+    "ThreadId": "56178",
+    "Html": "<p>Thanks for the tip ColinEver. It is not working though ):<br><br>Here is my code now...</p>\r\n<p>UserControl XAML<br><br>&lt;commonViews:MaintenanceView x:Class=&quot;FMS.Modules.Stock.Views.Suppliers&quot;<br>&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; xmlns:dg=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; xmlns:local=&quot;clr-namespace:FMS.Modules.Stock.Views&quot;<br>&nbsp;&nbsp;&nbsp; xmlns:shared=&quot;http://schemas.actiprosoftware.com/winfx/xaml/shared&quot;</p>\r\n<p>&nbsp;&nbsp;&nbsp; Height=&quot;Auto&quot; Width=&quot;600&quot; DataContextChanged=&quot;UserControl_DataContextChanged&quot; Uid=&quot;Suppliers&quot; x:Name=&quot;SuppliersUC&quot; &gt;<br>&nbsp; &lt;dg:DataGrid Name=&quot;pricesGrid&quot; AutoGenerateColumns=&quot;False&quot; HeadersVisibility=&quot;Column&quot; SelectionUnit=&quot;Cell&quot; SelectionMode=&quot;Extended&quot; ClipboardCopyMode=&quot;IncludeHeader&quot; GridLinesVisibility=&quot;None&quot; CanUserAddRows=&quot;False&quot; CanUserDeleteRows=&quot;False&quot; VerticalScrollBarVisibility=&quot;Visible&quot; Margin=&quot;5,0,0,0&quot; Height=&quot;200&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn Header=&quot;Efective Date&quot; Width=&quot;150&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;shared:DateTimePicker Value=&quot;{Binding EffectiveDate, ValidatesOnDataErrors=True}&quot; FirstDayOfWeek=&quot;{Binding ElementName=SuppliersUC, Path=FirstDayOfWeek}&quot; &gt;&lt;/shared:DateTimePicker&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn&gt;<br>&nbsp; &lt;/dg:DataGrid&gt;<br>&lt;/commonViews:MaintenanceView&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Code Behind<br>public DayOfWeek FirstDayOfWeek<br>{<br>&nbsp; get { return DayOfWeek.Monday; }<br>}</p>\r\n<p><br>Message in the output window<br>System.Windows.Data Error: 4 : Cannot find source for binding with reference 'ElementName=SuppliersUC'. BindingExpression:Path=FirstDayOfWeek; DataItem=null; target element is 'DateTimePicker' (Name=''); target property is 'FirstDayOfWeek' (type 'DayOfWeek')<br><br>The error in the output window is repeated for each row bound to the datagrid.<br><br>I included the datagrid code too incase it is something related to that that is causing this to not work.<br><br>Any other ideas?</p>",
+    "PostedDate": "2009-05-15T04:26:32.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190722",
+    "ThreadId": "56178",
+    "Html": "<p>Hi,</p>\r\n<p>This looks like a XAML Namescope issue. Have a read of the namescope documentation:</p>\r\n<p>http://msdn.microsoft.com/en-us/library/ms746659.aspx</p>\r\n<p>Basically your template is in a different namescope to your user control, hence the named element cannot be found.</p>\r\n<p>I would consider using a relative source binding in this case. Something like this ...</p>\r\n<p>FirstDayOfWeek=&quot;{Binding Path=FirstDayOfWeek, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type commonViews:MaintenanceView}}}&quot;</p>\r\n<p>This navigates the visual tree looking for a class of a specific type, in this case your user control, using it as the source for the binding.</p>\r\n<p>Regards,<br> Colin E.<br> --<br> http://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br> http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-15T06:44:20.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190763",
+    "ThreadId": "56178",
+    "Html": "<p>ColinEber: Thank-you man. Big time. Your solution worked 100%.<br><br>The time you spent helping me here is very highly appreciated!!</p>",
+    "PostedDate": "2009-05-15T08:24:49.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190781",
+    "ThreadId": "56178",
+    "Html": "<p>Thanks for letting me know it worked. No problem :-)</p>\r\n<p>Regards,<br> Colin E.<br> --<br> http://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br> http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples</p>",
+    "PostedDate": "2009-05-15T09:05:55.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

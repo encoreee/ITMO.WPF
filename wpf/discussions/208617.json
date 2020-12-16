@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "428508",
+    "ThreadId": "208617",
+    "Html": "I have a strange problem with a DataGri. The scrollbars appear correctly when the number of rows grows, and the scrolling works when you press up or down arrows on the scrollbar.The problem comes in when I try to drag the scrollbar on the datagrid. My page has a scrollviewer around it. When I click and drag the scrollbar on the grid, it scrolls the page scroller instead. If the scrollbar does not apear on the page, there grid still does not scroll. Is there a workaround for this???\r\n\r\nWould really appreciate some help with this issue!\r\n",
+    "PostedDate": "2010-04-07T13:55:13.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

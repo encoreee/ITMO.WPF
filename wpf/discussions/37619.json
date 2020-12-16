@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "124781",
+    "ThreadId": "37619",
+    "Html": "I have the following code:<br>\r\n<br>\r\npublic class Customer : ICustomer<br>\r\n{<br>\r\n<br>\r\n}<br>\r\npublic interface ICustomer{}<br>\r\n<br>\r\nWhen I bind to an empty List&lt;ICustomer&gt; I have no row for the NewItemPlaceHolder - if I add a Customer in the the List&lt;ICustomer&gt;, the NewItemPlaceHolder appears. I realize that the DataGrid has no way of knowing the concrete type I intend to use. My question is whether it is possible to 'force-feed' this information? Ie. somehow make the DataGrid aware that it should use the concrete class Customer.<br>\r\n<br>\r\nI would like to avoid using List&lt;Customer&gt; if possible.<br>\r\n",
+    "PostedDate": "2008-10-13T12:01:40.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "124972",
+    "ThreadId": "37619",
+    "Html": "Unfortunately with the current design there is no way to tell the DataGrid (or more importantly the IEditableCollectionView) the concrete implementation for ICustomer.&nbsp; There have been discussions on how to provide such an extensibility point in IECV but nothing in the current bits.&nbsp; A workaround that I'm sure you've already thought of for the empty case is to manually contrust the new item yourself.&nbsp;\r\n",
+    "PostedDate": "2008-10-14T06:13:47.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125093",
+    "ThreadId": "37619",
+    "Html": "Yeah - either creating it myself or using a NullCustomer (Null Object Pattern), so that I can still keep the list in-synch with the database and leave the DataGrid untouched.<br>\r\n<br>\r\nBut anyhow - thanks for clearing it up. I hope a solution is found later - perhaps designing the NewItemPlaceHolder as a Prototype of a type specified - so you could clone this when entering a new row - or the ability to specify an ObjectFactory that should be responsible for creating the new objects. With my limited knowledge of the inner workings - this should be doable - but I have no idea how much existing functionality it would break :-).<br>\r\n",
+    "PostedDate": "2008-10-14T13:00:20.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

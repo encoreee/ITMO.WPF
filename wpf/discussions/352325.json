@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "823922",
+    "ThreadId": "352325",
+    "Html": "\r\n<p>Hai, anyone know how to build Histogram in WPF ?<br>\r\nI search in google but it was nothing there.</p>\r\n<p>Thanks before&nbsp;</p>\r\n",
+    "PostedDate": "2012-04-14T18:46:07.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823982",
+    "ThreadId": "352325",
+    "Html": "<p>I have found one link in codeproject that could help you:</p>\r\n<p><a href=\"http://www.codeproject.com/Articles/83953/Image-Magic-Image-Levels-using-Custom-Controls\">http://www.codeproject.com/Articles/83953/Image-Magic-Image-Levels-using-Custom-Controls</a></p>",
+    "PostedDate": "2012-04-15T04:52:55.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "824217",
+    "ThreadId": "352325",
+    "Html": "<p>thanks for replying</p>\r\n<p>i've try that but it's not too good<br />Do you have another one ?</p>",
+    "PostedDate": "2012-04-15T23:50:54.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

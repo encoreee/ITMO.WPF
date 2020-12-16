@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nI am very new for .net & WPF,  I am not able to bind the data to lineSeries.\n\nI am gone through with some of the examples, but I didn't understand how to bind the data\n\nI need to bind the data which is in the Dictionary.\nPlotgraph.cs\n```\ninternal class Plotgraph : ICommand\n    {\n        private ViewModel viewModel;\n\n        public Plotgraph(ViewModel viewModel)\n        {\n            this.viewModel = viewModel;\n        }\n\n        public event EventHandler CanExecuteChanged;\n\n        public bool CanExecute(object parameter) => true;\n\n        public void Execute(object parameter)\n        {\n             viewModel.Model.GetParameterValues(viewModel.SelectedParameter.Name);\n\n        }\n    }\n```\nI have the chart in Window.xaml\n\n```\n<ChartingControls:Chart Title=\"Parameter Values v/s TimeStamp\" x:Name=\"GraphPlot\" Grid.Row=\"1\" Grid.Column=\"0\">\n            <ChartingControls:LineSeries x:Name=\"ParameterTimeStamp\" \n                    Title=\"{Binding Path=SelectedParameter.Description}\" DependentValuePath=\"Value\"\n                                         IndependentValuePath=\"Key\" ItemsSource=\"{Binding PlotParameter}\">\n            </ChartingControls:LineSeries>\n            <ChartingControls:Chart.Axes>\n                <ChartingControls:LinearAxis\n                        Orientation=\"X\"\n                        Title=\"TimeStamp\"\n                        Interval=\"50\" Minimum=\"0\" Maximum=\"{Binding Path=Mission.DataLength}\"/>\n                <ChartingControls:LinearAxis\n                        Orientation=\"Y\"\n                        Title=\"Values\"\n                        Interval=\"30\" Minimum=\"{Binding Path=SelectedParameter.MinimumValue}\" \n                    Maximum=\"{Binding Path=SelectedParameter.MaximumValue}\"/>\n            </ChartingControls:Chart.Axes>\n        </ChartingControls:Chart>\n```\n\nthe window.cs looks like\n\n```\npublic partial class GraphPlotUIWindow : Window\n    {\n        public GraphPlotUIWindow(IViewModel viewModel)\n        {\n            InitializeComponent();\n            DataContext = viewModel;\n        }\n    }\n```\nI have added PlotParameter in both Iviewmodel and in viewmodel, as below:\n\nIViewModel.cs\n```\nDictionary<int, double> PlotParameter { get; set; }\n```\nViewModel.cs\n```\npublic Dictionary<int, double> plotparameter;\n\npublic Dictionary<int, double> PlotParameter\n        {\n            get\n            {\n                return plotparameter;\n            }\n\n            set\n            {\n                plotparameter = Model.GetParameterValues(SelectedParameter.Name);\n                OnPropertyChanged(nameof(PlotParameter));\n            }\n        }\n```\nBut the dataset is available in Model.cs:\n\n```\npublic Dictionary<int, double> ParameterDataSet;\n\n\npublic Dictionary<int, double> GetParameterValues(string name)\n        {\n           var parameterValues =  tcpServiceClient.GetParameterValues(name);\n\n            ParameterDataSet = new Dictionary<int, double>();\n\n            foreach (var item1 in parameterValues)\n            {\n                var key = item1.TimeStamp;\n                var value = item1.Value;\n                ParameterDataSet.Add(key, value);\n            }\n            return ParameterDataSet;\n        }\n```\nI have read the example. still I am in dark, I am not getting where I am doing mistake...\n\nPlease help me from this,\n\nThanks in advance...",
+    "LastUpdatedDate": "2016-08-22T23:48:51.7-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2016-08-22T23:48:51.7-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to bind the Dictionary to LineSeries...",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 22336
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

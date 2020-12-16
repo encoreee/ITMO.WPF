@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "131486",
+    "ThreadId": "39625",
+    "Html": "Hi All,<br>\r\n<br>\r\nI have a grid, contained in a WPF border control.&nbsp; My app is uses this pattern quite a bit (one border with rounded edges which contains a grid).&nbsp; I would like to be able to set the background of the WPF border element when the grid that it contains receives focus.&nbsp; Does anyone know of a straightforward way to do this?<br>\r\n<br>\r\nThank you,<br>\r\nJon<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-10T12:44:17.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

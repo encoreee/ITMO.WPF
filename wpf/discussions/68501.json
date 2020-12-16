@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "232995",
+    "ThreadId": "68501",
+    "Html": "<p>Hi,</p>\r\n<p>I&nbsp;have created pie chart with 5 slice by using WPF Toolkit. I want to bind the values of pie slice with 5 Sliders each.</p>\r\n<p>Please help me on the following scenarios,</p>\r\n<p>1) When the pie chart is loaded each slice value to be bind with Slider. (Say if Slice1 has value X, the corresponding Slider should show the value X)</p>\r\n<p>2) When modifying the any of the Slider the correspoding PieSlice needs to be updated.</p>\r\n<p>Note: The total value of piechart (sum of pieslices) is 100.</p>\r\n<p>Please help me with sample if any.</p>\r\n<p>Thanks in Advance.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-10T01:15:34.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234519",
+    "ThreadId": "68501",
+    "Html": "<p>This should be pretty easy if your underlying data objects implement INotifyPropertyChanged for the value you're using as the DependentValue of the PieSeries. Just set up the PieSeries normaly and be sure to use a two-way Binding for the Scrollbars, and the right thing should just happen since the Scrollbar will change the data value which will broadcast via INPC which will update the Chart! :)</p>",
+    "PostedDate": "2009-09-14T15:55:02.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "280308",
+    "ThreadId": "81640",
+    "Html": "<p>I'd like to have my DataGrid set its MaxHeight so that it won't grow bigger than all the rows. &nbsp;I tried binding to the DataGridRowPresenter's ActualHeight, but that is growing with the grid. &nbsp;At this point, I'm thinking I need to derive from DataGrid and monitor the sizes of the visible DataGridRows. &nbsp;Is there any simpler option I'm missing?</p>",
+    "PostedDate": "2010-01-21T16:32:01.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

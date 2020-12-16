@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "192194",
+    "ThreadId": "56862",
+    "Html": "<p>I want to add a new content presenter to display the selected date information as: Wensday, Apir 2009 into the calendar, then how to realize?</p>\r\n<p>The whole calender will be like this:</p>\r\n<p>Su Mo Tu We Th Fr Sa</p>\r\n<p>&nbsp;1&nbsp;&nbsp; 2&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp; 5&nbsp; 6&nbsp; 7</p>\r\n<p>...</p>\r\n<p>Wensday, Apir 2009</p>\r\n<p>Regards</p>\r\n<p>Daniel</p>",
+    "PostedDate": "2009-05-19T22:44:03.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195505",
+    "ThreadId": "56862",
+    "Html": "<p>You would have to re-template the Calendar to include your new element at the bottom then bind that element's content/text to the Calendar's SelectedDate.</p>\r\n<p>Here is an&nbsp;example of the Binding:&nbsp;</p>\r\n<p>&lt;TextBox&nbsp; Text=&quot;{Binding ElementName=yourCalendar, Path=SelectedDate, StringFormat='D'}&quot;&nbsp;/&gt;</p>\r\n<p>The 'D' specifies the formatting that is returned by the DateTime's ToString(String). For more info, see: <a href=\"http://msdn.microsoft.com/en-us/library/system.windows.data.bindingbase.stringformat.aspx\">http://msdn.microsoft.com/en-us/library/system.windows.data.bindingbase.stringformat.aspx</a></p>\r\n<p>-Eric, MSFT</p>",
+    "PostedDate": "2009-05-28T17:30:09.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

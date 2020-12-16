@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I think this piece of code in AutoCompleteBox.cs prevents it from working correctly:\n \n// The TextBox.TextChanged event was not firing immediately and \n            // was causing an immediate update, even with wrapping. If there is \n            // a selection currently, no update should happen.\n            if (IsTextCompletionEnabled && TextBox != null && TextBox.SelectionLength > 0 && TextBox.SelectionStart != TextBox.Text.Length)\n            {\n                return;\n            }\n \n \nI was using it to simulate a ComboBox with a custom method for filtering, and was running into problems. I traced it down to the value of the IsTextCompletionEnabed property being set to true.\n \nMy custom filter attempts at showing the full list of items available when they have already selected the item and click the togglebutton to open the dropdown. The relevant code for this custom filter looks like this:\n \nif (null != SelectedItem && SelectedItem.ToString().Equals(searchText, StringComparison.InvariantCulture))\n                {\n                    //the selected item is what is typed exactly,\n                    //return the other records so they can see them in the dropdown\n                    toReturn = true;\n                }\n \n \nIf more details/code is needed, let me know...",
+    "LastUpdatedDate": "2013-02-21T18:40:35.483-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-05-11T13:49:45.87-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AutoCompleteBox doesn't populate dropdown properly when IsTextCompletionEnabled is True",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12999
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

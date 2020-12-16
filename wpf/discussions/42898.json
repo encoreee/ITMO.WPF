@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "142564",
+    "ThreadId": "42898",
+    "Html": "<span style=\"font-family:'-webkit-monospace';font-size:13px;white-space:pre-wrap\">Hi Friends,I am new to WPF programming, please help me out with the following Issue:The text in the TextBox are separated,, i.e, like N 23°23.65, here User enters N first, after that he should press Tab to edit the next field (i.e, Degrees field) and then again press tab to edit next field (minutes field)....Kindly help me...Thanks in Advance... </span>",
+    "PostedDate": "2008-12-23T04:34:06.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143562",
+    "ThreadId": "42898",
+    "Html": "It seems you need a masked text box implementation in WPF. I did a quick web search and found these two links....<br>\r\n<br>\r\n<p><a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/b559b41a-274f-414a-8651-39d55c408ad8/\">http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/b559b41a-274f-414a-8651-39d55c408ad8/</a></p>\r\n<p><a href=\"http://geekswithblogs.net/QuandaryPhase/archive/2008/12/17/wpf-masked-textbox.aspx\">http://geekswithblogs.net/QuandaryPhase/archive/2008/12/17/wpf-masked-textbox.aspx</a><br>\r\n<br>\r\nPS: I havent personally looked at these implementations.</p>\r\n",
+    "PostedDate": "2008-12-30T11:05:20.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

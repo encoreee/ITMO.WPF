@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am using Microsoft Ribbon for WPF October 2010 and in some cases getting into measure loop through RibbonContextualTabGroupsPanel and RibbonTabHeadersPanel. I have sveral regular tabs and some contextual tabs. All contextual tabs are collapsed by default and in specified cases are visible. Theirs visibility are set by DataTrigger. Issue occurs when contextual tab group header is wider than tab header within it.\n \n<r:Ribbon>\n  <r:RibbonTab ... />\n  <r:RibbonTab ... />\n  <r:RibbonTab ... />\n  <r:RibbonTab ... />\n  <r:RibbonTab Header=\"Short Text\" ContextualTabGroupHeader=\"Really Longer Text\">\n    <r:RibbonTab.Style>\n      <Style TargetType=\"r:RibbonTab\">\n        <Style.Triggers>\n          <DataTrigger Binding=\"{Binding Context}\" Value=\"Edit\">\n            <Setter Property=\"IsSelected\" Value=\"True\" />\n          </DataTrigger>\n        </Style.Triggers>\n      </Style>\n    </r:RibbonTab.Style>\n  </r:RibbonTab>\n \n  <r:Ribbon.ContextualTabGroups>\n    <r:RibbonContextualTabGroup Header=\"Really Longer Text\" Background=\"Green\">\n      <r:RibbonContextualTabGroup.Style>\n        <Style TargetType=\"r:RibbonContextualTabGroup\">\n          <Style.Triggers>\n            <DataTrigger Binding=\"{Binding Context}\" Value=\"Edit\">\n              <Setter Property=\"Visibility\" Value=\"Visible\" />\n            </DataTrigger>\n          </Style.Triggers>\n        </Style>\n      </r:RibbonContextualTabGroup.Style>\n    </r:RibbonContextualTabGroup>\n  </r:Ribbon.ContextualTabGroups>\n</r:Ribbon>\n \nCan you provide any workaround for this issue?\n \nThanks in advance.",
+    "LastUpdatedDate": "2017-08-31T05:15:34.013-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2012-02-16T23:50:58.003-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon Contextual Tabs Measure Issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 17436
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi. Have you found a workaround?\r\nThanks",
+      "PostedDate": "2012-07-02T09:14:46.837-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "No. I tried to find shorter string which didn't cause the problem.",
+      "PostedDate": "2012-07-10T00:14:56.777-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-01-09T14:00:03.687-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:07.033-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-08-31T05:15:34.013-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

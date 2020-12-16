@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130138",
+    "ThreadId": "39230",
+    "Html": "Greetings,<br>\r\n<br>\r\nDoes the Ribbon CTP 1 have the built-in-feature of displaying a ContextMenu when you right-click a button on a Ribbon Tab?<br>\r\n<br>\r\nAs an example, if you right-click the &quot;Paste&quot; button in Word 2007, you get a ContextMenu with the following options:<br>\r\n- Add to Quick Access Toolbar<br>\r\n- Customize the Quick Access Toolbar...<br>\r\n- Show Quick Access Toolbar Above the Ribbon<br>\r\n- Minimize the Ribbon<br>\r\n<br>\r\nThis functionality is key to our application, and I am wondering if the functionality exists or whether I need to either implement the feature myself, or choose another Ribbon implementation.<br>\r\n<br>\r\nCheers,<br>\r\n-Brad \r\n",
+    "PostedDate": "2008-11-04T21:58:26.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130266",
+    "ThreadId": "39230",
+    "Html": "Hi Brad,<br>\r\n<br>\r\nThis feature is not built-in to the CTP, but it should be fairly easy to implement yourself.  You would just need to define a ContextMenu with those items and hook up the logic to handle execution of those items, and then assign that ContextMenu to all of your Ribbon controls and groups.  &quot;Show Quick Access Toolbar Above the Ribbon&quot; and &quot;Minimize the Ribbon&quot; are already defined in the CTP under the customize menu of the QuickAccessToolbar, so you could just copy those over from our source code and reuse them.  &quot;Add to Quick Access Toolbar&quot; is pretty simple because you just need to write logic to add a new control of the same type to the QAT, assign the same command to it, and set the Placement property to InToolbar (and make sure that its state is the same as the control on the Ribbon).  &quot;Customize the Quick Access Toolbar&quot; will be the most difficult since you'll need to create the dialog, but this is an optional feature so you could skip if you don't need it.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-05T09:41:10.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

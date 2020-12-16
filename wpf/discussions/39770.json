@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "132021",
+    "ThreadId": "39770",
+    "Html": "<div>Hi all.</div>I have my custom control of filtering.<div>I want to embed this control in DG_ScrollViewer in default DataGrid template.</div><div>After I embedded it scrolling doesn't work for my control and works only for other native elements.</div><div>How can I do scrolling for my custom control together with other elements DataGrid?</div><div><br></div><div>Thanks</div>",
+    "PostedDate": "2008-11-12T07:25:55.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

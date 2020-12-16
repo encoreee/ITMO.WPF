@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed in the March 2009 release.",
+    "ClosedDate": "2009-03-24T14:57:11.92-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm creating a datagrid (from code) with one column that has a width of \"*\"\n \n cb.Width = new DataGridLength(100,DataGridLengthUnitType.Star); \n \nIn attached file you can see that the right part of the combo is not visible. There is a margin on the datagrid. I've the impression that the part that is missing is equal to margin left + right.\n \nIf I remove the margin the problem dissappears...\n \nRegards,\n \nDave\n \n \n \n                        DataGrid dg = new DataGrid();\n                        dg.Height = 114;\n                        \n                        BindingOperations.SetBinding(dg,DataGrid.ItemsSourceProperty,new Binding(\"Item.\"+column.Name));    \n                        dg.Style = Application.Current.FindResource(\"DetailDataGridStyle\") as Style;\n                        BindingOperations.SetBinding(dg, DataGrid.SelectedItemProperty, new Binding(\"Relations.\" + column.RelationTo+\".SelectedItem\"));\n \n                        DataGridComboBoxColumn cb = new DataGridComboBoxColumn();\n                        cb.Header = Resource.ResourceManager.GetString(\"V_\" + viewName + \"_\" + column.Name + \"_Label\");\n                        cb.DisplayMemberPath = \"DisplayMemberPath\";\n                        cb.SelectedValuePath = \"Id\";\n                        cb.SelectedValueBinding = new Binding(\"Id\");\n                        cb.Width = new DataGridLength(100,DataGridLengthUnitType.Star); \n                        Binding itemsSource = new Binding(column.RelationTo);\n                        itemsSource.Source = JoRPA.UI.App.Current.Data;   \n                        BindingOperations.SetBinding(cb, DataGridComboBoxColumn.ItemsSourceProperty, itemsSource);\n                        dg.Columns.Add(cb);",
+    "LastUpdatedDate": "2013-05-16T05:31:08.47-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-19T09:22:33.04-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid Column Width=\"*\" strange sizing behaviour",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9561
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2885,
+      "FileName": "Sizing.jpg",
+      "DownloadUrl": ".\\2885"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "It's resolve in the March release apparently.\r\n\r\nYou can close this. Thanks for the new release... ;)",
+      "PostedDate": "2009-03-20T03:35:02.787-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T14:57:11.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:26.187-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:08.47-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

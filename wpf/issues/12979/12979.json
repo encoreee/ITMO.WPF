@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, I have written a WPF Application that runs fine on Windows XP with WPF Toolkit 3.5.40128.1 \nBut on Windows 7 Professional it throws the following Exception, even after upgrading to the current WPF Toolkit 3.5.50211.1 \nThe same compiled Application works on XP but crashes on Windows 7. \nI suppose it must be an Error in my Application but it would be very helpful, if someone could point me into the right Direction. \n \nThanks in advance\n \nThis is the Stacktrace: \nSystem.ArgumentException\t\"An Item with the same key has already been added\"\n \tmscorlib.dll!System.ThrowHelper.ThrowArgumentException(System.ExceptionResource resource) + 0x34 bytes\t\n \tmscorlib.dll!System.Collections.Generic.Dictionary<object,Microsoft.Windows.Automation.Peers.DataGridItemAutomationPeer>.Insert(object key, Microsoft.Windows.Automation.Peers.DataGridItemAutomationPeer value, bool add) + 0x2e9 bytes\t\n \tmscorlib.dll!System.Collections.Generic.Dictionary<System.__Canon,System.__Canon>.Add(System.__Canon key, System.__Canon value) + 0xc bytes\t\n \tWPFToolkit.dll!Microsoft.Windows.Automation.Peers.DataGridAutomationPeer.GetItemPeers() Line 281 + 0xc9 bytes\tC#\n \tWPFToolkit.dll!Microsoft.Windows.Automation.Peers.DataGridRowsPresenterAutomationPeer.GetChildrenCore() Line 62 + 0x17 bytes\tC#\n \tPresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.EnsureChildren() + 0x1a bytes\t\n \tPresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.UpdateChildren() + 0x3e bytes\t\n \tPresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree() + 0x2e4 bytes\t\n \tPresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree() + 0x2f8 bytes\t\n \tPresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree() + 0x2f8 bytes\t\n \tPresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.UpdateSubtree() + 0x2f8 bytes\t\n \tPresentationCore.dll!System.Windows.ContextLayoutManager.fireAutomationEvents() + 0x98 bytes\t\n \tPresentationCore.dll!System.Windows.ContextLayoutManager.UpdateLayout() + 0x65b bytes\t\n \tPresentationCore.dll!System.Windows.ContextLayoutManager.UpdateLayoutCallback(object arg) + 0x19 bytes\t\n \tPresentationCore.dll!System.Windows.Media.MediaContext.InvokeOnRenderCallback.DoWork() + 0x10 bytes\t\n \tPresentationCore.dll!System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks() + 0x97 bytes\t\n \tPresentationCore.dll!System.Windows.Media.MediaContext.RenderMessageHandlerCore(object resizedCompositionTarget) + 0x80 bytes\t\n \tPresentationCore.dll!System.Windows.Media.MediaContext.RenderMessageHandler(object resizedCompositionTarget) + 0x2b bytes\t\n \tPresentationCore.dll!System.Windows.Media.MediaContext.Resize(System.Windows.Media.ICompositionTarget resizedCompositionTarget) + 0x3b bytes\t\n \tPresentationCore.dll!System.Windows.Interop.HwndTarget.OnResize() + 0x147 bytes\t\n \tPresentationCore.dll!System.Windows.Interop.HwndTarget.HandleMessage(int msg, System.IntPtr wparam, System.IntPtr lparam) + 0x21a bytes\t\n \tPresentationCore.dll!System.Windows.Interop.HwndSource.HwndTargetFilterMessage(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam, ref bool handled) + 0x3a bytes\t\n \tWindowsBase.dll!MS.Win32.HwndWrapper.WndProc(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam, ref bool handled) + 0xbe bytes\t\n \tWindowsBase.dll!MS.Win32.HwndSubclass.DispatcherCallbackOperation(object o) + 0x7a bytes\t\n \tWindowsBase.dll!System.Windows.Threading.ExceptionWrapper.InternalRealCall(System.Delegate callback, object args, bool isSingleParameter) + 0x8a bytes\t\n \tWindowsBase.dll!System.Windows.Threading.ExceptionWrapper.TryCatchWhen(object source, System.Delegate callback, object args, bool isSingleParameter, System.Delegate catchHandler) + 0x4a bytes\t\n \tWindowsBase.dll!System.Windows.Threading.Dispatcher.WrappedInvoke(System.Delegate callback, object args, bool isSingleParameter, System.Delegate catchHandler) + 0x44 bytes\t\n \tWindowsBase.dll!System.Windows.Threading.Dispatcher.InvokeImpl(System.Windows.Threading.DispatcherPriority priority, System.TimeSpan timeout, System.Delegate method, object args, bool isSingleParameter) + 0x91 bytes\t\n \tWindowsBase.dll!System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority priority, System.Delegate method, object arg) + 0x40 bytes\t\n \tWindowsBase.dll!MS.Win32.HwndSubclass.SubclassWndProc(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam) + 0xdc bytes\t\n \t[Native to Managed Transition]\t\n \t[Managed to Native Transition]\t\n \tPresentationFramework.dll!System.Windows.Window.ShowHelper(object booleanBox) + 0xb9 bytes\t\n \tPresentationFramework.dll!System.Windows.Window.Show() + 0x48 bytes\t\n>\tKWeb.exe!Gui.MainWindow.CreateNewWindow(org.structs.KnowledgeWeb.Data.Layout layout) Line 1955 + 0xa bytes\tC#\n \tKWeb.exe!Gui.MainWindow._LayoutOpen() Line 1396 + 0x8 bytes\tC#\n \tKWeb.exe!Gui.MainWindow._KeyDown(object sender, System.Windows.Input.KeyEventArgs e) Line 1273 + 0x8 bytes\tC#",
+    "LastUpdatedDate": "2014-09-26T00:05:19.09-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-05-10T13:21:29.77-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGridAutomationPeer.GetItemPeers ArgumentException same key has already been added on Vista",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 12979
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am having the same issue... Compilation working fine with Windows XP, but crashing in Windows 7...",
+      "PostedDate": "2010-06-21T09:36:43.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-10-26T17:51:08.95-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-06T04:17:15.64-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "i'm having the same issue too. i thought that disabling automation in my app would workaround this issue but it looks like i was wrong...\r\nhere is the code I've used to shut down automation:\r\n public partial class MainWindow : Window\r\n    {\r\n        public MainWindow()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n        class FakeWindowAutomationPeer : WindowAutomationPeer\r\n        {\r\n            public FakeWindowAutomationPeer(Window owner)\r\n                : base(owner)\r\n            {\r\n            }\r\n\r\n            protected override List<AutomationPeer> GetChildrenCore()\r\n            {\r\n                return null;\r\n            }\r\n        }\r\n\r\n        protected override AutomationPeer OnCreateAutomationPeer()\r\n        {\r\n            return new FakeWindowAutomationPeer(this);\r\n        }\r\n    }\r\n",
+      "PostedDate": "2011-01-06T04:20:30.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I encountered this problem, and was able to determine that having two items in the DataGrid for which the \"virtual bool Equals (object obj)\" implementation returned true resulted in the exception. Fundamentally, this means that the DataGrid (at least the automation portion of it) does not allow for duplicate items in the DataGrid.\r\n\r\nFor me, I happen to have duplicates because the dummy test data I was inserting didn't have the \"unique ID\" field properly set, so my dummy objects appeared equal.\r\n\r\nMaking all your items 'unique' may be an option for letting folks avoid this problem.",
+      "PostedDate": "2011-10-18T14:10:27.597-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:36.057-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-25T23:30:15.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I solved the problem by changing the following file:[0A][0A]> DataGrid\\Microsoft\\Windows\\Automation\\Peers\\DataGridAutomationPeer.cs[0A][0A]In method:[0A][0A]```[0A]private List<AutomationPeer> GetItemPeers()[0A]```[0A][0A]replace line:[0A][0A]```[0A]_itemPeers.Add(item, peer);[0A]```[0A][0A]with:[0A][0A]```[0A]_itemPeers[item] = peer;[0A]```[0A][0A]Note: although these changes solved my problem, I didn't check if they still make the datagrid to behave correctly with automation peer clients.",
+      "PostedDate": "2014-09-26T00:05:19.09-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "170353",
+    "ThreadId": "50825",
+    "Html": "<p>Apologies for any confusion and delay in getting the March release of WPF Toolkit out. The Toolkit was originally supposed to be released Friday morning (March 20, 2009). Shortly after we posted the release, users reported that the Disabled DatePicker bug that was supposed to have been fixed actually wasn’t (thanks shallotx &amp; Octothorpe!). When we investigated, we discovered that we made an error in porting the source code to CodePlex, which left out part of the change. The CodePlex emergency maintenance that occurred on Friday prevented us from updating the project that afternoon. <br>\r\n<br>\r\nThis morning we replaced the release with a new one which includes updated binaries.  Source code for this release will also be added within the next few days.  For anyone that downloaded 3.5.40319.1, which we have now removed, please upgrade to 3.5.40320.1, which contains this additional bug fix.</p>\r\n<p>Thank you all for your patience and understanding,<br>\r\nThe WPF Toolkit Team</p>\r\n",
+    "PostedDate": "2009-03-21T07:36:11.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170935",
+    "ThreadId": "50825",
+    "Html": "Source code is now posted.  Thanks\r\n",
+    "PostedDate": "2009-03-23T10:47:38.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185117",
+    "ThreadId": "50825",
+    "Html": "Hi, I am looking for a DataGrid with one of the column type as treeview. Is this possible with this DataGrid ? If not could you provide some help on how this can be achieved ?\r\n",
+    "PostedDate": "2009-04-29T11:00:11.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187644",
+    "ThreadId": "50825",
+    "Html": "<span lang=EN-US style=\"font-size:11pt;font-family:'calibri','sans-serif';color:rgb(31, 73, 125)\">Hi, I am looking for a method to access the current state of VSM. i use the VSM to control my hole UI. the UI is not pointer-based. i use only key events (from a remote control) to control it. it is essential to know which object has for  example </span><span lang=EN-US style=\"font-size:11pt;font-family:'calibri','sans-serif';color:rgb(31, 73, 125)\">the VisualState &quot;Focused&quot; to define the next  possible interaction!<br>\r\n<br>\r\nthanks for help!<br>\r\n</span>\r\n",
+    "PostedDate": "2009-05-07T01:23:47.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202366",
+    "ThreadId": "50825",
+    "Html": "<p>Hello,</p>\r\n<p>When using the grid, if we try to define the columns, then the vss visualiser tries to add an extra column to the left and expands it to infinite causing the vss to crash. Using the grid with no column defined works without any problem but we need to see only some columns and format them.</p>\r\n<p>We are using vss 2008 team version + sp1 + dotnet framework 3.5 sp1</p>\r\n<p>Greetings</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-17T01:48:34.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

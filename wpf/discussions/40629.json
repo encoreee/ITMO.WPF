@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "134759",
+    "ThreadId": "40629",
+    "Html": "Hi,<br>\r\n<br>\r\nIs there a built in way to toggle between making a row editable or read only on the data grid?<br>\r\n<br>\r\nOff the top of my head I would think I could do this with commands fairly easily, but I would like to use whatever is considered &quot;standard&quot;.<br>\r\n<br>\r\nThanks,<br>\r\nJon \r\n",
+    "PostedDate": "2008-11-24T06:35:28.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137236",
+    "ThreadId": "40629",
+    "Html": "There isn't a built in way.  But you can easily create a binding to a checkbox or use a command.  \r\n",
+    "PostedDate": "2008-12-03T05:49:32.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

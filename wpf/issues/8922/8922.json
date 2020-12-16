@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When you click on the orb/menu in the top left corner, then click on it again to close it, you need to click elsewhere before you can do anything else (excluding the control box buttons).  For example: if you click on the the orb twice, then click and drag on the bar up the top (where the application title is), nothing happens.  However, seeing you've clicked, if you do it again, it works.  If you click twice on the menu orb, then hover over items on the ribbon bar, the animations do not play, and you have to double click to get the button to activate.\n \nI do believe this is NOT the intended behaviour?  Also, I am running a custom theme on Windows XP and using the Office 2007 Blue theme.",
+    "LastUpdatedDate": "2013-02-21T18:41:36.503-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-14T17:38:45.91-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon Menu Button steals focus",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 8922
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

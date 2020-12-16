@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "167294",
+    "ThreadId": "49980",
+    "Html": "I want to unselect all the <span style=\"font-size:13px;color:#010001\">SelectedItems </span>when use multi-select mode in DataGrid if the <span style=\"font-size:13px;color:#010001\">SelectedItems is not proper or useless for me</span>, <br>\r\n<br>\r\n<span style=\"font-size:13px;color:#010001\"> I use UnselectAll function of DataGrid in <span style=\"font-size:13px;color:#010001\">SelectionChanged method</span>, and it really unselect the last item I select, but the other items are still highlight and selected? What's wrong?  And I bind the <span style=\"font-size:13px;color:#010001\">IsSelected </span>property of rows to my ViewModel using TwoWay mode. </span>\r\n",
+    "PostedDate": "2009-03-12T03:29:12.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

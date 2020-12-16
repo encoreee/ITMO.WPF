@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "147607",
+    "ThreadId": "44351",
+    "Html": "Can I use this wpf toolkit in the business software ? <br>\r\n<br>\r\nAfter read the license ,I still can't understand whether I can do or not . <br>\r\n<br>\r\nThanks. <br>\r\n",
+    "PostedDate": "2009-01-15T22:58:41.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147793",
+    "ThreadId": "44351",
+    "Html": "Hi ms44cn,<br>\r\n<br>\r\nYes, you're more than welcome to use this in business software (I'm assuming you're referring to  features in the WPF Toolkit or Futures, NOT the Ribbon CTP, which is not currently licensed for distribution).  Please just be aware of the Known Issues before you ship anything: <a href=\"http://www.codeplex.com/wpf/Wiki/View.aspx?title=Tips %26 Tricks&referringTitle=Home\">http://www.codeplex.com/wpf/Wiki/View.aspx?title=Tips%20%26%20Tricks&amp;referringTitle=Home</a>.  These components are not guaranteed to be serviced as often as the versions in the framework, so by accepting the license, you are assuming any risk that comes along with using these early bits.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-01-16T11:00:41.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156296",
+    "ThreadId": "44351",
+    "Html": "In addition to the above question: I don't really understand the license with regards to &quot;publishing&quot; - does one need to include in the redistributed software that uses this library a note that repeats the license or so?  What exactly does one need to do when using this library in a business application that gets resold please?\r\n",
+    "PostedDate": "2009-02-10T09:16:19.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160293",
+    "ThreadId": "44351",
+    "Html": "Hi xstof,<br>\r\n<br>\r\nI'm not qualified to give a legal opinion, but my interpretation is that if you are including Toolkit <strong>source code</strong> in your application, you should include a copy of the MS-PL license.  I'm not sure if that means in the comments of your code or with your application license.  If you have questions about the license, my best recommendation would be to consult an attorney.  I'm also asking our legal department to post an FAQ about MS-PL to provide more guidance about this topic in the future.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-20T13:32:21.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

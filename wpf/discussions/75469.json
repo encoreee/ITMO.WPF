@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "258264",
+    "ThreadId": "75469",
+    "Html": "<p>I would like to add rows to the WPF toolkit Datagrid without binding it to a datasource like datatable.</p>\r\n<p>I know it is startight forward in Windows.Forms. I use the DataGridView.Rows.Add() function to do it.</p>\r\n<p>Apparently WPF toolkit Datagrid did not have any such function. Is there a work around for it?</p>\r\n<p>Note: Ofcourse I can use a WindowsFormHost Control and use the Windows.Forms datagridview. But I would like to use the WPF controls.</p>",
+    "PostedDate": "2009-11-18T05:49:56.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

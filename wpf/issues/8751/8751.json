@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comments.",
+    "ClosedDate": "2009-02-18T17:31:20.14-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi ,\n \nPlease forgive me  to discuss about John'sarticle here . Of course the comments section had been closed there :) \n \nI recently come across a nice article on WPF here..\nhttp://joshsmithonwpf.wordpress.com/2007/06/22/overview-of-dependency-properties-in-wpf/\n \nAccording to John's explanation , The value of DP is set based on the following order of precedence . \n \nProperty system coercion \nActive animations, or animations with a Hold behavior \nLocal value \nTemplatedParent template \nStyle triggers \nTemplate triggers \nStyle setters \nTheme style \nInheritance\n \n--Text box demo for DP--\n<Style x:Key=\"TestStyle\" TargetType=\"TextBlock\">\n        <Setter \n          Property=\"Text\" \n          Value=\"This is the Style's Setter-supplied value\" \n          />\n        <Style.Triggers>\n          <Trigger Property=\"IsMouseOver\" Value=\"True\">\n            <Setter \n              Property=\"Text\" \n              Value=\"This is the Style's Trigger-Supplied Value\" \n              />\n          </Trigger>\n        </Style.Triggers>\n      </Style>\n \nvoid chkApplyStyle_Checked( object sender, RoutedEventArgs e )\n \n{Style style = this.textBlk.FindResource( \"TestStyle\" ) as Style;this.textBlk.Style = style;}\n \nvoid chkApplyStyle_Unchecked( object sender, RoutedEventArgs e ){this.textBlk.Style = null;}\n \n \nStep 1 : if  \"chkApplyStyle_Checked\" is called , then the control is assigned with the style as given in XAML . \nStept 2 : if  \"chkApplyStyle_UnChecked\" is called , then no style is set for the control  .\n \nIf step 1 is executed , i am clear . \nIf step 2 is executed after step1 , Then empty is assigned to the style of the control . This can well be done in normal CLR property like unsetting the back ground , text etc .  \n \nMy conclusions \n \na) The difference is the styles and triggers are automatically applied in DP just by assigning the style unlike CLR property.Am i right ?\n \nb) Why dont MSFT change all properties to DP , just becos of considering the consumption of system resources ?\n \nPlease advice . \n \n \nThanks\nDevasena",
+    "LastUpdatedDate": "2013-05-16T05:31:13.21-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-29T04:41:11.883-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Dependency Property -More details Please",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8751
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "A better place to ask this question is at http://social.msdn.microsoft.com/forums/en-US/wpf/threads/\r\n\r\nSetting Style to null is not the same as calling ClearValue on the Style property. Setting the value to null sets a local value of null.\r\n\r\nDependencyProperties allows for the tracking of a variety of values from various sources and choosing one to be the current value, and then notifying targets that are dependent on the property.\r\n\r\nThere is a cost for using a DependencyProperty that is greater than a CLR property backed by a field. If the features of a DependencyProperty are not needed, then DPs should not be used.",
+      "PostedDate": "2009-02-18T17:31:10.593-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:31:20.14-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:37.827-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:13.21-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

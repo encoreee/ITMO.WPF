@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "277039",
+    "ThreadId": "80782",
+    "Html": "<p>Hello,</p>\r\n<p>When I create a new DataGrid in code and add a column to it like:</p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">var <span style=\"font-size:x-small\">myDataGrid = new DataGrid();<br></span></span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">var </span></span><span style=\"font-size:x-small\">column = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">new</span></span><span style=\"font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">DataGridTextColumn</span></span><span style=\"font-size:x-small\"> { Header = &quot;Header&quot; };<br></span><span style=\"font-size:x-small\">myDataGrid</span><span style=\"font-size:x-small\">.Columns.Add(column);</span></p>\r\n<p>I would like to generate the XAML of it via the XamlWriter.Save(myDataGrid).</p>\r\n<p>The output of the XamlWriter.Save&nbsp;results in a &lt;DataGrid&gt;...&lt;/DataGrid&gt;tag but i'm missing the DataGridTextColumn :(</p>\r\n<p>It looks like the XamlWriter isn't saving the datagrid columns to the Xaml output :(</p>\r\n<p>Any idea why? Or am I missing something? Is there a workaround for this?</p>\r\n<p>Greetz,</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-14T01:40:54.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "421982",
+    "ThreadId": "80782",
+    "Html": "<p>Hi, I have this problem too. I just start reading about how the serialization process work.&nbsp;</p>\r\n<p>Please if you found how to solve this post the solution. Thanks.</p>",
+    "PostedDate": "2010-03-21T23:32:37.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441812",
+    "ThreadId": "80782",
+    "Html": "I have the same problem too, it seems to be a bug",
+    "PostedDate": "2010-05-11T21:38:29.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

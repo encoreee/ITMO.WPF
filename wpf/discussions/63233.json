@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "214944",
+    "ThreadId": "63233",
+    "Html": "<p>I have created a simple WPF Application in VS2008 SP1 (running on Windows 7 RC x64).&nbsp; I have added a chartingToolkit:PieSeries chart to the main window in a DockPanel.&nbsp; Whenever I switch to the XAML/Design view, VS2008 hangs for long periods of time.&nbsp; I have even forced display of the XAML (text) only instead of automatically showing the split screen between XAML and design and it's still painfully slow.</p>\r\n<p>Note that the built application is fine and is very responsive.&nbsp; The slow behavior is only in the designer.</p>\r\n<p>Does anyone have any idea why this is happening or how to fix it?</p>\r\n<p>Thanks so much in advance!</p>",
+    "PostedDate": "2009-07-22T13:02:01.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

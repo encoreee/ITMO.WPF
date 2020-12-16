@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "180151",
+    "ThreadId": "53509",
+    "Html": "I've just started using the DataGrid and wish to create my own column type rather than using the templated column.<br>\r\n<br>\r\nI have my own control called NumericTextBox, which (as you probably guessed) only accepts numeric values.<br>\r\n<br>\r\nI've already tried using the templated column type with my NumericTextBox, but the functionality is a little clunky - in order to edit a numeric value you have to double-click to get the cell into edit mode then click again to give the NumericTextBox focus and display the caret ready for editing.  Another thing that's missing is the ColumnHeaderStyle, when you use a templated column you have to create your own style if you want to highlight the column headers when hovering over them, you also lose the ability to sort by default - this all has to be manually implemented.<br>\r\n<br>\r\nMy plan is to create a DataGridNumericTextColumn that is basically a copy of the standard DataGridTextColumn, only with a NumericTextBox instead of a standard TextBox.  Obviously I want to keep this code within my own solution rather than incorporate it into the Microsoft source code, but since it needs access to a lot of the internal objects/methods I'm not sure about the best way to achieve this.<br>\r\n<br>\r\nHas anyone else managed to do anything similar?<br>\r\n<br>\r\nThanks\r\n",
+    "PostedDate": "2009-04-16T06:44:38.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181659",
+    "ThreadId": "53509",
+    "Html": "Have you tried using a stock DataGridTextColumn and overriding EditingElementStyle (I think that's the name of the property) making it contain an instance of your NumericTextBox rather than a standard TextBox? If I am not misunderstanding what you are trying to do, that should work. If so, you could subclass DataGridTextColumn and simply override the default value of the property in the constructor.<br>\r\n",
+    "PostedDate": "2009-04-21T01:38:56.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181668",
+    "ThreadId": "53509",
+    "Html": "Thanks mikj, I hadn't tried that.<br>\r\n<br>\r\nI'll post back later to let you know if it worked  :-)\r\n",
+    "PostedDate": "2009-04-21T01:57:29.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181735",
+    "ThreadId": "53509",
+    "Html": "If you subclass DataGridTextColumn you'll want to override GenerateElement and GenerateEditingElement.\r\n",
+    "PostedDate": "2009-04-21T05:13:53.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184230",
+    "ThreadId": "53509",
+    "Html": "I was able to create a custom DataGridColumn type by inheriting from DataGridBoundColumn and overriding the GenerateElement, GenerateEditingElement, and CommitCellEdit methods.&nbsp; I also override the PrepareCellForEdit method to get text to be selected when edit mode is entered.<br>\r\n<br>\r\nI wanted text input to automatically start an edit of the current cell.&nbsp; This is done in DataGridTextColumn by overriding the OnInput method.&nbsp; However, this method is currently set as internal, and so I could not override it in my own assembly.&nbsp; Is it possible for a future release of the toolkit to change the OnInput and BeginEdit methods to protected instead of internal?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2009-04-27T13:54:11.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196409",
+    "ThreadId": "53509",
+    "Html": "<p>I also would like to switch to edit mode when the user types in the cell. But like dgish, the OnInput method and BeginEdit methods are internal so those are no help. Is there another way to accomplish this?</p>",
+    "PostedDate": "2009-06-01T07:40:56.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "583565",
+    "ThreadId": "53509",
+    "Html": "<p>Bump. Is it just me or does it seem like there are a lot of&nbsp;arbitrary&nbsp;\"Internal\" methods where there is no valid reason to be internal... why is a virtual method internal of a non internal class? That's ridiculous.</p>",
+    "PostedDate": "2011-03-21T01:58:59.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

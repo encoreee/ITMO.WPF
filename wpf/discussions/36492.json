@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "121040",
+    "ThreadId": "36492",
+    "Html": "<p>I have a grid bound to an observable collection. I have a button that the user clicks to add a new object to the collection (as opposed to setting the CanUserAddRows=&quot;True&quot; property). This successfully adds a new row to the grid. What I want to happen is for that row to be selected and then automatically begin editing the first column. Here is the code I have tried (along with several other variations):<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">Dim</span></span><span style=\"font-size:13px\"> newDetailObject </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">As</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">New</span></span><span style=\"font-size:13px\"> BusinessObject()\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">Me</span></span><span style=\"font-size:13px\">.Collection.Add(newDetailObject)\r\n<p>&nbsp;</p>\r\n<p>dgDetail.Items.MoveCurrentTo(newDetailObject)</p>\r\n<p>dgDetail.SelectedCells.Add(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">New</span></span><span style=\"font-size:13px\"> DataGridCellInfo(newDetailObject, dgDetail.Columns(0)))\r\n<p>&nbsp;</p>\r\n<p>dgDetail.BeginEdit()<br>\r\n<br>\r\nThe row and cell get selected fine but it never begins editing. I have stepped throw the code in DataGrid and the &quot;CurrentCellContainer&quot; (I think it's called) always returns null. I have even tried setting the dgDetail.CurrentCell property directly, but still no luck. Any other suggestions?<br>\r\n<br>\r\nThanks!</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-09-25T12:23:02.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121049",
+    "ThreadId": "36492",
+    "Html": "It is b/c the row container is virtualized.&nbsp; That is why CurrentCellContainer is null.&nbsp; For your specific scenario you can do something like dgDetail.ScrollIntoView(newDetailObject) before calling BeginEdit().&nbsp; This was the example code I used:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person p = new Person();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; people.Add(p);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid_Standard.CurrentItem = p;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid_Standard.CurrentCell = new DataGridCellInfo(p, DataGrid_Standard.Columns[0]);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataGrid_Standard.ScrollIntoView(p);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid_Standard.BeginEdit();<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-25T13:42:32.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121151",
+    "ThreadId": "36492",
+    "Html": "Using your code the row successfully scrolls into view (which I wasn't doing previosly) and the cell is visibly selected, but BeginEdit() still does not work.&nbsp;&quot;CurrentCellContainer&quot; is still returning null, and the editing doesn't start unless I double click the cell. Any other suggestions?<br>\r\n<br>\r\nThanks!\r\n",
+    "PostedDate": "2008-09-26T06:25:26.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121153",
+    "ThreadId": "36492",
+    "Html": "I fixed it. I needed to make sure the grid had focus prior to call BeginEdit().<br>\r\n<br>\r\nThanks!\r\n",
+    "PostedDate": "2008-09-26T06:28:03.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

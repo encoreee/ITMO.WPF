@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "134230",
+    "ThreadId": "40463",
+    "Html": "Hi EveryOne, <br>\r\n<br>\r\nI have a problem in enabling and Disabling the Controls in the WPF:DataGrid, <br>\r\nI am trying to Disable the TextBoxes in the DataGrid when the ComboBox in the same DataGrid gets the SelectedIndex as 0. The TextBoxes of the same row in which the ComboBox's SelectedIndex is 0 should be disabled.<br>\r\n<br>\r\nFor example, lets say there are 6 columns and 10 rows in a DataGrid,<br>\r\nComboBox is in Column 3, rest are the TextBox Columns. If I set the ComboBox's SelectedIndex to 0(ZERO) of Row 3, then the TextBoxes in the Column 4 and 5 of the respective row(i.e., Row 3) has to be disabled,<br>\r\n<br>\r\nCan Anybody please, help me out with this Issue????<br>\r\n<br>\r\nThank you in Advance.....<br>\r\n",
+    "PostedDate": "2008-11-21T05:45:58.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134321",
+    "ThreadId": "40463",
+    "Html": "Hi chetanarayan,<br>\r\n<br>\r\nSomething like the following should work....<br>\r\n<br>\r\n&lt;DataGrid&gt;<br>\r\n    &lt;DataGrid.Columns&gt;<br>\r\n        &lt;DataGridComboBoxColumn SelectedItemBinding={Binding Path=Cake} /&gt;<br>\r\n        &lt;DataGridTextBoxColumn&gt;<br>\r\n            &lt;dg:DataGridTextColumn.EditingElementStyle&gt;<br>\r\n                  &lt;Style TargetType=&quot;{x:Type TextBox}&quot;&gt;<br>\r\n                       &lt;Style.Triggers&gt;<br>\r\n                          &lt;DataTrigger Binding=&quot;{Binding Path=Cake}&quot; Value=&quot;Chocolate&quot;&gt;<br>\r\n                              &lt;Setter Property=&quot;IsEnabled&quot; Value=&quot;False&quot;&gt;&lt;/Setter&gt;<br>\r\n                          &lt;/DataTrigger&gt;<br>\r\n                      &lt;/Style.Triggers&gt;<br>\r\n                  &lt;/Style&gt;<br>\r\n              &lt;/dg:DataGridTextColumn.EditingElementStyle&gt;<br>\r\n        &lt;/DataGridTextBoxColumn&gt;<br>\r\n    &lt;/DataGrid.Columns&gt;<br>\r\n&lt;/DataGrid&gt;<br>\r\n<br>\r\nBasically have a trigger for TextBox bound to the same property as is ComboBox and enable it appropriately.<br>\r\n",
+    "PostedDate": "2008-11-21T10:48:59.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134669",
+    "ThreadId": "40463",
+    "Html": "Thanks a lot Mr.Vamsee.... \r\n",
+    "PostedDate": "2008-11-23T21:05:12.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1447562",
+    "ThreadId": "645955",
+    "Html": "When adding an AutoCompleteBox I have to:<br />\n<ol>\n<li>Reference the assemblies</li>\n<li>Add the AutoCompleteBox control as XAML</li>\n<li>Add 2 Styles and 2 Control Templates to my resources</li>\n<li>\nAdd DropDownToggle_Click and Text_Initialized methods to my code behind<br />\n</li>\n</ol>\nIs the AutoCompleteBox meant to be a reusable control? If so, isn't that 2 steps too many?\r<br />\nWhy are steps 3 and 4 required?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2015-10-07T18:22:10.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452943",
+    "ThreadId": "645955",
+    "Html": "Pretty late answer, but the things you point our are to use an AutoCompleteBox as an AutoCompleteComboBox.\r<br />\n<br />\nIf you want to use the AutoCompleteBox, all you need to do is reference the toolkit, put the reference in your xaml code and place the control in your view (step 1 and 2).\r<br />\n<br />\nIf you want AutoCompleteComboBox features like in their sample project you have to do the above + adding 2 styles and/or templates and wiring up a DropDownToggle_Click method. As far as I know the 2nd method you mention isn't necessary.\r<br />\n<br />\nWhat I did to get a reusable AutoCompleteComboBox was by following the following tutorial: <a href=\"http://www.codeproject.com/Articles/55993/AutoComplete-ComboBox-for-Silverlight\" rel=\"nofollow\">http://www.codeproject.com/Articles/55993/AutoComplete-ComboBox-for-Silverlight</a>\r<br />\n<br />\nIt's written for Silverlight but can be applied to WPF. Just place the styles/themes in a Resource Dictionary and place code from req 1, 2 and 3 in a class which I named AutoCompleteComboBox : AutoCompleteBox.<br />\n",
+    "PostedDate": "2015-11-18T04:44:24.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

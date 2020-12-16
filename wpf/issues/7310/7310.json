@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "Closed - This will need to be fixed in WPF components other than DataGrid, so we're closing this bug in this database.  However, this issue is being tracked in other internal databases and has been noted as a feature request for DataGrid in particular, so we plan to fix it in a later release.",
+    "ClosedDate": "2009-02-18T13:47:54.333-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Sorted 10,000 objects in a generic list, sorting by an integer column, this caused the entire window to freeze, perhaps should use a background thread for the sort operation. Also it seems the sort performance for 10,000 items should be better than this?",
+    "LastUpdatedDate": "2013-05-16T05:31:20.343-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-08-14T07:30:22.413-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "UI Freezes when Sorting by a column in the Data Grid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 7310
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi flatliner60,\r\n\r\nUnforunately the default sort is handled on the UI thread, which is why you're seeing this behavior.  We agree that it would be better to do on a background thread, so we've filed this suggestion in our internal database for a future release.  In the meantime, you may be interested in implementing a custom sort which runs on a background thread.  You can find instructions for implementing custom sort here: http://www.codeplex.com/wpf/Wiki/View.aspx?title=Custom%20Sort&referringTitle=Tips%20%26%20Tricks.\r\n\r\nThanks!\r\nSamantha",
+      "PostedDate": "2009-02-18T13:45:27.52-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:47:54.333-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:51.31-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:20.343-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

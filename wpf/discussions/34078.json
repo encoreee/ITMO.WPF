@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "112981",
+    "ThreadId": "34078",
+    "Html": "I added a reference to WPFToolkit in my project and I also added&nbsp;<span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\">xmlns</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">:</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\">dg</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=<a href=\"http://schemas.microsoft.com/wpf/2008/toolkit\">http://schemas.microsoft.com/wpf/2008/toolkit</a>&nbsp; to the top of my Xaml.<br>\r\n</span></span><br>\r\nEverything builds and runs just&nbsp;fine but the Xaml page designer will not load and&nbsp;references with the&nbsp;&lt;dg:DataGrid&gt; tag are underlined. When I hover over these I get the following message...<span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">&nbsp;</span></span>&quot;The type 'dg:DataGrid' was not found. Verify that you are not missing an assembly reference and that all referenced assemblies have been built.&quot;&nbsp; What am I doing wrong here?<br>\r\n<br>\r\nAnother thing. I notice that&nbsp;my &quot;http://&quot;&nbsp;xml name spaces&nbsp;at the top of my Xaml's are not being underlined. Is this just a setting that can be changed in VS 2008?\r\n",
+    "PostedDate": "2008-08-22T08:31:07.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113640",
+    "ThreadId": "34078",
+    "Html": "Hi, I've got the same problem when I create a new WFP project and add WPFToolkit.dll assembly to it ('using Microsoft.Windows.Controls'&nbsp;statement in .cs files is OK).<br>\r\nHowever, the example&nbsp;project from <a href=\"http://www.codeproject.com/KB/WPF/WPFDataGrid.aspx\">this</a>&nbsp;article was opened&nbsp;correctly despite no marked difference in solutions, xaml code editor and designer worked as expected. I also guess there are only a few project setting options&nbsp;for sound mapping the namespaces.<br>\r\n<br>\r\nPS: I use Visual Studio 2008 Team System SP1\r\n",
+    "PostedDate": "2008-08-25T18:15:28.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118349",
+    "ThreadId": "34078",
+    "Html": "Hey folks,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; I ran into much the same problem when I got started.&nbsp; The eventual solution was to either compile the project again, using a strong name, or as I did, to disassemble the provided dll using ildasm, generate a keypair using sn, and then to reassemble it using ilasm.&nbsp; Straightforward directions for this can be found here.&nbsp;<a href=\"http://www.geekzilla.co.uk/ViewCE64BEF3-51A6-4F1C-90C9-6A76B015C9FB.htm\">http://www.geekzilla.co.uk/ViewCE64BEF3-51A6-4F1C-90C9-6A76B015C9FB.htm</a>&nbsp;I hope this helps.<br>\r\n<br>\r\nPaul Allaire\r\n",
+    "PostedDate": "2008-09-13T11:08:31.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118441",
+    "ThreadId": "34078",
+    "Html": "I have the same problem. App compile and run just fine, but I get error in dev mode. so I can't design.<br>\r\n<br>\r\nPlease explain in deitals how to solv it (with strong name?)<br>\r\n<br>\r\n(Also using VS2008 .NET 3.5 SP1)\r\n",
+    "PostedDate": "2008-09-14T09:03:22.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

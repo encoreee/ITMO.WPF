@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "To group items in DataGrid, I add GroupDescription into DataGrid's ItemsSource (via CollectionViewSource). In case there is only one item in each group, when I edit an item and then confirm by Enter, the item's group is moved to last position in datagrid. Is this a bug or by design? Test project is attached.",
+    "LastUpdatedDate": "2013-02-21T18:41:04.253-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-24T20:59:34.78-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "An issue when add GroupDescription into DataGrid's ItemsSource",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10343
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3211,
+      "FileName": "DataGridTest.zip",
+      "DownloadUrl": ".\\3211"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This is caused by a bug in the ListCollectionView class.  Essentially, it refreshes the grouping rules when items are edited by removing the item from its group and then adding it to whatever group it belongs to after being edited, even if that turns out to be the same group it was removed from.  Unfortunately, this causes notifications to be sent that the item is being removed from the group and then that it has been added back to the group.  The data grid responds by removing the DataGridRow for that item, and then adding a new one.  This also has the side-effect of inserting the item at the end of the group instead of its original position.  The simplest workaround would be simply to add a sort to your collection so that the order of items within each group is well-defined.  In another post it was said that the ListCollectionView has been fixed in the latest development build of .NET, but I don't know when it will be released.",
+      "PostedDate": "2009-07-29T08:23:39.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:04.253-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

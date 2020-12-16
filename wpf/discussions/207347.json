@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "423796",
+    "ThreadId": "207347",
+    "Html": "<p>This is a really trivial task to change the color of the datagrid column headers. I copied this code from another example on the web and can't figure out why it won't work. I assume this &lt;Style&gt; setter changes the style of the datagrid and there is nothing else to be done in the actual datagrid code which occurs further down in the XAML code. Am I correct? If not, what else do I need to do to change the header color?</p>\r\n<p>&lt;Window x:Class=&quot;InfoSeeker.Window1&quot;<br>&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>&nbsp;&nbsp;&nbsp; xmlns:dg=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;<br>&nbsp;&nbsp;&nbsp; &lt;Window.Resources&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;SolidColorBrush x:Key=&quot;DataGrid_Style0_Header&quot; Color=&quot;AliceBlue&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Style x:Key=&quot;ColumnHeaderStyle&quot; TargetType=&quot;{x:Type dg:DataGridColumnHeader}&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Background&quot; Value=&quot;{StaticResource DataGrid_Style0_Header}&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Style&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/Window.Resources&gt;</p>",
+    "PostedDate": "2010-03-25T14:57:33.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

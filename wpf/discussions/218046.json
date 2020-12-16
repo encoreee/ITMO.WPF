@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "462279",
+    "ThreadId": "218046",
+    "Html": "<p>I have datapoints that go from 0 - 0.026, but the chart refuses to show tick marks below the hundredth place so the chart actually looks like the values go to above 0.03 (rounded 0.026--&gt;0.03)</p>\r\n<p>Is there anyway to get the tick marks in the dependent axis to go to the thousandth place?</p>",
+    "PostedDate": "2010-07-01T10:49:45.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

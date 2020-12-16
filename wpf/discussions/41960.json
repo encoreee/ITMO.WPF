@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "139280",
+    "ThreadId": "41960",
+    "Html": "Hello,<br>\r\n<br>\r\nI noticed a bug with the scrolling row by row on the DataGrid.<br>\r\n<br>\r\nWhen I edit a cell, the template display a very big treeview that is bigger that the screen so you need to scroll down if you want to pick and item at the bottom of the tree.<br>\r\nBut If I scroll it goes directly to the next row so you can't see the not visible part of the row!!!<br>\r\n<br>\r\nTheir is no options to get a continuous scrolling instead of a row by row scrolling is their a work around?<br>\r\nIf I need to modify the code can someone tels me where to start?<br>\r\n<br>\r\nAny help would be welcome.<br>\r\n<br>\r\nThanks<br>\r\n<br>\r\nFred<br>\r\n",
+    "PostedDate": "2008-12-10T06:51:26.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139297",
+    "ThreadId": "41960",
+    "Html": "It seems that setting : <span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\">\r\n<p>ScrollViewer.CanContentScroll</p>\r\n</span>\r\n<p> </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">=&quot;False&quot;<br>\r\n<br>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\nRemove the feature of scrolling row by row. \r\n",
+    "PostedDate": "2008-12-10T07:47:25.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211907",
+    "ThreadId": "41960",
+    "Html": "<p>I noticed a similar problem when applying data through a DataTemplate to a WPF ListBox which causes each ListBoxItem to be presented at a variable size, that content scrolling breaks. In fact, I would say there is a bug in this extreme scenario. Setting ScrollView.CanContentScroll to false works like a charm.</p>\r\n<p>There is one caveat to setting this property to false. If you are using a control which relies on Virtualization to optimize large collections of data (very large ListBox or DataGrid), especially when using a complex data template, having CanContentScroll set to false may cause scrolling to appear jumpy. More than likely not a problem for most scenarios.</p>",
+    "PostedDate": "2009-07-14T17:23:39.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

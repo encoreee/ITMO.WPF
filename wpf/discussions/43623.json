@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "145040",
+    "ThreadId": "43623",
+    "Html": "The ribbon responds to MouseWheel events by switching the tabs. This is not very useful since the tabs are relatively few and the wheel is used to navigate large lists. <br>\r\n<br>\r\nThe problem is that if you have a RibbonComboBox with many elements and you NEED to use the wheel , what happens is that the wheel still switches tabs. Scrolling RibbonComboBox lists with the wheel is now impossible!<br>\r\n<br>\r\nIn Office 2007 ribbon the wheel still switches between tabs, but not when you have an open combo box - then it scrolls the list as expected.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-07T06:56:11.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145835",
+    "ThreadId": "43623",
+    "Html": "Hi Banko,<br>\r\n<br>\r\nThanks for reporting the issue.<br>\r\n<br>\r\nYes, it is an office 2007 parity issue. It looks like RibbonComboBox should handle the mouse wheel scroll input, so it doesn’t bubble up to RibbonTab. <br>\r\n<br>\r\nI filed a bug to track the issue.<br>\r\n<br>\r\nThanks,<br>\r\nWilliam<br>\r\n",
+    "PostedDate": "2009-01-09T14:49:41.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146494",
+    "ThreadId": "43623",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"color:#1f497d;font-family:calibri\"><span style=\"font-size:11pt;color:#1f497d;font-family:'calibri','sans-serif'\">It looks like the root cause is that</span> we’re handling the MouseWheel input event in preview call back OnPreviewMouseWheel method in Ribbon.cs. A possible fix would be changing the if statement in <span style=\"color:#1f497d;font-family:calibri\">OnPreviewMouseWheel method below</span>.</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"color:#1f497d;font-family:calibri\">From </span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:10pt;font-family:'courier new'\">            <span style=\"color:#0000ff\">if</span> (!<span style=\"color:#0000ff\">this</span>.IsMinimized &amp;&amp; <span style=\"color:#0000ff\">this</span>.SelectedTab != <span style=\"color:#0000ff\">null</span>)</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"color:#1f497d;font-family:calibri\"> </span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"color:#1f497d;font-family:calibri\">To</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:10pt;font-family:'courier new'\">            <span style=\"color:#0000ff\">if</span> (!<span style=\"color:#0000ff\">this</span>.IsMinimized &amp;&amp; <span style=\"color:#0000ff\">this</span>.SelectedTab != <span style=\"color:#0000ff\">null</span> &amp;&amp; (<span style=\"color:#2b91af\">Mouse</span>.Captured == <span style=\"color:#0000ff\">this</span> || <span style=\"color:#2b91af\">Mouse</span>.Captured == <span style=\"color:#0000ff\">null</span>))</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"color:#1f497d;font-family:calibri\">This way we only handle the event when the captured is Ribbon or null.<br>\r\n<br>\r\nThanks,<br>\r\nWilliam</span></p>\r\n",
+    "PostedDate": "2009-01-12T16:46:27.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "254497",
+    "ThreadId": "43623",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I have the same problem.</p>\r\n<p>Where can I find the Source of the Ribbon to change the mentioned row in ribbon.cs?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Tucca</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-07T03:15:52.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

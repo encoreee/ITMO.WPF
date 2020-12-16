@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "542315",
+    "ThreadId": "240047",
+    "Html": "\r\n<p>I'm using WPF toolkit charting. One of my chart uses LinearAxis and when the range is too low then it displays the chart interval in decimals. I dont want my chart to pick the decimal values for interval. For example my MaxY and MinY are 5, 0, then my chart\r\n interval is 0.5, 1.5 etc.. i want the interval to be 1, 2, 3, 4 etc.. i dont want to hard code the values of the interval on the linear axis.</p>\r\n",
+    "PostedDate": "2010-12-30T12:42:25.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

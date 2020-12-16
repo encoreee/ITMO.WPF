@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "236187",
+    "ThreadId": "69418",
+    "Html": "<p>I have a class, MyMainClass,&nbsp;with a member that is also a class, MyChildClass.&nbsp; MyChildClass is accessed through a property named &quot;ChildClass&quot;.&nbsp; I have a WPF TextBlock that binds to a property of the ChildClass named &quot;Name&quot;.&nbsp; I use {binding = MyChildClass.Name}.&nbsp; In my code I instantiate a MyMainClass object and set the DataContext of my &lt;Grid&gt; to it.&nbsp; The TextBlock picks up the proper value of MyChildClass.Name.&nbsp; This problem I having is trying to have the control update with a new value.&nbsp; I tried using OnPropertyChanged(...(&quot;MyChildClass.Name&quot;)) and OnPropertyChanged(...(&quot;Name&quot;) but the TextBlock still won't update.&nbsp; I then tried OnPropertyChanged(...(&quot;&quot;)) and this time it does update.&nbsp; But I don't want all fields to update which from my understanding is what the empty string does.</p>\r\n<p>I also tried PropertyChanged(this,e) and even PropertyChanged(this.MyChildClass) with the various property names with no luck.</p>\r\n<p>Am I doing something wrong?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T12:24:41.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236238",
+    "ThreadId": "69418",
+    "Html": "<p>My knowledge is that you will need your ItemsSource of datagrid bound to an observable collection which implements INotifyCollectionChanged which will upadate the grid items source.</p>\r\n<p>More info <a href=\"http://msdn.microsoft.com/en-us/library/ms752347.aspx#binding_to_collections\">http://msdn.microsoft.com/en-us/library/ms752347.aspx#binding_to_collections</a></p>",
+    "PostedDate": "2009-09-18T14:13:37.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236286",
+    "ThreadId": "69418",
+    "Html": "<p>I am not actually using a grid, but the &lt;Grid&gt; container which defines a grid type of layout of children.&nbsp; MyMainClass implements INotifyPropertyChanged (I think that is the name, I don't have the files with me right now).&nbsp; MyChildClass is not however, but since it is able to work when I initially set the &lt;Grid&gt;'s DataContext and is does update when I use OnPropertyChanged(...(&quot;&quot;)) I would think it work in a nested fashion using &quot;ChildClass.Name&quot;.&nbsp; When I get a chance I will post sections of code to show what I am trying to do.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T17:05:56.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236408",
+    "ThreadId": "69418",
+    "Html": "<p>I tried to put together some code from what I can remember:</p>\r\n<p>public class MyChildClass<br>{<br>&nbsp;&nbsp; public string Name { get... }<br>}</p>\r\n<p>public class MyMainClass : INotifyPropertyChanged<br>{<br>&nbsp;&nbsp; public ChildClass { get... }<br>&nbsp;&nbsp; public event PropertyChangedEventHandler PropertyChanged;<br>&nbsp;&nbsp; public void OnPropertyChanged(PropertyChangedEventArgs a_Args)<br>&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (PropertyChanged != null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PropertyChanged(this, a_Args);<br>&nbsp;&nbsp; }<br>&nbsp;&nbsp; public void Foo()<br>&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OnPropertyChanged(new PropertyChangedEventArgs(&quot;MyChildClass.Name&quot;));<br>&nbsp;&nbsp; }<br>}</p>\r\n<p><br>public MyTest : Window<br>{<br>&nbsp;&nbsp; private MyMainClass mainClass = new MyMainClass();<br>&nbsp;<br>&nbsp;&nbsp; public void Init()<br>&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainClass.ChildClass = new MyChildClass();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainClass.ChildClass.Name = &quot;James&quot;;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MainArea.DataContext = mainClass;<br>&nbsp;<br>&nbsp;&nbsp; }<br>&nbsp;&nbsp; public void FooAction()<br>&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainClass.ChildClass.Name = &quot;Richard&quot;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainClass.Foo();<br>&nbsp;<br>&nbsp;&nbsp; }<br>&nbsp;<br>}</p>\r\n<p><br>XAML<br>=====<br>&lt;Window ...&gt;<br>&nbsp;&nbsp; &lt;Grid name=&quot;MainArea&quot;&gt;<br>&nbsp;&nbsp; ...<br>&nbsp;&nbsp; &lt;TextBlock Text=&quot;{Binding Path=ChildClass.Name}&quot;/&gt;<br>&nbsp;&nbsp; ...<br>&nbsp;&nbsp; &lt;/Grid&gt;<br>&lt;/Window&gt;</p>",
+    "PostedDate": "2009-09-19T06:34:08.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

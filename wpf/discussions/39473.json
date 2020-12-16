@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "130977",
+    "ThreadId": "39473",
+    "Html": "I would appreciate any suggestion on how to update the RowDetails at runtime.<br>\r\nI want to dynamically update the RowDetails to show a child DataGrid when clicking a button.<br>\r\n<br>\r\nWhat I am trying to implement is a hierarchical DataGrid.<br>\r\n<br>\r\nThanks,<br>\r\nAburel<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-07T17:52:11.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

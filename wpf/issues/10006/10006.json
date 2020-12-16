@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've got a DataGrid bound to a collection of ViewModels. I'm trying to use UIAutomation to find a cell of a particular column which has a particular text value (the column is using a DataGridTextColumn).\n \nThere are more view models than can be displayed in the view port of the DataGrid, so scrolling is enabled. When I inspect the DataGrid using UI Spy I see DataItems created for each of the ViewModels each with ControlType.Custom elements corresponding to the number of columns. For the first few items (corresponding to the number of visible rows) each of the column elements also has a child - a Text element in this case . But if I inspect dataitems corresponding to rows that are not in view, their column elements do not have content elements. \n \nSo far, so good - clearly UI Virtualization is playing a part here.\n \nThings continue to look OK as I begin to scroll - remembering to refresh UISpy. The content elements for the first rows disappear, and content elements appear for rows that are scrolling into view. But when I reach a certain mark - maybe about 20-25 rows in, content elements no longer get created for rows.  If for example I scroll all the way to the bottom of the Grid, then inspect the children of the dataitem, I see the custom elements (representing the columns), but they have no children.",
+    "LastUpdatedDate": "2013-02-21T18:41:16.01-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-19T03:57:45.18-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cell Content Item Peers do not get created when Data Grid Scrolls",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10006
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've find a workaround that will do for now:\r\n\r\nI've added a style for the DataGridRow, and in that style I bind AutomationProperties.AutomationId to the same property as my column was bound to. Then, when I'm searching the Grid's children through UI Automation I can just check AutomationElement.Current.AutomationId (though I do have to ensure that the element is scrolled into view, otherwise AutomationId is reported as empty).",
+      "PostedDate": "2009-05-19T04:32:24.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Samuel,\r\n\r\nAre you using the most recent version of the toolkit?  If you try this scenario with the March release and still see it can you send us the repro application so we can investigate?  Thanks for bringing this up!\r\n\r\nAlexis",
+      "PostedDate": "2009-05-26T13:13:09.14-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've run into the same problem.  In addition to no longer seeing content elements after scrolling down the grid a ways, I'm finding that the Automation Tree structure of the grid is breaking after scrolling, and cell AutomationElements are being returned as children of the wrong row.  This can easily be seen in UISpy and looks something like this:\r\n\r\n...\r\n+\"dataitem\" \"00000018923 - Emp72 Emp72\"\r\n+\"dataitem\" \"00000019298 - Emp73 Emp73\"\r\n- \"dataitem\" \"00000014257 - Emp74 Emp74\"\r\n-> \"header item\" \"\"\r\n-> \"custom\" \"Item: 00000009753 - Emp41 Emp41, Column Display Index: 0\"\"\r\n-> \"custom\" \"Item: 00000009753 - Emp41 Emp41, Column Display Index: 1\"\"\r\n-> \"custom\" \"Item: 00000009753 - Emp41 Emp41, Column Display Index: 2\"\"\r\n-> \"custom\" \"Item: 00000009753 - Emp41 Emp41, Column Display Index: 3\"\"\r\n-> \"custom\" \"Item: 00000009753 - Emp41 Emp41, Column Display Index: 4\"\"\r\n-> \"custom\" \"\"\r\n+\"dataitem\" \"00000020069 - Emp75 Emp75\"\r\n+\"dataitem\" \"00000001469 - Emp76 Emp76\"\r\n...\r\n\r\nNotice that the children (cells) of the Emp74 data item look like they should be associated with the Emp41 item (and in fact they should.  Selecting one of these cells in UISpy highlights a cell in a completely different area of the grid than the row dataitem they are showing up under.\r\n\r\nI can work around this by obtaining the cell AutomationElements by calling GetItem from the TablePattern of the main DataGrid element instead of first obtaining the AutomationElement for a row, then grabbing its child cells.\r\n\r\nHowever this still leaves me with the problem of content elements not being populated further down the grid.  I tried samuel_d_jack's workaround, and it seems to work, however I would prefer to populate the Name property of the cell AutomationElement rather than the AutomationId.  This doesn't seem to work, unfortunately.  It seems the value of the name property returned by the DataGridCellItemAutomationPeer overwrites/overrides the value I specify in the XAML for the application.  I always thought values explicitly set in XAML were supposed to take precedence over whatever the control would normally return by default.  Is there any way to force the AutomationElement to use the value I'm binding in XAML?",
+      "PostedDate": "2009-10-22T14:15:15.35-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-22T14:30:40.187-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:16.01-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

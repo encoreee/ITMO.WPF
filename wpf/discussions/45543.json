@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "151962",
+    "ThreadId": "45543",
+    "Html": "How do you add, update, and remove items in a WPF Toolkit DataGrid control programmatically?  Meaning, the items will be changed via code and not by a user entering by typing data in datagrid.<br>\r\n<br>\r\nI can add a list of items by the following:<br>\r\n<br>\r\nDataGrid1.ItemsSource = lstItems<br>\r\n<br>\r\nI need to add, update, and remove by individual items.<br>\r\n<br>\r\nThanks in advance.\r\n",
+    "PostedDate": "2009-01-28T14:35:04.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154518",
+    "ThreadId": "45543",
+    "Html": "If you are bound to the ItemsSource you can just update your data source directly and the DataGrid should update.  If you are not bound you can update the DataGrid through DataGrid.Items.\r\n",
+    "PostedDate": "2009-02-04T19:32:45.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

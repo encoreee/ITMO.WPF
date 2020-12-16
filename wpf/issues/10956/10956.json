@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I compile WPFToolkit, I get following error message for Controls.DataVisualization.Toolkit.Design:\nThe type 'Microsoft.Windows.Design.Metadata.AttributeTableBuilder' exists in both 'c:\\Program Files (x86)\\Microsoft Expression\\Blend 3\\Microsoft.Windows.Design.Extensibility\\Microsoft.Windows.Design.Extensibility.dll' and 'c:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\PublicAssemblies\\Microsoft.Windows.Design.dll'",
+    "LastUpdatedDate": "2013-02-21T18:40:51.707-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-18T00:01:54.087-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AttributeTableBuilder exists in two referenced assemblies",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 10956
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I get the same error with the latest source code (40156).",
+      "PostedDate": "2010-03-19T11:38:50.067-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-28T13:41:35.087-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Same error with the February 2010 release.",
+      "PostedDate": "2010-03-28T13:42:01.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-14T07:52:42.277-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Same for me with the Feb 2010 release.  I found this post (http://wpf.codeplex.com/Thread/View.aspx?ThreadId=72582) and deleting and readding the projects didn't work, but once I removed all of the ones with duplicate references, it did compile okay.  I assume I'm going to run into issues if I actually try to use this DLL.",
+      "PostedDate": "2010-06-29T16:19:33.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-10-17T21:24:57.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "why nobody puts there solutions here?",
+      "PostedDate": "2011-12-28T05:11:10.977-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:51.707-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

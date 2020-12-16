@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "150891",
+    "ThreadId": "45248",
+    "Html": "<span style=\"font-size:10pt;color:red;line-height:125%;font-family:'courier new'\"></span><span style=\"font-size:10pt;color:blue;line-height:125%;font-family:'courier new'\"><br>\r\nHi,<br>\r\n<br>\r\nI have a problem of setting the selected value in DataGridComboBoxColumn.<br>\r\n<br>\r\n&lt;dg:DataGridComboBoxColumn&nbsp; x:Name =&quot;joinComboBox&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectedItemBinding=&quot;{Binding <strong>Join</strong>}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Width=&quot; 120&quot;&gt;<br>\r\n&lt;/dg:DataGridComboBoxColumn&gt;<br>\r\n<br>\r\nI have set the <span style=\"font-size:10pt;color:blue;line-height:125%;font-family:'courier new'\">DataGridComboBoxColumn&nbsp; </span>ItemsSource as below<br>\r\n<br>\r\nMicrosoft.Windows.Controls.DataGridComboBoxColumn combo = (Microsoft.Windows.Controls.DataGridComboBoxColumn)dualInputJoinerDataGrid.FindName(&quot;joinComboBox&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; combo.ItemsSource = matchFields;<br>\r\n<br>\r\nmatchFields is an arrayList<br>\r\n&nbsp;<br>\r\n<span style=\"font-size:10pt;color:blue;line-height:125%;font-family:'courier new'\"><strong>Join </strong>is a property of string type and I need the value of the <span style=\"font-size:10pt;color:blue;line-height:125%;font-family:'courier new'\">Join</span> property to be as the selected value in the <span style=\"font-size:10pt;color:blue;line-height:125%;font-family:'courier new'\">DataGridComboBoxColumn <br>\r\n<br>\r\nI have read gone through <br>\r\nhttp://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-datagridcomboboxcolumn-v1-intro.aspx <br>\r\nand bind the <span style=\"font-size:10pt;color:blue;line-height:125%;font-family:'courier new'\">SelectedItemBinding</span> as in the above code but it does not work.<br>\r\n<br>\r\nHow can I solve this issue?<br>\r\n<br>\r\nThanks in advance.<br>\r\nKanchana<br>\r\n<br>\r\n<br>\r\n</span></span><br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n</span>\r\n",
+    "PostedDate": "2009-01-26T03:29:53.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "150914",
+    "ThreadId": "45248",
+    "Html": "Is matchFields an arralist of strings?  If not, you should try to use SelectedValue and SelectedValuePath.\r\n",
+    "PostedDate": "2009-01-26T05:30:27.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151182",
+    "ThreadId": "45248",
+    "Html": "Yes matchFields is an array of strings.<br>\r\n",
+    "PostedDate": "2009-01-26T19:45:58.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151262",
+    "ThreadId": "45248",
+    "Html": "I tried with SelectedValue and SelectedValuePath as well nothing is working\r\n<br>\r\n",
+    "PostedDate": "2009-01-27T03:06:07.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151717",
+    "ThreadId": "45248",
+    "Html": "Does something like this work, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=45372\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=45372</a>?\r\n",
+    "PostedDate": "2009-01-28T05:02:37.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

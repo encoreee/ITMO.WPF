@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This is funny. The header just disapears.",
+    "LastUpdatedDate": "2013-02-21T18:41:22.113-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-02T15:12:14.09-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: Setting a Visual parent's IsEnabled property to False causes DataGridColumnHeader to disapear.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9670
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2920,
+      "FileName": "DataGridTest2.zip",
+      "DownloadUrl": ".\\2920"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thanks for a simple repro.  It looks like the problem is that something in the template is binding against IsEnabled, and this is getting inherited because IsEnabled is an inheritable DP.  I'll file a bug in our internal database for this.",
+      "PostedDate": "2009-04-03T13:52:51.303-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-03T13:52:52.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Funny it is, the coming year of testing we are going to write testscenarios for these, to set an example ...\r\n... just kidding: we are only human.\r\n\r\nI had this behaviour too. In my case it only happened when I had Widths (also Min and Max) set for my columns, Maybe TemplateColumns , I didn't test for that. \r\nMy workaround came by accident when I - in order to make only row accessible and editable at the time - wanted to set each row its IsEnabled-property individually, If you like that as a temporarily solution, search in Visibal's blogs for that. Best you set that property and others on the events that are there for you, like f.e the loading,of a row, rather than somewhere else. When data is not yet loaded or the grid is not directly visible (f.e. on a nonselected tabpage) not every item returns a row inmediately. A disadvantage is that you maybe have to disable more behaviour. \r\n\r\nBest regards,\r\n\r\nEric Gehring\r\nwww.softex.nl",
+      "PostedDate": "2009-04-10T06:37:26.877-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-10T06:40:27.8-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-14T07:00:30.617-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:22.113-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

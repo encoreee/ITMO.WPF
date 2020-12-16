@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Situation: The user wants to add multiple new rows to an existing DataGrid (with CanUserAddRows=\"True\") which already contains a few rows. Assume that the user has entered the first row and the focus is now in the last field of that new row.\n \nObserved behavior: To commit this row and start adding another one, the user has the following options:\n \n(1) Hit TAB. The row is committed, a new empty row is shown below and the focus jumps to the upper left-hand corner of the DataGrid. The user has to hit the DOWN key multiple times to get to the first field of the last row.\n \n(2) Hit ENTER. The row is committed, a new empty row is shown below and the focus is in the last field of the last row. The user has to hit the LEFT key multiple times to get to the first field of the last row.\n \n(3) Hit TAB or ENTER and then use the mouse.\n \nExpected behavior: After the user pressed TAB, the current row is committed, a new empty row is shown below and the focus is in the *first* field of the last row.",
+    "LastUpdatedDate": "2013-02-21T18:40:57.12-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-09-23T00:27:09.193-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Adding new rows in a DataGrid requires too many keystrokes",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10677
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Try hitting ENTER and HOME.",
+      "PostedDate": "2009-09-25T13:27:28.86-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-25T13:31:31.53-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks, that's a good workaround!\r\n\r\nNevertheless, I think that this is not at all intuitive (for comparison, try the same in MS Access, MS Outlook, MS Excel or any other professional application using a DataGrid-style input method). Therefore, I am reopening this issue.",
+      "PostedDate": "2009-09-26T03:46:52.767-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "\r\n\r\n\n\n** Closed by VamseeP 9/25/2009 1:31 PM",
+      "PostedDate": "2009-09-26T03:47:20.79-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "see comment 2009-09-26 12:46 PM",
+      "PostedDate": "2009-09-26T03:47:21.663-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-05T15:28:09.39-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-10T06:47:48.063-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:57.12-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

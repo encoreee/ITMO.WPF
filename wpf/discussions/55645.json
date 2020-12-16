@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "187917",
+    "ThreadId": "55645",
+    "Html": "I am trying to hide the button once it has been clicked.&nbsp; Each button has its own UID within a datagrid.&nbsp; Is there a way to set or pass a parameter that will hide that particular button?\r\n",
+    "PostedDate": "2009-05-07T16:28:41.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

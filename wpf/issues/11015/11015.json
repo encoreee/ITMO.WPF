@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have been tracing some problems with the Southridge \"DataGrid\" sample (the grid does not populate with data). The problem was I had the solution set to \"Any CPU\" but I had 32 bit SQL Server Compact Edition Binaries (which installed with VS 2008). After I did some testing, in which I created a console app and created an ADO.NET entity referecing the Southridge db. As soon as I instanciated the Entity an exception was immediatly thrown: \"The specified store provider cannot be found in the configuration, or is not valid.\" \n \nAfter some KB / BLOG searches I found that I needed to change the platform to x86 (or possibly install the 64 bit version).",
+    "LastUpdatedDate": "2013-02-21T18:40:50.91-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-29T01:30:54.163-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SSCE provider exceptions in Windows Vista x64 and Windows 7 x64",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11015
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

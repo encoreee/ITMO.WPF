@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In the febuary 2010 release, the Accordion control has a dark blue background for the opened AccordionItem, and none of the brush settings seem to change this.  Googling shows others as having this issue, but no solutions as of yet.",
+    "LastUpdatedDate": "2013-02-21T18:40:41.04-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-17T13:23:22.48-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Accordion Control",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 12109
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4400,
+      "FileName": "NonBlueStyle.txt",
+      "DownloadUrl": ".\\4400"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Looking at the Toolkits source code, the Blue background is being set in the Controls.Layout.Toolkit - Themes - Generic.xml Resource file.  If you look at the style for layoutToolkit:AccordionItem, in the Template property, you'll see the Background set the Blue for one of the Grids.  I found this to be the source of the smurfy problem.\r\n\r\nTo fix I copied and pasted this style into my own ResourceDictionary.  One could also recompile the Toolkit as well.\r\n\r\nI attached the Style in a file for anyones reference.",
+      "PostedDate": "2010-05-19T13:30:45.787-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-19T13:30:47.487-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-19T13:39:02.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-03T10:57:53.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think the title of this bug should be changed to something along the lines of \"Accordion control has blue background as default\".",
+      "PostedDate": "2010-06-11T00:56:50.23-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I tried this fix and it did successfully get rid of the blue background but now my Accordion items do not expand and they are not scaling correctly (they are too short)\r\n\r\nthanks\r\n",
+      "PostedDate": "2010-07-07T00:45:54.323-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The fix is as simocks suggested, download the source code, change the blue setting described and then rebuild.\r\n\r\nThanks",
+      "PostedDate": "2010-07-07T20:49:42.13-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have a problem... When I try this fix, it works in the sample project, but when I add the assembly to the project I'm actually working on and try to use the Accordion control, it doesn't compile and gives me an error message that the file or assembly \"WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35\" or one of its dependencies could not be found and that an assembly with a strong name is required. (This is roughly translated because I'm using a German version of Visual Studio and couldn't find the \"proper\" translation of this message, I'm attaching the original message at the bottom of this comment). I'm a bit lost and not sure what to do about this... Can anyone help?\r\n\r\nUnbekannter Buildfehler, \"Die Datei oder Assembly \"WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35\" oder eine Abhängigkeit davon wurde nicht gefunden. Eine Assembly mit starkem Namen ist erforderlich. (Ausnahme von HRESULT: 0x80131044) Zeile 14 Position 24.\" \tD:\\[ProjectPath]\\TestControl.xaml\t14\t24\t[ProjectName]\r\n",
+      "PostedDate": "2012-01-19T02:20:35.257-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:41.04-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

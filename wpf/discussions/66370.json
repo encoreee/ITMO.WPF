@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "225473",
+    "ThreadId": "66370",
+    "Html": "<p>When I have IEnumerable datasource for grid, user can't sort data.</p>\r\n<p>If I change it to ToList() user can sort data.</p>\r\n<p>Any solution to sort data with IEnumerable datasource.</p>\r\n<p>Thanks for help in advance!</p>",
+    "PostedDate": "2009-08-19T08:35:28.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "139616",
+    "ThreadId": "42040",
+    "Html": "Hi, all<br>\r\n<br>\r\nif I set ColumnWidth to the DataGrid when it loads, that works.<br>\r\n<br>\r\nbut when I using a bing below:<br>\r\n<span style=\"font-size:13px;color:#008000\">\r\n<p>&nbsp;</p>\r\n<p>&lt;ComboBox Grid.Row=&quot;1&quot; SelectedItem=&quot;{Binding Path=ColumnWidth, ElementName=dataGrid}&quot;&gt;</p>\r\n<p>&lt;toolkit:DataGridLength&gt;SizeToHeader&lt;/toolkit:DataGridLength&gt;</p>\r\n<p>&lt;toolkit:DataGridLength&gt;Auto&lt;/toolkit:DataGridLength&gt;</p>\r\n<p>&lt;toolkit:DataGridLength&gt;SizeToCells&lt;/toolkit:DataGridLength&gt;</p>\r\n<p>&lt;sys:Int32&gt;100&lt;/sys:Int32&gt;</p>\r\n<p>&lt;/ComboBox&gt;<br>\r\n<br>\r\nthen I select different item in the comboBox, I find that each column's width doesn't change,<br>\r\nwhy?<br>\r\n<br>\r\nThanks for your help.</p>\r\n</span>\r\n",
+    "PostedDate": "2008-12-11T01:56:15.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141692",
+    "ThreadId": "42040",
+    "Html": "This is actually a limitation of the DataGrid framework where column width values are set locally after initialization.  So setting DataGrid.ColumnWidth will only work on initialization of the DataGrid.\r\n",
+    "PostedDate": "2008-12-18T13:28:03.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

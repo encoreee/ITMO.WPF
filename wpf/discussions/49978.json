@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "167284",
+    "ThreadId": "49978",
+    "Html": "Hi,<br>\r\n<br>\r\nWe are experiencing a problem. Maybe the behaviour of DataGrid control doesn't work as fine as we want. Why the default behaviour of DataGrid is to commit the edit changes when focusing any other window? What is the explanation for this? Is not only a question of how to surround this problem. It's about the philosophy of that. Why is so difficult to workaround this behaviour?<br>\r\n<br>\r\nIt is expectable a behaviour Excel alike: If you are editting a cell, and you change the focus to another window (for any purposes) the cell in Excel remains in Edit state whitout losing the focus, and what is more important, without commiting the changes to the underlying data binding.<br>\r\n<br>\r\nSo, my questions are two:<br>\r\n<br>\r\n1. Why this is not the default behaviour (Excel alike)?<br>\r\n2. How to workaround the behaviour?<br>\r\n<br>\r\nMany thanks in advance,<br>\r\n<br>\r\nA.Afonso<br>\r\n<br>\r\nNote: We are using the January 2009 release of DataGrid \r\n",
+    "PostedDate": "2009-03-12T03:12:08.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "129040",
+    "ThreadId": "38897",
+    "Html": "<p>Can you give me an example of how I would create and bind a DataGridComboColumn at runtime?  I am unsure of how to set the binding and also what field it maps to in the itemssource of the grid?  In Windows forms, I would have a DisplayMember, ValueMember, and then the field it is mapped to in the grid.  How does that work?<br>\r\n<br>\r\nI am doing something like this but it doesnt work.<br>\r\n</p>\r\n<p>DataGridComboBoxColumn column = new DataGridComboBoxColumn();<br>\r\ncolumn.SelectedItemBinding = new Binding(&quot;SampleID&quot;);<br>\r\ncolumn.DisplayMemberPath = &quot;SampleNumber&quot;;<br>\r\ncolumn.SelectedValueBinding = new Binding(&quot;SampleID&quot;);<br>\r\ncolumn.Header = (string)col.HeaderText;<br>\r\nIEnumerable&lt;GeoStratSysDS.SampleRow&gt; MySamples = from s in DataAccess.dtSample<br>\r\n  select s;</p>\r\n<p>column.ItemsSource = MySamples;<br>\r\nGridMain.Columns.Add(column);</p>\r\n<p><span style=\"font-size:13px;color:#2b91af\"><br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span></span></p>\r\n",
+    "PostedDate": "2008-10-30T14:14:34.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129496",
+    "ThreadId": "38897",
+    "Html": "Does this post help at all, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-datagridcomboboxcolumn-v1-intro.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-datagridcomboboxcolumn-v1-intro.aspx</a>?  It doesn't set it at runtime but it can give you an idea of which APIs to use when hooking up the DataGridComboBoxColumn.\r\n",
+    "PostedDate": "2008-11-02T08:03:57.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

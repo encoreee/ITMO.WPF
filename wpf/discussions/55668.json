@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "188001",
+    "ThreadId": "55668",
+    "Html": "<p>Hi,</p>\r\n<p>I use datagrid to display arbitrary sized two dimensional arrays. Data in arrays can be in different formats so I use a column derived from the DataGridTemplateColumn to select proper template for each cell. Because of the arrays I can't use AutoGenerateColumns=&quot;True&quot; and since arrays are arbitrary sized I can't configure columns in XAML but add them dynamically on the fly. I'm also using <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">Vincent Sibal's</a> implementation for frozen rows so I can't use virtualization.</p>\r\n<p>&nbsp;</p>\r\n<p>This all works fine with smaller arrays (e.g 5x5) but with larger (e.g 30x30) I start to see some serious performance problems. Updating grid takes 4-6 seconds which is annoying since I have to change displayed arrays very often. Running the program with profiler seems to indicate that most of the time is spent measuring cells and adding new item containers.</p>\r\n<p>Is there anything I could try to improve performance atleast a bit?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Hannu Pousi</p>",
+    "PostedDate": "2009-05-07T23:59:53.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

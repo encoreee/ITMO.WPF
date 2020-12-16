@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "450268",
+    "ThreadId": "214631",
+    "Html": "I'm working on my first WPF application.  This is a re-write of a very old VB6 application.  In the old VB6 app, it collected dates in several locations throughout the code, which in the new app I want it to also collect dates.  Someone recommended that I use the DatePicker control in the WPFToolkit; so I've just downloaded and installed it.\r\n\r\nIn a few places throughout the old VB6 app, it collected both the date and the time, which got stored into a datetime column in SQL Server.  So, I've got to do that here, too.  Only problem is, I've no idea how I'll do that with any of the controls that I see in the WPFToolkit.  I've tried to find, and follow, the documentation online, but I'm afraid that, at least for me, it isn't too helpful.  So, I'm asking here what control(s) do I use to collect both date and time, and how do I do it?\r\n",
+    "PostedDate": "2010-06-01T13:43:31.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

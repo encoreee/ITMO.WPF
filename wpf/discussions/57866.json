@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "195635",
+    "ThreadId": "57866",
+    "Html": "<p>I run unit tests on a datagrid, where I select rows by setting the DataGrid.SelectedIndex property.</p>\r\n<p>This works ok.</p>\r\n<p>But I would like to be able to select more &nbsp;than one row in some tests. &nbsp;Is that possible? &nbsp;If so, how do I do it?</p>\r\n<p>Thanx!</p>\r\n<p>&nbsp;</p>\r\n<p>- Steinar</p>",
+    "PostedDate": "2009-05-29T04:48:14.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195637",
+    "ThreadId": "57866",
+    "Html": "<p>Something like this might do the trick:</p>\r\n<p>&nbsp;&nbsp;  ((DataGridRow)myDataGrid.ItemContainerGenerator.ContainerFromIndex(0)).IsSelected;<br>&nbsp;&nbsp;  ((DataGridRow)myDataGrid.ItemContainerGenerator.ContainerFromIndex(1)).IsSelected;<br><br></p>",
+    "PostedDate": "2009-05-29T05:01:59.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195640",
+    "ThreadId": "57866",
+    "Html": "<p>Or add the underlying objects to the DataGrid.SelectedItems collection.</p>",
+    "PostedDate": "2009-05-29T05:24:59.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

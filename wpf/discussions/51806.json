@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "173819",
+    "ThreadId": "51806",
+    "Html": "I have a datagrid , it has two columns  A , B <br>\r\nI have set CanUserAddRows=false, when the button &quot;Add&quot;  in the bottom of the page  be cliked<br>\r\na new row was inserted.<br>\r\n<br>\r\nMy problem is ,I want column B to be readonly so that users can not change the values of  the column,<br>\r\nbut when the add button clicked, the Cell in column B and new Row is Readonly too---So that i can't <br>\r\nfill in values in it.<br>\r\n<br>\r\nHow can i make the cell can be written temporarily so that i can fill in it?<br>\r\nAny help would be appreciated , thx \r\n",
+    "PostedDate": "2009-03-31T02:36:24.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173860",
+    "ThreadId": "51806",
+    "Html": "You could temporarily make it read/write when the user presses the &quot;Add&quot; button.  As soon as the edits to the new row are committed, change it back to read only.\r\n",
+    "PostedDate": "2009-03-31T05:21:22.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173909",
+    "ThreadId": "51806",
+    "Html": "Thanks for your reply,vinsibal.<br>\r\nFirst:  I wonder if i can just make the new added cell writable with the others in the same column remaining readonly.  <br>\r\nlike  GetCell(datagrid,datagrid.Items.count-1,1).IsReadOnly = true?<br>\r\n<br>\r\nSecond:  The only solution is  to temporarily make the column B.isreadonly = false.Here I must  keep the focus on the new added row <br>\r\nso that people would not leave here to change the values in the other rows ,and even worse, to move the focus out of this datagrid .  <br>\r\nI  tried to listen  lostfocus and lostkeyboardfocus event ,but it doen't work well.<br>\r\n How can i make sure of  the added row being locked when edited?<br>\r\nI have read you post about  Locking rows in Datagrid , but i found it really did't help me because there is no &quot;add&quot; in your example.<br>\r\nThanks for you help.\r\n",
+    "PostedDate": "2009-03-31T07:54:26.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173934",
+    "ThreadId": "51806",
+    "Html": "Instead of listening to focus changes, why not listen for a RowEditEnding event (which will handle all the focus commiting scenarios).  In that event you can set that particular column back to IsReadOnly.  \r\n",
+    "PostedDate": "2009-03-31T09:37:59.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174140",
+    "ThreadId": "51806",
+    "Html": "Thanks, i'll try now\r\n",
+    "PostedDate": "2009-03-31T18:12:19.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "129744",
+    "ThreadId": "39118",
+    "Html": "I'd like to hide columns in the AutoGeneratingColumn event, but I don't see how to set the visibility on a column.  Can someone give me an example of hiding a column in code?<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n",
+    "PostedDate": "2008-11-03T11:50:01.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129760",
+    "ThreadId": "39118",
+    "Html": "You have access to DataGridColumn.Visibility.\r\n",
+    "PostedDate": "2008-11-03T12:47:32.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129929",
+    "ThreadId": "39118",
+    "Html": "Sorry.  I didn't have the new version installed properly.  It works now.\r\n",
+    "PostedDate": "2008-11-04T06:10:53.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

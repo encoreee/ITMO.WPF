@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "164333",
+    "ThreadId": "49183",
+    "Html": "I have a datagrid with a button:<br>\r\n<br>\r\n&lt;Custom:DataGrid IsSynchronizedWithCurrentItem=&quot;True&quot; Margin=&quot;40,120,40,124&quot; Grid.ColumnSpan=&quot;3&quot; Name=&quot;gvItems&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Custom:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Custom:DataGridTemplateColumn Width=&quot;100&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Custom:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button Content=&quot;Print Label&quot; Click=&quot;btnPrint_Click&quot;&gt;&lt;/Button&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Custom:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Custom:DataGridTemplateColumn&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Custom:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Custom:DataGrid&gt;<br>\r\n<br>\r\nHow do I “wire” that button into the data grid so that when that button is clicked row and column information is found and sent to another object?&nbsp; Kind of like a Windows forms gridview button column.<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nJP\r\n",
+    "PostedDate": "2009-03-04T07:13:30.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164443",
+    "ThreadId": "49183",
+    "Html": "<p>Following should work for you....</p>\r\n<p>        T FindVisualParent&lt;T&gt;(UIElement element) where T : UIElement<br>\r\n        {<br>\r\n            UIElement parent = element;<br>\r\n            while (parent != null)<br>\r\n            {<br>\r\n                T correctlyTyped = parent as T;<br>\r\n                if (correctlyTyped != null)<br>\r\n                {<br>\r\n                    return correctlyTyped;<br>\r\n                }<br>\r\n                parent = VisualTreeHelper.GetParent(parent) as UIElement;<br>\r\n            }<br>\r\n            return null;<br>\r\n        }<br>\r\n<br>\r\n        void btnPrint_Click(object sender,...)<br>\r\n        {<br>\r\n            Button button = (Button)sender;<br>\r\n            DataGridCell cell = FindVisualParent&lt;DataGridCell&gt;(button);<br>\r\n            DataGridRow row=FindVisualParent&lt;DataGridRow&gt;(cell);<br>\r\n            DataGridColumn column = cell.Column;<br>\r\n            // use row and column<br>\r\n        }</p>\r\n",
+    "PostedDate": "2009-03-04T10:52:20.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164827",
+    "ThreadId": "49183",
+    "Html": "What do you have in your using statements??&nbsp; I have all three parts of the toolkit in my project references (WPFToolKit, WPFToolKit.Design, and WPFToolKit.VisualStudio) but I'm getting an error on DataGridCell, DataGridRow, and DataGridCoulmn.&nbsp; <br>\r\n<br>\r\nThe type or namespace name 'DataGridCell' could not be found (are you missing a using directive or an assembly reference?)<br>\r\n<br>\r\nI'm not however calling any part of the toolkit through a using statement.&nbsp; I didn't think I had to.&nbsp; But I'm pretty new to WPF.<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nJP <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-03-05T06:28:54.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164847",
+    "ThreadId": "49183",
+    "Html": "Forget it I figured it out.<br>\r\n<br>\r\nusing Microsoft.Windows.Controls;<br>\r\n<br>\r\nFor anyone else with the same question. <br>\r\n<br>\r\nAnd thanks!!&nbsp; That was a big help.&nbsp; I may get the hang of this WPF stuff after all.<br>\r\n<br>\r\nJP<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-05T07:17:08.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264001",
+    "ThreadId": "49183",
+    "Html": "<p>It took me forever to find this but it was exactly what I needed.</p>\r\n<p>Thanks.</p>\r\n<p>Tom</p>",
+    "PostedDate": "2009-12-05T13:12:05.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

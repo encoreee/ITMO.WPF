@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In the old windows forms datagridview:\n  Select multiple rows (dgvMyGrid.SelectedRows.Count > 1)\n  Right click anywhere in the datagridviewform to open a ContextMenu\n  Use the Multiple rows as expected.  (dgvMyGrid.SelectedRows.Count > 1)\n \nIn the WPF datagrid:\n  Select multiple rows (dgvMyGrid.SelectedRows.Count > 1)\n  Right clicking in the Row header, or on a row that is not selected causes that row to be selected to open a ContextMenu\n  The SelectedItems property resets to the current row (dgMyGrid.SelectedItems.Count == 1)",
+    "LastUpdatedDate": "2013-02-21T18:41:02.66-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-10T11:54:05.957-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Losing SelectedItems when opening a ContextMenu",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10430
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3251,
+      "FileName": "WindowsForms DataGridView ContextMenu.jpg",
+      "DownloadUrl": ".\\3251"
+    },
+    {
+      "FileId": 3252,
+      "FileName": "WPF ContextMenu pt1.jpg",
+      "DownloadUrl": ".\\3252"
+    },
+    {
+      "FileId": 3253,
+      "FileName": "WPF ContextMenu pt2.jpg",
+      "DownloadUrl": ".\\3253"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Part 1 of WPF DataGrid ContextMenu",
+      "PostedDate": "2009-08-10T11:54:41.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-10T11:54:43.027-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Part 2 of WPF DataGrid ContextMenu picture",
+      "PostedDate": "2009-08-10T11:55:07.77-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-10T11:55:08.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-01T19:55:27.67-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:02.66-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

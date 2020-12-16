@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "435096",
+    "ThreadId": "210460",
+    "Html": "<p>I Develope a XBAP Partial trust that use datagrid. This DataGrid has a TemplateColumn that use AutoComplateBox as Editing Element.</p>\r\n<p>When Click on One of that Column's cell throw the exception</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>Systm.Security.SecurityException: That assembly does not allow partially trusted callers.\r\n</pre>\r\n<pre><p>any idea? tanx</p></pre>\r\n</div>",
+    "PostedDate": "2010-04-24T22:50:30.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "435565",
+    "ThreadId": "210460",
+    "Html": "<p>I don't think that the WPF Toolkit is safe to use in partial trust.&nbsp; I had a less explicit error from the charting components (<a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=210081\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=210081</a>) that occurs because of running in partial trust.&nbsp;</p>\r\n<p>It would be nice if someone from the project would comment on their support / non support of patial trust.</p>",
+    "PostedDate": "2010-04-26T09:20:15.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

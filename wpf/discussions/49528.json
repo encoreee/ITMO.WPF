@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "165748",
+    "ThreadId": "49528",
+    "Html": "Hi all I have been trying to figure out a way to easily hide or un-hide the columns of a table, e.g. right click on the header column and have a context menu come up for &quot;hide column&quot;.  I know that I could probably do this with check boxes somewhere but I did not think that would be as intuitive.  I plan to also give them the option to hide un-hide columns from the menu.<br>\r\n<br>\r\nOr how about I put a transparent button over the top of the header text that responds to right clicks only?<br>\r\n<br>\r\nAny thoughts?  \r\n",
+    "PostedDate": "2009-03-07T16:48:36.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166059",
+    "ThreadId": "49528",
+    "Html": "In the control I have been working on that derives from the WPF DataGrid, I have done this (and more) by overriding OnContextMenuOpening(). My version builds the context menu dynamically and thus has access to the up-to-the-millisecond state of the Columns collection, which it uses to populate a submenu offering the user the ability to hide/unhide each of the columns.<br>\r\n<br>\r\nEach such menu item is bound to the same Click handler, which simply reverses the visiblity (Collapsed versus Visible). The menu item that the user selected is available in e.OriginalSource, and each MenuItem points to the appropriate DataGridColumn by way of the MenuItem's Tag attribute.<br>\r\n<br>\r\nThis may or may not be a workable approach for you, but maybe it will give you a starting point.<br>\r\n",
+    "PostedDate": "2009-03-09T06:30:54.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166133",
+    "ThreadId": "49528",
+    "Html": "Thanks mikj,<br>\r\n<br>\r\nThis is definitely a great starting place.  It would be nice if there were some built in capabilities like that, similar to an Excel spreadsheet, but I understand that the grid cannot be everything to everyone.<br>\r\n<br>\r\n-jupiter\r\n",
+    "PostedDate": "2009-03-09T09:33:47.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166346",
+    "ThreadId": "49528",
+    "Html": "Okay I did this but when I create the sub menu items in the overridden OnContextMenuOpening() they do not display but if I build them in the OnLoaded event handler for the DataGrid they do show up.  Any thoughts?<br>\r\n<br>\r\nThank you,<br>\r\n-jupiter \r\n",
+    "PostedDate": "2009-03-09T21:23:16.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166348",
+    "ThreadId": "49528",
+    "Html": "I think I have been coding to long today, I had the visibility set to hidden on the sub menu item. Doh!\r\n",
+    "PostedDate": "2009-03-09T21:32:18.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

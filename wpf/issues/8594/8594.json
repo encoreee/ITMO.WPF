@@ -1,0 +1,126 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi There,\n \nI have experienced this problem in data grid, template column.\n \n1. I have one control having a combo and a checkbox control (arranged in a plain grid). They are internally bound to some data. \n2. I have another user control that hosts the above control (control 1) in a popup. The popup is opened and closed using  a toggle button. So this control simply hosts a toggle button and has an associated popup that wraps the above control in a stack panel.\n3. I host the template of above user control (control 2) in the cell template of the datagrid's template column. \n \nI load the UI, the datagrid displays rows which correctly repeat control 2. I click the toggle button from some cell and the popup opens. But all the controls in the popup (checkbox and combo) are not responding to any clicks or keyboard events that I perform on them. I can neither uncheck\\check the checkbox nor select any entry from combobox. I cant even see any binding in combobox.\n \nI have successfully reproduced it in another WPF project with other type of set of controls (buttons, textboxes, listbox etc.). They too become unresponsive. Its always the hierarchy of user controls hosted in popups that give problem on datagrid template column. \n \nIt is even more irritating when I implement the same template in DataGridTemplate.CellEditingTemplate instead of DataGridTemplate.CellTemplate. Because in that case the control automatically hides if I try to click the combobox and goes in non edit state. \n \nThis bug is lost if\n \n1. I merge user control 1 and 2 in a single user control and host that control in the template column of the data grid. I can expand the combo, check\\uncheck the checkbox.\n2. I implement the same template in a Listview or Listbox's ItemTemplate. The controls on the popup are correctly respsonsive in such case.  \n \nCan someone guide me here...\n \nIf you want, I can attach an example... but I would really appreciate if someone else tries to reproduce it on his/her side as well so that I can be assured that there isnt any WPF ghost on my machine... ;-)\n \nThx\n \n   - Vinit.",
+    "LastUpdatedDate": "2013-02-21T18:41:38.2-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-20T09:12:53.937-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Latest DataGrid: DataGridTemplate Column: Nested Usercontrol template with popup hide when used.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 11,
+    "Id": 8594
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2636,
+      "FileName": "TestGrid.zip",
+      "DownloadUrl": ".\\2636"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Attached is the confirmation of the problem. The example shows how the data grid control doesnt operate toggle and popup based usercontrol correctly but the neighboring list view does.",
+      "PostedDate": "2009-01-13T04:29:32.48-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T04:42:56.943-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T05:02:30.17-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T21:06:10.803-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-14T06:24:49.26-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I believe this is a known bug but I want to confirm with your repro.  I don't see the attachment though.",
+      "PostedDate": "2009-01-15T05:41:09.933-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Vinsible,\r\n\r\nThx for the confirmation. Here is my attachment.",
+      "PostedDate": "2009-01-15T07:10:06.557-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-15T07:10:07.587-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-19T13:59:21.04-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-19T13:59:21.79-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-23T05:21:06.777-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The Silverlight 2 DataGrid December 2008 Release fixed a bug which is similar to this: \r\nSee: \r\nhttp://silverlight.net/forums/t/59990.aspx under Bugs Fixed \r\n27. Cannot hold editing mode when using a DatePicker or ComboBox in editing template\r\nThere was a bug that prevented any editing control that uses a Popup to work correctly in the DataGrid.  As soon as the Popup opened, the DataGrid would lose focus and automatically CommitEdit.  It now tracks focus within a child Popup in order to support DatePicker, ComboBox and any other editing control that opens a Popup.\r\n\r\nDatePicker/Calendar stays open nicely in a CellEditingTemplate and is clearly not defined literally in the DataTemplate. Now what do DatePicker and ComboBox do differently so the above mentioned DataGrid bugfix recognizes their Popup for focus management?",
+      "PostedDate": "2009-03-07T13:04:13.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T07:47:32.303-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-05T23:00:33.777-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-09T08:56:56.537-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:38.2-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

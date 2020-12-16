@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "198479",
+    "ThreadId": "58630",
+    "Html": "<p>hi,<br> <br>&nbsp;i am using WPF datagrid in that we can give alternate background for row but&nbsp; my problem is in my datagrid i am binding data dynamically i want to set RowBackground of each row with different color from code like for example in my datagrid will look like this<br> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br> Category | Name | Year | Enter Value|<br> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-<br> Cat1     |       |     |             |<br> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br> |  S1   |2001 |             |<br> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br> |  s2   |2002 |             |<br> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br> Cat2     |       |      |            |<br> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>\r\n<p>i want to highlight Row with only Category and Want to give different Background color for EnterValue column how can we approach this.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n<p>RUkmini</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-05T22:08:25.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

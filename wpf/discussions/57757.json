@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "195260",
+    "ThreadId": "57757",
+    "Html": "<p>i am looking for a way to select a row by pressing a key (i.e. the key P)and it gives me all the rows that starts with P.</p>\r\n<p>i'm new with wpf. can any body tell me what to do</p>",
+    "PostedDate": "2009-05-28T08:43:55.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195571",
+    "ThreadId": "57757",
+    "Html": "<p>Look at Items.Filter. Also, you will have to define what it means that &quot;a row starts with P&quot; in terms of your business object type so that you can implement the proper logic.</p>",
+    "PostedDate": "2009-05-28T23:34:17.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195663",
+    "ThreadId": "57757",
+    "Html": "<p>Thank you very much for the reply.</p>\r\n<p>Please can you help me with any workaround example or how to's. I cant find anything explanatory online about Itemx.Fillter. i meant a Cell value(string) that starts with P letter, ofcourse a column musst be defined</p>\r\n<p>Thanks in advance</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-29T06:26:11.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195673",
+    "ThreadId": "57757",
+    "Html": "<p><a title=GIYF href=\"http://www.google.com/search?q=WPF+&quot;Items.Filter&quot;+example&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a\">GIYF</a>.</p>",
+    "PostedDate": "2009-05-29T06:42:52.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

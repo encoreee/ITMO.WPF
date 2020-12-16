@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello all,\n \n     I have a partially trusted WPF application that is experiencing the following issue: Request for the permission of type 'System.Security.Permissions.UIPermission, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' failed.  This exception is thrown because a VisualState transition is occuring after a page is unloaded.  The ShouldRunStateStoryboard is being invoked automatically on a Button that is no longeer loaded (meaning IsLoaded = false).  It is my suspition that a RoutenUICommand is disabling this button just before the page is unloaded and since Completed event handlers always occur asynchronous, this causes the ShouldrunStateStoryboard method to be invoked after the control has been unloaded. \n \n    I figure a simple if (!control.IsLoaded) will fix the issue.  At the minimum, a Try, Catch should be placed around the \"PresentationSource.FromVisual(control)\" code because the exeption originates within this method.  \n \nstate.Name = \"Disabled\"\ncontrol.Name = idMyButton\ncontrol.IsInitialized = true\ncontrol.IsEnabled = false\ncontrol.Parent(Grid).Parent(Control).Parent(Grid).Parent(Page).Parent = null // <--- this is why the exception happes because the page has been unloaded by this time\nPermissionType: {Name = \"UIPermission\" FullName = \"System.Security.Permissions.UIPermission\"}\nMessage: Request for the permission of type 'System.Security.Permissions.UIPermission, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' failed.\nAction: System.Security.Permissions.SecurityAction.Demand\nSource: mscorlib\nCall Stack:\n   at System.Security.CodeAccessSecurityEngine.Check(Object demand, StackCrawlMark& stackMark, Boolean isPermSet)\n   at System.Security.CodeAccessPermission.Demand()\n   at MS.Internal.PresentationCore.SecurityHelper.DemandUIWindowPermission()\n   at System.Windows.PresentationSource.FromVisual(Visual visual)\n   at System.Windows.VisualStateManager.ShouldRunStateStoryboard(FrameworkElement control, FrameworkElement stateGroupsRoot, VisualState state, VisualStateGroup group)\n   at System.Windows.VisualStateManager.<>c__DisplayClass3.<GoToStateInternal>b__0(Object sender, EventArgs e)\n   at System.Windows.Media.Animation.Clock.FireEvent(EventPrivateKey key)\n   at System.Windows.Media.Animation.Clock.RaiseAccumulatedEvents()\n   at System.Windows.Media.Animation.TimeManager.RaiseEnqueuedEvents()\n   at System.Windows.Media.Animation.TimeManager.Tick()\n   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)",
+    "LastUpdatedDate": "2013-02-21T18:40:26.71-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-07-31T21:35:04.64-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ShouldRunStateStoryboard needs Try, Catch statement block",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13836
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4695,
+      "FileName": "WpfBrowserApplication1.zip",
+      "DownloadUrl": ".\\4695"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I looked into this in a bit more detail.  The PresentationSource.FromVisual documentation distinctly demands the UIPermission permission [see http://msdn.microsoft.com/en-us/library/system.windows.presentationsource.fromvisual.aspx].  So I'm asking whether or not the VisualStateManager class is properly developed for partially tested environments?  \r\n\r\n- Rashad Rivera\r\n   omegusprime.com",
+      "PostedDate": "2010-08-02T09:21:46.26-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-02T10:05:05.397-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I was able to create a sample application that cuses the exception.  I tested this on the .NET 4.0 framework and it's version of VisualStateManager works.  The trick to reproducing this bug is the following:\r\n\r\n1) Employ the use of a Frame control in one of your main Page (say we name it Page1.xaml for this demo).\r\n2) Create another Page (say Page2.xaml)\r\n3) Set the Frame's Source to Page2.xaml\r\n3) Create a Button style that uses custom Visual States in Page2 (or globally).\r\n4) Set the all GeneratedDuration to a value greater than 2 seconds (necessary to produce the bug)\r\n5) Create a button in Page2.xaml and apply your new custom style\r\n6) Create a CommandBinding in Page2 and for the button (Say we use System.Windows.Input.NavigationCommands.BrowseBack command).\r\n7) In the CanExecute handler on Page2, set e.CanExecute this.IsLoaded (this is a trick that will cause the exception after the page is unloaded)\r\n8) In the Execute handler on Page2, navigate page by using the following code:\r\n    NavigationService.GetNavigationService(this).GoBack();  // unloades our Page2.xaml\r\n    CommandManager.InvalidateRequerySuggested();  // forces a command manager walk\r\n9) The SecurityException will be thrown\r\n\r\n*SPECIAL NOTES*: I have only experienced this issue on Windows 7 PCs using .NET 3.5 SP1 and WPFToolkit.dll.  Again, .NET 4.0 does not seem to have this issue.",
+      "PostedDate": "2010-08-02T10:05:06.72-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "In relation to this issue:\r\n\r\nI found out today that this issue is not just localized to Windows 7.  It also includes Vista.  I just had the same issue today when I deployed my product to the field and some Vista clients had the same exception.\r\n\r\nI posted a Connect.Microsoft.com response here: https://connect.microsoft.com/VisualStudio/feedback/details/583702/shouldrunstatestoryboard-needs-try-catch-statement-block#tabs\r\nI also found a similar posting from another user on codeplex: http://wpf.codeplex.com/Thread/View.aspx?ThreadId=210081",
+      "PostedDate": "2010-08-05T13:08:35.487-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:26.71-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

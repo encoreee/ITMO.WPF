@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "230870",
+    "ThreadId": "67913",
+    "Html": "<p>I have &quot;Copy&quot; and &quot;Paste&quot; working just fine in my DataGrid project. &nbsp;But how can I implement the &quot;Cut&quot; functionality?</p>\r\n<p>The first part of implementing &quot;Cut&quot;, is to copy the selected cells content to the clipboard. &nbsp;So, I could use (i.e. inherit) the built-in Copy functionality for that in principle - but how practically?. &nbsp;And for the second part: erasing the copied cells, I could use the code I already have made for pasting (derived from vinsibals posts).</p>\r\n<p>I would appreciate a few pointers/ideas of how to make this work - or maybe there are other easier/better ways to do this? - or maybe it is very easy and I just cannot see how to?</p>\r\n<p>Another factor is that cut, copy and paste already is built into WPF for many controls, e.g. the TextBox. &nbsp;So, when you select the given text string (or a part of the text string) in a TextBox in the usual Windows way via the keyboard and/or the mouse, you automatically have a Context Menu available (right click) where Cut and Copy are enabled. &nbsp;And when nothing is selected, Cut and Copy are nicely disabled and Paste is enabled. &nbsp;</p>\r\n<p>The complicating aspect of this existing functionality is that the same Context Menu mechanism is available for the cells in a DataGrid - but only Copy works, by design. &nbsp; I will have to be able to control this context menu (or get rid of it), so Cut links up with my Cut implementation, and likewise for Paste but leaves Copy as it is. &nbsp;How can I do that?</p>\r\n<p>Regards, Fin</p>",
+    "PostedDate": "2009-09-03T13:50:01.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231273",
+    "ThreadId": "67913",
+    "Html": "<p>Hi,</p>\r\n<p>For your first question, you can use the copy command to get the content into the Clipboard.&nbsp; Then you can use the dataGrid.SelectedCells property and clear the respective&nbsp;cell content.</p>\r\n<p>For your second question,&nbsp;in order to get the&nbsp;Cut and Paste Routed&nbsp;UI Commands for the DataGrid, you need to implement your own commands as follows,</p>\r\n<p>&lt;DataGrid ...&gt;<br>&nbsp; &lt;DataGrid.CommandBindings&gt;<br>&nbsp;&nbsp;&nbsp; &lt;CommandBinding Command=&quot;ApplicationCommands.Cut&quot;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CanExecute=&quot;OnCanCutExecute&quot; Executed=&quot;OnCutExecute&quot;/&gt;</p>\r\n<p>... and just implement the OnCanCutExecute and OnCutExecute.&nbsp; You may look at the link below for an example.</p>\r\n<p><a href=\"http://msdn.microsoft.com/en-us/magazine/cc785480.aspx\">http://msdn.microsoft.com/en-us/magazine/cc785480.aspx</a></p>\r\n<p>Hope that helps,</p>\r\n<p>Saied Khanahmadi&nbsp;</p>",
+    "PostedDate": "2009-09-04T13:56:25.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

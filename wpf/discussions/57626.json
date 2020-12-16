@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "194830",
+    "ThreadId": "57626",
+    "Html": "<p>I have a generic grid bound to an ObservableCollection via Items Source and I want the grid to be completely generic.</p>\r\n<p>I now want to programatically in the generic grid to Add / Insert a new record (aka user hits the insert key).&nbsp;</p>\r\n<p>So in generic grid I can intercept the insert key and then delegate to its parent to add to the observable collection and that words.&nbsp; What I would like to do is to do it completely in the generic grid w/out delegating back to parent.</p>\r\n<p>Aka</p>\r\n<p>Items.Add(????);&nbsp; How do I add because I am generic grid w/out knowledge of the item type.&nbsp; aka it could be</p>\r\n<p>Items.Add(new Station()); or Items.Add(new Apple());&nbsp; =&gt; i don't know how to do this programatically but probably very simple.</p>",
+    "PostedDate": "2009-05-27T09:00:57.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

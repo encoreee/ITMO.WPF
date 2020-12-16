@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "134459",
+    "ThreadId": "40531",
+    "Html": "How can I accomplish loading data on demand with wpf datagrid?<br>\r\nI have to display a lot of items in a datagrid. Because of performance reasons, it is not possible to fetch all data from the database.<br>\r\nI think of something like at first only to get a total items count (to scale the scrollbar) and then to get only that data from the database that comes into view.<br>\r\nDatagrid has UI virtualization as far as I know, but I'd rather need a feature like data virtualization. Is there a way to get this done?<br>\r\n<br>\r\nThanks in advance for any help.<br>\r\n",
+    "PostedDate": "2008-11-22T07:30:25.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135140",
+    "ThreadId": "40531",
+    "Html": "Hi heroicinventor,<br>\r\n<br>\r\nUnfortunately the DataGrid (and none of the other WPF controls) support data virtualization out-of-the-box at the moment.  However, it is possible to roll your own using a strategy like you suggested if you're willing to write some code.  Some third-party providers also have data virtualization solutions.  I would recommend that you search online to find a solution which works for you, whether it be a guide to writing your own data virtualization (there are lots of blog posts about this) or a pre-built solution which you can purchase.  The WPF team does have data virtualization on our roadmap for a future release, but unfortunately it will not be available in our next release (.NET 4.0).<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-25T07:49:40.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151288",
+    "ThreadId": "40531",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nConcerning data virtualization, you write <br>\r\n... search online to find a solution which works for you, .... (there are lots of blog posts about this)<br>\r\n<br>\r\nI tried googling ... <br>\r\n<a href=\"http://www.google.de/search?hl=en&q=%2Bwpf+%2B\">http://www.google.de/search?hl=en&amp;q=%2Bwpf+%2B%22data+virtualization%22</a><br>\r\n<br>\r\nBut no hits on experiences with doing data virtualisation with wpf.<br>\r\n<br>\r\nWould you update this thread with a few links on this?<br>\r\n<br>\r\nThanks,<br>\r\nPaul \r\n",
+    "PostedDate": "2009-01-27T04:55:30.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152251",
+    "ThreadId": "40531",
+    "Html": "Hi Paul,<br>\r\n<br>\r\nI don't know of any non-third party (or open source) data virtualization solutions, and was not able to find any good instructions for implementing this yourself in a search either.  You might want to try posting a question to the MSDN forums: <a href=\"http://forums.microsoft.com/MSDN/default.aspx?siteid=1\">http://forums.microsoft.com/MSDN/default.aspx?siteid=1</a>.  The experts in the forums on this site are specialized in WPF controls, particularly DataGrid and Ribbon, and the MSDN forums are visited by a variety of people with a greater breadth of knowledge, so someone there may be able to help you more than we can.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-01-29T10:31:03.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171284",
+    "ThreadId": "40531",
+    "Html": "I have just posted an article on CodeProject (<a href=\"http://www.codeproject.com/KB/WPF/WpfDataVirtualization.aspx\">http://www.codeproject.com/KB/WPF/WpfDataVirtualization.aspx</a>), which may provide a solution.<br>\r\n",
+    "PostedDate": "2009-03-24T05:12:39.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173788",
+    "ThreadId": "40531",
+    "Html": "thanks\r\n",
+    "PostedDate": "2009-03-31T01:08:44.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430038",
+    "ThreadId": "40531",
+    "Html": "<p>Take a look at my blog post:</p>\r\n<p><a href=\"http://www.devzest.com/blog/post/WPF-Data-Virtualization.aspx\">http://www.devzest.com/blog/post/WPF-Data-Virtualization.aspx</a></p>",
+    "PostedDate": "2010-04-12T07:58:17.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

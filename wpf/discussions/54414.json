@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "183398",
+    "ThreadId": "54414",
+    "Html": "I have a DataGrid that uses an ObservableCollection of business objects.&nbsp; There is a property on the business object that refers to another business object.&nbsp; I am using the following DataGridTextColumn:<br>\r\n<br>\r\n<br>\r\n&lt;dg:DataGridTextColumn Binding=&quot;{Binding EquipmentType.Description}&quot; Header=&quot;Category&quot; Width=&quot;100&quot; SortMemberPath=&quot;EquipmentType.Description&quot;&gt;&lt;/dg:DataGridTextColumn&gt;<br>\r\n<br>\r\nThe column displays the information, but when I try to sort the column by clicking on the column header, I get the following error:<br>\r\n<br>\r\nSystem.InvalidOperationException was unhandled<br>\r\n&nbsp; Message=&quot;The SortDescriptions added are not valid. The probable solutions are to set the CanUserSort on the Column to false, or to use SortMemberPath property on the Column, or to handle the Sorting event on DataGrid.&quot;<br>\r\n&nbsp; Source=&quot;WPFToolkit&quot;<br>\r\n&nbsp; StackTrace:<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Windows.Controls.DataGrid.DefaultSort(DataGridColumn column, Boolean clearExistingSortDescriptions) in D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:line 6202<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Windows.Controls.DataGrid.OnSorting(DataGridSortingEventArgs eventArgs) in D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:line 6070<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Windows.Controls.DataGrid.PerformSort(DataGridColumn sortColumn) in D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:line 6100<br>\r\n.....<br>\r\n&nbsp; InnerException: System.InvalidOperationException<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Message=&quot;Collection was modified; enumeration operation may not execute.&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Source=&quot;mscorlib&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StackTrace:<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Collections.Generic.List`1.Enumerator.MoveNextRare()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Collections.Generic.List`1.Enumerator.MoveNext()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Windows.Controls.DataGrid.AddGroupingSortDescriptions() in D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:line 6339<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Windows.Controls.DataGrid.DefaultSort(DataGridColumn column, Boolean clearExistingSortDescriptions) in D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:line 6195<br>\r\n<br>\r\n<br>\r\nIs this because of the '.' notation? \r\n",
+    "PostedDate": "2009-04-24T13:41:23.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271380",
+    "ThreadId": "54414",
+    "Html": "<p>Check the following link:</p>\r\n<p>http://stackoverflow.com/questions/1645823/wpf-datagrid-sort-on-column-with-null-elements</p>",
+    "PostedDate": "2009-12-29T02:35:00.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "421974",
+    "ThreadId": "206831",
+    "Html": "<p>Hey,</p>\r\n<p>We are currently trying to move some of our existing forms at work from WinForms to WPF. The main sticking point we have at the moment is that we have no real NumericUpDown control for WPF (our system is very number oriented, so we have a lot of these).</p>\r\n<p>&nbsp;</p>\r\n<p>I have been searching the discussions here for 'NumericUpDown' and 'Spinner', and a few hits came up from 6-12 months ago saying that there would be one coming out 'shortly' with the ribbon control. Allthough i had a look through the latest code and can't find any classes relating to a ribbon or numericupdown control. I was just wandering what happened to these plans?</p>\r\n<p>&nbsp;</p>\r\n<p>I currently have a working version that i created myself, however my problem is that it looks but-ugly. I really need a theme that will look the same as the WinForms NumericUpDown in both XP and Vista (in whatever theme).</p>\r\n<p>&nbsp;</p>\r\n<p>Does anyone know of anywhere that has a free numeric up down (preferable open-source) that has a theme matching the Winforms one?</p>",
+    "PostedDate": "2010-03-21T22:39:19.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "133538",
+    "ThreadId": "40241",
+    "Html": "Hi All,<br>\r\nI am facing some issues in using the RibbonSeparator control inside the Ribbon Control (Ribbon Control). To my knowledge the RibbonSeparator visible as vertical when it is placed inside a Ribbon control. But here it is showing as horizontal separator. Is this a bug or did I missed anything?<br>\r\n",
+    "PostedDate": "2008-11-18T18:45:20.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133705",
+    "ThreadId": "40241",
+    "Html": "Hi Venki5star,<br>\r\n<br>\r\nWhat you are seeing is the correct behavior; RibbonSeparator is a horizontal separator.  If you need vertical separators you will need to write your own style.<br>\r\n<br>\r\nAlexis\r\n",
+    "PostedDate": "2008-11-19T10:37:49.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133887",
+    "ThreadId": "40241",
+    "Html": "Alexisr,<br>\r\nI read some of documentations in MSDN which mentioned about what I said before. I believe this WPF Ribbon will act same as Office Ribbon control comes with Visual Studio 2008 right? If so, what I said is correct. Reference:&nbsp;<a href=\"http://msdn.microsoft.com/en-us/library/microsoft.office.tools.ribbon.ribbonseparator.aspx\">http://msdn.microsoft.com/en-us/library/microsoft.office.tools.ribbon.ribbonseparator.aspx</a><br>\r\n",
+    "PostedDate": "2008-11-20T03:54:30.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133973",
+    "ThreadId": "40241",
+    "Html": "Hi Venki5star,<br>\r\n<br>\r\nThe documentation on MSDN relates to Visual Studio Tools for Office, which is different from the WPF Ribbon (we won't have any documentation for this control available on MSDN until .NET 4.0).  However, we have noted that the behavior is different and that this can be confusing, so we will take into consideration when finalizing V1.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-20T10:58:07.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134264",
+    "ThreadId": "40241",
+    "Html": "Samantha,<br>\r\nAre you saying that this Ribbon control will be available only on 4.0?? When 4.0 is planned to release?<br>\r\n<br>\r\nThanks,<br>\r\nVenkatesh. \r\n",
+    "PostedDate": "2008-11-21T07:12:56.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134288",
+    "ThreadId": "40241",
+    "Html": "The version of Ribbon available now is a CTP only.  We are still finalizing the Ribbon release schedule but V1 of the control will be available sometime next year.  Glad to see you're trying it out early!<br>\r\n<br>\r\nAlexis\r\n",
+    "PostedDate": "2008-11-21T08:52:03.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134337",
+    "ThreadId": "40241",
+    "Html": "Hi venki5star,<br>\r\n<br>\r\nYes, to clarify, the Ribbon control will be shipped out-of-band (through the Office UI Licensing site) sometime in 2009 but will NOT be part of .NET 4.0.  However, Ribbon documentation will appear on MSDN at the same time as the .NET 4.0 documentation.<br>\r\n<br>\r\nHope that clears it up.  Thanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-21T11:48:15.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177342",
+    "ThreadId": "40241",
+    "Html": "So I made my own RibbonSeperator to be vertical just to try out making a control for the ribbon and I'm getting an error:<div><div>A value of type 'RibbonVerticalSeparator' cannot be added to a collection or dictionary of type 'Collection`1'.</div><div><br></div><div>It still runs and shows up, but I'm getting that error.</div><div><br></div><div>Anyone see what I'm doing wrong?</div><div><br></div><div><br></div><div>Here is what I have:</div></div><div><div><br></div><div>RibbonVerticalSeparator.xaml</div><div><br></div><div>&lt;StackPanel x:Class=&quot;bleh.RibbonVerticalSeparator&quot;</div><div>            xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</div><div>            xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</div><div>            Height=&quot;55&quot;</div><div>            Margin=&quot;5,6,5,6&quot;</div><div>            Orientation=&quot;Horizontal&quot;</div><div>            SnapsToDevicePixels=&quot;True&quot;&gt;</div><div>   &lt;Rectangle Fill=&quot;#ffeaecee&quot;</div><div>              Width=&quot;1&quot; /&gt;</div><div>   &lt;Rectangle Fill=&quot;#ffb4b6b7&quot;</div><div>              Width=&quot;1&quot; /&gt;</div><div>&lt;/StackPanel&gt;</div><div><br></div><div><br></div><div>RibbonVerticalSeparator.xaml.cs</div><div><br></div><div>using Microsoft.Windows.Controls.Ribbon;</div><div>namespace bleh</div><div>{</div><div>   public partial class RibbonVerticalSeparator : IRibbonControl</div><div>   {</div><div>      public RibbonVerticalSeparator()</div><div>      {</div><div>         InitializeComponent();</div><div>      }</div><div>   }</div><div>}</div><div><br></div><div><br></div><div>Window1.xaml</div><div><br></div><div>...</div><div>&lt;r:RibbonGroup Command=&quot;{StaticResource ViewBlehCommand}&quot;&gt;</div><div><span style=\"white-space:pre\">\t</span> &lt;r:RibbonToggleButton Command=&quot;{StaticResource ViewBleh1Command}&quot; /&gt;</div><div><span style=\"white-space:pre\">\t</span> &lt;bleh:RibbonVerticalSeparator /&gt;</div><div><span style=\"white-space:pre\">\t</span> &lt;r:RibbonToggleButton Command=&quot;{StaticResource ViewBleh2Command}&quot; /&gt;</div><div>...</div></div>",
+    "PostedDate": "2009-04-08T13:30:11.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "180651",
+    "ThreadId": "40241",
+    "Html": "Instead of using stack panel, use a RibbonControlGroup<br>\r\n<br>\r\n            Height = 55;<br>\r\n            Margin = new Thickness(5, 5, 5, 5);<br>\r\n            Width = 2;<br>\r\n            MaxWidth = 2;<br>\r\n            MinHeight = 55; \r\n",
+    "PostedDate": "2009-04-17T11:30:00.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

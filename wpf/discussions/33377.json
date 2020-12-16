@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "110649",
+    "ThreadId": "33377",
+    "Html": "In that case, the 'look ahead' row is not created since the declared collection item is an interface. A nice feature would be to be able to provide the corresponding class that could serve as a base for instantiation. In the meantime, all such collections have to declare the 'class item' ... or is there an alternative? Thank you, Julie.\r\n",
+    "PostedDate": "2008-08-12T11:18:52.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "111100",
+    "ThreadId": "33377",
+    "Html": "<div class=CommentText3>\r\n<p>One workaround is to derive from ObservableCollection&lt;ISomething&gt; and start with a non-empty list. For example:</p>\r\n<p>public class Products : ObservableCollection&lt;IProduct&gt;</p>\r\n<p>&nbsp; &nbsp;{</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;public Products()</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;Pro WPF in C# 2008&quot;, &quot;Matthew MacDonald&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;Window Presentation Foundation Unleashed&quot;, &quot;Adam Nathan&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;Programming WPF&quot;, &quot;Chris Sells and and Ian Griffiths&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;WPF Programming&quot;, &quot;Chris Andrade, Shawn Livermore, Mike Meyers, and Scott Van Vliet&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;3D Programming For Windows&quot;, &quot;Charles Petzold&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;Applications = Code + Markup&quot;, &quot;Charles Petzold&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;Practical WPF Graphics Programming&quot;, &quot;Jack Xu&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add((new Product(&quot;Essential Windows Presentation Foundation&quot;, &quot;Chris Anderson&quot;, 49.99)));</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp; &nbsp;}</p>\r\n<p>where Product implements IProduct. &nbsp;You do have to have a non-empty collection to begin with. &nbsp;Since you derive from ObservableCollection&lt;T&gt; the ListViewCollectionView code will not try to construct the new object with the generic argument (IProduct) and instead will try to get a representative type by actually querying for an item in the list. &nbsp;In this case it will return a type of Product which as long as there is a default constructor will create the new item for you.</p>\r\n<p>With just ObservableCollection&lt;T&gt;, the framework has to query for the type it has and use reflection to construct it. &nbsp;If it's an interface it cannot just construct the item solely based on that information.</p>\r\n</div>\r\n",
+    "PostedDate": "2008-08-14T07:22:16.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "111290",
+    "ThreadId": "33377",
+    "Html": "One can also note that the following quasi-equivalent construction : &quot; IEditableCollectionView iecv = new ListCollectionView(ObservableCollection&lt;IProduct&gt; as IList); &quot; also leaves the 'CanAddNew' placeholder status of&nbsp;iecv to false.<br>\r\n<br>\r\nSuch instantiation casts the ObservableCollection&lt;IProduct&gt; to a non-generic IList straight into the constructor of ListCollectionView, that is responsible for the 'CanAddNew' placeholder status.<br>\r\n<br>\r\nDespite this, the ListCollectionView will ignore the IList intent and still introspect the provided collection as an &quot;ObservableCollection&lt;IProduct&gt;&quot; and not as a &quot;IList&quot;. Based on this mechanism,<br>\r\nit will set the 'CanAddNew' placeholder status to 'false'. If it had taken the &quot;as Ilist&quot; cast into account, it would have discovered the underlying &quot;Product&quot; class type and set the 'CanAddNew' placeholder status to 'true'.\r\n",
+    "PostedDate": "2008-08-15T00:19:04.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

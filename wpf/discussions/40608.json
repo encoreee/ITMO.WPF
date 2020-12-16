@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "134706",
+    "ThreadId": "40608",
+    "Html": "I am using rowdetails for editing the rows. everything works fine but i m having problem with validation. If one use cells directly for editing then if thr is error other rows dont get into edit mode but in case of rowdetails,other rows get in editing mode and thr is one more bug that in details if thr is error even if u close that detial that red border keep showing.please help i m stuck",
+    "PostedDate": "2008-11-24T01:32:54.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137235",
+    "ThreadId": "40608",
+    "Html": "RowDetails does not have the same editing with row validation capability as editing the cells in a row has.  If you want to use row validation, I suggest leaving the editing of the rows in the cells instead of the RowDetails.\r\n",
+    "PostedDate": "2008-12-03T05:47:39.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

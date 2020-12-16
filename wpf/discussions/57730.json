@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "195178",
+    "ThreadId": "57730",
+    "Html": "<p>Hello,</p>\r\n<p>My application&nbsp;will be used onto interactive whiteboard. Because some users are small, I want to give the choice to show the Ribbon bar at the application top side or the application downside.</p>\r\n<p>I'm using the Ribbon CTP (ver 3:5:31016:1 of&nbsp;RibbonControlsLibrary assembly) onto a Windows 7 RC1 (build 7100). I have some problems when I try to show the Ribbon bar at the application bottomside.</p>\r\n<p>Have you plan this possibility ?</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-28T06:22:25.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195237",
+    "ThreadId": "57730",
+    "Html": "<p>The Office 2007 UI Guidelines explicitly prohibit the placement of the ribbon anywhere apart from at the top of the window.</p>",
+    "PostedDate": "2009-05-28T07:43:53.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

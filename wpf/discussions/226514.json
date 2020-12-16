@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "490876",
+    "ThreadId": "226514",
+    "Html": "<p>Hello!</p>\r\n<p>I'm trying to make a RibbonSplitButton like the TextColor-Button in Office or in this Form where I'm writing now.</p>\r\n<p>( <a href=\"http://www.java2s.com/Tutorial/Microsoft-Office-PowerPoint-2007Images/Select_Custom_Colors___Select_Text_Box_Click_Font_Color_Bu.PNG\">http://www.java2s.com/Tutorial/Microsoft-Office-PowerPoint-2007Images/Select_Custom_Colors___Select_Text_Box_Click_Font_Color_Bu.PNG</a>&nbsp;)<br><br>Unfortunately I can't bring the Current-Color-Line under the &quot;A&quot; :( If I have a normal WPF-Button i'm doing the following:</p>\r\n<p>&lt;Button....&gt;<br>&lt;Stackpanel&gt;<br>&lt;Image... /&gt;<br>&lt;Line... /&gt;<br>&lt;/Stackpanel&gt;<br>&lt;/Button&gt;.<br><br>But in the RibbonSplitButton you can't edit the Content of the Main-Button.</p>\r\n<p>Have someone an Idea how to solve this Problem? <br>Thank you!!</p>",
+    "PostedDate": "2010-09-08T12:41:56.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491210",
+    "ThreadId": "226514",
+    "Html": "<p>Same here...But I have no idea as to how to solve this. Also, is there any way in which I can display the QAT undernearth the ribbon by default?</p>",
+    "PostedDate": "2010-09-09T05:36:50.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

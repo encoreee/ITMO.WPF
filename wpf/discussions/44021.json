@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "146399",
+    "ThreadId": "44021",
+    "Html": "<p>When I first started playing around with the WPF DataGrid, it displayed an empty line at the bottom, where a new item could be added to the bound collection.</p>\r\n<p>But at some point it disappeared.</p>\r\n<p>Beyond setting CanUserAddRows to true (which didn't have any visible effect) I didn't investigate it more closely.</p>\r\n<p>But today I decided to give it a shot and started searching for the issue.  At first I thought it could be the issue(s) involved with empty collections:<br>\r\n <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7960\">http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7960</a><br>\r\n <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8424\">http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8424</a></p>\r\n<p>But then it struck me that even for the collections that <em>have</em> content, the empty line at the bottom wasn't present.</p>\r\n<p>Does anyone know what might cause this problem, and what I can do to work around it?</p>\r\n<p>Thanx!</p>\r\n<p>- Steinar</p>\r\n",
+    "PostedDate": "2009-01-12T11:36:43.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146406",
+    "ThreadId": "44021",
+    "Html": "At some point in time we've swapped the version of the WPF toolkit.  But I'm unable to find out what the previous version was. The current version shows up in the references in project as 3.5..31016.1.<br>\r\n<br>\r\nI tried to roll back to the previous version of WPF Toolkit (to see if the upgrade was the culprit), but I was unable to build both the WPF Toolkit itself and the projects depending on it.\r\n",
+    "PostedDate": "2009-01-12T11:56:30.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146410",
+    "ThreadId": "44021",
+    "Html": "Another data point: where the empty row is missing, we're using data binding to ItemsSource.<br>\r\n<br>\r\nWe have a different usage of the DataGrid, where ItemsSource is set directly to a collection, and in that case the empty row is present.\r\n",
+    "PostedDate": "2009-01-12T12:07:30.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146485",
+    "ThreadId": "44021",
+    "Html": "Did you ever find anything on this?<br>\r\n<br>\r\nAs I want to get rid of the additional record.<br>\r\n<br>\r\nTerry Voss\r\n",
+    "PostedDate": "2009-01-12T16:08:57.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146564",
+    "ThreadId": "44021",
+    "Html": "Getting rid of the empty row should be as easy as setting CanUserAddRows to false.  Doesn't that work for you?<br>\r\n<br>\r\nBTW what version of the DataGrid are you using?  The latest release?  And are you using data binding, or setting the ItemsSource directly to the collection the DataGrid operates on?\r\n",
+    "PostedDate": "2009-01-12T22:27:14.787-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146654",
+    "ThreadId": "44021",
+    "Html": "Does IEditableCollectionView.CanAddNew return true?\r\n",
+    "PostedDate": "2009-01-13T05:08:57.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146989",
+    "ThreadId": "44021",
+    "Html": "Vinsibal writes:<br>\r\n&gt; Does IEditableCollectionView.CanAddNew return true?<br>\r\n<br>\r\nI haven't checked that yet.<br>\r\n<br>\r\nI'm afraid this was &quot;friendly fire&quot;.  It was the aforementioned proxy wrapper object we put between the actual source object<br>\r\n <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37330\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37330</a><br>\r\nthat was the culprit.<br>\r\n<br>\r\nWe were wrapping all list properties in an ObservableCollection&lt;T&gt; subclass, and  that subclass behaved strangely, and different to both IList&lt;T&gt; and ObservableCollection&lt;T&gt;:<br>\r\n - the empty row at the end was gone<br>\r\n - _nothing_ showed up when the properties contained empty collections<br>\r\n<br>\r\nI verified that DataGrid worked ok for a plain IList&lt;SomeClass&gt; and almost worked for ObservablCollection&lt;SomeClass&gt; (it displayed the already known problem for empty ObservableCollections <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7960\">http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7960</a> )<br>\r\n<br>\r\nWe won't spend any time tracking the problem with our wrapping collections.  We will instead be dropping the wrapping of collection properties. There were too many places it didn't really work anyway (e.g. there were properties that just exposed IEnumerable&lt;T&gt; and made shallow defensive copies on both setters and getters), and it didn't handle new types of properties, such as e.g. Dictionary&lt;string, string&gt;.<br>\r\n<br>\r\nWe will be wrapping the setters and getters of the properties in the proxy.  And we will detect changes in the collections in the setters, and fire property update notifications.<br>\r\n<br>\r\nWe will continue to wrap IList&lt;string&gt; properties into lists of a class with a string property (see the above linked to thread for a recap), but we'll make this wrapper be IList&lt;StringWrapper&gt; rather than ObservableCollection&lt;StringWrapper&gt;.  Keeping it simple.  Also, using an IList avoids the issue with empty ObservableCollections.\r\n",
+    "PostedDate": "2009-01-14T04:26:15.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "228167",
+    "ThreadId": "67116",
+    "Html": "<p>I have a RibbonDropDownButton.&nbsp; Two things I'd like to do with it</p>\r\n<p>1) wait until the user clicks the button before building or rebuilding  the menu items that it contains. Like because depending on context, the items could change.</p>\r\n<p>2) whenever the button is clicked (or more accurately, before the menu is made visible) update the state of items that exist in the menu. Specifically, I'd like to set the IsChecked state on various RibbonCheckBox items contained in the RibbonDropDownMenu.Items collection.</p>\r\n<p>So far, I can't get it.</p>\r\n<p>I've tried adding event handlers to the dropdown button's GotFocus, MouseDown, and Command.Executed events, no joy.</p>\r\n<p>So, what is the correct approach to doing this sort of thing?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-08-26T15:39:10.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228173",
+    "ThreadId": "67116",
+    "Html": "<p>Ok, Never mind on #2, that can be accomplished easily enough with data binding.</p>\r\n<p>And, for that matter, I suppose so could #1. But, I don't want to do it that way.&nbsp; I want to (re)create the items for a (bunch of) drop down menu buttons only when needed, sometime between when the button is clicked and when the menu shows.</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-26T16:29:00.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

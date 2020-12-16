@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "143492",
+    "ThreadId": "43175",
+    "Html": "Is it possible to create titles and subtitles with heads?<br>\r\n(¿Es posible crear cabezales con titulo y subtitulo?) <br>\r\n<br>\r\n<div id=\"result_box\" dir=ltr style=\"text-align:left\">What are some examples to modify the template of the head. <br>\r\n<br>\r\nNow thank you very much for your help.</div>\r\n",
+    "PostedDate": "2008-12-30T04:22:02.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156342",
+    "ThreadId": "43175",
+    "Html": "<div id=\"result_box\" dir=ltr>Anybody can help me on this? <br>\r\nKnow if you can add two heads, and to take title and subtitle. <br>\r\n<br>\r\nFrom already thank you very much for your help.</div>\r\n",
+    "PostedDate": "2009-02-10T11:10:26.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160263",
+    "ThreadId": "43175",
+    "Html": "I'm not sure if this is what you want, but you can define the HeaderTemplate of the DatagridColumn to be one consisting of a control (eg. myHeaderControl) which can be created to display what you want.<br>\r\n<br>\r\nMy code is in VB but it's really simple: eg. set HeaderTemplate of the first column in the grid:<br>\r\n<br>\r\nmyGrid.Column.Item(0).HeaderTemplate = <span style=\"font-size:13px\">CreateHeaderDataTemplate(</span><span style=\"font-size:13px;color:#0000ff\">myTitleObject,  </span><span style=\"font-size:13px;color:#0000ff\">GetType</span><span style=\"font-size:13px\">(myHeaderControl))      'See code below</span><br>\r\n<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#008000\">\r\n<p>'type refers to a usercontrol we wish to put into the header of a grid - datasource can be any object having properties eg. Title and Subtitle</p>\r\n</span><span style=\"font-size:13px\">\r\n<p> </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Public</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Shared</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Function</span><span style=\"font-size:13px\"> CreateHeaderDataTemplate(</span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> datasource </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Object</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> type </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> System.Type) </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> DataTemplate\r\n<p> </p>\r\n<p>  </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Dim</span><span style=\"font-size:13px\"> fef </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">New</span><span style=\"font-size:13px\"> FrameworkElementFactory(type)\r\n<p> </p>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">'bind the header control first<br>\r\nDim</span><span style=\"font-size:13px\"> placeBinding </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">New</span><span style=\"font-size:13px\"> Binding()<br>\r\nplaceBinding.Source = datasource<br>\r\nfef.SetBinding(myHeaderControl..DataContextProperty, placeBinding)\r\n<p> </p>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">'create the datatemplate<br>\r\nDim</span><span style=\"font-size:13px\"> newTemplate </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> DataTemplate = </span><span style=\"font-size:13px;color:#0000ff\">New</span><span style=\"font-size:13px\"> DataTemplate(</span><span style=\"font-size:13px;color:#0000ff\">GetType</span><span style=\"font-size:13px\">(Type))<br>\r\nnewTemplate.VisualTree = fef\r\n<p> </p>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Return</span><span style=\"font-size:13px\"> newTemplate\r\n<p> </p>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">End</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Function<br>\r\n<br>\r\n<br>\r\n<br>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2009-02-20T11:54:21.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

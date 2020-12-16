@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "224119",
+    "ThreadId": "65885",
+    "Html": "<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">Hi,</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">I am using following way to set the Item source of my datagrid. There are certain fields in the DataTable that are too long, therefore I want to set the maximum width of all the columns in the datagrid.</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">DataGrid.ItemSource = DataTable.DataView;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">DataTable columns and DataTable structure are changed time to time.</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">Is there any way to set the maximum value for the column as a DataGrid property?</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">Thanks,</div>\r\n<div>Hi,</div>\r\n<div></div>\r\n<div>I am using following way to set the Item source of my datagrid. There are certain fields in the DataTable that are too long, therefore I want to set the maximum width of all the columns in the datagrid.</div>\r\n<div></div>\r\n<div>DataGrid.ItemSource = DataTable.DataView;</div>\r\n<div></div>\r\n<div>DataTable columns and DataTable structure are changed time to time.</div>\r\n<div></div>\r\n<div>Is there any way to set the maximum value for the column as a DataGrid property?</div>\r\n<div></div>\r\n<div>Thanks,</div>\r\n<div></div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-16T19:28:31.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "168064",
+    "ThreadId": "50195",
+    "Html": "Hi there,<br>\r\n<br>\r\nmy problem is that the WPF Ribbon Bar always disappear, if the window size gets below a minimum size.<br>\r\n<br>\r\nI know that this is a normal behaviour of the Ribbon Bar, but I wonder if it is possible to deactivate this behaviour.<br>\r\n<br>\r\nThe only Element in my Window is the Ribbon Bar. I don't need any other elements in there, so my window should be<br>\r\nexactly as high as the Ribbon Bar.<br>\r\nWhen I try to achieve this, the Ribbon Bar disappears, because the client area will get too small. In fact, I don't need the client area.<br>\r\n<br>\r\nAny idea if this is possible?<br>\r\n<br>\r\nThanks,<br>\r\nKogs<br>\r\n",
+    "PostedDate": "2009-03-14T05:26:57.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169562",
+    "ThreadId": "50195",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:'times new roman','serif'\">Hi Kogs,<br>\r\n<br>\r\nThanks for reporting this issue.  In investigating how to go about preventing the collapse behavior, I've discovered that there's currently no way to do this since it's controlled through private methods.  However, since the Office guidelines do allow this (they specify &quot;The entire Ribbon SHOULD completely disappear when the application window is less than 300 pixels wide and 250 pixels tall to provide more space for displaying the document.&quot;) I believe that we need to expose some public way of turning off this behavior.  I've filed a bug to track this and it will be fixed in V1.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha</span></p>\r\n",
+    "PostedDate": "2009-03-18T13:15:46.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170005",
+    "ThreadId": "50195",
+    "Html": "Hi Samantha,<br>\r\n<br>\r\nthanks for creating a request for my problem.<br>\r\n<br>\r\nBye,<br>\r\nKogs<br>\r\n",
+    "PostedDate": "2009-03-19T14:40:51.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "206782",
+    "ThreadId": "61002",
+    "Html": "<p>Hi Y'All ;-)</p>\r\n<p>I am setting a set of selected dates&nbsp;for the Calendar control using the SelectedDates.Add() method&nbsp;after calling SelectedDates.Clear() on the previous selected dates where the new range of dates is smaller than the previous one. Strangely, the previous range of dates remains in effect on the calendar display! For example, if the previous date range was June 12, 2009 to June 22, 2009 and the new range is June 15, 2009 to June 18, 2009, the range still reflects the larger span! Am I missing something here?</p>\r\n<p>Cheers!</p>",
+    "PostedDate": "2009-06-29T14:27:05.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207229",
+    "ThreadId": "61002",
+    "Html": "<p>Hi Hanoverian,</p>\r\n<p>Are you adding individual DateTimes or DateTimeRanges?&nbsp;When you say &quot;remains&nbsp;in effect on the calendar display&quot; -&nbsp;do you mean that the Calendar&nbsp;UI still shows the cleared dates as&nbsp;selected? I was unable to reproduce your issue with individual DateTimes or DateTimeRanges. Can you provide a repro if your issue?</p>\r\n<p>Thanks,</p>\r\n<p>Eric, MSFT</p>",
+    "PostedDate": "2009-06-30T13:46:06.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208546",
+    "ThreadId": "61002",
+    "Html": "<p>Hi Eric,</p>\r\n<p>Thanks for getting back to me! The following code snippet displays the problem on my computer (Vista-64 SP1). Essentially, the problem is as follows: 1) there is a set of selected dates that come from an XML data set that say has only one date July 4, 2009 2) with the CheckBox below unselected, the user manually selects the following date range on the calendar control July 1, 2009 to July 7, 2009 3) the user checks the CheckBox to show only the date from the XML data set. As the code shows, the calendar SelectedDates are cleared and the single date is added to the calendar SelectedDates collection. The result is that the calendar control does not clear the previous date range! It appears that the Clear() method does not force a redraw of the control. Am I missing something?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:x-small\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> chkAllDates_Checked(<span style=\"color:Blue\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            CheckBox cb = e.OriginalSource <span style=\"color:Blue\">as</span> CheckBox;\r\n            <span style=\"color:Blue\">if</span> (cb != <span style=\"color:Blue\">null</span>)\r\n            {\r\n                calendar.IsEnabled = (<span style=\"color:Blue\">bool</span>)!cb.IsChecked;\r\n\r\n                <span style=\"color:Green\">// Show all dates from target file.</span>\r\n                calendar.SelectedDates.Clear();\r\n                <span style=\"color:Blue\">foreach</span> (DateTime dt <span style=\"color:Blue\">in</span> RecordDates)\r\n                {\r\n                    calendar.SelectedDates.Add(dt);\r\n                }\r\n\r\n                FilterResults();\r\n            }\r\n        }\r\n\r\n</pre>\r\n</div>\r\n</span></p>",
+    "PostedDate": "2009-07-04T11:42:19.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214111",
+    "ThreadId": "61002",
+    "Html": "<p>Hi Hanoverian -</p>\r\n<p>I was able to reproduce your issue and a bug has been filed in our database. I have devised a temporary work-around for you. It may not be the best or the most appropriate, but it should work for your scenario. I highly suggest that you thoroughly test it as it is not <em>guarenteed</em> at all. With that said, you'll have to modify the source code in SelectedDatesCollection.cs, in the ClearItems() function, add the following line after&nbsp;<span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">this</span></span><span style=\"font-size:x-small\">._owner.SelectedDate = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">null :&nbsp;&nbsp; </span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">this</span></span><span style=\"font-size:x-small\">._owner.HoverStart = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">null</span></span><span style=\"font-size:x-small\">;</span></p>\r\n<p>Let me know if it works out for you :-)</p>\r\n<p>-Eric, MSFT</p>",
+    "PostedDate": "2009-07-20T20:30:20.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The attached sample demonstrates two problems, both of which I consider bugs:\n \n1. Cancelling an edit requires two presses of the escape key.\n \n2. Because of #1, it is possible to enter an invalid value by entering it, pressing return, moving focus to another cell, moving focus back to the invalid cell, then presing escape.",
+    "LastUpdatedDate": "2013-02-21T18:41:21.57-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-14T09:48:50.86-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect Cancellation Behavior",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9751
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2967,
+      "FileName": "DataGridCancelRepro.zip",
+      "DownloadUrl": ".\\2967"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi,\r\n\r\nWe have taken note of the problem you mention in #2 above. As for #1, could explain the exact repro steps? The current behavior is that on pressing ESC once it rolls back the cell value and on the second ESC we roll back the entire row's value (caveat only supported when the row's data object supports IEditableObject).\r\n\r\nThanks\r\nVarsha",
+      "PostedDate": "2009-04-14T13:36:50.8-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-14T13:54:32.72-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "My apologies. #1 only occurs with my specific column subclass. I must have a bug in my code. Basically, I think hitting Escape is accepting the change rather than cancelling it. The second press of Escape is rolling back the whole row correctly.\r\n\r\nAs for #2, it is a definite issue as the attachment demonstrates.\r\n\r\nBest,\r\nKent\r\n\r\n",
+      "PostedDate": "2009-04-15T01:46:10.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:21.57-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "260165",
+    "ThreadId": "76069",
+    "Html": "<p>As the question states, how do I group columns in a DataGrid? Or is it even supported?</p>",
+    "PostedDate": "2009-11-24T03:16:21.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "260425",
+    "ThreadId": "76069",
+    "Html": "<p>See whether this applies to you...</p>\r\n<p><a href=\"http://forums.silverlight.net/forums/t/50182.aspx\">http://forums.silverlight.net/forums/t/50182.aspx</a></p>",
+    "PostedDate": "2009-11-24T15:57:52.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

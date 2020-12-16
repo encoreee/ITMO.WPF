@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "264361",
+    "ThreadId": "77342",
+    "Html": "<p>I want to set the text/content of a row to at bottom, with space above (increased the height) during the dataGrid.LoadingRow event.</p>\r\n<p>e.Row.Height = 30;<br>e.Row.VerticalAlignment = VerticalAlignment.Bottom;<br>e.Row.VerticalContentAlignment = VerticalAlignment.Bottom;</p>\r\n<p>It didnt work. so I tried:</p>\r\n<p>&lt;Style x:Key=&quot;vBtm&quot; TargetType=&quot;{x:Type my:DataGridRow}&quot;&gt;<br>&nbsp; &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Bottom&quot; &gt;&lt;/Setter&gt;<br>&nbsp; &lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Bottom&quot; &gt;&lt;/Setter&gt;<br>&lt;/Style&gt;<br>&nbsp;</p>\r\n<p><span style=\"font-size:x-small\">e.Row.Style = (Style)Resources[&quot;vBtm&quot;];</span></p>\r\n<p>still doesn't work.</p>\r\n<p>can anyone help?</p>",
+    "PostedDate": "2009-12-07T00:21:47.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

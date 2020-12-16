@@ -1,0 +1,57 @@
+<div class="wikidoc"><h1>DataGrid Tips &amp; Tricks: Single-Click Editing</h1>
+By default, end users must double-click a cell in the DataGrid to enter edit mode.  In certain cases, it may be more desirable for cells to enter edit mode with a single mouse click (for example, when editing a CheckBox).  Use the code snippets below to implement single-click editing in your DataGrid. <br /><br /><b>To apply single-click editing to all cells in the DataGrid</b><br />1. Paste the style below into the Resources of your DataGrid<br />2. Paste the method into the code behind<br /><br /><b>To apply single-click editing to only certain cells in the DataGrid</b><br />1. Set an x:Key on the Style (ex. &lt;Style x:Key=&quot;SingleClickEditing&quot; TargetType=&quot;{x:Type dg:DataGridCell}&quot;&gt;)<br />2. Paste the style into the Resources of your DataGrid<br />3. Apply the style to the CellStyle property of the columns which you&#39;d like to have single click editing (ex. &lt;dg:DataGridCheckBoxColumn CellStyle=&quot;{StaticResource SingleClickEditing}&quot;/&gt;)<br />4. Paste the method into the code behind<br /><br /><pre>
+        &lt;!--
+          SINGLE CLICK EDITING
+        --&gt;
+        &lt;Style TargetType=&quot;{x:Type dg:DataGridCell}&quot;&gt;
+          &lt;EventSetter Event=&quot;PreviewMouseLeftButtonDown&quot; Handler=&quot;DataGridCell_PreviewMouseLeftButtonDown&quot;&gt;&lt;/EventSetter&gt;
+        &lt;/Style&gt;
+
+        //
+        // SINGLE CLICK EDITING
+        //
+        private void DataGridCell_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DataGridCell cell = sender as DataGridCell;
+            if (cell != null &amp;&amp; !cell.IsEditing &amp;&amp; !cell.IsReadOnly)
+            {
+                if (!cell.IsFocused)
+                {
+                    cell.Focus();
+                }
+                DataGrid dataGrid = FindVisualParent&lt;DataGrid&gt;(cell);
+                if (dataGrid != null)
+                {
+                    if (dataGrid.SelectionUnit != DataGridSelectionUnit.FullRow)
+                    {
+                        if (!cell.IsSelected)
+                            cell.IsSelected = true;
+                    }
+                    else
+                    {
+                        DataGridRow row = FindVisualParent&lt;DataGridRow&gt;(cell);
+                        if (row != null &amp;&amp; !row.IsSelected)
+                        {
+                            row.IsSelected = true;
+                        }
+                    }
+                }
+            }
+        }    
+
+        static T FindVisualParent&lt;T&gt;(UIElement element) where T : UIElement
+        {
+            UIElement parent = element;
+            while (parent != null)
+            {
+                T correctlyTyped = parent as T;
+                if (correctlyTyped != null)
+                {
+                    return correctlyTyped;
+                }
+
+                parent = VisualTreeHelper.GetParent(parent) as UIElement;
+            }
+            return null;
+        } 
+</pre><br /></div><div class="ClearBoth"></div>

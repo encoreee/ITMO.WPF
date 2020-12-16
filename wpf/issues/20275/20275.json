@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI have attached full details of the exception received while loading the assembly on Windows 8. The application is working well on Windows 7. \n\nCan someone please help me?",
+    "LastUpdatedDate": "2013-10-06T11:46:37.36-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2013-10-06T11:46:36.277-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue loading Assembly on Windows 8",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20275
+  },
+  "FileAttachments": [
+    {
+      "FileId": 7205,
+      "FileName": "Exception.xml",
+      "DownloadUrl": ".\\7205"
+    }
+  ],
+  "Comments": []
+}

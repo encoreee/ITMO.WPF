@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "222897",
+    "ThreadId": "65446",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Can a wpf datagrid template column contain multiple controls? Or just a single control? For example, a date picker, a text box, and a check box in a single templte column. If this is possible, can someone please point me to some documentation on it or post sample syntax?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks!</p>\r\n<p>&nbsp;</p>\r\n<p>/Justin&nbsp;</p>",
+    "PostedDate": "2009-08-13T03:32:32.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222921",
+    "ThreadId": "65446",
+    "Html": "<p>DataGridTemplateColumn has a CellTemplate and CellEditingTemplate DependencyProperty where you specify a DataTemplate.&nbsp; The DataTemplate can really be anything you want.&nbsp; Here's an example with a DatePicker, TextBox, and CheckBox:</p>\r\n<p>&lt;DataGridTemplateColumn&gt;<br>&nbsp;&lt;DataGridTemplateColumn.CellTemplate&gt;<br>&nbsp;&nbsp;&lt;DataTemplate&gt;<br>&nbsp;&nbsp;&nbsp;&lt;StackPanel&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;DatePicker /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBox /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;CheckBox /&gt;&nbsp;<br>&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;<br>&nbsp;&nbsp;&lt;/DataTemplate&gt;<br>&nbsp;&lt;/DataGridTemplateColumn.CellTemplate&gt;<br>&lt;/DataGridTemplateColumn&gt;</p>",
+    "PostedDate": "2009-08-13T05:26:26.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

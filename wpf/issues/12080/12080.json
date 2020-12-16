@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi guys , I am trying to bind a WPF DataGrid's ItemsSource to a DataTable. And the DataTable contains columns with names like \"01/14/10\" , then the data in these columns don't show up in the DataGrid Cells. Any idea what's going on here ?\n \nThanks",
+    "LastUpdatedDate": "2013-02-21T18:40:41.667-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-15T02:50:22.527-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Data don't show up when bind WPF DataGrid ItemsSource to a DataTable which contains '/' in  ColumnName",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 12080
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Yes, I have  the same problem, if the column name including these: \"/\" \".\" \" \" , it ca not show up the data.",
+      "PostedDate": "2010-03-15T18:34:06.91-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:41.667-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

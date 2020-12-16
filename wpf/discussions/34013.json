@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "112720",
+    "ThreadId": "34013",
+    "Html": "I see that the WPF DataGrid supports freezing columns -- does it also support freezing rows? I am currently using the Infragistics WinGrid (not WPF) and it allows rows as well as columns to be &quot;pinned&quot; so that it would not scroll out of view. This feature is important to our users so I wanted to check before I dive into using the WPF Grid. Thanks!\r\n",
+    "PostedDate": "2008-08-21T11:04:49.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122509",
+    "ThreadId": "34013",
+    "Html": "Sorry for the super delayed response.&nbsp; Currently the WPF DataGrid does not support frozen rows.&nbsp; There are a couple things that you can do to enable the scenario.&nbsp; If you want to add a footer that is done through restyling the control template of the DataGrid.&nbsp; Someone&nbsp;talks about&nbsp;their implementation of it on this thread,&nbsp;<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=36686\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=36686</a>.&nbsp; If you want to support a scenario similar to excel where you can pin rows from the top down you will need to do a custom implementation of DataGridRowPresenter.ArrangeOverride.&nbsp; I just finished a sample of that with the goal to minimize custom implementation and if you are interested I can post the solution.&nbsp; The only problem with it is that it was not designed to&nbsp;work when the item container recycling feature is turned on.&nbsp; To get it to work with recycling will require a good amount of reimplementation of the VirtualizingStackPanel's recycling code.&nbsp; <br>\r\n<br>\r\nSo to sum up on this, you will be able to customize the DataGrid control for some frozen row scenarios but not for others without a big chunk of reimplementation.&nbsp; This feature request has been noted by the feature team&nbsp;and will be considered for future versions of the DataGrid.\r\n",
+    "PostedDate": "2008-10-02T15:15:21.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122589",
+    "ThreadId": "34013",
+    "Html": "I am desperately looking for a footer solution. Could you please be more specific as to how to do it with restyling? I just started to learn WPF and more often than not have no idea where to start.<br>\r\nthank you\r\n",
+    "PostedDate": "2008-10-03T00:16:53.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "124096",
+    "ThreadId": "34013",
+    "Html": "Vinsibal, I'm also very interested in this (Excel freeze pane) feature. I can live with it not using the container recycling for the time being (hoping though that it will get added in the future). What are your plans for sharing your code?\r\n",
+    "PostedDate": "2008-10-09T09:44:55.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125223",
+    "ThreadId": "34013",
+    "Html": "joining the friends above - I'd also like to hear about a solution for freeze row.are there any plans to insert it into the DataGrid project?<br>\r\n",
+    "PostedDate": "2008-10-15T02:28:06.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129278",
+    "ThreadId": "34013",
+    "Html": "I just wrote a post that has a frozen row sample, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-frozen-row-sample.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/31/wpf-datagrid-frozen-row-sample.aspx</a>.\r\n",
+    "PostedDate": "2008-10-31T13:52:29.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

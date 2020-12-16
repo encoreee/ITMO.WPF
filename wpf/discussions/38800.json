@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "128731",
+    "ThreadId": "38800",
+    "Html": "I heard there was a registry switch or something to tell Blend 2 SP1 to show the States panel for WPF projects using VSM. What is it?\r\n",
+    "PostedDate": "2008-10-29T15:42:18.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129172",
+    "ThreadId": "38800",
+    "Html": "See this blog post, <a href=\"http://blogs.msdn.com/expression/archive/2008/10/30/blend-2-sp1-wpf-toolkit-visual-state-manager-for-wpf.aspx\">http://blogs.msdn.com/expression/archive/2008/10/30/blend-2-sp1-wpf-toolkit-visual-state-manager-for-wpf.aspx</a>.\r\n",
+    "PostedDate": "2008-10-31T07:13:23.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

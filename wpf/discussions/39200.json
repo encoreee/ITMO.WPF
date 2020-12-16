@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130045",
+    "ThreadId": "39200",
+    "Html": "I have a grid set to a data table, and I set all the column widths in the autogeneratingcolumn event.  I made a change to my query, and the widths stopped working.  All the columns were sized to fit to the width of the screen.  Since my query has several fields, all the column widths became really small.  <br>\r\n<br>\r\nAfter looking at the changes to my query, I noticed I accidentally selected a field twice.  After I removed the duplicate from my query, it started working fine again.  To verify the problem, I added another duplicate field in my select statement, and the error came back.  It appears if you have 2 or more columns with the same field name, the column widths get messed up.<br>\r\n<br>\r\nIt's not a problem for me, since I accidentally typed in the field twice.  I just thought I'd report a possible bug.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-04T13:02:57.653-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130505",
+    "ThreadId": "39200",
+    "Html": "hm.. I'm not able to repro.  Would you mind showing a code snippet.\r\n",
+    "PostedDate": "2008-11-06T06:44:24.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "145208",
+    "ThreadId": "43665",
+    "Html": "I am curious if it would be possible for the VisualStateManager to not use animations in the case where the transition time is set to 0 seconds.&nbsp; This seems like a lot of overhead for something that does not need an animation.&nbsp; Would it be possible for a VisualState to include a property setter instead of a Storyboard?&nbsp; I know it is not currently supported but this seems like it would be a good thing to be able to do.&nbsp; Please let me know what you think of this.<br>\r\n<br>\r\nThanks,<br>\r\nBrent Schooley<br>\r\n",
+    "PostedDate": "2009-01-07T13:04:27.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145274",
+    "ThreadId": "43665",
+    "Html": "Hi Brent,<br>\r\n<br>\r\nI think you make a really good point.  Accordingly, the GoToState method in VisualStateManager takes a parameter &quot;useTransition&quot; to determine whether transition animations should be applied during the specified state change.  If you pass it a false value, then the state change behaves the way you described it.  The target snaps directly to the new visual state, very much like how a property setter would behave.<br>\r\n<br>\r\nHope that helps you Brent.<br>\r\n<br>\r\nRegards,<br>\r\nSaied Khanahmadi\r\n",
+    "PostedDate": "2009-01-07T17:32:33.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145407",
+    "ThreadId": "43665",
+    "Html": "Saied,<br>\r\n<br>\r\nThank you for your quick response.&nbsp; <br>\r\n<br>\r\nIt is definitely good to hear that the &quot;useTransition&quot; parameter exists.&nbsp; However, take for example a Button.&nbsp; Even though the behaviors for MouseOver and Pressed are not built in, the VSM will do what I have seen described as &quot;event interception magic&quot; to make these states work without the need to use the GoToState method.&nbsp; Since I never use the GoToState method in this case, I would not be able to set that parameter.<br>\r\n<br>\r\nThe other reason I asked the question about the property setter case (instead of everything being an animation) is that a Storyboard and corresponding Animation is a very intimidating piece of XAML to work with in the case where a developer wants to make a tweak to one of these &quot;instant&quot; states.&nbsp; This is not a concern for me personally as an integrator (since I am fluent in Blend I would just make the change in Blend), but for developers who do not have an integrator in the mix I suppose a property setter looks more natural to them.<br>\r\n<br>\r\nI guess I'm just wondering if the team has given any consideration to making the animations more implicit in the cases where the state change only involves property changes (over 0 time or over non-zero time).&nbsp; The VisualState could resemble:<br>\r\n<br>\r\n&lt;vsm:VisualState x:Name=&quot;MouseOver&quot; Duration=&quot;0.2&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Opacity&quot; TargetName=&quot;bd&quot; Value=&quot;50&quot;/&gt;<br>\r\n&lt;/vsm:VisualState&gt;<br>\r\n<br>\r\nThe VSM could then behind the scenes create the Animation over the 0.2 second duration as an implicit animation.&nbsp; In cases where the timeline is used to build out keyframe based animations, the current model of using an explicit Storyboard could be used.&nbsp; Any thoughts?<br>\r\n<br>\r\nThanks,<br>\r\nBrent \r\n",
+    "PostedDate": "2009-01-08T06:53:01.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147220",
+    "ThreadId": "43665",
+    "Html": "<p>Hi Brent,</p>\r\n<p>These are very good questions.  At this time VSM does not allow for external manipulation of the UseTransitions flag on the GoToState call.  However, there are specific cases in which we ensure that transitions aren't used, such as applying a new template to a control.  The 0 second duration is however not a part of this criteria.  VSM is a huge feature and is still a working progress.  We're prioritizing limitations such as this one and aiming to tend to them in a future release.</p>\r\n<p>As for your next question, in place of a property setter you may want to use a Discrete Animation type, which is fundamentally a property setter accompanied by a timer.  Ultimately, this serves the same purpose as you mentioned above, and both are parallel solutions.  However, the GeneratedDuration property is not effective in this case.  Your options are either using Discrete Animations for better readability and simplicity of your XAML code; regular Animations for access to extra features such as GeneratedDuration; or you may simply use triggers if the overhead cost of Animations is too much for your project.  Please note that the triggers option is not a VSM solution.  The example you provided above might look something like the following using Discrete Animations,</p>\r\n<p>&lt;vsm:VisualState x:Name=&quot;MouseOver&quot;&gt;<br>\r\n   &lt;Storyboard&gt;<br>\r\n      &lt;DoubleAnimationUsingKeyFrames Storyboard.TargetName=&quot;bd&quot; <br>\r\n                                                              Storyboard.TargetProperty=&quot;(UIElement.Opacity)&quot; <br>\r\n                                                              BeginTime=&quot;00:00:00&quot;&gt;<br>\r\n         &lt;DiscreteDoubleKeyFrame KeyTime=&quot;00:00:00.2&quot; Value=&quot;0.5&quot;/&gt;<br>\r\n      &lt;/DoubleAnimationUsingKeyFrames&gt;<br>\r\n   &lt;/Storyboard&gt;<br>\r\n&lt;/vsm:VisualState&gt;</p>\r\n<p>Regards,<br>\r\nSaied Khanahmadi</p>\r\n",
+    "PostedDate": "2009-01-14T16:58:54.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

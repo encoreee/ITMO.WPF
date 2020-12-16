@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "132718",
+    "ThreadId": "39984",
+    "Html": "I am relativly new to WPF and the DataGrid, I was wondering if there was a way to extend a style to Filler Header<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-11-14T13:28:06.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133083",
+    "ThreadId": "39984",
+    "Html": "What exactly is a Filler Header?\r\n",
+    "PostedDate": "2008-11-17T05:47:37.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133187",
+    "ThreadId": "39984",
+    "Html": "The filler header would be the space remaining, from the end of the headers to the end of the datagrid. <br>\r\n",
+    "PostedDate": "2008-11-17T10:09:28.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133195",
+    "ThreadId": "39984",
+    "Html": "You need to retemplate DataGridColumnHeadersPresenter. Current template is....<br>\r\n<br>\r\n  &lt;Style x:Key=&quot;{x:Type dg:DataGridColumnHeadersPresenter}&quot; TargetType=&quot;{x:Type dg:DataGridColumnHeadersPresenter}&quot;&gt;<br>\r\n    &lt;Setter Property=&quot;Template&quot;&gt;<br>\r\n      &lt;Setter.Value&gt;<br>\r\n        &lt;ControlTemplate TargetType=&quot;{x:Type dg:DataGridColumnHeadersPresenter}&quot;&gt;<br>\r\n            &lt;Grid&gt;<br>\r\n                &lt;dg:DataGridColumnHeader IsHitTestVisible=&quot;False&quot;/&gt; <strong>&lt;!-- This is the header which you need to customize --&gt;</strong><br>\r\n                &lt;ItemsPresenter /&gt;<br>\r\n            &lt;/Grid&gt;<br>\r\n        &lt;/ControlTemplate&gt;<br>\r\n      &lt;/Setter.Value&gt;<br>\r\n    &lt;/Setter&gt;<br>\r\n  &lt;/Style&gt;\r\n",
+    "PostedDate": "2008-11-17T10:18:35.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

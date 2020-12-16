@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "285850",
+    "ThreadId": "83168",
+    "Html": "<p>Hi,</p>\r\n<p>I have a datagrid where the cells containing an object and the correct value is displayed through a converter. Every column is a Templatecolumn and is generated during runtime. When I try to implement a sorting on these columns through the SortMemberMath-Property, the columns will be sorted but not in a alphabetically way. In my opinion the problem is the converter of the cells and the sorting tries to sort the objects in the cells and not the value of the cell. But the SortMemberPath-Property does not support any Converter. How can I achieve to sort my tables in this situation?</p>\r\n<p>&nbsp;</p>\r\n<p>Thx in advance</p>",
+    "PostedDate": "2010-02-04T08:59:12.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "286574",
+    "ThreadId": "83168",
+    "Html": "<p>Hi</p>\r\n<p>I've got a similiar column implementation - custom object as a cell Content with many converters used for displaying some data from that object. The easiest way of implementing sorting (if you are sure that SortMemberMath is set properly, especially when you have bindings) is to implement IComparable interface in the class of your Property. It's enought to implement CompareTo(object o) method, depending on your needs. You can also implement Equals(object o).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-06T05:57:10.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287101",
+    "ThreadId": "83168",
+    "Html": "<p>Thanks for this hint. Now I have implemented the IComparable interface to my object and set the SortMemberPath to the Property who gets this object. This works fine now.</p>",
+    "PostedDate": "2010-02-08T04:40:15.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

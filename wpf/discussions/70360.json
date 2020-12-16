@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "239649",
+    "ThreadId": "70360",
+    "Html": "<p>I'm exporting the contents of a WPFtk Datagrid to Excel using the following code, where currentGrid is a WPFTk DataGrid:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>currentGrid.SelectionMode = DataGridSelectionMode.Extended;\r\n\r\ncurrentGrid.SelectAllCells();\r\ncurrentGrid.ClipboardCopyMode =\r\n                     DataGridClipboardCopyMode.IncludeHeader;\r\nApplicationCommands.Copy.Execute(<span style=\"color:Blue\">null</span>, currentGrid);\r\n\r\nString csvData = (String)Clipboard.GetData(DataFormats.CommaSeparatedValue);\r\n\r\n.....\r\n</pre>\r\n<pre>my question is this, is it possible to select only <strong>certain</strong>  columns within the Datagrid? if so, how would I go about doing that?</pre>\r\n<pre>That way I could copy the data from only those selected cells to the clipboard</pre>\r\n<pre>Thanks,</pre>\r\n<pre>Chris</pre>\r\n</div>",
+    "PostedDate": "2009-09-28T11:38:43.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

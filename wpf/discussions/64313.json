@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "218826",
+    "ThreadId": "64313",
+    "Html": "<p>Hi, all,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have a &quot;Waiting message...&quot; window which pops up in another Thread. It works but not perfect as expected.&nbsp;I&nbsp;change Opacity of&nbsp;Main window (say .35) when waiting message window is popped up and change it back to original when whole process (usually it takes about several minutes) is done. However I find main window totally freezes and even worse it leaves a movement path of pop-up window if I move it around.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any ideas? Thanks a lot.</p>",
+    "PostedDate": "2009-08-03T08:45:50.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

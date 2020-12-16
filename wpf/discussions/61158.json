@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "207407",
+    "ThreadId": "61158",
+    "Html": "<p>\r\n<p>hi, I am new to WPF datagrid. I have a Windows Form program needs to port to WPF.</p>\r\n<p>In the Windows Form program, there is a datagrid displaying some data from a byte[].</p>\r\n<p>The byte[](whose name in code is RawData) data is actually a block of data from physical memory.</p>\r\n<p>&nbsp;</p>\r\n<p>Code here:</p>\r\n<p><span> </span>for (int i = 0; i &lt; (lens / 16 + 1); i++)</p>\r\n<p><span> </span>{</p>\r\n<p><span> </span> &nbsp; &nbsp;dataGridViewDump.Rows.Add();</p>\r\n<p><span> </span> &nbsp; &nbsp;for (int j = 0; (j &lt; 16) &amp;&amp; ((j + 16 * i) &lt; lens-1); j++)</p>\r\n<p><span> </span> &nbsp; &nbsp;{</p>\r\n<p><span> </span> &nbsp; &nbsp; &nbsp; &nbsp;dataGridViewDump.Rows[i].Cells[0].Value = i.ToString(&quot;X8&quot;);</p>\r\n<p><span> </span> &nbsp; &nbsp; &nbsp; &nbsp;int v = RawData[j + i * 16];</p>\r\n<p><span> </span> &nbsp; &nbsp; &nbsp; &nbsp;dataGridViewDump.Rows[i].Cells[j + 1].Value = v.ToString(&quot;X2&quot;);</p>\r\n<p><span> </span> &nbsp; &nbsp;}</p>\r\n<p><span> </span>}</p>\r\n<p>&nbsp;</p>\r\n<p>When porting to WPF datagrid, I don't know how to do. Will anyboby kindly help me out?</p>\r\n<p>My purpose is just to display a block of memory data like debug.exe does.</p>\r\n</p>",
+    "PostedDate": "2009-07-01T00:32:03.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207851",
+    "ThreadId": "61158",
+    "Html": "<p>so sad there is still no feedback.</p>\r\n<p>My purpose is to display a block of bytes data in the datagrid, one byte per cell , 16 bytes per row. In future, I will add functions to support two bytes or 4bytes in a cell. So, how can I do this with wpf datagrid?</p>\r\n<p>Or, am I using the wrong control? Please help to specify if there is other wpf control suitable for my requirement.&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-02T01:06:55.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208131",
+    "ThreadId": "61158",
+    "Html": "<p>Looks as tho you already have all the data you want to display, so, create an in-memory table, and populate it with the data you want to display.&nbsp; You can use a different field for each cell of data.</p>\r\n<p>Then assign the default view of the table as the ItemsSource for the datagrid.</p>\r\n<p>If the datagrid has been set in the XAML to autogenerate=Yes, it will generate the appropriate rows and columns.</p>",
+    "PostedDate": "2009-07-02T14:21:21.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "176616",
+    "ThreadId": "52553",
+    "Html": "I wish I could put together simple repro for this, but I can't.&nbsp; What's happening is that when I set the itemsource of the datagrid sometimes all of the pre-declared columns (i.e. they weren't auto-generated) slide to the right side of the grid, and disappear.&nbsp; What's worse, is that after the columns have disappeared, the application becomes unresponsive.&nbsp; I'm setting the itemsource of the grid in the code-behind in response to changes in other controls (e.g. dropdown to filter the type of record displayed in the grid).&nbsp; The itemsource is a collection of business objects, and I've noticed that this behavior only occurs when the item source has a length of 0 (i.e. no data to display).&nbsp; <br>\r\n<br>\r\nI've tried creating a simple repro, but was unable to reproduce the same behavior.&nbsp; Has anyone else seen this?&nbsp; Workaround ideas?&nbsp; Thanks!<br>\r\n",
+    "PostedDate": "2009-04-07T06:58:40.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176816",
+    "ThreadId": "52553",
+    "Html": "We  tried to repro it with no success. If anyone is able to repro this please send it over.\r\n",
+    "PostedDate": "2009-04-07T13:45:09.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176838",
+    "ThreadId": "52553",
+    "Html": "Thanks, brandf, for trying to repro this.&nbsp; Like I said, I've tried creating a simple repro with no luck - apparently, there's something about my app that is contributing to this.&nbsp; Without a repro, is there anything you can think of off the top of your head that would lead to this kind of behavior?&nbsp; Thanks.<br>\r\n",
+    "PostedDate": "2009-04-07T14:52:04.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

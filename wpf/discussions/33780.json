@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "111961",
+    "ThreadId": "33780",
+    "Html": "I think I have followed all the instructions required to work with the WPFToolkit but keep getting the following error...<br>\r\nCould not load file or assembly 'WPFToolkit, Version=3.5.30731.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.<br>\r\n<br>\r\nI started working in Expression Blend - this error does not appear there.&nbsp; I brought the project into another PC with VS2008 (using C#) and there I cannot load any of the xaml, cs, etc files. - ending up with the above error.<br>\r\n<br>\r\nI have validated the steps of downloading the binaries, extracting, referencing in VS Project, setting up the namespace and referencing the namespace in the instantiating of the datagrid control.<br>\r\n<br>\r\nWhat am I doing wrong - really need some help.&nbsp; Please.<br>\r\n<br>\r\nThanks<br>\r\nKNana\r\n",
+    "PostedDate": "2008-08-18T21:21:09.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112040",
+    "ThreadId": "33780",
+    "Html": "I assume you are working with VS 2008, have .Net 3.5 SP1 installed and&nbsp;are creating a WPF project for starters.&nbsp;What is the location of WPFToolkit.dll on your machine and how are you referencing it from your VS project?<br>\r\n<br>\r\nThanks<br>\r\nVarsha\r\n",
+    "PostedDate": "2008-08-19T06:47:18.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "116334",
+    "ThreadId": "33780",
+    "Html": "Hi KNana,<br>\r\n<br>\r\nI had the same problem. You have to install .Net 3.5 SP1.<br>\r\n<br>\r\nMatthieu\r\n",
+    "PostedDate": "2008-09-05T07:15:47.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

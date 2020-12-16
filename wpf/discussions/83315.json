@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "286476",
+    "ThreadId": "83315",
+    "Html": "<p>I have a WPF DataGrid, using a DataTable to bind data to this DataGrid. First Column has range, if the range is two, user should be able to enter only two chanracters in the second column. How to limit the cell's max text length based on first column data.<br><br>When I bind data to WPF DataGrid, I don't see any space between column headers. How to give spacing between column headers so that it will be easy for the user to differentiate between two column headers.</p>\r\n<p>Thanks in Advance.</p>\r\n<p>-Sandeep</p>",
+    "PostedDate": "2010-02-05T18:03:43.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

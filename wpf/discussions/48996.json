@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "163671",
+    "ThreadId": "48996",
+    "Html": "Hi,<div>Im developing custom datagrid in wpf.I could able to work with custom datagrid .My custom control is having generic.xaml which has template as datagrid .with Auto genrated columns = true</div><div><br></div><div>My Question is how can i have columns in custom datagrid.I could able to get customgridview.columns and within columns ,I added datagridTextcolumn ,It is not rendering gridview with textcolumn,.i also  made Auto genrated columns = false</div><div><br></div><div>In short ,How can have different types of columns like comboboxcolumn,checkboxcolumn,textbox column within Custom Datagrid.I could not able to generate columns </div><div><br></div><div><br></div><div>With Regards,</div><div>Mahender</div><div><br></div>",
+    "PostedDate": "2009-03-02T18:45:53.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

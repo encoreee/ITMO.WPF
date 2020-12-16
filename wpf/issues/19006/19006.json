@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a WPF Chart control with gridlines on the Linear (Y) axis and have set IsSelectable to true so that I can click on a column and drill into the data.  On the selection changed command, I remove the existing column series and add the new series based on the selected column thus achieving a drill down report.\n\nThe only thing not working correctly is the gridlines now appear in front of the column data points.\n\nAny ideas?",
+    "LastUpdatedDate": "2013-02-21T18:40:05.287-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2012-12-04T15:02:29.84-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Charts: Gridlines display behind Columns after drill-down",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19006
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

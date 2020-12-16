@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "213157",
+    "ThreadId": "62792",
+    "Html": "<p>We use Single Select of rows only. &nbsp;&nbsp;My users want to make sure that if they are not actively working withthe grid... and they work with other controls/ETC, that the visual &quot;Item Selected Style&quot; is removed. &nbsp;The Grid will appears as it did before they tried editing.</p>\r\n<p>I've created a little wrapper class &nbsp; myDataGrid : Microsoft.Windows.Controls.DataGrid. &nbsp; &nbsp;&nbsp;Can I accomplish the deselect behavior by overridding the OnLostFocus event and setting &nbsp; &nbsp; base.SelectedIndex = -1;?</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;protected override void OnLostFocus(RoutedEventArgs e)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;base.OnLostFocus(e);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;base.SelectedIndex = -1;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;protected override void OnLostFocus(RoutedEventArgs e)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;base.OnLostFocus(e);</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;base.SelectedIndex = -1;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>Is this the right event to override? &nbsp;Also. setting the selectedIndex seems to have no impact.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Tracy</p>",
+    "PostedDate": "2009-07-17T11:44:23.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

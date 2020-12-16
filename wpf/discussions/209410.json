@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "431304",
+    "ThreadId": "209410",
+    "Html": "<p>Hi,</p>\r\n<p>I'm facing 2 problems using a datagrid with cell validation:</p>\r\n<p>1- When i have an invalid field the cell stays in edition not allowing me to do edit new cells.</p>\r\n<p>I would like to have the possibility for the user to edit other cells(I prefer this solution), or to block the user from leaving the cell until he corrects the problem.</p>\r\n<p>2- I saw that the Esc Key (CancelEdit), removes the red border validation out of the cell allowing me to edit other cells, but i I would like to keep the red border since an error is still there. Do you know how to do it?</p>\r\n<p>Can anyone help?</p>\r\n<p>Thanks</p>\r\n<p>Joao</p>",
+    "PostedDate": "2010-04-15T00:18:18.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

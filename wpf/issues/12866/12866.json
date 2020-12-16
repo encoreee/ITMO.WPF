@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This is how I defined my Style            \n \n            <Style x:Key=\"dataGridGroupTemplate\" TargetType=\"{x:Type GroupItem}\">\n                <Setter Property=\"Template\">\n                    <Setter.Value>\n                        <ControlTemplate TargetType=\"{x:Type GroupItem}\" >\n                            <ControlTemplate.Triggers>\n                                <DataTrigger Binding=\"{Binding Path=IsBottomLevel}\" Value=\"True\">\n                                    <Setter TargetName=\"gridButtomLevelTemplate\" Property=\"Grid.Background\" Value=\"{StaticResource GroupHeaderLevelTwoBackgroundBrush}\" />\n                                </DataTrigger>\n                            </ControlTemplate.Triggers>\n                            <Grid >\n                                <Grid.RowDefinitions>\n                                    <RowDefinition />\n                                    <RowDefinition />\n                                </Grid.RowDefinitions>\n                                <Grid x:Name=\"gridButtomLevelTemplate\" Background=\"{StaticResource GroupHeaderLevelOneBackgroundBrush}\" VerticalAlignment=\"Center\" MouseLeftButtonDown=\"gridButtomLevelTemplate_MouseLeftButtonDown\" >\n                                    <Grid.Resources>\n                                        <Style TargetType=\"{x:Type TextBlock}\">\n                                            <Setter Property=\"FontSize\" Value=\"11\" />\n                                            <Setter Property=\"FontWeight\" Value=\"Bold\" />\n                                            <Setter Property=\"TextAlignment\" Value=\"Right\" />\n                                            <Setter Property=\"Foreground\" Value=\"{StaticResource DefaultControlForegroundBrush}\" />\n                                            <Setter Property=\"VerticalAlignment\" Value=\"Center\" />\n                                        </Style>\n                                    </Grid.Resources>\n                                    <Grid.ColumnDefinitions>\n                                        <ColumnDefinition Width=\"Auto\" />\n                                        <ColumnDefinition Width=\"100\" />\n                                        <ColumnDefinition Width=\"100\" />\n                                        <ColumnDefinition Width=\"100\" />\n                                    </Grid.ColumnDefinitions>\n                                    <ToggleButton Grid.Column=\"0\" x:Name=\"btnShowHide\" IsChecked=\"True\" Margin=\"3.5\" />\n                                    <TextBlock Grid.Column=\"1\" Text=\"Test\" TextAlignment=\"Left\" />\n                                    <TextBlock Grid.Column=\"2\" Text=\"Test1\" TextAlignment=\"Left\" />\n                                    <TextBlock Grid.Column=\"3\" Text=\"Test2\" />\n                                </Grid>\n                                <ItemsPresenter Visibility=\"{Binding ElementName=btnShowHide, Path=IsChecked, Converter={StaticResource booleanToVisibilityConverter}}\" Grid.Row=\"1\" Margin=\"11,0,0,3.5\" />                                \n                            </Grid>\n                        </ControlTemplate>\n                    </Setter.Value>\n                </Setter>\n            </Style>\n \nThis is how I applied it in my datagrid\n \n                            <dg:DataGrid x:Name=\"oPortGridMain\"                                         \n                                         AutoGeneratingColumn=\"oGridMain_AutoGeneratingColumn\"\n                                         ColumnHeaderStyle=\"{StaticResource GenericColumnHeaderStyle}\" \n                                         Grid.Row=\"1\"\n                                         Grid.Column=\"0\"      \n                                         RowHeaderWidth=\"0\"\n                                         SelectionChanged=\"oPortGridMain_SelectionChanged\"\n                                         Width=\"Auto\"\n                                         Style=\"{StaticResource DefaultDataGridStyles}\"\n                                          >\n                                <dg:DataGrid.GroupStyle>\n                                    <GroupStyle ContainerStyle=\"{StaticResource dataGridGroupTemplate}\">\n                                        <GroupStyle.Panel>\n                                            <ItemsPanelTemplate>\n                                                <dg:DataGridRowsPresenter />\n                                            </ItemsPanelTemplate>\n                                        </GroupStyle.Panel>\n                                    </GroupStyle>\n                                </dg:DataGrid.GroupStyle>\n                            </dg:DataGrid>\n \nThese all seemed to be working fine, but the problem is that when I use the scroll bar scrolling to the right, after I scroll back, the first few column of my datagrid is not repainted properly!  The first few rows are missing part of the contents, depends on how quickly I scroll back.  I am wondering if this is some kind of datagrid defect, or maybe someone could point out what I did wrong in my Datagrid Template for grouping.\n \nThanks!",
+    "LastUpdatedDate": "2013-02-21T18:40:37.263-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-04-27T14:48:59.373-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Afer apply a customized Datagrid Group Template, when I scroll datagrid, its column is not properly painted.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12866
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4272,
+      "FileName": "Datagrid Repaint Issue.gif",
+      "DownloadUrl": ".\\4272"
+    }
+  ],
+  "Comments": []
+}

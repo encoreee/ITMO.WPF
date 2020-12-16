@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "133685",
+    "ThreadId": "40291",
+    "Html": "Hi,<br>\r\nIs there a way to change the CheckBoy properties in a single click editing event or is there event fired by the <span style=\"font-size:13px;color:#008000\">DataGridCheckBoxColumn ?</span><br>\r\n<p><span style=\"font-size:13px;color:#2b91af\">Something like this?<br>\r\n<br>\r\nFrameworkElement</span><span style=\"font-size:13px\"> fe = cell.Column.GetCellContent (row);<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">CheckBox</span><span style=\"font-size:13px\"> cb = (</span><span style=\"font-size:13px;color:#2b91af\">CheckBox</span><span style=\"font-size:13px\">)fe;<br>\r\ncb.IsChecked = </span><span style=\"font-size:13px;color:#0000ff\">false</span><span style=\"font-size:13px\">;<br>\r\n<br>\r\nMany thanks in advance.<br>\r\nWorstCase.<br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-11-19T09:48:25.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

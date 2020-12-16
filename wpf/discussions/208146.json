@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "426783",
+    "ThreadId": "208146",
+    "Html": "<p>Hi, is there a way to filter in XAML the datapoints of a LineSeries (using the Chart from WPF Toolkit)?</p>\r\n<p>Or I have to edit the datasource in code behind before passing it to the LineSeries as ItemsSource?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-04-02T03:45:09.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427838",
+    "ThreadId": "208146",
+    "Html": "<p>You could make a Binding and write a converter that filters... still you need to write c# code - but maybe it is more flexible.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-06T06:24:43.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

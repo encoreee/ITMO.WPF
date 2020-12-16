@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "633619",
+    "ThreadId": "262963",
+    "Html": "<p>So obviously setting the IsReadOnly property to True on a DataGridTextColumn means that column cannot be edited. Setting it to False means it can be edited. Is there a way to change this for each row? My object has properties named Length and FixedLength.  my DataGrid has a column that binds to the Length property. I want to bind the read only property to FixedLength but when i do:<br /> &lt;wt:DataGridTextColumn Header=\"Length\" Binding=\"{Binding Length}\" IsReadOnly=\"{Binding FixedLength}\"/&gt;<br />&lt;wt:DataGridTextColumn Header=\"Precision\" Binding=\"{Binding Precision}\" IsReadOnly=\"True\"/&gt;<br />&lt;wt:DataGridTextColumn Header=\"Scale\" Binding=\"{Binding Scale}\" IsReadOnly=\"False\"/&gt;</p>\n<p>The Precision column is never editable, the Scale column is always editable, and the Length column is always editable no matter what the value of FixedLength is. The binding is good, the correct values appear in all 3 columns. Is there a way to do this?</p>",
+    "PostedDate": "2011-06-27T09:52:33.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "633706",
+    "ThreadId": "262963",
+    "Html": "<p>Is FixedLength a Boolean?</p>",
+    "PostedDate": "2011-06-27T12:20:33.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

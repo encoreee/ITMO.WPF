@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Because AlternatingRowBackground is a property transferred from the DataGrid and is not present on the DataGridRow itself, when set, it causes the chosen alternate background color to be set on a row regardless of what other triggers might be setting Background to on the row. It looks like this is because when the AlternatingRowBackground property is set, the background properly on the row itself, even if set, is ignored. This looks to be due to how DataGridHelper.GetCoercedTransferPropertyValue is used to transfer the value from the parent grid if it is set. I can see both where this would be the right behavior, and where it might be the wrong behavior. \n \nThe workaround that I have found for myself is to not use AlternatingRowBackground but instead set AlternationCount (this seemed necessary, or else AlternationIndex will not be set) and then have my local styles trigger based on that value. The part that makes this tricky to maintain is that in the various instances of the grid, different properties cause different background colors, and so the trigger logic is quite a bit more complicated by having to handle this extra case. What would be ideal in my case (but again, perhaps not in all cases) would be if explicit setting of the Background property on the DataGridRow took precedence over the parent grid's AlternatingRowBackground or RowBackground properties.",
+    "LastUpdatedDate": "2013-02-21T18:40:26.34-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-04T13:43:08.73-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AlternatingRowBackground Causes Ignoring of Row Background Triggers",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13908
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "One other quick note on this: because AlternationIndex is a ready only CLR property, it doesn't seem to show up in the VS2008 XAML editor, and so it actually took me poking around in the toolkit source to figure out how how to get my styles to work the way I wanted. Likewise, it wasn't obvious that I would need to explicitly set AlternationCount, and that setting AlternatingRowBackground would implicitly cause AlternationIndex on rows to start being set as expected. I can't think of any great suggestion on how to address this non-obvious, but perhaps it is a good place for a little how-to or tutorial. If I can find some home-coding time to do this outside of work, I will try to attach one. ",
+      "PostedDate": "2010-08-04T13:45:52.8-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:26.34-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

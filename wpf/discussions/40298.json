@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "133708",
+    "ThreadId": "40298",
+    "Html": "Hi,<br>\r\nAfter re-initializing the datagrid programmatically the ScrollBar disappears when not using grouping. Using grouping the ScrollBar appears again.<br>\r\nThe ScrollBars visibility is set to Visible already.<br>\r\n<br>\r\nWhile re-initializing I'm clean up columns, items, sorting, grouping.<br>\r\n<br>\r\nDoes anyone has an idea what to do?<br>\r\n<br>\r\nMany thanks in advance.<br>\r\nWorstCase.<br>\r\n",
+    "PostedDate": "2008-11-19T10:51:40.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133788",
+    "ThreadId": "40298",
+    "Html": "Which scrollbar are we talking about Vertical or Horizontal?<br>\r\n<br>\r\nCan you post a simple repro XAML and code??\r\n",
+    "PostedDate": "2008-11-19T15:06:03.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133868",
+    "ThreadId": "40298",
+    "Html": "Hi,<br>\r\nIt is the vertical scrollbar.<br>\r\nI find out that the groupStyle should not be set at the beginning when not using any groupDescription after initializing the datagrid.<br>\r\n<br>\r\nAfter using grouping and clean up the groups again by deleting the groupstyles then the vertical scrollbar disappears.<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">When using this method the vertical scrollbar disappears.</span><br>\r\nprivate</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">void</span><span style=\"font-size:13px\"> ClearGrouping ( )<br>\r\n{<br>\r\n</span><span style=\"font-size:13px;color:#008000\"><strong>dg.GroupStyle.Clear ();<br>\r\n</strong></span><span style=\"font-size:13px;color:#2b91af\">ICollectionView</span><span style=\"font-size:13px\"> view = </span><span style=\"font-size:13px;color:#2b91af\">CollectionViewSource</span><span style=\"font-size:13px\">.GetDefaultView (dg.ItemsSource);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">if</span><span style=\"font-size:13px\"> (view != </span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)<br>\r\n{<br>\r\nview.GroupDescriptions.Clear ();<br>\r\n}<br>\r\n}</span><br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">When using this method the vertical scrollbar still exists.</span><br>\r\n<span style=\"font-size:13px\"><span style=\"color:#0000ff\">private</span> <span style=\"color:#0000ff\">void</span> ClearGrouping ( )<br>\r\n{<br>\r\n</span><span style=\"font-size:13px\"><span style=\"color:#008000\">        //    dg.GroupStyle.Clear ();<br>\r\n</span><span style=\"color:#2b91af\">ICollectionView</span> view = <span style=\"color:#2b91af\">CollectionViewSource</span>.GetDefaultView (dg.ItemsSource);<br>\r\n<span style=\"color:#0000ff\">if</span> (view != <span style=\"color:#0000ff\">null</span>)<br>\r\n{<br>\r\nview.GroupDescriptions.Clear ();<br>\r\n}<br>\r\n}</span><br>\r\n<br>\r\nThank you.<br>\r\n",
+    "PostedDate": "2008-11-20T01:43:11.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

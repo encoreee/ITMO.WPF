@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "168952",
+    "ThreadId": "50413",
+    "Html": "Hi there <br>\r\n<br>\r\nI have a strange effect using the datagrid:<br>\r\n<br>\r\nI have some tables which content I want to browse in the datagrid (readonly).<br>\r\nTherefore I have a combo besides my datagrid that selects the table.<br>\r\nWhen I select table A, it is displayed in the datagrid.<br>\r\nAfter changing the selection from table A to B, table B is displayed.<br>\r\nThe number of rows vary between 500 to 30000, the number of columns are between 3 and 25.<br>\r\n<br>\r\nNow the problem: At arbitrary moments, some single lines have a row header displayed, so that these lines appear ragged.<br>\r\nI have the feeling (this is not reproducable) that it appears often after switching the window state from or to maximized.<br>\r\n<br>\r\nWhat I found is that this will only happen when &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HeadersVisibility=&quot;Column&quot; <br>\r\nSetting it to &quot;All&quot; seems to work which is fine for me but maybe you like to fix this...<br>\r\n<br>\r\nPlease find the xaml below<br>\r\n<br>\r\nRegards<br>\r\nKlaus<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DockPanel &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;StackPanel Orientation=&quot;Horizontal&quot; DockPanel.Dock=&quot;Top&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ComboBox x:Name=&quot;coModules&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding}&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IsSynchronizedWithCurrentItem=&quot;True&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemTemplate=&quot;{StaticResource dtModulesSimple}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectionChanged=&quot;coModules_SelectionChanged&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ComboBox&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ComboBox x:Name=&quot;coTables&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding}&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IsSynchronizedWithCurrentItem=&quot;True&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemTemplate=&quot;{StaticResource dtTablesSimple}&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectionChanged=&quot;coTables_SelectionChanged&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ComboBox&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/StackPanel&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid x:Name=&quot;dgTableDetails&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnableRowVirtualization=&quot;true&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnableColumnVirtualization=&quot;true&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectionMode=&quot;Single&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectionUnit=&quot;Cell&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IsReadOnly=&quot;true&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding}&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;True&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HeadersVisibility=&quot;Column&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGeneratingColumn=&quot;dgTableDetails_AutoGeneratingColumn&quot; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DockPanel&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n<br>\r\n&nbsp;<br>\r\n",
+    "PostedDate": "2009-03-17T02:47:58.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169573",
+    "ThreadId": "50413",
+    "Html": "Can you reply back with a screenshot of the display bugs you are seeing?  <br>\r\nIf you need you can create an issue and use codeplex to host the image.\r\n",
+    "PostedDate": "2009-03-18T13:26:09.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169577",
+    "ThreadId": "50413",
+    "Html": "I think this might be due to the same issue reported here: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=47047\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=47047</a>.\r\n",
+    "PostedDate": "2009-03-18T13:32:18.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169775",
+    "ThreadId": "50413",
+    "Html": "\r\n<div dir=ltr align=left><span class=500475608-19032009>please find \r\nthe attached image</span></div><br>\r\n<div class=OutlookMessageHeader lang=en-us dir=ltr align=left>\r\n<hr>\r\n<b>From:</b> elclark \r\n[mailto:notifications@codeplex.com] <br><b>Sent:</b> Mittwoch, 18. März 2009 \r\n21:26<br><b>To:</b> Klaus Wiesel<br><b>Subject:</b> Re: Datagrid: Ragged display \r\n[wpf:50413]<br><br></div>\r\n<div></div>\r\n\r\n\r\n<p>From: elclark</p>\r\n<div id=ThreadNotificationPostBody>Can you reply back with a screenshot of the \r\ndisplay bugs you are seeing?  <br>If you need you can create an issue and \r\nuse codeplex to host the image. </div>\r\n",
+    "PostedDate": "2009-03-19T01:57:23.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

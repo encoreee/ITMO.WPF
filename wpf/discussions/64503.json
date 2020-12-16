@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "219567",
+    "ThreadId": "64503",
+    "Html": "<p>Is there an option to show a &quot;Today&quot; button?</p>",
+    "PostedDate": "2009-08-04T23:44:20.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "240855",
+    "ThreadId": "64503",
+    "Html": "<p>I am curious as well.</p>\r\n<p><br>If this isnt possible, how would i go about creating my own &quot;Today&quot; button?</p>",
+    "PostedDate": "2009-10-01T04:27:19.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242164",
+    "ThreadId": "64503",
+    "Html": "<p>I've also had this requested.</p>",
+    "PostedDate": "2009-10-05T06:40:39.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "243063",
+    "ThreadId": "64503",
+    "Html": "<p>can anyone help?</p>",
+    "PostedDate": "2009-10-07T11:18:59.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "243145",
+    "ThreadId": "64503",
+    "Html": "<p>I just ended up puttin it in a stack panel and placed a button underneath that set the date to today.</p>",
+    "PostedDate": "2009-10-07T14:17:44.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "243567",
+    "ThreadId": "64503",
+    "Html": "<p>I guess that works for the Calendar by itself but I also use the DatePicker, where Calendar is created internally and used in a Popup. I dont see an obvious way to add a &quot;Today&quot; button to the popup without modifying the toolkit source.</p>",
+    "PostedDate": "2009-10-08T11:56:00.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

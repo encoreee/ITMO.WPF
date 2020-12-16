@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "128678",
+    "ThreadId": "38785",
+    "Html": "Is there any way to get the DatePicker to show and validate date formats that include time values?&nbsp; For instance I would like to show a datetime value in this format: &quot;dd\\MM\\yyyy HH:mm:ss&quot;&nbsp; is this possible?<br>\r\n",
+    "PostedDate": "2008-10-29T11:11:10.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129171",
+    "ThreadId": "38785",
+    "Html": "<p style=\"margin:0in 0in 0pt\">There are 2 options for <span style=\"font-size:10pt;color:red;font-family:'courier new'\">SelectedDateFormat</span><span style=\"font-size:10pt;color:blue;font-family:'courier new'\"> :&quot;Long&quot; and “Short”</span><span style=\"font-size:10pt;font-family:'courier new'\">, but those not what you neded. Short Date format shows “12/20/1980”, long one “Thursday, May 15, 2008”. There is no format option for time. Maybe, there is work around or it will be fixed in future release? </span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:10pt;font-family:'courier new'\">Thanks. Lena </span></p>\r\n",
+    "PostedDate": "2008-10-31T07:12:59.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129200",
+    "ThreadId": "38785",
+    "Html": "You are correct, I am looking for something more along the lines of &quot;12/20/1980 10:30:00 PM&quot;.&nbsp;&nbsp; I am thinking that it may be possible to overwrite the DatePicker, and add new SelectedDateFormat options but I haven't had time since the release to try anything in depth with it.&nbsp; I would prefer to do this all in XAML but I doubt that is going to be possible. <br>\r\n",
+    "PostedDate": "2008-10-31T08:40:51.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129552",
+    "ThreadId": "38785",
+    "Html": "You can't do this with the DatePicker now.  MS may update the control to perform this as done in WinForms.  I saw on one of the PDC 08 sessions that they plan on relasing a TimePicker for SL2 and hopefully release to WPF.  Not sure timeline, though.  \r\n",
+    "PostedDate": "2008-11-02T17:03:57.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

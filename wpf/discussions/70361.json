@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "239651",
+    "ThreadId": "70361",
+    "Html": "<p>Sorry if this has been discussed, but what I saw didn't help me.</p>\r\n<p>I have a couple of questions:</p>\r\n<p>&nbsp;- I set the DisplayMode=&quot;Month&quot;, but I get the day view. I have to click once on the month. What is the event or property I need to configure? I'm using&nbsp;also <span style=\"font-size:x-small\">calendar1_DisplayModeChanged:</span></p>\r\n<p align=left><span style=\"color:#2b91af;font-size:10pt\">Calendar</span><span style=\"font-size:10pt\"> calObj = sender <span style=\"color:blue\">as</span> <span style=\"color:#2b91af\">Calendar</span>;</span></p>\r\n<p align=left><span style=\"font-size:10pt\">&nbsp;</span><span style=\"font-size:10pt\">calObj.DisplayMode = <span style=\"color:#2b91af\">CalendarMode</span>.Year;</span></p>\r\n<p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;- What event should I use to know the month I have clicked.</p>\r\n<p>Thank you!</p>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-28T11:41:08.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

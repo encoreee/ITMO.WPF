@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nI have produced a self-contained solution demonstrating a problem about focus events when clicking (e.g. to sort) on a column header.\n \nThanks,\n \nJulie\n \nProcedure\n------------\nUnzip annexed file\nStart Visual Studio 2008 and adjust the reference to 'WPFToolkit.dll' (I used v3.5.40128.1) in the  solution project\n \nScenario\n----------\nStart Application ... this shows the grid and a DOS console  as well\n \nStep 1 (correct result): Click on 'B1' then on 'B2' ... you get  in the DOS console:\n \n1.=== OnIsKeyboardFocusWithinChanged\n1.+++ OnGotFocus\n1.+++ OnGotKeyboardFocus\n1.=== OnIsKeyboardFocusWithinChanged\n2.=== OnIsKeyboardFocusWithinChanged\n1.--- OnLostKeyboardFocus\n1.--- OnLostFocus\n2.+++ OnGotFocus\n2.+++ OnGotKeyboardFocus\n2.=== OnIsKeyboardFocusWithinChanged\n \nStep 2 (correct result): Click on 'B1' then on the row header of 'B2' ... you get  in the DOS console:\n \n1.=== OnIsKeyboardFocusWithinChanged\n1.+++ OnGotFocus\n1.+++ OnGotKeyboardFocus\n1.=== OnIsKeyboardFocusWithinChanged\n2.=== OnIsKeyboardFocusWithinChanged\n1.--- OnLostKeyboardFocus\n1.--- OnLostFocus\n2.+++ OnGotFocus\n2.+++ OnGotKeyboardFocus\n2.--- OnLostKeyboardFocus\n2.--- OnLostFocus\n2.+++ OnGotFocus\n2.+++ OnGotKeyboardFocus\n \nStep 3 (incorrect result): Click on 'B1' then on the column header (Name) of 'B2' ... you get  in the DOS console:\n \n1.=== OnIsKeyboardFocusWithinChanged\n1.+++ OnGotFocus\n1.+++ OnGotKeyboardFocus\n \nEnd",
+    "LastUpdatedDate": "2013-02-21T18:41:18.623-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-29T04:21:37.74-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid : 'focus events' not reported when clicking on column header",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9889
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3033,
+      "FileName": "03 focus events column header.zip",
+      "DownloadUrl": ".\\3033"
+    }
+  ],
+  "Comments": []
+}

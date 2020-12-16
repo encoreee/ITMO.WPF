@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When datagrid contains a lot of records (more than 100) I have experienced with problem that some record are panned horizontally.\n \nSometimes panned records repeated after some period (for exaple each 30-th record), but sometimes without any regularity (like in screenshot in attachment)\n \nThis issue has been reproduced since January version.",
+    "LastUpdatedDate": "2013-02-21T18:41:05.08-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-16T09:00:41.91-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPFDataGrid: Some records are shifted (panned horizontally)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 10311
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3196,
+      "FileName": "panned_records.JPG",
+      "DownloadUrl": ".\\3196"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thank you for reporting this issue.  We do have a few bugs tracking similar bugs internally which we will be investigating.  We'll post an update when we have more information and/or a fix.  Thanks!",
+      "PostedDate": "2009-07-16T12:45:48.923-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I got the same problem!",
+      "PostedDate": "2009-08-23T21:29:28.57-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-23T21:58:55.703-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have a bug on this in our internal database.",
+      "PostedDate": "2009-08-25T13:38:59.493-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-02T07:01:28.677-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Samanta, \r\nAny news about this bug?",
+      "PostedDate": "2009-11-13T13:32:42.41-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also get this issue sometimes, although it is rare and appears to occur randomly.\r\n\r\nFrom my testing, it appears as though the problem does not occur if the row headers are set to visible (specifically if HeadersVisibility is set to All rather than Column). Can anybody confirm this? I would like to use this as a temporary workaround but cannot prove that the workaround actually works!",
+      "PostedDate": "2010-01-12T03:47:20.98-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-01-12T03:50:45.25-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:05.08-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "211786",
+    "ThreadId": "62395",
+    "Html": "<p>So I have some code that I found that allows the extension of the vista glass into the client region of a window (like on internet explorer)&nbsp; The code works wonderfully on regular windows but not on a ribbon window.&nbsp; What changes would I need to make in order to have this same effect on the ribbon window?&nbsp; Here's the code:</p>\r\n<p>Public Class GlassExtension</p>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Private Structure <span id=\"lw_1247584989_0\">MARGINS</span></div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Public Sub New(ByVal t As Thickness)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Left = CInt(t.Left)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Right = CInt(t.Right)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Top = CInt(t.Top)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Bottom = CInt(t.Bottom)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;End Sub</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Public Left As <span id=\"lw_1247584989_1\" style=\"border-bottom:#0066cc 1px dashed;cursor:hand\">Integer</span></div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Public Right As Integer</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Public Top As Integer</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Public Bottom As Integer</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;End Structure</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&lt;DllImport(&quot;dwmapi.dll&quot;, PreserveSig:=False)&gt; _</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Private Shared Sub DwmExtendFrameIntoClientArea(ByVal hwnd As IntPtr, ByRef margins As MARGINS)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;End Sub</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&lt;DllImport(&quot;dwmapi.dll&quot;, PreserveSig:=False)&gt; _</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Private Shared Function DwmIsCompositionEnabled() As Boolean</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;End Function</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Public Shared Function ExtendGlassFrame(ByVal window As Window, ByVal margin As Thickness) As Boolean</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If Not DwmIsCompositionEnabled() Then</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Return False</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;End If</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dim hwnd As IntPtr = New WindowInteropHelper(window).Handle</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If hwnd = IntPtr.Zero Then</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Throw New InvalidOperationException(&quot;The Window must be shown before extending glass.&quot;)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;End If</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' Set the background to transparent from both the WPF and Win32 perspectives</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dim background As New SolidColorBrush(Colors.Red)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;background.Opacity = 0.5</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;window.Background = Brushes.Transparent</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HwndSource.FromHwnd(hwnd).CompositionTarget.BackgroundColor = Colors.Transparent</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dim margins As New MARGINS(margin)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DwmExtendFrameIntoClientArea(hwnd, margins)</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Return True</div>\r\n<div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;End Function</div>\r\n<div>&nbsp;&nbsp; &nbsp;End Class</div>\r\n<div>Thanks for your help! I love the control...</div>",
+    "PostedDate": "2009-07-14T10:12:30.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211800",
+    "ThreadId": "62395",
+    "Html": "<p>The ribbon window is already extending glass into its client area, that's how it works. There is no API for further extending it, and if you try, you will only mess up the effect that the window is trying to manage itself.</p>",
+    "PostedDate": "2009-07-14T11:06:57.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211885",
+    "ThreadId": "62395",
+    "Html": "<p>So how would one adjust the margins to allow further extension?</p>",
+    "PostedDate": "2009-07-14T15:42:04.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211887",
+    "ThreadId": "62395",
+    "Html": "<p>You can't.</p>",
+    "PostedDate": "2009-07-14T15:43:02.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211891",
+    "ThreadId": "62395",
+    "Html": "<p>Could you please explain... I'm having difficulty understanding.</p>\r\n<p>If the glass is already partially extended why couldn't you extend it on the other side?&nbsp; It seems that there would be some sort of override (like the code shown above) that would allow some additional changes...</p>",
+    "PostedDate": "2009-07-14T16:24:48.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212732",
+    "ThreadId": "62395",
+    "Html": "<p>We didn't expose any APIs to allow you to extend the glass further.&nbsp; RibbonWindow was designed as a convenience for the 90% case of just wanting the standard glass/non-client area integration which is found in Office.&nbsp; If you want to extend the glass further, that's an advanced scenario which RibbonWindow was not designed to accomodate, so you'll have to roll your own implementation.&nbsp; However, this is good feedback and we will certainly take this into account as we complete V1.</p>",
+    "PostedDate": "2009-07-16T12:36:58.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212737",
+    "ThreadId": "62395",
+    "Html": "<p>Thanks... yeah I've just made my own custom setup and it seems to be working fine. &nbsp;Thanks for the explanation and the help.</p>",
+    "PostedDate": "2009-07-16T13:04:28.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "351630",
+    "ThreadId": "62395",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to do the same thing but having some difficulty, could you give me some pointers on how you achieved this&nbsp;please?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-21T14:08:54.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "362651",
+    "ThreadId": "62395",
+    "Html": "<p>I took the above-mentioned code and ran it on startup.&nbsp; If you mess with the margins a little bit you can acheive the same effect as the ribbon window and still be able to adjust other things... but that's probably an over simplification.&nbsp; Let me know if there are any specific issues.</p>",
+    "PostedDate": "2010-02-22T07:02:42.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "362855",
+    "ThreadId": "62395",
+    "Html": "<p>Thanks - I've got it working. I was going about it the wrong way - I was trying to change the RibbonWindow, but&nbsp;after reading your reply&nbsp;I am just using an ordinary window (with code almost the same as you have, I already had that from a WPF book) and my own ControlTemplate for the Ribbon.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-22T13:53:00.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

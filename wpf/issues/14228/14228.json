@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nAs RibbonWindow handles non-client area for minimize, maximize, close etc. button, does it have any provision to change title bar color? At present the title bar color is picked from the OS theme. I want to override it and provide my own color. Is there any property on RibbonWindow object which will allow me to override the title bar color (OS theme). If there is no direct way of doing that then please let me know any workaround (handling non-client area for title bar color in same way as it does for others) to achieve it. Kindly provide some sample project which allows this. \n \nI need it very urgently. Please someone help me.\n \nThanks.\nSushant.",
+    "LastUpdatedDate": "2013-02-21T18:40:22.32-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-09-11T11:31:34.96-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Provision to change Title bar color in RibbonWindow",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 14228
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

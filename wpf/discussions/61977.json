@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "210379",
+    "ThreadId": "61977",
+    "Html": "<p>Hi,</p>\r\n<p>I'm using a DataGrid (from the WPFTloolkit) binded to a big collection (more then 1000 rows).</p>\r\n<p>My problem is that the insertion row is at the bottom of the DataGrid and if i want to add a new row i have to go at the end of my DataGrid.</p>\r\n<p>&nbsp;</p>\r\n<p>I would like to know if there is a way that the insertion row could be always displayed even if I'm in the middle of the DataGrid.</p>\r\n<p>I know I can do that with the XCeed DataGrid but I need to use WPFToolKit DataGrid cause of the licence.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thomas</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-09T06:05:22.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

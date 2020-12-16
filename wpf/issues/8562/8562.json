@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This is the same issue as 8153: http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8153",
+    "ClosedDate": "2009-02-18T17:39:29.37-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We had some problem using the ItemsSource Property of the DataGridComboBoxColumn. Binding it to an ObservableCollection did not work and resulted in this error:\nSystem.Windows.Data Error: 2 : Cannot find governing FrameworkElement or FrameworkContentElement for target element. BindingExpression:Path=ControlFlow.Value.RequestsFlat.Value; DataItem=null; target element is 'DataGridComboBoxColumn' (HashCode=8873934); target property is 'ItemsSource' (type 'IEnumerable')\n \nWe are not sure why this error happened. One idea is that there is some problem with the binding of the ItemsSource, and the fact, that the DataGridComboBoxColumn has no DataContext property. Perhaps somebody can verfiy this?\n \nTo solve our problem, we created a new property ItemsSourceBinding of type BindingBase. This works similar to the SelectedItemBinding property, that already exsists and we use the ApplyBinding method to set the ItemsSourceProperty of the combobox. In our first tests this worked fine. Is this the correct way to solve this problem? Or is there also some other way? \n \nYou find attached the DataGridComboBoxColumn.cs with our changes.\n \nThis is some extract from our xaml:\n \n<controls:DataGridComboBoxColumn Header=\"Receive at\"\n\t\t\t\t\t\t\tSelectedValueBinding=\"{Binding Path=Test.Value}\"\n\t\t\t\t\t\t\tSelectedValuePath=\"DisplayName.Value\"         \n\t\t\t\t\t\t\tDisplayMemberPath=\"DisplayName.Value\"\n\t\t\t\t\t\t\tItemsSourceBinding=\"{Binding Path=MyObservableCollection}\">",
+    "LastUpdatedDate": "2013-05-16T05:31:13.833-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-16T09:05:42.917-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF DataGrid: DataGridComboBoxColumn.ItemsSource Binding problems",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 8562
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2447,
+      "FileName": "DataGridComboBoxColumn.cs",
+      "DownloadUrl": ".\\2447"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I'm having same problem. But I think the Impact is High!",
+      "PostedDate": "2008-12-18T04:28:57.573-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I talk about this and a workaround for it here, http://blogs.msdn.com/vinsibal/archive/2008/12/17/wpf-datagrid-dynamically-updating-datagridcomboboxcolumn.aspx.",
+      "PostedDate": "2009-01-06T05:54:20.537-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have used the workaround, but I agree that there should be a cleaner solution.  It should be possible to bind ItemsSource to the current datacontext of the DataGrid.  Nonetheless the workaround is sufficient so I am not sure it is worth saying the ipact is high.",
+      "PostedDate": "2009-02-13T16:27:11.627-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:39:29.37-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:38.833-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:13.833-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

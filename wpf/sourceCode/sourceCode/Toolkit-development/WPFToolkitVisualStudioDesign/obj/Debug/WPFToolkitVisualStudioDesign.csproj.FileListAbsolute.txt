@@ -1,0 +1,7 @@
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\WPFToolkitVisualStudioDesign.csprojAssemblyReference.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\VisualStudio\AddDataGridColumnsUserInterface.baml
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\VisualStudio\AddDataGridColumnsUserInterface.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\VisualStudio\EditDataGridColumnsUserInterface.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\WPFToolkit.VisualStudio.Design_MarkupCompile.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\WPFToolkitVisualStudioDesign\obj\Debug\WPFToolkit.VisualStudio.Design_MarkupCompile.lref

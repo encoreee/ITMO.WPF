@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "214145",
+    "ThreadId": "63030",
+    "Html": "<p>Hi,</p>\r\n<p>Is there&nbsp;an event to track the keyboard's &quot;Enter&quot; key event in the WPF data grid?</p>\r\n<p>In fact, I want to get the selected datagrid row when I&nbsp; hit the &quot;Enter&quot; key.</p>\r\n<p>+Dushantha</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-20T23:16:33.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214175",
+    "ThreadId": "63030",
+    "Html": "<p>I don't think there is a direct way to do it. I solved a very similar issue (custom logic when certain keys were pressed while in edit mode) by changing the EditingElementStyle and adding a PreviewKeyDown event handler to the textbox in (actually a class deriving from) DataGridTextColumn. Maybe something similar can work for you as well.</p>",
+    "PostedDate": "2009-07-21T00:47:08.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214225",
+    "ThreadId": "63030",
+    "Html": "<p>I have done it following way,</p>\r\n<p>Added PreviewKeyDown event into Datagrid and inside that event I checked the key.</p>\r\n<p>If the key is &quot;Return&quot; (Enter key) , then got the selected item from the grid.</p>\r\n<p>Key can be get from, System.Windows.Input.KeyEventArgs. If you have entered the &quot;Enter&quot; key, value would be System.Windows.Input.Key.Return</p>\r\n<p>Thanks,</p>\r\n<p>+Dushantha</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-21T03:21:24.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

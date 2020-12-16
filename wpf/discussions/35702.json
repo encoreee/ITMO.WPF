@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "118622",
+    "ThreadId": "35702",
+    "Html": "I'm creating a DataGrid using the various column types such as combobox, checkbox etc, and when&nbsp;I add rows&nbsp;to my&nbsp;DataGrid&nbsp;&nbsp;thos column types show up&nbsp;for each row I add.&nbsp; This is great except I also want to create a couple of empty &quot;Separator Rows&quot; that don't&nbsp;contain the control of the column type.&nbsp; I don't want the combobox or checkbox to show up for these rows. &nbsp;Is this possible?\r\n",
+    "PostedDate": "2008-09-15T11:56:39.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119288",
+    "ThreadId": "35702",
+    "Html": "Do you want these &quot;Separator Rows&quot; to be editable and part of the items in the ItemsControl?&nbsp; If you want just the new rows to act like this you can take an approach talked about on this thread,&nbsp;<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34847\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34847</a>.&nbsp; Unfortunately a bug was found with this technique that will be fixed in v1.&nbsp; Also, in the v1 release we will be exposing DataGrid.LoadingRow event that will enable to you to retemplate a row as it is prepared.&nbsp;\r\n",
+    "PostedDate": "2008-09-17T21:33:30.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119365",
+    "ThreadId": "35702",
+    "Html": "They should not be editable by the user and&nbsp;I don't want them to contain any of the controls established for particualr column types.&nbsp; Just a blank empty row.&nbsp; Sounds like the later solution exposing DataGrid.LoadingRow event may be what I'm looking for, Thanks.\r\n",
+    "PostedDate": "2008-09-18T06:01:54.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

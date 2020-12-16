@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello.\n \nEither I am doing something wrong (which is ofcourse very possible), or there are some issues with the WPF Ribbon. \n - When Windows Vista Aero is used, the RibbonWindow works fine with the Office 2007 theme applied\n - With Windows Vista Basic, the form chrome that is used in the Office applications is not applied, even when the Office theme is applied\n - With Windows Vista Standard style it gets even worst, the minimize, maximize and close buttons do not work correctly on the Window\n \nSee the attachment for the screenshots. Hope this helps.\n \nBest regards,\n \n \nJeroen Landheer",
+    "LastUpdatedDate": "2013-02-21T18:41:47.28-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-10-29T14:26:46.34-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problems with the Ribbon and the Non-client area",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 7915
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2231,
+      "FileName": "WPFRibbon Form Border Problems.docx",
+      "DownloadUrl": ".\\2231"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi Jeroen,\r\n\r\nThank you for reporting these issues.  I do believe that these are valid bugs and have passed them on to our test team to investigate.  Thanks for taking the time to report them to us!\r\n\r\nSamantha",
+      "PostedDate": "2008-10-29T20:29:37.65-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T14:00:03.34-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:22:55.883-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-27T08:17:05.36-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is the same for me. I am using windows XP SP3. Have set my applications resources to use the OF.07 Blue Theme. Using the ribbon control I am expecting the chrome of my application to be like (Office 2007 Blue) however its ending up using the standard windows XP theme. Exactly as Jeroens attachment (except mine is XP not Vista Std). Seems the only way to get the cool looking Office Blue 2007 Title Bar is to go 3rd Party at this point? (p.s I realize its only CTP :P )",
+      "PostedDate": "2009-07-27T08:20:12.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:47.28-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

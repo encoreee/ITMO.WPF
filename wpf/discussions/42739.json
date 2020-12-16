@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "142021",
+    "ThreadId": "42739",
+    "Html": "Is it by design that only properties can be bound?<br>\r\nWhen I set the path to a public field it does not work.<br>\r\nThanks<br>\r\nGlenn\r\n",
+    "PostedDate": "2008-12-20T04:46:14.103-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "142031",
+    "ThreadId": "42739",
+    "Html": "Public properties and DPs can be bound.  Fields cannot be bound.\r\n",
+    "PostedDate": "2008-12-20T07:05:48.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "142076",
+    "ThreadId": "42739",
+    "Html": "I am deeply sadened ... ;-)<br>\r\nI wonder what made that decision?<br>\r\nThink it will be that way for good?<br>\r\nThis causes issues with other components that like fields.  Like oodb's and whatever.<br>\r\nAnd what is DP?  (Sorry new to WPF) been in the backend far too long. <br>\r\nThanks<br>\r\nGlenn<br>\r\n",
+    "PostedDate": "2008-12-20T12:24:14.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143577",
+    "ThreadId": "42739",
+    "Html": "A &quot;DP&quot; is a Dependency Property.<br>\r\n<br>\r\nI highly doubt that they'll add support for public fields<br>\r\n",
+    "PostedDate": "2008-12-30T11:59:05.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147299",
+    "ThreadId": "42739",
+    "Html": "However, you can always add a wrapper DP around a field if you need this sort of functionality. That is usually how they are implemented anyway.<br>\r\n<br>\r\nOr, just tack on a {get;set;} after the field declaration, turning it into a .NET property (which like vinsibal points out can be data bound).<br>\r\n",
+    "PostedDate": "2009-01-15T01:45:45.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

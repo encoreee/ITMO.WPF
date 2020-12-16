@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "198535",
+    "ThreadId": "58646",
+    "Html": "<p>I have an ObjectDataProvider whose ObjectInstance is set to a wrapper class containing an ObservableCollection. I want to have a combobox column which allows a user to select an item in the ObservableCollection or type a new one. So far the closest I've come is to use a TemplateColumn containing a ComboBox in the CellEditingTemplate, then use the LostKeyboardFocus to check the ObjectDataProvider's List to see if it contains the text entered. If not, add it.</p>\r\n<p>I can add the text so it's visible and selectable if I go to re-edit the combobox or any other row's combobox, but the value I entered isn't selected the first time I commit and I'm not sure why.</p>\r\n<p>Any suggestions?</p>",
+    "PostedDate": "2009-06-06T06:11:00.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

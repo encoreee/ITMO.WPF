@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "227074",
+    "ThreadId": "66808",
+    "Html": "<p>I cannot find any way to have a default selection for the WPF RibbonComboBox.&nbsp; No matter how hard I try to databind it to other objects, fill in the Text property at initialization, or do other tricks, the RibbonComboBox is <em>always</em> empty until I actually physically move my mouse to select an object from the combo box, and even then the resulting selection only shows up as being selected in the UI if I specifically set the Text field of the combo box to be equal to the Content of the RibbonComboBoxItem that was selected.</p>\r\n<p>Any tips, tricks, or fixes?&nbsp; I can post code if need be.</p>\r\n<p>- David</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T08:38:51.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "625497",
+    "ThreadId": "260798",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>We're using the general themes (i.e.,&nbsp;<span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\">&lt;</span></span></span><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\"><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\"><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\">ResourceDictionary</span></span></span><span style=\"font-family:Consolas; color:#ff0000; font-size:x-small\"><span style=\"font-family:Consolas; color:#ff0000; font-size:x-small\"><span style=\"font-family:Consolas; color:#ff0000; font-size:x-small\">\r\n Source</span></span></span><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\">&nbsp;</span><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\">=&quot;Theme/Theme.xaml&quot;/&gt;</span></span></span>)\r\n in the app.config, for our applications. We have an odd behavior in the datagrid, with scroll bars. When both horizontal and vertical scrollbars are visible (as display requires), after clicking the right horizontal scrollbar button, the vertical scrollbar\r\n starts scrolling down. Likewise, clicking the left horizontal button scrolls the records up. It's as if the themes &quot;cross-wire&quot; the behavior, which doesn't makes sense from an event standpoint. However, when all themes are removed, the behavior goes away.</p>\r\n<p>No searches have turned up anything remotely related.</p>\r\n<p>Does anybody have any ideas? This is keeping a finished app from rolling into production.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-06-09T09:45:04.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

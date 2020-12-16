@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "152092",
+    "ThreadId": "45585",
+    "Html": "Hello,<br>\r\n<br>\r\nhow can i use a DataTable as ItemSource?<br>\r\n<br>\r\nFor example:<br>\r\n_ds&nbsp; = GetDataSet();<br>\r\nthis._dataGrid.ItemsSource = _ds.Tables[0]; //dont work.<br>\r\n<br>\r\nI found this topic http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/d04229ba-3c96-4aa7-a386-7cd1ce5eedea/ but there will be set the ItemSource in the xaml Code. I have to set this in C#. I need something lik this _dataGrid.ItemSource = _datatabel.<br>\r\n",
+    "PostedDate": "2009-01-29T00:22:35.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152093",
+    "ThreadId": "45585",
+    "Html": "Okay i got it dataGrid.ItemsSource = DataTable.DefaultView;<br>\r\n",
+    "PostedDate": "2009-01-29T00:31:05.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

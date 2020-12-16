@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "131099",
+    "ThreadId": "39514",
+    "Html": "Hello everyone,<br>\r\nThe new datagrid is cool, but I have a trouble with it. When I set a column header background, the small arrow which indicate sorting direction was disappeared. Are there any solution, please?<br>\r\n<br>\r\nThank you,<br>\r\nChau<br>\r\n",
+    "PostedDate": "2008-11-09T00:45:55.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131111",
+    "ThreadId": "39514",
+    "Html": "Hi <span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"><a id=\"ctl00_ctl00_MasterContent_TabContentPanel_Content_PostRepeater_ctl00_UserNameLink\" href=\"/site/users/view/tungchau\" style=\"text-decoration:underline;color:rgb(62, 98, 166)\">tungchau</a>,</span><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"><br></span></div><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"><br></span></div><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"> There are already several of threads on this site covering this issue, The top 2 most relevant are:</span></div><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"><a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625</a><br></span></div><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"><a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38902\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38902</a><br></span></div><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\"><br></span></div><div><span style=\"font-family:'segoe ui';font-size:14px;white-space:nowrap\">Good luck, </span></div>",
+    "PostedDate": "2008-11-09T03:14:42.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131113",
+    "ThreadId": "39514",
+    "Html": "<table cellspacing=0 cellpadding=0 border=0><tr><td valign=top style=\"font:inherit\">Thank you! this post http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38902 is what I need. You've saved my life :)<br></td></tr></table><br>",
+    "PostedDate": "2008-11-09T03:23:50.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

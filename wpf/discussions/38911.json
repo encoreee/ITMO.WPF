@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "129105",
+    "ThreadId": "38911",
+    "Html": "When creating a new row on the grid, is there an event that can be used in order to insert default values for that row?  I would looking for an even like OnRowAdded or something of that sort.  Basically, I want to be able to set the first columns value to a value when a row is added.\r\n",
+    "PostedDate": "2008-10-30T22:36:30.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129146",
+    "ThreadId": "38911",
+    "Html": "dataGrid.InitializingNewItem += new InitializingNewItemEventHandler(dataGrid_InitializingNewItem);<br>\r\n<br>\r\nInitializingNewItemEventArgs e has e.NewItem where you can do your things<br>\r\n<br>\r\ngreets <br>\r\nRobert<br>\r\n<br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-10-31T05:28:12.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

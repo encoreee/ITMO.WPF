@@ -1,0 +1,16 @@
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\bin\Debug\ITMO.WPF.DataBindingDemo.exe.config
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\bin\Debug\ITMO.WPF.DataBindingDemo.exe
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\bin\Debug\ITMO.WPF.DataBindingDemo.pdb
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.csprojAssemblyReference.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\MainWindow.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\App.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo_MarkupCompile.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo_MarkupCompile.lref
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\MainWindow.baml
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.g.resources
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.Properties.Resources.resources
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.csproj.GenerateResource.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.csproj.CoreCompileInputs.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.exe
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\ITMO.WPF.DataBindingDemo.pdb
+C:\Users\RaikovAN\source\repos\ITMO.WPF\ITMO.WPF.DataBindingDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs

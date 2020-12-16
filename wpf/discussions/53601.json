@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "180419",
+    "ThreadId": "53601",
+    "Html": "Hi,<br>\r\nI am using the DataGrid with an MVVM design. So, on my ViewModel class (which is set as the DataContext of my view), I have a &quot;CurrentSelection&quot; property. In the XAML for the DataGrid, I have a binding for the selected item to my property. Something like:<br>\r\n&lt;WPFToolkt:DataGrid <br>\r\n    ItemsSource={Binding Path=TheItems}<br>\r\n    SelectedItem={Binding Path=CurrentSelection} ... &gt;<br>\r\n<br>\r\nEverything works fine if the binding on the SelectedItem is not there. As soon as I add it, I get an exception in DataGrid.MakeFullRowSelection on line EndUpdateSelectionItems. Below is the call stack.<br>\r\nI tried using SelectedValue: same result. I tried using SelectedIndex: no problem. I tried forcing the selection mode to single: doesn't help.<br>\r\nIs there something I am missing??<br>\r\n<br>\r\ngabriel<br>\r\n<br>\r\n    System.Text.StringBuilder.FormatError()<br>\r\n    System.Text.StringBuilder.AppendFormat(IFormatProvider provider, String format, Object[] args)<br>\r\n    System.String.Format(IFormatProvider provider, String format, Object[] args)<br>\r\n    System.Diagnostics.TraceListener.TraceEvent(TraceEventCache eventCache, String source, TraceEventType eventType, Int32 id, String format, Object[] args)<br>\r\n    System.Diagnostics.TraceSource.TraceEvent(TraceEventType eventType, Int32 id, String format, Object[] args)<br>\r\n    MS.Internal.AvTrace.Trace(TraceEventType type, Int32 eventId, String message, String[] labels, Object[] parameters)<br>\r\n    MS.Internal.TraceData.Trace(TraceEventType type, AvTraceDetails traceDetails, Object p1, Object p2)<br>\r\n    System.Windows.Data.BindingExpression.ConvertBackHelper(IValueConverter converter, Object value, Type sourceType, Object parameter, CultureInfo culture)<br>\r\n    System.Windows.Data.BindingExpression.ConvertProposedValue(Object value)<br>\r\n    System.Windows.Data.BindingExpressionBase.UpdateValue()<br>\r\n    System.Windows.Data.BindingExpression.Update(Boolean synchronous)<br>\r\n    System.Windows.Data.BindingExpressionBase.Dirty()<br>\r\n    System.Windows.Data.BindingExpression.SetValue(DependencyObject d, DependencyProperty dp, Object value)<br>\r\n    System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, OperationType operationType, Boolean isInternal)<br>\r\n    System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)<br>\r\n    System.Windows.Controls.Primitives.Selector.UpdatePublicSelectionProperties()<br>\r\n    System.Windows.Controls.Primitives.Selector.SelectionChanger.End()<br>\r\n    System.Windows.Controls.SelectedItemCollection.EndUpdateSelectedItems()<br>\r\n    System.Windows.Controls.Primitives.MultiSelector.EndUpdateSelectedItems()<br>\r\n    Microsoft.Windows.Controls.DataGrid.MakeFullRowSelection(Object dataItem, Boolean allowsExtendSelect, Boolean allowsMinimalSelect) dans D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:ligne 4663<br>\r\n    Microsoft.Windows.Controls.DataGrid.HandleSelectionForCellInput(DataGridCell cell, Boolean startDragging, Boolean allowsExtendSelect, Boolean allowsMinimalSelect) dans D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGrid.cs:ligne 4382<br>\r\n    Microsoft.Windows.Controls.DataGridCell.OnAnyMouseLeftButtonDown(MouseButtonEventArgs e) dans D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGridCell.cs:ligne 764<br>\r\n    Microsoft.Windows.Controls.DataGridCell.OnAnyMouseLeftButtonDownThunk(Object sender, MouseButtonEventArgs e) dans D:\\dd\\WPF_TSV_2\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataGrid\\Microsoft\\Windows\\Controls\\DataGridCell.cs:ligne 726<br>\r\n    System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)<br>\r\n    System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)<br>\r\n    System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)<br>\r\n    System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)<br>\r\n    System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)<br>\r\n    System.Windows.UIElement.CrackMouseButtonEventAndReRaiseEvent(DependencyObject sender, MouseButtonEventArgs e)<br>\r\n    System.Windows.UIElement.OnMouseDownThunk(Object sender, MouseButtonEventArgs e)<br>\r\n    System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)<br>\r\n    System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)<br>\r\n    System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)<br>\r\n    System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)<br>\r\n    System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)<br>\r\n    System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)<br>\r\n    System.Windows.Input.InputManager.ProcessStagingArea()<br>\r\n    System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)<br>\r\n    System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)<br>\r\n    System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)<br>\r\n    System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>\r\n    System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>\r\n    MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>\r\n    MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)<br>\r\n    System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)<br>\r\n    System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)<br>\r\n    System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)<br>\r\n    System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Boolean isSingleParameter)<br>\r\n    System.Windows.Threading.Dispatcher.Invoke(DispatcherPriority priority, Delegate method, Object arg)<br>\r\n    MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)<br>\r\n    MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG&amp; msg)<br>\r\n    System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)<br>\r\n    System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)<br>\r\n    System.Windows.Threading.Dispatcher.Run()<br>\r\n    System.Windows.Application.RunDispatcher(Object ignore)<br>\r\n    System.Windows.Application.RunInternal(Window window)<br>\r\n    System.Windows.Application.Run(Window window)<br>\r\n    System.Windows.Application.Run()<br>\r\n    DataGridSelectedItem.App.Main() dans D:\\Dev\\Experiments\\DataGridSelectedItem\\obj\\Debug\\App.g.cs:ligne 0<br>\r\n    System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)<br>\r\n    System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)<br>\r\n    Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()<br>\r\n    System.Threading.ThreadHelper.ThreadStart_Context(Object state)<br>\r\n    System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)<br>\r\n    System.Threading.ThreadHelper.ThreadStart()\r\n",
+    "PostedDate": "2009-04-16T20:08:19.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "180549",
+    "ThreadId": "53601",
+    "Html": "I forgot to mention something rather important:<div>To make it crash, you simply have to select the new item row placeholder.</div><div><br></div><div>gabriel</div>",
+    "PostedDate": "2009-04-17T05:03:14.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181099",
+    "ThreadId": "53601",
+    "Html": "Can someone confirm that this is indeed a bug?<br>\r\nThanks!<br>\r\n<br>\r\ngabriel\r\n",
+    "PostedDate": "2009-04-19T19:39:55.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181739",
+    "ThreadId": "53601",
+    "Html": "This is a bug and has been logged in our internal database.\r\n",
+    "PostedDate": "2009-04-21T05:32:39.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210431",
+    "ThreadId": "53601",
+    "Html": "<p>Vinsibal - is this bug in the CodePlex &quot;Issue Tracker&quot; - I can't find it.</p>",
+    "PostedDate": "2009-07-09T07:27:18.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210972",
+    "ThreadId": "53601",
+    "Html": "<p>No, the bug is filed in the internal bug database that we use within Microsoft to track our bugs.&nbsp; It is not accessible by the public.</p>",
+    "PostedDate": "2009-07-10T13:53:02.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211456",
+    "ThreadId": "53601",
+    "Html": "<p>FYI: The problem still exists with the DataGrid included&nbsp;in .Net 4 Beta 1.</p>\r\n<p>I searched Connect and couldn't find an existing bug; reported this:<br><a href=\"https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=474144\">https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=474144</a></p>",
+    "PostedDate": "2009-07-13T12:52:51.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

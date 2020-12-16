@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "441984",
+    "ThreadId": "212405",
+    "Html": "<p>Hi,</p>\r\n<p>I am using the datagird with FullRow SelectionUnit and my DataGridColumns are all readonly.</p>\r\n<p>User can navigate between the rows with arrow keys, But what I dont want is the datagridcell to have a focus trail (dotted border around the cell), when using key board for row navigation,</p>\r\n<p>Is there any way I can remove this focus trail on the grid cell?</p>\r\n<p>Thanks,</p>\r\n<p>Manju</p>",
+    "PostedDate": "2010-05-12T04:46:30.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442816",
+    "ThreadId": "212405",
+    "Html": "<p>Does anyone have a solution for my issue?</p>",
+    "PostedDate": "2010-05-14T03:25:19.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

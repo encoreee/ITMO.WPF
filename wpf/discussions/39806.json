@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "132108",
+    "ThreadId": "39806",
+    "Html": "Hi<br>\r\n<br>\r\nwhen I open the first example that came from vincent (&quot;DataGridSample.sln&quot;) in my vs and open the file &quot;DataGridBasicSample.xaml&quot;, visual studio exits directly.<br>\r\n<br>\r\nWhen I again open it, I have to call &quot;clean solution&quot;, otherwise it exists again.<br>\r\n<br>\r\nAny clue about this behaviour?<br>\r\n<br>\r\nregards<br>\r\nKlaus \r\n",
+    "PostedDate": "2008-11-12T13:34:29.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132124",
+    "ThreadId": "39806",
+    "Html": "Do you have PowerCommands for VS2008 installed?  If so, it is because of that and is a known issue with their tool.  Unfortunately, you'll have to remove it.  <br>\r\n<br>\r\nHowever, I'm guessing that that is not the issue since you are all good after cleaning.\r\n",
+    "PostedDate": "2008-11-12T14:24:26.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132232",
+    "ThreadId": "39806",
+    "Html": "\r\n\r\n\r\n<p><span lang=de>Vincent</span>\r\n</p>\r\n\r\n<p><span lang=de>You are right, I have the Powertools installed</span>\r\n</p>\r\n\r\n<p><span lang=en-us>But the project I mentioned is the only one which I have problems with, even other demos from you are running normally, </span></p>\r\n\r\n<p><span lang=en-us>Like DataGrid_ComboBoxColumnSamples.sln or VSM_and_DataGrid_Sample.sln</span>\r\n</p>\r\n\r\n<p><span lang=en-us>So there must be something particular with DataGridSample.sln</span>\r\n</p>\r\n\r\n<p><span lang=en-us>Regards</span>\r\n\r\n<br><span lang=en-us>Klaus</span>\r\n</p>\r\n\r\n",
+    "PostedDate": "2008-11-13T00:59:41.653-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136658",
+    "ThreadId": "39806",
+    "Html": "Hi<br>\r\n<br>\r\nafter patching the config file like described here, powercommands work again<br>\r\n<br>\r\nhttp://social.msdn.microsoft.com/Forums/en-US/vssetup/thread/e2434065-9921-4861-b914-9cc9d6c55553/<br>\r\n<br>\r\nRegards<br>\r\nKlaus \r\n",
+    "PostedDate": "2008-12-01T09:16:22.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

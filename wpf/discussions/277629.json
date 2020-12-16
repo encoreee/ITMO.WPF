@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "691127",
+    "ThreadId": "277629",
+    "Html": "\r\n<p>Hello All!</p>\r\n<p>A have a WPF App &#43; one class library. In both I have&nbsp;visual&nbsp;pages.</p>\r\n<p>I'm using frame to navigate through the pages with de following code:</p>\r\n<pre><span>        private void LoadPage_Click(object sender, RoutedEventArgs e)\r\n        {\r\n            string pageName;\r\n            string page;\r\n\r\n            page = ((FrameworkElement)sender).Name.Substring(3);\r\n\r\n            pageName = &quot;Views/&quot; &#43; page &#43; &quot;.xaml&quot;;\r\n\r\n                // If is new call \r\n                if (frmNavigate.Resources[pageName] == null)\r\n\r\n                    frmNavigate.Navigate(new Uri(pageName, UriKind.Relative));\r\n\r\n                // If page is old\r\n                else\r\n</span>                    <span>frmNavigate.Navigate(frmNavigate.Resources[pageName]);\r\n\r\n        }</span></pre>\r\n<p>And...</p>\r\n<pre>      private void frmNavigate_LoadCompleted(object sender, NavigationEventArgs e)\r\n        {\r\n            if (e.Uri != null)\r\n            {\r\n                if (frmNavigate.Resources[e.Uri.ToString()] == null)\r\n                    frmNavigate.Resources.Add(e.Uri.ToString(), e.Content);\r\n            }\r\n        }</pre>\r\n<p>I need&nbsp;that&nbsp;pages are created only once, so I test whether the page has not been loaded (<span>if (frmNavigate.Resources[pageName] == null)</span>).&nbsp;</p>\r\n<p>The code works well with the pages contained in App,&nbsp;in other words, pages are create&nbsp;only once. But, with the pages&nbsp;contained in class libaray, every time I call the pages are created!</p>\r\n<p>Why this happens?</p>\r\n<p>Alexandre</p>\r\n",
+    "PostedDate": "2011-10-29T07:45:25.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

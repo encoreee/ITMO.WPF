@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "132527",
+    "ThreadId": "39926",
+    "Html": "Hi,<div><br></div><div>I want my WPF DataGrid to be editable. When I try to double-click on a TextBox-Cell I get the exception &quot;EditItem is not allowed&quot; (translated from the German: &quot;EditItem&quot; ist für diese Ansicht nicht zulässig). I have  installed the latest release.</div><div>ItemsSource is a DataSet which I convert to an XmlNode and back again to a DataSet</div><div><br></div><div>My DataGrid:</div><div><div>        &lt;toolkit:DataGrid ItemsSource=&quot;{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataSource, Converter={StaticResource dsConv}, ConverterParameter=ATE/ATES}&quot;&gt;</div><div>            &lt;toolkit:DataGrid.Columns&gt;</div><div>                &lt;toolkit:DataGridTextColumn Header=&quot;Statusart&quot; Binding=&quot;{Binding XPath=STATECONTEXT/VALUE}&quot; /&gt;</div><div>            &lt;/toolkit:DataGrid.Columns&gt;</div><div>        &lt;/toolkit:DataGrid&gt;</div><div><br></div><div>Why do I get this exception?</div><div><br></div><div>Thanks.</div></div>",
+    "PostedDate": "2008-11-14T01:52:24.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132737",
+    "ThreadId": "39926",
+    "Html": "It looks like your data source doesn't support editing.  What is the type of collectionview of your DataGrid.ItemsSource?\r\n",
+    "PostedDate": "2008-11-14T14:49:30.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132995",
+    "ThreadId": "39926",
+    "Html": "Hi vinsibal,<div><br></div><div>thanks for your answer. I will try somthing out. I will notify you, if I have further questions...</div><div><br></div><div><br></div>",
+    "PostedDate": "2008-11-16T22:54:50.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

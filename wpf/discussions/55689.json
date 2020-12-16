@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "188059",
+    "ThreadId": "55689",
+    "Html": "<p>Hi All,<br><br>I am on the latest version of the datagrid and trying to enter edit mode programatically when the grid receive focus from tabbing from another control.</p>\r\n<p>I am trying to achieve using the form without using the mouse. The user has to tab through 3 text boxes then onto the grid. For the text boxes I handled the PreviewKeyDown event, checked for the Enter key and give focus to the next text box (if it was the Enter key) and swalling the enter key. This is all 100% until I give focus to the grid from the 3rd text box. The grid gets focus, but I still need to select the first row/cell with the mouse to begin editing.<br><br>So question is... How to programatically enter edit mode on the first editable cell in a grid when it receives focus.<br><br>TIA</p>",
+    "PostedDate": "2009-05-08T03:41:06.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188061",
+    "ThreadId": "55689",
+    "Html": "<p>Call DataGrid.BeginEdit(). That should do the trick.</p>",
+    "PostedDate": "2009-05-08T03:47:42.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188065",
+    "ThreadId": "55689",
+    "Html": "<p>Ye, first thing I tried. It did nada.<br><br>Here is the code from the 3rd textbox enter key press.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<p><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">&lt;font size=&quot;2&quot; color=&quot;#0000ff&quot;&gt;&lt;font size=&quot;2&quot; color=&quot;#0000ff&quot;&gt;\r\n<p>private</p>\r\n&lt;/font&gt;&lt;/font&gt;</span>&lt;font size=&quot;2&quot; color=&quot;#0000ff&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"font-size:x-small\"> </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">void</span></span><span style=\"font-size:x-small\"> BankedTextBox_PreviewKeyDown(</span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">object</span></span><span style=\"font-size:x-small\"> sender, </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">KeyEventArgs</span></span><span style=\"font-size:x-small\"> e)<br>{<br></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">&nbsp; if</span></span><span style=\"font-size:x-small\"> (e.Key == </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">Key</span></span><span style=\"font-size:x-small\">.Enter)<br>&nbsp; {<br>&nbsp;&nbsp;&nbsp; grid.Focus();&nbsp;//&nbsp;Gives focus<br>&nbsp;&nbsp;&nbsp; grid.BeginEdit(); // Does nada<br>&nbsp;&nbsp;&nbsp; e.Handled = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">true</span></span><span style=\"font-size:x-small\">; // Swallows the enter key<br>&nbsp; }<br>}</span></p>\r\n</p>\r\n</p>",
+    "PostedDate": "2009-05-08T04:14:18.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188502",
+    "ThreadId": "55689",
+    "Html": "<p>Hello Dominion,</p>\r\n<p>You must set the selected row and the selected cell before attempting  BeginEdit. These are the two lines needed to accomplish what you want:</p>\r\n<p><br>grid.SelectedIndex = 0; //Select the first row.<br>grid.CurrentCell = grid.SelectedCells[0]; //Set the CurrentCell to the first&nbsp;cell of the SelectedRow.</p>\r\n<p>You&nbsp;can change the logic&nbsp;to select the&nbsp;cell you wanted, I just selected the first.</p>\r\n<p><span style=\"color:#0000ff\">void</span> BankedTextBox_PreviewKeyDown(<span style=\"color:#0000ff\">object</span> sender, <span style=\"color:#008000\">KeyEventArgs</span> e)<br>{<br> &nbsp;&nbsp;<span style=\"color:#0000ff\">if</span> (e.Key == <span style=\"color:#008000\">Key</span>.Enter)<br> &nbsp;&nbsp;{<br> &nbsp;&nbsp;&nbsp;&nbsp;grid.Focus(); <span style=\"color:#008000\">// Gives focus</span><br>&nbsp;&nbsp;&nbsp;&nbsp;grid.SelectedIndex = 0; <span style=\"color:#008000\">//Select the first row.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;grid.CurrentCell = grid.SelectedCells[0]; <span style=\"color:#008000\">//Set the CurrentCell to the first&nbsp;cell of the SelectedRow.</span> <br>&nbsp;&nbsp;&nbsp;&nbsp;grid.BeginEdit(); <span style=\"color:#008000\">// you can check that now this method returns true so the edition took place.</span><br> &nbsp;&nbsp;&nbsp;&nbsp;e.Handled = <span style=\"color:#0000ff\">true</span>; <span style=\"color:#008000\">// Swallows the enter key</span><br> &nbsp;&nbsp;}<br>}</p>\r\n<p>Ajadex.</p>",
+    "PostedDate": "2009-05-09T12:50:10-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188647",
+    "ThreadId": "55689",
+    "Html": "<p>Thank-you Ajadex. That did the trick. :)</p>",
+    "PostedDate": "2009-05-10T12:46:56.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188659",
+    "ThreadId": "55689",
+    "Html": "<p>Glad to help, ;-)</p>",
+    "PostedDate": "2009-05-10T14:34:52.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193896",
+    "ThreadId": "55689",
+    "Html": "<p>I am trying to set a complte row into the edit mode when a user clicks into a button inside the row, that should get edited.</p>\r\n<p>In the Click-Eventhandler I am trying to set the whole row into edit mode, but the only thing I achieved with this hints is to get one cell into edit mode. Can somebody help me?</p>",
+    "PostedDate": "2009-05-25T05:19:04.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193918",
+    "ThreadId": "55689",
+    "Html": "<p>I'm not sure I understand your question. For one, what exactly should it mean that a full row, as opposed to a cell, is in edit mode?</p>\r\n<p>If you explain what underlying problem you are trying to solve by &quot;setting the whole row into edit mode&quot;, maybe someone can propose an alternative solution.</p>",
+    "PostedDate": "2009-05-25T07:35:39.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194109",
+    "ThreadId": "55689",
+    "Html": "<p>What I mean with setting the full row into edit mode is that when the user clicks the button not only in one cell the editing template is shown but in all cells of the selected row the editing template should be shown, so the user can edit the whole row without double clicking on each cell seperately.</p>",
+    "PostedDate": "2009-05-25T23:21:43.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194246",
+    "ThreadId": "55689",
+    "Html": "<p>When a cell gets into edit mode, the whole row gets into edit mode.&nbsp; As you tab to the next cell in the row, that cell gets into edit mode.&nbsp; That doesn't suffice your requirement?&nbsp; If you really just want all cells to go into edit mode at the same time (and lose that IEditableObject behavior) then you may be better of with a custom ListView that implements IEditableCollectionView.&nbsp; Here is an example of that, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/05/20/wpf-3-5-sp1-feature-ieditablecollectionview.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/05/20/wpf-3-5-sp1-feature-ieditablecollectionview.aspx</a>.</p>",
+    "PostedDate": "2009-05-26T05:36:46.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194251",
+    "ThreadId": "55689",
+    "Html": "<p>Thankyou vinsibal.<br>I will have a look at the custom ListView...</p>",
+    "PostedDate": "2009-05-26T05:44:27.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194652",
+    "ThreadId": "55689",
+    "Html": "<p>The ListBox does not work for me. I have a Style Guide that tells me that my grid has to have Columns with headers and so on. <br>At first I thought I could take a ListView, because it has Columns and headers when I am using it with the GridView inside, but then I have the same problem, that there are the CellTemplates...</p>",
+    "PostedDate": "2009-05-27T00:07:39.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

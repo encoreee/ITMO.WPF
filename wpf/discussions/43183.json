@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "143507",
+    "ThreadId": "43183",
+    "Html": "Hello together,<br>\r\n<br>\r\nI'm using the RibbonWindow-Class for the RibbonControl to be shown correctly. The problem is, that maximizing the window lead always to a fullscreen program without the taskbar visible. My taskbar is fixed.<br>\r\nI had this with the telerik RibbonControl as well. In a classic Windows-Forms-App I could use<br>\r\n<br>\r\nMe.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size<br>\r\n<br>\r\nin the Load-Code. With WPF I have no clue how to solve the problem an where to do it (xxxx.xaml.vb oder xxxx.xaml).<br>\r\nSomeone can help me?<br>\r\n<br>\r\nRegards<br>\r\nCarsten\r\n",
+    "PostedDate": "2008-12-30T06:05:10.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143522",
+    "ThreadId": "43183",
+    "Html": "This is a bug in the Microsoft Ribbon control. Try using a decent third-party one in the meantime, such as <a href=\"http://www.divelements.co.uk/net/controls/sandribbonwpf/\">Divelements</a>.\r\n",
+    "PostedDate": "2008-12-30T07:03:18.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "160955",
+    "ThreadId": "43183",
+    "Html": "Does anyone know if this will be fixed in V1?  When my app is maximized, it covers the entire screen including the taskbar.\r\n",
+    "PostedDate": "2009-02-23T06:57:21.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161055",
+    "ThreadId": "43183",
+    "Html": "<span style=\"font-family:'calibri','sans-serif';font-size:12pt\">Yes, this will be fixed in Ribbon V1 (see the related Issue Tracker post here: <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8506\">http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=8506</a>).  </span>\r\n",
+    "PostedDate": "2009-02-23T10:42:01.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

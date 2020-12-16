@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "273737",
+    "ThreadId": "79899",
+    "Html": "<p>I'm applying a cell style that includes some databinding. Something like this:</p>\r\n<p>&lt;Style x:Key=&quot;CellStyle&quot; TargetType=&quot;{x:Type wtk:DataGridCell}&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;ToolTip&quot; Value=&quot;{Binding Hint}&quot; /&gt;<br>&lt;/Style&gt;</p>\r\n<p>It seems to work but I keep getting these errors in the output window:</p>\r\n<p>System.Windows.Data Error: 39 : BindingExpression path error: 'Hint' property not found on 'object' ''Object'...</p>\r\n<p>I guess this happens when the style is applied to the new item.</p>\r\n<p>Does anyone know how to avoid these?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-06T04:34:29.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "508122",
+    "ThreadId": "231112",
+    "Html": "<p>Hi all,</p>\r\n<p>I downloaded 2010 Feb version and installed on my computer. I have Windows 7 64bit, VS2010.</p>\r\n<p>I am building a WFP project and I referencec all DLL files found under WPF Toolkit folder, when I launch the application in debug mode I got exception message: &quot;<span style=\"color:#ff0000\">Could not load file or assembly 'WPFToolkit, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified</span>&quot;.</p>\r\n<p>After some search I saw some people talked about add these DLL to GAC, but I don't want this. Is there a way I can load WPF toolkit <span style=\"color:#ff0000\">WITHOUT</span> GAC? Because I need to distribute the desktop application to uses without WPF Toolkit installed, I would like to reference to local DLL files instead.</p>\r\n<p>Thanks</p>\r\n<p>Hardy</p>",
+    "PostedDate": "2010-10-15T18:39:38.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "202834",
+    "ThreadId": "59917",
+    "Html": "<p>Hi All,<br><br>I am stumped on something that should be really simple. Brain is sleepy today though :)<br><br>I am trying to get the text just entered into a cell when the CellEditEnding event is fired. I cannot find out how to get the text from the cell though. The Microsoft.Windows.Controls.DataGridCellEditEndingEventArgs arguement passed into the event does not have a property for accessing the cell and its text. Only the column.<br><br>Please would someone assist.<br><br>TIA.</p>",
+    "PostedDate": "2009-06-18T02:31:43.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202835",
+    "ThreadId": "59917",
+    "Html": "<p>Hi</p>\r\n<p>you can get the edited string using</p>\r\n<p>TextBox txt = e.EditingElement as TextBox;</p>\r\n<p>string&nbsp; strTxt = txt.ToString();</p>\r\n<p><span style=\"font-size:x-small\">in CellEditEnding Event method</span></p>\r\n<p><span style=\"font-size:x-small\">I hope, this will helps </span></p>",
+    "PostedDate": "2009-06-18T02:44:48.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202836",
+    "ThreadId": "59917",
+    "Html": "<p>Thank-you nanpal76. This works 100%. Much appreciated!</p>",
+    "PostedDate": "2009-06-18T02:47:51.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202837",
+    "ThreadId": "59917",
+    "Html": "<p>Wouldn't that assume a DataGridTextColumn, though? I'd be worried about other column types not faring so well with that code in place. Null dereference bug waiting to happen on that second line... (also, I'd use txt.Text rather than txt.ToString(), but in this case that's probably largely a matter of taste.)</p>",
+    "PostedDate": "2009-06-18T02:51:36.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202839",
+    "ThreadId": "59917",
+    "Html": "<p>You are correct mikj. I however took nanpal76's suggestion as a the route to follow and it works. You would just need to typecast appropriately depending on the cell you were reading.<br>As mentioned, I did use .Text instead of .ToString().</p>",
+    "PostedDate": "2009-06-18T02:56:26.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202840",
+    "ThreadId": "59917",
+    "Html": "<p>One side affect I am however having, is the CellEditEnding event is fired TWICE when I hit TAB to exit the cell. This is painful and I suppose I would need to create a workaround to ignore subsequent events.<br><br>Does anyone know the reason for this?</p>",
+    "PostedDate": "2009-06-18T02:58:55.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "239956",
+    "ThreadId": "59917",
+    "Html": "<p>Hi any one find a&nbsp;work&nbsp;around to this issue with the TAB key. And one more thing after the CellEditEnding event is fire the RowEditEnding is also fire. This is the expected behavior?</p>\r\n<p>&nbsp;</p>\r\n<p>sorry for my english ;)</p>",
+    "PostedDate": "2009-09-29T05:55:55.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I guess this has crossed the mind of many people used to working with datagrids...\n \nThe WPF toolkit datagrid should, in my opinion, have a OnUserDeleteRow event..\n \nSome workarounds have been tried, but to my knowledge to no (full) success...",
+    "LastUpdatedDate": "2013-02-21T18:41:17.503-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-08T03:20:18.75-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OnUserDeleteRow event",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9948
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

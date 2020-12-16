@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1027080",
+    "ThreadId": "439474",
+    "Html": "Hi All,\r<br />\n<br />\nI am totally new with WPF and I have trying to look for some sample with the requirement below.<br />\n<ol>\n<li>DataGrid that bind from a datasources.</li>\n<li>A radio button that attached to each row.</li>\n<li>Buttons for edit and delete for the row that radio button that selected.</li>\n<li>\nFor the edit button selected it will launch a new screen to edit the data and store it back to the database.<br />\n</li>\n</ol>\nWith the above requirement I had done it for item 1 and item 2. So the problem now I facing is to identified the radio button that selected from in the row and edit or delete. Hopefully some guidelines can show me the way to move on.<br />\n",
+    "PostedDate": "2013-04-08T02:19:25.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

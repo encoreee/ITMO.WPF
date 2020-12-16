@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1058629",
+    "ThreadId": "447537",
+    "Html": "Hi,\r<br />\n<br />\nAFAIU, in order to create a password text box I should use the MaskedTextBox control (I can't use the WPF PasswordBox).\r<br />\nI saw that MaskedTextBox has a MaskedTextProvider which has password related properties (e.g.  IsPassword, PasswordChar), however I can't make all work together...\r<br />\n<br />\nIs there any sample how to create such a password control?\r<br />\n<br />\nThanks,\r<br />\n--Eran<br />\n",
+    "PostedDate": "2013-06-19T05:26:39.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

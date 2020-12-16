@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "192459",
+    "ThreadId": "56950",
+    "Html": "<p>I have a datagrid on tab control.&nbsp; Basically this datagrid is used as my log window.&nbsp; There are about 8 text columns.&nbsp; I run the program until there are about 300-500 messages in the window.&nbsp; When I switch to the tab item for the first time the entire UI hangs for about 5-10 seconds!&nbsp; What I can I do about this?&nbsp; Any ideas would be appreciated.&nbsp; I've already asked about this in the msdn forums but was informed that the datagrid is not a microsoft supported product. (what a load of crap)</p>",
+    "PostedDate": "2009-05-20T10:21:41.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192581",
+    "ThreadId": "56950",
+    "Html": "<p>Could you point me to the MSDN forum post?&nbsp; Also, now that .NET 4.0 Beta 1 has been released, if you do this in a 4.0 application (where DataGrid is in the Framework) then I think that would clear up the issue of &quot;supported or not&quot;&nbsp;since I believe the Beta is considered &quot;supported.&quot;&nbsp; I'm not positive about that, but you could try. :-)</p>\r\n<p>Anyway, let's see if we can clear this up for you here.&nbsp; Some quick ideas: Do you have virtualization turned on?&nbsp; (DataGrid.EnableRowVirtualization=true and there's no grouping applied?)&nbsp; Are you making any of the layout mistakes mentioned in this post: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=53930\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=53930</a>?&nbsp; Are you using * column&nbsp;widths?&nbsp;&nbsp;If so, try setting those to absolute widths or SizeToCells, SizeToHeader, or Auto - we've had some bugs reported&nbsp;with star&nbsp;width columns in TabControl.&nbsp; None of those helping?&nbsp; If you could create an Issue and post a simple repro project, we could take a look at it to see if we can find anything else that's going wrong.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-05-20T15:48:29.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192747",
+    "ThreadId": "56950",
+    "Html": "<p>Samantha,</p>\r\n<p>Thanks for the fast response!&nbsp; Here is the MSDN post. <a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/cd26c8c8-84cf-4230-a8e6-6af71272a681/\">http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/cd26c8c8-84cf-4230-a8e6-6af71272a681/</a></p>\r\n<p>As for VS 2010/.NET 4 Beta 1, I did download and install the beta on seperate machine to play with.&nbsp; The problem is that even if .NET 4 solves the performance issue it won't solve my problem.&nbsp; The WPF UI I'm working on is part of product that is shipping in a month or so.&nbsp; I will go over your suggestions and see if that helps.&nbsp; If it doesn't I'll try to build a small repro project.&nbsp; Thanks.</p>\r\n<p>Jon</p>",
+    "PostedDate": "2009-05-21T04:17:08.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192901",
+    "ThreadId": "56950",
+    "Html": "<p>Thanks Jon.&nbsp; Ok, let me know if any of the suggestions work for you and if not, send over the repro.&nbsp; In reference to the .NET 4 thing, I just meant that if anyone on MSDN says it's not a supported control, you can likely retort with &quot;it's in the .NET 4.0 Beta, so now it should be.&quot; :-)&nbsp; The DataGrid in 4.0 is actually the exact same control as is in the Toolkit (give or take a few bug fixes which could only be done in the framework), so if you find a solution which works on 4.0, chances are it *should* also work for you in 3.5 SP1.</p>",
+    "PostedDate": "2009-05-21T11:47:05.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "457507",
+    "ThreadId": "216592",
+    "Html": "<p>Hi</p>\r\n<p>I used ObservableCollection of Class Person. Person Class have property of Weight. I want to find Max Weight out of collection without using For Each loop.</p>\r\n<p>How can i able to do that?</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-18T23:46:26.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457549",
+    "ThreadId": "216592",
+    "Html": "<p>double max = personCollection.Max(person =&gt; person.Weight);</p>\r\n<p>&nbsp;</p>\r\n<p>note: expression uses System.Linq</p>",
+    "PostedDate": "2010-06-19T05:31:00.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457908",
+    "ThreadId": "216592",
+    "Html": "<p>Thanks it work for me.</p>",
+    "PostedDate": "2010-06-21T00:02:30.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

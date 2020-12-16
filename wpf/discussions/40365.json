@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "133985",
+    "ThreadId": "40365",
+    "Html": "Hi,<br>\r\nThere seems to be a problem when I bind a RibbonComboBox to a System.Data.DataTable.  Here's my RibbonComboBox (the DataContext of the combobox is set to the datatable and 'Year' is a column in the datatable)<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\"> &lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonComboBox</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Name</span><span style=\"font-size:13px;color:#0000ff\">=&quot;ribbonComboBox&quot;</span><span style=\"font-size:13px;color:#ff0000\"> IsEditable</span><span style=\"font-size:13px;color:#0000ff\">=&quot;True&quot;</span><span style=\"font-size:13px;color:#ff0000\"> ItemsSource</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#0000ff\">}&quot; <br>\r\n</span><span style=\"font-size:13px;color:#ff0000\">                                      Width</span><span style=\"font-size:13px;color:#0000ff\">=&quot;75&quot;</span><span style=\"font-size:13px;color:#ff0000\"> SelectedValuePath</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Year&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonComboBox.ItemTemplate</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n        </span><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">DataTemplate</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n            </span><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">TextBlock</span><span style=\"font-size:13px;color:#ff0000\"> Text</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> Year</span><span style=\"font-size:13px;color:#0000ff\">}&quot; /&gt;<br>\r\n        </span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">DataTemplate</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n    </span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonComboBox.ItemTemplate</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonComboBox</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<br>\r\n</span>\r\n<p style=\"color:#000000\"> This works good, but when I select an item from the RibbonComboBox I get this exception:</p>\r\nSystem.InvalidCastException was unhandled<br>\r\n  Message=&quot;Unable to cast object of type 'System.Data.DataRowView' to type 'Microsoft.Windows.Controls.Ribbon.RibbonComboBoxItem'.&quot;<br>\r\n  Source=&quot;RibbonControlsLibrary&quot;<br>\r\n  StackTrace:<br>\r\n       at Microsoft.Windows.Controls.Ribbon.RibbonComboBox.GetHighlightedComboBoxItem()<br>\r\n       at Microsoft.Windows.Controls.Ribbon.RibbonComboBox.OnSelectionChanged(SelectionChangedEventArgs e)<br>\r\n       at System.Windows.Controls.Primitives.Selector.InvokeSelectionChanged(List`1 unselectedItems, List`1 selectedItems)<br>\r\n       at System.Windows.Controls.Primitives.Selector.SelectionChanger.End()<br>\r\n       at System.Windows.Controls.Primitives.Selector.SelectionChanger.SelectJustThisItem(Object item, Boolean assumeInItemsCollection)<br>\r\n       at System.Windows.Controls.ComboBox.NotifyComboBoxItemMouseUp(ComboBoxItem comboBoxItem)<br>\r\n       at System.Windows.Controls.ComboBoxItem.OnMouseLeftButtonUp(MouseButtonEventArgs e)<br>\r\n       at System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)<br>\r\n       at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)<br>\r\n       at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)<br>\r\n       at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)<br>\r\n       at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)<br>\r\n       at System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)<br>\r\n       at System.Windows.UIElement.CrackMouseButtonEventAndReRaiseEvent(DependencyObject sender, MouseButtonEventArgs e)<br>\r\n       at System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)<br>\r\n       at System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)<br>\r\n       at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)<br>\r\n       at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)<br>\r\n       at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)<br>\r\n       at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)<br>\r\n       at System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)<br>\r\n       at System.Windows.Input.InputManager.ProcessStagingArea()<br>\r\n       at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)<br>\r\n       at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)<br>\r\n       at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)<br>\r\n       at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>\r\n       at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>\r\n       at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>\r\n       at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)<br>\r\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)<br>\r\n       at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)<br>\r\n       at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)<br>\r\n       at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Boolean isSingleParameter)<br>\r\n       at System.Windows.Threading.Dispatcher.Invoke(DispatcherPriority priority, Delegate method, Object arg)<br>\r\n       at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)<br>\r\n       at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG&amp; msg)<br>\r\n       at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)<br>\r\n       at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)<br>\r\n       at System.Windows.Threading.Dispatcher.Run()<br>\r\n       at System.Windows.Application.RunDispatcher(Object ignore)<br>\r\n       at System.Windows.Application.RunInternal(Window window)<br>\r\n       at System.Windows.Application.Run(Window window)<br>\r\n       at System.Windows.Application.Run()<br>\r\n       at SeedToHarvest.App.Main() in C:\\Users\\Alex\\Documents\\Visual Studio 2008\\Projects\\SeedToHarvest\\SeedToHarvest\\obj\\Debug\\App.g.cs:line 0<br>\r\n       at System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)<br>\r\n       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)<br>\r\n       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()<br>\r\n       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)<br>\r\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)<br>\r\n       at System.Threading.ThreadHelper.ThreadStart()<br>\r\n  InnerException: <br>\r\n<p style=\"color:#000000\"> Everything works fine when I use a regular ComboBox instead, so is there is something else I need to do when using a RibbonComboBox, or is it a bug?<br>\r\n<br>\r\nThanks,<br>\r\nAlex</p>\r\n",
+    "PostedDate": "2008-11-20T11:33:27.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134491",
+    "ThreadId": "40365",
+    "Html": "I have the exact same problem only mine is trying to do an ObservableCollection&lt;string&gt; bound to the control. <br>\r\n<br>\r\nIs there anybody who has a workaround for this problem?\r\n",
+    "PostedDate": "2008-11-22T11:06:33.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134965",
+    "ThreadId": "40365",
+    "Html": "Thanks for reporting this issue.  This is a known issue and will be addressed in our V1 release.  In the meantime, unfortunately, you'll only be able to bind to collections of type RibbonComboBoxItem until we release a fix.",
+    "PostedDate": "2008-11-24T18:55:13.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135279",
+    "ThreadId": "40365",
+    "Html": "Hi,<br>\r\n<br>\r\nI have the same problem, but now, even using a RibbonComboBoxItem I cannot get anything to display in the SelectionBox. The list displays OK when you click the drop down button, but I cannot get anything to appear in the SelectionBox. I have tried various things:<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"color:#2b91af;font-size:13px\">RibbonComboBox</span><span style=\"font-size:13px\"> cb = mw.RibbonGrouping.FindName(</span><span style=\"color:#a31515;font-size:13px\">&quot;Combo1&quot;</span><span style=\"font-size:13px\">) </span><span style=\"color:#0000ff;font-size:13px\">as</span><span style=\"font-size:13px\"> </span><span style=\"color:#2b91af;font-size:13px\">RibbonComboBox</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#2b91af;font-size:13px\">List</span><span style=\"font-size:13px\">&lt;</span><span style=\"color:#2b91af;font-size:13px\">RibbonComboBoxItem</span><span style=\"font-size:13px\">&gt; list = </span><span style=\"color:#0000ff;font-size:13px\">new</span><span style=\"font-size:13px\"> </span><span style=\"color:#2b91af;font-size:13px\">List</span><span style=\"font-size:13px\">&lt;</span><span style=\"color:#2b91af;font-size:13px\">RibbonComboBoxItem</span><span style=\"font-size:13px\">&gt;();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#2b91af;font-size:13px\">RibbonComboBoxItem</span><span style=\"font-size:13px\"> rcbi = </span><span style=\"color:#0000ff;font-size:13px\">new</span><span style=\"font-size:13px\"> </span><span style=\"color:#2b91af;font-size:13px\">RibbonComboBoxItem</span><span style=\"font-size:13px\">();\r\n<p>&nbsp;</p>\r\n<p>rcbi.Content = </p>\r\n</span></p>\r\n<p><span style=\"color:#a31515;font-size:13px\">&quot;xyz&quot;</span><span style=\"font-size:13px\">;\r\n<p>&nbsp;</p>\r\n<p>list.Add(rcbi);</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"color:#008000;font-size:13px\">//cb.Items.Add(rcbi);\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>cb.ItemsSource = list;</p>\r\n<p>cb.SelectedIndex = 0;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"color:#008000;font-size:13px\">//cb.SelectedValue = rcbi;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"color:#008000;font-size:13px\">//cb.SelectedItem = rcbi;<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<strong>I think I must be missing something obvious, can someone point it out to me please?<br>\r\n<br>\r\nThanks</strong><br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-11-25T13:31:44.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135305",
+    "ThreadId": "40365",
+    "Html": "Hi ChangedDaily,<br>\r\n<br>\r\nI had the same problem and and setting IsEditable to true fixed it for me.  On <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39780\">this thread</a> I found that there is a known problem with the IsEditable property.  But doing this doesn't fix the problem with binding to a DataTable.<br>\r\n<br>\r\nAlex \r\n",
+    "PostedDate": "2008-11-25T14:48:44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135635",
+    "ThreadId": "40365",
+    "Html": "Thanks - that fixed the problem I was having, I had spent some time on that!<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-26T09:37:23.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258219",
+    "ThreadId": "40365",
+    "Html": "<p>Has this issue been addressed yet?</p>\r\n<p>I get exactly the same exception trying to bind to a List of strings!!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-18T02:50:22.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "418596",
+    "ThreadId": "40365",
+    "Html": "<p>Same exception&nbsp;problem still today...??? Any news... its been 4 months since the last post?</p>",
+    "PostedDate": "2010-03-16T02:13:25.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426025",
+    "ThreadId": "40365",
+    "Html": "<p>Just spent almost a day trying to get the RibbonComboBox to work with anything other than a hard-coded RibbonComboBoxItem; and just now found this thread. &nbsp;The RibbonComboBox should work just like a standard WPF ComboBox. Please do update the RibbonComboBox to work as expected.</p>",
+    "PostedDate": "2010-03-31T07:41:50.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448654",
+    "ThreadId": "40365",
+    "Html": "<p>I have a ribboncombobox and when I select a item from that I'm getting following error.</p>\r\n<p>An unhandled exception of type 'System.InvalidCastException' occurred in RibbonControlsLibrary.dll Additional information: Unable to cast object of type 'System.Data.DataRowView' to type 'Microsoft.Windows.Controls.Ribbon.RibbonComboBoxItem'.</p>\r\n<p>&nbsp;&lt;r:RibbonComboBox Name=&quot;childnamecombo&quot; ItemsSource=&quot;{Binding}&quot; SelectedValuePath=&quot;stid&quot; Margin=&quot;34,56,0,0&quot; VerticalAlignment=&quot;Top&quot; HorizontalAlignment=&quot;Left&quot; Width=&quot;168&quot; IsEditable=&quot;True&quot; IsReadOnly=&quot;True&quot; IsDropDownOpen=&quot;false&quot; SelectedIndex=&quot;-1&quot; SelectionChanged=&quot;selectchildindividualobservation_SelectionChanged&quot;&gt;</p>\r\n<p>&lt;r:RibbonComboBox.ItemTemplate &gt;</p>\r\n<p>&nbsp;&lt;DataTemplate &gt;</p>\r\n<p>&nbsp;&lt;TextBlock Text=&quot;{Binding stid}&quot;/&gt;</p>\r\n<p>&lt;/DataTemplate&gt;</p>\r\n<p>&nbsp;&lt;/r:RibbonComboBox.ItemTemplate&gt;</p>\r\n<p>&lt;/r:RibbonComboBox&gt;</p>\r\n<p>Can anyone please help me.</p>",
+    "PostedDate": "2010-05-28T06:05:46.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

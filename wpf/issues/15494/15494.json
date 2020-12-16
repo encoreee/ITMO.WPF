@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a datagrid where the cellcontent is displayed in a textblock and the celleditor used to be a textbox.  With this configuration, the font size in the textblock and textbox could be the same.  When I replaced the textbox with the autocompletebox, I had to reduce the font size or the bottom of the text would get cut off.  Letters like y,p,g,q... are cut off along the bottom.  I am using the xceed datagrid, since I don't like the datagrid in the wpftoolkit.\n \nMy datarow MinHeight value is 26.  To get the AutoCompleteBox to fit like the textbox without the row expanding in edit mode, I had to create the below style in my theme.  I had no special style for the textbox.  After Reducing the Height value to 22, I have to set the fontsize to 11 to keep the text from getting cut off.  This resizing wasn't necessary with the textbox.  There seems to be plenty of whitespace above and below for the default fontsize, but for some reason it gets cut off.\n \n<Style TargetType=\"{x:Type tk:AutoCompleteBox}\">\n        <Setter Property=\"Height\" Value=\"22\" />\n        <Setter Property=\"FontSize\" Value=\"11\" />\n        <Setter Property=\"FocusVisualStyle\" Value=\"{x:Null}\"/>\n    </Style>\n \nHere is the Column where I replaced the textbox with the autocompletebox.\n \n<xcdg:Column Title=\"Description\" FieldName=\"Description\" Width=\".4*\" ReadOnly=\"False\">\n                    <xcdg:Column.CellContentTemplate>\n                        <DataTemplate>\n                            <TextBlock Text=\"{Binding Path=., UpdateSourceTrigger=PropertyChanged, Mode=OneWay}\" VerticalAlignment=\"Center\" />\n                        </DataTemplate>\n                    </xcdg:Column.CellContentTemplate>\n                    <xcdg:Column.CellEditor>\n                        <xcdg:CellEditor>\n                            <xcdg:CellEditor.EditTemplate>\n                                <DataTemplate>\n                                    <!--<TextBox Text=\"{xcdg:CellEditorBinding}\" />-->\n                                    <tk:AutoCompleteBox Text=\"{xcdg:CellEditorBinding}\" ItemsSource=\"{Binding Source={StaticResource transactionDescriptionODP}, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}\" >\n                                    </tk:AutoCompleteBox>\n                                </DataTemplate>\n                            </xcdg:CellEditor.EditTemplate>\n                        </xcdg:CellEditor>\n                    </xcdg:Column.CellEditor>\n                    <xcdg:Column.CellValidationRules>\n                        <src:CellValidation />\n                    </xcdg:Column.CellValidationRules>\n                </xcdg:Column>",
+    "LastUpdatedDate": "2013-02-21T18:40:13.667-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-03-08T19:06:00.34-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "wpftoolkit Autocompletebox can't handle the same font size as the textbox",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15494
+  },
+  "FileAttachments": [
+    {
+      "FileId": 5512,
+      "FileName": "autocompletebox_text_cut_off.png",
+      "DownloadUrl": ".\\5512"
+    }
+  ],
+  "Comments": []
+}

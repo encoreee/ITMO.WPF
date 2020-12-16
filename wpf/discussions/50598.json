@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "169698",
+    "ThreadId": "50598",
+    "Html": "I want to user selected one row or multi-rows only when user click the RowHeader or multi-RowHeader of the rows.<br>\r\nAnd it means user can't select the full rows in a DataGrid directly following default way.<br>\r\n<br>\r\nDoes anyone know how to do it, thanks? \r\n",
+    "PostedDate": "2009-03-18T19:13:46.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171141",
+    "ThreadId": "50598",
+    "Html": "<span style=\"font-size:13px\">\r\n<p>I found it, it's so simple by setting SelectionUnit=&quot;CellOrRowHeader&quot;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2009-03-23T19:18:32.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171340",
+    "ThreadId": "50598",
+    "Html": "<p>But it lose the ability MultiSelect by Ctrl/Shift Key when I select rows by RowHeader?</p>\r\n<p>How can solve it? Thanks.</p>\r\n",
+    "PostedDate": "2009-03-24T07:57:51.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171487",
+    "ThreadId": "50598",
+    "Html": "When SelectionUnit is FullRow or CellOrRowHeader, you should be able to select rows when clicking on the headers. Perhaps I don't understand exactly what you're trying to achieve.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-03-24T13:05:12.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171661",
+    "ThreadId": "50598",
+    "Html": "\r\n <br>\r\nThank your reply!<br>\r\nI found it caused by my code. Because I want to do multi-row drag, so before I use selectedItem to get row. And later maybe I'll use selectedItems <br>\r\n <br>\r\n<em>DataItemType selectedItem = dgPointCloud.SelectedItem as DataItemType;</em><br>\r\n<em>if (selectedItem != null)</em><br>\r\n<em>{</em><br>\r\n<em>DataGridRow row = (DataGridRow)dgPointCloud.ItemContainerGenerator.ContainerFromItem(selectedItem);<br></em>\r\n<em>if (null != row && !row.IsEditing)</em><br>\r\n<em>...</em><br>\r\n <br>\r\n <br>\r\nSo if select one row, then select another row just by click row header, both the two rows will be selected, even more, they'll do drag and drop immediately. After I read other sample code and use the following replace, it's no problem.<br>\r\n <br>\r\nDataGridRow row = FindVisualParent&lt;DataGridRow&gt;(e.OriginalSource as FrameworkElement);<br>\r\nif ((row != null) && !row.IsEditing && row.IsSelected)<br>\r\n...<br>\r\n <br>\r\nBut I'm still not clear how to do Multi-Row Drag&Drop now.<br>\r\n <br>\r\nThanks<br>\r\nDan<br> <br>\r\n<hr id=stopSpelling>\r\nFrom: [email removed]<br>To: [email removed]<br>Date: Tue, 24 Mar 2009 13:05:16 -0700<br>Subject: Re: Select rows by RowHeader [wpf:50598]<br><br>\r\n\r\n\r\nFrom: BenCarter<br>\r\n<div id=\"EC_ThreadNotificationPostBody\">When SelectionUnit is FullRow or CellOrRowHeader, you should be able to select rows when clicking on the headers. Perhaps I don't understand exactly what you're trying to achieve.<br><br>Ben </div>\r\n<br><hr>�������� MSN �����ܣ����� MSN ��ȫ�ȶ��� <a href=\"http://im.live.cn/safe/\">���ھ����أ�</a>",
+    "PostedDate": "2009-03-24T20:36:09.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171963",
+    "ThreadId": "50598",
+    "Html": "When you say multi-row drag or multi-row drag and drop, are you referring to being able to select multiple rows by pressing down on a header and dragging the mouse, or are you referring to re-ordering the items by selecting one or more rows and then dragging them to a new location?<br>\r\n<br>\r\nIf the former, then you should not need to implement anything, since the header behavior should already be that way.<br>\r\n<br>\r\nIf the later, then you will need to essentially override the existing mouse behavior when clicking on a row that is already selected.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-03-25T11:20:37.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172112",
+    "ThreadId": "50598",
+    "Html": "Unfortunately, my intent is the later option. Not only re-order, I have to drag mulit-rows and drop into another row as child nodes so it looks like a tree in datagrid:-)<br>\r\n<br>\r\nThanks Dan<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-25T19:03:59.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

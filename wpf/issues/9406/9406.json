@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am having a problem where ApplicationMenu items are initially correctly displayed, but then, as soon as any command is executed, or if I click a menu, everything becomes disabled, and is never reenabled.  My commands are static resources, and those same commands bound to MenuItems are enabled/disabled correctly.  But the ones in ApplicationMenu never become reenabled.  I don't see anyone posting about this, why is it happening?\n \nI was going to create some sample code, but this sample app has the similar behavior as well.  Just change a theme, and then click the round button, everything will be disabled.  Then next time you click, it's reenabled.\nhttp://www.chakkaradeep.com/blog/proper-way-to-create-menus-submenus-in-wpf-ribbon/\n \nEnvironment: C#, VS2008 SP1, .NET 3.5SP1, Vista\n \nHere is my screenshot.  The first part is initial view.  The second row is the menu (where e.g. Print is enabled) and application menu (where everything is disabled).\nhttp://img515.imageshack.us/img515/6213/ribbonproblemscreenshot.png",
+    "LastUpdatedDate": "2013-02-21T18:41:29.503-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-03T06:18:24.723-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon disables all ApplicationMenu commands",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9406
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I second this bug... This should be set to a high priority because for me, the commands disable anytime the window looses focus to certain controls in my application. The only way to get the commands to show back is to click on a tool button and then the menu items are clickable again.",
+      "PostedDate": "2009-04-12T12:23:24.057-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-12T13:59:10.853-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you both for reporting this issue; we'd like to investigate this as soon as possible.  The sample link above seems to have been changed; can you send the updated link or a attach a small repro application?\r\n\r\nThanks!\r\nAlexis",
+      "PostedDate": "2009-04-14T13:29:27.157-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We are rewriting the commanding portion of Ribbon for our RTM release; hopefully your issue will not show in the new implementation.  However, we'd like to investigate in the meantime -- if either of you can attach a small application that shows the problem we will take a look!\r\n\r\nThanks,\r\nAlexis",
+      "PostedDate": "2009-04-24T13:17:16.15-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:20:55.04-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:29.503-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

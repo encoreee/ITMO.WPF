@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "166190",
+    "ThreadId": "49651",
+    "Html": "I'm building app using MVVM pattern and I've got collection of RibbonTabs in my MainWindowViewModel. How can I bind in xaml this collection to Tabs in ribbon (there's no dependency property Tabs)?\r\n",
+    "PostedDate": "2009-03-09T11:16:50.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166419",
+    "ThreadId": "49651",
+    "Html": "Why are you defining the tab in ViewModel? Isn't that a &quot;presentation&quot; concern?<br>\r\nViewModel shouln't define how something looks like. Instead, it should contain interaction logic and UI's state.<br>\r\n<br>\r\nWe have it put like that:<br>\r\n - Tabs and ribbons are declared in xaml. That's the View part.<br>\r\n - Commands are forwarded to ViewModels for execution.<br>\r\n<br>\r\nHow to forward a RibbonCommand to other command is another question.<br>\r\nTake a look at the Southridge application: <a href=\"http://blogs.msdn.com/jaimer/archive/2009/02/10/m-v-vm-training-day-sample-application-and-decks.aspx\">http://blogs.msdn.com/jaimer/archive/2009/02/10/m-v-vm-training-day-sample-application-and-decks.aspx</a>\r\n",
+    "PostedDate": "2009-03-10T04:08:07.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

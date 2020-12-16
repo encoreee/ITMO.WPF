@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "221701",
+    "ThreadId": "65107",
+    "Html": "<p>So I'm looking at using the ribbon control from the RibbonControlsLibrary. For the most part, pretty straight forward.</p>\r\n<p>I do have one question, which I don't even know if its a good idea but, is it event&nbsp;possible...</p>\r\n<p>Say I have only one tab group that contains everything my application needs in a ribbon. Is it possible to suppress the tab strip above the ribbon, which would have just the one tab and as such be pointless and take up space?</p>\r\n<p>Just wondering.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-10T13:38:15.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221742",
+    "ThreadId": "65107",
+    "Html": "<p>Hi rogerr,</p>\r\n<p>Technically speaking, yes, you should be able to do this by retemplating the Ribbon.&nbsp; However, I don't think you'd want to because a) it would be really complicated, since we rely on that strip to do things like minimizing the Ribbon, so you'd lose functionality and need to reimplement it, and b) I'm pretty sure it'd be in violation of the Fluent UI License guidelines to get rid of that piece of the UI.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-08-10T15:13:29.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

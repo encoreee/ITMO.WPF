@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "171047",
+    "ThreadId": "51038",
+    "Html": "I would if there is a way to implement ad-hoc rows grouping.  Here is a typical user-case scenario:<div><br></div><div><div>Here is a user case scenario.</div><div><br></div><div>1) A user highlights one section of rows on the datagrid.</div><div>2) User right clicked on the mouse and chooses to group the highlighted rows.</div><div>3) The rows grouped together and can be expanded or collapsed.</div><div>4) A description and or an icon can be assigned to group.</div><div>5) The rows that were not highlighted will NOT be grouped.</div><div>6) Grouping does not change the order of rows.</div><div><br></div><div>This is not your typical database rows and columns but instead it will be use a script editor.  For example, the loop below would be grouped together. </div><div><div>Example:</div><div><br></div><div>Command do something 1 (maybe initialization) </div><div>Command do something 2 </div><div>Loop n_times</div><div>  Command do something 3</div><div>  Command do something 4</div><div>EndLoop</div><div>Command End.</div><div><br></div><div>Any help is greatly appreciated!</div><div><br></div><div>Dan</div><div><br></div></div></div>",
+    "PostedDate": "2009-03-23T14:46:39.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

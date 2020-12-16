@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "A DataGrid with an empty but bound data collection, that is Grouped, throws an exception when attempting to create a new Row.\n \n1. Run application.  Will appear with grouped and sorted data, and pre-populated.\n2. Create a new row, just to prove that new row works.\n3. New row should group itself.\n4. Delete all rows.  (click the selector to the left of the row, and press delete)\n5. Create a new row.  Exception is thrown within DataGrid code.",
+    "LastUpdatedDate": "2013-02-21T18:40:55.057-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-10-14T20:22:15.1-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid Grouping and row creation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10764
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3439,
+      "FileName": "WpfApplication-datagridgroupbug.zip",
+      "DownloadUrl": ".\\3439"
+    }
+  ],
+  "Comments": []
+}

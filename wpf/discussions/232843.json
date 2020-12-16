@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "514769",
+    "ThreadId": "232843",
+    "Html": "\r\n<p>Hi, Developers,</p>\r\n<p>I've been trying to create a horizontal DataGrid using the&nbsp;toolkit:DataGrid control.</p>\r\n<p>By horizontal DataGrid, I means something just&nbsp;similar&nbsp;to multi-columns PropertyGrid, with property title in the left most&nbsp;column, all elements on the right as column</p>\r\n<p>The way I found is to use LayoutTransform twice. The first time, rotate the whole DataGrid anti-clockwise 90 degree; the second step, rotate every cell clockwise 90 degree. It roughly works, but the text in each cell looks blurring.</p>\r\n<p>Does anyone know any better solution to create horizontal DataGrid?</p>\r\n<p>/Kai</p>\r\n",
+    "PostedDate": "2010-10-29T15:06:00.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

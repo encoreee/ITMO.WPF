@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "131355",
+    "ThreadId": "39590",
+    "Html": "I downloaded the WPF Futures release today and tried to install the SplashScreen template, but the template doesn't appear in the template list when I try to add a new item to my Windows Application (WPF) project.<div><br></div><div>I have Visual Studio 2008 SP1/.NET 3.5 SP1 installed on Vista Enterprise SP1.</div>",
+    "PostedDate": "2008-11-10T06:35:36.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

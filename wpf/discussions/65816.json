@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "223901",
+    "ThreadId": "65816",
+    "Html": "<p>I have a DataGrid in FixedDocument:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>&lt;FixedDocument&gt;\r\n     &lt;PageContent&gt;\r\n          &lt;FixedPage&gt;\r\n               &lt;dg:DataGrid Name=<span style=\"color:#A31515\">&quot;dataGrid&quot;</span> ... /&gt;\r\n          &lt;/FixedPage&gt;\r\n     &lt;/PageContent&gt;\r\n&lt;/FixedDocument&gt;\r\nas</pre>\r\n</div>\r\n<p>Everything works OK, except DataGridColumnHeader is always the same (style is not implemented).<br>I tried with control template too, but without success.<br>How to change DataGridColumnHeader style on FixedDocument page?</p>\r\n<p>Thanks for help in advance!</p>",
+    "PostedDate": "2009-08-15T12:57:12.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223908",
+    "ThreadId": "65816",
+    "Html": "<p>I have already found out what is wrong.</p>\r\n<p>Style has to be implemented in Grid resources, not in window resources.</p>",
+    "PostedDate": "2009-08-15T13:34:24.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

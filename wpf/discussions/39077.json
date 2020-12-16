@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "129618",
+    "ThreadId": "39077",
+    "Html": "Hello,<br>\r\n<br>\r\nIs it possible to handle exceptions that arise from data tables using data grid validation?<br>\r\n<br>\r\nFor example, consider a data table with a single column titled &quot;ID&quot;. This column is the table's primary key.<br>\r\nSo whenever I add a new row with a null or previously used ID, an exception will arise.<br>\r\n<br>\r\nSample Code:<br>\r\n<br>\r\n&lt;dg:DataGrid x:Name=&quot;dataGrid&quot; AutoGenerateColumns=&quot;False&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding Source={StaticResource Table}}&quot; ColumnWidth=&quot;*&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn Header=&quot;ID&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn.Binding&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Binding Path=&quot;ID&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Binding&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTextColumn.Binding&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTextColumn&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;<br>\r\n&nbsp;<br>\r\n<br>\r\nHow can I handle such cases and display a useful message to the user?<br>\r\n<br>\r\nThank you.\r\n",
+    "PostedDate": "2008-11-03T04:18:36.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129642",
+    "ThreadId": "39077",
+    "Html": "You should look into using ExceptionValidationRule.  This is a pre-built validation rule that tells WPF to report all exceptions.  \r\n",
+    "PostedDate": "2008-11-03T05:34:33.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129648",
+    "ThreadId": "39077",
+    "Html": "Thank you for your quick reply.<br>\r\n<br>\r\nI tried a lot of different things with validation rules and unfortunately I was not able to solve the problem. Can you please tell me what I exactly have to add.<br>\r\n<br>\r\nI tried something like this:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Binding Path=&quot;ID&quot; ValidatesOnExceptions=&quot;True&quot; NotifyOnValidationError=&quot;True&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Binding.ValidationRules&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ExceptionValidationRule&gt;&lt;/ExceptionValidationRule&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Binding.ValidationRules&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Binding&gt;<br>\r\n<br>\r\nHowever, I still get the System.Data.ConstraintException&nbsp; {&quot;Column 'Name' is constrained to be unique.&nbsp; Value 'Name1' is already present.&quot;} thrown.<br>\r\nAlso note that I did not add any custom error/validation templates. For now, I just want to suppress the exception.<br>\r\n<br>\r\nWhen I tried adding a DataGridTemplateColumn and doing validation on a TextBox in the CellEditingTemplate, the exception was successfully suppressed (using similar code as above). So my question is, why isn't it working with the DataGridTextColumn?<br>\r\n<br>\r\nAttached below is the full code for the window's xaml and code behind classes:<br>\r\n<br>\r\nXAML:<br>\r\n------------------------------------------------------------------------------------------<br>\r\n&lt;Window x:Class=&quot;WPF_Test.Window3&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:dg=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;<br>\r\n&nbsp;&nbsp;&nbsp; Title=&quot;Window3&quot; Height=&quot;300&quot; Width=&quot;500&quot;&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Window.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ObjectDataProvider x:Key=&quot;Table&quot;&gt;&lt;/ObjectDataProvider&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Window.Resources&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid x:Name=&quot;dataGrid&quot; AutoGenerateColumns=&quot;False&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ItemsSource=&quot;{Binding Source={StaticResource Table}}&quot; ColumnWidth=&quot;*&quot;&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid.Columns&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn Header=&quot;Name&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn.Binding&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Binding Path=&quot;Name&quot; ValidatesOnExceptions=&quot;True&quot; NotifyOnValidationError=&quot;True&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Binding.ValidationRules&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ExceptionValidationRule&gt;&lt;/ExceptionValidationRule&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Binding.ValidationRules&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Binding&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTextColumn.Binding&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTextColumn&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n&lt;/Window&gt;<br>\r\n-----------------------------------------------------------------------------------<br>\r\n<br>\r\nCode Behind:<br>\r\n----------------------------------------------------------------------------------<br>\r\n<br>\r\nnamespace WPF_Test<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;<br>\r\n&nbsp;&nbsp;&nbsp; /// Interaction logic for Window3.xaml<br>\r\n&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;<br>\r\n&nbsp;&nbsp;&nbsp; public partial class Window3 : Window<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public DataTable Table { get; set; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public Window3 ()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InitializeComponent();<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjectDataProvider tableResource = (ObjectDataProvider) FindResource(&quot;Table&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tableResource.ObjectInstance = new DataTable(&quot;Table&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Table = (DataTable) tableResource.ObjectInstance;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataColumn column1 = new DataColumn(&quot;Name&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column1.Caption = &quot;Name&quot;;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column1.DataType = System.Type.GetType(&quot;System.String&quot;);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Table.Columns.Add(column1);<br>\r\n<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataColumn[] primaryKey = new DataColumn[1];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; primaryKey[0] = Table.Columns[0];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Table.PrimaryKey = primaryKey;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n}<br>\r\n<br>\r\n---------------------------------------------------------------------------------- \r\n",
+    "PostedDate": "2008-11-03T05:55:39.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130296",
+    "ThreadId": "39077",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'calibri','sans-serif'\">After further investigation, this is a bug in the data binding system as it does not catch exceptions when they are thrown from IEditableObject.EndEdit.  The bug has been filed and will be addressed in the next release.  A possible workaround is to create a custom ValidationRule for the BindingGroup and try to update the source there but catch exceptions yourself.  Sorry for the inconvenience.</span></p>\r\n",
+    "PostedDate": "2008-11-05T11:45:11.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132551",
+    "ThreadId": "39077",
+    "Html": "Ziad,<br>\r\n<br>\r\nYou might be interested in a work-around that I have created for this problem which you will find in this article:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx<br>\r\n<br>\r\nBasically, the DataTable constraints are checked when the row/cells are validated. This ensures that when the modified row is committed to the DataTable, constraint violation exceptions do not occur.<br>\r\n<br>\r\nColin E.<br>\r\n<br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-11-14T04:03:56.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132558",
+    "ThreadId": "39077",
+    "Html": "Thank you for your reply. I'll will review your code when I have free time. For now, I was able to solve the problem by adding custom validation rules. But this becomes a pain when validating unique constraints since I have to query for duplicates myself.<br>\r\n",
+    "PostedDate": "2008-11-14T04:24:44.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189609",
+    "ThreadId": "39077",
+    "Html": "<p>Hi vinsibal,</p>\r\n<p>Can you confirm if this bug was fixed in the march 2009 release? I think i'm experiencing the same issue as the original poster but i'm using the latest version of wpf toolkit.</p>\r\n<p>Oskar H</p>",
+    "PostedDate": "2009-05-13T00:06:31.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213814",
+    "ThreadId": "39077",
+    "Html": "<p>Parts of that project don't work anymore.&nbsp; Is this datagrid dead already ????</p>",
+    "PostedDate": "2009-07-20T07:41:11.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237045",
+    "ThreadId": "39077",
+    "Html": "<p>Please, can someone confirm that this bug has been fixed in the latest release? And what's the issue number in the tracker?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-09-21T14:02:14.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427741",
+    "ThreadId": "39077",
+    "Html": "<p>Hi Vincent,</p>\r\n<p>-I have class CustomItem:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> <span style=\"color:Blue\">class</span> <strong>CustomItem</strong>: IEditableObject, INotifyPropertyChanged, IDataErrorInfo<br></pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>-I bind DataGrid with <strong>col </strong>that is ObservableCollection&lt;CustomItem&gt;</p>\r\n<p>-<strong>col </strong>has CollectionChanged handler:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><strong>col</strong>.CollectionChanged += <span style=\"color:Blue\">new</span> NotifyCollectionChangedEventHandler(CustomItemsCollectionChanged);<br></pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>-handler:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre> <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">void</span> CustomItemCollectionChanged(<span style=\"color:Blue\">object</span> sender, NotifyCollectionChangedEventArgs e)<br>        {<br>            <span style=\"color:Blue\">if</span> (e.Action == NotifyCollectionChangedAction.Remove)<br>            {<br>                <span style=\"color:Blue\">foreach</span> (<span style=\"color:Blue\">object</span> item <span style=\"color:Blue\">in</span> e.OldItems)<br>                {<br>                    CustomItem itemToDelete = item <span style=\"color:Blue\">as</span> CustomItem;<br>                    <span style=\"color:Green\">// use the data access layer to delete the wrapped data object</span><br>                    <span style=\"color:Blue\">try</span><br>                    {<br>                        customItemService.DeleteCustomItem(itemToDelete.Id);<br>                    }<br>                    <span style=\"color:Blue\">catch</span> (Exception exp)<br>                    {                        <br>                        <span style=\"color:Green\">//this Exception throw in cycle, i don't able catch exception in IEditableObject.EndEdit in my CustomItem Class =  i don't able cancel Remove/Delete operation in DataGrid</span><br>                        <span style=\"color:Blue\">throw</span> <span style=\"color:Blue\">new</span> Exception(<span style=\"color:#A31515\">&quot;Exception from CustomItemCollectionChanged&quot;</span>);<br>                        <br>                    }<br>                    <br>                }<br>            }<br>}<br><br>My question is:<br><strong>How can i cancel Remove/Delete operation in DataGrid in my scenario?</strong><br><strong>Colin Eberhardt</strong> say that is a bug(<span style=\"color:green\">throw in cycle</span>)(end of <a href=\"http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#layered_updates\">Handling Updates / Inserts</a> section (http://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#layered_updates))<br>Thank you for your reply.<br><br>Martin.</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-06T00:58:51.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

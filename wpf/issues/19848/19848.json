@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have the Feb., 2010 release of WPF Toolkit, being used in VS2010.  I can create a line chart in XAML, with one or more LineSeries, and bind it/them to Observable Collection(s), just fine.  What I CAN'T do is add a LineSeries dynamically in code-behind. The moment I try to instantiate a LineSeries object, I get an error saying that a file can't be found.  If I execute this statement:\n```\nDim mySeries As New System.Windows.Controls.DataVisualization.Charting.LineSeries\n```\nI get this message:\n```\nLocating source for 'C:\\dd\\WPF_1\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataVisualization\\Charting\\Series\\LineSeries.cs'. Checksum: MD5 {1b c6 9c 8d 23 3b 86 df 36 1f c1 94 a2 a3 79 66}\nThe file 'C:\\dd\\WPF_1\\src\\wpf\\src\\ControlsPack\\WPFToolkit\\DataVisualization\\Charting\\Series\\LineSeries.cs' does not exist.\n\n```\nI tried uninstalling and re-installing the WPF Toolkit, to no avail.  This is a show-stopper, as my application must be able to read data and add new LineSeries objects dynamically.  The data being charted is not known at design-time.\n\nHas anybody else had this issue?  Any ideas of a fix?  Thanks...",
+    "LastUpdatedDate": "2013-06-14T09:15:13.06-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2013-06-13T09:41:05.89-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't Add LineSeries From Code",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19848
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I notice that when I located the above file by Googling, then saved it on my system under where my WPF Toolkit is installed, I could browse to the file when my application error'd out, then select that file and continue.  This lets me add the single line series in code-behind.\r\n\r\nHowever, when I try to add a second line series to the chart, I get a similar error, this time stating that the file \"LineAreaBaseSeries.cs\" is missing.  I guess the first file depends on the second file when adding additional LineSeries.\r\n\r\nI must be missing something here.  Shouldn't the WPF Toolkit supply all of these items when it is installed?  Did I forget to reference something?  I referenced System.Windows.Controls.DataVisualization.Toolkit, then added namespaces in my xaml for DataVisualization and DataVisualization.Charting.\r\n\r\nWhat is missing here?  Can anybody supply proper steps to be able to add LineSeries in code?\nThanks...",
+      "PostedDate": "2013-06-14T09:15:13.06-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

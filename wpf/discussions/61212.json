@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "207580",
+    "ThreadId": "61212",
+    "Html": "<p>\r\n<div>\r\n<div>\r\n<div>\r\n<pre>I want to highlight the rows in a datagrid based on whether a cell in the row (userID) is equal to the current user (codeBehindUser)</pre>\r\n<pre>I don't seem to be able to use a DynamicResource as a DataTrigger Value.</pre>\r\n<pre>I'd be very grateful to know how (if) this can be achieved.</pre>\r\n<pre>e.g:</pre>\r\n<pre><span>public</span> <span>partial</span> <span>class</span> Window1 : Window</pre>\r\n<pre>{\r\n<span>int</span> codeBehindUser=1;\r\n}\r\n</pre>\r\n<pre>           &lt;Style.Triggers&gt;</pre>\r\n<pre>                &lt;DataTrigger Binding=&quot;{Binding Path=userID}&quot; Value=codeBehindUser&gt;</pre>\r\n</div>\r\n</div>\r\n</div>\r\n<div>\r\n<pre>                   &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Red&quot;&gt;&lt;/Setter&gt;</pre>\r\n<pre>                &lt;/DataTrigger&gt;</pre>\r\n<pre>            &lt;/Style.Triggers&gt;</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2009-07-01T08:27:43.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208166",
+    "ThreadId": "61212",
+    "Html": "<p>Not a pro myself but maybe you could do something like:</p>\r\n<p>add a field to the dataset or whatever you are using as the Items Source for the grid.</p>\r\n<p>Store the highlight value in the field.</p>\r\n<p>Bind the field to the highlight property of the rows - whether the color you want to use or whatever you are using to highlight the row.</p>\r\n<p>E.g. in the XAML above where you have Value=Red, instead of Red, you can bind that value to the field in your data source.&nbsp;</p>\r\n<p>Then when the field changes, the foreground color will change too.</p>\r\n<p>Hope this helps.</p>",
+    "PostedDate": "2009-07-02T18:40:28.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

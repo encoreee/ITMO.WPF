@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "262750",
+    "ThreadId": "76845",
+    "Html": "<p>Hi all,</p>\r\n<p>I am trying to creating a custom Ribbon control (a RibbonRepeatButton), with a template based upon the standard RibbonButton's template.</p>\r\n<p>The new control generally works, except that I have had to remove a lot of&nbsp;the Triggers from the control template, meaning that the button does not change as required (i.e. in the same way as a RibbonButton) when pressed or hovered over.</p>\r\n<p>I had to remove the triggers due to several lines such as the following:</p>\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{DynamicResource {x:Static RibbonButtonIsPressedBackgroundBrushKey}}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Background</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{DynamicResource {x:Static RibbonButtonIsPressedBorderBrushKey}}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">BorderBrush</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{DynamicResource {x:Static RibbonButtonIsPressedInnerBorderBrushKey}}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">TargetName</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">innerBorder</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">BorderBrush</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n<p>Because when attemping to build I get errors like this:</p>\r\n<p><em>'RibbonButtonIsPressedBackgroundBrushKey' member is not valid because it does not have a qualifying type name.</em></p>\r\n<p>Any ideas how to resolve this issue? Thanks in advance.</p>",
+    "PostedDate": "2009-12-02T07:06:45.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262770",
+    "ThreadId": "76845",
+    "Html": "<p>Crisis over, found them. Although if anybody knows a better way of using them than copy-pasting them from the themes/generic.baml file...</p>",
+    "PostedDate": "2009-12-02T07:53:02.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

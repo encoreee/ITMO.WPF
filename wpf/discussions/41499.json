@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "137691",
+    "ThreadId": "41499",
+    "Html": "Hi,<br>\r\n<br>\r\nI downloaded vinsibal's excellent datagrid sample.&nbsp; In this sample, if I scroll up and down with arrow keys in the datagridbasicsample, my CPU goes up to 60%.&nbsp; This matches what I am seeing in my own usage of the datagrid that has a couple hundred rows.<br>\r\n<br>\r\nI have an Intel Core 2 Duo E8500 3.16 ghz and 8 gigs of ram.<br>\r\n<br>\r\nAre there any settings I can use on the grid to improve this? Or is this just the performance in V1?<br>\r\n<br>\r\nThank you,<br>\r\nJon<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-04T08:23:14.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139588",
+    "ThreadId": "41499",
+    "Html": "It is really a problem, any one knows?\r\n",
+    "PostedDate": "2008-12-10T23:48:04.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

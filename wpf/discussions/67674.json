@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "230016",
+    "ThreadId": "67674",
+    "Html": "<p>Im looking to get the functionality that all row heights are always uniform.</p>\r\n<p>&nbsp;</p>\r\n<p>So when i adjust a row height, all row heights are adjusted. any ideas?</p>",
+    "PostedDate": "2009-09-01T22:12:04.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230433",
+    "ThreadId": "67674",
+    "Html": "<p>Hi aranm,</p>\r\n<p>There is a DataGrid.RowHeight property that sets the default height for all rows.&nbsp; I'm not sure&nbsp;what way you plan to resize the row heights, but if you want to do it visually by dragging the row header&nbsp;border then you need to set the CanUserResizeRows to true.&nbsp; This should enable&nbsp;row resizing by dragging row header border.</p>\r\n<p>As far as resizing all row heights in a consistent manner, I'm not sure if there's a trivial way of doing this, but someone suggested the following.</p>\r\n<p>For uniform row heights I suggest setting CanUserResizeRows to false and set DataGrid.RowHeight. &nbsp;If user resizing is needed along with uniform row heights, then re-template DataGridRowHeader, have your own drag handlers which affect only DataGrid.RowHeight instead of the local height. ~ V.P.</p>\r\n<p>Hope that helps,<br>Saied Khanahmadi</p>",
+    "PostedDate": "2009-09-02T14:57:47.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

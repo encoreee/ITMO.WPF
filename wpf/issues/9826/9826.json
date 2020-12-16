@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi There,\n \nThere seems to be some problem with ItemsSource of context menus of two when they share a dynamically created composite collection.\n \nIt works when the context menus appear for the first time by right clicking but then the items diappear from either of the shared context menus.\n \nThe XAML below shows the configuration of the datagrid using two ContextMenu StaticResources \n \n.... \n    <Window.Resources>\n       <ContextMenu x:Key=\"GridContextMenu\">\n            <ContextMenu.Resources>\n                <Style TargetType=\"{x:Type MenuItem}\" BasedOn=\"{StaticResource {x:Type MenuItem}}\">\n                    <Style.Triggers>\n                        <!--This trigger is needed, because RelativeSource binding can only succeeds if the current MenuItem is already connected to its visual parent-->\n                        <Trigger Property=\"IsVisible\" Value=\"True\">\n                            <Setter Property=\"HorizontalContentAlignment\" Value=\"{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}\"/>\n                            <Setter Property=\"VerticalContentAlignment\" Value=\"{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}\"/>\n                        </Trigger>\n                    </Style.Triggers>\n                </Style>\n            </ContextMenu.Resources>\n            <ContextMenu.ItemsSource>\n                <CompositeCollection>\n                    <MenuItem Header=\"Test1\"/>\n                    <MenuItem Header=\"Test2\"/>\n                </CompositeCollection>\n            </ContextMenu.ItemsSource>\n        </ContextMenu>\n        <ContextMenu x:Key=\"RowContextMenu\">\n            <ContextMenu.Resources>\n                <Style TargetType=\"{x:Type MenuItem}\" BasedOn=\"{StaticResource {x:Type MenuItem}}\">\n                    <Style.Triggers>\n                        <!--This trigger is needed, because RelativeSource binding can only succeeds if the current MenuItem is already connected to its visual parent-->\n                        <Trigger Property=\"IsVisible\" Value=\"True\">\n                            <Setter Property=\"HorizontalContentAlignment\" Value=\"{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}\"/>\n                            <Setter Property=\"VerticalContentAlignment\" Value=\"{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}\"/>\n                        </Trigger>\n                    </Style.Triggers>\n                </Style>\n            </ContextMenu.Resources>\n            <ContextMenu.ItemsSource>\n                <CompositeCollection>\n                    <MenuItem Header=\"Test3\"/>\n                    <MenuItem Header=\"Test4\"/>\n                </CompositeCollection>\n            </ContextMenu.ItemsSource>\n        </ContextMenu>       \n    </Window.Resources>\n    <Grid>\n        <dg:DataGrid x:Name=\"TestGrid\" SelectionMode=\"Single\" ItemsSource=\"{Binding}\" AutoGenerateColumns=\"False\" ContextMenu=\"{DynamicResource GridContextMenu}\">\n            <dg:DataGrid.CellStyle>\n                <Style TargetType=\"{x:Type dg:DataGridCell}\">\n                    <EventSetter Event=\"PreviewMouseLeftButtonDown\" \n                                 Handler=\"DataGridCell_PreviewMouseLeftButtonDown\" />\n                </Style>\n            </dg:DataGrid.CellStyle>\n            <dg:DataGrid.RowStyle>\n                <Style TargetType=\"{x:Type dg:DataGridRow}\">\n                    <EventSetter Event=\"PreviewMouseLeftButtonDown\" \n                                     Handler=\"DataGridRow_PreviewMouseLeftButtonDown\" />\n                    <Setter Property=\"ContextMenu\" Value=\"{StaticResource RowContextMenu}\"/>\n                </Style>\n            </dg:DataGrid.RowStyle>\n            <dg:DataGrid.Columns>\n                <dg:DataGridTextColumn Header=\"Id\" Binding=\"{Binding Path=Id}\" Width=\"*\" IsReadOnly=\"True\"/>\n                <dg:DataGridTextColumn Header=\"Name\" Binding=\"{Binding Path=Name}\" Width=\"*\" IsReadOnly=\"False\"/>\n                <dg:DataGridTemplateColumn Width=\"*\" Header=\"Name\\Surname\" SortMemberPath=\"Surname\">\n                    <dg:DataGridTemplateColumn.CellTemplate>\n                        <DataTemplate>\n                            <TextBlock Text=\"{Binding Name}\"/>\n                        </DataTemplate>\n                    </dg:DataGridTemplateColumn.CellTemplate>\n                    <dg:DataGridTemplateColumn.CellEditingTemplate>\n                        <DataTemplate>\n                            <TextBlock Text=\"{Binding Surname}\"/>\n                        </DataTemplate>\n                    </dg:DataGridTemplateColumn.CellEditingTemplate>\n                </dg:DataGridTemplateColumn>\n            </dg:DataGrid.Columns>\n        </dg:DataGrid>\n....\n \n \nAnd then code behind shows dynamic composite collection adds items from the grid contextmenu onto its row context menu.\n \nPrivate Sub TestGrid_LoadingRow(ByVal sender As Object, ByVal e As Microsoft.Windows.Controls.DataGridRowEventArgs) Handles TestGrid.LoadingRow\n        If e.Row.ContextMenu Is Nothing Then e.Row.ContextMenu = New ContextMenu\n        If e.Row.ContextMenu.ItemsSource Is Nothing Then e.Row.ContextMenu.ItemsSource = New CompositeCollection\n        If TestGrid.ContextMenu IsNot Nothing And TestGrid.ContextMenu.ItemsSource IsNot Nothing Then\n            For Each item As MenuItem In CType(TestGrid.ContextMenu.ItemsSource, CompositeCollection)\n                If Not CType(e.Row.ContextMenu.ItemsSource, CompositeCollection).Contains(item) Then\n                    CType(e.Row.ContextMenu.ItemsSource, CompositeCollection).Add(item)\n                End If\n            Next\n        End If\n    End Sub",
+    "LastUpdatedDate": "2013-02-21T18:41:20.43-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-22T07:45:45.433-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Composite Collection and Shared ContextMenu Not Working On DataGrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9826
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "134252",
+    "ThreadId": "40471",
+    "Html": "hi there,<br>\r\n<br>\r\nhow do you set the Name-property on a RibbonCommand that is created from a ResourceDictonary as shown in the CheckbookManager sample?<br>\r\nat the moment i am creating the RibbonCommands in code, but i would prefer a XAML markup method.<br>\r\n<br>\r\ntia<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-21T06:47:36.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

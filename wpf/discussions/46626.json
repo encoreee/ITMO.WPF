@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "155795",
+    "ThreadId": "46626",
+    "Html": "Hi there,<br>\r\n<br>\r\nPerhaps I'm doing something stupid, but I cannot get a simple editable DataGridComboBoxColumn to work. Basically, the combo side of things works OK, but once the focus is lost it loses the text. I have tried binding both Text in both the ElementStyle and EditableElementStyle to no avail.<br>\r\n<br>\r\nAre there any samples for this? I can email a small sample that shows the problem if needs be.<br>\r\n<br>\r\nThanks,<br>\r\nKent<br>\r\n",
+    "PostedDate": "2009-02-09T07:23:04.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

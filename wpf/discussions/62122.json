@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "210853",
+    "ThreadId": "62122",
+    "Html": "<p>Hi</p>\r\n<p>I have implemented a datagrid within my program and everything is working fine except when using the mouse wheel to scroll down.</p>\r\n<p>This leads to an OverflowException (&quot;Arithmetic operation resulted in an overflow&quot;) in System.Windows.Interop.HwndMouseInputProvider.FilterMessage</p>\r\n<p>I have got virtualisation switched on (it is a large data set) but there is nothing else I can see that relates to scrolling that I have changed.</p>\r\n<p>I can put the code up if required but I thought I would ask if anyone else has come across a similar problem.</p>\r\n<p>Thanks in advance</p>\r\n<p>Stu</p>",
+    "PostedDate": "2009-07-10T07:54:37.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227515",
+    "ThreadId": "62122",
+    "Html": "<p>I'm getting this issue too!</p>\r\n<p>Did you find a resolution Stu?</p>",
+    "PostedDate": "2009-08-25T08:49:26.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227632",
+    "ThreadId": "62122",
+    "Html": "<p>If you could file an Issue under the Issue Tracker and attach a repro project, that would be really helpful.&nbsp; The exception doesn't look like it's coming from something DataGrid-specific, so we'll need to debug this further.&nbsp; Thanks!</p>",
+    "PostedDate": "2009-08-25T13:26:08.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227826",
+    "ThreadId": "62122",
+    "Html": "<p>Done :)</p>\r\n<p><a href=\"http://wpf.codeplex.com/WorkItem/View.aspx?WorkItemId=10533\">http://wpf.codeplex.com/WorkItem/View.aspx?WorkItemId=10533</a></p>",
+    "PostedDate": "2009-08-26T01:43:18.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227840",
+    "ThreadId": "62122",
+    "Html": "<p>Thanks for posting a project bannistj as I have not had time to do it.&nbsp; I have not found a solution yet and have temporarily switched off the mouse wheel scrolling</p>\r\n<p>Cheers Stu</p>",
+    "PostedDate": "2009-08-26T02:08:48.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

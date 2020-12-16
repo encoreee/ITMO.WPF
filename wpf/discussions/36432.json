@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "120839",
+    "ThreadId": "36432",
+    "Html": "Hello,<br>\r\n<br>\r\nis it possible to wrap long text in a cell? The cell height should be automatically adapted so that the total text is visible?<br>\r\nIs there a way to do that?<br>\r\n<br>\r\nBest regards<br>\r\nMariser<br>\r\n<br>\r\nSorry for my bad english.\r\n",
+    "PostedDate": "2008-09-24T21:51:25.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120950",
+    "ThreadId": "36432",
+    "Html": "Try setting TextWrapping to &quot;Wrap&quot; on the ElementStyle of a DataGridTextColumn.<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&lt;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">Style</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> x</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">:</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\">Key</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;tb_ElementStyle&quot;</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> TargetType</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;TextBlock&quot;&gt;<br>\r\n</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span></span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">Setter</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> Property</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;TextWrapping&quot;</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> Value</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;Wrap&quot; /&gt;<br>\r\n</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&lt;/</span></span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">Style</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>&nbsp;</p>\r\n<p>&lt;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">dg</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">:</span></span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">DataGridTextColumn</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> Width</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;150&quot;</span></span><span style=\"font-size:13px\">&nbsp;</span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\">DataFieldBinding</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span></span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">Binding</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> Path</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=FirstName}&quot;</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\">ElementStyle</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span></span><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">StaticResource</span></span><span style=\"font-size:13px;color:#ff0000\"><span style=\"font-size:13px;color:#ff0000\"> tb_ElementStyle</span></span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">}&quot;/&gt;\r\n<p>&nbsp;</p>\r\n</span></span></p>\r\n</span></span></p>\r\n",
+    "PostedDate": "2008-09-25T07:05:27.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121104",
+    "ThreadId": "36432",
+    "Html": "Many thanks for your help.<br>\r\n<br>\r\nBest regards<br>\r\nMariser\r\n",
+    "PostedDate": "2008-09-26T00:31:57.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

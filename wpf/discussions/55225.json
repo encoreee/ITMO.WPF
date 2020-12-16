@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "186437",
+    "ThreadId": "55225",
+    "Html": "<p>I'm using the DatePicker from the WPF ToolKit with a custom style. In my style, I would like to use a ToggleButton instead of the normal button, but this doesn't work without changing two lines of code in DatePicker.cs.</p>\r\n<p>The field for the DropDownButton is defined as</p>\r\n<p><blockquote>private ButtonBase _dropDownButton;</blockquote></p>\r\n<p>No problem so far. But in the TemplatePart attribute, the button is not defined as ButtonBase, but as Button instead:</p>\r\n<p><blockquote>[TemplatePart(Name = DatePicker.ElementButton, Type = typeof(<strong>Button</strong>))]</blockquote></p>\r\n<p>Also, in the OnApplyTemplate method, the button is also defined as Button:</p>\r\n<p><blockquote>_dropDownButton = GetTemplateChild(ElementButton) as <strong>Button</strong>;</blockquote></p>\r\n<p>By changing those two lines to ButtonBase, it's also working with a ToggleButton.</p>\r\n<p>Maybe you can change that in future releases?</p>\r\n",
+    "PostedDate": "2009-05-04T01:06:20.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

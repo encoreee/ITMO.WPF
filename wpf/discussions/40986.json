@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "135976",
+    "ThreadId": "40986",
+    "Html": "I'm setting a calendar's SelectedDate programatically.<br>\r\n<br>\r\nThe annoying thing is, the SelectedDatedoes change, but not the &quot;page/month it's displaying&quot;.<br>\r\nSay I selected &quot;11th November 2008&quot;, then I programatically set the SelectedDate to &quot;1t January 2006&quot;, the SelectedDate does change but the calendar still shows &quot;November 2008&quot;.<br>\r\nHow could I change the month displayed by the calendar?\r\n",
+    "PostedDate": "2008-11-27T18:03:36.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136698",
+    "ThreadId": "40986",
+    "Html": "I think DisplayDate is the property you're looking for.<br>\r\n",
+    "PostedDate": "2008-12-01T11:37:45.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153456",
+    "ThreadId": "40986",
+    "Html": "I’m having same problem, but I was able to do it by setting both properties (is that valid) :<br>\r\n<span style=\"font-size:13px\">\r\n<p>cal.DisplayDate = </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Today;\r\n<p>&nbsp;</p>\r\n<p>cal.SelectedDate = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Today;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-02-02T12:32:35.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153483",
+    "ThreadId": "40986",
+    "Html": "Ho goodie, thanks for the tip!\r\n",
+    "PostedDate": "2009-02-02T13:44:26.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153525",
+    "ThreadId": "40986",
+    "Html": "BaderMahayni, sure that is valid. DisplayDate and SelectedDate are treated differently to allow one to have a date selected while browsing other dates.<br>\r\n<br>\r\n-Eric Fabricant, MSFT<br>\r\n",
+    "PostedDate": "2009-02-02T15:08:38.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

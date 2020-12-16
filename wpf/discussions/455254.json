@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1087627",
+    "ThreadId": "455254",
+    "Html": "Hello,\r<br />\nI've seen this come up several times but the solutions do not seem to work for .Net 4.5 with Visual Studi 2012.\r<br />\n<br />\nI have a data grid with a template column.  In each cell is a stack panel that contains a check box or a textbox.\r<br />\n<br />\nIs there any way to get the check box checked (or unchecked) once the user clicks or focuses on a particular cell?  i.e. instead of having to click twice, for the check box to be toggled on one click?\r<br />\n<br />\nSimilarly, once the cell with the textbox is clicked the user should be able to start typing.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-09-03T04:25:12.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "190509",
+    "ThreadId": "56383",
+    "Html": "<p>Greetings,</p>\r\n<p>First of all I'd like to apologize about&nbsp;my question&nbsp;since it's probably LINQ related and not DataGrid related directly but...</p>\r\n<p>When I bind a LINQ query directly to the WPF DataGrid in a way that:</p>\r\n<p>var query = from customer in dataContext.Customers orderby customer.Name select customer;<br>wpfDataGrid.ItemsSource = query;</p>\r\n<p>&nbsp;</p>\r\n<p>then when I insert a new row or delete an existing row, LINQ to SQL DataContext -i.e. the dataContext object in the query above- can track the insert/update operation.<br>But when I bind the same query by getting a generic list out of it in a way that:<br><br>var query = from customer in dataContext.Customers orderby customer.Name select customer;<br>wpfDataGrid.ItemsSource = query.ToList();<br><br>then inserting a row to or deleting a row from the WPF DataGrid does not seem to notify the DataContext at hand and ChangeSet is empty.</p>\r\n<p>Can anyone please explain the reason behind this? Since things seem to get interesting ,whether you bind a LINQ DataQuery or a generic List, DataContext can always track update changes, or so it seems.</p>\r\n<p>Is it related to the INotifyPropertyChanging/INotifyPropertyChanged&nbsp; interfaces implemented in the entity classes -e.g. Customer in the example above- or DataContext can keep track of changes for direct queries -i.e. DataQuery-&nbsp;and stops change tracking for converted/casted results such as generic lists. And if so, why can it still keep tracking changes on generic lists for updates but not for insert/delete operations?</p>\r\n<p>Thanks in advance.</p>",
+    "PostedDate": "2009-05-14T18:31:02.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190570",
+    "ThreadId": "56383",
+    "Html": "<p>This has come up before, and I believe the answer was that in the first case, you are binding to the query instance (which IIRC implements IEnumerable, or something to that effect at least), but in the second case, you are binding to the RESULTS of the query (converted to a List). That's a pretty big difference, and would explain the exact behavior you are seeing, since updates only modify existing items, but adding or deleting items modifies the collection itself (which in the second case only exists in wpfDataGrid.ItemsSource as you do nothing else with ToList()'s result).</p>\r\n<p>If you need the results of the query as a List for some specific reason, you could always try assigning the result of query.ToList() to an intermediate, appropriately scoped variable, and then playing with that variable. That should get you your desired behavior.</p>",
+    "PostedDate": "2009-05-14T23:25:26.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

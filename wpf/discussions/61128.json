@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "207266",
+    "ThreadId": "61128",
+    "Html": "<p>More lovely features on the WPF Charting tool - when you hover over a pie slice (or bar), a popup shows the value and percentage.&nbsp; How can you make changes to this popup to show additional or different information?</p>\r\n<p>Also, if I may ask a second question - how to get the bars of a bar chart to be different colors?</p>\r\n<p>Thanks in advance.</p>",
+    "PostedDate": "2009-06-30T14:52:20.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207305",
+    "ThreadId": "61128",
+    "Html": "<p>Thanks! I answer the first question here:</p>\r\n<p><a href=\"http://blogs.msdn.com/delay/archive/2009/05/19/chart-tweaking-made-easy-how-to-make-four-simple-color-tooltip-changes-with-silverlight-wpf-charting.aspx\">http://blogs.msdn.com/delay/archive/2009/05/19/chart-tweaking-made-easy-how-to-make-four-simple-color-tooltip-changes-with-silverlight-wpf-charting.aspx</a></p>\r\n<p>And the second here:</p>\r\n<p><a href=\"http://blogs.msdn.com/delay/archive/2009/02/04/columns-of-a-different-color-customizing-the-appearance-of-silverlight-charts-with-re-templating-and-mvvm.aspx\">http://blogs.msdn.com/delay/archive/2009/02/04/columns-of-a-different-color-customizing-the-appearance-of-silverlight-charts-with-re-templating-and-mvvm.aspx</a></p>\r\n<p>Hope this helps!</p>",
+    "PostedDate": "2009-06-30T16:25:51.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207342",
+    "ThreadId": "61128",
+    "Html": "<p>oooh lovely.&nbsp; thanks so much.</p>",
+    "PostedDate": "2009-06-30T19:23:35.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

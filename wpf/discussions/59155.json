@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "200290",
+    "ThreadId": "59155",
+    "Html": "<p>Hi all,</p>\r\n<p>We have a datagrid template column, it's a text box. Just like to discuss a easy way to fulfil: when key in arrow down, the focus will jump into the text box in next cell right below the current one.</p>\r\n<p>Thanks for any advices</p>\r\n<p>Henry</p>",
+    "PostedDate": "2009-06-10T23:29:50.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200373",
+    "ThreadId": "59155",
+    "Html": "<p>I did this exact thing, but with DataGridTextColumn. Since I was already implementing my own derived version of the class to add some other non-standard functionality, in that class I added an override for GenerateEditingElement() and in there, hooked up the TextBox's PreviewKeyDown to an event handler. What that function does, in turn, is basically to check the generated editing element's AcceptsReturn property (to guard against that possibility), then if the key pressed is the up or down arrow, commits the current edit, sets DataGridOwner.CurrentItem and DataGridOwner.CurrentColumn appropriately (hint: Items, Items.IndexOf() and CurrentItem are your best friends there) and calls BeginEdit() to re-enter edit mode on the new row. At the end, call UnselectAllCells() so that it doesn't leave a lingering selection behind. Works like a charm.</p>\r\n<p>The exact solution probably doesn't apply directly to DataGridTemplateColumn, but maybe you can use a similar approach.</p>",
+    "PostedDate": "2009-06-11T05:16:39.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

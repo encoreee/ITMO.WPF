@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "433169",
+    "ThreadId": "209903",
+    "Html": "<p>I am relatively new to MVVM.&nbsp; I want to create a WPF app with a ribbon and a tabbed window area.&nbsp; The ribbon needs to have contextual tabs based on certain things like the active tab view and what is currently selected in the view.&nbsp; So this is what I have:</p>\r\n<p>MainWindowView: the main window that contains the ribbon and a tab window area.&nbsp; The buttons in the ribbon are tied to the view model's commands.&nbsp;&nbsp;I will be following the help from the discussion &quot;Using Ribbon with MVVM&quot; to make sure MVVM is followed.</p>\r\n<p>MainWindowViewModel: contains commands.</p>\r\n<p>One of the commands opens a screen for &quot;Customer&quot;.&nbsp; So I would have a CustomerView and a CustomerViewModel.&nbsp; The CustomerView should have its own Contextual tab because certains commands only apply to the CustomerViewModel.</p>\r\n<p>Another command could open a different View and ViewModel and have its own contextual tab.</p>\r\n<p>Does anyone have any ideas on how to do this and still maintain MVVM?</p>",
+    "PostedDate": "2010-04-20T06:28:46.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

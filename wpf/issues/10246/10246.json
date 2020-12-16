@@ -1,0 +1,145 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Select a DataGridTextColumn cell and press the ESC or Backspace key. Then the cell enters the edit mode and shows an unrecognized character ('[]') in the TextBox.\n \nHowever, the behavior should be similar to Microsoft Excel.\n1) ESC doesn't do anything when the cell is not in edit mode.\n2) The Backspace key should delete the content of the cell and it should enter the edit mode.",
+    "LastUpdatedDate": "2013-02-21T18:41:07.917-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-02T07:05:30.6-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: The ESC and Backspace key produces an unrecognized character",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 11,
+    "Id": 10246
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Code to reproduce the issue:\r\n  \r\n<wpf:DataGrid ItemsSource=\"{Binding Persons}\" SelectedItem=\"{Binding SelectedPerson}\" AutoGenerateColumns=\"False\" CanUserAddRows=\"False\">\r\n    <wpf:DataGrid.Columns>\r\n        <wpf:DataGridTextColumn Header=\"First Name\" Binding=\"{Binding Firstname}\"/>\r\n        <wpf:DataGridTextColumn Header=\"Last Name\" Binding=\"{Binding Lastname}\"/>\r\n        <wpf:DataGridTextColumn Header=\"Age\" Binding=\"{Binding Age}\"/>\r\n    </wpf:DataGrid.Columns>\r\n</wpf:DataGrid>\r\n  \r\n  \r\nI'm using the WPF Toolkit June 2009 release.\r\n ",
+      "PostedDate": "2009-07-02T07:08:36.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have the same problem.",
+      "PostedDate": "2009-07-06T18:19:15.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-06T18:19:34.827-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We agree that this is a bug in June toolkit and we have it logged in our internal database.",
+      "PostedDate": "2009-07-07T13:11:34.997-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-07T13:29:55.963-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-07T13:50:10.933-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-18T18:36:59.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Code i use to fix the issue, although it does involving deriving from the grid:\r\n\r\n   public class DerivedDataGrid : DataGrid {\r\n\r\n      protected override void OnKeyDown(System.Windows.Input.KeyEventArgs e) {\r\n\r\n         switch (e.Key) {\r\n            case System.Windows.Input.Key.Escape:\r\n\r\n               if (Items == null) { }\r\n               else {\r\n                  IEditableCollectionView collectionView = Items as IEditableCollectionView;\r\n                  if (collectionView == null) { }\r\n                  //if we are in cell edit mode do nothing\r\n                  else if (collectionView.IsEditingItem && collectionView.CurrentEditItem == this.CurrentCell.Item) { }\r\n                  else {\r\n                     //otherwise we are not editing, mark the event as handled so it does no damage\r\n                     e.Handled = true;\r\n                  }\r\n\r\n               }\r\n               break;\r\n         }\r\n         //pass other massages to the base\r\n         if (e.Handled == false) {\r\n            base.OnKeyDown(e);\r\n         }\r\n      }\r\n   }\r\n",
+      "PostedDate": "2009-08-20T17:52:07.247-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "the escape issue that is, to fix the backspace one i derive from DataGridTextColumn and change the start of the method as so\r\n\r\n      protected override object PrepareCellForEdit(FrameworkElement editingElement, RoutedEventArgs editingEventArgs) {\r\n         TextBox textBox = editingElement as TextBox;\r\n         if (textBox != null) {\r\n            string originalValue = textBox.Text;\r\n\r\n            TextCompositionEventArgs textArgs = editingEventArgs as TextCompositionEventArgs;\r\n            if (textArgs != null) {\r\n               string inputText = String.Empty;\r\n               // If text input started the edit, then replace the text with what was typed, unless it was the backspace key (then just replace it with String.Empty\r\n               if (textArgs.Text == \"\\b\") {\r\n                  //backspace was pressed\r\n               }\r\n               else {\r\n                  inputText = textArgs.Text;\r\n               }\r\n               textBox.Text = inputText;\r\n\r\netc....",
+      "PostedDate": "2009-08-20T17:56:14.527-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-02T08:48:44.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-09T06:12:50.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-03T18:57:25.927-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have the same problem.~~\r\nPlease fix it.\r\nThanks!",
+      "PostedDate": "2009-11-03T18:58:59.587-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-12T06:15:06.267-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please fix this.\r\nThanks!",
+      "PostedDate": "2009-12-12T06:17:50.36-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The bug involving the backspace key is still not fixed in the .net 4.0 datagrid.  This is absolutely unacceptable.  This bug should have been fixed before the datagrid was released as part of .net 4.0.  Now that .net 4.0 has been out for almost a year, it seems unlikely this problem will be fixed before the next major release of .net.",
+      "PostedDate": "2011-01-31T11:22:55.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-31T11:23:34.323-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-12-30T04:46:43.47-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It looks strange to me... why it's still Unassigned?..",
+      "PostedDate": "2011-12-30T04:54:44.153-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-22T15:06:55.913-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:07.917-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

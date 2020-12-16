@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you set a column header to a text block (rather than a string), and you set the visiblity of the column to collapsed, then later set the visibility back to Visible grid gives an invalid operation exception \"Specified element is already the logical child of another element. Disconnect it first.\" Below is complete code for a program to demonstrate. Run the program, click the three buttons in order.\n \n<Window x:Class=\"WpfApplication1.MainWindow\"\n        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n        Title=\"MainWindow\" Height=\"350\" Width=\"525\">\n    <Grid>\n\t\t<Grid.RowDefinitions>\n\t\t\t<RowDefinition Height=\"*\"/>\n\t\t\t<RowDefinition Height=\"Auto\"/>\n \n\t\t</Grid.RowDefinitions>\n\t\t<DataGrid AutoGenerateColumns=\"True\" Name=\"dataGrid1\" ItemsSource=\"{Binding}\"/>\n\t\t<StackPanel Grid.Row=\"1\" Orientation=\"Horizontal\">\n\t\t\t<Button Click=\"SetTextBlocks_Click\">Set Headers to TextBlocks</Button>\n\t\t\t<Button Click=\"Hide_Click\">Hide Weight Column</Button>\n\t\t\t<Button Click=\"Show_Click\">Show Weight Column</Button>\n\t\t</StackPanel>\n\t</Grid>\n</Window>\n \nCode Behind:\n \nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Collections.ObjectModel;\n \nnamespace WpfApplication1\n{\n\t/// <summary>\n\t/// Interaction logic for MainWindow.xaml\n\t/// </summary>\n\tpublic partial class MainWindow : Window\n\t{\n\t\tpublic MainWindow()\n\t\t{\n \n\t\t\tInitializeComponent();\n \n\t\t\tObservableCollection<Item>  Items = new ObservableCollection<Item>();\n\t\t\tItems.Add(new Item(1, \"John\", 200));\n\t\t\tItems.Add(new Item(2, \"Mary\", 100));\n\t\t\tItems.Add(new Item(3, \"Jane\", 150));\n\t\t\tDataContext = Items;\n \n \n\t\t}\n \n\t\tpublic class Item\n\t\t{\n\t\t\tpublic int ID { get; private set; }\n\t\t\tpublic string Name { get; private set; }\n\t\t\tpublic double Weight { get; private set; }\n \n\t\t\tpublic Item(int id, string name, double weight)\n\t\t\t{\n\t\t\t\tID = id;\n\t\t\t\tName = name;\n\t\t\t\tWeight = weight;\n\t\t\t}\n\t\t}\n \n\t\tprivate void Hide_Click(object sender, RoutedEventArgs e)\n\t\t{\n\t\t\tdataGrid1.Columns[2].Visibility = System.Windows.Visibility.Collapsed;\n\t\t}\n \n\t\tprivate void Show_Click(object sender, RoutedEventArgs e)\n\t\t{\n\t\t\tdataGrid1.Columns[2].Visibility = System.Windows.Visibility.Visible;\n\t\t}\n \n\t\tprivate void SetTextBlocks_Click(object sender, RoutedEventArgs e)\n\t\t{\n\t\t\tTextBlock temp = new TextBlock();\n\t\t\ttemp.Text = \"ID X\";\n\t\t\tdataGrid1.Columns[0].Header = temp;\n \n\t\t\ttemp = new TextBlock();\n\t\t\ttemp.Text = \"Name X\";\n\t\t\tdataGrid1.Columns[1].Header = temp;\n \n\t\t\ttemp = new TextBlock();\n\t\t\ttemp.Text = \"Weight X\";\n\t\t\tdataGrid1.Columns[2].Header = temp;\n\t\t}\n\t}\n}",
+    "LastUpdatedDate": "2013-02-21T18:40:29.21-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-06-21T16:05:53.26-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Hiding and Showing a column with a TextBlock as the header causes exception",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13589
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "219776",
+    "ThreadId": "64571",
+    "Html": "<p>I have a ListBox whos datasource is an ObservableCollection of 10 integers (trying to keep example simple - will probably collections of other things later). I've tried to size the ListBox to be only one entry high. I need functionality like one of those old mechanical radios, where you move a thumbwheel to select a single value, where the value you can see&nbsp;is the selected value.</p>\r\n<p>I start with the following to make the first item the selected item:</p>\r\n<p>myListBox.SelectedItem = 0;</p>\r\n<p>When the user clicks the previous or next button, I need to make the previous or next item the only visible item, and also make it the SelectedItem.</p>\r\n<p>I'm also curious as to why I can't figure out what the event handler would be for the up/down (previous/next) arrows.</p>\r\n<p>Any suggestions are greatly appreciated.</p>\r\n<p>Thanks,<br>Randy</p>",
+    "PostedDate": "2009-08-05T08:14:29.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

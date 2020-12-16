@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "489979",
+    "ThreadId": "226280",
+    "Html": "<p>I have created a chart using the Ms toolkit, vs2010.</p>\r\n<p>So far I have created a chart that is bound to an observable collection of objects containing 2 doubles for x and y.</p>\r\n<p>I would like to know how the datapoints are referenced, that is I can delete the last datapoint by using</p>\r\n<p><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\">\r\n<p>Data.Remove(Data[i - 1]);</p>\r\n<p>How would I go about removing the 3rd datapoint in a collection by clicking on it.</p>\r\n<p>So I can mouse over the datapoint and show a tooltip of x and y but can I show the ref of the collection or the actual datapoint?</p>\r\n</span></span></p>",
+    "PostedDate": "2010-09-07T02:05:45.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

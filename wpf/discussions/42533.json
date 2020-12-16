@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "141387",
+    "ThreadId": "42533",
+    "Html": "I want to know if there's a way to be able to lock the datagrid on the current selected row.<br>\r\n<br>\r\nI want to be able to move from  cell to cell within that locked row.<br>\r\n<br>\r\nSo when the user select a row in the datagrid and click edit, i want the row to lock. So the user will be able to move from cell to cell to edit the informations but he wont be able to select another row unless he click save (which unlock the row)<br>\r\n<br>\r\nI wish there was some event like SelectionChanging that way i could do some validations and cancel the event if needed, but we only have SelectionChanged...<br>\r\n<br>\r\nAny way to do this? <br>\r\n<br>\r\nThanks\r\n",
+    "PostedDate": "2008-12-17T10:38:52.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141523",
+    "ThreadId": "42533",
+    "Html": "This would be a great feature. I don't like the behavior of commiting the row when it loses focus. The default behavior must be cancel, or better there must be an option to specify behavior.",
+    "PostedDate": "2008-12-18T00:05:16.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141619",
+    "ThreadId": "42533",
+    "Html": "I just wrote a sample for this here, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/12/18/wpf-datagrid-sample-locking-input-to-the-row-being-edited.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/12/18/wpf-datagrid-sample-locking-input-to-the-row-being-edited.aspx</a>.  Hope that helps.\r\n",
+    "PostedDate": "2008-12-18T08:57:12.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141883",
+    "ThreadId": "42533",
+    "Html": "Nice... <br>\r\n<br>\r\neven thought that your code is not exactly what i needed, you did point me at the right direction.<br>\r\n<br>\r\nI also think that my solution support what you're trying to do. (well in my case it does)<br>\r\n<br>\r\nHere's my new DataGridTools that i've created to make it work for my solution:<br>\r\nso if you pass to this method the datagrid you want to study and the object that you're trying to edit (in my case it's an object but it can be change to an index instead)<br>\r\n<br>\r\nThanks vinsibal for your help, greatly appreciated!<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>Imports </p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\">Microsoft.Windows.Controls\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>Public </p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Class</span><span style=\"font-size:13px\"> DataGridTools\r\n<p>&nbsp;</p>\r\n<p>     </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Public</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Shared</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Sub</span><span style=\"font-size:13px\"> DisableUnEditedRows(</span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> dataGrid </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> DataGrid, </span><span style=\"font-size:13px;color:#0000ff\">ByVal</span><span style=\"font-size:13px\"> editedObject </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Object</span><span style=\"font-size:13px\">)\r\n<p>&nbsp;</p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</blockquote></span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p><span style=\"font-size:13px;color:#0000ff\">For</span><span style=\"font-size:13px\"> i </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">Integer</span><span style=\"font-size:13px\"> = 0 </span><span style=\"font-size:13px;color:#0000ff\">To</span><span style=\"font-size:13px\"> dataGrid.Items.Count - 1\r\n<p>&nbsp;</p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</blockquote></span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p><span style=\"font-size:13px;color:#0000ff\">Dim</span><span style=\"font-size:13px\"> row = </span><span style=\"font-size:13px;color:#0000ff\">CType</span><span style=\"font-size:13px\">(dataGrid.ItemContainerGenerator.ContainerFromIndex(i), DataGridRow)\r\n<p>&nbsp;</p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</blockquote></span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p><span style=\"font-size:13px;color:#0000ff\">If</span><span style=\"font-size:13px\"> editedObject.Equals(row.Item) </span><span style=\"font-size:13px;color:#0000ff\">Then\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>         </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px\">row.BorderBrush = Brushes.Red\r\n<p>&nbsp;</p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p>row.BorderThickness = </p>\r\n</blockquote></span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p><span style=\"font-size:13px;color:#0000ff\">New</span><span style=\"font-size:13px\"> Thickness(2)\r\n<p>&nbsp;</p>\r\n<blockquote></blockquote><blockquote dir=ltr style=\"margin-right:0px\">\r\n<p> row.IsSelected = </p>\r\n</blockquote></span></p>\r\n</blockquote><blockquote dir=ltr style=\"margin-right:0px\">\r\n<p><span style=\"font-size:13px;color:#0000ff\">True </span><span style=\"font-size:13px\"> \r\n<p>&nbsp;</p>\r\n<blockquote></blockquote></span></p>\r\n</blockquote>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Else <br>\r\n</span><span style=\"font-size:13px\">        row.IsSelected = </span><span style=\"font-size:13px;color:#0000ff\">False <blockquote dir=ltr style=\"margin-right:0px\">\r\n<p> </p>\r\n</blockquote></span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p><span style=\"font-size:13px\">row.IsEnabled = </span><span style=\"font-size:13px;color:#0000ff\">False\r\n<p>&nbsp;</p>\r\n<blockquote></blockquote>\r\n<p dir=ltr>         </p>\r\n</span></p>\r\n</blockquote>\r\n<p dir=ltr><span style=\"font-size:13px\">row.Background = Brushes.LightGray<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">End</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">If\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Next</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<blockquote></blockquote><blockquote></blockquote></span></p>\r\n</blockquote></blockquote>\r\n<p><span style=\"font-size:13px;color:#0000ff\">End</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">Sub <blockquote></blockquote>\r\n<p>End</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n</blockquote>\r\n<p><span style=\"font-size:13px\"></span><span style=\"font-size:13px;color:#0000ff\">Class\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-12-19T08:45:12.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141885",
+    "ThreadId": "42533",
+    "Html": "Sorry for the formating, can't seem to fix it...\r\n",
+    "PostedDate": "2008-12-19T08:49:23.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

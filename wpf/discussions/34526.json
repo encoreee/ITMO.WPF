@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "114628",
+    "ThreadId": "34526",
+    "Html": "I have DataGrid with properties:<br>\r\n<span style=\"font-size:10pt;font-family:'Courier New';color:blue\" lang=EN-US><br>\r\n&lt;</span><span style=\"font-size:10pt;font-family:'Courier New';color:rgb(163, 21, 21)\" lang=EN-US>toolkit</span><span style=\"font-size:10pt;font-family:'Courier New';color:blue\" lang=EN-US>:</span><span style=\"font-size:10pt;font-family:'Courier New';color:rgb(163, 21, 21)\" lang=EN-US>DataGrid</span><span style=\"font-size:10pt;font-family:'Courier New';color:red\" lang=EN-US>&nbsp;</span>\r\n<p style=\"margin:0cm 0cm 0.0001pt 35.4pt;text-indent:35.4pt;line-height:normal\"><span style=\"font-size:10pt;font-family:'Courier New';color:red\" lang=EN-US>SelectionMode</span><span style=\"font-size:10pt;font-family:'Courier New';color:blue\" lang=EN-US>=&quot;Single&quot;</span><span style=\"font-size:10pt;font-family:'Courier New';color:red\" lang=EN-US>&nbsp;</span></p>\r\n<p style=\"margin-bottom:0.0001pt;line-height:normal\"><span style=\"font-size:10pt;font-family:'Courier New'\" lang=EN-US><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style=\"color:red\">SelectionUnit</span><span style=\"color:blue\">=&quot;FullRow&quot;</span></span></p>\r\n<p><span style=\"font-size:10pt;line-height:115%;font-family:'Courier New'\" lang=EN-US><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style=\"color:red\">CanUserAddRows</span><span style=\"color:blue\">=&quot;True&quot;/&gt;</span></span></p>\r\n<br>\r\nWhen I try add new row through DataGrid it throw exception: <br>\r\n&quot;Kolekcję SelectedItems można zmienić tylko w trybie wielokrotnego wyboru. W trybie pojedynczego wyboru użyj SelectedItem.&quot;<br>\r\nException message is in polish. Here is my english translate:<br>\r\n&quot;SelectedItems collection can be change only in SelectionMode=&quot;Extended&quot;. In SelectionMode=&quot;Single&quot; use SelectedItem.&quot;<br>\r\n<br>\r\nHow I can set DataGrid to use SelectedItem instead of SelectedItems in SelectionMode=&quot;Single&quot;? <br>\r\n<br>\r\nPS. Yes I can change properties(set SelectionUnit=&quot;Cell&quot; or set SelectionnMode=&quot;Extended&quot;) of my DataGrid to fix this, but I need this properties to be set as I wrote on the top.\r\n<br>\r\n",
+    "PostedDate": "2008-08-29T03:42:26.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114658",
+    "ThreadId": "34526",
+    "Html": "The is a known bug that will be addressed in the final release.\r\n",
+    "PostedDate": "2008-08-29T06:30:46.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114664",
+    "ThreadId": "34526",
+    "Html": "Thanks for the answer. I can now write little workaround in my code ;)<br>\r\n",
+    "PostedDate": "2008-08-29T06:48:49.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

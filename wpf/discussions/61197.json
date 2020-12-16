@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "207523",
+    "ThreadId": "61197",
+    "Html": "<p>How to highlight the selected ribbon button in the Microsoft windows ribbon control ? I have a set of ribbon buttons in a Ribbon tab. When i keep the mouse over the ribbon button i can see it highlighted with yellow background but when i move the mouse away from the Ribbon button the yellow background goes off. I want to highlight the particular ribbon button that the user has clicked. In my application each ribbon button is an option for the user and i want to highlight the option that the user has currently selected.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Bhupesh.</p>",
+    "PostedDate": "2009-07-01T06:15:48.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207642",
+    "ThreadId": "61197",
+    "Html": "<p>Hi Bhupesh,</p>\r\n<p>Have you tried using the RibbonToggleButton?&nbsp; RibbonToggleButton is similar to the &quot;Bold&quot; button in the Word 2007 Ribbon - if it is clicked, it will remain &quot;pressed&quot; (and highlighted) until the user clicks it again.&nbsp; Let me know if that solves your problem.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-07-01T10:51:45.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207910",
+    "ThreadId": "61197",
+    "Html": "<p>Hi Samantha,</p>\r\n<p>Thanks a lot for the reply. Half the problem is solved but when i click the next ribbon toggle button it should get selected/highlighted and the ribbon button that lost focus should not remain pressed and highlighted. Its something like this left, centre, right alignment buttons in office. Only one can be selected and highlighted at a time. How can i do this ?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Bhupesh.</p>",
+    "PostedDate": "2009-07-02T05:20:27.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207922",
+    "ThreadId": "61197",
+    "Html": "<p>Hi samantha,</p>\r\n<p>On the lost focus event of the RibbonToggleButton, i am setting the IsChecked to false. It solves the issue for me.</p>\r\n<p>Do let me know if there is any better way to do it ?</p>",
+    "PostedDate": "2009-07-02T06:02:59.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209054",
+    "ThreadId": "61197",
+    "Html": "<p>Hi Bhupesh,</p>\r\n<p>That solution should work fine.&nbsp; We don't have any built-in way to toggle the checked state between multiple Ribbon controls, so you would need to add some logic to do this manually and it sounds like the solution you found is working.&nbsp; Note that you can use the RibbonControlGroup to get the same &quot;grouped&quot; look as the alignment buttons in Office, but this will only change the styling and not add any special toggle behavior.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-07-06T11:08:14.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

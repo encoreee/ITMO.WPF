@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "190242",
+    "ThreadId": "56312",
+    "Html": "<p>Hi,</p>\r\n<p>We have a scenario where we are creating our mainview in the startup of the app.xaml.cs. Then we create the viewmodel. wqe then set the DataContext on the mainview to the viewmodel. Pretty normal stuff. In my mainview I have a RibbonControl. If in the constructor for the mainview I new up the viewmodel and then set the mainview's DataContext my RibbonControl buttons are enabled (using the CanExecute, etc). But when I don't have this viewmodel created in the constructor the RibbonControl's buttons are all disabled. I created a delegate for the OnDataContextChanged event and I am getting that event firing when I set the DataContext. The RibbonControl is using ICommand for wiring up. Any ideas why this doesn't work?</p>\r\n<p>thanks in advance!!</p>\r\n<p>Bill</p>",
+    "PostedDate": "2009-05-14T07:13:13.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190246",
+    "ThreadId": "56312",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I just noticed that if I put the creating of the viewmodel and setting the DataContext in the constructor AFTER the InitializeComponent() call that the RibbonControl buttons are also disabled. Is there some way to get the RibbonControl to refresh?</p>\r\n<p>thanks!</p>\r\n<p>Bill</p>",
+    "PostedDate": "2009-05-14T07:18:58.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191057",
+    "ThreadId": "56312",
+    "Html": "<p>Hi,</p>\r\n<p>So - as I mentioned it looks that the DataContext must be set in the UserControl that has the RibbonControl in it in the constructor BEFORE the InitializeComponent() is called. Curious. I would think that you could set the DataContext at any time as it does cause a DataContextChanged event to occur. Shouldn't that wire things up?</p>\r\n<p>\r\n<p><span style=\"color:#0000ff\">\r\n<p>In the app.xaml.cs file I would think that I could create the Window, create the ViewModel, and then set the DataContext of the Window (and by inheritance the UserControl's DataContext) and that should make everything work.</p>\r\n&lt;font color=&quot;#0000ff&quot;&gt;\r\n<p>public</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"color:#0000ff\">void</span> App_Startup(<span style=\"color:#0000ff\">object</span> sender, <span style=\"color:#2b91af\">StartupEventArgs</span> e)</p>\r\n</p>\r\n</p>\r\n<p>{</p>\r\n<p>\r\n<p><span style=\"color:#0000ff\">&lt;font color=&quot;#0000ff&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"color:#0000ff\">try</span></p>\r\n</p>\r\n</p>\r\n<p>{</p>\r\n<p><span style=\"color:#008000\">//Show the main window</span></p>\r\n<p><span style=\"color:#2b91af\">PenskeRouteAssist</span> vRAWindow = <span style=\"color:#0000ff\">new</span> <span style=\"color:#2b91af\">PenskeRouteAssist</span>();</p>\r\n<p>vRAWindow.dockManager.ParentWindow = vRAWindow;</p>\r\n<p><span style=\"color:#008000\">// Create the ViewModel to which the main window binds</span></p>\r\n<p><span style=\"color:#0000ff\">var</span> penskeRouteAssitViewModel = <span style=\"color:#0000ff\">new</span> <span style=\"color:#2b91af\">PenskeRouteAssistViewModel</span>(vRAWindow.dockManager);</p>\r\n<p>vRAWindow.DataContext = penskeRouteAssitViewModel;</p>\r\n<p>vRAWindow.Show();</p>\r\n<p>}</p>\r\n<p><span style=\"color:#0000ff\">catch</span> (<span style=\"color:#2b91af\">Exception</span> ex)</p>\r\n<p>...</p>\r\n<p>Any ideas? I'm not sure if even if this works that the CanExecute() methods in the ViewModel that should enable and disable the Ribbon Buttons will work if the value changes from True to False.</p>\r\n<p>thanks!!</p>\r\n<p>Bill</p>",
+    "PostedDate": "2009-05-16T10:56:57.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194746",
+    "ThreadId": "56312",
+    "Html": "<p>Hi,</p>\r\n<p>Is there anyone on this list that knows about the RibbonControl? We have been struggling with this so much for a couple weeks now. We can't figure out how to have a change of state of CanExecute for RibbonButtons to cause them to activate/deactivate. We can't even figure out how to set the Ribbon Title during runtime. Yikes. Is there 'anywhere' we can get some help/ideas?</p>\r\n<p>thanks,</p>\r\n<p>Bill</p>",
+    "PostedDate": "2009-05-27T05:04:20.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194947",
+    "ThreadId": "56312",
+    "Html": "<p>Hi. Did you try to find some posts about Ribbon here? I think&nbsp;that your can avoid these problems when&nbsp;application structure and&nbsp;DataContext&nbsp;managing are well considered.&nbsp;Look&nbsp;here: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=52089\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=52089</a>&nbsp;and here: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=41623\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=41623</a>&nbsp;for&nbsp;why and how to extend&nbsp;RibbonCommand. Hope be helpful.</p>",
+    "PostedDate": "2009-05-27T14:12:47.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195396",
+    "ThreadId": "56312",
+    "Html": "<p>Firedog607,</p>\r\n<p>Thanks!! I hadn't found those links when I had searched on this site. I am using the NonRoutedRibbonCommand as shown by Jaime Rodriquez in his Southridge Labs example. I'm still trying to figure out how to get the change of CanExecute's state to bubble up to the Ribbon. I'm sure I'm missing something.</p>\r\n<p>Again, Thanks for the reply!</p>\r\n<p>Bill</p>",
+    "PostedDate": "2009-05-28T13:10:37.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "the issue was resolved using OnDetach",
+    "ClosedDate": "2009-04-03T13:24:25.803-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The release notes for the latest (3.5.40128.1) WPF Toolkit release indicated that a memory in the VSM was fixed.  However, there seems to be another memory leak that manifests itself when using VSM with the DataGrid.  To reproduce the leak, I started with Vincent Sibal’s sample found here:\n \nhttp://blogs.msdn.com/vinsibal/archive/2008/11/04/wpf-vsm-and-datagrid-sample.aspx\n \nAnd I made the following changes:\n1) Removed the WPFToolkit project and replaced it with a reference to the 3.5.40128.1 dll\n2) Added a button to force garbage collection\n3) Modified Window1 so it allocates 100MB of memory when it is instantiated\n4) Added Window2, which is an exact copy of Window1 except I removed RowStyle=\"{DynamicResource defaultRowStyle}\" from the DataGrid\n \nWhen you run the application, click the “Window1” button and you will see the memory jump up by 100MB.  Close Window1 and click the “Garbage Collect” button.  The memory allocated for Window1 does not get collected.\n \nNow click the “Window2” button to show the Window that does not have the RowStyle set.  Again you will see the 100MB get allocated.  Close Window2 and click the “Garbage Collect” button.  This time the allocated memory is collected.\n \nThe only difference between the two windows is the use of VSM.\n \nThe sample project is attached.",
+    "LastUpdatedDate": "2013-05-16T05:31:10.267-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-23T08:44:16.197-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Memory leak with VSM and DataGrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9328
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2769,
+      "FileName": "VSM_and_DataGrid_Sample.zip",
+      "DownloadUrl": ".\\2769"
+    },
+    {
+      "FileId": 2776,
+      "FileName": "VSM_and_DataGrid_Sample.zip",
+      "DownloadUrl": ".\\2776"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This is because my DataGridRowBehavior class was not updated to implement the OnDetach protected method for behavior classes.  Once the events are detached you should not see a memory leak.",
+      "PostedDate": "2009-02-24T06:19:18.07-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ah ... that was it.  I implemented OnDetach and that fixed it.  Thanks.",
+      "PostedDate": "2009-02-24T08:36:54.623-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Oops, I spoke too soon.  I am still seeing the memory leak after implementing OnDetach.  Do I need to do more than the following in OnDetach?\r\n\r\n      protected override void OnDetach(Control control)\r\n      {\r\n         base.OnDetach(control);\r\n\r\n         DataGridRow dataGridRow = (DataGridRow)control;\r\n         Type targetType = typeof(DataGridRow);\r\n\r\n         RemoveValueChanged(DataGridRow.IsMouseOverProperty, targetType, dataGridRow, this.handler);\r\n         RemoveValueChanged(DataGridRow.IsSelectedProperty, targetType, dataGridRow, this.handler);\r\n         RemoveValueChanged(DataGridRow.IsEditingProperty, targetType, dataGridRow, this.handler);\r\n      }\r\n\r\nI updated the attached sample.",
+      "PostedDate": "2009-02-24T08:52:08.143-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-24T08:52:10.08-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-03T13:24:25.803-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:30.953-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:10.267-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

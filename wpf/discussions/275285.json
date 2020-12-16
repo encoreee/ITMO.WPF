@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "681957",
+    "ThreadId": "275285",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using wpf [vs2008]</p>\r\n<p>DB - ORacle11G<br>\r\nI google datagrid for wpf. many peoples suggest that codeplex datagrid. thanks for a great work.<br>\r\nI'm newbiw for codeplex datagrid. well. I have a big problem, I dont know how to data binding at design time or &nbsp;codebehind &nbsp;mode.&nbsp;i search code in google and in codeplex Discussion. at there i saw some code not fullfill my need.<br>\r\ncould you please give my some sample code to start up databinding by design mode and codebehind.</p>\r\n<p>I need a simple code with step by step explanation of data binding to start up.</p>\r\n<p>thanks in advance,</p>\r\n<p>thenndral.</p>\r\n",
+    "PostedDate": "2011-10-10T00:16:43.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

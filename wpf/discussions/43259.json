@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "143765",
+    "ThreadId": "43259",
+    "Html": "Hi!<br>\r\nWhen setting Is Enabled property on DatePicker to false, I'm getting Exception:<br>\r\n&quot;'PART_DisabledVisual' name cannot be found in the name scope of 'System.Windows.Controls.Grid'.&quot;<br>\r\nDoes anyone know how to fix this issue? <br>\r\n                                                          Thank you. Lena\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-12-31T13:33:22.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143981",
+    "ThreadId": "43259",
+    "Html": "Hi This is a known issue, .... Refer <a href=\"http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7904\">http://www.codeplex.com/wpf/WorkItem/View.aspx?WorkItemId=7904</a><br>\r\n<br>\r\nRegards,<br>\r\nVinit\r\n",
+    "PostedDate": "2009-01-02T04:56:51.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

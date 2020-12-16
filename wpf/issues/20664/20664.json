@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, I'm able to download the folder using subversion pointing to https://sccmclictr.svn.codeplex.com/svn.\n\nBut when I open the folder in visual studio 2010 it challenges me for login connecting to tfs.codeplex.com, please provide credentials to connect to team foundation server.\nAs your directions says only project members can connect to the project using TFS.  I'm a non members using Subversion, I get the files, but then I can't open them in VS 2010\n\nWhat is the secret? \n\nSee attached conversation with CodePlex admin Kevin David at Microsoft...",
+    "LastUpdatedDate": "2014-01-23T15:19:43.4-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2014-01-23T15:19:42.153-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot Access Downloaded Code",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20664
+  },
+  "FileAttachments": [
+    {
+      "FileId": 7342,
+      "FileName": "RE Cannot Access Client Center for configuration manager.msg",
+      "DownloadUrl": ".\\7342"
+    }
+  ],
+  "Comments": []
+}

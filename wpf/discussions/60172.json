@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "203715",
+    "ThreadId": "60172",
+    "Html": "<p>I'm wondering how come VSM is looking for root object instead of reading VSG directly?&nbsp;</p>\r\n<p>Let's say I have UserControl as below.&nbsp;</p>\r\n<p>\r\n<p>&lt;UserControl .....<br>.....<br>&lt;VisualStateManager.VisualStateGroups&gt;<br>&lt;/VisualStateManager.VisualStateGroups&gt;&nbsp;</p>\r\n<p>....</p>\r\n<p>&lt;Grid&gt;&nbsp;<br>....<br>&lt;/Grid&gt;<br>&lt;/UserControl&gt;</p>\r\n<p>I changed the state from code as below. then, it won't work.&nbsp;</p>\r\n<p>bool result = VisualStateManager.GoToState(this, &quot;Loaded&quot;, false);</p>\r\n<p>Code should be changed like that .</p>\r\n<p>IList&lt;VisualStateGroup&gt; groups = VisualStateManager.GetVisualStateGroupsInternal(control);</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</p>",
+    "PostedDate": "2009-06-20T13:35:24.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204321",
+    "ThreadId": "60172",
+    "Html": "<p>This version of VSM is only meant to work in control templates and UserControl.Content.&nbsp; Dev10 will have a version where it will work for any FrameworkElement.&nbsp; In addition, the code to look for the VSGs is more robust.&nbsp;</p>\r\n<p>By the way, your solution didn't suggest how the reference to control was found.&nbsp; This will be different depending if its coming from the template or directly from the control.</p>",
+    "PostedDate": "2009-06-22T21:11:41.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "213932",
+    "ThreadId": "62989",
+    "Html": "<p>I have a DataGrid which has two columns. I want to check if a newly inserted row has data (Users enter) in both columns so I added&nbsp;RowEditEditing event. However I find this handler is called three times when a new row is inserted. Is this how it works (like check each column, then whole row) or something I missed to use. What I reall want to see is it works only once.</p>\r\n<p>Although I can use Timestamp to make it runing only once, it is kind of awkward. Is there any nice way to reach it? Thanks</p>",
+    "PostedDate": "2009-07-20T11:37:35.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI experienced a problem with the AutoCompleteBox Component in 3.5.50211.1:\nWhen entering the \"search\" test, the ItemsSource list is updated in the Populating Event Handler (I also used FilterMode=\"Contains\"... same problem).\nWhen this list contains more than exactly 15 items, scrolling through the popup (or by using the arrow keys) brings up duplicates and other selected items differ from those I click at, but only from the 15th item on.\n \nIs this problem known or is there a workaround?\n \nBest regards,\nMichael",
+    "LastUpdatedDate": "2013-02-21T18:40:10.2-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-08-23T08:26:26.873-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AutoCompleteBox Popup display bug with more that 15 items",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 16438
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

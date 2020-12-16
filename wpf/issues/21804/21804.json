@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nIs there a way for oblige the user to select only items shown in list?\nI would avoid that user can to insert custom words in database.\n\nThanks.",
+    "LastUpdatedDate": "2015-04-20T01:32:16.977-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2015-04-14T09:21:15.67-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "[WPF] AutoCompleteBox: oblige the user to select only items",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21804
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi,\nI resolved with this way:\n```\nprivate void PropertyAutoCompleteBox_MouseLeave(object sender, MouseEventArgs e)\n{\n   SampleProperty lastRow = (SampleProperty)dgProperties.SelectedItem;\r\n\r\n    if ((sender as AutoCompleteBox).SelectedItem != null && (sender as AutoCompleteBox).SelectedItem.GetType() == typeof(BaseDataProperty))\n\t{\n\t\tBaseDataProperty selectedItem = (BaseDataProperty)(sender as AutoCompleteBox).SelectedItem;\r\n\r\n\t\t//[MY_CODE]\n\t}\n\telse\n\t\t//SHOW MESSAGE\n}\n```\r\n\r\nI hope this is helpful to someone.",
+      "PostedDate": "2015-04-20T01:32:16.977-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a few databases ported from mdb files that allowed a forward slash in the column name (i.e.  Type/Grade) when binding the data to the datasource of the DataGrid those columns with the forward slash are blank.  Could this be a bug?",
+    "LastUpdatedDate": "2013-02-21T18:41:37.467-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-30T13:58:44.38-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid forward slash in Column name returns nothing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 8768
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.\r\n\r\nIn the mean time, try attaching to the AutoGeneratingColumn event. You may be able to fix up the column and its binding in your handler.",
+      "PostedDate": "2009-02-18T17:25:24.613-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:25:25.363-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-26T11:02:09.68-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-24T22:32:32.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-24T22:33:27.163-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-24T22:36:10.28-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It's not only the slash, it's also the dot.",
+      "PostedDate": "2010-08-24T22:57:03.557-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have successfully attached my data to the datagrid with columns that have a \"/\" in the value. I now have an issue when the column values are edited in the grid and on the end row editing, I am getting an \"Object reference not set to an instance of an object.\" This only occurs for those columns with the \"/\" in the value. Any suggestions?",
+      "PostedDate": "2011-04-20T11:04:41.29-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-20T11:06:12.85-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:37.467-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

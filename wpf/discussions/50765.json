@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "170197",
+    "ThreadId": "50765",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a situation where I have to bind a <strong>List&lt;List&lt;Object&gt;&gt;</strong> with a <strong>WPF Toolkit datagrid</strong>. In each object I have a property by the name of &quot;Value&quot; whose data I want to display within the grid.<br>\r\n<br>\r\nI have tried this but the grid does not generate properly. Can someone please advice me on a way to achive this.<br>\r\n<br>\r\nRegards,\r\n",
+    "PostedDate": "2009-03-20T07:42:57.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176600",
+    "ThreadId": "50765",
+    "Html": "Hi There,<br>\r\n<br>\r\nI have the same requirement...<br>\r\n<br>\r\nHas anybody acomplished this already? Automaticaly binding to a List&lt;List&lt;double&gt;&gt;?<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2009-04-07T06:22:43.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176667",
+    "ThreadId": "50765",
+    "Html": "A WPF datagrid cannot be directly bound to a data grid. You will need to bind the grid in your code behind.<br>\r\n<br>\r\nAnd create the grid based on the data.\r\n",
+    "PostedDate": "2009-04-07T09:20:00.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176687",
+    "ThreadId": "50765",
+    "Html": "Thank you for your input..<br>\r\n<br>\r\nDo you know of any of those workarounds (code examples would be great)?<br>\r\n<br>\r\nThanks in advance \r\n",
+    "PostedDate": "2009-04-07T09:59:34.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176702",
+    "ThreadId": "50765",
+    "Html": "As already suggested, you can solve this by manually setting up the bindings in code. I do this for a list of objects with several fields I want to display in a single row in my grid. However, there may be some issues with how the columns bindings are cleared. See my other post on manually creating and clearing bindings for example code. <br>\r\n<br>\r\nIf you have a list, you will need to use the array syntax.<br>\r\n<br>\r\nDataGridTextColumn newColumn = new DataGridTextColumn();<br>\r\nnewColumn.Binding = new Binding(&quot;MyPath&quot;);<br>\r\n<br>\r\nWhere MyPath is of the form &quot;MyOuterList[ListIndex].ProperyNameOrValue&quot;, and is a string.<br>\r\n<br>\r\nHope this helps,<br>\r\n<br>\r\nMax\r\n",
+    "PostedDate": "2009-04-07T10:29:51.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

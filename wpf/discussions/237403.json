@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "532187",
+    "ThreadId": "237403",
+    "Html": "\r\n<p>I am using the .Net 4 Datagrid to display a business class (for our purposes &quot;Employee&quot;) which implements INotifyPropertyChanged and IEditableObject in an Observable collection.</p>\r\n<p>These items are grouped in the datagrid (on Department) and I am using a value converter to show totals in the group header (eg &nbsp;&quot;Average Salary&quot;). &nbsp;This all works fine when its loaded, &nbsp;however the user is able to update the Salary field\r\n for each employee. When this happens, the Average Salary group total does not update to reflect the change made by the user.</p>\r\n<p>I found the following sites but they don't seem to have solved my problem.</p>\r\n<p><a href=\"http://drwpf.com/blog/2008/10/20/itemscontrol-e-is-for-editable-collection/\">http://drwpf.com/blog/2008/10/20/itemscontrol-e-is-for-editable-collection/</a></p>\r\n<p>Any help is much appreciated!!!</p>\r\n",
+    "PostedDate": "2010-12-07T02:25:35.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

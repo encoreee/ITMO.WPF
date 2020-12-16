@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "428569",
+    "ThreadId": "208639",
+    "Html": "<p>I have recently updated to the Feb 2010 release of WPF Toolkit. I am now running into an issue of a chart not properly updating.</p>\r\n<p>&nbsp;</p>\r\n<p>I used to simply execute Chart.Refresh() after updating the dataset that is bound to my LineSeries, but the Refresh method is no longer part of the charting toolkit. How can I refresh my chart? It does not seem to update anymore.</p>",
+    "PostedDate": "2010-04-07T17:35:40.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429306",
+    "ThreadId": "208639",
+    "Html": "<p>Do you use an ObservableCollection of object with a PropertyChangedEventHandler to fill you chart ? That's how I do it.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>How to declare an Object with a PropertyChangedEventHandler:</strong></p>\r\n<p>private class Person: INotifyPropertyChanged<br>{<br>&nbsp;public event PropertyChangedEventHandler PropertyChanged;<br><br>&nbsp;private void NotifyPropertyChanged(String info)<br>&nbsp;{<br>&nbsp; if (PropertyChanged != null)<br>&nbsp; {<br>&nbsp;&nbsp; PropertyChanged(this, new PropertyChangedEventArgs(info));<br>&nbsp; }<br>&nbsp;}</p>\r\n<p>&nbsp;private string m_name;</p>\r\n<p>&nbsp;public string Name<br>&nbsp;{<br>&nbsp; get { return m_name; }<br>&nbsp; set<br>&nbsp; {<br>&nbsp;&nbsp; if (m_name!= value)<br>&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp; m_name= value;<br>&nbsp;&nbsp;&nbsp;&nbsp; NotifyPropertyChanged(&quot;Name&quot;);<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp; }<br>&nbsp; }</p>\r\n<p>}</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-09T08:30:28.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

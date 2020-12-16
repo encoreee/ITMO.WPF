@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi!\n \nI think, I have found a bug in the RibbonWindow. What is the szenario:\n \n1. I have a WPF Window which opens a subwindow with a Ribbon.\n2. The SubWindow has a Minimized Ribbon (IsMinimized=true)\n3. The Ribbon contains a RibbonButton \"Close\"\n4. When I click the \"Close\"-Button in the ribbon, the applications freezes\n \nI have attached a sample application. \n \n1. Start the application\n2. Click \"click me\"\n3. Click \"Home\"\n4. Click \"Close\"\n \nThanks\nJus",
+    "LastUpdatedDate": "2013-02-21T18:40:24.097-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-08-25T01:48:29.563-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Application freezes when closing a RibbonWindow with minimized Ribbon",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14078
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4789,
+      "FileName": "WpfApplication1.zip",
+      "DownloadUrl": ".\\4789"
+    }
+  ],
+  "Comments": []
+}

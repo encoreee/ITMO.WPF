@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "161836",
+    "ThreadId": "48476",
+    "Html": "Hi,<br>\r\n<br>\r\nI am wondering if we can do something in datagrid to access more detail data of specific row.<br>\r\n<br>\r\nRight here is the scenario, currently i am using aspx pages to build database application. In my application i have aspGridView and the the end of every row i can eaisly put HyperLinkField upon clicking it will take user to next page and displays the detail data of same row using its unique ID. i am wondering if it is possible in WPF DataGrid. <br>\r\n<br>\r\ni have prototype in ASPX page i am afraid there is no option to upload photos. that could have been of better understanding<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2009-02-25T03:03:15.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161889",
+    "ThreadId": "48476",
+    "Html": "I think the sample actually showed using a template for detail nested in the xaml using the selected item data.&nbsp; Unfortunately, I can't remember WHERE I saw that.&nbsp; But I think that is a better way of doing it than transfer to another form.<br>\r\n",
+    "PostedDate": "2009-02-25T06:35:51.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161891",
+    "ThreadId": "48476",
+    "Html": "Yeah, I have a sample zip.&nbsp; It doesn't say where it came from, so I'm not sure if it came with the toolkit, but I could send it to you if you want.<br>\r\n",
+    "PostedDate": "2009-02-25T06:41:19.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162212",
+    "ThreadId": "48476",
+    "Html": "Hi mtiede<br>\r\n<br>\r\nThanks for reply and yeh it would be of great help. email is tj49@live.com<br>\r\n<br>\r\nMany thanks\r\n",
+    "PostedDate": "2009-02-26T01:10:12.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

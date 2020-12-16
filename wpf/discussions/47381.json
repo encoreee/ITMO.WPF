@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "158578",
+    "ThreadId": "47381",
+    "Html": "I would like to use XAML (vector) based visuals for the icons used in the ribbon.  These don't necessarily need to be interactive (they could be frozen).<br>\r\nThis could be exposed on the RibbonComand as an additional feature ontop of the existin Small and LargeImageSource.  Maybe a property call ImageContent.<br>\r\nThis would enable resolution independence and allow designers to compose visuals for icon images that included regional dependent symbols (currency symbols etc).<br>\r\n",
+    "PostedDate": "2009-02-17T10:47:33.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

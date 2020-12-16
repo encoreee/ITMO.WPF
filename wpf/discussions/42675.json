@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "141828",
+    "ThreadId": "42675",
+    "Html": "Hi,<br>\r\n<br>\r\nI tried to set the scrollbar style using the &quot;VSM GloosyBlack&quot; template found somewhere here around.<br>\r\nWhile it works with &quot;standard controls&quot; I found no way to use this template with DataGrid.<br>\r\nIt uses the style - but the vertical scrollbar shows the look of a horizontal (vertical displayed) scrollbar.<br>\r\n<br>\r\nThere is no must to use GloosyBlack (although I like it) - it would be enough to change the look of the scrollbar to &quot;more blackish&quot;.<br>\r\n<br>\r\nManfred\r\n",
+    "PostedDate": "2008-12-19T05:29:33.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

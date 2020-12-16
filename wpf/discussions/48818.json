@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "163011",
+    "ThreadId": "48818",
+    "Html": "Hello,<div><br></div><div>   How to manag loading part of Ribbon base on User rights  i mean say i need to add Some tabs or some ribbon buttons base on rights given to user who login to the system</div><div>how can  we manage that part</div><div><br></div><div>Jignesh</div><div><br></div><div><br></div>",
+    "PostedDate": "2009-02-28T03:13:24.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218413",
+    "ThreadId": "48818",
+    "Html": "<p>You have to use codes.</p>\r\n<p>for instance, if you want to add a tab named &quot;tab1&quot; in to ribbon according to the user right</p>\r\n<p>if (user.haveEnoughRights)</p>\r\n<p>{</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; RibbonTab tab1 = new RibbonTab() { Label = &quot;tab1&quot;};</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; this.ribbon.Tabs.Add(tab1);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; this.ribbon.OnApplyTemplate();</p>\r\n<p>}</p>",
+    "PostedDate": "2009-08-01T22:32:52.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

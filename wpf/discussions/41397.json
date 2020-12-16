@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "137328",
+    "ThreadId": "41397",
+    "Html": "Hello, I've tried different approaches to clear the contents of a single cell in a DataGrid (in a generic Window.PreviewKeyUp event), but still I couldn't do it.<br>\r\n<br>\r\nI've tried clearing the value of the ContentProperty dependency property, which clears it from the grid, but not from the bound element, I've tried to use BindingOperations to get the BindingExpression, but had no luck with that either. <br>\r\n<br>\r\nI've tried many other things that I don't remember now, I know this is probably a symptom of my lack of knowledge about WPF...could anyone tell me how I can do this?<br>\r\n<br>\r\nThanks,<br>\r\nPablo<br>\r\n",
+    "PostedDate": "2008-12-03T09:46:30.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137662",
+    "ThreadId": "41397",
+    "Html": "I've found what I needed to do. <br>\r\n<br>\r\nLooking at this <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39968\">thread</a>, I've learned how to get hold of the BindingExpression associated with the cell's TextBlock, changed that text to an empty string, and called UpdateSource() on the BindingExpression.<br>\r\n<br>\r\nThanks to CorpPeon and vinisibal for that thread! =)<br>\r\n<br>\r\nPablo<br>\r\n",
+    "PostedDate": "2008-12-04T07:00:06.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

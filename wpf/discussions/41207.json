@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "136659",
+    "ThreadId": "41207",
+    "Html": "Hi,<br>\r\nFirst of all, sorry for my english.<br>\r\n<br>\r\nI have a problem. <br>\r\n<br>\r\nSystem.Collections.ObjectModel.ObservableCollection&lt;myItem&gt; MyItem = new .....<br>\r\nMyDataGrid.DataContext = MyItem<br>\r\n<br>\r\n&lt;dg:DataGrid Name=&quot;MyDataGrid&quot; CanUserAllRows=&quot;true&quot; ..... /&gt;<br>\r\n<br>\r\nbut when I start my test Application, no rows are displayed on the datagrid, and I can't insert nothing.<br>\r\n<br>\r\nHow could I do it ?<br>\r\n<br>\r\nthanks \r\n",
+    "PostedDate": "2008-12-01T09:28:36.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136695",
+    "ThreadId": "41207",
+    "Html": "You need set the ItemsSource for your datagrid. <br>\r\n<br>\r\n<blockquote>MyDataGrid.ItemsSource = MyItem;<br>\r\n</blockquote><br>\r\nOr you can keep your code the way it is and do something like this:<br>\r\n<br>\r\n<blockquote>System.Collections.ObjectModel.ObservableCollection&lt;myItem&gt; MyItem = new .....<br>\r\nMyDataGrid.DataContext = MyItem<br>\r\n<br>\r\n&lt;dg:DataGrid Name=&quot;MyDataGrid&quot; ItemsSource=&quot;{Binding}&quot; CanUserAllRows=&quot;true&quot; ..... /&gt;<br>\r\n</blockquote>\r\n",
+    "PostedDate": "2008-12-01T11:17:21.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136823",
+    "ThreadId": "41207",
+    "Html": "thanks for the reply.<br>\r\n<br>\r\n<div id=\"result_box\" dir=ltr>I did as you said, but mygrid is empty with no rows and I can't insert new row. I think it is because the collection is empty...<br>\r\n</div>\r\n",
+    "PostedDate": "2008-12-02T00:42:01.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136824",
+    "ThreadId": "41207",
+    "Html": "thanks for the reply.<br>\r\n<br>\r\n<div id=\"result_box\" dir=ltr>I did as you said, but mygrid is empty with no rows and I can't insert new row. I think it is because the collection is empty...<br>\r\n</div>\r\n",
+    "PostedDate": "2008-12-02T00:42:06.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137322",
+    "ThreadId": "41207",
+    "Html": "please help me....<br>\r\n",
+    "PostedDate": "2008-12-03T09:35:04.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137337",
+    "ThreadId": "41207",
+    "Html": "See this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/01/overview-of-the-editing-features-in-the-wpf-datagrid.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/01/overview-of-the-editing-features-in-the-wpf-datagrid.aspx</a>.  It talks about some of the things that have to be enabled for being able to add new rows.\r\n",
+    "PostedDate": "2008-12-03T10:03:01.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137354",
+    "ThreadId": "41207",
+    "Html": "I think I see what you mean. I am able to reproduce this when I set AutoGenerateColumns=true and my collection is empty. It looks like the DataGrid defers auto-generating the columns when your collection is empty. The problem is that if there are no columns in your datagrid, then there's nowhere to click to add a new row. <br>\r\n<br>\r\nI'm not sure if this is the intended behavior or a bug but you can work around it by setting AutoGenerateColumns=false and explicity defining columns in the XAML.<br>\r\n<br>\r\n&lt;dg:DataGrid Name=&quot;MyDataGrid&quot; ItemsSource=&quot;{Binding}&quot; CanUserAllRows=&quot;true&quot;&nbsp;AutoGenerateColumns=&quot;False&quot;&gt;<br>\r\n&nbsp; &lt;dg:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn Header=&quot;Column 1&quot; Binding=&quot;{Binding Column1}&quot; /&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; ...<br>\r\n<br>\r\n&nbsp; &lt;/dg:DataGrid.Columns&gt;<br>\r\n&lt;/dg:DataGrid&gt; <br>\r\n",
+    "PostedDate": "2008-12-03T10:42:18.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137570",
+    "ThreadId": "41207",
+    "Html": "thank you very much Peterburrell, I did as you said and all works fine.<br>\r\nI find the problem. <br>\r\nI have a collection like this.<br>\r\n<br>\r\npublic class MyCollection : ObservableCollection&lt;MyItem&gt;<br>\r\n{<br>\r\n    // nothing here<br>\r\n}<br>\r\n<br>\r\nif I do<br>\r\n<br>\r\nMyCollection items = new MyCollection();<br>\r\nMyDataGrid.DataContext =  items;<br>\r\n<br>\r\nDon't Work and the grid display me only columns but no rows for add, I items collection is empty;<br>\r\n<br>\r\nif I do<br>\r\nObservableCollection&lt;MyItem&gt; items = new ObservableCollection&lt;MyItem&gt;();<br>\r\nMyDataGrid.DataContext =  items;<br>\r\n<br>\r\nAll Works also collection is empty.<br>\r\n<br>\r\ndo you konw why ?<br>\r\n<br>\r\nthanks.<br>\r\n<br>\r\nps: sorry for my english.<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-04T01:17:59.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137571",
+    "ThreadId": "41207",
+    "Html": "thank you very much Peterburrell, I did as you said and all works fine.<br>\r\nI find the problem. <br>\r\nI have a collection like this.<br>\r\n<br>\r\npublic class MyCollection : ObservableCollection&lt;MyItem&gt;<br>\r\n{<br>\r\n    // nothing here<br>\r\n}<br>\r\n<br>\r\nif I do<br>\r\n<br>\r\nMyCollection items = new MyCollection();<br>\r\nMyDataGrid.DataContext =  items;<br>\r\n<br>\r\nDon't Work and the grid display me only columns but no rows for add, I items collection is empty;<br>\r\n<br>\r\nif I do<br>\r\nObservableCollection&lt;MyItem&gt; items = new ObservableCollection&lt;MyItem&gt;();<br>\r\nMyDataGrid.DataContext =  items;<br>\r\n<br>\r\nAll Works also collection is empty.<br>\r\n<br>\r\ndo you konw why ?<br>\r\n<br>\r\nthanks.<br>\r\n<br>\r\nps: sorry for my english.<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-04T01:18:02.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151278",
+    "ThreadId": "41207",
+    "Html": "Hi,<br>\r\n<br>\r\nI am having the same problem and I'd like to know if this is a bug or the intended behavior.<br>\r\nWhy doesn't WPF DataGrid show an empty row when one uses a class deriving from an ObservableCollection (or Collection) as a binding source and the collection has no elements?<br>\r\n<br>\r\nthanks. \r\n",
+    "PostedDate": "2009-01-27T04:31:18.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151326",
+    "ThreadId": "41207",
+    "Html": "...so the answer to my question is that my custom made collection has to have a generic argument, even if it's not used.<br>\r\n<br>\r\nWhat I had before was this:<br>\r\n<br>\r\n<blockquote>public class MyCollection : Collection&lt;MyClass&gt;<br>\r\n{<br>\r\n&nbsp;...<br>\r\n}<br>\r\n</blockquote><br>\r\nWhat I have now is:<br>\r\n<blockquote>public class MyCollection <strong>&lt;T&gt;</strong> : Collection&lt;MyClass&gt; <strong>where T : MyClass</strong><br>\r\n{<br>\r\n&nbsp;...<br>\r\n}<br>\r\n</blockquote>Adding the generic argument {T} in the second case enabled the DataGrid to show an empty row for adding new values as I wanted.<br>\r\n<br>\r\nHowever this generic argument is not used anywhere in MyCollection, and it seems redundant. In the first case, the type of elements in the collection would still be MyClass, but it seems that DataGrid (or data binding FW) fails to &quot;see&quot; that...<br>\r\n<br>\r\nAm I missing something obvious here or is it a bug?<br>\r\n",
+    "PostedDate": "2009-01-27T06:08:08.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151778",
+    "ThreadId": "41207",
+    "Html": "Is this the same issue as http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=42062 ?<br>\r\n",
+    "PostedDate": "2009-01-28T06:48:24.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151801",
+    "ThreadId": "41207",
+    "Html": "It looks like it's the same issue, yes.<br>\r\n",
+    "PostedDate": "2009-01-28T07:31:22.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "630025",
+    "ThreadId": "41207",
+    "Html": "<p>the problem is that&nbsp; DataGrid try to create instant of new MyItem()&nbsp; for new empty row.</p>\r\n<p>So DataType of your ItemSource <strong>\"must have\"</strong> a default constructor that accept no params</p>\r\n<p>public class MyItem<br /> {</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: #008000;\">// the Constructor with <strong>NO params </strong>must declared</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public MyItem()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //do something or leave nothing.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /> }</p>\r\n<p>DataGrid <strong>CanUserAddRows</strong> only work if.. it can create <strong>new MyItem() </strong></p>\r\n<p><strong>&nbsp;</strong></p>",
+    "PostedDate": "2011-06-20T05:10:20.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "149562",
+    "ThreadId": "44885",
+    "Html": "Hi,<br>\r\n<br>\r\nI am binding different DataTables dynamically for the DataGrid as the ItemSource. After assigning the ItemSource I want to select(highlight) the last row of the datagrid. Is there any easy way to select the last row of the DataGrid?<br>\r\n<br>\r\nThanks!<br>\r\n",
+    "PostedDate": "2009-01-21T21:06:47.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149607",
+    "ThreadId": "44885",
+    "Html": "Hi,<br>\r\n<br>\r\nIf you are binding a DataTable you can find its row count from DataTable.Rows.Count, you can then use this to select the last row by setting the DataGrid.SelectedIndex property.<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n",
+    "PostedDate": "2009-01-22T01:01:45.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "157639",
+    "ThreadId": "47126",
+    "Html": "The front page mentions the brand new release as having fixes for memory leaks in the DatePicker and the VSM, is it possible to find out what files were changed?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2009-02-13T22:57:27.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "158752",
+    "ThreadId": "47126",
+    "Html": "We changed all the Behavior files in VSM to fix the memory leak.<div><br></div><div>Regards,</div><div>SaiedK</div>",
+    "PostedDate": "2009-02-17T17:15:42.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

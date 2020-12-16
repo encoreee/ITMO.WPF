@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If the datagrid is hosted in a scrollviewer and if the scroll viewer does not have Focusable=\"False\" when the current cell is clicked on the scrollviewer receives the focus. This is demonstrated i the attached project.\n \nThe behaviour that i am expecting is that if i click on the CurrentCell, it stays the CurrentCell.\n \nI use the ControlPanel->Ease of Access Center-> Make the keyboard easier to use->Underline keyboard shortcuts and access keys\nThis enables one to see where the keyboard focus is, as with this setting set there is a dotted line around the currently focused element.",
+    "LastUpdatedDate": "2013-02-21T18:40:40.147-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-28T20:24:01.827-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid looses focus when clicking on CurrentCell if contained in a ScrollViewer",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12340
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4077,
+      "FileName": "ScrollViewDatagridFocus.zip",
+      "DownloadUrl": ".\\4077"
+    }
+  ],
+  "Comments": []
+}

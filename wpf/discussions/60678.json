@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "205530",
+    "ThreadId": "60678",
+    "Html": "<p>Hello,<br> <br> I'm trying to bind two properties of the DataGridTemplateColumn - the &quot;Header&quot; property and the &quot;Visibility&quot; property, to two properties on my window class which <br> created the data grid. In both cases, the binding don't work. I checked the same binding with the &quot;Visibility&quot; property of another control, and it worked perfectly.<br> <br> the binding of the visibility property looks like this:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\"><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">dg</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTemplateColumn</span> <span style=\"color:Red\">Header</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Color</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Width</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">70</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Visibility</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:ObjectsCheckListControl}}, Path=IsColorColumnVisible, Mode=OneWay, Converter={StaticResource Bool2VisibilityConverter}}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span></pre>\r\n</div>\r\n</span><br>whereas ObjectsCheckListControl is my custom user control and is my x:Class of the current xaml file.</pre>\r\n</div>\r\n<p><br> <br> I don't have a clue what seem to be the problem.. <br> Does anyone once tried to bind these properties on the DataGridTemplateColumn and succeeded? <br> Or have Any suggestions?<br> <br> Thanks,<br> Avner.Ho.</p>",
+    "PostedDate": "2009-06-25T09:48:51.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

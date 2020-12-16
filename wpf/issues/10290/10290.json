@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The calendar doesn't raise the SelectedDatesChanged event, nor does it update its SelectedDates if you:\n1. enable multiple dates selection\n2. hold down the mouse button and select several days\n3. let the mouse button up _outside_ the Calendar control.\n \nIt looks like someone forgot to capture the mouse...",
+    "LastUpdatedDate": "2013-02-21T18:41:05.82-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-09T09:44:42.897-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Calendar: selection isn't updated when mouse is released outside the control",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10290
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This seems to obvous of a bug for it to exist this long...",
+      "PostedDate": "2009-07-20T16:35:28.553-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "A bug has been filed in our database. Thankyou, jdu.\r\n\r\n-Eric, MSFT",
+      "PostedDate": "2009-07-20T17:29:07.477-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-20T17:29:39.947-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-31T13:23:05.653-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-07-27T23:56:28.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:05.82-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

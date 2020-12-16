@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "432654",
+    "ThreadId": "209758",
+    "Html": "<p>Hello,</p>\r\n<p>I'm having a collection of data with 90000 items. When I bind this collection to a datagrid, it takes about 4 seconds to load it.</p>\r\n<p>The main problem is if I want to group the datas in the grid. If I use GroupDescription.Add(description), then when it tries to bind it to the view, it stays there, eating 1GB of ram and finally showing a contextswitchdeadlock error.</p>\r\n<p>can anyone give me some information on how to use large collections on datagrifd, or how to use grouping in datagrid on large collections?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-04-19T03:42:35.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

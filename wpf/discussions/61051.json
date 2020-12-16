@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "206990",
+    "ThreadId": "61051",
+    "Html": "<p>&nbsp;</p>\r\n<div>I;m trying to set a style from code behind</div>\r\n<div>These don't work:</div>\r\n<div>dataGrid1.Columns[0].CellStyle = ((Style)FindResource(&quot;{StaticResource myCellStyle}&quot;));</div>\r\n<div>dataGrid1.Columns[0].CellStyle = ((Style)FindResource(&quot;myCellStyle&quot;));</div>\r\n<div>can it be done?</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-30T03:09:11.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207231",
+    "ThreadId": "61051",
+    "Html": "<p>Hi zaurska,</p>\r\n<p>Yes, it looks like you are doing this correctly.&nbsp; We would recommend the following:</p>\r\n<p>dataGrid1.Columns[0].CellStyle = ((Style)FindResource(&quot;myCellStyle&quot;));</p>\r\n<p>As long as the Style you're trying to find is a StaticResource defined in the Resources of your Window, then this should work.</p>\r\n<p>Thanks,<br>Samantha</p>",
+    "PostedDate": "2009-06-30T13:50:22.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207286",
+    "ThreadId": "61051",
+    "Html": "\r\n<div>thanks Samantha,</div>\r\n<div> </div>\r\n<div>knowing that was correct has helped me see the real \r\nissue:</div>\r\n<div> </div>\r\n<div>I should have had:</div>\r\n<div> </div>\r\n<div>TargetType=&quot;{x:Type \r\nmy:DataGridCell}&quot;&gt;</div>\r\n<div> </div>\r\n<div>Z</div>",
+    "PostedDate": "2009-06-30T15:31:27.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258187",
+    "ThreadId": "61051",
+    "Html": "<p>Thank you so much! I met this issue, and it has been solved with the help of your discussion.<br>I am continue thinking about this issue, why I can not implement it in code directly without the resource? Do you have any advice?</p>",
+    "PostedDate": "2009-11-18T01:38:46.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258205",
+    "ThreadId": "61051",
+    "Html": "<p>Hi Jospeh</p>\r\n<p>I am not sure I understand your question fully.</p>\r\n<p>If you mean: why do you have to create a xaml resource to apply a style to a cell?</p>\r\n<p>... that bothered me too, while I'm coming from Win Forms where you can access anything at design or runtime, Xaml initially felt like a step backwards and counter intuitive.</p>\r\n<p>I too wanted to write something in c#&nbsp;like:</p>\r\n<p>Style x = new Style();</p>\r\n<p>x.Background= Brushes.Red</p>\r\n<p><strong>I think its because the Xaml elements have to be registered before runtime, you can then manipulate them, share them and swap them round during runtime, but they must be there to compile the Xaml, which is necessarily &quot;Fixed&quot; when you F5. &nbsp;</strong><em>does that make sense?</em></p>\r\n<p>I guess as a transition/translation between two quite different architectures there has to be some compromise, and the beauty of Xaml - as I'm finally beginning to see - is that its small, neat, efficient and static and transferable.</p>\r\n<p>I'm a home/hobby developer, so all the above might be wrong! But, I am starting to get really exciting results with c#/xaml mix, and what seems weird to begin with eventually does make a lot of sense, and actually helps the structure and discipline of your code.</p>\r\n<p>Z</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-18T02:17:43.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

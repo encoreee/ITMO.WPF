@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "111142",
+    "ThreadId": "33538",
+    "Html": "It would be a great asset to have the unit tests that are being used with this solution with the source.&nbsp; I find the unit tests invaluable, as they allow me the ability to know if I make a change/tweak to the original project that I didn't break anything and gives me pointers on how the item was designed to be used.&nbsp; <br>\r\n",
+    "PostedDate": "2008-08-14T09:35:41.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "111153",
+    "ThreadId": "33538",
+    "Html": "Hi,<br>\r\n<br>\r\nThanks for this piece of feedback.&nbsp;The WPF team&nbsp;does have some thoughts on these lines and you should hear more from us in future releases.<br>\r\n<br>\r\nThanks<br>\r\nVarsha (MSFT)\r\n",
+    "PostedDate": "2008-08-14T10:00:15.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

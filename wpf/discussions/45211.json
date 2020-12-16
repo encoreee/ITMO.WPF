@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "150783",
+    "ThreadId": "45211",
+    "Html": "Hi, I'm trying to preserve and restore the main window, deriving from RibbonWindow, using the Window.Loaded event and an OnClosing override.  I keep getting a consistent drift of Top-56, Left-8, and ActualWidth+8.  In other words, window keeps drifting up and to the left, while the width keeps getting wider.  This happens regardless of whether I use a Settings class or just hard-coded numbers in the Loaded event.<br>\r\n<br>\r\nIs this is a known issue or is there some known delta I'm supposed to apply?<br>\r\n<br>\r\nThanks,<br>\r\n\\Steven<br>\r\n",
+    "PostedDate": "2009-01-25T17:12:27.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155243",
+    "ThreadId": "45211",
+    "Html": "To be clear, this RibbonWindow does have a Ribbon.  I'm guessing that the ribbon itself is accounting for the 56 pixel difference in the top value?  Any have any ideas?  Thanks!\r\n",
+    "PostedDate": "2009-02-06T16:27:41.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

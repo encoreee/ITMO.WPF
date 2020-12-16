@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "204301",
+    "ThreadId": "60332",
+    "Html": "<p>Hi All,</p>\r\n<p>&nbsp;</p>\r\n<p>Is it possible to refresh one cell (call GenerateElement() once) of the DataGrid? Now I used NotifyPropertyChanged(&quot;ElementStyle&quot;) but this will refresh all the rows of the column (Called GenerateElement many times)</p>",
+    "PostedDate": "2009-06-22T19:39:57.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206034",
+    "ThreadId": "60332",
+    "Html": "<p>I'm also interested in this. Anybody have a solution?</p>",
+    "PostedDate": "2009-06-26T12:28:58.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206068",
+    "ThreadId": "60332",
+    "Html": "<p>Hey tonytam,</p>\r\n<p>What is the actual scenario you are trying to solve. I am afraid it is not possible to do what you are asking for in a non-hacky way (Setting IsEditable to true and then to false on DataGridCell would do the trick, but it is hacky).</p>",
+    "PostedDate": "2009-06-26T13:45:28.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206309",
+    "ThreadId": "60332",
+    "Html": "<p>Hi VamseeP,</p>\r\n<p>Thanks for your reply. I will try your hacky-way to see whether it can solve my scenario. And I will let you know the result later.</p>\r\n<p>My scenario is that I extend the DataGridTextColumn and override the method GenerateElement(). Inside this method, I  need&nbsp; to access my own data structures in order to do some UI formattings such as Underline the textblock. Once, my data structure is updated I need to repaint that cell only&nbsp; (Like calling Invalidate() in WinForm). Now I just call NotifyPropertyChanged(&quot;ElementStyle&quot;) to repaints the UI but this call will refresh all the rows of the column. The performance is not good when my DataGrid contains many records.</p>",
+    "PostedDate": "2009-06-28T01:31:50.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

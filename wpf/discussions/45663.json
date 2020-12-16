@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "152406",
+    "ThreadId": "45663",
+    "Html": "I want to have a tooltip to be displayed for each column.<br>\r\n<br>\r\nAny advice? <br>\r\n<br>\r\nThanks in advance.<br>\r\n",
+    "PostedDate": "2009-01-29T22:08:42.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157910",
+    "ThreadId": "45663",
+    "Html": "+1. It seems the DataGridColumnHeader has a Tooltip property. But the trick I think is figuring out how to bind to the property. If you sink the ColumnAdded event you don't get the header, just the Column....<br>\r\n<br>\r\nAnyone have any ideas?\r\n",
+    "PostedDate": "2009-02-15T20:14:25.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159966",
+    "ThreadId": "45663",
+    "Html": "I have one temporary solution to this is to catch DataGrid Mouse enter event and initialize each column header... just like below... may be it will help you as well..<br>\r\n<br>\r\nprivate void OnDataGridMouseEnter(object sender, MouseEventArgs args)<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (m_MouseEnterCount == 1)&nbsp;&nbsp; &nbsp;//&nbsp;&nbsp;&nbsp; Make sure it initialize only once and not every time mouse enter in DataGrid....<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;DataGridColumnHeader columnHeader = DataGridHelper.GetColumnHeader(m_MyDataGrid, 0);<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;columnHeader.ToolTip = &quot;Tool tip for first column&quot;;<br>\r\n<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;columnHeader = DataGridHelper.GetColumnHeader(m_MyDataGrid, 1);<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;columnHeader.ToolTip = &quot;Tool tip for Second column&quot;;<br>\r\n<br>\r\n<br>\r\n// do the same thing for all columns.........<br>\r\n<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; m_MouseEnterCount++;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n",
+    "PostedDate": "2009-02-19T17:57:19.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159999",
+    "ThreadId": "45663",
+    "Html": "You might have an easier time using DataGrid.ColumnHeaderStyle and setting the ToolTip property there.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-02-19T18:46:25.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176544",
+    "ThreadId": "45663",
+    "Html": "Hy.<br>\r\nI would also need this functionality with the tooltips for the columns headers. But I would like to bind this ToolTip property of the CoulmnHeader but I don't know how.<br>\r\nWere you able to solve this problem with the tooltips?<br>\r\n<br>\r\nThanks a lot.<br>\r\nNico\r\n",
+    "PostedDate": "2009-04-07T04:07:53.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176986",
+    "ThreadId": "45663",
+    "Html": "<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>Hy all.<br>\r\nI have done this for the style of the column:<br>\r\n<br>\r\n&lt;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#a31515\">Style</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Key</span><span style=\"font-size:13px;color:#0000ff\">=&quot;DefaultColumnHeaderStyle&quot;</span><span style=\"font-size:13px;color:#ff0000\"> TargetType</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">Type</span><span style=\"font-size:13px;color:#ff0000\"> wpfToolkit</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">DataGridColumnHeader</span><span style=\"font-size:13px;color:#0000ff\">}&quot;&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">Setter</span><span style=\"font-size:13px;color:#ff0000\"> Property</span><span style=\"font-size:13px;color:#0000ff\">=&quot;ToolTip&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Value</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> RelativeSource</span><span style=\"font-size:13px;color:#0000ff\">={</span><span style=\"font-size:13px;color:#a31515\">RelativeSource</span><span style=\"font-size:13px;color:#ff0000\"> Self</span><span style=\"font-size:13px;color:#0000ff\">},</span><span style=\"font-size:13px;color:#ff0000\"> Path</span><span style=\"font-size:13px;color:#0000ff\">=Column.(ToolTipService.ToolTip)}&quot;/&gt;<br>\r\n&lt;<span style=\"font-size:13px;color:#a31515\">Style<span style=\"font-size:13px;color:#0000ff\">/&gt;<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><br>\r\nAnd when for binding the tooltip on the column, I do this:<br>\r\n<br>\r\n&lt;</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGridTextColumn </span><span style=\"font-size:13px;color:#ff0000\">Binding</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> Path</span><span style=\"font-size:13px;color:#0000ff\">=CountryCode}&quot;</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#ff0000\">Header</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> Path</span><span style=\"font-size:13px;color:#0000ff\">=lblCountry,</span><span style=\"font-size:13px;color:#ff0000\"> Source</span><span style=\"font-size:13px;color:#0000ff\">={</span><span style=\"font-size:13px;color:#a31515\">StaticResource</span><span style=\"font-size:13px;color:#ff0000\"> resStaticData</span><span style=\"font-size:13px;color:#0000ff\">},</span><span style=\"font-size:13px;color:#ff0000\"> Mode</span><span style=\"font-size:13px;color:#0000ff\">=OneWay}&quot;</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#ff0000\">ToolTipService.ToolTip</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> Path</span><span style=\"font-size:13px;color:#0000ff\">=lblCountry,</span><span style=\"font-size:13px;color:#ff0000\"> Source</span><span style=\"font-size:13px;color:#0000ff\">={</span><span style=\"font-size:13px;color:#a31515\">StaticResource</span><span style=\"font-size:13px;color:#ff0000\"> resStaticData</span><span style=\"font-size:13px;color:#0000ff\">},</span><span style=\"font-size:13px;color:#ff0000\"> Mode</span><span style=\"font-size:13px;color:#0000ff\">=OneWay}&quot;/&gt;<br>\r\n<br>\r\nNico\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p> </p>\r\n</span></span></span></span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2009-04-07T23:16:56.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276379",
+    "ThreadId": "45663",
+    "Html": "<p>this works for me</p>\r\n<p><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span>&nbsp; <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{x:Type Custom:DataGridColumnHeader}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style.Triggers</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Trigger</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">IsMouseOver</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">True</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Setter</span> <span style=\"color:Red\">Property</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">ToolTip</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Value</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Column.(ToolTipService.ToolTip), RelativeSource={RelativeSource Self}}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Trigger</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style.Triggers</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp; <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Style</span><span style=\"color:Blue\">&gt;</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-12T12:34:50.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

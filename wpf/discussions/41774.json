@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "138622",
+    "ThreadId": "41774",
+    "Html": "Is there a way to colorize/theme/style the ribbon besides the PopularApplicationSkins merge?<br>\r\n",
+    "PostedDate": "2008-12-08T08:23:57.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139100",
+    "ThreadId": "41774",
+    "Html": "Yes, you can retemplate the Ribbon just like you would any other WPF control.\r\n",
+    "PostedDate": "2008-12-09T12:33:27.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139585",
+    "ThreadId": "41774",
+    "Html": "Some examples would be nice, or how the default templates look like. How to guess what the properties and 'PART_' definitions are?<br>\r\n",
+    "PostedDate": "2008-12-10T23:42:19.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139784",
+    "ThreadId": "41774",
+    "Html": "You can view the default templates using Reflector with the BamlViewer add-on:<br>\r\n- Reflector can be installed here: <a href=\"http://www.red-gate.com/products/reflector/\">http://www.red-gate.com/products/reflector/</a><br>\r\n- The BamlViewer add-on can be found here: <a href=\"http://www.codeplex.com/reflectoraddins/Wiki/View.aspx?title=BamlViewer&referringTitle=Home\">http://www.codeplex.com/reflectoraddins/Wiki/View.aspx?title=BamlViewer&amp;referringTitle=Home</a><br>\r\n<br>\r\nYou'll want to look at themes/generic.baml.  You can tell what parts of the Ribbon the different styles are for by looking at the TargetTypes.  You'll probably have to do a bit of trial and error to get the look you want.  If you have trouble finding a particular visual that you want to retemplate, let me know and I can try to help locate the appropriate style/template.\r\n",
+    "PostedDate": "2008-12-11T11:17:44.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "186907",
+    "ThreadId": "55351",
+    "Html": "Hi,<div>Im Using WPF ToolKit March release.Im Having require ment like this:- Datagrid is populated with collection of customer object. Datagrid consists of 2 Template column.each Teamplate column consists of one Button.Namely Button1 ,Button2.When the User click on Button1 Row Detail should be visible .RowDetail consists of Stackpanel with TextBox. On Click of Button ,I writing in code behind for button click </div><div><br></div><div><div>  DataGridRow drp = DataGridRow.GetRowContainingElement(sender as Button);  //gets Current Row of Button Clicked</div><div><br></div><div>(drp.DetailsTemplate.LoadContent() as StackPanel).FindName(&quot;TextBox1&quot;).Text = &quot;Some Value&quot;; Set the Text to TextBox1<br></div><div><br></div><div>whenever user clicks on Button2 of same row,RowdetailTemplate 's Textbox is not populated with NewValues.</div><div>Some How above code is not wrking </div><div><br></div><div>Even I moved code to LoadingRowDetails i.e On Clicking of Button Im calling LoadingRowDetails,First time it loads with correct value but next time i click on Another Button in the same row,it doesnot reflect with new value (which i set).</div><div><br></div><div>Code is wrking by moving code RowDetailsVisibilityChanged event ,It is wrking fine,But this event has to fire twice.because if there is change in visiblity of rowdetails then this event fires.First time rowdetail visiblity change from collapse to Visible state,  when i click on 2nd button,since rowdetail visiblity is visible,RowDetailsVisiblityChanged event doesnot fire.</div><div><br></div><div>Does any1 faced same issue.</div><div><br></div><div>With Regards,</div><div>Mahender</div><div><br></div></div>",
+    "PostedDate": "2009-05-05T05:18:18.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187317",
+    "ThreadId": "55351",
+    "Html": "I would be interested in this answer as well.<div><br></div><div>Does the RowDetailsVisibilityChanged event only fire when the Visibilty is set to Visible and not when set to collapsed?</div><div><br></div><div>Mahender, are you using the March or the Jan toolkit currently?</div><div><br></div><div>Tracy</div>",
+    "PostedDate": "2009-05-06T04:35:16.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212000",
+    "ThreadId": "55351",
+    "Html": "<p>any solution or work around for this problem??</p>",
+    "PostedDate": "2009-07-15T00:48:32.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212290",
+    "ThreadId": "55351",
+    "Html": "<p>Hi,</p>\r\n<p>There is work around for this kind of situation.Inspite of creating style in xaml file</p>\r\n<p>and retrieve datatemplate in code -behind and changing state of control like change text or assigning click functionality dynamically etc .</p>\r\n<p>We have to create Framework element dynamically and assign to control template of Row details</p>\r\n<p>Psedo code:-</p>\r\n<p>Create a Framework Element Factory instance ,which is of Textbox /Buttton etctype.</p>\r\n<p>Set the Bindings or values to FrameElement Factory Instance</p>\r\n<p>and assign FrameworkElement Factory instance to Visual Tree of control Template of RowDetailTemplate</p>\r\n<p>No Need to create Style in XAML.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-15T13:07:29.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

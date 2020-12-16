@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "185277",
+    "ThreadId": "54895",
+    "Html": "Hi <br>\r\n<br>\r\nHow to set background color for a Calendar of DatePicker? <br>\r\nI even copied the theme's generic.xaml  (from the source code) of the calendar to my resource file, it still does't work.<br>\r\n <br>\r\nThanks for help!<br>\r\nSteve\r\n",
+    "PostedDate": "2009-04-29T19:00:21.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187093",
+    "ThreadId": "54895",
+    "Html": "Hi Steve - <br>\r\n<br>\r\nYou could try using the CalendarStyle Property on the DatePicker and assign it a Style for a Calendar with the Background Property set to whatever you need. For example:<br>\r\n<br>\r\n<span style=\"color:#0000ff;font-size:13px\"><span style=\"color:#0000ff;font-size:13px\">\r\n<p>&lt;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"color:#a31515;font-size:13px\">ms</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">DatePicker</span><span style=\"color:#ff0000;font-size:13px\"> </span><span style=\"color:#0000ff;font-size:13px\">&gt;<br>\r\n</span><span style=\"color:#0000ff;font-size:13px\">    &lt;</span><span style=\"color:#a31515;font-size:13px\">ms</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">DatePicker.CalendarStyle</span><span style=\"color:#0000ff;font-size:13px\">&gt;<br>\r\n        </span><span style=\"color:#0000ff;font-size:13px\">&lt;</span><span style=\"color:#a31515;font-size:13px\">Style</span><span style=\"color:#ff0000;font-size:13px\"> TargetType</span><span style=\"color:#0000ff;font-size:13px\">=&quot;ms:Calendar&quot;&gt;<br>\r\n            </span><span style=\"color:#0000ff;font-size:13px\">&lt;</span><span style=\"color:#a31515;font-size:13px\">Setter</span><span style=\"color:#ff0000;font-size:13px\"> Property</span><span style=\"color:#0000ff;font-size:13px\">=&quot;Background&quot;</span><span style=\"color:#ff0000;font-size:13px\"> Value</span><span style=\"color:#0000ff;font-size:13px\">=&quot;Blue&quot;/&gt;<br>\r\n        </span><span style=\"color:#0000ff;font-size:13px\">&lt;/</span><span style=\"color:#a31515;font-size:13px\">Style</span><span style=\"color:#0000ff;font-size:13px\">&gt;<br>\r\n    </span><span style=\"color:#0000ff;font-size:13px\">&lt;/</span><span style=\"color:#a31515;font-size:13px\">ms</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">DatePicker.CalendarStyle</span><span style=\"color:#0000ff;font-size:13px\">&gt;<br>\r\n</span><span style=\"color:#0000ff;font-size:13px\">&lt;/</span><span style=\"color:#a31515;font-size:13px\">ms</span><span style=\"color:#0000ff;font-size:13px\">:</span><span style=\"color:#a31515;font-size:13px\">DatePicker</span><span style=\"color:#0000ff;font-size:13px\">&gt;<br>\r\n</span><br>\r\n-Eric, MSFT </p>\r\n",
+    "PostedDate": "2009-05-05T13:40:43.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

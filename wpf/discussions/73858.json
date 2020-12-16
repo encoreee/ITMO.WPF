@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "252568",
+    "ThreadId": "73858",
+    "Html": "<div>Hi! I'm using a datagrid with a number of columns that makes the scrolling facility necesary. But I need while scrolling the first and the last columns to&nbsp;stay visible. That is, that only the inner columns scroll. Exists a way of &quot;freeze&quot; the first and the last columns while scrolling the inner columns???. <br>Thanks.&lt;!----&gt;</div>",
+    "PostedDate": "2009-11-02T14:08:51.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

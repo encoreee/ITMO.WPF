@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "415667",
+    "ThreadId": "204246",
+    "Html": "<p>I'm using the Feb 2010 release. I'm opening a view with 3 tabs, each tab contains an instance of the DataGrid, for some reason, the grid on the first tabs header and rows render totally blank, but I know the items are there as I see the alternating colors. If I put a 4th empty tab to start with, it renders fine once I switch tabs, but that seems impractical. Is this a known bug or is there a workaround? I also tried attaching a debugger with the toolkit source to see if any exceptions were being thrown, but it didn't seem any were.</p>",
+    "PostedDate": "2010-03-08T14:40:48.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "415692",
+    "ThreadId": "204246",
+    "Html": "<p>Appears turning Column virtualization off fixes it, although I'd rather not have to do that.</p>",
+    "PostedDate": "2010-03-08T15:09:42.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

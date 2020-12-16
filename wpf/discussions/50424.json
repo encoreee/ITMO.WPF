@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "168989",
+    "ThreadId": "50424",
+    "Html": "I am creating an app that uses the Ribbon control. I have encapsulated the Ribbon in a UserControl, to keep its markup and resources separated from those of the host window. I would like to create a custom RibbonCommand for each item on the ribbon, like this:<br>\r\n<br>\r\n<p>&lt;r:RibbonCommand x:Key=&quot;Copy&quot;<br>\r\n    Executed=&quot;Copy_Executed&quot;<br>\r\n    CanExecute=&quot;CanExecuteCopy&quot;<br>\r\n    LabelTitle=&quot;Copy&quot;<br>\r\n    LargeImageSource=&quot;Images\\CopyLarge.png&quot;<br>\r\n    SmallImageSource=&quot;Images\\CopySmall.png&quot;<br>\r\n    ToolTipDescription=&quot;Copy the selection and put it on the Clipboard.&quot;<br>\r\n    ToolTipTitle=&quot;Copy&quot; /&gt;</p>\r\n<p> I can place 'Executed' and 'CanExecute' handlers in the UserControl's code-behind, and they work okay.<br>\r\n<br>\r\nBut that's not what I want to do. What I want is for the RibbonCommand to bubble up the logical tree so that the <em>window hosting</em> the UserControl can respond to it. I know that I need to set a CommandBinding in the host window, and I know generally how to do that. But I'm not sure how to reference a custom RibbonCommand in the UserControl from the host window. Can someone tell me how to do that? <br>\r\n<br>\r\nBTW, I'm aware that RibbonCommands are probably going away in v1 of the Ribbon control. I'm simply trying to get the current version of the control wired up using the existing infrastructure.<br>\r\n<br>\r\nThanks for your help.<br>\r\n<br>\r\nDavid Veeneman<br>\r\nForesight Systems</p>\r\n",
+    "PostedDate": "2009-03-17T05:35:50.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169237",
+    "ThreadId": "50424",
+    "Html": "I found my answer. I won't belabor things here. A RibbonCommand is declared in code pretty much the same way as a custom RoutedCommand--declare it in a static class, add it to the CommandBindings collections of both the UserControl and the main window. The 'executed' and 'can execute' methods get specified in the main window's CommandBinding, since that's who will respond to the command. The RibbonCommand type has properties for label, images, tool tip, and keyboard gesture--so those properties get set in code, rather than in XAML.<br>\r\n<br>\r\nDavid Veeneman<br>\r\nForesight Systems\r\n",
+    "PostedDate": "2009-03-17T19:22:58.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

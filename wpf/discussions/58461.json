@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "197785",
+    "ThreadId": "58461",
+    "Html": "<p>I read thru several post where two functions are used, GetRow and GetCell coded in C-Sharp (which are also in the Samples and will not compile either). I converted both, GetRow converts fine but in GetCell I get errors on</p>\r\n<p>\r\n<p>&nbsp;Dim<span style=\"font-size:x-small\"> presenter </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">As</span></span><span style=\"font-size:x-small\"> DataGridCellsPresenter = GetVisualChild(</span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">Of</span></span><span style=\"font-size:x-small\"> DataGridCellsPresenter)(rowContainer)</span></p>\r\n</p>\r\n<p>I have Option Strict On, Option explcit On and Option infer On</p>\r\n<p>Can someone assist with this problem or suggest another method to get a cells content?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks...Kevin</p>",
+    "PostedDate": "2009-06-04T08:04:27.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

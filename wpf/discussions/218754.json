@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "464782",
+    "ThreadId": "218754",
+    "Html": "<p>...or ideally how to do both at once!</p>\r\n<p>In my software I need to virtualise a DataGrid because it can have a reasonably large number of rows and columns (the highest so far has been about 200 rows and maybe 15 columns - not huge by some people's standards, but enough to cause problems); disabling virtualisation causes not only the datagrid but also other parts of the software (notably the ribbon) to update slowly.</p>\r\n<p>Unfortunately, enabling virtualisation also causes a number of problems, most notably: some data being disaplyed incorrectly (binding sources misaligned?), column widths changing as the grid is scrolled if they have been set to auto (because the currently-visible items all happen to be narrower than those visible in other scroll&nbsp;positions), and Vince Sabal's GetCell() implementation returning blank values for any data not currently visible.</p>\r\n<p>So I need to find a solution that affords the speed of virtualisation without the problems. The last problem (with GetCell()) I can probably work around by disabling virtualisation at the start of the routine that calls it then enabling it again at the end (so far it is only used for copying the data from the data grid prior to exporting or printing that data, so this should not cause any other problems), but on the others I am out of ideas. Can anybody offer any suggestions?</p>",
+    "PostedDate": "2010-07-08T04:29:02.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

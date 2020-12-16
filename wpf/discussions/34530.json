@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "114640",
+    "ThreadId": "34530",
+    "Html": "Hi,<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; i want to display my DataGrid by Paging<br>\r\n&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp; my datasource is a good many<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; how can i do this?<br>\r\n<br>\r\nThanks,<br>\r\nOnly<br>\r\n",
+    "PostedDate": "2008-08-29T04:57:47.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115814",
+    "ThreadId": "34530",
+    "Html": "Paging isn't specific to the DataGrid.&nbsp; It can really be implemented for any general ItemsControl.&nbsp; Here is an example on CodeProject that does a custom paging implementation.&nbsp;&nbsp;<a href=\"http://www.codeproject.com/KB/WPF/WPF_Paging.aspx\">http://www.codeproject.com/KB/WPF/WPF_Paging.aspx</a>\r\n",
+    "PostedDate": "2008-09-03T13:47:23.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "115882",
+    "ThreadId": "34530",
+    "Html": "Thanks!",
+    "PostedDate": "2008-09-03T19:56:18.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

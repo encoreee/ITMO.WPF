@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "894309",
+    "ThreadId": "389898",
+    "Html": "\r\n<p>I am using WPFToolkit Calendar Control from WPFToolkit library. I am experiencing weird UI behavior. The following set of events happening.</p>\r\n<ol>\r\n<li>Open calendar widget </li><li>Click on the month at the top of the widget (takes you to the list of months)\r\n</li><li>Select a different month </li><li>Click on the month at the top of the widget (Now it closes the Calendar) </li></ol>\r\n<p>At the 4th Step, it shouldn't closes the Calendar. Any idea why it is happening?</p>\r\n",
+    "PostedDate": "2012-08-01T12:19:15.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

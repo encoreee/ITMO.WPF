@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "171056",
+    "ThreadId": "51039",
+    "Html": "How can I bind the WPF datagrid to XML?&nbsp; I followed Bea Stollnitz's great blog article on binding to XML in WPF but when I add in a DataGrid and bind to the XmlDataProvider, I get an error that ItemsSource cannot be an XmlDataProvider.&nbsp; As Bea's blog article demonstrates, ListBox ItemsSource can be an XmlDataProvider so what about DataGrid?&nbsp; How can I do this?<br>\r\n<br>\r\nI did use ItemsSource=&quot;{Binding}&quot; but that only made my grid bind to the XML document object model rather than to the XML data in the document.<br>\r\n<br>\r\nRegards,<br>\r\n<br>\r\nDale<br>\r\n",
+    "PostedDate": "2009-03-23T15:07:16.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172731",
+    "ThreadId": "51039",
+    "Html": "See this thread, <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39322\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39322</a>.\r\n",
+    "PostedDate": "2009-03-27T05:45:48.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

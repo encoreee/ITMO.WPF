@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "How to reproduce the bug:\n\t1. Create DataGrid with manually defined columns\n\t2. Define validation rules for cells and rows\n\t3. Change a cell creating a validation error\n\t4. Now change ItemsSource to a valid collection without any validation errors\n\t5. Grid resets, but disallows any editing.\n\t\nSimilar issue is discussed here: http://wpf.codeplex.com/Thread/View.aspx?ThreadId=70620\n\t\nWorkaround adapted from http://maximusmahender.spaces.live.com/blog/cns!E5ADEF9F25580ADA!237.entry?sa=535108261\n \n        public void ResetDatagrid()\n        {\n            Type DatagridType = fieldsTable.GetType();\n            PropertyInfo HasCellValidationProperty = DatagridType.GetProperty(\"HasCellValidationError\", BindingFlags.NonPublic | BindingFlags.Instance);\n \n            if (HasCellValidationProperty != null)\n            {\n                HasCellValidationProperty.SetValue(fieldsTable, false, null);\n            }\n \n        }",
+    "LastUpdatedDate": "2013-02-21T18:40:38.683-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-04-10T06:40:28.277-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Internal property HasCellValidationError not reset properly on source change",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12591
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have of course tried cancelling edits and rolling back any unvalidated changes, but nothing apart from the above mentioned code works.",
+      "PostedDate": "2010-04-10T06:41:49.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-10T06:43:22.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:38.683-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

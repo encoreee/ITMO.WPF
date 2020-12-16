@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "130715",
+    "ThreadId": "39403",
+    "Html": "I have a .NET 2.0 WinForm app, where I have leveraged DataGridView heavily. Now, I have started to migrate that app to .NET 3.5 &amp; WPF. As the application is large, it would take months to migrate it seamlessly. In the meantime, I want WPF to integrate into the existing UI.<br>\r\n<br>\r\nSo, I need to style the DataGrid like a traditional DataGridView (default DGV look without any customizations). I have tried but not able to achieve it exactly.<br>\r\n<br>\r\nCan somebody provide me the styling for the WPF DataGrid to make it look exactly like a traditional DGV?? I believe many people would be able to reuse the styles.<br>\r\n",
+    "PostedDate": "2008-11-06T19:24:31.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

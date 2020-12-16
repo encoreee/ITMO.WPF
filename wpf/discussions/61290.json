@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "207904",
+    "ThreadId": "61290",
+    "Html": "<p>Can we export the chart created using WPF Charting (June 2009 release of the WPF Toolkit) to Excel? If possible , How?</p>\r\n<p>Thanks</p>\r\n<p>JJ</p>",
+    "PostedDate": "2009-07-02T05:04:56.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209303",
+    "ThreadId": "61290",
+    "Html": "<p>JJ,</p>\r\n<p>I believe you asked the same question on my blog: <a href=\"http://blogs.msdn.com/delay/archive/2009/06/25/wpf-charting-it-s-official-june-2009-release-of-the-wpf-toolkit-is-now-available.aspx#9813868\">http://blogs.msdn.com/delay/archive/2009/06/25/wpf-charting-it-s-official-june-2009-release-of-the-wpf-toolkit-is-now-available.aspx#9813868</a></p>\r\n<p>Here was my reply:</p>\r\n<p><em>What kind of export are you looking for? The chart is created from data the application owns, so if the application wants to export that same data to Excel (via COM/XLS/CSV/etc.), then it can do so. If an image of the chart is desired, that can be obtained via WPF's RenderTargetBitmap. I'm not sure what export functionality people are looking for from the Chart control itself, so if you have specific scenarios in mind, I'd love to hear them!&nbsp;</em></p>",
+    "PostedDate": "2009-07-06T23:09:50.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

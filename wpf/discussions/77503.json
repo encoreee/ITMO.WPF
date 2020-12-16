@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "265040",
+    "ThreadId": "77503",
+    "Html": "<p>Our application, which uses a DataGrid (latest version) with grouping, is showing a significant memory leaking when the user sorts columns. Basically, each time the user clicks on a column to sort, a bit of memory is chewed up, and never seems to be released. It's pretty easy to get the app using over 200 MB (starting around 60MB) with a few clicks.&nbsp; When I turn off grouping, the memory usage stabilizes, staying around 80MB.</p>\r\n<p>Anyone else seeing this? Any fixes?</p>",
+    "PostedDate": "2009-12-08T10:44:16.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265131",
+    "ThreadId": "77503",
+    "Html": "<p>I spent the day tracing through the toolkit and WPF source, and I think I have at least a partial understanding of what's happening (though I won't claim to understand it in depth - there's helluva lot of code involved).</p>\r\n<p>It looks like in Grouping mode, the row's row.Tracker.StopTracking method is never called, because ClearContainerForItemOverride is never called by the WPF ItemsControl implementation. The result is that you just end up with an ever growing chain of ContainerTracking instances.</p>\r\n<p>No idea how to fix the problem, though. Anyone?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-08T16:13:50.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268700",
+    "ThreadId": "77503",
+    "Html": "<p>Note that Microsoft has acknowledged that this is a bug, being fixed in .NET 4.0. No fix for .NET 3.5 at this time.</p>",
+    "PostedDate": "2009-12-17T16:48:31.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459059",
+    "ThreadId": "77503",
+    "Html": "<p>was the fix for 4.0 ever committed to the codeplex source? Was it released in the Feb or March 2010 releases of the WPF Toolkit?</p>",
+    "PostedDate": "2010-06-23T10:30:24.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459063",
+    "ThreadId": "77503",
+    "Html": "<p>The fix was actually in the .NET framework, not the toolkit itself. From what I understand, it isn't fixable in just the toolkit, so it won't ever be fixed on .NET 3.5.&nbsp;</p>",
+    "PostedDate": "2010-06-23T10:38:17.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459118",
+    "ThreadId": "77503",
+    "Html": "<p>This is unfortunate.</p>\r\n<p>there are already &quot;bugs&quot; fixed in the toolkit that make the WPF Toolkit version of DataGrid better to use than the version released in 4.0.</p>\r\n<p>I presume since it is open source, I am free to attempt to fix this bug myself?</p>",
+    "PostedDate": "2010-06-23T12:41:23.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

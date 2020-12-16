@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "174094",
+    "ThreadId": "51890",
+    "Html": "Can anybody direct me to a sample ControlTemplate for the DataGrid? Specifically the DataGrid, not the cells and rows. Through trial and error I have an ugly grid that doesn't scroll and whose header columns are misaligned with the columns in the rows. More importantly, is there a better way (than trial and error) to customize the controltemplate? For example, could I somehow discover the default control template and just tweak it for my needs? I feel like I'm wasting too much time even for a novice.\r\n",
+    "PostedDate": "2009-03-31T14:33:17.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174126",
+    "ThreadId": "51890",
+    "Html": "Have you looked at the actual DataGrid.ControlTemplate?  Maybe that can help you understand how to build a custom template.\r\n",
+    "PostedDate": "2009-03-31T17:07:29.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174128",
+    "ThreadId": "51890",
+    "Html": "It certainly might! How would I go about looking at it? \r\n",
+    "PostedDate": "2009-03-31T17:24:43.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174145",
+    "ThreadId": "51890",
+    "Html": "You can download the source code under the Releases tab.  Once downloaded, take a look at the Generic.xaml file for DataGrid.\r\n",
+    "PostedDate": "2009-03-31T19:07:28.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174291",
+    "ThreadId": "51890",
+    "Html": "Thank you very much.\r\n",
+    "PostedDate": "2009-04-01T05:29:11.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238762",
+    "ThreadId": "51890",
+    "Html": "<p>That was helpful. 10x</p>",
+    "PostedDate": "2009-09-25T06:02:36.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

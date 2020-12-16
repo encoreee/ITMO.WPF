@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "186251",
+    "ThreadId": "55174",
+    "Html": "Modern applications, including Visual Studio and Office have recently (couple of years ago) introduced very useful control - the smart tag. I think smart tags would nicely fit into the set of new controls available for future-ready applications, and the WPF Toolkit might be a good place to introduce such control. I also believe such control has to be developed for new Visual Studio UI anyway, so why not release it to developers, too?\r\n",
+    "PostedDate": "2009-05-03T03:33:22.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

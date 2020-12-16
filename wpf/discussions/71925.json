@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "245509",
+    "ThreadId": "71925",
+    "Html": "<p>hello everybody !</p>\r\n<p>i need some help concerning DataGrid Row Style.</p>\r\n<p>i have a&nbsp;DataGrid that one of it's columns is a DataGridCheckBoxColumn.<span style=\"font-size:x-small;color:#a31515\"></span></p>\r\n<p>what do i need to do&nbsp;in order to&nbsp;allow a change of Row Style on&nbsp;each row that&nbsp;check event accured on it.</p>\r\n<p>10x !</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-14T04:12:06.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "136915",
+    "ThreadId": "41264",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a question for the experts out there!! I have just been looking at the VSM in the tool kit and I was wondering; is it intended that the VSM will replace Triggers when wanting to customize controls? (I don't know much about Triggers either mind you!!)<br>\r\n<br>\r\nFor example: If I wanted to use the DataGrid but have the rows highlight when the mouse goes over (not selecting) them, can this be done using the VSM? Also, if I wanted to change the sort of move over color of a button, should I use the VSM or a Trigger in a Style?<br>\r\n<br>\r\nThanks for your help.<br>\r\n<br>\r\nGraham\r\n",
+    "PostedDate": "2008-12-02T05:55:54.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136984",
+    "ThreadId": "41264",
+    "Html": "The VSM was invented for Silverlight to make up for the fact that Silverlight doesn't have real triggers. The VSM, in my opinion, is a bit of a hack. Partly because it's trying to give you the functionality that the much-more-powerful triggers give you, and party because it really only works for quite trivial scenarios/controls. You should use triggers if they are available to you.\r\n",
+    "PostedDate": "2008-12-02T09:22:57.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137049",
+    "ThreadId": "41264",
+    "Html": "VSM was first released in Silverlight, and Silverlight does not have triggers. However, we do view both as having a place in templating. VSM, generally, is about allowing designers to define the look of visual states and transitions between these states. Currently, it is up to the developer to switch between these states, and this can only be done in code. Many of the state transition methods written out there, however, look very much like template trigger definitions. We are working on a unifying story here but don't have anything to announce yet.<br>\r\n<br>\r\nThe main message is that both will be around in the future and have their place:<br>\r\n<ul>\r\n    <li>Use VSM when you are working like a designer on distinct visual states and transitions.</li>\r\n    <li>Use Triggers when you are working like a developer with property values and dependencies.</li>\r\n</ul>\r\n<p>These aren't hard rules, just generalities.<br>\r\n<br>\r\nHope that helps,<br>\r\nBen</p>\r\n",
+    "PostedDate": "2008-12-02T13:52:17.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137139",
+    "ThreadId": "41264",
+    "Html": "Thanks guys for your help and advice.<br>\r\n<br>\r\nGraham\r\n",
+    "PostedDate": "2008-12-02T22:35:25.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137459",
+    "ThreadId": "41264",
+    "Html": "Here's a link to a sample that uses VSM with DataGrid.  It's a good base that illustrates how this can be done using the WPFToolKit.<br>\r\n<br>\r\n<a href=\"http://msdnrss.thecoderblogs.com/2008/11/04/wpf-vsm-and-datagrid-sample/\">http://msdnrss.thecoderblogs.com/2008/11/04/wpf-vsm-and-datagrid-sample/</a> \r\n",
+    "PostedDate": "2008-12-03T14:58:27.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

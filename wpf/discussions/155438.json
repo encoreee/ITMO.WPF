@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "363012",
+    "ThreadId": "155438",
+    "Html": "<p>I'm trying to open the SL4 demos with VS 2010 RC and it's can't open Core.Silverlight4 project.</p>\r\n<p>What I am missing ?</p>",
+    "PostedDate": "2010-02-22T22:56:09.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "363287",
+    "ThreadId": "155438",
+    "Html": "<p>I believe you are on the wrong forum, but to answer your question....&nbsp; VS2010 RC does not support SL4.&nbsp; It will not until they release the next bits @ MIX2010.&nbsp; If you want to use SL4, stay with VS2010 B2 for now.</p>",
+    "PostedDate": "2010-02-23T10:25:52.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

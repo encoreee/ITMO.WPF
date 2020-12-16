@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "134627",
+    "ThreadId": "40585",
+    "Html": "Hi,<br>\r\nHow can I display a separator in the RibbonApplicationMenu?  I tried using a regular Separator and also the RibbonSeparator, and both of them just added an extra space with no visible line.<br>\r\n<br>\r\nThanks in advance,<br>\r\nAlex\r\n",
+    "PostedDate": "2008-11-23T15:13:21.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134932",
+    "ThreadId": "40585",
+    "Html": "Hi Alex,<div><br></div><div>Both should work equally well, can you provide more information about your OS and version of the .NET Framework installed so we can try to reproduce the problem?<br></div><div><br></div><div>-Mike</div>",
+    "PostedDate": "2008-11-24T15:37:29.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134936",
+    "ThreadId": "40585",
+    "Html": "Hi Mike,<br>\r\nI am using VS 2008 SP1 and .Net Framework 3.5 SP1 on Windows Vista SP1 (32 bit).  Here is the XAML for the application menu:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonApplicationMenu</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#008000\">    &lt;!--More Menu Items Here--&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonApplicationMenuItem</span><span style=\"font-size:13px;color:#ff0000\"> Command</span><span style=\"font-size:13px;color:#0000ff\">=&quot;cmd:AppCommands.Save&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">Separator</span><span style=\"font-size:13px;color:#0000ff\"> /&gt; OR <span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonSeparator</span><span style=\"font-size:13px;color:#0000ff\"> /&gt;</span><br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonApplicationMenuItem</span><span style=\"font-size:13px;color:#ff0000\"> Command</span><span style=\"font-size:13px;color:#0000ff\">=&quot;cmd:AppCommands.Options&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">    &lt;</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonApplicationMenuItem</span><span style=\"font-size:13px;color:#ff0000\"> Command</span><span style=\"font-size:13px;color:#0000ff\">=&quot;cmd:AppCommands.Exit&quot; /&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">r</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">RibbonApplicationMenu</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<p style=\"font-size:14px;color:#000000\">As I said in my first post, using either kind of separator just adds some extra space to the menu where there should be a horizontal line.<br>\r\n<br>\r\nThanks in advance,<br>\r\nAlex</p>\r\n</span></span>\r\n",
+    "PostedDate": "2008-11-24T15:57:33.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

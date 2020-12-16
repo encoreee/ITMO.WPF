@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "815704",
+    "ThreadId": "350099",
+    "Html": "\r\n<p>Hello Toolkit gurus!</p>\r\n<p>My problem is to make a line chart from an array.</p>\r\n<p>I have double array as Data_points[ 1.23, 1.45, 1.37, 1.33, 2.10, 2.05, 1.99, 1.56, 1.77]</p>\r\n<p>Now I would like to present in in a line chart, how should I proceed?</p>\r\n<p>I try to find documentation for data visualizatin, but no luck!</p>\r\n<p>Thank you in advance...</p>\r\n",
+    "PostedDate": "2012-03-26T10:51:26.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

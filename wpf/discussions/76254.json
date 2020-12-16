@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "260722",
+    "ThreadId": "76254",
+    "Html": "<p><span style=\"font-size:10pt\">I have two WPF DataGrids.&nbsp; I want to allow the user to drag the contents of a cell (DataGridComboBoxColumn selected value) in one DataGrid and drop it into the other DataGrid.&nbsp; Does anyone have any examples or suggestions on how this can be done?&nbsp; Thank you,</span></p>",
+    "PostedDate": "2009-11-25T13:18:22.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261940",
+    "ThreadId": "76254",
+    "Html": "<p><span style=\"font-size:10pt\">Hi,</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;</span></p>\r\n<p><span style=\"font-size:10pt\">I was able to implement the drag/drop functionality between two DataGrids by following the instructions in this post.&nbsp; I had to make a few changes, but the article did a good job explaining how to implement drag/drop between WPF components.</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;</span></p>\r\n<p><span style=\"font-size:10pt\"><a href=\"http://www.wpftutorial.net/DragAndDrop.html\">http://www.wpftutorial.net/DragAndDrop.html</a></span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;</span></p>\r\n<p><span style=\"font-size:10pt\">Also, I set the grid to single-click editing per the instructions found in the DataGrip Tips and Tricks</span></p>\r\n<p><span style=\"font-size:10pt\"><a href=\"http://wpf.codeplex.com/wikipage?title=Single-Click Editing&referringTitle=Tips %26 Tricks\">http://wpf.codeplex.com/wikipage?title=Single-Click%20Editing&amp;referringTitle=Tips%20%26%20Tricks</a></span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;</span></p>\r\n<p><span style=\"font-size:10pt\">Thank you,</span></p>",
+    "PostedDate": "2009-11-30T09:07:40.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

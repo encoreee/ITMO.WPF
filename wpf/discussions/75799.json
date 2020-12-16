@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "259325",
+    "ThreadId": "75799",
+    "Html": "<p>I have a WPF datagrid binded with LINQ.</p>\r\n<p>I want to add rows in the datagrid and I created an handler for RowEditEnding event, but I don't know how to check if the row of the event has been added or not.<br>Since I have to know if I have to call insertOnSubmit() method for adding the row item to my datacontext, I must check someway if the row edited was new or not... Is there some method to perform this??</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you</p>",
+    "PostedDate": "2009-11-21T06:21:08.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259329",
+    "ThreadId": "75799",
+    "Html": "<p>Sorry I solved,</p>\r\n<p>the correct event is InitializeNewItem.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-21T07:11:32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

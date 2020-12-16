@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "123152",
+    "ThreadId": "37119",
+    "Html": "Hi,$0$0$0$0 I want to sort a grid programaticly. (it workes fine if I just click on the column header)$0$0$0$0$0 I use this code Grid.Columns[0].SortDirection = ListSortDirection.Ascending$0$0$0$0$0 The values gets set, but unfortunatly there is no visual feedback.$0$0$0$0$0 Any guess on this one ?$0$0$0$0$0Regads,$0$0Calin$0",
+    "PostedDate": "2008-10-06T05:30:40.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123344",
+    "ThreadId": "37119",
+    "Html": "To sort programmatically you have to do more than update the SortDirection.&nbsp; If you want to copy the functionality of the default sort when clicking a column header you have to clear the Items.SortDescriptions and add a new SortDescription with the column's property that it's bound to in addition to setting the SortDirection.&nbsp; Take a look at the source code in DataGrid.DefaultSort().\r\n",
+    "PostedDate": "2008-10-06T16:32:46.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123419",
+    "ThreadId": "37119",
+    "Html": "Hi <span style=\"font-family:'Segoe UI';font-size:14px;white-space:nowrap\"><a id=\"ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl02_UserNameLink\" href=\"/site/users/view/vinsibal\" style=\"text-decoration:underline;color:rgb(62, 98, 166)\">vinsibal</a></span>$0<span style=\"font-family:'Segoe UI';font-size:14px;white-space:nowrap\">$0</span>$0$0<span style=\"font-family:'Segoe UI';font-size:14px;white-space:nowrap\"> I took the time to look at the code and see you point.</span>$0$0<span style=\"font-family:'Segoe UI';font-size:14px;white-space:nowrap\">$0</span>$0$0<span style=\"font-family:'Segoe UI';font-size:14px;white-space:nowrap\">Thank you,</span>$0",
+    "PostedDate": "2008-10-07T02:01:35.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

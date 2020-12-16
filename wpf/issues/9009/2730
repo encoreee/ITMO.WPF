@@ -1,0 +1,20 @@
+Index: Calendar.cs
+===================================================================
+--- Calendar.cs	(revision 25087)
++++ Calendar.cs	(working copy)
+@@ -902,8 +902,13 @@
+ 
+                     case CalendarMode.Decade:
+                     {
+-                        newDate = DateTimeHelper.SetYear(this.DisplayDate, d.Year);
+-                        newMode = CalendarMode.Year;
++                        // Fix: CodePlex 9009 by Caleb Vear
++                        if (switchDisplayMode)
++                        {
++                            newDate = DateTimeHelper.SetYear(this.DisplayDate, d.Year);
++                            newMode = CalendarMode.Year;
++                        }
++
+                         break;
+                     }
+ 

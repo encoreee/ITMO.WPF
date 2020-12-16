@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "123760",
+    "ThreadId": "37305",
+    "Html": "When I load up my datagrid, it is bound CollectionViewSource, and I have an Event handler for OnSelectionChanged, however, I do not want the grid to automatically select the first row for me by default (this firing the event when loading).&nbsp; Is there anyway to avoid this behavior and not have a row selected?<br>\r\n<br>\r\nThanks,<br>\r\nBob\r\n",
+    "PostedDate": "2008-10-08T07:30:21.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123768",
+    "ThreadId": "37305",
+    "Html": "This is probably happening b/c IsSynchronizedWithCurrentItem is set to true.&nbsp; You can set that to false.&nbsp; If you still want it to be synchronized however, you can have your OnSelectionChanged logic work only after the DataGrid is loaded.\r\n",
+    "PostedDate": "2008-10-08T07:59:21.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

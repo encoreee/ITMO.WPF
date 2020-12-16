@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "227401",
+    "ThreadId": "66885",
+    "Html": "<div>\r\n<p>Hello,</p>\r\n<p>Is there a way to zoom a viewbox content, excpet for one control? I have a viewbox with a grid, and in this grid I have some controls and I'm trying to zoom all the controls in the viewbox except one, is it possible?</p>\r\n<p>Many thanks, <br>Paulo</p>\r\n</div>",
+    "PostedDate": "2009-08-25T03:16:36.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227413",
+    "ThreadId": "66885",
+    "Html": "<p>I doubt it. However, you should be able to accomplish (visually) the same result by applying a zoom to the viewbox, and the inverse of that zoom to the one control inside the viewbox.</p>",
+    "PostedDate": "2009-08-25T03:52:52.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

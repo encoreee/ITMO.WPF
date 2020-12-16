@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "184013",
+    "ThreadId": "54575",
+    "Html": "Hi,<br>\r\n<br>\r\nDoes anyone know how to modify the DatePicker Icon? The '15' icon does not suit for me, I would prefer a 'calendar' one.<br>\r\nThanks for your help.<br>\r\n<br>\r\nClement\r\n",
+    "PostedDate": "2009-04-27T03:10:03.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187105",
+    "ThreadId": "54575",
+    "Html": "You will have to re-template the DatePicker Control. Inside the template found in generic.xaml you will find an element with the key DropDownButtonTemplate. This is the Template for the Button you have mentioned. Here you can completely change its appearance to whatever suits you needs.... but a simple solution that may suffice for your scenario is to remove one particular element. In the template you will see a Path between the Rectangle and Ellipse. If you remove this path, you will remove the &quot;15&quot;.<br>\r\n<br>\r\n-Eric, MSFT\r\n",
+    "PostedDate": "2009-05-05T14:02:46.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187356",
+    "ThreadId": "54575",
+    "Html": "\r\nThanks,<br>\r\n <br>\r\nThis helped a lot !<br>\r\n <br>\r\nClement<br> <br>\r\n<hr id=stopSpelling>\r\nFrom: [email removed]<br>To: [email removed]<br>Date: Tue, 5 May 2009 14:02:50 -0700<br>Subject: Re: DatePicker Icon [wpf:54575]<br><br>\r\n\r\n\r\nFrom: ericf<br>\r\n<div id=\"EC_ThreadNotificationPostBody\">You will have to re-template the DatePicker Control. Inside the template found in generic.xaml you will find an element with the key DropDownButtonTemplate. This is the Template for the Button you have mentioned. Here you can completely change its appearance to whatever suits you needs.... but a simple solution that may suffice for your scenario is to remove one particular element. In the template you will see a Path between the Rectangle and Ellipse. If you remove this path, you will remove the &quot;15&quot;.<br><br>-Eric, MSFT </div>\r\n<br><hr>Souhaitez vous  « être au bureau sans y être » ? <a href=\"http://www.microsoft.com/france/windows/bts/default.mspx\">Oui je le veux !</a>",
+    "PostedDate": "2009-05-06T06:46:49.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

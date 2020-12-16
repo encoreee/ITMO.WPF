@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "145028",
+    "ThreadId": "43621",
+    "Html": "Hi,<br>\r\n<br>\r\nThe DataGrid doesn't appear to allow you to freeze columns on the right-hand-side. They are always on the left. Are there any existing examples/guidance out there about freezing columns on the right? I've had a look through the code base and it would appear to be a fair chunk of work.<br>\r\n<br>\r\nThanks,<br>\r\nKent<br>\r\n",
+    "PostedDate": "2009-01-07T06:09:56.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145163",
+    "ThreadId": "43621",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri;color:#1f497d\">Hi Kent,<br>\r\n<br>\r\nYou're right - it’s fairly complicated to implement a frozen column on the right side.  To do it, you’d have to:</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri;color:#1f497d\"> </span></p>\r\n<p style=\"margin:0in 0in 0pt 38.25pt\"><span style=\"font-family:symbol;color:#1f497d\">·<span style=\"font:7pt 'times new roman'\">         </span><span style=\"font-family:calibri;color:#1f497d\">Subclass DataGrid to add new properties like RightFrozenColumnCount (if you wanted to freeze more than one column)</span>\r\n<p style=\"margin:0in 0in 0pt 38.25pt\"><span style=\"font-family:symbol;color:#1f497d\">·<span style=\"font:7pt 'times new roman'\">         </span><span style=\"font-family:calibri;color:#1f497d\">Subclass DataGridCellsPanel and override ‘MeasureOverride’ and ‘ArrangeOverride’ methods to arrange cells accordingly (this is probably the biggest part of the problem). One has to note that this is the class which has most of the implementation for column virtualization (and most of hidden columns) too which makes it more difficult.</span>\r\n<p style=\"margin:0in 0in 0pt 38.25pt\"><span style=\"font-family:symbol;color:#1f497d\">·<span style=\"font:7pt 'times new roman'\">         </span><span style=\"font-family:calibri;color:#1f497d\">Subclass DataGridColumnHeadersPresenter to modify the end user column reordering to account for right frozen columns.</span>\r\n<p style=\"margin:0in 0in 0pt 38.25pt\"><span style=\"font-family:symbol;color:#1f497d\">·<span style=\"font:7pt 'times new roman'\">         </span><span style=\"font-family:calibri;color:#1f497d\">Retemplate/restyle DataGrid to account for above changes</span>\r\n<p style=\"margin:0in 0in 0pt 38.25pt\"><span style=\"font-family:symbol;color:#1f497d\">·<span style=\"font:7pt 'times new roman'\">         </span><span style=\"font-family:calibri;color:#1f497d\">Retemplate DataGrid to position horizontal scroll bar appropriately</span>\r\n<p style=\"margin:0in 0in 0pt 38.25pt\"><span style=\"font-family:symbol;color:#1f497d\">·<span style=\"font:7pt 'times new roman'\">         </span><span style=\"font-family:calibri;color:#1f497d\">There might be other small changes<br>\r\n<br>\r\nAs far as I know, I don't believe there are any samples of this implemented available at this time (if you write one, please share!).  You're not the first to make this request, so this is a feature that we will consider adding in a future release.  However, it definitely won't be in .NET 4.0, so it will likely be a while before an official solution is available.  We apologize for the inconvenience - unfortunately we just couldn't fit all of the features we wanted in V1.  If you do come across a sample or guidance, please post a link to it here so that other developers can use it also.<br>\r\n<br>\r\nThanks!<br>\r\nSamantha</span></span></p>\r\n</span></p>\r\n</span></p>\r\n</span></p>\r\n</span></p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-01-07T11:32:54.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145371",
+    "ThreadId": "43621",
+    "Html": "OK, thanks for the prompt reply Samantha.<br>\r\n<br>\r\nBest,<br>\r\nKent<br>\r\n",
+    "PostedDate": "2009-01-08T02:12:51.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

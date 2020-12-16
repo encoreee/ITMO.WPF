@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "248360",
+    "ThreadId": "72725",
+    "Html": "<p>How do I databind a DataGridColumn width? e.g.</p>\r\n<p><span style=\"color:blue;font-size:13px\">&lt;</span><span style=\"font-size:13px\">dg:DataGridTextColumn&nbsp;</span><span style=\"color:red;font-size:13px\">Header</span><span style=\"font-size:13px\">=</span><span style=\"color:blue;font-size:13px\">&quot;Some Column Name&quot;</span><span style=\"font-size:13px\">&nbsp;</span><strong><span style=\"color:red;font-size:13px\">Width</span><span style=\"font-size:13px\">=</span><span style=\"color:blue;font-size:13px\">&quot;{Binding AWidthProperty}&quot;</span></strong><span style=\"font-size:13px\">&nbsp;</span><span style=\"color:red;font-size:13px\">Binding</span><span style=\"font-size:13px\">=</span><span style=\"color:blue;font-size:13px\">&quot;{Binding&nbsp;SomeBinding}&quot;</span><span style=\"font-size:13px\">&nbsp;</span><span style=\"font-size:13px\">/&gt;</span></p>\r\n<p><span style=\"font-size:13px\">Thanks.</span></p>",
+    "PostedDate": "2009-10-21T18:13:54.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

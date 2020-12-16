@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "260007",
+    "ThreadId": "76019",
+    "Html": "<p>Hi all,</p>\r\n<p>does the wpf datagrid supports UI automation ? i was trying to write some UI testing on our application (that has wpf datagrid control) using the coded UI test (comes with vs 2010). but its not detecting the wpf datagrid control ? any idea how do i able to make it detectable ? but it is detecting 2.0 datagrid.</p>\r\n<p>&nbsp;</p>\r\n<p>any help would be really appreciated.</p>\r\n<p>Thanks</p>\r\n<p>Srini</p>",
+    "PostedDate": "2009-11-23T14:38:58.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

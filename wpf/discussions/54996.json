@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "185659",
+    "ThreadId": "54996",
+    "Html": "I am trying to use the Ribbon Control for a small test application. <br>\r\n<br>\r\nI am struggeling to find a RibbonTab Event which I can use to find out that a RibbonTab changed or a specific Ribbon Tab is selected.<br>\r\n<br>\r\nAny Ideas?? Thanks for any help<br>\r\n",
+    "PostedDate": "2009-04-30T11:15:59.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264530",
+    "ThreadId": "54996",
+    "Html": "<p>I too would very much like to know what tab the user is on / when they change tabs.</p>\r\n<p>Is a TabChanged event available or in the works?</p>",
+    "PostedDate": "2009-12-07T08:39:04.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

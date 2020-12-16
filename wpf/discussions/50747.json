@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "170146",
+    "ThreadId": "50747",
+    "Html": "I do not now if this is intended functionality but when I change from one row to a other row in my datagrid the RowEditEnding event is fired multiple times. <br>\r\n<br>\r\nOn the other hand if I click outside of my datagrid it is only fired once. I want it to work this way all the time. how can I solve this issue? \r\n",
+    "PostedDate": "2009-03-20T03:43:14.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

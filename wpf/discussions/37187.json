@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "123420",
+    "ThreadId": "37187",
+    "Html": "Hi,$0$0$0$0 I've defined myself a new DataGridColumnHeader style. Declaration looks like this:$0$0$0$0$0 &lt;Style TargetType=&quot;toolkit:DataGridColumnHeader&quot; BasedOn=&quot;{StaticResource {x:Type toolkit:DataGridColumnHeader}}&quot;&gt;$0$0$0$0$0$0 All is fine, except i loose the small arrow that indicates the sorting direction. Is anyone aware of this issue ?$0$0$0$0$0Regards,$0$0Calin$0",
+    "PostedDate": "2008-10-07T02:03:56.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123575",
+    "ThreadId": "37187",
+    "Html": "Could you be a little more specific about what your Style does.&nbsp; Also, did you mean for the BasedOn to be another style resource?\r\n",
+    "PostedDate": "2008-10-07T13:16:43.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123678",
+    "ThreadId": "37187",
+    "Html": "Hi,$0$0$0$0 Here is my full style definition$0$0$0$0$0$0&lt;Style TargetType=&quot;toolkit:DataGridColumnHeader&quot; BasedOn=&quot;{StaticResource {x:Type toolkit:DataGridColumnHeader}}&quot;&gt;$0$0        &lt;Setter Property=&quot;Background&quot; Value=&quot;{StaticResource LightBrush}&quot; /&gt;$0$0        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;{StaticResource NormalBorderBrush}&quot; /&gt;$0$0        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;1&quot; /&gt;$0$0        &lt;Setter Property=&quot;MinHeight&quot; Value=&quot;25&quot; /&gt;$0$0        &lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Center&quot; /&gt;$0$0        &lt;Setter Property=&quot;Padding&quot; Value=&quot;5,0,5,0&quot; /&gt;$0$0        &lt;Style.Triggers&gt;$0$0            &lt;Trigger Property=&quot;IsMouseOver&quot; Value=&quot;true&quot;&gt;$0$0                &lt;Setter Property=&quot;Background&quot; Value=&quot;{StaticResource HoverBackgroundBrush}&quot;/&gt;$0$0            &lt;/Trigger&gt;$0$0            &lt;Trigger Property=&quot;IsPressed&quot; Value=&quot;true&quot;&gt;$0$0                &lt;Setter Property=&quot;Background&quot; Value=&quot;{StaticResource PressedBrush}&quot;/&gt;$0$0                &lt;Setter Property=&quot;Margin&quot; Value=&quot;1,1,0,0&quot;/&gt;$0$0            &lt;/Trigger&gt;$0$0            &lt;Trigger Property=&quot;IsEnabled&quot; Value=&quot;false&quot;&gt;$0$0                &lt;Setter Property=&quot;Foreground&quot;$0$0                      Value=&quot;{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}&quot;/&gt;$0$0            &lt;/Trigger&gt;$0$0        &lt;/Style.Triggers&gt;$0$0    &lt;/Style&gt;$0$0$0$0$0I use base on to derive from default style in Wpftoolkit/Generic.xaml$0$0What I basicly do in my style is change some coloros. $0$0The issue as I said in the first post, is that the sorting arrow does not appear. I've also try to copy paste the style from Generic.xaml and add the background color, same effect no sorting arrow.$0$0$0$0$0Thank you,$0$0",
+    "PostedDate": "2008-10-07T23:37:27.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125578",
+    "ThreadId": "37187",
+    "Html": "See this thread,&nbsp;<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=37625</a>.\r\n",
+    "PostedDate": "2008-10-16T06:43:28.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "131265",
+    "ThreadId": "39558",
+    "Html": "I use LoadingRow event to change row background color dependently of\r\nrow data. It works, but if I change some data in row's item by code (I\r\nuse INotifyPropertyChanged), the data in grid changes, not color. So I\r\nneed to force row reloading.<br>\r\n<br>\r\nMy question it: how to reload/refresh particular row? Without Items.Refresh?\r\n",
+    "PostedDate": "2008-11-09T23:46:41.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131330",
+    "ThreadId": "39558",
+    "Html": "You can do a DataGridRow.UpdateLayout().\r\n",
+    "PostedDate": "2008-11-10T05:30:23.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131348",
+    "ThreadId": "39558",
+    "Html": "Unfortunately, UpdateLayout does not took into account Background binding, so it's does not work.<br>\r\n",
+    "PostedDate": "2008-11-10T06:16:04.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131441",
+    "ThreadId": "39558",
+    "Html": "Could you show a code snippet.\r\n",
+    "PostedDate": "2008-11-10T10:18:06.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131586",
+    "ThreadId": "39558",
+    "Html": "<p>Ok, for example, I have my SimpleEntity as a Item:</p>\r\n<p>    public class SimpleEntity : INotifyPropertyChanged<br>\r\n{<br>\r\npublic int Id {get; set; }<br>\r\npublic string Name { get; set; }<br>\r\npublic string Key1 { get; set; }<br>\r\n<br>\r\npublic SimpleEntity(int id, string name)<br>\r\n{<br>\r\nId = id;<br>\r\nName = name;<br>\r\nKey1 = &quot;&quot;;<br>\r\n}<br>\r\n#region INotifyPropertyChanged Members<br>\r\npublic event PropertyChangedEventHandler PropertyChanged;<br>\r\n#endregion<br>\r\npublic void NotifyAll()<br>\r\n{<br>\r\nif (PropertyChanged != null)<br>\r\n{<br>\r\nPropertyChanged(this, new PropertyChangedEventArgs(&quot;Key1&quot;));<br>\r\n//PropertyChanged(this, new PropertyChangedEventArgs(&quot;LU1&quot;));<br>\r\n}<br>\r\n}<br>\r\n<br>\r\n}</p>\r\n<p>public class SimpleEntityList : ObservableCollection&lt;SimpleEntity&gt;<br>\r\n{<br>\r\n}</p>\r\n<p>And my descendant for DataGrid which can expose row by index:</p>\r\n<p>    public class MyDataGrid : DataGrid<br>\r\n{<br>\r\npublic DataGridRow RowByIndex(int index)<br>\r\n{<br>\r\nDataGridRow R = (DataGridRow)ItemContainerGenerator.ContainerFromIndex(index);<br>\r\nreturn R;<br>\r\n}<br>\r\n<br>\r\n}</p>\r\n<p>Ok, I create all in code, not XAML:</p>\r\n<p>        private void button1_Click(object sender, RoutedEventArgs e)<br>\r\n{<br>\r\nfor (int i = 0; i &lt; 200; i++)                tbl.Add(new SimpleEntity(i, &quot;Text_&quot; + i));<br>\r\n<br>\r\nmyDataGrid1.AutoGenerateColumns = false;<br>\r\n<br>\r\nDataGridTextColumn col1 = new DataGridTextColumn();<br>\r\ncol1.Header = &quot;Code&quot;;<br>\r\ncol1.Binding = new Binding(&quot;Id&quot;);<br>\r\nmyDataGrid1.Columns.Add(col1);<br>\r\n<br>\r\nDataGridTextColumn col2 = new DataGridTextColumn();<br>\r\ncol2.Header = &quot;Description&quot;;<br>\r\ncol2.Binding = new Binding(&quot;Name&quot;);<br>\r\nmyDataGrid1.Columns.Add(col2);<br>\r\n<br>\r\nDataGridTemplateColumn col3 = new DataGridTemplateColumn();<br>\r\nDataTemplate col3Template = new DataTemplate();<br>\r\nBinding binding3 = new Binding(&quot;Key1&quot;);<br>\r\nFrameworkElementFactory cellTemplateFactory3 = new FrameworkElementFactory(typeof(TextBlock));<br>\r\ncellTemplateFactory3.SetBinding(TextBlock.TextProperty, binding3);<br>\r\ncol3Template.VisualTree = cellTemplateFactory3;<br>\r\ncol3.CellTemplate = col3Template;<br>\r\ncol3.Header = &quot;Key1&quot;;<br>\r\n<br>\r\nBinding binding3bk = new Binding();<br>\r\nbinding3bk.Converter = new MyBrushConverter();<br>\r\nbinding3bk.ConverterParameter = &quot;SomeParam&quot;;<br>\r\ncellTemplateFactory3.SetBinding(TextBlock.BackgroundProperty, binding3bk);<br>\r\n<br>\r\n<br>\r\nmyDataGrid1.Columns.Add(col3);<br>\r\n<br>\r\nmyDataGrid1.ItemsSource = tbl;<br>\r\n}</p>\r\n<p>Also, converter for Background binding to highlight cell:</p>\r\n<p>    public class MyBrushConverter : IValueConverter<br>\r\n{<br>\r\nprotected static SolidColorBrush RedBrush;<br>\r\nprotected static SolidColorBrush GreenBrush;<br>\r\n<br>\r\nstatic MyBrushConverter()<br>\r\n{<br>\r\nRedBrush = new SolidColorBrush(Colors.Green);<br>\r\nGreenBrush = new SolidColorBrush(Colors.Yellow);<br>\r\nRedBrush.Freeze();<br>\r\nGreenBrush.Freeze();<br>\r\n<br>\r\n}<br>\r\n#region IValueConverter Members<br>\r\n<br>\r\npublic object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)<br>\r\n{<br>\r\nSimpleEntity sac = value as SimpleEntity;<br>\r\nif (sac != null &amp;&amp; targetType == typeof(Brush) &amp;&amp; parameter is string)<br>\r\n{<br>\r\nbool bCheck = false;<br>\r\nif ((string)parameter == &quot;SomeParam&quot;)<br>\r\n{<br>\r\nbCheck = sac.Key1.Length &gt; 5;<br>\r\n}<br>\r\n<br>\r\nif (bCheck)<br>\r\nreturn GreenBrush;<br>\r\nelse<br>\r\nreturn RedBrush;<br>\r\n}<br>\r\nreturn null;<br>\r\n}<br>\r\n<br>\r\npublic object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)<br>\r\n{<br>\r\nthrow new NotImplementedException();<br>\r\n}<br>\r\n<br>\r\n#endregion<br>\r\n<br>\r\n}<br>\r\n<br>\r\nOk, that's all. Now we can try to change some values:</p>\r\n<p>        private void button3_Click(object sender, RoutedEventArgs e)<br>\r\n{<br>\r\ntbl[2].Key1 = &quot;7777777&quot;;<br>\r\ntbl[2].NotifyAll();<br>\r\nmyDataGrid1.RowByIndex(2).UpdateLayout();<br>\r\n}</p>\r\n<p>And we can see, that value in cell was changed; but cell background remains green, not red.<br>\r\n<br>\r\n</p>\r\n<p><br>\r\n</p>\r\n<p><br>\r\n</p>\r\n",
+    "PostedDate": "2008-11-10T22:46:47.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131587",
+    "ThreadId": "39558",
+    "Html": "<p>But, if I add</p>\r\n<p>        private void button3_Click(object sender, RoutedEventArgs e)<br>\r\n{<br>\r\ntbl[2].Key1 = &quot;7777777&quot;;<br>\r\ntbl[2].NotifyAll();<br>\r\nmyDataGrid1.Items.Refresh();<br>\r\n}</p>\r\n<p>Background of cell changes after .Items.Refresh(); So, .Items.Refresh() works and RowByIndex(2).UpdateLayout() does not work.<br>\r\n</p>\r\n",
+    "PostedDate": "2008-11-10T22:51:53.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479042",
+    "ThreadId": "39558",
+    "Html": "I have similar problem.\r\nIs there any solution?",
+    "PostedDate": "2010-08-11T04:48:12.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "483201",
+    "ThreadId": "39558",
+    "Html": "<p>I attempted to use the Items.Refresh() method, but it was to slow.&nbsp;</p>\r\n<p>Instead, something that performs much better is to remove the line-item from the source list and re-insert it at the same index. It updates the row because it is a &quot;newly added row&quot;.</p>",
+    "PostedDate": "2010-08-21T22:35:41.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

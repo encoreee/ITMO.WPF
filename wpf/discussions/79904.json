@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "273746",
+    "ThreadId": "79904",
+    "Html": "<p>I have downloaded WPFToolkit and made the changes to make Watermark property(DatePicker) of accessible. I am getting following error message when opening XAML files to in Visual Studio:</p>\r\n<pre>An unhandled exception has occuered<br><br>Click here to reload designer<br><br><br>Details<br>Index was outside the bounds of the array.</pre>\r\n<p>&nbsp;&nbsp; at System.RuntimeTypeHandle.GetDeclaringType()<br>&nbsp;&nbsp; at System.RuntimeType.RuntimeTypeCache.GetEnclosingType()<br>&nbsp;&nbsp; at System.RuntimeType.get_DeclaringType()<br>&nbsp;&nbsp; at MS.Internal.Xaml.AssemblyNode.BuildNamespaces()<br>&nbsp;&nbsp; at MS.Internal.Xaml.AssemblyNode.FindNamespace(Identifier name)<br>&nbsp;&nbsp; at MS.Internal.Xaml.ReflectionProjectNode.BuildNamespaces()<br>&nbsp;&nbsp; at MS.Internal.Xaml.ReflectionProjectNode.Find(Identifier namespaceUri)<br>&nbsp;&nbsp; at MS.Internal.Xaml.PrefixScope.AddIgnorablePrefix(Identifier prefix)<br>&nbsp;&nbsp; at MS.Internal.Xaml.XmlElement.BuildScope(PrefixScope parentScope, IParseContext context)<br>&nbsp;&nbsp; at MS.Internal.Xaml.XmlElement.FindElementType(PrefixScope parentScope, IParseContext context)<br>&nbsp;&nbsp; at MS.Internal.DocumentTrees.Markup.XamlSourceDocument.get_RootType()<br>&nbsp;&nbsp; at Microsoft.Windows.Design.Documents.Trees.MarkupDocumentTreeManager.get_RootType()<br>&nbsp;&nbsp; at Microsoft.Windows.Design.Documents.MarkupDocumentManager.CalculateLoadErrorState()<br>&nbsp;&nbsp; at Microsoft.Windows.Design.Documents.MarkupDocumentManager.get_LoadState()<br>&nbsp;&nbsp; at MS.Internal.Host.PersistenceSubsystem.Load()<br>&nbsp;&nbsp; at MS.Internal.Host.Designer.Load()<br>&nbsp;&nbsp; at MS.Internal.Designer.VSDesigner.Load()<br>&nbsp;&nbsp; at MS.Internal.Designer.VSIsolatedDesigner.VSIsolatedView.Load()<br>&nbsp;&nbsp; at MS.Internal.Designer.VSIsolatedDesigner.VSIsolatedDesignerFactory.Load(IsolatedView view)<br>&nbsp;&nbsp; at MS.Internal.Host.Isolation.IsolatedDesigner.BootstrapProxy.LoadDesigner(IsolatedDesignerFactory factory, IsolatedView view)<br>&nbsp;&nbsp; at MS.Internal.Host.Isolation.IsolatedDesigner.BootstrapProxy.LoadDesigner(IsolatedDesignerFactory factory, IsolatedView view)<br>&nbsp;&nbsp; at MS.Internal.Host.Isolation.IsolatedDesigner.Load()<br>&nbsp;&nbsp; at MS.Internal.Designer.DesignerPane.LoadDesignerView()</p>",
+    "PostedDate": "2010-01-06T04:59:22.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276414",
+    "ThreadId": "79904",
+    "Html": "<p>Hi pardeepbogra -</p>\r\n<p>Can you share a snippit of the changes you made?</p>\r\n<p>Thank you,</p>\r\n<p>Eric, MSFT</p>",
+    "PostedDate": "2010-01-12T13:43:07.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276588",
+    "ThreadId": "79904",
+    "Html": "<p>I performed the following steps:</p>\r\n<p>1.&nbsp; Get source code.<br> 2.&nbsp; Add the following dependency property to the DatePicker.cs file:&nbsp; (I added in&nbsp;#Data region)<br> <span style=\"font-size:10px\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public</span> <span style=\"color:#0000ff\">static</span> <span style=\"color:#2b91af\">DependencyProperty</span> WatermarkProperty = <span style=\"color:#2b91af\">DependencyProperty</span>.Register( <span style=\"color:#a31515\">&quot;Watermark&quot;</span>, <span style=\"color:#0000ff\">typeof</span>( <span style=\"color:#0000ff\">string</span> ), <span style=\"color:#0000ff\">typeof</span>( <span style=\"color:#2b91af\">DatePicker</span> ), <span style=\"color:#0000ff\">new</span> <span style=\"color:#2b91af\">PropertyMetadata</span>( <span style=\"color:#a31515\">&quot;Show Calendar&quot;</span> ) );<br> <span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public</span> <span style=\"color:#0000ff\">string</span> Watermark<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#0000ff\">get</span> { <span style=\"color:#0000ff\">return</span> ( <span style=\"color:#0000ff\">string</span> ) GetValue( WatermarkProperty ); }<br> <span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set</span> { SetValue( WatermarkProperty, <span style=\"color:#0000ff\">value</span> ); }<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> </span><br> 3.&nbsp; Replace existing SetWatermarkText() with the following:<br> <span style=\"font-size:10px\"><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private</span> <span style=\"color:#0000ff\">void</span> SetWaterMarkText()<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#0000ff\">if</span> (<span style=\"color:#0000ff\">this</span>._textBox != <span style=\"color:#0000ff\">null</span>)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#0000ff\">this</span>.SetTextInternal(<span style=\"color:#0000ff\">string</span>.Empty);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#0000ff\">this</span>._defaultText = <span style=\"color:#0000ff\">string</span>.Empty;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#0000ff\">this</span>._textBox.Watermark = Watermark;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> <br> </span>4.&nbsp; Recompile WPFToolkit and replace the existing WPFToolkit.DLL with new one.</p>",
+    "PostedDate": "2010-01-13T01:01:18.897-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276840",
+    "ThreadId": "79904",
+    "Html": "<p>Hi pardeepbogra -</p>\r\n<p>I've added a new project (consisting of a Window with a DatePicker in it)&nbsp;to the WPFToolkit solution and added a reference to the WPFToolkit project to my new project. After replicating your changes to DatePicker.cs I was unable to reproduce your issue. To be clear, when you un-do your modifications to SetWaterMarkText, everything compiles? If you wish to simply modify the Watermark, there are other (less flexible) approaches that do not involve code such as changing the Template for the DatePickerText box to use a hard coded String instead of a Binding to the Watermark property.</p>\r\n<p>-Eric, MSFT</p>",
+    "PostedDate": "2010-01-13T12:44:50.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511080",
+    "ThreadId": "79904",
+    "Html": "\r\n<p>Hi, was there any final resolution to this issue?&nbsp;I am suddenly getting exactly the same error whenever I open the designer, even for a blank UserControl. It's very annoying.</p>\r\n",
+    "PostedDate": "2010-10-22T06:30:24.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

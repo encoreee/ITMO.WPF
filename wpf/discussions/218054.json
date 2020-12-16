@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "462306",
+    "ThreadId": "218054",
+    "Html": "I'm trying to use the Accordion and the TransitioningContentControl in from the Feb 16, 2010 release of the WPF toolkit in a WPF 4.0 project. Is this a valid combination? When I add references to the WPFToolkit dlls I start to get errors telling me that types have been defined more than once such as:\r\n\r\nAmbiguous type reference. A type named 'VisualStateGroup' occurs in at least two namespaces, 'System.Windows' and 'System.Windows'. Consider adjusting the assembly XmlnsDefinition attributes.\r\n\r\nand:\r\n\r\nThe property 'GeneratedEasingFunction' does not exist in XML namespace 'http://schemas.microsoft.com/winfx/2006/xaml/presentation'. Line 36 Position 77.\r\n\r\nIs the WPF Toolkit just not supported in WPF 4 yet?",
+    "PostedDate": "2010-07-01T11:56:28.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462562",
+    "ThreadId": "218054",
+    "Html": "I have the same problem.\r\nI am trying now to rebuild the Toolkit for WPF4, but it is a tricky business. Deleted the visual state manager stuff from the project but I have still some issues.\r\n\r\nToo bad the toolkit does not work with .Net 4 from the start.",
+    "PostedDate": "2010-07-02T02:52:27.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467494",
+    "ThreadId": "218054",
+    "Html": "<p>I too have the same problem. The issue seems to only be with .Net 4 and Visual Studio 2010. The issue also only causes design time problem in Visual Studio 2010 in my case. Using Expression Blend 4 design time is fine and no errors occur. Whenever using Visual Studio or Expression Blend, debugging works fine.</p>",
+    "PostedDate": "2010-07-14T15:34:49.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468383",
+    "ThreadId": "218054",
+    "Html": "<p>Anyone find a solution to this?&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>I have VS2010 and WPF toolkit.&nbsp; I did not get the error until I createda&nbsp; custom button and added it to a resource dictionary.&nbsp; Without the overriden style in the resource dictinary, things are fine, but somethign in the overriden style is causing the VisualState error.</p>",
+    "PostedDate": "2010-07-16T16:07:43.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475058",
+    "ThreadId": "218054",
+    "Html": "<p>I never did find a solution to it. My guess is that the Feb 16 release is just not compatible with WPF 4. Here's to hoping for another rev of the toolkit that is .net 4 compatible.</p>",
+    "PostedDate": "2010-07-31T11:00:10.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475204",
+    "ThreadId": "218054",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>moorster wrote:</strong><br>\r\n<p>I never did find a solution to it. My guess is that the Feb 16 release is just not compatible with WPF 4. Here's to hoping for another rev of the toolkit that is .net 4 compatible.</p>\r\n</blockquote>\r\n<p>&nbsp;I did, but forgot to post it....</p>\r\n<p>&nbsp;</p>\r\n<p>You need to create a namespace reference and then preface all the &lt;VisualState..&gt; with it.&nbsp; For instance, in your resourcedict you can add a namepsace ref to the toolkit like so:</p>\r\n<p><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:small\">\r\n<p>&nbsp;xmlns:vsm=&quot;clr-namespace:System.Windows;assembly=WPFToolkit&quot;\r\n<div><span style=\"font-family:Consolas;color:#0000ff;font-size:small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:small\"></span></span></div>\r\n&nbsp;</p>\r\n</span></span></span></span><span style=\"font-family:Consolas;color:#0000ff;font-size:small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:small\">&nbsp;</span></span></span></span></span></span><span style=\"font-family:Consolas;color:#0000ff;font-size:small\"></span></p>\r\n<p>&nbsp;...And then preface all the visual state mgrs like so:</p>\r\n<p>&lt;vsm:VisualStateManager...</p>",
+    "PostedDate": "2010-08-01T12:37:51.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479210",
+    "ThreadId": "218054",
+    "Html": "<p>Or better if you want use the .NET 4 VSM and you need the WPF Toolkit for other components (per sample the Chart), you can add this xml namespace in your xaml files\r\n<div><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\">&nbsp;</span></span></span></div>\r\n</p>\r\n<p><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\">&nbsp;</span></span></p>\r\n<p><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\">xmlns</span></span></span><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\">:</span></span></span><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\"><span style=\"font-family:Consolas;color:#ff0000;font-size:x-small\">sw</span></span></span><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"> <span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\">=&quot;clr-namespace:System.Windows;assembly=PresentationFramework&quot;</span></span></span></p>\r\n<p>And on each class marked as marked as ambiguous, add sw: before, per sample:</p>\r\n<p>&lt;sw:VisualStateManager.VisualStateGroups&gt;<br>&nbsp;&nbsp;&lt;sw:VisualStateGroup x:Name=&quot;CommonStates&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;sw:VisualState x:Name=&quot;Normal&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sw:VisualState x:Name=&quot;Disabled&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Storyboard&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&lt;DoubleAnimation Storyboard.TargetName=&quot;PART_DisabledVisual&quot; Storyboard.TargetProperty=&quot;Opacity&quot; To=&quot;1&quot; Duration=&quot;0&quot; /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Storyboard&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp; &lt;/sw:VisualState&gt;<br>&nbsp; &lt;/sw:VisualStateGroup&gt;<br>&lt;/sw:VisualStateManager.VisualStateGroups&gt;</p>\r\n<p>If you want to continue to use the VSM of the Toolkit and not the native in .net 4, replace assembly=PresentationFramework by assembly=WPFToolkit, but it's not a good idea, a day the VSM will be removed from the toolkit.</p>",
+    "PostedDate": "2010-08-11T10:02:05.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

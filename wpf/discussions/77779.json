@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "265971",
+    "ThreadId": "77779",
+    "Html": "<p>I have a DataGrid and when the user double clicks on a row I catch the event and display a new window with detail informaton.&nbsp;&nbsp;The new window displays under the the window with the DataGrid.&nbsp; When I trap button click events from the&nbsp;DataGrid Window&nbsp;the new window is displayed above the DataGrid's window!&nbsp; All&nbsp; New windows are created with the same code.&nbsp; The only way I can get the detail Window to load on top is with TopMost which is not an optimial solution because when other windows are opened the detail window remains on top, which is what TopMost is supposed to do but not what I want.&nbsp; Any help would be greatly appreciated.</p>",
+    "PostedDate": "2009-12-10T14:51:46.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266504",
+    "ThreadId": "77779",
+    "Html": "<p>vferrava,</p>\r\n<p>It would help if you could send a simple project with your code that shows above described behavior.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-12-11T16:57:06.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

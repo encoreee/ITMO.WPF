@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Calendar",
+      "DisplayName": "Calendar"
+    },
+    "ClosedComment": "See comments. (This behavior is by design. Place the Control in a Viewbox and set the dimensions on the Viewbox.)",
+    "ClosedDate": "2009-03-13T16:11:57.587-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I noticed that the calender control has a fixed width and height.\nWhy has that code has no effect ?? or how can is set the height and width? (i don't like to write a complete control template for the calender, or have i?)\n<c:Calendar Height=\"500\" Width=\"500\"",
+    "LastUpdatedDate": "2013-05-16T05:31:17.223-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-10-31T04:05:08.797-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Fixed Height and Width of Calender???",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 7930
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi ThomasG,\r\n\r\nWe agree that this is a bug. We're filing a bug in our internal database to track this and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T15:56:47.837-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T15:57:21.073-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-09T07:15:46.34-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This was actually done by design for various reasons. If you would like the equivilant effect surround the Calendar in a Viewbox and set the Width and Height on the Viewbox.\r\n\r\n-Eric, MSFT",
+      "PostedDate": "2009-03-13T16:10:25.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-13T16:11:57.587-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:46.707-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:17.223-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

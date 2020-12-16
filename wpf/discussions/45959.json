@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "153358",
+    "ThreadId": "45959",
+    "Html": "<br>\r\nSetting the ScrollContentPresenter HorizontalAlignment to &quot;Left&quot; does not behave as expected.  There is a tiny column added to the end of my DataGrid on the right.  If I resize my last column and make it larger by dragging to the right it covers this &quot;extra&quot; column.  However, if I resize my last column making it smaller by dragging to the left this &quot;extra&quot; column that is created is now the size of my last column before I made it smaller.  This does not occur on the DataGridColumnHeadersPresenter with the HorizontalAlignment set to &quot;Left&quot;.  My work around for this issue was to change the itemsPanel for the DataGrid to use a standard StackPanel, which worked fine in the CTP.  Since upgrading to V1 the DataGrid no longer respects the itemsPanel Property.  Any suggestions?<br>\r\n<br>\r\nKindest regards,<br>\r\n-LT\r\n",
+    "PostedDate": "2009-02-02T08:16:23.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

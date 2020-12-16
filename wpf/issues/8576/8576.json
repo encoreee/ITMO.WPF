@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-02-18T18:07:31.893-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Applications showing a large list in a data grid typically needs to be sorted before a user can effectively find his item of interest. The user can do that by clicking on a column header and sorting the items accordingly. This works and all is well in the world of the user, but there is a snag.\n \nSuppose we have an application where we have a list of orders called the master and a data grid with order lines called the detail. The typical way for the user interface would be to show the master list above the details data grid. When the user selects an item from the master the details are updated.\n \nIn the world of the developer the order object will have a list of order lines and the detailed view would be typically bound to the master's selected item with a path to the order list.\n \nThis is were things start to get nasty, because every time you switch the order from the master the data grid details item source is replaced. Replace an item source on the data grid invokes the following pieces of code currently in the October 2008 release. (DataGrid.cs)\n \n/// <summary>\n///     Coercion callback for ItemsSource property\n/// </summary>\n/// <remarks>\n///     SortDescriptions and GroupDescriptions are supposed to be\n///     cleared in PropertyChangedCallback or OnItemsSourceChanged\n///     virtual. But it seems that the SortDescriptions are applied\n///     to the new CollectionView due to new ItemsSource in \n///     PropertyChangedCallback of base class (which would execute\n///     before PropertyChangedCallback of this class) and before calling\n///     OnItemsSourceChanged virtual. Hence handling it in Coercion callback.\n/// </remarks>\nprivate static object OnCoerceItemsSourceProperty(DependencyObject d, object baseValue)\n{\n      DataGrid dataGrid = (DataGrid)d;\n      if (baseValue != dataGrid._cachedItemsSource && dataGrid._cachedItemsSource != null)\n      {\n              dataGrid.Items.SortDescriptions.Clear();\n              dataGrid.Items.GroupDescriptions.Clear();\n      }\n      return baseValue;\n}\n \nAs can be seen in this piece of code the SortDescriptors are removed from the data grid when the item source binding updates. Currently there is no easy way to get around this problem except by removing the lines of code marked in red and building your own version.\n \nWhy is the code in there in the first place you ask? Well it makes perfect sense to clear sort descriptors if the new bound collection holds a different data type. However this would be more of a data grid mode of operation, which warrants a property on the data grid to control how it reacts to item source updates. Therefore I am hoping the WPF team will implement the change.\n \nSo far it has been about re-applying column sorts, however as the topic would suggest we also need to dive into the 'default column sort'. Okay, lets fire up another rocket and take off.\n \nSuppose the user opens the applications order window. The data grid would be unsorted because the user has not clicked on a column header. This makes no sense to the user, since he always sorts on the order's creation time. In fact it annoys the hell out of him, that he needs to click on that column every time.\n \nDeveloper to the rescue... or not. The first solution would be to edit the XAML as shown below:\n \n<wpftoolkit:DataGrid.Columns>\n      <wpftoolkit:DataGridTextColumn Header=\"{StaticResource strHeader}\" \n                                     SortDirection=\"Ascending\"\n                                     Binding=\"{Binding CreatedOn}\"/>\n</wpftoolkit:DataGrid.Columns>\n \nOne might expect this to solve all problems, however in the October 2008 release this affects only the column header style showing the nice ascending arrow and highlights it with the sorted header style.\n \nThe solution I am using is to add the following XAML resource:\n \n<CollectionViewSource x:Key=\"cvs\" Source=\"{Binding ...}\">\n      <CollectionViewSource.SortDescriptions>\n            <scm:SortDescription PropertyName=\"CreatedOn\" Direction=\"Ascending\" />\n      </CollectionViewSource.SortDescriptions>\n</CollectionViewSource>\n \nYou will of course need to bind the item source of the data grid to this collection view source for all of this to work, but if you do then your users will be happy all day every day.. or they will start complaining about something else.\n \nWhy does this work? The first fix we did was to have the data grid no longer destroy sort descriptors every time the item source changes. Hence this collection view source sort descriptor is kept on the item source until the user selects a different sort order. This new sort order is auto magically stored and never erased from that point forward. So until the user closes the window all will be stable sorted in this world.\n \nHope this helps,\n  Jan Izaak Oosthoek",
+    "LastUpdatedDate": "2013-05-16T05:31:13.607-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-17T23:55:39.29-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid, no default column sort and itemsource binding updates changes sorting",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 8576
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Jan,\r\n\r\nThis is definitely a common scenario and one which I think we'll want to have better support for in the future.  I've filed this in our internal feature request database and we'll consider adding it in a future release.  Thanks for posting how to achieve this so that other developers can use your solution in the meantime.\r\n\r\nThanks!\r\nSamantha",
+      "PostedDate": "2009-02-18T18:06:05.647-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T18:07:31.893-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I wrapped the two Clear() lines of code with a Type Check on the new source vs the cached source:\r\n              if (baseValue.GetType() != dataGrid._cachedItemsSource.GetType())\r\n              {\r\n                dataGrid.Items.SortDescriptions.Clear();\r\n                dataGrid.Items.GroupDescriptions.Clear();\r\n              }\r\n\r\nThis may not be super efficent, but if the entire underlying collection is changing then a single Type check probably isn't going to have too much of a negative affect.\r\nAnyway this work fine for my needs - your milage my vary.",
+      "PostedDate": "2009-02-23T19:40:28.16-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I am having this problem but in different setup. I have a dialog with Page navigation (similar to a wizard) where pages in general specifiy different ItemsSource for the DataGrid displayed in another view. Each time ItemsSource is linked to ICollectionView with its own sort descriptions. So after switching between different pages, all sort descriptions from all ICollectionView are cleared and data is displayed in the unsorted way.\r\n\r\nCurrently I reset  sort descriptions every time user changes the page but this is clearly an inappropriate way because I would like to retain the sort order that user had last time before he left the page.\r\n\r\nSo this issue is not solved for current scenarios because ItemsSource type does not change.",
+      "PostedDate": "2009-04-10T01:41:59.65-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:38.567-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:13.607-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "522543",
+    "ThreadId": "234845",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>When I apply grouping on WPF toolkit datagrid and try to scroll data, I observe weird behavior where group section scrolls along with data.</p>\r\n<p>Could you help in providing fix for it?</p>\r\n",
+    "PostedDate": "2010-11-16T00:34:05.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

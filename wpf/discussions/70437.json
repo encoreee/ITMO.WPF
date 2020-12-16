@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "239917",
+    "ThreadId": "70437",
+    "Html": "<p>Hello,</p>\r\n<p>I want&nbsp; to set perticular row enabled or disabled . so can i perform this with <strong>data binding.</strong></p>\r\n<p>assumptions are.</p>\r\n<p>I have a DataTable object with 3 column.</p>\r\n<p>1. FirstName</p>\r\n<p>2. LastName</p>\r\n<p>3. IsEnabled</p>\r\n<p>I want to display first name and last name column in data grid and by the&nbsp;value of last column i want to set enable disable row displayed.</p>\r\n<p>&nbsp;</p>\r\n<p>If any one have solution of this please rply me.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in Advance.</p>",
+    "PostedDate": "2009-09-29T03:14:03.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

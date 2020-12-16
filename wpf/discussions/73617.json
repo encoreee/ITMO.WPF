@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "251633",
+    "ThreadId": "73617",
+    "Html": "<p>When you tab into a DataGrid the top left cell shows that it has focus but&nbsp;the row doesn't show as being selected. However, when you tab to the next cell (or use the arrow keys to move between rows) the focus changes cell and the row that the cell is in becomes selected.</p>\r\n<p>Does anyone know how&nbsp;to get the row to show as being selected when you first tab into the control?</p>",
+    "PostedDate": "2009-10-30T09:02:26.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

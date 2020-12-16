@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "170248",
+    "ThreadId": "50781",
+    "Html": "I am working with the DataGrid control and cannot figure out how to get rid of the black line between a Row and its corresponding RowDetails. I have tried modifying the RowDetailsTemplate, and the style for DataGridRow - neither of them seem to be able to get rid of the black line between the row and its details. <br>\r\n<br>\r\nI pointed to the line in paint in this image here:<br>\r\nhttp://www.smartypantscoding.com/_images/DataGrid_RowDetailsDividerIssue.gif<br>\r\n<br>\r\nIf you have any suggestions please let me know. <br>\r\n",
+    "PostedDate": "2009-03-20T09:37:45.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170291",
+    "ThreadId": "50781",
+    "Html": "apparently this line is part of the grid lines.. so setting GridLinesVisibility can get rid of it, and setting the HorizontalGridLinesBrush property can change its color - unfortunately it doesnt appear to be possible to get rid of the line between the row and the rowdetail while keeping the line between rows.. i guess i can just put a line in my row style and hide the grid row for a reasonable solution.<br>\r\n<br>\r\nguess i answered my own question.. <br>\r\n",
+    "PostedDate": "2009-03-20T11:25:18.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

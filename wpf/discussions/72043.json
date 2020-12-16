@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "245867",
+    "ThreadId": "72043",
+    "Html": "<p>When the Left/Right RepeatButton of the HorizontalScrollBar is clicked, the columns of DataGrid moved in the unit of some pixels.</p>\r\n<p>This sometimes makes the left most column partial visible.</p>\r\n<p>How to make the HorizontalScrollBar scroll in the unit of column?</p>\r\n<p>The width of each column maybe different.</p>\r\n<p>I know that sometimes it is impossible to makes the left most column complete show, because of the limit of the view and the width of other columns.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-14T21:39:27.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

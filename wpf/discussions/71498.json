@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "243874",
+    "ThreadId": "71498",
+    "Html": "<p>I have a DatePicker on my wpf control.&nbsp; When loading it I give it a DisplayStartDate.&nbsp; When you open the calendar, you can then only go back as far as that StartDate.&nbsp; However, if you type a date into the DatePicker textbox which is prior to&nbsp;the StartDate and then open the calendar, the calendar now goes back as far as the date you typed in.</p>\r\n<p>Is there a clean&nbsp;way to prevent this?&nbsp; I tried capturing the typed in date in the DateChanged event and if it is prior to my original DisplayStartDate, then reset my DisplayStartDate and SelectedDate&nbsp;again to the earliest available date again.&nbsp;&nbsp;However, I don't think it's a good user experience to type in a date and then have the control&nbsp;just change that date to&nbsp;a valid date.&nbsp;</p>\r\n<p>Essentially, once I set the DisplayStartDate I don't want the calendar to ever display dates prior to that, and I don't want to just changed the users start date in the textbox to a valid date.&nbsp; I want there date to remain there, and then display an error message (which i've already got working).</p>\r\n<p>Thanks,</p>\r\n<p>Troy</p>",
+    "PostedDate": "2009-10-09T06:28:01.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

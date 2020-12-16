@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "217138",
+    "ThreadId": "63855",
+    "Html": "<p>Hi,</p>\r\n<p>I am just working with the Microsoft Ribbonbar and tried to connect RibbonCommand and CommandBinding..</p>\r\n<p>Why does the RibbonBar use another approach than WPF?</p>\r\n<p>Is it true that soon the RibbonBar will use CommandBindings?</p>\r\n<p>If anyone knows something, I would be glad:)</p>\r\n<p>Regards,</p>\r\n<p>picatshow</p>",
+    "PostedDate": "2009-07-29T05:05:22.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217144",
+    "ThreadId": "63855",
+    "Html": "<p><a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=63223&ANCHOR#Post216574\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=63223&amp;ANCHOR#Post216574</a> should help with your second question.</p>",
+    "PostedDate": "2009-07-29T05:18:48.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217153",
+    "ThreadId": "63855",
+    "Html": "<p>Thanks miki,</p>\r\n<p>The Link is very good!</p>",
+    "PostedDate": "2009-07-29T05:54:09.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

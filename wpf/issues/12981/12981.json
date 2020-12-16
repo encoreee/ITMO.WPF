@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We have a simple WPF form with a slider control which controls the zoom level of the datagrid cells. The datagrid is populated with random data. With the application full screen, move the slider. The application crashes with the stack trace shown below. This project was compiled against the .NET 4 framework. When we compile against the 3.5 framework, it seems to work.\n \nThere may be an incompatibility between the DataGrid and .NET 4 or a bug within the .NET 4 framework?\n \nSystem.ArgumentNullException was unhandled\n  Message=Value cannot be null.\nParameter name: d\n  Source=PresentationFramework\n  ParamName=d\n  StackTrace:\n       at MS.Internal.Data.ElementObjectRef.GetObject(DependencyObject d, ObjectRefArgs args)\n       at MS.Internal.Data.ObjectRef.GetDataObject(DependencyObject d, ObjectRefArgs args)\n       at System.Windows.Data.BindingExpression.MS.Internal.Data.IDataBindEngineClient.VerifySourceReference(Boolean lastChance)\n       at MS.Internal.Data.DataBindEngine.Task.Run(Boolean lastChance)\n       at MS.Internal.Data.DataBindEngine.Run(Object arg)\n       at MS.Internal.Data.DataBindEngine.OnLayoutUpdated(Object sender, EventArgs e)\n       at System.Windows.ContextLayoutManager.fireLayoutUpdateEvent()\n       at System.Windows.ContextLayoutManager.UpdateLayout()\n       at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)\n       at System.Windows.Media.MediaContext.InvokeOnRenderCallback.DoWork()\n       at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\n       at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n       at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)\n       at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)\n       at System.Windows.Threading.DispatcherOperation.InvokeImpl()\n       at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)\n       at System.Threading.ExecutionContext.runTryCode(Object userData)\n       at System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)\n       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx)\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n       at System.Windows.Threading.DispatcherOperation.Invoke()\n       at System.Windows.Threading.Dispatcher.ProcessQueue()\n       at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n       at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n       at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)\n       at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)\n       at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)\n       at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\n       at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)\n       at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\n       at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)\n       at System.Windows.Threading.Dispatcher.Run()\n       at System.Windows.Application.RunDispatcher(Object ignore)\n       at System.Windows.Application.RunInternal(Window window)\n       at System.Windows.Application.Run(Window window)\n       at System.Windows.Application.Run()\n       at ErrorForMicrosoft.App.Main() in C:\\Users\\Corey\\Desktop\\ErrorForMicrosoft\\ErrorForMicrosoft\\ErrorForMicrosoft\\obj\\x86\\Debug\\App.g.cs:line 0\n       at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)\n       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\n       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\n       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx)\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n       at System.Threading.ThreadHelper.ThreadStart()\n  InnerException:",
+    "LastUpdatedDate": "2013-02-21T18:40:35.71-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-05-10T17:08:29.667-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid crash when applying ScaleTransform to DataGridCell (.NET 4)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 9,
+    "Id": 12981
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4340,
+      "FileName": "DataGridBug.zip",
+      "DownloadUrl": ".\\4340"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I get the same error at the same location in the framework code. I too am using a DataGrid, but I cannot replicate it at will. It happens randomly. My application uses a TabControl where each tab displays a grid. I get this crash, sometimes, when I open multiple \"documents\" which result in several tabs being created with a grid in each. I use a MVVM design where data templates for my VM objects are looked up from resource dictionaries based on types. I am not sure if this is related, but I would wager that this issue is related to timing in regards to how the XAML is parsed and resources/styles/datacontexts are looked up.",
+      "PostedDate": "2010-06-15T04:20:51.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-15T04:28:57.267-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-17T09:45:05.547-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-17T04:51:31.173-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello,\r\n\r\nI got the same error using a slider with an Image in a WrapPanel.\r\nAs Telison it happens randomly.",
+      "PostedDate": "2010-08-24T02:04:37.153-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-24T04:00:56.657-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have seen this exception too when expanding or scrolling through a TreeView. The TreeView is virtualized. With virtualization turned off it seems to work fine, but turning off virtualization is not an option for me as the performance degrades too much.",
+      "PostedDate": "2010-12-15T02:21:26.53-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Full stacktrace:\r\n\r\n\r\nA ArgumentNullException error occured: \r\nInnerException ArgumentNullException : Value cannot be null.\r\nParameter name: d\r\n   at MS.Internal.Data.ElementObjectRef.GetObject(DependencyObject d, ObjectRefArgs args)\r\n   at System.Windows.Data.BindingExpression.MS.Internal.Data.IDataBindEngineClient.VerifySourceReference(Boolean lastChance)\r\n   at MS.Internal.Data.DataBindEngine.Task.Run(Boolean lastChance)\r\n   at MS.Internal.Data.DataBindEngine.Run(Object arg)\r\n   at MS.Internal.Data.DataBindEngine.OnLayoutUpdated(Object sender, EventArgs e)\r\n   at System.Windows.ContextLayoutManager.fireLayoutUpdateEvent()\r\n   at System.Windows.ContextLayoutManager.UpdateLayout()\r\n   at System.Windows.ContextLayoutManager.UpdateLayoutCallback(Object arg)\r\n   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\r\n   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\r\n   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\r\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)\r\n   at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)\r\n",
+      "PostedDate": "2010-12-15T02:35:15.86-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-06T22:54:06.903-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:35.71-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

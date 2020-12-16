@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "141179",
+    "ThreadId": "42472",
+    "Html": "hi guys,<br>\r\n<br>\r\nMy project is confined to .net 3.0 with wpf CTP, so unfortunately i can't use wpf datagrid here.<br>\r\ndo you know any similar things existent in .net 3.0?<br>\r\n<br>\r\nmany thanks,<br>\r\ntedy<br>\r\n",
+    "PostedDate": "2008-12-16T17:49:34.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141346",
+    "ThreadId": "42472",
+    "Html": "Hi Tedy,<br>\r\n<br>\r\nUnfortunately the WPF DataGrid is heavily dependent on .NET 3.5 SP1, and it's the first version of the control, so it doesn't sound like it will work for you.  You might want to take a look at some of our earlier controls, such as ListView.  Also, thre are a bunch of third party DataGrid controls available - I'm not positive off the top of my head, but some of them might work with 3.0.<br>\r\n<br>\r\nMaybe other developers on this forum have recommendations of controls they used before DataGrid?<br>\r\n<br>\r\nThanks!<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-12-17T07:51:24.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

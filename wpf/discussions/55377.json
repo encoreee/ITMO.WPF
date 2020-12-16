@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "186991",
+    "ThreadId": "55377",
+    "Html": "<div>I need to display a running total in a datagrid.  Each row should contain a column which includes the total from the previous row +/- a value from the current row.<br>\r\n<br>\r\nThe grid is bound to a collectionviewsource defined in Xaml.<br>\r\nThe items in the source come from Linq Entities.<br>\r\n<br>\r\nI know one way would be to create the source as a list of custom items and hold a total column that i can calculate before binding to the grid, but I was hoping there was a better way.<br>\r\n<br>\r\nCan this be done with any sort of converter?  There must be a better way.</div>\r\n",
+    "PostedDate": "2009-05-05T09:20:40.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

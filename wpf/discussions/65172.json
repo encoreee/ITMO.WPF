@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "221951",
+    "ThreadId": "65172",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>When I am viewing a wpf datagrid, and I start to type in a new value for a cell, what is the type of the control used there during the edit operation?</p>\r\n<p>&nbsp;</p>\r\n<p>My xaml looks like this:</p>\r\n<p>\r\n<p><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">&nbsp;</span></span></p>\r\n<p><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">dg</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">:</span></span><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">DataGridTextColumn</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> Binding</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;{</span></span><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">Binding</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> FirstName</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">}&quot;</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> Header</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;First Name&quot; /&gt;</span></span></p>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>I run the application and there is a FirstName cell with Frank in it, I arrow to it and type Joe. At the point I start to type Joe, what is the type of control being used? For example, a DatagridTextColumn? A DatagridEditColumn?</p>\r\n<p>&nbsp;</p>\r\n<p>I need to actually read the documentation on the type of control if there is any available.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n<p>&nbsp;</p>\r\n<p>/Justin</p>",
+    "PostedDate": "2009-08-11T03:24:23.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221957",
+    "ThreadId": "65172",
+    "Html": "<p>A DataGridTextColumn uses a TextBox in its EditingElementStyle.</p>",
+    "PostedDate": "2009-08-11T04:03:38.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221963",
+    "ThreadId": "65172",
+    "Html": "\r\n<div>Thanks much for the reply.</div>\r\n<div> </div>\r\n<div>Can you please point me to any documentation on \r\nthis control?</div>\r\n<div> </div>\r\n<div>I need to read up on the interfaces that it \r\nexposes, properties, methods, etc.</div>\r\n<div> </div>\r\n<div>thanks!</div>\r\n<div> </div>\r\n<div><br>/Justin</div>\r\n<blockquote style=\"border-left:#000000 2px solid;padding-left:5px;padding-right:0px;margin-left:5px;margin-right:0px\" dir=ltr>\r\n  <div style=\"font:10pt arial\">----- Original Message ----- </div>\r\n  <div style=\"font:10pt arial;background:#e4e4e4;font-color:black\"><b>From:</b> \r\n  [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>To:</b> [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>Sent:</b> Tuesday, August 11, 2009 7:03 \r\n  AM</div>\r\n  <div style=\"font:10pt arial\"><b>Subject:</b> Re: wpf datagrid type of control \r\n  while in edit mode [wpf:65172]</div>\r\n  <div><br></div>\r\n  \r\n\r\n  <p>From: mikj</p>\r\n  <div id=ThreadNotificationPostBody>\r\n  <p>A DataGridTextColumn uses a TextBox in its EditingElementStyle.</p></div>\r\n  </blockquote>",
+    "PostedDate": "2009-08-11T04:21:09.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221964",
+    "ThreadId": "65172",
+    "Html": "<p>Try here: <a title=\"http://msdn.microsoft.com/en-us/library/system.windows.controls.textbox.aspx\" href=\"http://msdn.microsoft.com/en-us/library/system.windows.controls.textbox.aspx\">http://msdn.microsoft.com/en-us/library/system.windows.controls.textbox.aspx</a></p>",
+    "PostedDate": "2009-08-11T04:23:24.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221999",
+    "ThreadId": "65172",
+    "Html": "\r\n<div>Hi,</div>\r\n<div> </div>\r\n<div>I am using UIA and programming a screen reader to \r\ninteract with the editable cell which is to be a text box.</div>\r\n<div> </div>\r\n<div><span class=187583612-11082009>However, it doesn't appear to UIA that it is a regular text box and I \r\ncan't get the text provider interface via UIA on whatever type of control this \r\nthing is while in edit mode in a cell.</span></div>\r\n<div> </div>\r\n<div>Can someone please help me with this \r\nsituation?</div>\r\n<div> </div>\r\n<div>What control type or interface can I use to access \r\nthe text box while in edit tmode in a datagrid row using UIA?</div>\r\n<div> </div>\r\n<div>Help!</div>\r\n<div><br>Regards,<br>Justin</div>\r\n<blockquote style=\"border-left:#000000 2px solid;padding-left:5px;padding-right:0px;margin-left:5px;margin-right:0px\" dir=ltr>\r\n  <div style=\"font:10pt arial\">----- Original Message ----- </div>\r\n  <div style=\"font:10pt arial;background:#e4e4e4;font-color:black\"><b>From:</b> \r\n  [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>To:</b> [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>Sent:</b> Tuesday, August 11, 2009 7:23 \r\n  AM</div>\r\n  <div style=\"font:10pt arial\"><b>Subject:</b> Re: wpf datagrid type of control \r\n  while in edit mode [wpf:65172]</div>\r\n  <div><br></div>\r\n  \r\n\r\n  <p>From: mikj</p>\r\n  <div id=ThreadNotificationPostBody>\r\n  <p>Try here: <a title=\"http://msdn.microsoft.com/en-us/library/system.windows.controls.textbox.aspx\" href=\"http://msdn.microsoft.com/en-us/library/system.windows.controls.textbox.aspx\">http://msdn.microsoft.com/en-us/library/system.windows.controls.textbox.aspx</a></p></div>\r\n  </blockquote>",
+    "PostedDate": "2009-08-11T05:54:09.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222162",
+    "ThreadId": "65172",
+    "Html": "\r\n<div>Hi all,</div>\r\n<div> </div>\r\n<div>I haven't heard anything on this from anyone so \r\nhopefully someone is familiar with UI Automation and can assist me with this \r\none. I could use some help.</div>\r\n<div> </div>\r\n<div>What control type or interface can I use to access the text box while in \r\nedit mode in a datagrid row using Microsoft UI Automation?</div>\r\n<div> </div>\r\n<div>\r\n<div>I am using UI Automation and programming a screen reader to interact \r\nwith the editable cell which is to be a text box. <span class=187583612-11082009>However, it doesn't appear to UIA that it is a regular \r\ntext box and I can't get the text provider interface via UIA on whatever type of \r\ncontrol this thing is while in edit mode in a cell.</span></div></div>\r\n<div><br>Regards,<br>Justin</div>\r\n<blockquote style=\"border-left:#000000 2px solid;padding-left:5px;padding-right:0px;margin-left:5px;margin-right:0px\" dir=ltr>\r\n  <div style=\"font:10pt arial\"> </div>\r\n  <p> </p></blockquote>",
+    "PostedDate": "2009-08-11T12:05:59.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222232",
+    "ThreadId": "65172",
+    "Html": "<p>Hi Justin,</p>\r\n<p>The control which is displayed in edit mode of the DataGridTextColumn is indeed a TextBox (not a subclass of TextBox or a custom control of any sort).&nbsp; I don't really have much experience with screenreaders, so I'm not sure why it wouldn't recognize it as being a TextBox.&nbsp; I will ask around the team and see if we can find anyone who might understand.&nbsp;</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-08-11T14:57:14.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222262",
+    "ThreadId": "65172",
+    "Html": "\r\n<div>Hi Samantha,</div>\r\n<div> </div>\r\n<div>Thanks for your response!</div>\r\n<div> </div>\r\n<div>Here is my xaml. Is there anything that looks incorrect for \r\nchanging the read only information to a text box?</div>\r\n<div> </div>\r\n<div>I run the application and in the EmployeeName cell, there is \r\nSam Jackson. I type in there Joe Smith and the cell is not seen as a text box \r\ncontrol for some reason as I type Joe Smith.</div>\r\n<div> </div>\r\n<div>Maybe I am not setting a property on the datagrid that needs \r\nto be set? Can you please confirm?</div>\r\n<div> </div>\r\n<div>Sorry if the copy/paste looks terrible!</div>\r\n<div> </div>\r\n<div>Does this xaml look ok and setup correctly for an edit \r\noperation?</div>\r\n<div> </div>\r\n<div>\r\n<p>&lt;dg:DataGrid ItemsSource=&quot;{Binding ElementName=This, Path=EmployeeData}&quot; </p>\r\n<p>Margin=&quot;5&quot; \r\nAutoGenerateColumns=&quot;False&quot; CanUserAddRows=&quot;True&quot; MinRowHeight=&quot;10&quot; RowBackground=&quot;Cyan&quot; RowDetailsVisibilityMode=&quot;VisibleWhenSelected&quot; IsTabStop=&quot;True&quot;&gt;</p>\r\n<p>&lt;dg:DataGrid.Columns&gt;</p>\r\n<p>&lt;dg:DataGridTextColumn Binding=&quot;{Binding EmployeeName}&quot; Header=&quot;Employee Name&quot; /&gt;</p>\r\n<p>&lt;dg:DataGridTextColumn Binding=&quot;{Binding PhoneNumber}&quot; Header=&quot;Telephone Number&quot; /&gt;</p>\r\n<p>&lt;dg:DataGridComboBoxColumn Header=&quot;Job Title&quot; x:Name=&quot;_JobTitleCombo&quot;</p>\r\n<p>SelectedItemBinding=&quot;{Binding JobTitle}&quot; /&gt;</p>\r\n<p>&lt;dg:DataGridCheckBoxColumn Binding=&quot;{Binding IsFullTime}&quot; </p>\r\n<p>Header=&quot;Fulltime Employee&quot; /&gt;</p>\r\n<p>&lt;/dg:DataGrid.Columns&gt;</p>\r\n<p>&lt;/dg:DataGrid&gt;</p>\r\n<p>&lt;/Window&gt;</p></div>\r\n<div> </div>\r\n<div>Thanks!</div>\r\n<div> </div>\r\n<div>Regards,<br>Justin</div>\r\n<blockquote style=\"border-left:#000000 2px solid;padding-left:5px;padding-right:0px;margin-left:5px;margin-right:0px\" dir=ltr>\r\n  <p> </p></blockquote>",
+    "PostedDate": "2009-08-11T16:31:46.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222290",
+    "ThreadId": "65172",
+    "Html": "\r\n<div>Hi Samantha,</div>\r\n<div> </div>\r\n<div>Does the wpf datagrid follow the UI Automation \r\nsupport for the table control type as outlined in this article?</div>\r\n<div> </div>\r\n<div><a href=\"http://msdn.microsoft.com/en-us/library/ms750608.aspx\">http://msdn.microsoft.com/en-us/library/ms750608.aspx</a></div>\r\n<div> </div>\r\n<div><br>Regards,<br>Justin</div>\r\n<blockquote style=\"border-left:#000000 2px solid;padding-left:5px;padding-right:0px;margin-left:5px;margin-right:0px\" dir=ltr>\r\n  <p> </p></blockquote>",
+    "PostedDate": "2009-08-11T19:13:01.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222291",
+    "ThreadId": "65172",
+    "Html": "\r\n<div>Also, does the wpf datagrid use any concepts from \r\nthe UI Automation table control pattern as outlined here:</div>\r\n<div> </div>\r\n<div> </div>\r\n<div> </div>\r\n<div><a href=\"http://msdn.microsoft.com/en-us/library/ms750497.aspx\">http://msdn.microsoft.com/en-us/library/ms750497.aspx</a></div>\r\n<div> </div>\r\n<div><br>Regards,<br>Justin</div>\r\n<blockquote style=\"border-left:#000000 2px solid;padding-left:5px;padding-right:0px;margin-left:5px;margin-right:0px\" dir=ltr>\r\n  <p> </p></blockquote>",
+    "PostedDate": "2009-08-11T19:19:01.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227594",
+    "ThreadId": "65172",
+    "Html": "<p>Justin,</p>\r\n<p>Datagrid is not a Table control type for UI Automation type, but it supports almost all properties, control patterns and events as the Table. Only that ControlTypeProperty returns &quot;custom&quot; for Datagrid instead of &quot;Table&quot;.</p>\r\n<p>For your second question, Datagrid implements ITableProvider pattern as well as IGridProvider and ISelectionProvider.</p>\r\n<p>-Keerthi</p>",
+    "PostedDate": "2009-08-25T12:12:02.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

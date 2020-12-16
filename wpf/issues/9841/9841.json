@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi!\n \nIn the attachment you've found sample project that reproduce the memory leak.\n \nIt's is reproduced when I'm define custom RowValidationErrorTemplate with binding in it.",
+    "LastUpdatedDate": "2013-02-21T18:41:19.69-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-23T11:54:32.47-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid Memory Leak",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9841
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3011,
+      "FileName": "DataGridMemoryLeak.zip",
+      "DownloadUrl": ".\\3011"
+    }
+  ],
+  "Comments": []
+}

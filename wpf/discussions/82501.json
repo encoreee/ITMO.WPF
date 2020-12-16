@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "283539",
+    "ThreadId": "82501",
+    "Html": "<p><img src=\"http://community.visual-basic.it/images/community_visual-basic_it/alessandro/586/o_wpfdatabinding18.jpg\" alt=\"\"></p>\r\n<p>in vs2010 beta2,i follow the picture above added datasource(no nested &quot;Orders&quot;, i just use that picture to try to explain), and try to present &quot;Customers&quot; as a DataGrid in wpf window.</p>\r\n<p>so in the dropdown list beside &quot;Customers&quot;, i select &quot;DataGrid&quot; and drag the &quot;Customers&quot; to a wpf window.</p>\r\n<p>but the wpf window doesn't accept the drop, which do accept &quot;List&quot;, &quot;Details&quot;.</p>\r\n<p>how can i just do TABLE -&gt; Entities -&gt; DataGrid in wpf window?</p>\r\n<p>any help would be appreciated.</p>",
+    "PostedDate": "2010-01-29T17:42:04.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

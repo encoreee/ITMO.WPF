@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "211099",
+    "ThreadId": "62196",
+    "Html": "<p>I'm using the new chart controls and I noticed that the percentages where off. When using the pie series I had multiple values but I was wondering how would you setup the chart to show the percentage of a certain amount.&nbsp; For example.&nbsp; If I wanted the chart to show the total of an amount and the different slices would show what the percentage of this item was of the total amount.&nbsp; In other words If I have an amount of 100 and I have two items both worth 25 I should have 2 pieces that represent 50% of the total 100 amount.&nbsp; I'm not sure exactly how this can be represented.</p>",
+    "PostedDate": "2009-07-11T10:21:12.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211213",
+    "ThreadId": "62196",
+    "Html": "<p>Looks like I figured this one out myself.&nbsp; Turns out all I had to do was calculate the percentage of the amounts and put them in an observablecollection that's bound to my chart.&nbsp; Now I just need to know how to get my tooltip to show the independent value binding in the tooltip instead of the decimal values.</p>",
+    "PostedDate": "2009-07-12T11:43:03.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211418",
+    "ThreadId": "62196",
+    "Html": "<p>I've blogged about modifying the default ToolTips here:</p>\r\n<p><a href=\"http://blogs.msdn.com/delay/archive/2009/05/19/chart-tweaking-made-easy-how-to-make-four-simple-color-tooltip-changes-with-silverlight-wpf-charting.aspx\">http://blogs.msdn.com/delay/archive/2009/05/19/chart-tweaking-made-easy-how-to-make-four-simple-color-tooltip-changes-with-silverlight-wpf-charting.aspx</a></p>\r\n<p>Hope this helps!</p>",
+    "PostedDate": "2009-07-13T11:32:09.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211453",
+    "ThreadId": "62196",
+    "Html": "<p>Thanks davidans,</p>\r\n<p>I saw you're article some time ago but I can't get it to work.&nbsp; I keep getting the following error which makes no sense so far.&nbsp; Here my chart source.</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Chart</span> <span style=\"color:Red\">Title</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">BiWeekly Income/Expenses</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Foreground</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{DynamicResource FontColor}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">FontFamily</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Calibri</span><span style=\"color:Black\">&quot;</span>\r\n                                    <span style=\"color:Red\">Background</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{DynamicResource PanelGradientBrush}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">LegendTitle</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Legend</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">LegendStyle</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{DynamicResource LegendStyle}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">PieSeries</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">PieSeriesChart</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">ItemsSource</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{x:Static BLL:Checkbook.Expenses}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">FontFamily</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Calibri</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">StylePalette</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">ModifiedStylePalette</span><span style=\"color:Black\">&quot;</span> \r\n                               <span style=\"color:Red\">IndependentValueBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Type}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">DependentValueBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding PctOfIncome}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                                            \r\n                        <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">PieSeries</span><span style=\"color:Blue\">&gt;</span>\r\n\r\nCheckbook.Expenses is an observablecollection</pre>\r\n</div>\r\nHere's the error.</p>\r\n<p>System.Windows.Markup.XamlParseException occurred<br>&nbsp; Message=&quot;'Collection`1' type does not have a public TypeConverter class.&nbsp; Error at Line 239 Position 136.&quot;<br>&nbsp; Source=&quot;PresentationFramework&quot;<br>&nbsp; LineNumber=239<br>&nbsp; LinePosition=136<br>&nbsp; StackTrace:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlParseException.ThrowException(String message, Exception innerException, Int32 lineNumber, Int32 linePosition, Uri baseUri, XamlObjectIds currentXamlObjectIds, XamlObjectIds contextXamlObjectIds, Type objectType)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlTypeMapper.ThrowExceptionWithLine(String message, Exception innerException)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlTypeMapper.ThrowException(String id, String parameter)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlTypeMapper.GetTypeConverter(Type type)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlTypeMapper.GetPropertyConverter(Type propType, Object dpOrPiOrMi)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlTypeMapper.ParseProperty(Object targetObject, Type propType, String propName, Object dpOrPiOrFi, ITypeDescriptorContext typeContext, ParserContext parserContext, String value, Int16 converterTypeId)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.BamlRecordReader.ParseProperty(Object element, Type propertyType, String propertyName, Object dpOrPi, String attribValue, Int16 converterTypeId)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.BamlRecordReader.ReadPropertyRecordBase(String attribValue, Int16 attributeId, Int16 converterTypeId)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.BamlRecordReader.ReadPropertyRecord(BamlPropertyRecord bamlPropertyRecord)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.BamlRecordReader.ReadRecord(BamlRecord bamlRecord)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.BamlRecordReader.Read(Boolean singleRecord)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.TreeBuilderBamlTranslator.ParseFragment()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.TreeBuilder.Parse()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at BudgetManager.MainWindow.InitializeComponent() in e:\\Code\\BudgetManager\\BudgetManager\\MainWindow.xaml:line 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at BudgetManager.MainWindow..ctor() in E:\\Code\\BudgetManager\\BudgetManager\\MainWindow.xaml.cs:line 49<br>&nbsp; InnerException:</p>",
+    "PostedDate": "2009-07-13T12:46:57.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211543",
+    "ThreadId": "62196",
+    "Html": "<p>I'm afraid I don't have enough context to say what might be going on here, though I agree with your opinion that the ItemsSource assignment seems to be to blame. One thing I'd suggest is trying the same syntax with an ItemsControl or ListBox. If it's broken there, then at least we know Charting's not causing the problem. If not, then maybe we can try to determine what about using that collection here is problematic...</p>",
+    "PostedDate": "2009-07-13T17:53:14.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211695",
+    "ThreadId": "62196",
+    "Html": "<p>Found the problem.&nbsp; My style code was incorrect.&nbsp; I was passing the datapoint style instead of the datapoint controltemplate.&nbsp; Works great now.&nbsp; thanks for the help!</p>",
+    "PostedDate": "2009-07-14T05:43:14.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

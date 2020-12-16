@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "130322",
+    "ThreadId": "39277",
+    "Html": "<span style=\"font-size:13px\">\r\n<p>Hi, I'm trying to populate my DataGridComboBoxColumn runtime:<br>\r\n<br>\r\n_custTypesList = BusinessLogic.</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">CustTypesBL</span><span style=\"font-size:13px\">.getCustTypes();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span><span style=\"font-size:13px\"> dgc = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataGridComboBoxColumn</span><span style=\"font-size:13px\">();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DataTable</span><span style=\"font-size:13px\"> dtTypes = ResQ.Converters.</span><span style=\"font-size:13px;color:#2b91af\">DataTableConverter</span><span style=\"font-size:13px\">.GetDataTableNative(_custTypesList);\r\n<p>&nbsp;</p>\r\n<p>dgc.ItemsSource = dtTypes.AsEnumerable();</p>\r\n<p>dgc.TextBinding = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\">(c.ColumnName);\r\n<p>&nbsp;</p>\r\n<p>dgCustomers.Columns.Add(dgc);<br>\r\n<br>\r\nThis doesn't work. I suspect it's because I can't setup an ItemSource to the whole datatable. So, how I can map it to just a single column from this DataTable?<br>\r\n<br>\r\nAny help is appreciated.</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-11-05T13:44:08.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130339",
+    "ThreadId": "39277",
+    "Html": "You may want to try setting the ItemsSource to dtTypes.DefaultView.  Does that help at all?\r\n",
+    "PostedDate": "2008-11-05T14:25:52.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130343",
+    "ThreadId": "39277",
+    "Html": "Nope, same result...<br>\r\n",
+    "PostedDate": "2008-11-05T14:33:09.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130507",
+    "ThreadId": "39277",
+    "Html": "What about it doesn't work?  The combobox doesn't populate?\r\n",
+    "PostedDate": "2008-11-06T06:46:53.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130619",
+    "ThreadId": "39277",
+    "Html": "I solved this. Thanks.\r\n",
+    "PostedDate": "2008-11-06T12:28:43.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133820",
+    "ThreadId": "39277",
+    "Html": "Wish you had said how!\r\n",
+    "PostedDate": "2008-11-19T18:48:40.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "While looking through the source code, investigating this issue: http://wpf.codeplex.com/WorkItem/View.aspx?WorkItemId=10006, I came across the following in DataGridCellItemAutomationPeer.cs\n \n///\nprotected override string GetNameCore()\n{\n    return string.Format(SR.Get(SRID.DataGridCellItemAutomationPeer_NameCoreFormat), _item, _column.DisplayIndex);\n}\n \nThis stood out as it did not follow the same pattern as most of the other Automation Property methods:\n \n///\nprotected override string GetXXXCore()\n{\n    return (this.OwningCellPeer != null) ? this.OwningCellPeer.GetXXX() : <some default behavior>;\n}\n \nLooking back at an older version of the code revealed this previous implementation:\n \n///\nprotected override string GetNameCore()\n{\n    // It is better to get the clipboard content instead of wrapper peer Name which is empty in most cases\n    object cellValue = _column.OnCopyingCellClipboardContent(_item);\n    if (cellValue != null)\n    {\n        return cellValue.ToString();\n    }\n \n    return String.Empty;\n}\n \nThe comment in this version shed some light on why this method is implemented differently than the others.  I understand that this original implementation was changed for performance reasons.  In any case, the problem with both of these implementations is that they simply assume that the wrapper peer name is going to be empty and don't even bother to try it.  This means that if a developer using the DataGrid actually wants to explicitly set the AutomationProperties.Name property in XAML, it doesn't work.  Therefore, I would suggest changing it to the following implementation, or something like it:\n \n///\nprotected override string GetNameCore()\n{\n    if (this.OwningCellPeer != null)\n    {\n        string name = this.OwningCellPeer.GetName();\n        if (!String.IsNullOrEmpty(name))\n        {\n            return name;\n        }\n    }\n \n    return String.Format(SR.Get(SRID.DataGridCellItemAutomationPeer_NameCoreFormat), _item, _column.DisplayIndex);\n}\n \n \nJesse\n \nPS:  The \"Discussion\" section of this site allows users to include nicely formatted code snippets in their posts.  That feature should be implemented here as well, for obvious reasons.",
+    "LastUpdatedDate": "2013-02-21T18:40:53.71-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-10-23T10:56:43.52-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Suggested change for DataGridCellItemAutomationPeer",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10821
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "135318",
+    "ThreadId": "40802",
+    "Html": "Hi,<br>\r\n<br>\r\nI was wondering what one gets with the new DataGrid instead of using the ListView's GridView.  I would like to use the DataGrid but a collegue of mine can't see any benefits to using it over the ListView GridView that is already in WPF.  Unfortunately I don't know why he would want to use the DataGrid instead.<br>\r\n<br>\r\nCheers,<br>\r\nClint \r\n",
+    "PostedDate": "2008-11-25T15:14:39.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135441",
+    "ThreadId": "40802",
+    "Html": "Much better support for editing data would be one reason that may or may not be relevant depending on your use cases.<br>\r\n",
+    "PostedDate": "2008-11-26T01:44:17.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135498",
+    "ThreadId": "40802",
+    "Html": "Here's a few<br>\r\n<ul>\r\n    <li>ListView (GridView) is a readonly control out-of-the-box.The standard solution would be to synchronise the list with a 'details view' comprised of textBoxes.</li>\r\n    <li>The DataGrid allows in-place editing of data.</li>\r\n    <li>The DataGrid performs transactional edits (the row is treated as an atom).</li>\r\n    <li>The DataGrid support auto-column generation.</li>\r\n    <li>The DataGrid has a RowDetails element (if you like that sort of thing!)</li>\r\n    <li>The DatGrid supports pretty much everything the ListView does, multiple selection modes, styling, etc ...</li>\r\n</ul>\r\nIn my mind the bottom line is - do you want in-place editing? if not, the two are reasonably close.<br>\r\n<br>\r\nColin E. \r\n",
+    "PostedDate": "2008-11-26T03:48:26.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135614",
+    "ThreadId": "40802",
+    "Html": "I do not need in-line editing, but I need styling (incl based on data), flexible sorting, flexible selection, and nested elements (another DataGrid). So my choice is still DataGrid\r\n",
+    "PostedDate": "2008-11-26T08:36:32.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

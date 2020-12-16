@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "483464",
+    "ThreadId": "224465",
+    "Html": "Hello,\r\n\r\nI'm using the latest version of MS Ribbon for WPF (3.5.40729.1) with Visual Basic 2010 Express and will change the skin of the ribbon. \r\nThe solution by MSDN (see below) doesn't work, and in the object browser I can't find the SkinRessources.\r\n\r\nSolution by MSDN:\r\n&lt;Window.Resources&gt;\r\n  &lt;ResourceDictionary&gt;\r\n    &lt;ResourceDictionary.MergedDictionaries&gt;\r\n      &lt;ResourceDictionary Source=&quot;/RibbonControlsLibrary;component/themes/office2007silver.xaml&quot;/&gt;\r\n    &lt;/ResourceDictionary.MergedDictionaries&gt;\r\n  &lt;/ResourceDictionary&gt;\r\n&lt;/Window.Resources&gt;\r\n\r\nHow can I change the skin ?",
+    "PostedDate": "2010-08-23T01:11:37.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

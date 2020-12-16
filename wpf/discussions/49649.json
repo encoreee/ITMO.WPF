@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "166186",
+    "ThreadId": "49649",
+    "Html": "While scrolling horizontally with one frozen column, upon reaching a column boundary, that is, when either a column is starting to appear from underneath the frozen column (scrolling left) or a column is starting to disappear beneath the frozen column (scrolling right) the text for the frozen column is mixed with the text for the scrolling column and is unreadable. Also at the same time the divider between the two columns in the header area dissappears making resizing of the frozen column unavailable. This does not always happen but seems to happen more often when you have scrolled down through a large data set. Deferred scrolling is being used. Upon further incremental scrolling the grid draws correctly but will get corrupted again when the scrolling reaches another column boundary.\r\n",
+    "PostedDate": "2009-03-09T11:09:26.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

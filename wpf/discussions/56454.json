@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "190786",
+    "ThreadId": "56454",
+    "Html": "<p>In <span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\"><span style=\"color:#000000\">DataGridTextColumn, cell editing mode (textbox) can be shown by double click. I was just wondering if it can be done in single click. Thanks for help.</span></span></span></p>\r\n<p><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\"><span style=\"color:#000000\">Troy</span></span></span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-15T09:11:36.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190827",
+    "ThreadId": "56454",
+    "Html": "<p>Hi Troy,</p>\r\n<p>Yes, it can - check out this sample: <a href=\"http://wpf.codeplex.com/Wiki/View.aspx?title=Single-Click Editing&referringTitle=Home\">http://wpf.codeplex.com/Wiki/View.aspx?title=Single-Click%20Editing&amp;referringTitle=Home</a></p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-05-15T10:57:38.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190836",
+    "ThreadId": "56454",
+    "Html": "<p>Sweet. Thanks very much for your info.&nbsp; Troy</p>",
+    "PostedDate": "2009-05-15T11:35:10.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

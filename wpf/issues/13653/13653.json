@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have several WPFToolKit datagrids in my project, and it seems like all of the datagrids that have a template column have text in the background of the header column, but that can only be seen in the space between the columns.  It's on the far left, and if i resize my column, i can read that it says:\n \nCollection)\n \nit's very annoying, becuase basically it's text that can't be gotten rid of, and it kinda looks like there is an extra column there that can't be resized.\n \nMy datagrid is nothing special:\n \n<tlKit:DataGrid Name=\"PlumeListView\" VerticalAlignment=\"Top\" VerticalContentAlignment=\"Stretch\" Grid.Row=\"1\" Margin=\"8\" ItemsSource=\"{Binding }\" ScrollViewer.HorizontalScrollBarVisibility=\"Disabled\" MouseDoubleClick=\"PlumeListView_MouseDoubleClick\" SelectionChanged=\"PlumeListView_SelectionChanged\" >\n            <tlKit:DataGrid.Columns>\n                <tlKit:DataGridTemplateColumn CellTemplate=\"{StaticResource sourceptImage}\" CanUserSort=\"True\" SortMemberPath=\"HasSourcePoint\" />\n                <tlKit:DataGridTextColumn Header=\"Name\" Width=\".9*\" Binding=\"{Binding Path=PlumeName, Mode=OneWay}\" />\n                <tlKit:DataGridTextColumn Header=\"Date Created\" Width=\"auto\" Binding=\"{Binding Path=FormattedCreationDate, Mode=OneWay}\" SortDirection=\"Descending\" />\n                <tlKit:DataGridTextColumn Header=\"Last Modified\" Width=\"auto\" Binding=\"{Binding Path=FormattedLastModifiedDate, Mode=OneWay}\" />\n                <tlKit:DataGridTextColumn Header=\"Edited By\" Width=\"auto\" Binding=\"{Binding Path=CreatedBy, Mode=OneWay}\" />\n                <tlKit:DataGridTextColumn Header=\"Plume Type\" Width=\"auto\" Binding=\"{Binding Path=PlumeType, Mode=OneWay}\" />\n            </tlKit:DataGrid.Columns>\n        </tlKit:DataGrid>\n \nIs anyone else seeing this? I've attached an image, and circled in the grid where the issue is, as well as put a slightly more expanded version of it above.",
+    "LastUpdatedDate": "2013-02-21T18:40:28.473-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-07-02T09:57:58.007-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "hidden column text between normal columns",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 13653
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4617,
+      "FileName": "ImageHandler.jpg",
+      "DownloadUrl": ".\\4617"
+    }
+  ],
+  "Comments": []
+}

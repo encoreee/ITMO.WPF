@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "133908",
+    "ThreadId": "40347",
+    "Html": "<p><span style=\"font-size:10.5pt;color:black\">Hi,&lt;o:p&gt;&lt;/o:p&gt;</span></p><p><span style=\"font-size:10.5pt;color:black\">&lt;o:p&gt;  I what tobe able to use F4 key to open the datepicker. Is there a best practice way to accomplishthis ? The first think I can think of is to listen to the KeyDown Event in theDatePicker class.&lt;/o:p&gt;</span></p><p><span style=\"font-size:10.5pt;color:black\">&lt;o:p&gt;Regards,&lt;/o:p&gt;</span></p><p><span style=\"font-size:10.5pt;color:black\">&lt;o:p&gt;Calin&lt;/o:p&gt;</span></p>",
+    "PostedDate": "2008-11-20T05:59:37.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

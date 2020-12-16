@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "118225",
+    "ThreadId": "35570",
+    "Html": "Hi,<br>\r\nI'm relatively new to the whole WPF thing, so bear with me if this question seems overly easy to solve but I have been struggling with it for a while. I'm using a grid to display a list of reservations for a hotel management program. The grid has several columns: Name, Room #, Amount Due, etc...Basically what I want to do is simple enough but I can't figure it out. I want the user to be able to click anywhere on the grid and have the entire row highlighted, then they should be able to press a button: edit reservation for example, and it should return the guest name, no matter what part of the row they selected. After searching endless amounts of google results I have come across this nice guide (http://blogs.msdn.com/jaimer/archive/2008/08/13/datagrid-part-2-show-me-some-code.aspx), which pointed me to this website. So, I grabbed the toolkit and put it in my project, however I still can't make out just how exactly Jamie (see link) was able to select entire rows at a time. Even if someone could just help me with that part I would greatly appreciate it forget the return only a guestName part I think i can figure that out on my own. Any help would awesome, thanks in advance! Sorry for lengthy read...<br>\r\n",
+    "PostedDate": "2008-09-12T13:54:05.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118248",
+    "ThreadId": "35570",
+    "Html": "I've done several posts that may help guide you as well,&nbsp;<a href=\"http://blogs.msdn.com/vinsibal/default.aspx\">http://blogs.msdn.com/vinsibal/default.aspx</a>.&nbsp; In particular see the sample in this post,&nbsp;<a href=\"http://blogs.msdn.com/vinsibal/archive/2008/08/11/net-3-5-sp1-and-wpf-datagrid-ctp-is-out-now.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/08/11/net-3-5-sp1-and-wpf-datagrid-ctp-is-out-now.aspx</a>.&nbsp; It shows how to customize selection between full row, cell, and/or both.\r\n",
+    "PostedDate": "2008-09-12T14:54:52.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118635",
+    "ThreadId": "35570",
+    "Html": "Awesome, thanks, I'll check it out.<br>\r\n",
+    "PostedDate": "2008-09-15T12:41:39.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

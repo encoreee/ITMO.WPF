@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed per poster&#39;s request.",
+    "ClosedDate": "2009-07-22T15:07:32.11-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "1. Apply NewItemPlaceholderPosition.AtBeginning for Default View (http://blogs.msdn.com/vinsibal/archive/2008/11/05/wpf-datagrid-new-item-template-sample.aspx)\n2. Sort column\n3. add new row (item)\n4. when you finish editing will be applyed auto sorting\nWe see that selected next row after new row.",
+    "LastUpdatedDate": "2013-05-16T05:31:04.673-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-07-21T16:22:09.573-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "selected index bug for using NewItemPlaceholderPosition.AtBeginning",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10328
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Sorry, I mistake. I forget about \"Enter\" button behaviour. It's all right :), because after Enter click should be selected next row.",
+      "PostedDate": "2009-07-22T12:03:56.017-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-22T15:07:32.11-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:04.853-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:04.673-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

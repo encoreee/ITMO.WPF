@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "204416",
+    "ThreadId": "60360",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;I am evaluating the WPFTools HaloGrid for potential use in a large project and found&nbsp;an issue or lack of feature.</p>\r\n<p>I Have a DataGrid bound to an ObservableCollection of custom objects. The objects do implement the INotifyPropertyChanged interface. I have noticed that if I have the grid sorted, and if I update the value of a field , which happens to be sorted on, the value is updated correctly on the grid, but the sorting does not update based on the new value.</p>\r\n<p>I believe this is because the grid does not update the sort on PropertyChanged event of its items? I can make it update the sort by firing a CollectionChanged event or Doing a refresh on the view from the collection. But these don't seem to be very efficient. Shouldn't the grid, on propertychanged, check if the change is on a sorted column and if so update the sorting automatically? Am I doing something wrong, or should I request this as feature?</p>\r\n<p>thanks and regards</p>\r\n<p>&nbsp;Bijesh</p>",
+    "PostedDate": "2009-06-23T03:20:44.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204645",
+    "ThreadId": "60360",
+    "Html": "<p>Hi Bijesh,</p>\r\n<p>We aren't able to reproduce this problem; if you&nbsp;attach a&nbsp;small&nbsp;application that shows this we will investigate.</p>\r\n<p><br>Thanks!</p>\r\n<p>Alexis</p>",
+    "PostedDate": "2009-06-23T13:18:37.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204793",
+    "ThreadId": "60360",
+    "Html": "<p>Hi Alexis,</p>\r\n<p>&nbsp;As you may know this forum is not allowing attachments, and the notification mail also says clearly that attachments will be deleted. Can you tell me how to send the sample. Am surprised that you are unable to recreate this as I am easily able to do it even on the sample that is available here</p>\r\n<p><span style=\"font-size:10pt;color:blue\"><a title=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\" href=\"http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/10/22/wpf-datagrid-and-the-wpftoolkit-have-released.aspx</a> </span></p>\r\n<p><span style=\"font-size:10pt;color:blue\">I can demonstrate the issue on that sample by having an update button which will chnage the value of one of the data columns. Then if I sort the gird by that column, and then click update, the grid value changes but the sort order does not.</span></p>\r\n<p><span style=\"font-size:10pt;color:blue\">Bijesh</span></p>",
+    "PostedDate": "2009-06-23T21:31:32.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204801",
+    "ThreadId": "60360",
+    "Html": "<p>Hi Alexis</p>\r\n<p>I have created this as an issue and attached the sample project and screenshot with it. The issue number is <span id=\"ctl00_ctl00_MasterContent_RightSideBar_WorkItemDetailsControl_DetailsSidebar_IssueIdLabel\">10183. Please let me know if you have any update?</span></p>\r\n<p><span>thanks and regards,</span></p>\r\n<p><span>Bijesh</span></p>",
+    "PostedDate": "2009-06-23T21:49:41.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230543",
+    "ThreadId": "60360",
+    "Html": "<p>Hi!</p>\r\n<p>Is there any update on this issue? I can't find it in the issue tracker and I have this problem too.&nbsp;</p>\r\n<p>EDIT: I found it..</p>",
+    "PostedDate": "2009-09-03T00:21:20.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230697",
+    "ThreadId": "60360",
+    "Html": "<p>Have you tried calling a Refresh in the CollectionView after you update the data?</p>",
+    "PostedDate": "2009-09-03T07:46:00.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231016",
+    "ThreadId": "60360",
+    "Html": "<p>HI Myzli, Is it issue number 10183 you are referring to? Or was there any other?</p>\r\n<p>Yes doing a refresh on the collection view would work, But the problem is it is not very efficient. And anyway the grid should do this automatically (or atleast have an option to have it done automatically) rather than having to do an extra refresh...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-04T00:35:43.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231025",
+    "ThreadId": "60360",
+    "Html": "<p>Hi! Yes, it is 10183 I'm referring to.</p>\r\n<p>Cells in my grid will be updated very frequently and I'm afraid refreshing will be to inefficient but I'll try it out...&nbsp;</p>",
+    "PostedDate": "2009-09-04T00:55:38.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231122",
+    "ThreadId": "60360",
+    "Html": "<p>I tried to do a refresh on the CollectionView but I'm not sure I do it right (probably not since not much happens ;)) I do like this:&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">void</span> RefreshDataGridItems()\r\n        {          \r\n            <span style=\"color:Blue\">var</span> view = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);\r\n\r\n            <span style=\"color:Blue\">if</span> (view == <span style=\"color:Blue\">null</span>)\r\n            {\r\n                <span style=\"color:Blue\">return</span>;\r\n            }\r\n\r\n            view.Refresh();\r\n        }\r\n</pre>\r\n</div>\r\n<p>I'm new to WPF and maybe I've misunderstood how to get the current CollectionView for the DataGrid, do you have an example?&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-04T06:33:18.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231261",
+    "ThreadId": "60360",
+    "Html": "<p>Hi myzli,</p>\r\n<p>Please try the following:</p>\r\n<p>dataGrid.Items.Refresh();</p>\r\n<p>&nbsp;</p>\r\n<p>Hope that helps,</p>\r\n<p>Saied K.</p>",
+    "PostedDate": "2009-09-04T13:24:42.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231770",
+    "ThreadId": "60360",
+    "Html": "<p>Hi Saied!&nbsp;</p>\r\n<p>I tried your code and it gave no result. I can see that it has some effect since I have some background colors that disappears when the items are refreshed but i doesn't effect the sorting. If I clear the SortDescriptions and then add the SortDescription again and refresh the grid is sorted (like this:)</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>            <span style=\"color:Blue\">var</span> view = CollectionViewSource.GetDefaultView(dataGrid.Items);\r\n\r\n            <span style=\"color:Blue\">if</span> (view == <span style=\"color:Blue\">null</span>)\r\n            {\r\n                <span style=\"color:Blue\">return</span>;\r\n            }\r\n\r\n            <span style=\"color:Blue\">if</span> (view.SortDescriptions.Count == 0)\r\n            {\r\n                <span style=\"color:Blue\">return</span>;\r\n            }\r\n\r\n            <span style=\"color:Blue\">var</span> description = view.SortDescriptions[0];\r\n\r\n            <span style=\"color:Blue\">using</span> (view.DeferRefresh())\r\n            {\r\n                view.SortDescriptions.Clear();\r\n                view.SortDescriptions.Add(description);\r\n            }\r\n \r\n</pre>\r\n</div>\r\n&nbsp;\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-07T01:58:07.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "277531",
+    "ThreadId": "60360",
+    "Html": "<p>Has something been done about this? I'm on a similar situation with the aggravation that my DataGrid is inside a DataTemplate for a ContentControl, on a ResourceDictionary, so I don't have code-behind where I can easily access it and it isn't always there anyway. I'm amazed that there isn't an option to autorefresh the order when the data objects' properties change.</p>\r\n<p>Regards,</p>\r\n<p>-Sergi D&iacute;az</p>",
+    "PostedDate": "2010-01-15T04:02:05.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

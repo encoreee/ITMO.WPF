@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed - By Design",
+    "ClosedDate": "2009-02-18T13:31:06.517-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "While using the CTP DataGrid I changed the itemsPanel to a regular StackPanel to get around some display issues with the Virtualizing StackPanel.  After upgrading to the V1 DataGrid I noticed my DataGrid wasn't being populated so I started pulling things out one by one and low and behold after removing the itemsPanel from my DataGrid it now works.  Any plans on putting the ability to change the itemsPanel back in to the DataGrid?\n \nKindest regards,\n-LT",
+    "LastUpdatedDate": "2013-05-16T05:31:11.987-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-03T11:08:25.933-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid ItemsPanel issue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9143
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi LT,\r\n\r\nWe agree that this is a bug. We're filing a bug in our internal database to track this and it will be fixed in a future release.\r\n\r\nThanks,\r\nSamantha",
+      "PostedDate": "2009-02-18T10:55:04.35-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Correction: After seeing the associated Discussions thread (http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=45939), it appears that this is not a bug.  That thread includes the correct XAML to get this to work.",
+      "PostedDate": "2009-02-18T13:30:04.067-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:30:04.753-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:31:06.517-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:34.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:11.987-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

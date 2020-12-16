@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "480388",
+    "ThreadId": "223531",
+    "Html": "<p>My problem is that some rows get incorrect height (<a href=\"http://img31.imageshack.us/img31/47/problemexample.png\">example</a>).</p>\r\n<p>In my case the bug only appeared when there were 10 or more rows. Out of the rows, ten first rows would in some cases have too small height for the contents. (I first thought that the nine items were drawn on top of each other, which was stupid of me.) There are quite many columns, so there's a scrollbar. Clicking on the scrollbar resizes the heights to proper values (so it looks like you would expect it to).</p>\r\n<p>Some things that in my experience do not work:</p>\r\n<p>* Changing virtualization settings had no effect.</p>\r\n<p>* InvalidateVisual() and InvalidateArrange() don't work. Tried both datagrid and its parent.</p>\r\n<p>* Changing the height of datagrid did not work (although I'm not quite happy with my tests here)     * Forcing the datatemplates of the cells to a specific size did not have an effect.</p>\r\n<p>* Placing the datagrid inside a scrollviewer (so that the datagrid would have all the space it could ever need...) did not work.</p>\r\n<p>However:  The one thing (I found) that the datagrid seems to respect is MinRowHeight-setting, so now I've got there a moronic value and I'm hoping that this won't cause problems later on when the datatemplates are modified.</p>\r\n<p>Any advice on how to get this to work would be appreciated. (And fixing the layout would be nice too)</p>",
+    "PostedDate": "2010-08-13T14:09:06.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

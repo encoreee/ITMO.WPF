@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "141622",
+    "ThreadId": "42611",
+    "Html": "Hi,<br>\r\nI tried using the the RibbonWindow with ribbon as shell for a CompositeWPF application.<br>\r\nWhen the view gets added to a region, it appears completely black, it works fine using a normal window.<br>\r\nAny hint?<br>\r\nThanks<br>\r\nAntonio \r\n",
+    "PostedDate": "2008-12-18T09:01:11.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141637",
+    "ThreadId": "42611",
+    "Html": "Hi Antonio,<br>\r\n<br>\r\nI'm not sue if I completely understand your scenario - does the black cover the other elements in the RibbonWindow or is it just the background? (If you could send a screenshot, that might help.)  If it's just the background, this is a known issue and it's super easy to fix.  Just set RibbonWindow.Background=&quot;White.&quot;  If it's something more complicated than that, please send a screenshot and maybe a simple repro so that we can investigate this.<br>\r\n<br>\r\nThanks!<br>\r\nSam\r\n",
+    "PostedDate": "2008-12-18T10:21:06.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141706",
+    "ThreadId": "42611",
+    "Html": "Hi Sam,<br>\r\nIt seams it is just the background, I set the Background=&quot;White&quot; in xaml as you suggested and it works.<br>\r\nWill this beaviour be corrected?<br>\r\nThanks<br>\r\nAntonio \r\n",
+    "PostedDate": "2008-12-18T15:05:48.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141717",
+    "ThreadId": "42611",
+    "Html": "Great, I'm glad that fixed it!  Yes, this should be corrected in V1.\r\n",
+    "PostedDate": "2008-12-18T16:43:32.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

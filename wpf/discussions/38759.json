@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "128576",
+    "ThreadId": "38759",
+    "Html": "Hi all,<br>\r\nWell done for the new toolkit release.It seems to be very useful.<br>\r\nI need your help, though, about a feature that seems to be missing from this release - I want to enable the user to pin selected rows to a fixed position at the top or bottom of the grid <br>\r\n(the Infragistics has that feature as can be seen in <a href=\"http://www.infragistics.com/dotnet/netadvantage/winforms/wingridgallery.aspx#Gallery\">http://www.infragistics.com/dotnet/netadvantage/winforms/wingridgallery.aspx#Gallery</a> )<br>\r\nIs there any way to achieve that goal ?<br>\r\n<br>\r\nThanks,<br>\r\nRegev\r\n",
+    "PostedDate": "2008-10-29T05:13:06.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

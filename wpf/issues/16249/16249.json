@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "i have done these steps:::\nI followed these steps to enable stepping through .NET source code in the debugger(kindly see the link ,step by step what i had done before this problem emerged)\n \nhttp://wpf.2000things.com/2010/10/10/90-stepping-into-net-source-code-in-visual-studio-2010/#comment-445\n \nNow i want to reset my tool box. I did these steps but none work.\n \n1. devenv /resetskippkgs on VS command prompt\n \n2. right click on toolbox and rest toolbar\n \n3. right click on toolbox, then add new item then click Reset button.\n \n4. deleted 4 files from this location(toolbox.tbd, toolbox_reset.tbd, toolboxIndex.tbd, ToolboxIndex_Reset.tbd).\n \n%USERPROFILE%\\Local Settings\\Application Data\\Microsoft\\VisualStudio\\9.0\n \nLet me know what else i do. All above action only showing the 3rd party tools that are attached to toolbox. tools are highlighted(can be drag and drop on page)",
+    "LastUpdatedDate": "2013-02-21T18:40:11.017-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-07-12T22:19:20.4-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Toolbox not showing Default tabs/tools, after Stepping Into .NET Source Code in Visual Studio 2008",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16249
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

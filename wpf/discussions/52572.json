@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "176668",
+    "ThreadId": "52572",
+    "Html": "I'm using RowDetails in a DataGrid and I've got some troubles with vertical scrolling. By default when all my RowDetails are collapsed the DataGrid scrolls vertically by one row at a time. This is fine but when I expand the RowDetail on the top row, subsequent scrolling will skip whole RowDetail section right to the next row. Is there a way to make scrolling smoother so I can scroll through the RowDetail section, when expanded, rather then just skip to the next row?\r\n",
+    "PostedDate": "2009-04-07T09:21:12.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176804",
+    "ThreadId": "52572",
+    "Html": "With virtualization on (which is the default), DataGrid scrolls by row - the RowDetails are part of the row, which is why you're seeing this behavior.  ItemsControls do have smooth scrolling, but it is disabled by virtualization, so unfortunately the only way you can achieve this is by turning off virtualization and setting CanContentScroll to false on the ScrollViewer inside DataGrid.  This could obviously have a big impact on performance and may not work for your scenario.  \r\n",
+    "PostedDate": "2009-04-07T13:32:35.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177067",
+    "ThreadId": "52572",
+    "Html": "Thanks a lot for your help, your solution works very well and so far I haven't noticed any performance issues.\r\n",
+    "PostedDate": "2009-04-08T02:58:50.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

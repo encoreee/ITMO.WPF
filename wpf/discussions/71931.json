@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "245521",
+    "ThreadId": "71931",
+    "Html": "<p>Hello!</p>\r\n<p>When I have an empty item source at the beginning, the data grid does not put a new item template row there. If I add one item, then it works.</p>\r\n<p>It doesn't help if I set up :</p>\r\n<p>IEditableCollectionView iecv =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (IEditableCollectionView)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CollectionViewSource.GetDefaultView(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; encounterTrackerControl1.TrackGrid.ItemsSource);<br> iecv.NewItemPlaceholderPosition = NewItemPlaceholderPosition.AtEnd;</p>\r\n<p>My grid is set up that the user can add a row. it is not read only.</p>\r\n<p>How can I set up this thing that in case of an empty collection it puts there a new item row only?</p>\r\n<p>thank you very much</p>\r\n<p>Marton</p>",
+    "PostedDate": "2009-10-14T04:56:50.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

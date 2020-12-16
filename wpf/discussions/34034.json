@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "112793",
+    "ThreadId": "34034",
+    "Html": "After populating my Database it seems that&nbsp;datagrid1.Columns.Count seems to always be equal to zero.&nbsp; This obviously isn't the way its done.&nbsp; Also, how do you count the rows?<br>\r\n<span style=\"font-size:13px\">\r\n<p>Thanks</p>\r\n</span>\r\n",
+    "PostedDate": "2008-08-21T15:21:50.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112796",
+    "ThreadId": "34034",
+    "Html": "The number of rows is DataGrid.Items.Count.&nbsp; Could you be a little more specific on what you mean by populating the Database and datagrid1.Columns.Count seems to always be equal to zero.&nbsp; I'm assuming you are auto-generating the columns.&nbsp; So is the problem, when you set the DataGrid.ItemsSource to your DataView no columns are generated and nothing shows up?\r\n",
+    "PostedDate": "2008-08-21T15:40:29.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112930",
+    "ThreadId": "34034",
+    "Html": "Sorry for not being more specific.&nbsp; Yes I'm auto-generating the columns.&nbsp; In .net 2.0 datagrid.Columns.Count would tell you how many columns where in the grid. Specifically, I'm trying to check the column width of each column that used to be done with DataGrid.Columns[x].width.&nbsp; DataGrid.Items.Count is seems strange for a Column count?.&nbsp; What about a row count?\r\n",
+    "PostedDate": "2008-08-22T05:43:00.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112996",
+    "ThreadId": "34034",
+    "Html": "row count is DataGrid.Items.Count.&nbsp; Column count is DataGrid.Columns.Count and to get the column width it is DataGrid.Columns[idx].Width.\r\n",
+    "PostedDate": "2008-08-22T09:21:56.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113007",
+    "ThreadId": "34034",
+    "Html": "DataGrid.Columns.Count&nbsp;gives me an accurate column count<br>\r\nDataGrid.Items.Count&nbsp;always gives&nbsp;me zero row count<br>\r\n<br>\r\nAnyone else have this&nbsp;same problem? <br>\r\n&nbsp;\r\n",
+    "PostedDate": "2008-08-22T10:08:18.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113019",
+    "ThreadId": "34034",
+    "Html": "Well see that's what I thought DataGrid.Items.Count gives the correct rows but DataGrid.Columns.Count is always = to 0 and DataGrid.Columns[idx].Width is always 0 as well.&nbsp; This is all after populating the grid with a database. <br>\r\n",
+    "PostedDate": "2008-08-22T11:26:40.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113020",
+    "ThreadId": "34034",
+    "Html": "Are you sure you don't have that backwards.&nbsp; My DataGrid.Columns.Count is always 0 and DataGrid.Items.Count&nbsp;give me correct row count?<br>\r\n<br>\r\nIf so, then I think there is a bug?\r\n",
+    "PostedDate": "2008-08-22T11:28:49.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113032",
+    "ThreadId": "34034",
+    "Html": "Could you post an example of the code you are running.\r\n",
+    "PostedDate": "2008-08-22T12:18:16.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113058",
+    "ThreadId": "34034",
+    "Html": "The grid displays the database properly even though it is sqlite database. Of which I applaud you guys.&nbsp; Good job.&nbsp; In the following code datagrid.Columns is always equal to zero.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (DataGridColumn dgColumn in datagrid.Columns)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gridwidth += Convert.ToInt16(dgColumn.Width);<br>\r\n<br>\r\nI also tryed your suggestion of using datagrid.Columns[idx].Width and\r\ndatagrid.Columns.Count using a for next loop but they are also 0.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int x = 0; x &lt; dataGridView1.Columns.Count; x++)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gridwidth += dataGridView1.Columns[x].Width; <br>\r\n<br>\r\n<br>\r\nusing System;<br>\r\nusing System.Collections.Generic;<br>\r\nusing System.Linq;<br>\r\nusing System.Text;<br>\r\nusing System.Windows;<br>\r\nusing System.Windows.Controls;<br>\r\nusing System.Windows.Data;<br>\r\nusing System.Windows.Documents;<br>\r\nusing System.Windows.Input;<br>\r\nusing System.Windows.Media;<br>\r\nusing System.Windows.Media.Imaging;<br>\r\nusing System.Windows.Shapes;<br>\r\nusing Microsoft.Windows.Controls;<br>\r\nusing System.Data.SQLite;<br>\r\nusing System.Threading;<br>\r\n<br>\r\nusing System.ComponentModel;<br>\r\nusing System.Data;<br>\r\nusing System.Runtime.InteropServices;<br>\r\nusing System.IO;<br>\r\n<br>\r\n<br>\r\nnamespace WpfApplication2<br>\r\n{<br>\r\n&nbsp;&nbsp; &nbsp;/// &lt;summary&gt;<br>\r\n&nbsp;&nbsp; &nbsp;/// Interaction logic for Window1.xaml<br>\r\n&nbsp;&nbsp; &nbsp;/// &lt;/summary&gt;<br>\r\n&nbsp;&nbsp; &nbsp;public partial class Window1 : Window<br>\r\n&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private SQLiteDataAdapter dataAdapter = null;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private DataSet dataSet = null;<br>\r\n<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;public Window1()<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.InitializeComponent();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loaddata();<br>\r\n<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// Insert code required on object creation below this point.<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void loaddata()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int gridwidth = 0;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.dataSet = new DataSet();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string connString = String.Format(&quot;Data Source={0};New=False;Version=3&quot;, @&quot;d:\\icon\\nominal.db&quot;);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQLiteConnection sqlconn = new SQLiteConnection(connString);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sqlconn.Open();<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string CommandText = String.Format(&quot;Select * from [{0}];&quot;, &quot;Nominal Table&quot;);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.dataAdapter = new SQLiteDataAdapter(CommandText, sqlconn);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQLiteCommandBuilder builder = new SQLiteCommandBuilder(this.dataAdapter);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.dataAdapter.Fill(this.dataSet, &quot;Nominal Table&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataTable NominalTable = this.dataSet.Tables[&quot;Nominal Table&quot;];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; datagrid.ItemsSource = NominalTable.DefaultView;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Width = 0;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (DataGridColumn dgColumn in datagrid.Columns)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gridwidth += Convert.ToInt16(dgColumn.Width);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Width = gridwidth - this.Width;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (SQLiteException sqlex)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(sqlex.Message);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (Exception ex)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(ex.Message);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void Window_Closing(object sender, CancelEventArgs e)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.dataAdapter.Update(this.dataSet, &quot;Nominal Table&quot;); &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp; &nbsp;}<br>\r\n}<br>\r\n",
+    "PostedDate": "2008-08-22T14:22:12.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113078",
+    "ThreadId": "34034",
+    "Html": "The problem is that the columns haven't been created by the time you are querying for them in the constructor.&nbsp; When columns are auto-generated they are created on the first measure pass.&nbsp; This is by design.&nbsp; You can query for them in an override of OnContentRendered on the Window:<br>\r\n<br>\r\n<p>protected<span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">override</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">void</span></span><span style=\"font-size:13px\"> OnContentRendered(</span><span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#2b91af\">EventArgs</span></span><span style=\"font-size:13px\"> e)<br>\r\n{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;base</span></span><span style=\"font-size:13px\">.OnContentRendered(e);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp; int</span></span><span style=\"font-size:13px\"> count = DataGrid_Standard.Columns.Count;<br>\r\n</span><span style=\"font-size:13px\">}\r\n<p>&nbsp;</p>\r\n</span></p>\r\nCount should be greater than zero in this function.\r\n",
+    "PostedDate": "2008-08-22T16:45:16.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113884",
+    "ThreadId": "34034",
+    "Html": "Thanks that did the trick.\r\n",
+    "PostedDate": "2008-08-26T11:06:30.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "162115",
+    "ThreadId": "48556",
+    "Html": "Hi,<br>\r\nI am VERY interested in the new DataGrid control for WPF but a majority (maybe even all) of samples and discussions use C#.<br>\r\n<br>\r\nCan you provide a lot more samples using VB9?<br>\r\n<br>\r\nOr maybe I should just quit using VB.Net!<br>\r\n8^)<br>\r\n<br>\r\nThanks.<br>\r\n<br>\r\nBest regards,<br>\r\nKen\r\n",
+    "PostedDate": "2009-02-25T16:04:02.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162263",
+    "ThreadId": "48556",
+    "Html": "Hi Ken,<br>\r\n<br>\r\nI would actually argue that it might be worth it to learn C# since it is a very widespread language, and also very similiar to Java (so you cover up a lot). But if you don't have the time or ambition you can always try using some of the automatic conversion tools between C# and VB.NET. They should be easy to find using Google.\r\n",
+    "PostedDate": "2009-02-26T04:09:55.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

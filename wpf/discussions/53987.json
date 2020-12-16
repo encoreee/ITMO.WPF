@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "181807",
+    "ThreadId": "53987",
+    "Html": "Hi,<br>\r\n<br>\r\nHow can i enter automatically in edit mode with focus on the first focusable control located inside a DataGridTemplateColumn.CellEditingTemplate, when i select a cell in a datagrid with mouse click or cursor keys, if all my datagrid columns are defined with DatagridTemplateColumns ?<br>\r\n<br>\r\nThanks.<br>\r\n<br>\r\nRui G.<br>\r\n",
+    "PostedDate": "2009-04-21T08:14:13.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182010",
+    "ThreadId": "53987",
+    "Html": "RuiG,<br>\r\n<br>\r\n<a href=\"http://wpf.codeplex.com/Wiki/View.aspx?title=Single-Click Editing&referringTitle=Home\">http://wpf.codeplex.com/Wiki/View.aspx?title=Single-Click%20Editing&amp;referringTitle=Home</a><br>\r\nThis article describes how to enter edit mode with single click. In your case you mkight want to do this in the PreviewMouseLeftButtonDown event handler of your first focusable control. <br>\r\n<br>\r\nThanks.\r\n",
+    "PostedDate": "2009-04-21T13:58:12.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

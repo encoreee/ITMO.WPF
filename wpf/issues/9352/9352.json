@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Ribbon",
+      "DisplayName": "Ribbon"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am having a problem where letters are being cut off in the second line of text in large icon view.\n \nPlease see the screenshot.  In small image mode, everything is fine.  In large, all letters below the base line of text are cut off.  In this screenshot, those are j, q, and y for illustration purposes.  Specifying Height does not do anything.\n \nI apologize if this is a duplicate issue, but I don't see anyone discussing this problem or any workaround.  Please help.",
+    "LastUpdatedDate": "2013-02-21T18:41:30.437-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-02-25T11:30:33.103-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon Truncates Second Line Text",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9352
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2779,
+      "FileName": "RibbonProblemScreenshot.png",
+      "DownloadUrl": ".\\2779"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-25T17:35:52.483-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-25T17:35:53.107-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-03T08:28:21.553-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:30.437-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

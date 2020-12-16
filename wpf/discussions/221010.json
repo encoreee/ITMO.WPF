@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "471689",
+    "ThreadId": "221010",
+    "Html": "Hi,\r\n\r\nCurrently every RibbonButton I have has an image and I would like to know if it is possible to rather than displaying an image for the ribbon button I can display a user control like (&lt;CustomWPFColorPicker:ColorPickerControlView x:Name=&quot;ForeColorPicker&quot; /&gt; )\r\n\r\n\r\nAny help will be greatly appreciate it, as I am totally stuck\r\n\r\nThis is what I currenlty have:\r\n\r\n&lt;r:RibbonButton Name=&quot;FontColor&quot; Margin=&quot;0,10,0,0&quot; Command=&quot;{StaticResource FontColorCommand}&quot;&gt;\r\n\r\n\r\n&lt;r:RibbonCommand x:Key=&quot;FontColorCommand&quot;\r\n                             ToolTipTitle=&quot;Font Color&quot;\r\n                             ToolTipDescription=&quot;Changes the text color.&quot; \r\n                             SmallImageSource=&quot;Images/Forecolor.gif&quot;\r\n                             LargeImageSource=&quot;Images/Forecolor.gif&quot;\r\n                             CanExecute=&quot;FontColorRibbonCommand_CanExecute&quot;\r\n                             Executed=&quot;FontColorRibbonCommand_Executed&quot;/&gt;\r\n\r\nThanks\r\n\r\n",
+    "PostedDate": "2010-07-23T09:42:37.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

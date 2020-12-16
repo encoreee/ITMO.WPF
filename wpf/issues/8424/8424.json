@@ -1,0 +1,115 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using WPFToolkit 3.5.31016.1, and I'm getting something I think a bug.\n \nHere is the XAML:\n<!---------------------------------------->\n<Window x:Class=\"WpfApplication1.Window1\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n    xmlns:Toolkit=\"clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit\"\n    Title=\"Window1\" Height=\"300\" Width=\"300\">\n    <Toolkit:DataGrid AutoGenerateColumns=\"False\" x:Name=\"grid\">\n        <Toolkit:DataGrid.Columns>\n            <Toolkit:DataGridTextColumn Header=\"FirstName\" Binding=\"{Binding FirstName}\"/>\n            <Toolkit:DataGridTextColumn Header=\"SecondName\" Binding=\"{Binding SecondName}\"/>\n        </Toolkit:DataGrid.Columns>\n    </Toolkit:DataGrid>\n</Window>\n \nAnd here is the cs:\n/**************************************/\nusing System.Collections.Generic;\nusing System.Windows;\n \nnamespace WpfApplication1\n{\n    /// <summary>\n    /// Interaction logic for Window1.xaml\n    /// </summary>\n    public partial class Window1 : Window\n    {\n        public Window1()\n        {\n            InitializeComponent();\n            Loaded += delegate\n            {\n                grid.ItemsSource = new List<Person>();\n            };\n        }\n    }\n \n    public class Person\n    {\n        public string FirstName { get; set; }\n        public string SecondName { get; set; }\n    }\n}\n \n \nAs long as I run it, there comes these errors:\n--------------------------------------------------\nSystem.Windows.Data Error: 39 : BindingExpression path error: 'FirstName' property not found on 'object' ''Object' (HashCode=16782441)'. BindingExpression:Path=FirstName; DataItem='Object' (HashCode=16782441); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')\nSystem.Windows.Data Error: 39 : BindingExpression path error: 'SecondName' property not found on 'object' ''Object' (HashCode=16782441)'. BindingExpression:Path=SecondName; DataItem='Object' (HashCode=16782441); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')",
+    "LastUpdatedDate": "2013-02-21T18:41:41.23-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-06T04:55:45.973-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "BindingExpression path error with empty List<> as ItemsSource",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 8424
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I think what you see is a try to bind specified properties on NewItemPlaceholder.\r\nYou could try to disable adding new rows (grid.CanUserAddRows = false) and see if error still exists.",
+      "PostedDate": "2008-12-06T10:49:38.707-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "yeah, the exceptions are gone after I turn off the \"CanUserAddRows\".\r\nHowever I need this feature set to True, so my users can add new Person, Is there any work around now?\r\nThanks!",
+      "PostedDate": "2008-12-06T21:31:20.243-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I need this feature \"xiebbs\" too..\r\nHow to fix this bug ?",
+      "PostedDate": "2009-01-13T22:50:14.077-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.\r\n\r\nYou should be able to safely ignore these debug errors for now.",
+      "PostedDate": "2009-02-18T17:54:39.623-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T17:54:40.28-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I am using v3.5.40619.1. This bug still not fixed. Any fix dates at this moment?",
+      "PostedDate": "2009-07-06T00:37:18.45-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi, we do have this on our radar for a future release, but we do not have any specific fix dates yet.  ",
+      "PostedDate": "2009-07-06T11:22:28.967-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-21T08:36:13.997-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-04T23:19:39.167-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "WPFToolkit 3.5.40128.1 still contains this bug. Very embarrassing...",
+      "PostedDate": "2010-03-02T06:20:59.403-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-04T11:16:17.62-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-15T16:51:06.533-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Does anybody have an workaround ?",
+      "PostedDate": "2010-03-15T16:52:35.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-16T05:45:31.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:41.23-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

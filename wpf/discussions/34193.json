@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "113345",
+    "ThreadId": "34193",
+    "Html": "Hello, I just wanted to point out that some properties in the DataGrid control, that is, in some classes that are used by it, would be really useful to devs.<br>\r\n<br>\r\nThat would avoid us to be forced to use either a VisualTreeHelper and rely on the templates used, or Reflection to get the job done.<br>\r\n<br>\r\nFor instance : DataGridCellsPresenter.DataGridOwner<br>\r\n<br>\r\nwouldn't that make sense to expose this property to other developpers in the final release of this control ?\r\n",
+    "PostedDate": "2008-08-25T00:58:19.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113379",
+    "ThreadId": "34193",
+    "Html": "Hi,<br>\r\nI couldn't agree more, and i've just wanted to remind some other things that would be great if they would be exposed:<br>\r\nDataGridColumn.ApplyDataFieldBinding() which is required when you are building your own columns by code.<br>\r\n<br>\r\nRegards Jan Dryk<br>\r\n",
+    "PostedDate": "2008-08-25T04:10:50.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "408802",
+    "ThreadId": "200046",
+    "Html": "<p>Hi,</p>\r\n<p>I want to import the dll from the installation folder in a VS 2010-project but it doesn't work.<br>What is my fault?</p>\r\n<p><br>This is the message:</p>\r\n<p>Could not resolve mscorlib for target framework '.NET Framework, Version=3.5,Profile=Server Core'. This can happen if the target framework is not installed or if the framework moniker is incorrectly formatted.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for helping</p>\r\n<p>GameCrasher</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-26T08:03:35.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "154394",
+    "ThreadId": "46244",
+    "Html": "<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'calibri','sans-serif'\">If I create a class that implements INotifyPropertyChanged and has a number of properties exposed, then I load some data and create several instances of my class populating the properties and adding each instance into a Generic.List collection. If I then set the DataGrid.ItemSource property = to my list and modify one of the values using the datagrid I can put a breakpoint on the set property on my class and see that the datagrid is updating the underlying data. GREAT.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'calibri','sans-serif'\"> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'calibri','sans-serif'\">However in my world everything is dynamic:- the columns are configurable as is the data being displayed. So I cannot define a class for this and instead I created a dataTable. To support the datatable I define a class that has a collection of attributes, each attribute has a name and a value. I process my data and create new instances of my class for each record, populating the collection of attributes. Each instance is then added to a collection and using the collection I build up a datatable setting each column/row value = to the attribute class. The grid displays correctly after I set the ItemSource = my new datatable. When I change a cell in the grid I can look at the datatable and see it has updated the row. <br>\r\n<br>\r\nQuestion:- Is there anyway I can have  the underlying attribute class updated just like the example above?</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:11pt;color:#1f497d;font-family:'calibri','sans-serif'\"><br>\r\nThanks Andy </span></p>\r\n",
+    "PostedDate": "2009-02-04T12:17:31.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154988",
+    "ThreadId": "46244",
+    "Html": "Does the DataTable implement some sort of event that fires when its data is updated? If it does, you could write an event handler for that in your underlying attribute class, and make a corresponding update there. But that seems kludgly to me.<br>\r\n<br>\r\nOn a more basic level, are you saying that not only your data is dynamic (I can buy that one without any problems, very little real-world data is static), but also the *structure* of the data is dynamic?<br>\r\n<br>\r\nHave you considered using some other approach, say, binding the DataGrid to something like an ObservableCollection&lt;IList&lt;&gt;&gt; or something along the lines of that? If you don't want to commit to putting the columns in XAML (you can always set Visiblity=&quot;Collapsed&quot; initially and display them on an as-needed basis), you can always generate the DataGrid.Columns collection dynamically in code whenever you need to. With this particular example, the ObservableCollection&lt;&gt;'s CollectionChanged event could be a good place to start. IList&lt;&gt; or Dictionary&lt;&gt; seem like obvious choices for a scenario like this, and wrapping them in a collection of some sort will effectively give you an editable, bindable, multi-dimensional array.<br>\r\n",
+    "PostedDate": "2009-02-06T01:40:51.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155037",
+    "ThreadId": "46244",
+    "Html": "mikj, DataTable does not fire events when the data is changed. However, you can manipulate a DataTable via a DataView. The DataView wraps each DataRow in a DataRowView which implements INotifyPropertyChanged, which will give you what you want.<br>\r\n<br>\r\namitchel7, I am not entirely sure what you are trying to do ... is it something like this ....<br>\r\n<br>\r\nAttribute class, contains dynamic data - name value pairs perhaps?<br>\r\nYou populate a DataTable from a list of Attribute instances and bind this to your grid.<br>\r\n<br>\r\nSo, when the data in the grid is edited, the DataTable is updated, but the Attribute instances are not.<br>\r\n<br>\r\nIf you bind to the DataTable.DefaultView, events will be raised when items are added / removed, also, you can handle teh PropertyChanged event for each DataRowView. With these events handled you shoud be able to sycnhronise you Attribute collection.<br>\r\n<br>\r\nI have examples for a few of these scenarious in the following article:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx<br>\r\n<br>\r\nYou could also remove the DataTable altogether. To do this you would need to create a suitable PropertyDescriptor for yoru Attribute class in order that the DataGrid can bind to it.<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n",
+    "PostedDate": "2009-02-06T04:52:34.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

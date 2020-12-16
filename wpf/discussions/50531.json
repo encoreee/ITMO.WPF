@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "169422",
+    "ThreadId": "50531",
+    "Html": "Greetings,<br>\r\n<br>\r\nI'm looking for a little guidance with a problem I'm having.  I have a DataGrid on my UI side, and an ObservableCollection on the backend.  I populate the ObservableCollection with custom data objects.  Here's the catch, I have separate threads populating the data in my custom data objects, which return data at different times.  I was hoping that the INotifyCollectionChanged interface would pick up on changes made to the data properties of my custom objects.  After looking in to it some more, I'm guessing that is not how this is designed.  I see that the DataGrid gets notified on the following actions:<br>\r\n<br>\r\nAdd, Remove, Replace, Move, and Reset (based on records, not record properties).<br>\r\n<br>\r\nMy intended design is to have a read only DataGrid with a OneWay binding to the collection of my custom objects.  Then once a data field changes on any of my custom objects, the DataGrid would reflect that change and modify the appropriate cell to display the new value.  I haven't tried this yet, but I guess I could create a custom collection object that implements the INotifyCollectionChanged interface, and then raise the CollectionChanged event with a Reset action every time a piece of data is populate on my custom objects.<br>\r\n<br>\r\nWhat would be our best practice in this situation?  <br>\r\nThank you for your time,<br>\r\n-Dave Fribley\r\n",
+    "PostedDate": "2009-03-18T07:01:15.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169467",
+    "ThreadId": "50531",
+    "Html": "Roel,<br>\r\n<br>\r\nThank you.  Your advice does help a lot and is setting me on the right track.  My first mistake was that I hadn't implemented the INotifyPropertyChanged on my custom objects.  After implementing that, I switched over to using a BindingList&lt;T&gt; object for my collection.  It worked great and I feel a lot more comfortable about the BindingList's ListChanged event.  It looks to be more what I'm trying to do with the &quot;ItemChanged&quot; change type.<br>\r\n<br>\r\nThanks again!  Great Advice.<br>\r\n-Dave\r\n",
+    "PostedDate": "2009-03-18T09:13:07.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

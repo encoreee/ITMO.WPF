@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Both CheckBox Command that I put in Header Style and CellTemplate never work. \n \n<toolkit:DataGrid x:Name=\"grid\"\n                           AutoGenerateColumns=\"False\"\n                           ItemsSource=\"{Binding ProjectMilestones}\"\n                           HorizontalAlignment=\"Stretch\" VerticalAlignment=\"Stretch\" \n                            >\n                        <toolkit:DataGrid.Columns>                            \n                            <toolkit:DataGridTemplateColumn >                                \n                                <toolkit:DataGridTemplateColumn.HeaderStyle>\n                                    <Style TargetType=\"{x:Type toolkit:DataGridColumnHeader}\">\n                                        <Setter Property=\"Template\">\n                                            <Setter.Value>\n                                                <ControlTemplate>\n                                                    <Grid Margin=\"0\">\n                                                        <CheckBox HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\" \n                                                                   IsChecked=\"{Binding ElementName=grid,Path=DataContext.IsCheckAllProjectMilestones}\"   \n                                                                   Command=\"{Binding CheckAllProjectMilestonesCommand}\"\n                                                             />\n                                                    </Grid>\n                                                </ControlTemplate>\n                                            </Setter.Value>\n                                        </Setter>\n                                    </Style>\n                                </toolkit:DataGridTemplateColumn.HeaderStyle> \n                                <toolkit:DataGridTemplateColumn.CellTemplate>\n                                    <DataTemplate>\n                                        <CheckBox HorizontalAlignment=\"Center\"  \n                                                      IsChecked=\"{Binding IsSelected}\" \n                                                      Command=\"{Binding ElementName=grid,Path=DataContext.CheckProjectMilestoneCommand}\"\n                                                      />\n                                    </DataTemplate>\n                                </toolkit:DataGridTemplateColumn.CellTemplate>\n                            </toolkit:DataGridTemplateColumn>",
+    "LastUpdatedDate": "2013-02-21T18:40:51.46-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-11-19T08:00:18.537-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Command with ElementName Binding doesn't wok in HeaderStyle and CellTemplate",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10967
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

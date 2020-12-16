@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The following MainWindow.xaml will fail with a NullReferenceException\n \n<Window\n  x:Class=\"DataVisTestApplication.MainWindow\"\n  xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n  xmlns:chart=\"clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit\">\n  <Window.Resources>\n      <PointCollection\n        x:Key=\"points\">\n        0, 1, 2, 3\n      </PointCollection>\n    </Window.Resources>\n      \n    <chart:Chart xml:lang=\"de-DE\">\n      <chart:Chart.Series>\n        <chart:LineSeries\n          DependentValuePath=\"Y\"\n          IndependentValuePath=\"X\"\n          ItemsSource=\"{StaticResource points}\">\n        </chart:LineSeries>\n      </chart:Chart.Series>\n    </chart:Chart>\n</Window>\n \nAfter changing the xml:lang attribute to en-US the code runs fine.",
+    "LastUpdatedDate": "2013-02-21T18:40:22.153-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-09-15T04:17:51.133-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NullReferenceException in Chart when xml:lang (FrameworkElement.Language) is set to something else than en-US",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 14255
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I had the same problem. I had many many hours fighting with this. My default culture was specified to neutral XD ",
+      "PostedDate": "2010-11-01T07:40:27.74-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also had the same problem, I track it to have a nullreference on the IndependentValueAxis. But setting the the language to en-US of the chart control solved it! \r\n\r\nThe reason why this is happening escapes me. This does not happen on Pie Charts. Only for Bar, Line, and Column charts.",
+      "PostedDate": "2012-04-09T20:51:20.18-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-04-09T20:51:36.783-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:22.153-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

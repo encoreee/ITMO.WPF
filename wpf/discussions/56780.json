@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "191910",
+    "ThreadId": "56780",
+    "Html": "<p>After bind DatePicker, only for the selected date bigger than Now, it can be displayed in the textbox. If I want to display the datetime in the datepicker textbox for any selected date, how to do? Thanks.</p>\r\n<p>My code:</p>\r\n<p>&lt;my:DatePicker&nbsp;&nbsp; Width=&quot;Auto&quot; x:Name=&quot;ScheduledDate&quot; VerticalContentAlignment=&quot;Stretch&quot; SelectedDate=&quot;{Binding Path=InspectionDate, Mode=TwoWay}&quot; CalendarStyle=&quot;{DynamicResource myCalendar}&quot;&nbsp; Margin=&quot;0,5,0,0&quot; SelectedDateFormat=&quot;Short&quot;&nbsp; /&gt;</p>",
+    "PostedDate": "2009-05-19T06:56:08.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192083",
+    "ThreadId": "56780",
+    "Html": "<p>In a simple app, dates befoire DateTime.Now were selectable. Does InspectionDate enforce being DateTime.Now or later?</p>\r\n<p>Ben</p>",
+    "PostedDate": "2009-05-19T13:49:13.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192169",
+    "ThreadId": "56780",
+    "Html": "<p>Thanks Ben,</p>\r\n<p>It's my wrong not to see the detail logic behide the page.</p>\r\n<p>But still I has another question: by default, the &quot;Sunday&quot; is abbreviated to &quot;Su&quot;, &quot;Monday&quot; to &quot;Mo&quot;, &quot;Tuesday&quot; to &quot;Tu&quot;,&quot;Wednesday&quot; to &quot;We&quot;, &quot;Thursday&quot; to &quot;Th&quot;, &quot;Friday&quot; to &quot;Fr&quot;, and 'Saturday&quot; to &quot;Sa&quot;?</p>\r\n<p>then how to display as&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, and &quot;Sat&quot;, it's similar like this:</p>\r\n<p>Sun&nbsp; Mon&nbsp; Tue&nbsp; Wed&nbsp; Thu&nbsp; Fri&nbsp; Sat</p>\r\n<p>&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 7</p>\r\n<p>...</p>\r\n<p>Regards</p>\r\n<p>Daniel</p>",
+    "PostedDate": "2009-05-19T19:48:39.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192580",
+    "ThreadId": "56780",
+    "Html": "<p>The day titles come from the current DateTimeFormat.ShortestDayNames. Changing to other day lengths isn't supported. If you have any interest in compiling the toolkit code yourself, you can look at CalendarItem.SetMonthModeDayTitles.</p>\r\n<p>Ben</p>",
+    "PostedDate": "2009-05-20T15:47:43.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

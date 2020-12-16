@@ -1,0 +1,275 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DatePicker",
+      "DisplayName": "DatePicker"
+    },
+    "ClosedComment": "Fixed in the March 2009 release",
+    "ClosedDate": "2009-03-24T13:18:02.89-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Whenever I set the IsEnabled property of the DatePicker to \"False\", I get the following error:\n \n'PART_DisabledVisual' name cannot be found in the name scope of 'System.Windows.Controls.Grid'.\n   at System.Windows.Media.Animation.Storyboard.ResolveTargetName(String targetName, INameScope nameScope, DependencyObject element)\n   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)\n   at System.Windows.Media.Animation.Storyboard.ClockTreeWalkRecursive(Clock currentClock, DependencyObject containingObject, INameScope nameScope, DependencyObject parentObject, String parentObjectName, PropertyPath parentPropertyPath, HandoffBehavior handoffBehavior, HybridDictionary clockMappings, Int64 layer)\n   at System.Windows.Media.Animation.Storyboard.BeginCommon(DependencyObject containingObject, INameScope nameScope, HandoffBehavior handoffBehavior, Boolean isControllable, Int64 layer)\n   at System.Windows.Media.Animation.Storyboard.Begin(FrameworkElement containingObject, HandoffBehavior handoffBehavior, Boolean isControllable)\n   at System.Windows.VisualStateGroup.StartNewThenStopOld(FrameworkElement element, Storyboard[] newStoryboards)\n   at System.Windows.VisualStateManager.GoToStateInternal(Control control, FrameworkElement element, VisualStateGroup group, VisualState state, Boolean useTransitions)\n   at System.Windows.VisualStateManager.GoToState(Control control, String stateName, Boolean useTransitions)\n   at Microsoft.Windows.Controls.ButtonBaseBehavior.UpdateState(Control control, Boolean useTransitions)\n   at Microsoft.Windows.Controls.ControlBehavior.<>c__DisplayClass2.<OnAttach>b__0(Object sender, RoutedEventArgs e)\n   at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n   at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n   at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)\n   at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)\n   at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)\n   at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)\n   at MS.Internal.LoadedOrUnloadedOperation.DoWork()\n   at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()\n   at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\n   at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n   at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n   at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)\n   at System.Windows.Interop.HwndTarget.OnResize()\n   at System.Windows.Interop.HwndTarget.HandleMessage(Int32 msg, IntPtr wparam, IntPtr lparam)\n   at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)",
+    "LastUpdatedDate": "2013-05-16T05:31:18.01-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-10-28T17:10:51.297-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker does not support IsEnabled=False",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 31,
+    "Id": 7904
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I subscribe to this, it makes the DatePicker almost impossible to use in a complex application",
+      "PostedDate": "2008-11-10T05:41:21.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I get the same error.",
+      "PostedDate": "2008-11-10T06:01:52.457-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-10T06:02:05.41-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-10T06:09:58.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-10T23:33:16-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-11T12:52:21.817-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Commenting out the VisualState tag named \"Disabled\" between lines 103 and 109 in Generic.xaml seems to fix the problem.\r\n\r\nNo more exception and the visual state still changes as I'd expect.",
+      "PostedDate": "2008-11-11T13:26:38.473-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-11T19:27:11.147-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I second hpebley3, commenting out VisualState tag named \"Disabled\" between lines 103 and 109 in Generic.xaml seems to fix the problem.  And hopefully there will be no sideeffects.\r\n\r\nI'm feeling a bit nervous about this though.  I don't have time to write another datepicker myself before my beta is due today, so not feeling exactly confident.",
+      "PostedDate": "2008-11-11T19:32:27.21-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-11T23:49:05.597-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-12T13:59:45.777-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Well for me I had to change the name on line 103 from Disabled  to PART_Disabled",
+      "PostedDate": "2008-11-12T14:18:21.307-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "In The DatePicker's Style, in Generic.XAML, there is an animation that targets PART_DisabledVisual. This Animation gets fired when the state (of the VSM's parent, the Grid) changes to Disabled. The problem here is that PART_DisabledVisual is not in scope from here. PART_Disabled is outside of that Grid and also outside of it's parent (DropDownButtonTemplate). Commenting out this Animation (and its Storyboard) fixes the issue because a different animation targets PART_Disabled from higher in the tree within the DatePicker's ControlTemplate where PART_Disabled is in scope.  So, to solve your issue, you can comment out the contents of the VisualState element for the Disabled State inside the Grid mentioned before. Thanks for finding this :-)\r\n\r\n-Eric Fabricant, MSFT",
+      "PostedDate": "2008-11-12T16:23:33.573-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-13T05:03:19.91-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-14T15:08:36.027-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Get the same error.",
+      "PostedDate": "2008-11-16T18:35:09.513-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-11-25T11:49:21.373-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-01T06:49:32.103-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-03T23:37:21.463-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-04T08:00:46.8-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-08T01:41:02.98-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-08T02:57:44.26-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-13T06:36:54.663-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-08T08:56:49.94-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Another quick fix, if you have only the binaries and don't want to bother with the source, is to use Blend to create a style resource for the DatePicker and use it on any DatePickers that you need to disable.",
+      "PostedDate": "2009-01-20T14:02:11.873-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-24T04:46:44.917-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-26T14:00:08.923-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-27T04:54:41.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-02T15:28:23.543-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Has this been fixed?",
+      "PostedDate": "2009-02-04T01:27:11.737-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "For anyone interested, I believe these \"fixes\" work because...\r\n\r\nrjempson & hpebley3, This just prevents the Animation from executing (which tries to reference the PART that is out of scope).\r\narackaf, You are just preventing it from executing as well by renaming the state.\r\n\r\nWhile these do work, I do not recommend renaming the visual state. This can have all sorts of bad consequences because the code behind can expect that state to be there with a certain name and the application may depend on the actions within the state that it cannot access. Instead, just comment out the actions that cause the problem.\r\n\r\nmahara, this has not been fixed yet but is its certainly on our radar and will be addressed.\r\n\r\n-Eric Fabricant, MSFT",
+      "PostedDate": "2009-02-04T19:14:59.437-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-05T03:53:17.357-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Then, can someone tell me what is the best fix? I see many posts with ideas.",
+      "PostedDate": "2009-02-05T03:56:01.637-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This will be fixed in the next release.",
+      "PostedDate": "2009-02-18T13:55:28.937-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T13:55:29.67-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I'm glad to hear that :)",
+      "PostedDate": "2009-02-19T12:44:51.613-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi, thanks for fixing this.\r\nWhen will the fix be available for download?",
+      "PostedDate": "2009-02-25T05:30:44.06-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The fix should be available within the next few weeks.",
+      "PostedDate": "2009-02-25T10:51:39.417-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I guess this is moot since the fix will soon be out but you can disable the DatePicker textbox (Microsoft.Windows.Controls.Primitives.DatePickerTextBox) which was all I wanted to do anyway. You just need to find a place where the DatePicker can be casted to that type. I used the  DataTimePicker's GotKeyboardFocus event and the OnGotKeyboardFocus override works too. I'm sure there are other places to use this technique.",
+      "PostedDate": "2009-03-18T14:44:25.24-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T13:18:02.89-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I'm Binding the IsEnabled Property of the DatePicker using a ViewModel property. The Application is crashing with the exception 'PART_DisabledVisual' name cannot be found in the name scope of 'System.Windows.Controls.Grid'. Doesn't look like the issue is fixed.",
+      "PostedDate": "2009-05-13T03:32:30.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Same issue here, using the latest version I get a crash. I'm also binding the IsEnabled Property of the DatePicker using a ViewModel property. The Application is crashing with the exception 'PART_DisabledVisual' name cannot be found in the name scope of 'System.Windows.Controls.Grid'. ",
+      "PostedDate": "2009-06-03T06:06:05.4-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also have the new version installed and and trying to disable a stackpanel that contains the datepicker.  If I remove the datepicker everything works fine.",
+      "PostedDate": "2009-06-26T09:29:31.59-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is this bug really fixed ?\r\nI'm using the DatePicker from the Feb 2010 WPFToolkit release, and it's as broken as a year ago.\r\n\r\nIn my xaml file, I have a checkbox, and I enable/disable a ComboBox & a DatePicker, based on the Checkbox's IsChecked value.\r\n\r\n<CheckBox x:Name=\"cbInforce\" />\r\n<toolkit:DatePicker Width=\"120\" HorizontalAlignment=\"Left\" IsEnabled=\"{Binding ElementName=cbInforce, Path=IsChecked}\"/>\r\n<ComboBox Grid.Row=\"5\" Grid.Column=\"1\" Width=\"200\" HorizontalAlignment=\"Left\" IsEnabled=\"{Binding ElementName=cbInforce, Path=IsChecked}\">\r\n\r\nAnd what happens ?\r\nWhen I tick the CheckBox, the ComboBox becomes enabled.  DatePicker stays disabled.\r\nWhen I untick the CheckBox, the ComboBox becomes disabled.  and the DatePicker stays disabled.\r\n\r\nNo amount of ticking/unticking makes my DatePicker become Enabled.\r\n\r\nSo, was this bug really ever fixed ?\r\n",
+      "PostedDate": "2010-09-01T07:46:45.797-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Actually, the IsEnabled flag DOES work, but just doesn't change the appearance of the DatePicker control.\r\nSo it always LOOKS disabled, even when it isn't.\r\n\r\nI've posted more details here:\r\nhttp://stackoverflow.com/questions/2635385/wpf-datepicker-isenabled-property-not-changing-appearance/3625475#3625475\r\n",
+      "PostedDate": "2010-09-02T01:59:04.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:48.22-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:18.01-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

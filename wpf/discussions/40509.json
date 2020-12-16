@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "134388",
+    "ThreadId": "40509",
+    "Html": "Hi,<br>\r\n<br>\r\nI am using WPF datagrid in my project. <br>\r\nI wanted to know how to get rid of the extra column the data grid adds. <br>\r\nI use the same datagrid to display a lot of results in differnet scenarios.<br>\r\nIt may have one to n columns depending on the scenario. I dynamically add the columns depending on the scenario.<br>\r\nThe issue is when there are less number of columns datagrid displays an additonal column. <br>\r\nThe frustrating part is on the click of the item area in the additional area the column doesnt get selected.<br>\r\n<br>\r\nCan any one tell me how to work around this issue. I know the * approcah but it has its own issues <br>\r\n<span style=\"font-size:13px;color:#2b91af\"><a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38679\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=38679</a><br>\r\n<br>\r\nAny help is highly appreciated</span>\r\n",
+    "PostedDate": "2008-11-21T16:39:51.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

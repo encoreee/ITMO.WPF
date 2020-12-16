@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "186974",
+    "ThreadId": "55370",
+    "Html": "I have a wpf project that I created on an xp machine using the march release of the toolkit. The project worked fine. My machine was upgraded to vista 32 bit and then when I loaded my project I got the following:<br>\r\n<br>\r\n<span lang=EN>\r\n<p>Could not load type 'System.Windows.Controls.Primitives.MultiSelector' from assembly 'PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. on the line that contains the xaml for the datagrid:<br>\r\n<br>\r\nI also get the following:<br>\r\n<br>\r\nError 5 The tag 'DataGrid' does not exist in XML namespace 'clr-namespace:Microsoft.Windows.Controls;assembly=WpfToolkit'. Line 10 Position 18. <br>\r\n<br>\r\nI have .net 3.5 sp1, vs2008 Version 9.0.30729.1 SP<br>\r\n<br>\r\nI even downloaded a sample from this site and get the same errors when I load the sample.<br>\r\n<br>\r\nplease Help!</p>\r\n</span>\r\n",
+    "PostedDate": "2009-05-05T08:32:38.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195103",
+    "ThreadId": "55370",
+    "Html": "<p>Hi Friends , I met one problem due to Presentation.Framework.dll ,&quot;<span style=\"border-collapse:collapse;font-family:Arial;white-space:pre\">Could not load type 'System.Windows.Controls.Primitives.MultiSelector' from assembly 'PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'&quot;</span></p>\r\n<p><span style=\"border-collapse:collapse;font-family:Arial;white-space:pre\">AAnybody Knows the answer pls Convey to Me also . . .</span></p>\r\n<p><span style=\"border-collapse:collapse;font-family:Arial;white-space:pre\"><br></span></p>",
+    "PostedDate": "2009-05-28T02:52:36.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

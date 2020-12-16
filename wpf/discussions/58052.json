@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "196272",
+    "ThreadId": "58052",
+    "Html": "<p>Hello all,<br> <br> I have couple of questions of data grid columns and cells:<br> <br> 1. i made a column readonly. Now i want it to be non-selectable. How to make it? (Even it is readonly we can select cell)<br> 2. how to hide cell border ? I have template column in which i am showing different controls. On selecting those control cell border is becoming visible making two borders around control, so , i want to hide cell border.<br> <br> <br> <br> Thanks.<br></p>",
+    "PostedDate": "2009-05-31T23:35:39.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196400",
+    "ThreadId": "58052",
+    "Html": "<p>Any thoughts on this?</p>",
+    "PostedDate": "2009-06-01T07:02:42.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

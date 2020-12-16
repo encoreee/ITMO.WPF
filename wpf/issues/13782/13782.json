@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "PieChart's PieDataPoint registers this property:\n        internal static readonly DependencyProperty ActualLegendItemStyleProperty =\n            DependencyProperty.Register(\n                DataPointSeries.ActualLegendItemStyleName,\n                typeof(Style),\n                typeof(PieDataPoint),\n                null);\n \nAnd the AreaChart's DataPointSingleSeriesWithAxes registers:\n        protected static readonly DependencyProperty ActualLegendItemStyleProperty =\n            DependencyProperty.Register(\n                ActualLegendItemStyleName,s\n                typeof(Style),\n                typeof(DataPointSeries),\n                null);\n \nSo if you try to use both PieChart and AreaChart in the same app your app will crash.  Properties have to be uniquely named.",
+    "LastUpdatedDate": "2013-02-21T18:40:27.273-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-07-25T22:11:41.337-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Conflicting property registration for property ActualLegendItemStyleProperty",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13782
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

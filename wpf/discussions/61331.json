@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "208042",
+    "ThreadId": "61331",
+    "Html": "<p>I'm using a DataGridTemplateColumn with a DatePicker, which works fine until I add a ValidationRule. The process goes like this:</p>\r\n<ul>\r\n<li>CellTemplate is displayed with &quot;1/1/2001&quot;</li>\r\n<li>Click to edit the date, change it (via CellEditingTemplate) to &quot;1/1/2009&quot;</li>\r\n<li>Click in another column in the same row</li>\r\n<li>Original CellTemplate is displayed with &quot;1/1/2001&quot;</li>\r\n</ul>\r\n<p>At this point, there's no way for me to know that I've actually changed the date until I commit the edit by hitting enter in some other column. This is very unintuitive.</p>\r\n<p>I need the row validation to ensure that some of the other columns aren't empty, so removing it isn't an option.&nbsp; Is there any way to make the CellTemplate display the uncommitted value?</p>\r\n<p>Thanks,</p>\r\n<p>Jason</p>",
+    "PostedDate": "2009-07-02T10:10:12.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209910",
+    "ThreadId": "61331",
+    "Html": "<p>Anyone else notice this?</p>",
+    "PostedDate": "2009-07-08T06:25:45.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "215575",
+    "ThreadId": "61331",
+    "Html": "<p>Shameless bump...</p>",
+    "PostedDate": "2009-07-23T20:15:40.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216646",
+    "ThreadId": "61331",
+    "Html": "<p>It's a wild guess, but the two things I would check at first is (1) what exactly does your validator function return? (the fact that it works fine until you add the validation rule would seem to suggest a problem there), and (2) does your business object implement INotifyPropertyChanged?</p>",
+    "PostedDate": "2009-07-27T23:06:48.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227305",
+    "ThreadId": "61331",
+    "Html": "<p>This happened to me while using row validation. I'm not sure if the setup is exactly the same, but in my case, the business object implements INotifyPropertyChanged and IEditableObject. It appears that the default transactional behavior does not update the business object's properties until the entire row is committed. That is, the Binding.UpdateSourceTrigger defaults to Explicit for template columns, and the source properties for these columns are not updated until the entire row is committed. At this point, the property change notification causes a NullReferenceException because it tries to retrieve the binding target (the DatePicker), but the CellEditingTemplate has already been replaced by the CellTemplate, and the DatePicker no longer exists. The solution is to explicitly set Binding.UpdateSourceTrigger (for any editing controls in&nbsp;a CellEditingTemplate) to LostFocus or PropertyChanged.</p>",
+    "PostedDate": "2009-08-24T20:20:41.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227456",
+    "ThreadId": "61331",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>KarlEr wrote:</strong><br>\r\n<p>The solution is to explicitly set Binding.UpdateSourceTrigger (for any editing controls in&nbsp;a CellEditingTemplate) to LostFocus or PropertyChanged.</p>\r\n</blockquote>\r\n<p>Perfect, thanks!</p>",
+    "PostedDate": "2009-08-25T06:24:22.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

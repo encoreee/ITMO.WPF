@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "229733",
+    "ThreadId": "67598",
+    "Html": "<p>Hello,</p>\r\n<p>Now several discussions have already pointed out a performance issue:</p>\r\n<p><span>- Any recommendations for improving DataGrid Performance? (</span>http://wpf.codeplex.com/Thread/View.aspx?ThreadId=66291)</p>\r\n<p>- <span>Important Performance Issue (2nd post) (</span>http://wpf.codeplex.com/Thread/View.aspx?ThreadId=65506)</p>\r\n<p>-<span>Very slow WPF datagrid performance (see last post of </span>http://wpf.codeplex.com/Thread/View.aspx?ThreadId=41964).</p>\r\n<p>I gave up the datagrid 2 weeks ago for the traditional listview but there are so many features missing!</p>\r\n<p>Is there any idea on this performance issue?</p>\r\n<p>Is there a fix expected for the next release?</p>\r\n<p>Any help on this would be greatly appreciated.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Kamel</p>",
+    "PostedDate": "2009-09-01T08:05:29.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229886",
+    "ThreadId": "67598",
+    "Html": "<p>I've posted replies to some of those, including one of yours.&nbsp; The problem is refreshing the entire collection is a very expensive operation as it throws away and recreates a lot of objects in the process.&nbsp; For performance, INotifyPropertyChanged and INotifyCollectionChanged (which ObservableCollection gives you) is the way to go.&nbsp; Code is posted to your other thread. Thanks!</p>",
+    "PostedDate": "2009-09-01T13:54:46.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230017",
+    "ThreadId": "67598",
+    "Html": "<p>Thanks to you for taking the time to teach me this essential implementation!!!</p>\r\n<p>It's working very well!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-01T22:22:22.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

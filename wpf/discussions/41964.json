@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "139301",
+    "ThreadId": "41964",
+    "Html": "Hello,<br>\r\n<br>\r\nI have a datagrid that has about 2000 rows and I see terrible lag issues when selecting items in the grid.&nbsp; Am I doing something wrong below?<br>\r\n<br>\r\nI used WPF Perf to test and everything seems ok from a screen drawing perspective. I also replaced the DataGrid with a listview and the listview is much faster than the datagrid.<br>\r\n<br>\r\nMain issues:<br>\r\n<ul>\r\n    <li>The selected row in the grid lags behind when scrolling up and down with the arrow keys.&nbsp; If hold down and then let off of the arrow key, rows keep getting selected for a few seconds (because of the lag).</li>\r\n    <li>Selecting a single item with the mouse that is in view on the grid (no scrolling) shows a noticeable lag for the item to become selected ( I can count to about a second saying &quot;one-thousand one&quot;).&nbsp;</li>\r\n</ul>\r\nBelow, I have created a very simple test project that shows this performance issue.&nbsp; Am I missing a setting for virtualization to kick in?<br>\r\n<br>\r\nThank you for any help!<br>\r\nJon<br>\r\n<br>\r\nXAML<br>\r\n<br>\r\n&lt;Window x:Class=&quot;WpfDataGridPerfTest.Window1&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:tk=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;<br>\r\n&nbsp;&nbsp;&nbsp; Title=&quot;Window1&quot; Height=&quot;500&quot; Width=&quot;800&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loaded=&quot;Window_Loaded&quot;&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid x:Name=&quot;grid&quot; SelectionUnit=&quot;FullRow&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;False&quot;&nbsp;&nbsp; Background=&quot;Azure&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CanUserAddRows=&quot;False&quot; CanUserDeleteRows=&quot;False&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnableRowVirtualization=&quot;True&quot; EnableColumnVirtualization=&quot;True&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid.Columns&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col1&quot;&nbsp; Binding=&quot;{Binding Col1}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col2&quot;&nbsp; Binding=&quot;{Binding Col2}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col3&quot;&nbsp; Binding=&quot;{Binding Col3}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col4&quot;&nbsp; Binding=&quot;{Binding Col4}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col5&quot;&nbsp; Binding=&quot;{Binding Col5}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col6&quot;&nbsp; Binding=&quot;{Binding Col6}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col7&quot;&nbsp; Binding=&quot;{Binding Col7}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col8&quot;&nbsp; Binding=&quot;{Binding Col8}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col9&quot;&nbsp; Binding=&quot;{Binding Col9}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;Col10&quot;&nbsp; Binding=&quot;{Binding Col10}&quot; IsReadOnly=&quot;True&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid&gt;<br>\r\n<br>\r\n&lt;/Window&gt;<br>\r\n<br>\r\n<br>\r\nCODE BEHIND<br>\r\n<br>\r\nnamespace WpfDataGridPerfTest<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; public partial class Window1 : Window<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public Window1()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InitializeComponent();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void Window_Loaded(object sender, RoutedEventArgs e)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;TestEntity&gt; items = new List&lt;TestEntity&gt;();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; 2000; i++)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; items.Add(new TestEntity());<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid.ItemsSource = items;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n}<br>\r\n<br>\r\nTEST ENTITY<br>\r\nnamespace WpfDataGridPerfTest<br>\r\n{<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; public class TestEntity<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public TestEntity()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col1 = Guid.NewGuid().ToString();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col2 = Guid.NewGuid().ToString();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col3 = Guid.NewGuid().ToString();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col4 = 4;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col5 = 5;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col6 = 6;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col7 = 7;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col8 = 8;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col9 = 9;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Col10 = 10;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string Col1 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string Col2 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string Col3 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col4 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col5 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col6 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col7 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col8 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col9 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int Col10 { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n}<br>\r\n",
+    "PostedDate": "2008-12-10T07:55:27.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140562",
+    "ThreadId": "41964",
+    "Html": "Hi,<br>\r\n<br>\r\nAre there known issues with performance with the DataGrid?&nbsp; I have Premiere Microsoft Development Support hours that I can use on this issue, but I would prefer to not have to go through several days with them to get this all sorted just to come to an answer &quot;that is how it is right now&quot;.<br>\r\n<br>\r\nI can also shoot a video of what I am seeing if that would help...<br>\r\n<br>\r\nThanks,<br>\r\nJon \r\n",
+    "PostedDate": "2008-12-15T05:15:33.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140704",
+    "ThreadId": "41964",
+    "Html": "Hi Jon,<br>\r\n<br>\r\nI tried out your test project, but I'm not able to repro the problem.  On my machine, the selection happens instantly with the mouse and I'm not seeing any issues with scrolling.  The only known issues we have with performance is with SelectAll() performance - you can read more about this here: <a href=\"http://www.codeplex.com/wpf/Wiki/View.aspx?title=SelectAll() Performance&referringTitle=Tips %26 Tricks\">http://www.codeplex.com/wpf/Wiki/View.aspx?title=SelectAll%28%29%20Performance&amp;referringTitle=Tips%20%26%20Tricks</a>.  (We also have a known issue with sort performance, but that doesn't come into play in this scenario.)<br>\r\n<br>\r\nI'm not sure what else could be causing this problem, except maybe if you're using a slower machine?  I'll check with the team to see if anyone has any other ideas.  You've already got both row and column virtualization turned on and in this simple app, there shouldn't be anything interfering with the virtualization, as far as I know.  I'll let you know if the team has any other comments.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-12-15T12:19:41.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140731",
+    "ThreadId": "41964",
+    "Html": "<p>Can you provide some information about the machine on which you're running the test application?</p>\r\n<ul>\r\n    <li>Operating System (XP, Vista, Windows 7 Beta)</li>\r\n    <li>Configuration (Desktop, Laptop, Tablet)</li>\r\n</ul>\r\n<p>Thanks,<br>\r\nBen</p>\r\n",
+    "PostedDate": "2008-12-15T14:02:34.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140788",
+    "ThreadId": "41964",
+    "Html": "Hi Ben,<br>\r\n<br>\r\nHere are the specifics of the machine:<br>\r\n<br>\r\nVista Enterprise x64<br>\r\nHP Desktop Workstation (ws xw4600) http://h10010.www1.hp.com/wwpc/us/en/sm/WF06a/12454-12454-296719-307907-296721-3429268.html<br>\r\nIntel Core2 Duo E8500 - 3.16ghz<br>\r\n8 GB RAM<br>\r\nNVidia Quadro FX 1700 Video (I just downloaded the latest driver from HP)<br>\r\n<br>\r\nSamsung SyncMAster 30&quot; monitor running at 2560x1600<br>\r\n<br>\r\nI'm going to follow up with a video...<br>\r\nJon<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-15T17:01:02.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140794",
+    "ThreadId": "41964",
+    "Html": "Hi Ben and Samantha,<br>\r\n<br>\r\nHere is a video showing the issues: <a href=\"http://www.jonkragh.com/video/gridperf2.wmv\">http://www.jonkragh.com/video/gridperf2.wmv</a><br>\r\n<br>\r\nThanks for your help!<br>\r\nJon <br>\r\n<br>\r\nEDIT: Here is the test project I used in the video <br>\r\n<a href=\"http://www.jonkragh.com/video/gridperf.zip\">http://www.jonkragh.com/video/gridperf.zip</a><br>\r\n",
+    "PostedDate": "2008-12-15T17:57:15.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141325",
+    "ThreadId": "41964",
+    "Html": "OK - I think I found it - I uninstalled a Wacom USB Tablet driver from my system and now the grid is FAST!<br>\r\n<br>\r\nIs this a tablet issue in general, or just specific to something with the Wacom?<br>\r\n<br>\r\nThanks,<br>\r\nJon<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-17T06:13:24.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141395",
+    "ThreadId": "41964",
+    "Html": "<p>I believe the issue arises only on tablets, but I haven't yet investigated the root cause. Will keep you posted.</p>\r\n<p>Ben</p>\r\n",
+    "PostedDate": "2008-12-17T11:07:10.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141399",
+    "ThreadId": "41964",
+    "Html": "<br>\r\nCool Ben!&nbsp; I am not using the tablet in production, I was actually just using it to draw up some design whiteboard stuff.<br>\r\n<br>\r\nAnyway, I would be interested to hear more about this.&nbsp; What a relief at least at this point that I can get good performance for my production app - which is a real time high performance app that I am developing (constant background updates of the grid, etc).<br>\r\n<br>\r\nCheers,<br>\r\nJon<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-17T11:28:54.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141527",
+    "ThreadId": "41964",
+    "Html": "Hi,<br>\r\n<br>\r\nI also recognized that WPF controls are very performance intensive.<br>\r\nSo I tried out your project against a Win32 listview.<br>\r\nThe application with the Win32 listview uses 3% of the CPU the WPF application uses &gt;30% with GridView and &gt;40% with DataGrid while pressing the arrow key continuously down.<br>\r\nThe CPU usage is much higher when pressing the page down key.<br>\r\n <br>\r\nSo, I decided to use the nice WPF datagrid only for small amount of items.<br>\r\n<br>\r\nWorstCase<br>\r\n",
+    "PostedDate": "2008-12-18T00:48:34.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144905",
+    "ThreadId": "41964",
+    "Html": "Hi, I relise this is a bit old, but I'd like to add to this discussion.<br>\r\n<br>\r\nWhen I was testing the Datagrid on my Tablet PC the performance is terrible, but on my Computer it is fine, it has to be something to do with Stylus input.<br>\r\n<br>\r\nHas an Issue been logged for this?<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-01-06T16:40:16.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145945",
+    "ThreadId": "41964",
+    "Html": "The same situation happened with me after removing my Genius Tablet Drivers every thing went back to speed .... it is definitely related to tablets...",
+    "PostedDate": "2009-01-10T10:27:49.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146461",
+    "ThreadId": "41964",
+    "Html": "Thanks for your patience. I wanted to update you on what I have found so far.<br>\r\n<br>\r\nAfter profiling the application, I see an extraordinary amount of calls to DataGridColumn.OnCopyingCellClipboardContent. This method is usually used for each cell to provide data to be placed on the clipboard when copying. In this case, however, the DataGridCellItemAutomationPeer's GetNameCore method is using the clipboard content as the name since a cell's name is rarely set. I presume, this is the name that is displayed in an automation tool, and the content of a cell is more useful in this case. However, this has the result that whenever the automation tree is updated, which happens after layout, every cell that is in view is providing data to the automation peer. This causes a lot of data binding to occur, and generally this is why it is slow.<br>\r\n<br>\r\nI will follow up on two things now. The first is to find out why being on a Tablet PC causes these automation peers to instantiate, since normally they do not unless you are using an accessibility aid or an automation tool. The second is to figure out a better way to implement GetNameCore.<br>\r\n<br>\r\nThanks,<br>\r\nBen<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-12T14:40:09.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "181781",
+    "ThreadId": "41964",
+    "Html": "Hi Ben,<br>\r\n<br>\r\nThanks for the follow up - anything new on this?<br>\r\n<br>\r\nCheers,<br>\r\nJon<br>\r\n",
+    "PostedDate": "2009-04-21T07:24:55.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182114",
+    "ThreadId": "41964",
+    "Html": "In the March 2009 Toolkit release, DataGridCellItemAutomationPeer's GetNameCore method was changed to &quot;Item: &lt;your item's ToString()&gt;, Column DisplayIndex: &lt;column index&gt;.&quot; This is much cheaper to create than the clipboard data and should resolve the issue.<br>\r\n<br>\r\nThe Tablet PC Input Panel is, apparently, an automation client and causes WM_GETOBJECT messages to be sent. WPF responds to WM_GETOBJECT by creating an automation peer for the root element (usually a Window). Whenever layout changes, a list of automation peers are called, and this root object is in that list. Due to this call, the entire visual tree's automation tree is created -- that means all of the cells' automation peers are instantiated too. I still don't know why all of this is happening.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-04-21T20:01:36.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182327",
+    "ThreadId": "41964",
+    "Html": "Hi Ben -<br>\r\n<br>\r\nThanks so much, you are the man!&nbsp; Great explanation, I hope I never have to care about those deep details :)<br>\r\n<br>\r\nI will test this in a week or so - I don't want to mess with my upcoming production release by installing my tablet again.&nbsp; (I am using March 2009 though for this release).<br>\r\n<br>\r\nCheers,<br>\r\nJon<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-22T06:53:53.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206938",
+    "ThreadId": "41964",
+    "Html": "<p>Hi All,</p>\r\n<p>I have the same problem. The CPU is very high (About 80% if need to scroll, 40% if no scroll)&nbsp;when I press down arrow. I am using the June 2009 release and not using the tablet pc. Any solution to overcome this problem?</p>\r\n<p>My machine is:</p>\r\n<p>Core 2 duo 7200 2.53Ghz</p>\r\n<p>4 GB ram</p>\r\n<p>Vista business</p>\r\n<p>Tony</p>",
+    "PostedDate": "2009-06-30T00:26:34.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210555",
+    "ThreadId": "41964",
+    "Html": "<p><span style=\"color:black;font-size:10pt\" lang=EN-GB>Hello,</span></p>\r\n<p><span style=\"color:black;font-size:10pt\" lang=EN-GB>I've also the same problems with the June 2009 release on a fast PC. I've set-up (with help of a code example), a simple grid with 200 rows and 10 columns. Scrolling isn't fast. With this simple table it is not terrible slow. However, more sophisticated tables are even slower. The datagrid doesn't have the performance of an Excel sheet (and Excel has many advanced features). So, faster scrolling is definitely possible.</span></p>\r\n<p><span style=\"color:black;font-size:10pt\" lang=EN-GB>The problems arise in: (DataGridRowsPresenter : VirtualizingStackPanel).MeasureOverride. This method takes relatively a long time to complete (with my analysis software, it is by leaps the slowest method). I&rsquo;ve Changed the specific class (with some minor modifications) to DataGridRowsPresenter : StackPanel. This results in faster scrolling up and down, but slower scrolling left and right. Weird.</span></p>\r\n<p><span style=\"color:black;font-size:10pt\" lang=EN-GB>This should definitely be resolved. The reason is Excel, even on slow machines Excel outperforms the datagrid with many advanced Excel features enabled. Why is WPF incapable of this?</span></p>\r\n<p><span style=\"color:black;font-size:10pt\" lang=EN-GB>Regards, Rick</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-09T12:16:36.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229736",
+    "ThreadId": "41964",
+    "Html": "<p>Hi,</p>\r\n<p>I tried to post a new discussion about this issue : http://wpf.codeplex.com/Thread/View.aspx?ThreadId=67598</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-01T08:07:45.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430577",
+    "ThreadId": "41964",
+    "Html": "Are there any updates in regards to the issue with the Datagrid performance on a tablet. I am experiencing very slow response times also on a very fast tablet. I have an old XP machine running the same application and the grid is faster on that machine than the tablet. I'm using WPFToolkit version 3.5.40128.1. Is that the latest version?",
+    "PostedDate": "2010-04-13T11:19:37.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431214",
+    "ThreadId": "41964",
+    "Html": "<p>Hi,</p>\r\n<p>The version&nbsp;included&nbsp;in .net 4.0 does not seem to have this problem with tablets from what I can tell.</p>\r\n<p>I installed it on Monday on the machine that had issues and it seems to be working ok.</p>\r\n<p>Cheers,<br>Jon</p>",
+    "PostedDate": "2010-04-14T18:03:30.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472497",
+    "ThreadId": "41964",
+    "Html": "<p>I have similar problem with data grid. But I automated Ctrl + Shift + End on &quot;Select&nbsp;All&quot; or &quot;Ctrl + A&quot; on the data grid and&nbsp;selection mode improved a lot. De-virtualisation is the key, I guess.</p>",
+    "PostedDate": "2010-07-26T00:03:37.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The exception message \"Assigned independent axis cannot be used. This may be due to an unset Orientation property for the axis.\" is inappropriate.\n \nFix inappropriate exception message and try to provide real reason of error not \"may be\", because in my case it was a binding problem to X axis value.",
+    "LastUpdatedDate": "2013-02-21T18:40:06.4-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2012-07-20T05:49:13.183-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Inappropriate error: \"may be due to an unset Orientation...\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18392
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

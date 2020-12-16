@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "232671",
+    "ThreadId": "68405",
+    "Html": "<p>I want to drag&amp;drop some data on a bar chart, but I can't get the current datapoint within drop event.</p>\r\n<p>The columnSeries MouseEnter/ MouseLeave events for selection are not fired - so there is no SelectedItem.</p>\r\n<p>How can I get the current datapoint form MousePosition or get a SelectedItem while drag&amp;drop?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-09T06:59:11.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

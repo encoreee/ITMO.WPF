@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nIt appears that my binding to the DisplayDate is getting overwritten by the calendar control. I have set a binding to a DefaultDate property on my business object in a data template like this:\n \n      <toolkit:DatePicker \n                x:Name=\"DateTimeAnswerPickerX\" \n                DisplayDate=\"{Binding DefaultDate, Mode=TwoWay}\"\n                Grid.Column=\"2\" />\n \nWhen I open up the Calendar popup it is on the current date and, when I snoop the Calendar.DisplayDate, it says that the value source is Local. If I right-click on it in Snoop and reset the value it picks up the binding again and picks up the value from the business object correctly.  I have noticed several places in the Calendar source code where the DisplayDate is set to a local value, which would explain why the binding is getting overwritten.\n \nIs there a work-around or should the DisplayDate dependency property be marked as not bindable?\n \nThanks for any help you can offer!\n \nJohn",
+    "LastUpdatedDate": "2014-08-13T01:11:06.333-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-30T09:49:42.21-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't Two-Way Bind to the Calendar's DisplayDate",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 12372
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This can be fixed on the loaded event of the calendar by a very dirty hack:\n```\n  private void MonthControl_Loaded(object sender, RoutedEventArgs e)\n        {\n            /// Fix to the DisplayDate problem:\n            if (this.SelectedDate.HasValue)\n            {\n                this.DisplayDate = this.SelectedDate.Value;\n            }\n        }\n```\nIn effect you have to relay on SelectedDate as a backing store for DisplayDate or else DisplayDate will be overwritten by CurrentDate (an internal variable of Calendar). So this is not realy a fix - only a possible workaround.",
+      "PostedDate": "2014-08-13T01:11:06.333-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "150130",
+    "ThreadId": "45040",
+    "Html": "Hello,<br>\r\n<br>\r\nI'm study the DataGrid-Control.<br>\r\n<br>\r\nI want to let the DataGrid generate the Columns, but I want set the Cell-TemplateSelector (for changing the way of the presentation)!<br>\r\n<br>\r\nNow I wrote this:<br>\r\n<em>&lt;dg:DataGrid x:Name=&quot;dg1&quot; ItemsSource=&quot;{Binding Path=Values, Converter={StaticResource documentItemConverter}}&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CanUserAddRows=&quot;False&quot; CanUserDeleteRows=&quot;False&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AlternatingRowBackground=&quot;WhiteSmoke&quot; HorizontalGridLinesBrush=&quot;Silver&quot; VerticalGridLinesBrush=&quot;Silver&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GridLinesVisibility=&quot;Vertical&quot; IsReadOnly=&quot;True&quot; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;True&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;</em><br>\r\n<br>\r\nI tried almost every possible way to do something like this:<br>\r\n<em>&lt;dg:DataGrid x:Name=&quot;dg1&quot; ItemsSource=&quot;{Binding Path=Values, Converter={StaticResource documentItemConverter}}&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CanUserAddRows=&quot;False&quot; CanUserDeleteRows=&quot;False&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AlternatingRowBackground=&quot;WhiteSmoke&quot; HorizontalGridLinesBrush=&quot;Silver&quot; VerticalGridLinesBrush=&quot;Silver&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GridLinesVisibility=&quot;Vertical&quot; IsReadOnly=&quot;True&quot; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;True&quot;<br>\r\n<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em></em><strong>CellTemplateSelector=&quot;{DynamicResource TemplateSelector}&quot;</strong><em><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGrid&gt;</em><br>\r\n<br>\r\nDoes anybody knows how to do this?<br>\r\n",
+    "PostedDate": "2009-01-23T01:41:28.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "150915",
+    "ThreadId": "45040",
+    "Html": "You can listen to the DataGrid.AutoGeneratingColumn event (I believe that's the correct name).  In the event, each generated column is returned to you to modify before it is set on the DataGrid.\r\n",
+    "PostedDate": "2009-01-26T05:33:16.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151243",
+    "ThreadId": "45040",
+    "Html": "OK, not the way I thought, but is a way!<br>\r\nthanks a lot!<br>\r\n",
+    "PostedDate": "2009-01-27T00:59:21.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

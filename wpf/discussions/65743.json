@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "223663",
+    "ThreadId": "65743",
+    "Html": "<p>I have a WPF UserControl. I want to find out all the elements of a particular type( Button or DataGrid) inside my user control. I want to do this on the lost focus of UserControl. How do i do this ?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Bhupesh.</p>",
+    "PostedDate": "2009-08-14T12:40:48.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223767",
+    "ThreadId": "65743",
+    "Html": "<p>Hi Bhupesh,</p>\r\n<p>Do you want this?</p>\r\n<p>public static void GetAllChildObjectOfTypeInVisualTree&lt;T&gt;(DependencyObject dpob, List&lt;T&gt; outList) where T : DependencyObject<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count = VisualTreeHelper.GetChildrenCount(dpob);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; count; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DependencyObject child = VisualTreeHelper.GetChild(dpob, i);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T childAsT = child as T;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (childAsT != null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; outList.Add(childAsT);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GetAllChildObjectOfTypeInVisualTree&lt;T&gt;(child, outList);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>}</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards,</p>\r\n<p>Tony</p>",
+    "PostedDate": "2009-08-14T20:03:15.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

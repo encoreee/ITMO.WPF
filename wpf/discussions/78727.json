@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "269541",
+    "ThreadId": "78727",
+    "Html": "<p>Hello all.</p>\r\n<p>I am new to the world of WPF and I was trying to create a button with a Bevel bitmap effect.</p>\r\n<p>So I applied the effect with the following configuration:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">BevelBitmapEffect</span> <span style=\"color:Red\">BevelWidth</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">3</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">EdgeProfile</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">BulgedUp</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">LightAngle</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">180</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Smoothness</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">1</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Relief</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">0.15</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>The effect looks good against a white backgound, but if I use a different color behind the button, you can see some ugly white pixels around the corners of the button. I think it's related to some kind of anti-aliasing, since it changes according to the smoothness (the higher the smoothness, the bigger the &quot;noise&quot;).</p>\r\n<p>Any suggestions to solve this?</p>\r\n<p>Thanks in advance!</p>",
+    "PostedDate": "2009-12-21T03:47:36.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "274554",
+    "ThreadId": "78727",
+    "Html": "<p>I can't speak to your specific problem, but in general all of the &quot;legacy&quot; classes derived from BitmapEffect have been deprecated in the upcoming WPF 4.0 release.&nbsp; They will no-op in the latest version of the framework (you would usually have to recompile your app as&nbsp;WPF 4.0 to get this behavior).&nbsp; This was done because of the performance of legacy BitmapEffects.</p>\r\n<p>I would encourage you to use the new hardware accelerated Effects (BlurEffect and DropShadowEffect), though there isn't a built-in hardware accelerated replacement for BevelBitmapEffect.&nbsp; You could write your own by deriving from the ShaderEffect class, writing a small PS 2.0 pixel shader to perform the bevel operation.&nbsp; I believe it would fit into the 64 instructions allowable by PS 2.0.</p>\r\n<p>Thanks!<br>David</p>",
+    "PostedDate": "2010-01-07T16:10:47.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "274694",
+    "ThreadId": "78727",
+    "Html": "<p>Thanks for that insight David!</p>\r\n<p>I was able to acheive some nice effects by using gradients...</p>\r\n<p>Thanks again!</p>",
+    "PostedDate": "2010-01-08T02:12:49.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

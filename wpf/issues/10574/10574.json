@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There is no way to handle the enter key in the datagrid (in the common ways). By trapping KeyDown event which is the most obvious way to do it won't be triggered since the OnEnterKeyDown function sets e.handled to true in DataGrid.cs if there is a current cell marked and the column count is more than 0.\n \nNow I have to inherit the DataGrid in my own CustomControl to be able to trap the enter key before the DataGrid gets hold of it.\n \nSuggested solution:\nTrigger the KeyDown event before custom handling in the datagrid to be able to do some custom handling of predefined keys if needed.",
+    "LastUpdatedDate": "2013-02-21T18:40:58.937-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-09-03T04:50:49.177-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Custom handling of Enter in Datagrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10574
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "you can handle this using the PreviewKeyDown event of the datagrid",
+      "PostedDate": "2009-10-01T01:52:47.44-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Of course.. That solves that problem!\r\n\r\nThanks,\r\n--Rune",
+      "PostedDate": "2009-10-01T04:01:54.78-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-14T05:39:15.57-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:58.937-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

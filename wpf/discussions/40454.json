@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "134198",
+    "ThreadId": "40454",
+    "Html": "Hi,<br>\r\n<br>\r\nI needed to know whether a cell or row was valid before allowing the user to save the work. I couldn't find any property on the DataGrid which told me this but I did find two private methods called <span style=\"font-size:11pt;line-height:115%;font-family:'calibri','sans-serif'\">HasRowValidationError<span>&nbsp; </span>/ HasCellValidationError&nbsp;</span> so I changed these to be protected so I could access them from my inherited control.<br>\r\n<br>\r\nI realize this will have upgrade issues any advice on alternatives? <br>\r\n<br>\r\nThanks \r\n",
+    "PostedDate": "2008-11-21T03:55:04.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137987",
+    "ThreadId": "40454",
+    "Html": "For cell validation you can set the ValidationStep to RawProposedValue or ConvertedValue which will allow you to validate before data is fully committed.  For row validation, unfortunately it will have to save to the data source for validation to take place.  \r\n",
+    "PostedDate": "2008-12-05T05:57:06.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

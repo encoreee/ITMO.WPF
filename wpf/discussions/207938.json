@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "426021",
+    "ThreadId": "207938",
+    "Html": "<p>Hi,</p>\r\n<p>I try to style a ColumnSeries, but whenever I set Style to DataPointStyle-Property of my ColumnSeries, it does not use the colors from the Palette anymore.<br>It does not matter what kind of style I use, among others I have tried an empty style or a copy of the default Style from the generic.xaml.</p>\r\n<p>Why is that and what do I need todo so it still works?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-03-31T07:39:09.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426378",
+    "ThreadId": "207938",
+    "Html": "<p>Okay I figured out that the Palette-Property of the Chart overrides the Styles of the individual DataPoints.. so removes the Style of the DataPointStyle-Property from the Series...</p>\r\n<p>That seems ... odd ... as an API-Design... that to define the colors you cannot use DataPointStyle-Property of the Series anymore...</p>\r\n<p>I want to use the Color-Palette for different types of Series (Line, Colum etc) but obviously different template for the different types of DataPoints...</p>\r\n<p>I could make a Template-Selector or something...</p>",
+    "PostedDate": "2010-04-01T02:55:11.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

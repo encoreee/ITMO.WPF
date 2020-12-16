@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "186122",
+    "ThreadId": "55139",
+    "Html": "Hi,<br>\r\n<br>\r\nWe're in the process of building a WPF application and trying to use the latest and greatest stuff. We have a View that has a DataGrid. This DataGrid is bound to the ViewModel's ObservableCollection using it's ItemsSource. Am I correct in understanding that if the contents of the ObservableCollection changes (add a row of data for example) that this should be updated in the View? I'm not sure why this might not be working but if I new up a new ViewModel then the View does correctly display the additional row. Shouldn't this just work by design (doesn't the ObservableCollection do all the Notify magic) or am I missing something? I can set breakpoints and see that the ObservableCollection is getting the additional row, but it's not showing in the View. Please - what am I missing?<br>\r\n<br>\r\nthanks!<br>\r\nBill\r\n",
+    "PostedDate": "2009-05-02T08:56:20.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

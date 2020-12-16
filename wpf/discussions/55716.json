@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "188155",
+    "ThreadId": "55716",
+    "Html": "<p>When one double clicks a cell in the datagrid and enters eidt mode, even if one tabs out of it WITHOUT changing anything, the grid registers a change in the underlying DataSource.</p>\r\n<p>This is very confusing for users! Is this behavior by design or a bug?</p>\r\n<p>If by design, is there any way to change it so when one does not change anything , the DataSource does not register a change&nbsp; either</p>",
+    "PostedDate": "2009-05-08T08:13:16.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

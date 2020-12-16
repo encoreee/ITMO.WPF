@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "131740",
+    "ThreadId": "39698",
+    "Html": "I'm trying to use the new DataGrid to bind to an ObservableCollection&lt;T&gt;...<br>\r\n<br>\r\nI'm setting ItemsSource to the collection, and if my class T has a public constructor, I can add new rows at the bottom of the grid. However, I wish to use a class for T that doesn't have a public default constructor, but does have a factory that can create new instances of it. Consequently, I can't add new rows to the grid.<br>\r\n<br>\r\nAnyone know if there is there a way to tell the grid to use a provided class factory, rather than requiring a default constructor?\r\n",
+    "PostedDate": "2008-11-11T10:49:02.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132311",
+    "ThreadId": "39698",
+    "Html": "Currently there isn't a way to do this with the current IEditableCollectionView.  There have been some talks to enable this scenario and if it were to go through you won't see it until vNext or vNextNext.  From the DataGrid, one thing you can do is listen the OnInitializingNewItem event or simply create the item yourself and add it to the collection.\r\n",
+    "PostedDate": "2008-11-13T07:22:27.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132330",
+    "ThreadId": "39698",
+    "Html": "I don't get the event, as the grid has already decided it doesn't allow adding new items?\r\n",
+    "PostedDate": "2008-11-13T07:52:16.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132363",
+    "ThreadId": "39698",
+    "Html": "So you mean IEditableCollectionView.CanAddNew returns false?  If that's the case, then you can't add a new item regardless.\r\n",
+    "PostedDate": "2008-11-13T09:24:33.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132590",
+    "ThreadId": "39698",
+    "Html": "Yes, IEditableCollectionView.CanAddNew is returning false. This is because the binding to my ObservableCollection is assuming it can't create items of T because there is no default constructor. Work is probably needed in the implementation of IEditableCollectionView to support other T creation mechanisms.<br>\r\n<br>\r\nAs a temporary workaround, I've added a button to my form to add rows to the collection explicitly...\r\n",
+    "PostedDate": "2008-11-14T06:18:32.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242849",
+    "ThreadId": "39698",
+    "Html": "<p>Any updates to whether this scenario is supported?</p>",
+    "PostedDate": "2009-10-07T01:28:41.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "243504",
+    "ThreadId": "71399",
+    "Html": "I'm looking for a way to select a datagrid row through code and have<br>it's row details expand.<br><br>This is somewhat related to my previous post /How to freeze expanded<br>Rowdetails/ which I'm not getting any help with.<br><br>Ideally, I'd like any expanded rowdetails to remain expanded when<br>refreshing the grid data by setting the ItemsSource, but if that's not<br>possible, I'll take some workaround that gets the user back to where he<br>was; like selecting the row he had previously selected.<br><br>I'm able to save the DataGridRow (and the DetailsElement for that<br>matter) when the LoadingRowDetails event is handled. I can get the<br>DataGridRow and DetailsElement from the DataGridRowDetailsEventArgs, but<br>then you can't seem to do anything with it later (like after the grid<br>refresh.) The obvious methods to try were BringIntoView and Focus (on<br>both the DataGridRow and DetailsElement) but neither of those worked in<br>any combination.<br><br>Any help appreciated here, thanks.<br><br>Bill",
+    "PostedDate": "2009-10-08T08:59:33.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

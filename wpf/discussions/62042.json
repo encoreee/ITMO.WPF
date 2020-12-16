@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "210588",
+    "ThreadId": "62042",
+    "Html": "<p>Hello,</p>\r\n<p>I am trying to Sort a DataGrid that has anunderlying collection with different objects defined in it.&nbsp; Here is my example..</p>\r\n<p>I have three types of objects.<br>&nbsp;- Card (Base Class that all my other classes implement).&nbsp; Card has four properties, ID, Name, Text, and Type<br>&nbsp;- ItemCard (implements Base class of Card).&nbsp; ItemCard has the base properties and two new ones of Cost and Strength<br>&nbsp;- RegionCard (implements Base class of Card).&nbsp; RegionCard has base properties and one new one of Location.</p>\r\n<p>I created a CollectionViewSource, and load my cards into it:<br>&nbsp;- CardList.Source = LoadCards();&nbsp; (this method returns an <span style=\"text-decoration:underline\">ObservableCollection&lt;Card&gt;</span> that contains all my cards loaded from an XML file)</p>\r\n<p>Finallyl, I bind this Collection to my DataGrid:<br>&nbsp;- CardGrid.DataContext = CardList.View</p>\r\n<p>At this point, my cards will display in the DataGrid with columns for each of the Base card properties, and columns for each of the specific card properties.&nbsp; The Grid can be Filtered just fine too.&nbsp; If I try to Sort on one of the Base Card properties, it will work, since all the Cards in the DataGrid have that property (i.e Sorting on Name or Text works fine).&nbsp; If I try to Sort on Cost, Strength, or Location though, I get an error.&nbsp;</p>\r\n<p>My Question is...&nbsp; How do I sort this grid on the specific card properties (Cost, Strength, Location)?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-07-09T13:29:08.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211722",
+    "ThreadId": "62042",
+    "Html": "<p>Bumpity bump..&nbsp; Anyone have any thoughts on this?&nbsp; I am still puzzling over how to accomplish sorting of multiple object types in a DataGridView.</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-07-14T06:51:14.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

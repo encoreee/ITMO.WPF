@@ -1,0 +1,2 @@
+<div class="wikidoc"><h1>DataGrid Known Issues: SelectAll()/UnselectAll() Performance</h1>
+When the DataGrid is in row selection mode, performing a SelectAll() or UnselectAll() operation on the DataGrid may result in slow performance.  This will occur when SelectionMode is set to Row or CellOrRowHeader.  This is due to a bug in the Selector base class.  Unfortunately, there is no workaround to this issue at this time.  The WPF team is working on fixing this issue in our next platform release.<br /></div><div class="ClearBoth"></div>

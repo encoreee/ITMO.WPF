@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "650850",
+    "ThreadId": "267361",
+    "Html": "\r\n<p>Hi All,</p>\r\n<p>I have spent the evening rummaging about trying to find out what is going on. I have a canvas that covers most of my window in order to allow a cursor change. Within the canvas is a grid and into one of the cells I have put an Acccordion control from the\r\n Toolkit. The Accordion contains a button which, when pressed, will change the state of the cursor. Unfortunately the cursor does not change immediately&nbsp; but when moved outside the bounds of the accordion it transforms.</p>\r\n<p>This is not ideal as the feedback from the cursor is important to the button activity. Has anyone encoutered problems where the canvas is obscured by the accordion control and if so, how did you resolve them? If not, does anyone have any ideas on how I might\r\n be able to get this to work properly. Aside from the this the control is perfect and a great job by the team who are working on this.</p>\r\n<p>Thanks in advance for any help that you can offer,</p>\r\n<p>Ben</p>\r\n",
+    "PostedDate": "2011-08-01T16:33:22.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "652604",
+    "ThreadId": "267361",
+    "Html": "<p>Anybody?</p>",
+    "PostedDate": "2011-08-04T11:47:20.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "198843",
+    "ThreadId": "58725",
+    "Html": "<p>Hi everyone,</p>\r\n<p>I was wondering if anyone could re-direct me to a sample on the web on how to create a wpf usercontrol from scratch using MVVM pattern.</p>\r\n<p>I'm not sure how to go about it as all the samples I see seem to have the application's window with the Exit menu but none are showing you on how to build a usercontrol using MVVM.</p>\r\n<p>Thanks.</p>\r\n<p>Thierry</p>",
+    "PostedDate": "2009-06-07T18:03:09.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "198994",
+    "ThreadId": "58725",
+    "Html": "<p>The sample code here, <a href=\"http://msdn.microsoft.com/en-us/magazine/dd419663.aspx\">http://msdn.microsoft.com/en-us/magazine/dd419663.aspx</a>, has UserControls that are part of the MVVM pattern.&nbsp; Is this what you're looking for?</p>",
+    "PostedDate": "2009-06-08T05:25:02.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "199296",
+    "ThreadId": "58725",
+    "Html": "<p>Hi,</p>\r\n<p>No, not really but thanks for the article. It explains it well, but I'm looking for some sort of lab that would allow me to go through step by step on how to build a usercontrol but not a full application. Once the usercontrol is build, I'd like to included in an test application which includes the basic window as created by .net 2008 mvvm template in order to test it.</p>\r\n<p>Am I making sense?</p>\r\n<p>Thanks.</p>\r\n<p>T.</p>",
+    "PostedDate": "2009-06-08T17:55:59.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200102",
+    "ThreadId": "58725",
+    "Html": "<p>Hi Thierry-</p>\r\n<p>Great suggestion, and it does make sense. We'll consider&nbsp;it for an upcoming release of the M-V-VM toolkit, as the first version (0.1) was really a starting point, and we're going to be updating the samples so&nbsp;as to&nbsp;cover a wider range of topics.</p>\r\n<p>Thanks!</p>\r\n<p>Patrick</p>",
+    "PostedDate": "2009-06-10T11:27:51.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200457",
+    "ThreadId": "58725",
+    "Html": "<p>Hi,</p>\r\n<p>Sorry delay getting back, but my laptop died on me last night, so I had to deal with this first. Anyway, thanks for the kind words. It would great to have such a sample. I'm still looking around for more sample and explaination on where to start with M-V-VM pattern. If I find anything I might post them here if that's ok?</p>\r\n<p>Looking forward to your updated samples.</p>\r\n<p>Cheers.</p>\r\n<p>T.</p>",
+    "PostedDate": "2009-06-11T08:58:48.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

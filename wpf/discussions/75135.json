@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "257136",
+    "ThreadId": "75135",
+    "Html": "<p>I tried the following:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>                <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">tk</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGridTextColumn</span> <span style=\"color:Red\">Header</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Item</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Binding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Item.Title}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">ToolTipService.ToolTip</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Item.Description}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n\r\n</pre>\r\n</div>\r\n<p>And I don't see any tool tip.</p>\r\n<p>&nbsp;</p>\r\n<p>Any ideas?<br>Is it even implemented?</p>",
+    "PostedDate": "2009-11-14T11:53:17.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

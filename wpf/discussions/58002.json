@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "196113",
+    "ThreadId": "58002",
+    "Html": "<p>Is there a way to check or uncheck the DataGridCheckboxColumn in C#?</p>",
+    "PostedDate": "2009-05-31T04:16:56.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196269",
+    "ThreadId": "58002",
+    "Html": "<p>Set the property that the column is bound to. Remember to raise a property changed event.</p>",
+    "PostedDate": "2009-05-31T23:07:17.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

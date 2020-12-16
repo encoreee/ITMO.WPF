@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "114248",
+    "ThreadId": "34407",
+    "Html": "I guess I'm just missing it.&nbsp; But when you click on a given cell.&nbsp; How do you read the coordinates from the cell you clicked on?&nbsp; (i.e. If you click on row 2 column 2)<br>\r\n<br>\r\nThanks\r\n",
+    "PostedDate": "2008-08-27T13:54:06.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114487",
+    "ThreadId": "34407",
+    "Html": "You can use DataGrid.CurrentCell to retrieve the current Column and the current Item.&nbsp; With those two objects you can find the row index with the current Item and DataGrid.Items and you can find the column index with the current column and DataGrid.Columns.&nbsp; Also, with the current column you have access to DataGridColumn.DisplayIndex so you can get that as well.&nbsp; Be aware though that a column's DisplayIndex&nbsp;may not be the same as the column's index in the DataGrid.Columns collection.\r\n",
+    "PostedDate": "2008-08-28T10:54:41.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114508",
+    "ThreadId": "34407",
+    "Html": "Ok, this seems to work.&nbsp; But there is something a miss that I must be doing wrong. The substring that was put in the MessageBox is because the string always came back with cell = Microsoft.Windows.Controls.DataGridCell: (cell contents).&nbsp; Any reason for this?&nbsp; <br>\r\n<br>\r\nAlso, the naming for column makes sense.&nbsp; (i.e. DataGrid1.CurrentCell.Column.DisplayIndex).&nbsp; Shouldn't there be a Row property just like the Column? (i.e. DataGrid1.CurrentCell.Row.DisplayIndex)?<br>\r\nDataGrid1.Items.IndexOf(DataGrid1.CurrentCell.Item) seems weird!<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">private</span></span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">void</span></span><span style=\"font-size:13px\"> dataGrid1_MouseLeftButtonUp(</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">object</span></span><span style=\"font-size:13px\"> sender, MouseButtonEventArgs e)\r\n<p>&nbsp;</p>\r\n<p>{</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;int</span></span><span style=\"font-size:13px\"> row = dataGrid1.Items.IndexOf(dataGrid1.CurrentCell.Item);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;int</span></span><span style=\"font-size:13px\"> col = dataGrid1.CurrentCell.Column.DisplayIndex;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;string</span></span><span style=\"font-size:13px\"> cell = Convert.ToString(GetCell(row, col));\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(cell.Substring(cell.IndexOf(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\"><span style=\"font-size:13px;color:#a31515\">&quot;:&quot;</span></span><span style=\"font-size:13px\">)+1,6));\r\n<p>&nbsp;</p>\r\n<p>}<br>\r\n<br>\r\nThanks for all your help.&nbsp; You've been great!!!!!!!!!!!!!</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-08-28T12:24:28.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114535",
+    "ThreadId": "34407",
+    "Html": "Why not try to use cell.Content.ToString() instead of the Convert.ToString?<br>\r\n<br>\r\nAnyway, the reason for the 'Row' name being 'Item' is b/c it is following the ItemsControl pattern where 'Items' is the list.&nbsp; I talk a little bit about this here,&nbsp;<a href=\"http://blogs.msdn.com/vinsibal/archive/2008/08/11/net-3-5-sp1-and-wpf-datagrid-ctp-is-out-now.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/08/11/net-3-5-sp1-and-wpf-datagrid-ctp-is-out-now.aspx</a>.<br>\r\n&nbsp;\r\n",
+    "PostedDate": "2008-08-28T14:34:24.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114539",
+    "ThreadId": "34407",
+    "Html": "I used Convert.ToString because cell.Content.ToString() gave the aformentioned<br>\r\n<br>\r\ncell.Content.ToString() = &quot;Microsoft.Windows.Controls.DataGridCell:&quot;<br>\r\n<br>\r\nWith no contents.&nbsp; The second time the cell was clicked I would get<br>\r\n<br>\r\ncell.Content.ToString() = &quot;Microsoft.Windows.Controls.DataGridCell: {Contents of cell}&quot;.&nbsp;&nbsp;Convert.ToString contained the contents everytime??????????????????????????<br>\r\n<br>\r\nAnyway, how the hell do you get rid of &quot;Microsoft.Windows.Controls.DataGridCell&quot; without using&nbsp;cell.Substring(cell.IndexOf(&quot;:&quot;+1,6)).&nbsp; Or is this just happening to me?&nbsp;\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px\">&nbsp;</p>\r\n</span>\r\n",
+    "PostedDate": "2008-08-28T14:44:43.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114554",
+    "ThreadId": "34407",
+    "Html": "I was being a little absent minded there. cell.Content represents the visual tree for the cell's content.&nbsp; So for example if the cell is in a DataGridTextColumn, the Content will be a TextBlock in non-editing state and TextBox in an editing state.&nbsp; So you can get the value of the visual element by doing something like this, (cell.Content as TextBlock).Text.&nbsp; It will obviously be different for other types of columns.\r\n",
+    "PostedDate": "2008-08-28T15:42:43.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114651",
+    "ThreadId": "34407",
+    "Html": "Vincent<br>\r\n<br>\r\nThat worked great.&nbsp; You've been a great help and I really apprieciate it.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-08-29T05:59:53.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

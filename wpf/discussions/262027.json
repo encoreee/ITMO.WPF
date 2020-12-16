@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "630095",
+    "ThreadId": "262027",
+    "Html": "\r\n<p>February, 2010, (the date of the last release) is a long time ago.&nbsp; There are issues and bugs that need to be addressed.&nbsp; Is anyone actually working on these?</p>\r\n<p>Thanks!</p>\r\n<p>Brad.</p>\r\n",
+    "PostedDate": "2011-06-20T08:00:16.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "633887",
+    "ThreadId": "262027",
+    "Html": "<p>If you want my opinion, a resounding yes!</p>\r\n<p>But, who knows ? Right, Microsoft.</p>\r\n<p>I will save you some time and give you in advance the official anwser: Wait for the Build conference september 13.</p>\r\n<p>This is the only anwser for this kind of questions coming from MS those days,&nbsp;when&nbsp;asking about Silverlight&nbsp;or WPF.</p>\r\n<p>If I can give you an advice, a commercial control library is the only&nbsp;way to go&nbsp;for any serious project developed in SL or WPF.</p>\r\n<p>We learned it the hard way with the Silverlight Controls toolkit.</p>\r\n<p>While sporting the name \"Toolkit\", those are just code&nbsp;incubator, witch can be unpluged at any moment without notice.</p>\r\n<p>That's surely&nbsp;the case&nbsp;with the wpf toolkit, the people who use to work on&nbsp;it&nbsp;moved&nbsp;away on something else.</p>\r\n<p>Fred</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-06-27T18:19:30.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

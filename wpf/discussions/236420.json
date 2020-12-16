@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "528402",
+    "ThreadId": "236420",
+    "Html": "\r\n<p>Hello everyone,</p>\r\n<p>I have a user control that uses assemblies that are dependent on the WPFToolkit.dll assembly. My control works fine in WPF applications and WinForms application using the ElementHost.</p>\r\n<p>However, when I try using the control in an application that requires strong typing (signed assemblies) I run into issues and my control throws an error:</p>\r\n<p>&quot;Could not load file or assembly 'WPFToolkit' or one of its dependencies. An argument was out of its legal range.&quot;</p>\r\n<p>I suspect that this could be from the lack of a signature on the WPFToolkit, can anyone confirm? I tried downloading the source code, signing it and recompiling but there were so many invalid references in the code that I just gave up.</p>\r\n<p>I'd appreciate if anyone could shed some light on this.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-29T10:36:19.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

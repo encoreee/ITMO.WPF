@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "237052",
+    "ThreadId": "69644",
+    "Html": "<p>Is there any way to open the drop down menu in code?</p>\r\n<p>I have a RibbonDropDownButton named parametersDropdown and using the following line of code I am able to raise the click event but it doesn't open the menu.</p>\r\n<pre>parametersDropDown.RaiseEvent(New RoutedEventArgs(ButtonBase.ClickEvent))</pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-21T14:27:07.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

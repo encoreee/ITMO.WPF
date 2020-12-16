@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "153445",
+    "ThreadId": "45985",
+    "Html": "If a user is using a comboboxcolumntype and they select and item and then change their mind, how can I put it back to an unselected state?  \r\n",
+    "PostedDate": "2009-02-02T11:59:45.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154006",
+    "ThreadId": "45985",
+    "Html": "You can implement something like this.....<br>\r\n<br>\r\n                &lt;dg:DataGridComboBoxColumn...&gt;<br>\r\n                    ....<br>\r\n                    &lt;dg:DataGridComboBoxColumn.EditingElementStyle&gt;<br>\r\n                        &lt;Style TargetType=&quot;{x:Type ComboBox}&quot;&gt;<br>\r\n                            &lt;EventSetter Event=&quot;KeyDown&quot; Handler=&quot;ComboBoxColumn_KeyDown&quot;&gt;&lt;/EventSetter&gt;<br>\r\n                        &lt;/Style&gt;<br>\r\n                    &lt;/dg:DataGridComboBoxColumn.EditingElementStyle&gt;<br>\r\n                &lt;/dg:DataGridComboBoxColumn&gt;<br>\r\n<br>\r\n        private void ComboBoxColumn_KeyDown(object sender, KeyEventArgs e)<br>\r\n        {<br>\r\n            if (e.Key == Key.Delete)<br>\r\n            {<br>\r\n                ComboBox cb = sender as ComboBox;<br>\r\n                if (cb != null)<br>\r\n                {<br>\r\n                    cb.SelectedIndex = -1;<br>\r\n                    e.Handled = true;<br>\r\n                }<br>\r\n            }<br>\r\n        }<br>\r\n<br>\r\nThis basically unselects the combobox in edit mode when the delete key is hit.<br>\r\n",
+    "PostedDate": "2009-02-03T16:07:42.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

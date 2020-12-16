@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "With the newest iteration of the WPF Ribbon Control (4.0), occasionally while attempting to select an item from a combo box/drop down list, the item will get clicked on, the drop down list will close, and the item field will still be blank.",
+    "LastUpdatedDate": "2013-02-21T18:40:20.037-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-11-08T08:03:03.76-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Combo Box/Drop Down List not always selecting the item you click on.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 14623
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

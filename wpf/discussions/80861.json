@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "277258",
+    "ThreadId": "80861",
+    "Html": "<p>Hi,</p>\r\n<p>I want to implement all Validation Rules in the ViewModel.</p>\r\n<p>If I use DataGrid.RowValidationRules, the class implementing the rules does'nt know the ViewModel.</p>\r\n<p>How can the Validationrule-class determine &quot;her&quot; View?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanx,</p>\r\n<p>Midiman</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-14T11:17:21.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

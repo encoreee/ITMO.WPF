@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "444967",
+    "ThreadId": "213176",
+    "Html": "Okay, I'm sorry if this question offends but for the last month or two I've been looking at MEF, Entity Framework, Prism and the WPF application framework.  It seems to me that all of these products are evolving but I'm confused as to which technogy would best meet my needs. I thought the WPF Application framework was pretty good but now I see this and it's yet another toolkit. \r\n\r\nWho supports this toolkit, is it something I should seriously consider, does it use PRISM, does it use MEF, does it use Entity Framework and does it come with good working samples. \r\n\r\nSome advice from anyone out there would be much appreciated. \r\n\r\nthanks,",
+    "PostedDate": "2010-05-19T09:08:32.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "445226",
+    "ThreadId": "213176",
+    "Html": "<p>this &quot;toolkit&quot; actually just to provide few ui control not &quot;officially&quot; come with M$ WPF controls, like DataGrid, DatePicker</p>\r\n<p>if you are looking for WPF framework stuff, afaik, this is not.</p>",
+    "PostedDate": "2010-05-19T20:50:53.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "445658",
+    "ThreadId": "213176",
+    "Html": "<p>MEF, EF, Prism, and WPF are different technologies that can all be used together.&nbsp; This toolkit is just a set of additional features for WPF and is supported by the WPF team.&nbsp; They are officially supported controls and as of .NET 4 they have been integrated into PresentationFramework.dll.</p>",
+    "PostedDate": "2010-05-20T18:17:44.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

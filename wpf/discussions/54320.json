@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "183045",
+    "ThreadId": "54320",
+    "Html": "Hi,<div><br></div><div>I have a record that contains first, last name, phone number.  I am required to display each of these attributes on a separate row. the first column, frozen, will be the rows' label and each column would be a separate record.  As I add people classes to my observable collection, I need to have the grid create more columns.  Is there a direction I can start down to get something like this going.  </div><div><br></div><div>I was going to just use a list, and item's  data template instead of the grid, but the look and feel of the grid is really appealing.  Maybe I shouldn't be using a datagrid. </div><div><br></div><div><br></div><div>any thoughts?  Thanks!</div><div><br></div><div>-Steve     </div>",
+    "PostedDate": "2009-04-23T15:20:49.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184314",
+    "ThreadId": "54320",
+    "Html": "i think u can implement your plan just using datagrid.<br>\r\n<br>\r\nFor u want to display one record in a column,<br>\r\nu can design your own datatable, the columns of which are the name of persons.<br>\r\nThe datatable should have three records, each of it stands for first,last name,phone number.<br>\r\nAnd then fill the data in it .<br>\r\nAt last bind the datagrid with your own datatable\r\n",
+    "PostedDate": "2009-04-27T19:22:50.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184318",
+    "ThreadId": "54320",
+    "Html": "Hi,<div><br></div><div>Thanks for the information!  I worked with it over the weekend, and implemented a datatable.  Each object is a column and each property is a record.  I will post some code on some other ideas, whereby I can use reflection to construct the &quot;pivot&quot; .  I am going to take what you said as a positive sign hat I am headed in the right direction.   To take it a step further, I am going top subclass the datagrid and use the datatable as the binding mechanism.  Then I will make its constructor take a &lt;T&gt; generic and use reflection to construct a propertyinfo array to use to locate and construct the rows.  Users of the component can then pass in an array of fields, of type string, and the table will be pivoted.  The saving of the user entry will be mapped back to the original objects (&lt;T&gt;).  I think this maybe helpful, but may present more challenges for fields that are read only on my original objects.  I guess the propertyinfo will tell me that.  Anyway,  thanks a lot for validating!  it took me all weekend toiling over the idea and its nice to hear back and get a confirm on the same line-of-thinking.  much appreciated.</div><div><br></div><div>-Steve</div>",
+    "PostedDate": "2009-04-27T19:51:02.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

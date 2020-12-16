@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "422182",
+    "ThreadId": "206899",
+    "Html": "<p>Hi,</p>\r\n<p>I've got a project where I won't know until RunTime what columns the user wants to display are.</p>\r\n<p>So I am trying to bind the Columns collection of a DataGrid to a Collection of DataGridColumns in the ViewModel but the Column collection is readonly.</p>\r\n<p>Is there any MVVM friendly way to achiveing this or should I just listen to the changes in the collection in the viewmodel in the codebehind and add / remove columns&nbsp;as nessesary?</p>\r\n<p>Thanks,</p>\r\n<p>Ross</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-22T10:19:14.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

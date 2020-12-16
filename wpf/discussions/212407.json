@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "441992",
+    "ThreadId": "212407",
+    "Html": "I have a grid with number of template columns bind to a dataset. One of the CellEditing template requires opening up a new modal dialog. But opening the dialog will trigger lost Keyboard focus event on the current cell and result in having exception of try to commit an complete empty row into dataset. Am I doing things in a wrong way?\r\nAny suggestions will be very appreciated. ",
+    "PostedDate": "2010-05-12T04:59:53.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

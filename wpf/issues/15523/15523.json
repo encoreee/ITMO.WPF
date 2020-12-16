@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Since the TooltipTitle and TooltipDescription are attached properties on the RibbonControlService, one could expect that the ribbon tooltip should work when applying these attached properties to custom controls, e.g. normal WPF button or other non-ribbon controls. I guess we can get it working by explicitly adding the dependency properties (AddOwner) to our own derived controls, but this is not the WPF way of doing it when there is an attached property mechanism, and we don't want to clutter our own controls with ribbon specific things.\n \nIs there a workaround or a solution for this?",
+    "LastUpdatedDate": "2013-02-21T18:40:13.49-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-03-15T03:55:07.093-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Ribbon tooltip does not work for Non-Ribbon controls.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 15523
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "You can use RibbonToolTip control:\r\n\r\n<ComboBox>\r\n    <ComboBox.ToolTip>\r\n        <Ribbon:RibbonToolTip Title=\"Title\" Description=\"Desc\" />\r\n    </ComboBox.ToolTip>\r\n</ComboBox>",
+      "PostedDate": "2012-01-16T01:13:58.23-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:13.49-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

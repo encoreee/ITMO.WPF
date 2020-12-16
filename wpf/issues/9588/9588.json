@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Related to discussion 50700:\nI have a DataGrid with columns where one column uses star width, and the others use Auto.  There's no data in the DataGrid initially.  The problem I'm having is that the columns using Width=\"Auto\" are too small and cutting off the text of the column header.  If I were to grab the bottom-right corner of the app and resize it smaller, then back to the same size the columns adjust themselves to what I expected, all 'Auto' column widths take up exactly the space needed for the header text and the one 'star' column takes up the rest.  When looking at the example project CommonDataGridAddOns, it appears to work correctly.\n \nIncluded is a small app and screen shot that replicates this problem.",
+    "LastUpdatedDate": "2013-02-21T18:41:24.36-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-23T11:11:17.173-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid column width size incorrent with Auto and 'star'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9588
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2892,
+      "FileName": "column width errors.zip",
+      "DownloadUrl": ".\\2892"
+    },
+    {
+      "FileId": 2895,
+      "FileName": "example column size error.GIF",
+      "DownloadUrl": ".\\2895"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Screen shot showing column widths incorrect upon program execution.  'star' column (Col2) takes up too much space reducing the size of all other column headers.",
+      "PostedDate": "2009-03-24T12:24:19.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T12:24:20.433-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is a known issue and is tracked in our internal bug database.",
+      "PostedDate": "2009-03-24T12:35:04.9-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T12:35:05.523-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:43:43.023-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:24.36-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

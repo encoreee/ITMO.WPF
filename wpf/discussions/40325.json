@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "133794",
+    "ThreadId": "40325",
+    "Html": "Hi,<br>\r\nI can't figure out how to get a Page (in a Frame) to bind to a RibbonCommand.  I put this code in the Loaded event handler of my Page<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>this</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\">.CommandBindings.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">CommandBinding</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">AppCommands</span><span style=\"font-size:13px\">.Save, </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">ExecutedRoutedEventHandler</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.OnSave)));<br>\r\n<br>\r\nbut the RibbonButton with the command <span style=\"font-size:13px\"><span style=\"color:#2b91af\">AppCommands</span>.Save is still disabled.  I then put this code in the Loaded event handler instead (<span style=\"color:#0000ff\">this</span><span style=\"font-size:13px\">.hostWindow is a reference to the main window)</span>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.hostWindow.CommandBindings.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">CommandBinding</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">AppCommands</span><span style=\"font-size:13px\">.Save, </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">ExecutedRoutedEventHandler</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#0000ff\">this</span><span style=\"font-size:13px\">.OnSave)));<br>\r\n<br>\r\nand then the RibbonButton is enabled.<br>\r\n<br>\r\nWhat am I missing?<br>\r\n<br>\r\nThanks,<br>\r\naSchimp </span></p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>\r\n<p>&nbsp;</p>\r\n</p>\r\n",
+    "PostedDate": "2008-11-19T15:56:29.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133835",
+    "ThreadId": "40325",
+    "Html": "This is probably the same issue I am running into.  Try setting FocusManager.IsFocusScope to true on the Ribbon and it should work  There are issues with doing this, ButtonDropDowns seem to have issues, but hopefully we will get answers to this.<br>\r\n",
+    "PostedDate": "2008-11-19T21:19:02.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134256",
+    "ThreadId": "40325",
+    "Html": "That seems to be working well.  Thank you very much.\r\n",
+    "PostedDate": "2008-11-21T06:52:39.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

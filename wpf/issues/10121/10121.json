@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closing per poster&#39;s request.",
+    "ClosedDate": "2009-06-10T15:26:20.98-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Just an FYI.\n \nI was working with defining a button to sit beside my row.  when the rowdetails are expanded for any given row... I wanted it to remain beside the row and not be centered on the Row + Row Details.\n \nTo do this, simple define a setter property in your RowHeaderStyle definition:\n \n        <Style x:Key=\"RowHeaderStyle\" TargetType=\"{x:Type wpftoolkit:DataGridRowHeader}\">\n            <Setter Property=\"Background\" Value=\"#A1A1A1\"/>\n            <Setter Property=\"VerticalAlignment\" Value=\"Top\"/>    \n        </Style>",
+    "LastUpdatedDate": "2013-05-16T05:31:05.353-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-06-10T11:57:15.17-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Vertical Alignment of RowHeaderDetails",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10121
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Please Delete.  This was posted as a work item but was intended as a discussion.",
+      "PostedDate": "2009-06-10T12:03:52.637-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-10T15:26:20.98-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:12.453-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:05.353-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

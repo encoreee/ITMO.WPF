@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "159215",
+    "ThreadId": "47553",
+    "Html": "I am looking for a low-cost/no costWPF DataGrid. which can display heirachical data.  Does the DataGrid included in the WPFToolKit support heirachical data display?<div><br></div><div>Thanks,</div><div>Tracy</div>",
+    "PostedDate": "2009-02-18T17:10:16.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159296",
+    "ThreadId": "47553",
+    "Html": "Hi Tracy,<br>\r\n<br>\r\nWhat do you mean by 'supports hierarchical data' ?<br>\r\n<br>\r\nIf it is simply a master / detail view, take a look at this:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#masterdetail<br>\r\n<br>\r\nThe WPF DataGrid also has the concept of RowDetails:<br>\r\n<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx#details<br>\r\n<br>\r\nYou can nest whatever content you like within the row details. You could, for example nest a DataGrid within there, allowing you to drill-down on the current row.<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://www.scottlogic.co.uk/blog/wpf/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n<br>\r\n",
+    "PostedDate": "2009-02-19T00:43:58.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159853",
+    "ThreadId": "47553",
+    "Html": "Hi Colin.    I have a nested object heirarchy that could be multiple leves deep.  The separate master/detail grids are not what my functional folks are looking for.<div><br></div><div>Here is a  pseudo-code example of an object heirachy:<div>Customers</div><div><span style=\"white-space:pre\">\t</span>name<br></div><div><span style=\"white-space:pre\">\t</span>orders (collection)<br></div><div><br></div><div>Orders</div><div><span style=\"white-space:pre\">\t</span>description<br></div><div><span style=\"white-space:pre\">\t</span>orderDetails (collection)<br></div><div><br></div><div>OrderDetail</div><div><span style=\"white-space:pre\">\t</span>date<br></div><div><span style=\"white-space:pre\">\t</span>item<br></div><div><br></div><div>When I retrieve an observableCollection of Customers, each customer object has a collection of orders...each order has a collection of order details.</div><div><br></div><div>When I bind the customer collection to the grid, I want to see expandable/nested order rows...and subsequently, each order row should house a nested set of detail rows.</div><div><br></div><div>Here is a link to an XAMDataGrid example:</div><div><a href=\"http://help.infragistics.com/Help/NetAdvantage/WPF/2008.2/CLR3.X/html/WPF_Binding_to_an_ObservableCollection.html\">http://help.infragistics.com/Help/NetAdvantage/WPF/2008.2/CLR3.X/html/WPF_Binding_to_an_ObservableCollection.html</a><br></div><div><br></div><div>It looks like the concept of RowDetails may work.  There doesn't seem to be much documentation on this grid though I would prefer to stay straight M$.  </div><div><br></div><div>Using the RowDetail approach, would I be able to do the following </div><div>- Edit all different levels</div><div>- Trigger IDataErrorInfo</div><div>-Apply filtering and grouping (similiar to this example: <a href=\"http://help.infragistics.com/Help/NetAdvantage/WPF/2008.2/CLR3.X/html/xamData_Sorting_and_Grouping_Overview.html\">http://help.infragistics.com/Help/NetAdvantage/WPF/2008.2/CLR3.X/html/xamData_Sorting_and_Grouping_Overview.html</a>)</div><div><br></div><div>Appreciate your help with this!</div><div>Tracy</div><div><br></div><div><br></div></div>",
+    "PostedDate": "2009-02-19T11:59:38.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

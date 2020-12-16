@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "227527",
+    "ThreadId": "66927",
+    "Html": "<p>Hello,<br> Is there a way to apply a style to all controls of the same type in <strong>one</strong> user control dynamically, without applying in all controls of my application and without go to the control and set the style manually?</p>\r\n<p>The problem is that in my ResorceDictionary I have 2 styles, with the x:Key set</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">x:Key</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">ScrollBar_White</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{x:Type ScrollBar}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Style</span> <span style=\"color:Red\">x:Key</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">ScrollBar_Black</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">TargetType</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{x:Type ScrollBar}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br></pre>\r\n</div>\r\n<br></pre>\r\n<p>And I want to know if there is a way in XAML to apply dynamically a named style without use the following code on all the scrollbars of my UserControl.</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">ScrollBar</span> <span style=\"color:Red\">Style</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">ScrollBar_White</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br></pre>\r\n</div>\r\n<br><span><br></span></pre>",
+    "PostedDate": "2009-08-25T09:23:52.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227642",
+    "ThreadId": "66927",
+    "Html": "<p>Hi Crasiness,</p>\r\n<p>You will want to use BasedOn to apply your application-wide style to particular UserControls.&nbsp; If you include the markup you have above in your main resource dictionary and add the following to your UserControl dictionary:</p>\r\n<p>\r\n<p><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">&lt;Style</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> BasedOn</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;{</span></span><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">StaticResource</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> ScrollBar_White</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">}&quot;</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> TargetType</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">=&quot;{</span></span><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">x</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">:</span></span><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\">Type</span></span><span style=\"color:#ff0000;font-size:x-small\"><span style=\"color:#ff0000;font-size:x-small\"> ScrollBar</span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">}&quot; /&gt;</span></span></p>\r\n<p>you will apply the ScrollBar_White style to all of the ScrollBars in the UserControl only.&nbsp; You also won't need to specify this style per-control (i.e. for each ScrollBar) to get this behavior once it's specified for the general UserControl.&nbsp;</p>\r\n<p>Hope that helps!</p>\r\n<p>Alexis</p>\r\n</p>",
+    "PostedDate": "2009-08-25T13:42:34.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227658",
+    "ThreadId": "66927",
+    "Html": "<p>Hello Alexis,</p>\r\n<p>Thanks for your reply, this solution actually works if the styles are StaticResource but I have another problem, the styles are DynamicResource and with that I cannot use the BasedOn.</p>\r\n<p>Another idea?<br><br>Many thanks ,<br>Paulo</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-25T14:16:53.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

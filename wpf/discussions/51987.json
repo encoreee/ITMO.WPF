@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "174412",
+    "ThreadId": "51987",
+    "Html": "<br>\r\nHi..<br>\r\n<br>\r\nI'm trying to catch the delete event in the datagrid in order to display a message..<br>\r\n<br>\r\nHow can this be done?<br>\r\n<br>\r\nI tried in XAML:<br>\r\n<br>\r\nCommandManager.Executed=&quot;OnDelete&quot;<br>\r\n<br>\r\nCode Behind:<br>\r\n<br>\r\n<span style=\"font-size:13px\"> OnDelete(</span><span style=\"font-size:13px;color:#0000ff\">object</span><span style=\"font-size:13px\"> sender,</span><span style=\"font-size:13px;color:#2b91af\"> ExecutedRoutedEventArgs</span><span style=\"font-size:13px\"> e)<br>\r\n{<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">&nbsp;&nbsp;&nbsp;&nbsp;RoutedCommand</span><span style=\"font-size:13px\"> routedCommand = (e.Command </span><span style=\"font-size:13px;color:#0000ff\">as</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">RoutedCommand</span><span style=\"font-size:13px\">);<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;if</span><span style=\"font-size:13px\"> (routedCommand != </span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</span><span style=\"font-size:13px\"> (routedCommand.Name == </span><span style=\"font-size:13px;color:#a31515\">&quot;Delete&quot;</span><span style=\"font-size:13px\">)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; MessageBox.Show(&quot;Deleted&quot;);</span><span style=\"font-size:13px\"><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n}</span><br>\r\n<br>\r\n<br>\r\nBut it doesn't call the event...<br>\r\n<br>\r\nI'm I missing something?<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2009-04-01T10:15:34.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174921",
+    "ThreadId": "51987",
+    "Html": "Can anybody help me with this?<br>\r\n<br>\r\nIs there another way to do it?<br>\r\n<br>\r\nsend a message everytime the user deletes a row (I can't find the event in the events list)<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2009-04-02T10:55:40.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176520",
+    "ThreadId": "51987",
+    "Html": "Hy..<br>\r\n<br>\r\nSorry for being pushy.. but I really need this functionality...<br>\r\n<br>\r\nWill it exist in the next version of WPF datagrid?<br>\r\n<br>\r\nIs is already contemplated?&nbsp; .. Something like OnUserDeletedRows event?<br>\r\n<br>\r\nthanks in advance<br>\r\n",
+    "PostedDate": "2009-04-07T02:40:51.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176796",
+    "ThreadId": "51987",
+    "Html": "You cant use the CommandBinding because if you handle the command the default handler will not be executed (and hence the delete will not happen).<br>\r\n<br>\r\nHandle PreviewKeyDown on DataGrid as follows...<br>\r\n<br>\r\n<p>        private void DataGrid_Standard_PreviewKeyDown(object sender, KeyEventArgs e)<br>\r\n        {<br>\r\n            if (e.Handled)<br>\r\n            {<br>\r\n                return;<br>\r\n            }</p>\r\n<p>            if (e.Key == Key.Delete)<br>\r\n            {<br>\r\n                MessageBox.Show(&quot;Deleting the row&quot;);<br>\r\n                //dont set the e.Handled to true here.<br>\r\n            }<br>\r\n        }</p>\r\n",
+    "PostedDate": "2009-04-07T13:15:22.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177507",
+    "ThreadId": "51987",
+    "Html": "Thanks for your input brandf,<br>\r\n<br>\r\nI tried it, but still found a problem:<br>\r\n<br>\r\nWhen the user is edditing data on a cell and presses the Delete key, the same message appears... and in this case it should not...<br>\r\n<br>\r\nDo you have a workaround for this?<br>\r\n<br>\r\nThanks in advance<br>\r\n<br>\r\nPS: I really think it should be included a OnUserDeleteRow event... <br>\r\n",
+    "PostedDate": "2009-04-09T01:41:14.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "180040",
+    "ThreadId": "51987",
+    "Html": "<br>\r\nCan anyone please help?...<br>\r\n<br>\r\nThis very important for my project...<br>\r\n<br>\r\nAre there steps being made to contemplate this in future versions?<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2009-04-16T03:03:56.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "180878",
+    "ThreadId": "51987",
+    "Html": "<p style=\"margin:0in 0in 10pt\"><span style=\"font-family:comic sans ms\">I override the DataGrid’s Delete command and do the delete myself. I do this by adding command binding on the DataGrid like this:</span></p>\r\n<p style=\"margin:0in 0in 10pt\"><span style=\"font-family:comic sans ms\">    &lt;CommandBinding Command=&quot;wpft:DataGrid.DeleteCommand&quot; Executed=&quot;DeleteTitleRow&quot;/&gt;</span></p>\r\n<p style=\"margin:0in 0in 10pt\"><span style=\"font-family:comic sans ms\">Where “wpft:” is define as xmlns:wpft=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;   </span></p>\r\n<p style=\"margin:0in 0in 10pt\"><span style=\"font-family:comic sans ms\"> </span></p>\r\n",
+    "PostedDate": "2009-04-18T15:13:18.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "180980",
+    "ThreadId": "51987",
+    "Html": "change the if statemant to: <br>\r\n<br>\r\n<span style=\"color:#0000ff;font-size:10px\"><span style=\"color:#0000ff;font-size:10px\">\r\n<p>if</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:10px\"> (e.Key == </span><span style=\"color:#2b91af;font-size:10px\">Key</span><span style=\"font-size:10px\">.Delete &amp;&amp; !e.OriginalSource.GetType().Equals(</span><span style=\"color:#0000ff;font-size:10px\">typeof</span><span style=\"font-size:10px\">(</span><span style=\"color:#2b91af;font-size:10px\">TextBox</span><span style=\"font-size:10px\">)))<br>\r\n<br>\r\nThis way you can prevent Delete key from textbox (editing cell mode)\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-04-19T08:03:24.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182040",
+    "ThreadId": "51987",
+    "Html": "Thanks for your inputs..<br>\r\n<br>\r\nI went with jonas_man idea.... but still missing a bit... basically upon data validation (which works a bit erraticly) and because I also have other columns like the chekbox column (which, in this case won't work...)...<br>\r\n<br>\r\nIs there a way to work around it?<br>\r\n<br>\r\nThanks in advance<br>\r\n",
+    "PostedDate": "2009-04-21T15:02:52.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189696",
+    "ThreadId": "51987",
+    "Html": "<p>I had a similiar problem. You should be able to do something like this:</p>\r\n<p>Add this to your window constructor:</p>\r\n<p style=\"padding-left:30px\"><strong>CommandManager.AddPreviewExecutedHandler(myDataGrid, new ExecutedRoutedEventHandler(MyPreviewDeleteCommandHandler));</strong></p>\r\n<p>And define your command handler:</p>\r\n<p style=\"padding-left:30px\"><strong>private void MyPreviewDeleteCommandHandler(object sender, ExecutedRoutedEventArgs e)<br>{<br>&nbsp;&nbsp;&nbsp; if (e.Command == DataGrid.DeleteCommand)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.Writeline(&quot;Delete...&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // If you set e.Handled=true here, the delete command will be suppressed..<br>&nbsp;&nbsp;&nbsp; }<br>}</strong></p>\r\n<p>This method will not be triggered when using the delete key while editing.</p>",
+    "PostedDate": "2009-05-13T05:01:01.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190669",
+    "ThreadId": "51987",
+    "Html": "<p>Thanks oskarh...</p>\r\n<p>It really worked great...</p>\r\n<p>Many thanks.. Problem solved!!!</p>",
+    "PostedDate": "2009-05-15T04:48:04.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248452",
+    "ThreadId": "51987",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>oskarh wrote:</strong><br>\r\n<p>I had a similiar problem. You should be able to do something like this:</p>\r\n<p>Add this to your window constructor:</p>\r\n<p style=\"padding-left:30px\"><strong>CommandManager.AddPreviewExecutedHandler(myDataGrid, new ExecutedRoutedEventHandler(MyPreviewDeleteCommandHandler));</strong></p>\r\n<p>And define your command handler:</p>\r\n<p style=\"padding-left:30px\"><strong>private void MyPreviewDeleteCommandHandler(object sender, ExecutedRoutedEventArgs e)<br>{<br>&nbsp;&nbsp;&nbsp; if (e.Command == DataGrid.DeleteCommand)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.Writeline(&quot;Delete...&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // If you set e.Handled=true here, the delete command will be suppressed..<br>&nbsp;&nbsp;&nbsp; }<br>}</strong></p>\r\n<p>This method will not be triggered when using the delete key while editing.</p>\r\n</blockquote>\r\n<p>And for people who prefer to attach event-handlers in XAML, you can assign the above handler (MyPreviewDeleteCommandHandler) declaratively by using xaml of the form:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">tk</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DataGrid</span> <span style=\"color:Red\">x:Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">MyDataGrid</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">CommandManager.PreviewExecuted</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">MyPreviewDeleteCommandHandler</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>This is the same as oskarh's solution, but done in xaml instead of in the code-behind in the constructor.</p>",
+    "PostedDate": "2009-10-22T00:34:09.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

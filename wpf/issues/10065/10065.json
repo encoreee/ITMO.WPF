@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nThe annexed application demonstrates that 'TAB' and 'SHIFT-TAB' into a datagrid may cause the following :\n \n- rows are shifted vertically\n- cell selection is not consistent with behaviour inside the datagrid\n \nThank you,\n \nJulie\n \nProcedure\n------------\nUnzip annexed file\nStart Visual Studio 2008 and adjust the reference to 'WPFToolkit.dll' (I used v3.5.40128.1) in the solution project\n \nScenario\n----------\nThe scenario is fully illustrated in the annexed Excel file\n \nEnd",
+    "LastUpdatedDate": "2013-02-21T18:41:14.983-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-30T03:26:17.18-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid : TAB into shifts rows vertically",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10065
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3115,
+      "FileName": "09 tab into shifts rows vertically.zip",
+      "DownloadUrl": ".\\3115"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This a bug with the default implementation of ItemsControl's virtualization.  It has been recorded in our internal bug database.\r\n\r\nThanks.",
+      "PostedDate": "2009-06-02T13:38:36.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-02T13:39:09.293-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-10T18:42:42.8-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:14.983-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

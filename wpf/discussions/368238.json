@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "866988",
+    "ThreadId": "368238",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I am using EF 4.3.1&#43;, The EF has lots of advantages and all Object states reside at DbContext.</p>\r\n<p>If I add DomainModel, There's lots of work following up, I am using it painful.</p>\r\n<p>&nbsp;</p>\r\n<p>If I added Repository,</p>\r\n<p>&nbsp;</p>\r\n<p>How WPF architect should go?</p>\r\n<p>This is not clear pattern (MVVM)</p>\r\n<p>How to sync ViewModel and DbContext?</p>\r\n<p>E.G If I add or delete from the view. I have to manaully dete from the view and DbContext layer.</p>\r\n<p><strong>ViewModel --&gt; layer.</strong></p>\r\n<p><strong>Repository &lt;--&gt; DomainModel --&gt; layer</strong></p>\r\n<p><strong>DbContext --&gt; layer.</strong></p>\r\n",
+    "PostedDate": "2012-07-14T15:17:41.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

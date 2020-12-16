@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "173884",
+    "ThreadId": "51833",
+    "Html": "The HorizontalScrollBar is disabled when there is no data in DataGrid.<br>\r\nTo view the columns out of window, we must drag the Horizontal Scroll Bar.<br>\r\nHow to solve this problem?<br>\r\n<br>\r\n&lt;Window x:Class=&quot;WpfApplication12.Window1&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp;&nbsp; Title=&quot;Window1&quot; Height=&quot;300&quot; Width=&quot;300&quot; xmlns:my=&quot;http://schemas.microsoft.com/wpf/2008/toolkit&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;my:DataGrid Margin=&quot;10,36,26,60&quot; Name=&quot;dataGrid1&quot; AutoGenerateColumns=&quot;False&quot; HorizontalScrollBarVisibility=&quot;Visible&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;my:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;my:DataGridTextColumn Header=&quot;DataGridTextColumn&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;my:DataGridTextColumn Header=&quot;DataGridTextColumn&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;my:DataGridTextColumn Header=&quot;DataGridTextColumn&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;my:DataGridTextColumn Header=&quot;DataGridTextColumn&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/my:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/my:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n&lt;/Window&gt;<br>\r\n",
+    "PostedDate": "2009-03-31T06:12:05.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174062",
+    "ThreadId": "51833",
+    "Html": "Hi Jetsun,<br>\r\n<br>\r\nCan you tell us more about the scenario you are trying to enable to help us determine if there is a work-around?  In the meantime we are tracking this bug and will investigate the root cause.<br>\r\n<br>\r\nAlexis\r\n",
+    "PostedDate": "2009-03-31T13:28:10.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174152",
+    "ThreadId": "51833",
+    "Html": "In our application, there are a lot of columns in the DataGrid.<br>\r\nBecause of the limitation of the size of window, some left-side columns are invisible.<br>\r\nUser need to drag the horizontal scroll bar the make the hidden columns visible.<br>\r\n<br>\r\nAs one special scenario, we also test the case that there is no data in DataGrid.<br>\r\nWe found the Horizontal Scroll Bar is disabled, <br>\r\nthen user cannot view the headers of the hidden columns&nbsp; by dragging the scroll bar.<br>\r\n",
+    "PostedDate": "2009-03-31T19:52:34.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290130",
+    "ThreadId": "51833",
+    "Html": "<p>Did you find a solution or workaround for this issue?</p>",
+    "PostedDate": "2010-02-12T07:32:58.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

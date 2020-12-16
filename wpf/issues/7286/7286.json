@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Thank you for the code sample.",
+    "ClosedDate": "2009-02-18T18:37:13.7-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, Greg Schechter and Gerhard Schneider. Thanks for your good job.\n \nI rewrote your ShaderBuildTask project by using my ID3DXEffectCompiler managed wrapper, which is fully written in C#.\nI attached the code.\n \nThis implementation have reflection capability like Managed DirectX's Effect class.\nSuch capability is useful when you generate C# code from HLSL files.\nI can offer my managed wrapper under Ms-PL.",
+    "LastUpdatedDate": "2013-05-16T05:31:20.473-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-08-12T19:11:31.17-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Managed Wrapper for ID3DXEffectCompiler",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7286
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2009,
+      "FileName": "ShaderBuildTask.zip",
+      "DownloadUrl": ".\\2009"
+    }
+  ],
+  "Comments": []
+}

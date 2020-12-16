@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "179504",
+    "ThreadId": "53342",
+    "Html": "Hi there<br>\r\n<br>\r\nIt appeared to me that the WPF ribbon creates memory leaks when used with default RibbonCommands and code-behind event listeners. I wrote about it <a href=\"http://www.hardcodet.net/2009/04/wpf-ribboncommand-memory-leak\">here</a> and published a sample along with a possible solution, but it would be nice to get a feedback on the issue from the team - especially in case my workaround is not the proposed one.<br>\r\n<br>\r\n<a href=\"http://www.hardcodet.net/2009/04/wpf-ribboncommand-memory-leak\">http://www.hardcodet.net/2009/04/wpf-ribboncommand-memory-leak</a><br>\r\n<br>\r\nCheers,<br>\r\nPhilipp<br>\r\n",
+    "PostedDate": "2009-04-15T03:27:10.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518577",
+    "ThreadId": "53342",
+    "Html": "\r\n<p>Has this issued been fixed on the october '10&nbsp;release? Anyone knows?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2010-11-07T23:50:47.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "188377",
+    "ThreadId": "55781",
+    "Html": "<p>Hi.</p>\r\n<p>I'm a novice student of WPF wanting to ask a question or two.</p>\r\n<p>I have a program that calls out data from a webservice over the internet, and i am wondering if i can call the webservice using a WPF frontend?</p>\r\n<p>How can i do that? Can i do it in Expression Blend?</p>",
+    "PostedDate": "2009-05-08T23:39:34.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188551",
+    "ThreadId": "55781",
+    "Html": "<p>Hi seaotter84,</p>\r\n<p>Yes, you can call a webservice using WPF, though I'm not sure if there are tools for this in Blend.&nbsp; You're probably best off asking general WPF questions like this one&nbsp;on the MSDN forum: <a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/threads\">http://social.msdn.microsoft.com/Forums/en-US/wpf/threads</a>.&nbsp; The moderators on this forum are specifically focused on WPF controls (in particular, the ones in the WPF Toolkit and the other components that we ship through this site), but there is a broader group of WPF team members and experts who browse the MSDN forums and are more likely to be able to help you with this sort of question.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-05-09T18:19:15.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

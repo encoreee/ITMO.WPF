@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "132026",
+    "ThreadId": "39774",
+    "Html": "Hi <br>\r\n<br>\r\nis there a way to programatically scroll the grid that it displays a certain row at the top of the grid, i.e as the first dislayed row. <br>\r\n<br>\r\n<strong>DataGrid.SrollIntoView(dataGrid.Items[index])</strong> <br>\r\n<br>\r\nseems not to do the job as it might place the row &quot;index&quot; at the bottom of the view or does not scroll at all if the row is already in view. <br>\r\n<br>\r\n<br>\r\nThanks for any hint. \r\n",
+    "PostedDate": "2008-11-12T07:58:28.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

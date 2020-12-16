@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "161452",
+    "ThreadId": "48372",
+    "Html": "System.Windows.Data Error: 39 : BindingExpression path error: 'FirstName' property not found on 'object' ''Object' (HashCode=6503226)'. BindingExpression:Path=FirstName; DataItem='Object' (HashCode=6503226); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')<br>\r\n<br>\r\nI get this error message logged to the output window at run time.&nbsp; I can't see anything wrong with the runtime behavior.&nbsp; Everything seems to be working fine with the DataGrid.&nbsp; Is this just an internal exception that gets handled automatically, but logged when the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoGenerateColumns=&quot;True&quot; is used?<br>\r\n",
+    "PostedDate": "2009-02-24T07:11:45.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161558",
+    "ThreadId": "48372",
+    "Html": "This looks to be the binding on the new row.  This is an affect of the new row being of type object.  If you don't need the new row you can set CanUserAddRows to false and you shouldn't see this binding error.\r\n",
+    "PostedDate": "2009-02-24T11:12:27.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161567",
+    "ThreadId": "48372",
+    "Html": "Could be since it only happens once.&nbsp; Though the collection I am binding to the datagrid itemssource is an ObservableCollection&lt;Person&gt;.&nbsp; Perhaps when it first makes the extra row, that row isn't associated with any Person yet and that is what the error is about.<br>\r\n<br>\r\nIt is just in the output window, so maybe I just shouldn't worry about it.&nbsp; Everything else seems to be going fine with it now.<br>\r\n<br>\r\nI WANT that extra row.&nbsp; It's taken me about a week to figure out how to make it BE THERE :-)&nbsp; (Just starting with .Net, DataGrid, Delphi Prism and Eco 5.&nbsp; Lots to learn)&nbsp; It took me a while to figure out what I had to do so that CanUserAddRows wasn't changed from the True that was in the Xaml to False that it had at runtime.&nbsp; Now I've got it figured out.<br>\r\n<br>\r\nExcept for that runtime output message that was worrying me.<br>\r\n<br>\r\nIf you have something to do about it, maybe you can make it so that if the binding can't be done on the &quot;extra row&quot;, it should just ignore it because that is okay.<br>\r\n",
+    "PostedDate": "2009-02-24T11:33:58.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161593",
+    "ThreadId": "48372",
+    "Html": "do you have any sorting or similar?",
+    "PostedDate": "2009-02-24T12:10:49.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161601",
+    "ThreadId": "48372",
+    "Html": "snovik,<br>\r\n<br>\r\n&nbsp;&nbsp; Not sure what you mean.&nbsp; For the error?&nbsp; No the error comes out as soon as the form is displayed.&nbsp; For the DataGrid?&nbsp; Yes, I can click on the column headers and sorting happens (which I am very pleased with because I think that was an issue with prior Eco versions) \r\n",
+    "PostedDate": "2009-02-24T12:34:05.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "161787",
+    "ThreadId": "48372",
+    "Html": "I had a similar error on a collectio with manual sorting which was sorted on a non-existent property",
+    "PostedDate": "2009-02-24T23:25:32.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "190434",
+    "ThreadId": "48372",
+    "Html": "<p>This is just because of the new row and I don't know why this row is expected as type of Object. Object type does not have 'FirstName' property of course. I think framework is smart enough to know the exactly type of items&nbsp;and please fix this annoying bug.</p>",
+    "PostedDate": "2009-05-14T13:22:16.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203448",
+    "ThreadId": "48372",
+    "Html": "<p>I agree with firedog067 - it doesn't make sense to let this error bubble up since by default the &quot;new row&quot; is enabled! Please fix it.</p>",
+    "PostedDate": "2009-06-19T10:58:14.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

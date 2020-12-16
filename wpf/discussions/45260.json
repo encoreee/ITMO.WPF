@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "150934",
+    "ThreadId": "45260",
+    "Html": "Hi All,<br>\r\n<br>\r\nHow do I control the keyboard navigation in the DataGrid control? I currently have 7 columns. First 3 read only, next 2 editable, and last 2 read only again.<br>\r\nCurrently when a user tabs, focus goes to the next cell in the row whether it is read only or not. If on the last editable cell, I want the focus to jump to the first editable cell in the next row.<br>\r\n<br>\r\nI would also like to achieve this behaviour with the Enter key, but currently Enter goes one row down. I would like Enter to behave the same as Tab.<br>\r\n<br>\r\nAny ideas?<br>\r\n<br>\r\nTIA<br>\r\n",
+    "PostedDate": "2009-01-26T06:36:55.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151057",
+    "ThreadId": "45260",
+    "Html": "Create a style for DataGridCell as<br>\r\n<br>\r\n            &lt;Style TargetType=&quot;{x:Type dg:DataGridCell}&quot; x:Key=&quot;MyCellStyle&quot;&gt;<br>\r\n                &lt;Setter Property=&quot;IsTabStop&quot; Value=&quot;False&quot;&gt;&lt;/Setter&gt;<br>\r\n            &lt;/Style&gt;<br>\r\n<br>\r\nand use it as <br>\r\n<br>\r\n    &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; ... /&gt;<br>\r\n<br>\r\nThis strategy may not work with TemplateColumns where inner controls may have tab stops for themselves in which case the template definition must have IsTabStop set to false for all such inner controls.<br>\r\n<br>\r\nIf this solution seems lazy then the other way of doing it is to handle key down event on DataGrid for Tab Key and implement your own behavior (this could get pretty complicated).\r\n",
+    "PostedDate": "2009-01-26T12:05:11.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151078",
+    "ThreadId": "45260",
+    "Html": "Thanks so much VamseeP. This worked 100% and also works 100% WITH TempalteColumns.<br>\r\n<br>\r\nBrilliant solution. Thanks again!!\r\n",
+    "PostedDate": "2009-01-26T13:03:46.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156740",
+    "ThreadId": "45260",
+    "Html": "This solution does not work with me: When I press the enter key, I want the next cell to enter the edit mode and not the cell below it<br>\r\n<br>\r\n I would like Enter to behave the same as Tab.<br>\r\n",
+    "PostedDate": "2009-02-11T10:52:04.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156754",
+    "ThreadId": "45260",
+    "Html": "Hi AAKLebanon,<br>\r\n<br>\r\nThe default behavior of enter key on DataGrid is to commit the cell (if it is edting) and move to the same cell of next row. This is similar to what we have in excel and winforms datagrid.<br>\r\n<br>\r\nHowever if one needs custom behavior, one can always get it by hooking PreviewKeyDown event handler on DataGrid and implement the needed custom behavior. In this case you can take the source code from DataGrid.OnKeyDown, DataGrid.OnTabKeyDown, DataGrid.OnArrowKeyDown and DataGrid.OnEnterKeyDown methods as reference to implement your behavior. (Note that these methods use some private stuff but you should be able to get them through public API too)\r\n",
+    "PostedDate": "2009-02-11T11:38:39.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156883",
+    "ThreadId": "45260",
+    "Html": "Thinks for the quick reply.<br>\r\n<br>\r\nI love the idea of  &quot;zero code behind&quot;, So this lead me to inherit from the data grid and override OnKeyDown, so in case of Key.Enter I can call OnTabKeyDown instead...<br>\r\n<br>\r\nhowever the problem is that OnTabKeyDown is private. if it is protected I think that I can solve my problem in my way...<br>\r\n<br>\r\nwhat you think about my solution ? and there is a plan to make OnTabKeyDown, OnEnterKeyDown or OnArrowKeyDown protected (or overridables) ?\r\n",
+    "PostedDate": "2009-02-11T21:13:55.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182888",
+    "ThreadId": "45260",
+    "Html": "Is there also a way to skip the button?&nbsp; See my example below:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Style TargetType=&quot;{x:Type dg:DataGridCell}&quot; x:Key=&quot;MyCellStyle&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;Background&quot; Value=&quot;Transparent&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;Transparent&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;0&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Setter Property=&quot;IsTabStop&quot; Value=&quot;False&quot;&gt;&lt;/Setter&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Style&gt;<br>\r\n<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;&quot; Binding=&quot;{Binding Path=TimeID}&quot; Visibility=&quot;Hidden&quot;&nbsp;&nbsp;&nbsp; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;Route Priority&quot; Binding=&quot;{Binding Path=RoutePriority}&quot; MinWidth=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;Job Address&quot; Binding=&quot;{Binding Path=JobAddress}&quot; MinWidth=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;Permit #&quot;&nbsp; Binding=&quot;{Binding Path=PermitNumber}&quot; MinWidth=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;Inspection Type&quot;&nbsp; Binding=&quot;{Binding Path=TimeOptionEntry}&quot; MinWidth=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;Start Time&quot;&nbsp; Binding=&quot;{Binding Path=StartTime}&quot; MinWidth=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTextColumn CellStyle=&quot;{StaticResource MyCellStyle}&quot; Header=&quot;End Time&quot;&nbsp; Binding=&quot;{Binding Path=EndTime}&quot; MinWidth=&quot;100&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn&nbsp; Header=&quot;&quot; Visibility=&quot;Visible&quot; MinWidth=&quot;50&quot; MaxWidth=&quot;50&quot; x:Name=&quot;SelectedGridItem&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button&nbsp; Content=&quot;Delete&quot; KeyboardNavigation.IsTabStop=&quot;False&quot; Foreground=&quot;Black&quot; FontSize=&quot;12&quot; VerticalAlignment=&quot;Center&quot; MaxWidth=&quot;50&quot; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click=&quot;VoidButton_Click&quot; Tag=&quot;jobid&quot; Uid=&quot;{Binding Path=TimeID}&quot;&nbsp; Visibility=&quot;Visible&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dg:DataGridTemplateColumn&gt;<br>\r\n",
+    "PostedDate": "2009-04-23T10:07:57.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

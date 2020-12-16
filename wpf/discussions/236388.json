@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "528276",
+    "ThreadId": "236388",
+    "Html": "\r\n<p>I'm trying to implement a custom axis for the chart control, but am inhibited by the fact that OrientedPanel is internal. Yes, I can just modify the source, but I'm wondering why this class was made internal in the first place, and how developers are expected\r\n to create custom axes <em>without </em>modifying the original source. Same goes for ObjectPool&lt;T&gt;, although I can make do without that one.</p>\r\n<p>My specific use case is I'm creating a LightweightCategoryAxis that only creates AxisLabels if it's told to. This allows me to use a CategoryAxis even in cases where there are too many categories to legibly label. Setting label visibility to collapsed avoids\r\n the rendering of the labels, but it does not avoid their <em>creation</em>, which is causing performance issues.</p>\r\n<p>Any thoughts? Is my only <em>option </em>here to resort to a custom build of WPF TK?</p>\r\n",
+    "PostedDate": "2010-11-29T07:11:53.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

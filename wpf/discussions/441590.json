@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1035762",
+    "ThreadId": "441590",
+    "Html": "Hi,\r<br />\nWhen i use CallMethodAction in MVVM-WPF i get this error: &quot;CallMethodAction&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/expression/2010/interactions\" rel=\"nofollow\">http://schemas.microsoft.com/expression/2010/interactions</a>&quot;.\r<br />\n<br />\nknowing that i include the following namespaces in my xaml:<br />\nxmlns:i=&quot;clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity&quot; xmlns:ei=&quot;<a href=\"http://schemas.microsoft.com/expression/2010/interactions\" rel=\"nofollow\">http://schemas.microsoft.com/expression/2010/interactions</a>&quot;\r<br />\n<br />\nAnd if it is for SL only, what is the equivalent in WPF<br />\n",
+    "PostedDate": "2013-04-25T10:55:03.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

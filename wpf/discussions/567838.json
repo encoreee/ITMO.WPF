@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1306186",
+    "ThreadId": "567838",
+    "Html": "Hi,\r<br />\n<br />\nUsing the below code i could change the x and y axis intervals but the graph is not chaging based on that. I want the lineseries should change based on the intervals. Is that possible?\r<br />\n<br />\nXAML:\r<br />\n<br />\n &lt;wpfTool:Chart Name=&quot;mcChart&quot; DockPanel.Dock=&quot;Top&quot; DragLeave=&quot;Chart_DragLeave&quot; AllowDrop=&quot;True&quot; Width=&quot;500&quot; Height=&quot;500&quot; PreviewMouseWheel=&quot;mcChart_PreviewMouseWheel&quot; <br />\n<pre><code>           MaxHeight=&quot;500&quot; MaxWidth=&quot;500&quot;  PreviewDragLeave=&quot;mcChart_PreviewDragLeave&quot;&gt;\n        &lt;wpfTool:Chart.Axes&gt;\n            &lt;wpfTool:DateTimeAxis Name=&quot;XAxis&quot; Orientation=&quot;X&quot; ShowGridLines=&quot;True&quot; AllowDrop=&quot;True&quot; /&gt;\n            &lt;wpfTool:LinearAxis Name=&quot;YAxis&quot; Orientation=&quot;Y&quot;  ShowGridLines=&quot;True&quot; AllowDrop=&quot;True&quot; /&gt;\n        &lt;/wpfTool:Chart.Axes&gt;\n</code></pre>\n\n&lt;wpfTool:LineSeries Name=&quot;Line1&quot; IsSelectionEnabled=&quot;True&quot; <br />\n<pre><code>                ItemsSource=&quot;{Binding Path=Data1}&quot;\n                IndependentValuePath=&quot;Date&quot;\n                DependentValuePath=&quot;Value&quot;/&gt;\n        &lt;wpfTool:LineSeries Name=&quot;Line2&quot;\n                ItemsSource=&quot;{Binding Path=Data2}&quot;\n                IndependentValueBinding=&quot;{Binding Date}&quot;\n                DependentValueBinding=&quot;{Binding Value}&quot;/&gt;            \n    &lt;/wpfTool:Chart&gt;\n</code></pre>\n\nXAML.cs: private void mcChart_PreviewMouseWheel(object sender, MouseWheelEventArgs e)<br />\n<pre><code>    {\n          if (e.Delta &gt; 0)\n        {\n            XAxis.Interval -= 0.5;\n            YAxis.Interval -= 0.5;\n        }\n        else\n        {\n            XAxis.Interval += 0.5;\n            YAxis.Interval += 0.5;\n        }\n    }</code></pre>\n\n",
+    "PostedDate": "2014-09-18T23:08:18.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

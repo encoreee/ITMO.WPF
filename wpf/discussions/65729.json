@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "223617",
+    "ThreadId": "65729",
+    "Html": "<p>Help!!</p>\r\n<p>How in the world can I change the font color of the datagrid's column header font.&nbsp; I am working in Expresion 3 and I have made it into editing the template of the DataGridColumnHeaderStyle.&nbsp; When I get down to the ContentPresenter inside the template, containting the text 'DataGridColumnHeader', I can't find any way to edit the font color.&nbsp; I've searched tons of newsgroups, web videos, and other with no luck.&nbsp; I'm sure its something simple, and that I have completely overlooked, but I can't find out how.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Please help!&nbsp; BTW, I am fairley new to Expressoin and WPF, but have been messing with it a lot recently and watching a lot of web vids on it.</p>\r\n<p>Thanks in advance.</p>\r\n<p>-Tim</p>",
+    "PostedDate": "2009-08-14T10:59:23.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

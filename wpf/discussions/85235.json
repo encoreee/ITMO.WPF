@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "290374",
+    "ThreadId": "85235",
+    "Html": "<p>Hi All,</p>\r\n<p>Does the behaviour of&nbsp;FEB release WPF Toolkit of nearly the same as VS2010 RC?</p>\r\n<p>&nbsp;</p>\r\n<p>Tony</p>",
+    "PostedDate": "2010-02-12T20:43:49.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419618",
+    "ThreadId": "85235",
+    "Html": "<p>I would also be quite interested in knowing the answer to this question.</p>\r\n<p>Specifically, what differences (if any) are there between the February WPF Toolkit version of the DataGrid and the version that will be in Visual Studio 2010 RTM?</p>\r\n<p>Thanks in advance.</p>\r\n<p>Ian</p>",
+    "PostedDate": "2010-03-18T02:28:34.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "133607",
+    "ThreadId": "40264",
+    "Html": "Hi,<div><br></div><div>first of all I apologise if this thread has already been created, I have not managed to find it as yet.</div><div><br></div><div>We are currently reviewing the new DataGrid and understand its DataBinding fundamentals, however we have a case where this approach is not sufficiently performant.  Is there currently a method of populating the grid manually?</div><div><br></div><div>To give an idea of our situation, we have a Chart control that can conditionally display its underlying data within a DataGrid, previously we were using WindowsFormHost in conjuntion with the Forms DataGrid which was pretty quick but not so neat when resizing, moving  etc.  The Chart can display in the region of 700 TimeSeries each with at least 180 value points, which would obviously have to be shown within the DataGrid if requested.  When using the DataBound approach this is horribly slow, both for the initial display of the Grid and when scrolling vertically.</div><div><br></div><div>I would value any assistance using this new control.</div><div><br></div><div><br></div>",
+    "PostedDate": "2008-11-19T03:02:50.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133716",
+    "ThreadId": "40264",
+    "Html": "Did you try setting EnableColumnVirtualization property to true on DataGrid.\r\n",
+    "PostedDate": "2008-11-19T11:12:10.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133722",
+    "ThreadId": "40264",
+    "Html": "Yes, EnableRowVirtualization should be true by default, and as Vamsee mentioned, you can turn on Column Virtualization by setting EnableColumnVirtualization to true.  If this doesn't solve your problem, you can try your idea of populating the grid manually by adding unbound rows and columns to the DataGrid.  This thread contains an example of how to do so: <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39976\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39976</a>\r\n",
+    "PostedDate": "2008-11-19T11:34:25.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133875",
+    "ThreadId": "40264",
+    "Html": "<div><br></div><div>Many thanks to you both, it certainly improves performance.</div><div><br></div><div>I'm still getting to grips with this control...</div>",
+    "PostedDate": "2008-11-20T01:57:03.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

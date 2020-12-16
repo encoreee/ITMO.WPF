@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "261913",
+    "ThreadId": "76594",
+    "Html": "<p>Hi , I am not sure if any one else experienced this problem but I am having trouble with getting the quick access toolbar on my ribbon control working when I am working in <strong>dual screen mode</strong>. The quick access tool bar works normally when i have the ribbon control open in my main monitor but when I drag it to the secondary monitor it just stops working. I have no clue on how to fix this issue and would appreciate any feedback on this problem. I am using the following theme for the ribbon control - &lt;ResourceDictionary Source=&quot;/RibbonControlsLibrary;component/Themes/Office2007Black.xaml&quot;/&gt;.&nbsp;</p>\r\n<p>I am currently running vista and the surprising thing is when I have my windows theme set to classic and have the ribbon control window open in my secondary monitor the minimize, maximize and close buttons also dont seem to work along with the quick access toolbar. The application menu button on the ribbon control and all other buttons seem to function normally. &nbsp;</p>",
+    "PostedDate": "2009-11-30T07:42:42.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263598",
+    "ThreadId": "76594",
+    "Html": "<p>I was just logging in to report the same thing!</p>\r\n<p>I'll bet you have your secondary monitor configured to be on the left of the primary. Swap them around, so that the secondary is on the right, and it'll work. Strange but true!!</p>",
+    "PostedDate": "2009-12-04T04:55:47.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263709",
+    "ThreadId": "76594",
+    "Html": "<p>Thanks Tim , that actually worked. &nbsp;I hope they end up fixing this issue in the next version ..&nbsp;</p>",
+    "PostedDate": "2009-12-04T09:37:42.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

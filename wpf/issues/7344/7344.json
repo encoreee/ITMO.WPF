@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "The current behavior is by design. Please refer to the workaround suggested in the comments.",
+    "ClosedDate": "2009-02-18T11:25:35.5-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've merged the resources from PresentationFramework.Aero.dll in App.xaml, and added the DataGrid to a window, along with other controls.\n \nWhen running on XP, all other controls appear with AeroNormalColor theme, while the grid appears on Classic theme.\nHow to address this issue?",
+    "LastUpdatedDate": "2013-05-16T05:31:20.077-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-08-19T05:36:28.62-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid theme on XP with merged resources",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7344
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2036,
+      "FileName": "ForcedTheme.rar",
+      "DownloadUrl": ".\\2036"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "If you look through the source of DataGrid, you will find that it contains seven themes with \"Classic\" as the default.  In order to change the theme, you need to merge the appropriate theme with your resource dictionary in much the same way as you merged the Aero theme.  Consult msdn (http://msdn.microsoft.com/en-us/library/aa350178.aspx) for more information about how to reference resources as my example applies only to XBAP applications.\r\n<ResourceDictionary.MergedDictionaries>\r\n\t<ResourceDictionary Source=\"pack://application:,,,/WPFToolkit;component/Themes/Aero.NormalColor.xaml\" />\r\n</ResourceDictionary.MergedDictionaries>\r\n\r\nThe included themes are as follows:\r\nAero.NormalColor.xaml\r\nClassic.xaml\r\nGeneric.xaml\r\nLuna.HomeStead.xaml\r\nLuna.Metallic.xaml\r\nLuna.NormalColor.xaml\r\nRoyale.NormalColor.xaml",
+      "PostedDate": "2008-09-15T16:53:15.217-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T11:25:35.5-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:50.963-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:20.077-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

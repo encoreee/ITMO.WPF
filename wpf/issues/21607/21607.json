@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using the WPF Toolkit line chart, as sample found [here](http://www.codeproject.com/Articles/196502/WPF-Toolkit-Charting-Controls-Line-Bar-Area-Pie-Co?fid=1626926&df=90&mpp=25&noise=3&prof=False&sort=Position&view=Normal&spc=Relaxed&fr=26#xx0xx)\n\nIf I use it in a test project (brand new WPF project), it works correctly, but if I use it in my project, it raises me exceptions System.ExecutionEngineException or FatalExecutionEngineError. \nI need to add values into the line chart after some calculation, so I pass data as follows:\n\n\n```\nPointCollection pc = new PointCollection();\n            pc.Add(new Point(1.5, 2.9));\n            pc.Add(new Point(12.5, 22.9));\n            pc.Add(new Point(41.5, 26.9));\n            this.lineseries.ItemsSource = pc;\n```\nand XAML is as follows:\n```\n<chartingToolkit:Chart Name=\"chart\" HorizontalAlignment=\"Left\" Margin=\"24,67,0,0\" Title=\"Chart Title\" VerticalAlignment=\"Top\" Width=\"425\" Height=\"225\">\n            <chartingToolkit:LineSeries x:Name=\"lineseries\" DependentValuePath=\"X\" IndependentValuePath=\"Y\" />\n        </chartingToolkit:Chart>\n```\nNotice that, in my project, I have other referenced dlls like Xceed.Wpf.Toolkit... Notice also that exception is raised randomly, sometimes before points are shown and sometimes after point visualization on chart.\nIs there some way to solve this?",
+    "LastUpdatedDate": "2014-12-15T08:03:09.293-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2014-12-15T08:03:09.293-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "exception in wpf toolkit line chart usage",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21607
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

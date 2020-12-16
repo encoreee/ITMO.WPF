@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "269831",
+    "ThreadId": "78816",
+    "Html": "<p>Hello,</p>\r\n<p>I'm still new to WPFs databindingcapabilities. I'm wondering if it's possible to a datasource bind with conditions, it should be I think, but how?</p>\r\n<p>What I have is a GUI with a dropdown to the right containing objects representing all languages available for a document. These objects can be checked and have a property called &quot;IsChecked&quot;. In the middle is a &quot;document&quot;. To the right is a dropdown containing the languages for a PART of the document.</p>\r\n<p>What I want is the dropdown to the right to only contain objects that are checked in the left dropdown.</p>\r\n<p>My binding for the left dropdown looks like this today:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>ItemsSource=<span style=\"color:#A31515\">&quot;{Binding Source={x:Static Application.Current}, Path=Areas.Values}&quot;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>What I would like to do is something like this:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>ItemsSource=<span style=\"color:#A31515\">&quot;{Binding Source={x:Static Application.Current}, Path=Areas.Values.Where(p =&gt; p.IsChecked == true)}&quot;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Is it possible to have condition in the binding or do I have to make a template of some sort that I later on use as a datasource?</p>\r\n<p>/Rob</p>",
+    "PostedDate": "2009-12-21T23:58:27.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "269902",
+    "ThreadId": "78816",
+    "Html": "<p>I think it's no possible.</p>\r\n<p>Anyway there is another way to do. Create a property in your Areas class that returns checked values or make observable collection that populates checked values</p>",
+    "PostedDate": "2009-12-22T05:15:27.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

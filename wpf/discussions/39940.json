@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "132559",
+    "ThreadId": "39940",
+    "Html": "Hi<br>\r\nWhat is wrong with thi code:<br>\r\n<br>\r\n&lt;Window x:Class=&quot;WizualizacjaWentylatora.Kal&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;<br>\r\n&nbsp;&nbsp;&nbsp; xmlns:dg=&quot;clr-namespace:Microsoft.Windows.Controls;assembly=WpfToolkit&quot;<br>\r\n&nbsp;&nbsp;&nbsp; Title=&quot;Kalendarz&quot; Height=&quot;300&quot; Width=&quot;300&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dg:Calendar x:Name=&quot;name&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n&lt;/Window&gt;<br>\r\n<br>\r\nI get an error: <br>\r\n&nbsp;&nbsp;&nbsp; Method not found: 'Void System.Windows.Media.Animation.Storyboard.SetTarget(System.Windows.DependencyObject, System.Windows.DependencyObject)'. \r\n",
+    "PostedDate": "2008-11-14T04:26:28.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137487",
+    "ThreadId": "39940",
+    "Html": "I can't seem to repro this error.  Do you get this at compile-time or at runtime?\r\n",
+    "PostedDate": "2008-12-03T16:48:40.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137554",
+    "ThreadId": "39940",
+    "Html": "I get this error right after a add references to: WPFToolkit, WPFToolkit.Design and WPFToolkit.VisualStudio.Design to the project with code how above. This is an error in XAML Designer in Visual Studio at design time. At compile-time a get an error about InitializeComponent method. This is a some info about designer error:<br>\r\n<br>\r\n&lt;CUT&gt;<br>\r\nMethod not found: 'Void System.Windows.Media.Animation.Storyboard.SetTarget(System.Windows.DependencyObject, System.Windows.DependencyObject)'.<br>\r\n&nbsp;&nbsp; at System.Windows.VisualStateManager.GenerateDynamicTransitionAnimations(FrameworkElement root, VisualStateGroup group, VisualState newState, VisualTransition transition)<br>\r\n&nbsp;&nbsp; at System.Windows.VisualStateManager.GoToStateInternal(Control control, FrameworkElement element, VisualStateGroup group, VisualState state, Boolean useTransitions)<br>\r\n&nbsp;&nbsp; at System.Windows.VisualStateManager.GoToState(Control control, String stateName, Boolean useTransitions)<br>\r\n&nbsp;&nbsp; at Microsoft.Windows.Controls.VisualStates.GoToState(Control control, Boolean useTransitions, String[] stateNames)<br>\r\n&nbsp;&nbsp; at Microsoft.Windows.Controls.Primitives.CalendarDayButton.ChangeVisualState(Boolean useTransitions)<br>\r\n&nbsp;&nbsp; at Microsoft.Windows.Controls.Primitives.CalendarDayButton.OnApplyTemplate()<br>\r\n&nbsp;&nbsp; at System.Windows.FrameworkElement.ApplyTemplate()<br>\r\n&nbsp;&nbsp; at System.Windows.FrameworkElement.MeasureCore(Size availableSize)<br>\r\n&nbsp;&nbsp; at System.Windows.UIElement.Measure(Size availableSize)<br>\r\n&nbsp;&nbsp; at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)<br>\r\n&nbsp;&nbsp; at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)<br>\r\n......<br>\r\n&lt;CUT&gt;<br>\r\nPlease help.<br>\r\n",
+    "PostedDate": "2008-12-03T23:57:23.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137823",
+    "ThreadId": "39940",
+    "Html": "Ok I'm able to get the compile-time error about the InitializeComponent method now.  Could you please go through your entire VS solution and make sure that all namings and namespaces are consistent.  According to the code you pasted above, your project name should be &quot;WizualizacjaWentylatora&quot;, this name should be reflected in the App.xaml, App.cs, Kal.xaml, Kal.cs, etc.  You're getting this InitializeComponent method error because the first line in your XAML, &quot;x:Class='WizualizacjaWentylatora.Kal'&quot; is looking for a Kal class in the WizualizacjaWentylatora namespace.<br>\r\n<br>\r\nSo let's try to isolate this problem, try commenting out any code you've written in the Kal.cs class, then ensure the naming is consistant throughout your VS solution and lets compile again.  Let me know how this works out and we can go from there.<br>\r\n<br>\r\nHope that helps,<br>\r\nSaied\r\n",
+    "PostedDate": "2008-12-04T14:15:38.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139243",
+    "ThreadId": "39940",
+    "Html": "I still get an error, but now at run-time: Method not found: 'Void System.Windows.Media.Animation.Storyboard.SetTarget(System.Windows.DependencyObject, System.Windows.DependencyObject)'. When a comment <br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--&lt;dg:Calendar x:Name=&quot;name&quot;/&gt;--&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n<br>\r\nit works perfect. Any suggestions?<br>\r\n",
+    "PostedDate": "2008-12-10T03:59:05.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140196",
+    "ThreadId": "39940",
+    "Html": "I'm going to dig deeper into this.  For now you can try this, create a new WPF project in Visual Studio and add the WPFToolKit references.  Then paste in only the snippet you posted in the beginning of this discussion and make sure than you've renamed the &quot;x:Class&quot; attribute accordingly.  If you run this project and still get the &quot;Method not found&quot; error, it is most likely that you have not yet installed the <a href=\"http://www.microsoft.com/downloads/details.aspx?FamilyID=ab99342f-5d1a-413d-8319-81da479ab0d7&DisplayLang=en\">.NET Framework 3.5 SP1</a>.  What is the latest version of the .NET Framework installed on your machine?\r\n",
+    "PostedDate": "2008-12-12T15:56:38.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270374",
+    "ThreadId": "39940",
+    "Html": "<p>I had the same issue, pl. re-install .Net 3.5 <strong>SP1</strong> and you should see no issues</p>",
+    "PostedDate": "2009-12-23T10:51:14.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

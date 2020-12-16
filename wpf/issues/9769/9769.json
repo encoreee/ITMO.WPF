@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have to Rich Text Boxes in a Row Details Template.  One of the boxes is editable and one is not.  They work fine in the January release, but when I upgraded to the March release it throws an \"InvalidOperationException : FlowDocument is not a visual or visual3D\" when you click on either box.  They display fine and show the correct value but if you click on it it throws the exception",
+    "LastUpdatedDate": "2013-02-21T18:41:21.19-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-04-15T13:49:23.89-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RichTextBox in DataGridRowDetailsTemplate throws Exception",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9769
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "185434",
+    "ThreadId": "54934",
+    "Html": "<span style=\"font-size:13px\">\r\n<p>grid starts with left part (probably for row numbers? also header has small column 0)<br>\r\ni need to hide it<br>\r\n(one moment i thought it will be via CellsPanelHorizontalOffset but there is private set)<br>\r\nthanks<br>\r\nt!</p>\r\n</span>\r\n",
+    "PostedDate": "2009-04-30T03:16:50.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185439",
+    "ThreadId": "54934",
+    "Html": "finaly found it's <span style=\"font-size:13px\">RowHeaderActualWidth</span><br>\r\nis there chance find such info into any doc or tutorial?<br>\r\ni always start next long source search with any other parameter\r\n",
+    "PostedDate": "2009-04-30T03:28:51.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

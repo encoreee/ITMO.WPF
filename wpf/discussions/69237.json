@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "235555",
+    "ThreadId": "69237",
+    "Html": "<p>Hi,</p>\r\n<p>I have a problem with two way binding on Minimum property of DateTimeAxis object. The code is:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">LineSeries.IndependentAxis</span><span style=\"color:Blue\">&gt;</span>\r\n                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DateTimeAxis</span> \r\n                            <span style=\"color:Red\">Orientation</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">X</span><span style=\"color:Black\">&quot;</span>\r\n                            <span style=\"color:Red\">Minimum</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Path=PowiekszenieMinimum2,Mode=TwoWay}</span><span style=\"color:Black\">&quot;</span>\r\n                            <span style=\"color:Red\">Maximum</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Path=PowiekszenieMaximum2,Mode=TwoWay}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span></pre>\r\n<pre><span style=\"color:Blue\">&nbsp;</span><span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">LineSeries.IndependentAxis</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n<pre><span style=\"color:#0000ff\"><br></span></pre>\r\n<pre><span style=\"color:#0000ff\"><div style=\"color:Black;background-color:White\"><pre> <span style=\"color:Blue\">object</span> _minimum2 = <span style=\"color:Blue\">null</span>;\r\n        <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">object</span> PowiekszenieMinimum2\r\n        {\r\n            <span style=\"color:Blue\">get</span>\r\n            {\r\n                <span style=\"color:Blue\">return</span> _minimum2;\r\n            }\r\n            <span style=\"color:Blue\">set</span>\r\n            {\r\n                _minimum2 = value;\r\n                OnPropertyChanged(<span style=\"color:#A31515\">&quot;PowiekszenieMinimum2&quot;</span>);\r\n            }\r\n        }\r\n        <span style=\"color:Blue\">object</span> _maximum2 = <span style=\"color:Blue\">null</span>;\r\n        <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">object</span> PowiekszenieMaximum2\r\n        {\r\n            <span style=\"color:Blue\">get</span>\r\n            {\r\n                <span style=\"color:Blue\">return</span> _maximum2;\r\n            }\r\n            <span style=\"color:Blue\">set</span>\r\n            {\r\n                _maximum2 = value;\r\n                OnPropertyChanged(<span style=\"color:#A31515\">&quot;PowiekszenieMaximum2&quot;</span>);\r\n            }\r\n        }\r\n</pre>\r\n</div>\r\n<br></span></pre>\r\n</div>\r\n<p>After load data to chart series, minimum and maximum property is set automatically on chart (they fit data), but it doesn't set PowiekszenieMinimum2 and PowiekszenieMaximum2. Why? What should I do to set those properties by two way binding? When I set Minimum property manually, binding works nice. Thx for help</p>\r\n<p>Dave</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-17T06:09:58.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235578",
+    "ThreadId": "69237",
+    "Html": "<p>I found that after load data to chart's series Minimum and Maximum properties are not set, but ActualMinimum and ActualMaximum are set. The problem is, i can't bind to them in XAML. Any idea?</p>",
+    "PostedDate": "2009-09-17T06:54:28.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236254",
+    "ThreadId": "69237",
+    "Html": "<p>ActualMaximum/ActualMinimum are DependencyProperties and therefore one should be able to bind to them. If you think about them like Width/ActualWidth, then that's probably the right way. Looking at what the code above is doing, I don't think that scenario would work for Width/ActualWidth, either. Maybe it would be possible to do things slightly differently?</p>",
+    "PostedDate": "2009-09-18T14:50:47.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "207174",
+    "ThreadId": "61098",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;&nbsp;&nbsp; Display text in ComboBox&nbsp;is a concatenated string from database table.&nbsp;The concatenated string&nbsp;(e.g. column1 (char(50))&nbsp;+ ' ' + column2) looks fine in SQL client. However it is messed up in ComboBox.&nbsp; Obviously it's caused by different Character width. Is there any way to make those aligned nicely? Thanks&nbsp;very much for help.</p>",
+    "PostedDate": "2009-06-30T11:08:17.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207225",
+    "ThreadId": "61098",
+    "Html": "<p>Hi Troy,</p>\r\n<p>Could you please send a screenshot and/or simple repro application?&nbsp; We're having trouble figuring out where the misalignment is happening.</p>\r\n<p>Thanks!<br>Samantha</p>",
+    "PostedDate": "2009-06-30T13:31:06.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207228",
+    "ThreadId": "61098",
+    "Html": "<p>Thanks for reply. I did a couple of screenshots but don't know how to send to you. Thanks</p>",
+    "PostedDate": "2009-06-30T13:45:08.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "207257",
+    "ThreadId": "61098",
+    "Html": "<p>You can either create an issue under the Issue Tracker (it allows you to attach things), or you can post them at an alternate URL (Flickr or whatever) and send a link.&nbsp; Thanks!</p>",
+    "PostedDate": "2009-06-30T14:38:57.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209645",
+    "ThreadId": "61098",
+    "Html": "<p>I see that you posted a picture on the Issue Tracker (<a href=\"http://wpf.codeplex.com/WorkItem/View.aspx?WorkItemId=10245\">http://wpf.codeplex.com/WorkItem/View.aspx?WorkItemId=10245</a>).&nbsp; Thanks for sending that.&nbsp; We took a look at this,&nbsp;but it's hard to tell what's going on without seeing your code - is there any way you could also attach a repro project to the Issue Tracker?&nbsp; Is this happening within a DataGrid or is just in a standalone ComboBox?&nbsp; How are you binding your ComboBox to the data?</p>\r\n<p>Thanks,<br>Samantha</p>",
+    "PostedDate": "2009-07-07T13:28:09.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

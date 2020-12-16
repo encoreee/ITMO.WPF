@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I bind a combo box to the fonts currently installed on a user's system by binding ItemsSource to System.Windows.Media.SystemFontFamilies and defining ItemsPanel as:\n \n<ComboBox.ItemsPanel>\n\t<ItemsPanelTemplate>\n\t\t<VirtualizingStackPanel />\n\t</ItemsPanelTemplate>\n</ComboBox.ItemsPanel>\n \nHowever, while this works for the normal WPF themes, when I use ExpressionDark (haven't tested the others) this doesn't work, and opening the combo box results in a long wait as WPF renders each font--the combo box also has an item template that previews each font:\n \n<ComboBox.ItemTemplate>\n\t<DataTemplate>\n\t\t<TextBlock\n\t\t\tText=\"{Binding}\"\n\t\t\tFontFamily=\"{Binding}\"\n\t\t\tFontSize=\"15\"\n\t\t\tHeight=\"20\" />\n\t</DataTemplate>\n</ComboBox.ItemTemplate>",
+    "LastUpdatedDate": "2013-02-21T18:40:33.343-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-05-22T07:38:08.54-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Combo box virtualization not working",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13268
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The answer :\r\nhttp://social.msdn.microsoft.com/forums/en-US/wpf/thread/edaaf8d9-a829-48f2-b728-e29aba947837",
+      "PostedDate": "2012-05-15T05:44:06.253-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:33.343-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

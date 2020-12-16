@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "455736",
+    "ThreadId": "216108",
+    "Html": "<p>Hi, I've&nbsp; recently added WPFToolkit reference to a WPF .NET 4.0 project. Now I&nbsp; am getting namespace collisions for VisualStateManager as it exists in .NET 4.0 (PresentationFramework) and WPFToolkit<br>Does anyone know a quick fix around instead of removing VSM and rebuilding the toolkit.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;</p>\r\n<p>Xoma</p>",
+    "PostedDate": "2010-06-15T10:20:02.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455964",
+    "ThreadId": "216108",
+    "Html": "<p>Hi Xoma,</p>\r\n<p>&nbsp;</p>\r\n<p>I had the exact same problem, unfortunately the only way to work around it for me was to use the system namespace.</p>\r\n<p>What happened here is that the toolkit was merged into .net 4.0 release and I think the later versions of the toolkit have changed the namespaces.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>",
+    "PostedDate": "2010-06-15T22:33:07.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

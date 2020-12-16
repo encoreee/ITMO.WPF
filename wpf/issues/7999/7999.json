@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Window1.xaml\n-----------------------\n<Window x:Class=\"WpfApplication1.Window1\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n\txmlns:tk=\"http://schemas.microsoft.com/wpf/2008/toolkit\"\n    Title=\"Window1\">\n\t<tk:DataGrid x:Name=\"dg\" />\n</Window>\n----------------------------\nWindow1.cs\n \nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Navigation;\nusing System.Windows.Shapes;\n \nnamespace WpfApplication1 {\n\tpublic partial class Window1 : Window {\n\t\tpublic Window1() {\n\t\t\tInitializeComponent();\n\t\t\tthis.dg.ItemsSource = new string[] { null };\n\t\t}\n\t}\n}\n-----------------------\n \n \nprivate void RestoreAttachedItemValue(DependencyObject objectWithProperty, DependencyProperty property)\n        {\n            object value;\n            if (_owner.ItemAttachedStorage.TryGetValue(Item, property, out value)) // should check on Item == null here, or in TryGetValue\n            {\n                objectWithProperty.SetValue(property, value);\n            }\n        }",
+    "LastUpdatedDate": "2013-02-21T18:41:45.233-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-11-10T06:02:31.19-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ArgumentNullException if there is a null value in collection, assigned to ItemsSource of DataGrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7999
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-18T18:24:41.803-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T18:24:42.663-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:45.233-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

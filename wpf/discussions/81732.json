@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "280669",
+    "ThreadId": "81732",
+    "Html": "<p>There appear to be a few different iterations of the&nbsp;WPF Ribbon control floating around within Microsoft.&nbsp; What's comfusing is that the internal folks are playing with much newer iterations of the control while the rest of us have to wait.</p>\r\n<p>Here's one example of a new variant of the control being used by Microsoft employees:</p>\r\n<p><a href=\"http://code.msdn.microsoft.com/getwpfcodebywillhan\">http://code.msdn.microsoft.com/getwpfcodebywillhan</a></p>\r\n<p>The version of the ribbon control referenced above appears to be much closer to the Office 2010 variant.</p>\r\n<p>Microsoft has also published the source code to the control as a result of work being published by Microsoft employees in the manner shown above.</p>\r\n<p>This makes things very confusing for outsiders and it also makes us feel like we're being held back when following official channels.</p>\r\n<p>I have another&nbsp;message on here regarding the lack of build instructions for the designer parts of WPF Toolkit.&nbsp; Other messages have been responded to but there's silence on this one.&nbsp; A simple &quot;looking into it&quot; would be nice.</p>\r\n<p>I don't mean to rant here, just that time is ticking and Microsoft products seem to be progressing quite nicely while development tools for the rest of us appear to be held back or are not given critical build instructions.&nbsp; Notice also that anyone using the above download will not have to sign up for the WPF Ribbon control while getting a newer version than what is published through more official channels.</p>\r\n<p>I realise there's a lot going on within the company, but we did start off nicely with all of the WPF related development releases put forward by Microsoft.&nbsp; Now releases seem to be lagging somewhat.</p>",
+    "PostedDate": "2010-01-22T10:29:10.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280810",
+    "ThreadId": "81732",
+    "Html": "<p>First, I want to say thanks for taking the time to give us feedback, and point out the inconsistency. We strive to find a balance between releasing code that is of high quality in terms of design, features, and free of bugs, doing so in a timely fashion,&nbsp;and still allowing us to gather feedback from the community to make improvements. Releasing the code we develop is an important step in the process, but one of many, and some of the steps, especially when viewed from the outside, can appear to take a long time.</p>\r\n<p>In this particular case, the sample shouldn't have included a version of the ribbon control, and I've taken steps to correct the situation. Our goal in having official releases is certainly not to hold people back, but to release quality controls that meet customer needs. I hope that helps clarify a little the situation, and if not definitely let us know!</p>\r\n<p>Thanks!</p>\r\n<p>Patrick</p>",
+    "PostedDate": "2010-01-22T17:37:06.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280906",
+    "ThreadId": "81732",
+    "Html": "<p>I was afraid this might be the outcome ... having a newer version of the WPF Ribbon pulled.&nbsp; When examining the post above, it was obvious that it represented a newer generation of code and seemed to be an attempt to incorporate 2010 look and feel characteristics.&nbsp; The quality of the above version of the control was ahead of what is currently available.</p>\r\n<p>In other words, we're now a bit further back having this release pulled.&nbsp; I appreciate the error that was made with the inclusion of the control given the requirement to sign up for access however this release did show that newer developments are in the works at Microsoft though there's no clarity on why this sort of thing is being held back.&nbsp; It's obviously not a quality concern issue given that those signing up for access to the WPF Ribbon have already acknowledged their acceptance of the fact that it is not a production grade solution.</p>\r\n<p>The two mistakes made in this instance are as follows:</p>\r\n<p>(1) The value of the sign up process was diminished as a result of creating an alternate channel for getting access to important Microsoft developments</p>\r\n<p>(2) Microsoft creates the appearance of an unfair advantage by not releasing interim builds used internally&nbsp;that are clearly of a higher grade than what is being made generally available.</p>\r\n<p>On point (2) I'm inclined to think that this is more a manifistation of organizational and administrative issues than any sort of intent.&nbsp; Companies big and small make mistakes regularly.&nbsp; When they are made, the best action is an equitable fix.</p>\r\n<p>The equitable fix here would be to release the current version of the control without a signup process.&nbsp; The cat is already out of the bag.</p>",
+    "PostedDate": "2010-01-23T08:15:12.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281225",
+    "ThreadId": "81732",
+    "Html": "<p>Hi Noemata,</p>\r\n<p>The sample was actually taken down because the samples&nbsp;page only requires accepting the MS-Pl license and not the Office Fluent UI license -- certainly a mistake we needed to correct.&nbsp; The Ribbon dll that the sample included was the exact same dll that has been publicly available for over a year; any changes to the look and feel would have been in the sample itself.&nbsp;</p>\r\n<p>Our team has been working full-time for over a year on the release of WPF 4.0 and unfortunately Ribbon development has been on hold.&nbsp; As frustrating as it is, there are no new Ribbon developments available internally or externally.&nbsp; We are very much looking forward to changing that!</p>\r\n<p>Hope that helps,</p>\r\n<p>Alexis</p>",
+    "PostedDate": "2010-01-24T18:11:43.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281380",
+    "ThreadId": "81732",
+    "Html": "<p>Hi Alexis,</p>\r\n<p>I disagree on the assertion made about the WPF Ribbon control that was pulled from the sample mentioned above based on a simple examination of the facts. &nbsp;The version number in the pulled sample is 1.0.0.0 whereas the version number on the official release is 3.5.31016.1. &nbsp;When running reflector on the newer variant of the control one can clearly see significant code changes. &nbsp;As previously stated, Microsoft has also leaked the source code to the official release of the WPF Ribbon control through other postings made by Microsoft employees (also recently pulled). &nbsp;Examining that code shows that the published version of the WPF Ribbon control that has been pulled contained significant updates from the original.</p>\r\n<p>The internal date stamp on the pulled version of the WPF Ribbon is much newer and its file size is about 100 kbytes larger (mostly code changes). &nbsp;Perhaps this is the version of control you think should be out instead of what is presently available?</p>\r\n<p>Maybe intended updates have not been issued? Shit happens! I suggest you take a closer look at the details.</p>\r\n<p>Noemata</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-25T05:48:13.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281404",
+    "ThreadId": "81732",
+    "Html": "<p>There's one more point that should not be lost here. &nbsp;The pulled version of the WPF Ribbon sample is now out. &nbsp;Irrespective of attempts to retract this error, any persons that have downloaded this sample are now legally entitled to assume that what they have obtained falls under the MS-PI license. &nbsp;The download made available was from an official Microsoft source after all.</p>\r\n<p>I'm pretty sure the statement made by Patrick Danino is not subject to correction by simply pulling the sample. &nbsp;The correction that needs to be made now is to level the playing field for those that went through the sign up process.</p>\r\n<p>The WPF Ribbon released via the MSDN code gallery falls under the MS-PI license. &nbsp;There's no taking that back. &nbsp;Microsoft can opt to re-release under newer terms, but the version 1.0.0.0 WPF Ribbon control with a file size of 451KB and a date stamp of 11/5/2008 is not subject to retractions.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-25T06:27:31.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281681",
+    "ThreadId": "81732",
+    "Html": "<p>We have the beginnings of a butterfly effect in the works here.&nbsp; The small, seemingly inconsequential ripple event started here:</p>\r\n<p><span style=\"color:#30332d;font-size:9.5pt\"><a href=\"http://code.msdn.microsoft.com/getwpfcodebywillhan\">http://code.msdn.microsoft.com/getwpfcodebywillhan</a></span></p>\r\n<p><span style=\"color:#30332d;font-size:9.5pt\">It was here that Microsoft published the WPF Ribbon and a corresponding usage sample under the MS-PL license.</span></p>\r\n<p><span style=\"color:#30332d;font-size:9.5pt\">The ripple grew a bit larger when Patrick Danino stated that the WPF Ribbon and sample published at the above address had been pulled with the qualifiers that this posting was not in keeping with Microsoft quality concerns, not in line with needed community feedback and not consistent with the official release of the WPF Ribbon.&nbsp; Is this a display of retroactive prejudice?</span></p>\r\n<p><span style=\"color:#30332d;font-size:9.5pt\">The one ripple then sets off a few more when Alexis Roosa clarified that the WPF Ribbon published at the above address was actually taken down because the sample only required acceptance of the MS-PL license, not the Office Fluent UI license.&nbsp; Thus the remarks made by Patrick Danino become questionable and perhaps disingenuous.&nbsp; Unfortunately, the qualifiers made by Alexis Roosa were also factually incorrect since he had stated that the WPF Ribbon published at this address was the same version as the one published under the Office Fluent UI license, which was not the case.</span></p>\r\n<p><span style=\"color:#30332d;font-size:9.5pt\">At no point was there any recognition given to the fact that posting the WPF Ribbon under an MS-PL license is not subject to an arbitrary repeal and not something that can merely be undone without consequence.&nbsp; Why?&nbsp; Because of this:</span></p>\r\n<p>Let&rsquo;s say that one day SHMACME Corp. invents this really cool widget called a Sibbon Bar, incorporates it into various products, releases a bunch of marketing spiel about the stellar invention, and issues a fancy license for the technology (the very stringent &ldquo;Off Ice Fluent UI license&rdquo;, because the big boss likes Hockey).&nbsp; SHMACME Corp. also makes several prominent statements about how critical this Sibbon Bar thingy is to the business, future plans, and the great value it brings to its products, implying that it might be worth a billion dollars.</p>\r\n<p>Then on the following day SHMACME Corp. posts the Sibbon Bar widget on one of its official web sites with something it calls an NS-PL license.&nbsp; This license happens to be quite permissive and generous to adopters.&nbsp; SMACME Corp. immediately (one minute later) sees this and goes woohoo, since it can now incorporate the Sibbon Bar into its product without concern for stringent licensing issues, costs, and patents now that the strict Off Ice Fluent UI license no longer applies because it has been replaced by the very liberal NS-PL license.&nbsp; Best of all, SMACME doesn&rsquo;t have to worry about massive law suits coming from SHMACME.&nbsp; On the same day SMACME Corp. releases a product featuring a shiny new Sibbon Bar, immediately followed by a deluge of product orders worth a billion dollars.</p>\r\n<p>The day after that SHMACME Corp. retracts the post it made on the previous day stating that it was all a big mistake.&nbsp; Shortly thereafter (one minute later) SHMACME Corp. sues SMACME Corp. for one billion dollars because it so egregiously violated its Off Ice Fluent UI licensing terms which strictly forbids the type of use SMACME made of the Sibbon Bar.</p>\r\n<p>As the corresponding TV commercial implies &hellip; even a kid can see the fault in this scenario.&nbsp; If this was actually possible, corporations would start making these mistakes intentionally as a means of creating revenue.</p>\r\n<p>SHMACME Corp. will have to eat it, as do all other companies when such mistakes are made.&nbsp; The Off Ice Fluent UI license was effectively replaced by the more liberal NS-PL license issued the following day.&nbsp; The NS-PL License is not subject to arbitrary repeal.&nbsp; Such a prospect is simply ludicrous.&nbsp; Ask any kid.</p>\r\n<p>There are a number of other interesting things to consider when a .Net assembly is released with the MS-PL license.&nbsp; Since .Net assemblies are easily reverted to source code form, does that mean that a .Net assembly released in binary under the MS-PL license implicitly includes an MS-PL source code license?&nbsp; I am inclined to think that would be the case since MS-PL includes no provision for disassembly or reverse assembly.&nbsp; Just think about the implications to IP.</p>\r\n<p>This suggests that one has to include specific qualifiers for elements of a project published with an MS-PL license; otherwise everything that is part of the project is subject to its terms when those components are from the same source/publisher.&nbsp; There are clearly common sense exceptions, third party components being one example.</p>\r\n<p>Caveat emptor.&nbsp; What&rsquo;s stated here is merely supposition.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-25T21:01:57.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281724",
+    "ThreadId": "81732",
+    "Html": "<p>Good grief <a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl10_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/noemata\">noemata</a>, just shut up already. You're talking rubbish.</p>",
+    "PostedDate": "2010-01-26T00:13:21.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281788",
+    "ThreadId": "81732",
+    "Html": "<p>You got that right.&nbsp; Its all rubbish.&nbsp; Once in awhile someone has to point it out.</p>",
+    "PostedDate": "2010-01-26T03:59:12.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

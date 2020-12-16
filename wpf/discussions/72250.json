@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "246654",
+    "ThreadId": "72250",
+    "Html": "I have a DataGrid whose underlying data comes from a LinqToSql <br>EntitySet. The backend data may change outside the application so it's <br>necessary to refresh the data and refresh the DataGrid. The application <br>becomes completely unresponsive when I try to call Refresh on the <br>DataContext:<br><br>AppData.Db.Refresh(RefreshMode.KeepChanges, AppData.Db.JobOrdTables);<br><br>And there are only 4 records in JobOrdTables.<br><br>Is this a DataGrid issue or a LinqToSql issue?<br><br><br>Thanks,<br><br><br>Bill",
+    "PostedDate": "2009-10-16T11:22:57.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246702",
+    "ThreadId": "72250",
+    "Html": "<p>Hey Bill, To get the updates you actually need to set the ItemsSource to null and then back to your backend; just calling refresh won't be sufficient.&nbsp; I know that is not a totally satisfying answer but hope it helps!</p>",
+    "PostedDate": "2009-10-16T13:57:07.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247272",
+    "ThreadId": "72250",
+    "Html": "I've tried that it it seems no different to just reseting the ItemsSource.<br><br>What I ended up doing was calling dispose on the DataContext and then <br>rebuilding it. That appears to be the fastest refresh.<br><br>Bill<br><br>On 10/16/2009 3:57 PM, alexisr wrote:<br>&gt; <br>&gt; <br>&gt; From: alexisr<br>&gt; <br>&gt; Hey Bill, To get the updates you actually need to set the ItemsSource to <br>&gt; null and then back to your backend; just calling refresh won't be <br>&gt; sufficient.  I know that is not a totally satisfying answer but hope it <br>&gt; helps!<br>&gt; <br>&gt; Read the full discussion online <br>&gt; &lt;http://wpf.codeplex.com/Thread/View.aspx?ThreadId=72250&ANCHOR#Post246702&gt;.<br>&gt; <br>&gt; To add a post to this discussion, reply to this email <br>&gt; ([email removed] <br>&gt; &lt;mailto:[email removed]?subject=[wpf:72250]&gt;)<br>&gt; <br>&gt; To start a new discussion for this project, email <br>&gt; [email removed] &lt;mailto:[email removed]&gt;<br>&gt; <br>&gt; You are receiving this email because you subscribed to this discussion <br>&gt; on CodePlex. You can unsubscribe or change your settings <br>&gt; &lt;https://wpf.codeplex.com/subscriptions/thread/project/edit&gt; on <br>&gt; codePlex.com.<br>&gt; <br>&gt; Please note: Images and attachments will be removed from emails. Any <br>&gt; posts to this discussion will also be available online at codeplex.com<br>&gt;",
+    "PostedDate": "2009-10-19T06:59:10.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

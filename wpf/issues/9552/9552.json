@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I set the IsReadOnly=true of the DataGrid, and try to bind a column using a Mode=OneWay/OneTime to a property without a public setter I get \"A TwoWay or OneWayToSource binding cannot work on the read-only property 'PropertyNameGoesHere' of type 'TypeNameGoesHere'.\"\n \nIf I explicitly set the IsReadOnly property of the column to true, then it works as expected.\n \nSurely setting the entire grid to IsReadOnly should be enough?",
+    "LastUpdatedDate": "2013-02-21T18:41:26.36-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-18T00:48:10.847-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid.IsReadOnly not propagated correctly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9552
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We agree this is a bug and are tracking it in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-03-18T10:37:35.927-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-18T10:37:37.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-01T11:43:13.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:26.36-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

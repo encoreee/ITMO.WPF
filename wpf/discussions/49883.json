@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "166939",
+    "ThreadId": "49883",
+    "Html": "It seems to me that the sort indicator always takes up enough space to display in every header, even if it is not currently displayed in a given header.  Is there any way around this?",
+    "PostedDate": "2009-03-11T09:08:51.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166970",
+    "ThreadId": "49883",
+    "Html": "I am afraid the only way around it is to retemplate DataGridColumnHeader.\r\n",
+    "PostedDate": "2009-03-11T10:22:24.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

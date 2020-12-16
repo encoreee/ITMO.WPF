@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "216356",
+    "ThreadId": "63625",
+    "Html": "<p>I can't get the July 2009 source to compile.</p>\r\n<p>I get errors in the DataVisualization design projects.<br>Stuff like: &quot;The type or namespace name 'Metadata' does not exist in the namespace 'Microsoft.Windows.Design' (are you missing an assembly reference?)&quot;</p>\r\n<p>Am I missing an assembly?</p>",
+    "PostedDate": "2009-07-27T06:02:11.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216582",
+    "ThreadId": "63625",
+    "Html": "<p>Could you please have a look at the &quot;Build Notes&quot; section of the following post:</p>\r\n<p><a href=\"http://blogs.msdn.com/delay/archive/2009/06/25/wpf-charting-it-s-official-june-2009-release-of-the-wpf-toolkit-is-now-available.aspx\">http://blogs.msdn.com/delay/archive/2009/06/25/wpf-charting-it-s-official-june-2009-release-of-the-wpf-toolkit-is-now-available.aspx</a></p>\r\n<p>The problem you're reporting sounds a lot like what I describe there - along with details for avoiding it.</p>\r\n<p>Hope this helps!</p>",
+    "PostedDate": "2009-07-27T16:08:19.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216779",
+    "ThreadId": "63625",
+    "Html": "<p>Thanks, it builds when I unload the *.Design projects.</p>",
+    "PostedDate": "2009-07-28T06:40:41.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

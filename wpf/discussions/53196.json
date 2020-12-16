@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "178923",
+    "ThreadId": "53196",
+    "Html": "I have a Calendar control with a customized template for coloring some days based on a runtime value. It works fine except for one little detail. The template is not applied initially. It doesn't seem to take effect until after I changed the SelectedDate of the control. I've tried doing it programmatically but that doesn't work. I've also tried calling ApplyTemplate and OnApplyTemplate on the control to no avail either.<br>\r\n<br>\r\nHow do I make sure the template is applied when the control is displayed initially and before a selection is actually made?<br>\r\n<br>\r\nRegards,<br>\r\nSøren<br>\r\n",
+    "PostedDate": "2009-04-14T03:19:42.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179211",
+    "ThreadId": "53196",
+    "Html": "Hi Søren - <br>\r\n<br>\r\nHow are you applying the template? Are you using Converters that depend on SelectedDate? Can you provide a simple repro to illustrate the issue?<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nEric, MSFT\r\n",
+    "PostedDate": "2009-04-14T13:45:31.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

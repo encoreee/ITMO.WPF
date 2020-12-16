@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "422032",
+    "ThreadId": "206848",
+    "Html": "<p>Hello</p>\r\n<p>I am working on a custom datagrid column that contains a usercontrol. The usercontrol itself contains a textbox and a button. The custom column is derived from DataGridTextColumn because I like to have binding support.</p>\r\n<p>Can anybody give me a hint / example of how to implement GenerateEditingElement so that the column binding is used for the usercontrols textbox binding?</p>\r\n<p>All is fine but changes I make to the textbox.text are not going back, although all bindings are TwoWay</p>\r\n<p>Any help would be appreciated</p>\r\n<p>Klaus</p>",
+    "PostedDate": "2010-03-22T02:51:47.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

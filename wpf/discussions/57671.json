@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "194985",
+    "ThreadId": "57671",
+    "Html": "<p><br><br>I am using Linq to SQL and using stored procedures. This generates for me a method that returns an ISingleResult as shown below.<br><br>&nbsp;&nbsp;public ISingleResult&lt;spMySPResult&gt; spMySP()<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));<br>&nbsp;&nbsp;&nbsp;return ((ISingleResult&lt;spMySPResult&gt;)(result.ReturnValue));<br>&nbsp;&nbsp;}<br><br>I can use the above as my ItemsSource and am able to generate the wpf datagrid.<br>I noticed that I am not able to do any sorting and as a result, no grouping is possible.<br>If instead I use a List&lt;&gt; and use the table instead of a stored procedure, I am able to sort as well.<br><br>Can someone please let me know how to be able to sort if I do use a stored procedure / ISingleResult&lt;&gt; ?<br><br>Thanks</p>",
+    "PostedDate": "2009-05-27T15:35:09.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195971",
+    "ThreadId": "57671",
+    "Html": "<p>Check to see if ISingleResult&lt;&gt; creates a BindingListCollectionView on the DataGrid.&nbsp; If so then see this thread for further info, <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=35129\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=35129</a>.</p>",
+    "PostedDate": "2009-05-30T07:16:18.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

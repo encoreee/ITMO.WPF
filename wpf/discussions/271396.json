@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "667272",
+    "ThreadId": "271396",
+    "Html": "\r\n<p>How do I turn of the graph series key? I.e. Red Line = Apples and Blue Line = Oranges?</p>\r\n<p>&nbsp;</p>\r\n<p>Marc</p>\r\n",
+    "PostedDate": "2011-09-03T15:15:24.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "667382",
+    "ThreadId": "271396",
+    "Html": "<p>Solution here&nbsp;<a href=\"http://stackoverflow.com/questions/3595222/hide-legend-of-wpf-toolkit-chart-with-more-than-one-data-series\">http://stackoverflow.com/questions/3595222/hide-legend-of-wpf-toolkit-chart-with-more-than-one-data-series</a></p>",
+    "PostedDate": "2011-09-04T06:12:38.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

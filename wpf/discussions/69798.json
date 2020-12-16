@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "237649",
+    "ThreadId": "69798",
+    "Html": "<p>Hi,</p>\r\n<p>I am binding a DataTable to a WPF DataGrid (ItemSource) and columns will be generated automatically based on the DataTable.</p>\r\n<p>However, I need to format some columns lengths once they are gone beyond 100.</p>\r\n<p>I have used IValueConverter's Convert method to format of data binding, but I had to change the datasource as columns are auto generated.</p>\r\n<p>Is there a way to do this without changing the datasource. In fact, I need to do the formatting only when displaying without committing those formatting into DataSource (DataTable)</p>\r\n<p>Thanks,</p>\r\n<p>Dushantha</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-22T22:44:14.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

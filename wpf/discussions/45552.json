@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "151985",
+    "ThreadId": "45552",
+    "Html": "How do you allow for double-clicking a row in WPF DataGrid control?  Meaning, I would like to allow user to double-click a row and display another Window that includes more data about item bound to selected row.  Double-click would be better than single-click as a better confirmation that is the item they would like to open in other Window.  Thanks in advance.\r\n",
+    "PostedDate": "2009-01-28T15:59:33.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152125",
+    "ThreadId": "45552",
+    "Html": "Hi shaggygi,<br>\r\ni am not sure this answers your question.  Also ... i think this might apply to the datagrid, as i only applied to a ListView.<br>\r\nI'd attach <span style=\"font-size:13px;color:#ff0000\">PreviewMouseDoubleClick</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Datagrid_PreviewMouseDoubleClick&quot; </span>to the datagrid.<br>\r\nIn <span style=\"font-size:13px;color:#0000ff\">Datagrid_PreviewMouseDoubleClick</span>, the sender will be the DataGrid, if the DataGrid has a SelectedItems method ... you'll be close to done.<br>\r\nhope this helps,<br>\r\nPaul<br>\r\n",
+    "PostedDate": "2009-01-29T03:04:17.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152170",
+    "ThreadId": "45552",
+    "Html": "<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">Yes, your reply helped me.  This is the basic code that works.  Thanks.<br>\r\n<br>\r\nprivate void dgToday_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)</span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">{</span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">    if (dgToday.SelectedItem != null)</span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">    {</span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">        // Do something.  E.g. Open Window, etc. based on selected item in datagrid.</span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">    }</span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\"> </span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\">    e.Handled = true; </span></p>\r\n<p style=\"margin:0in 0in 0pt;line-height:normal\"><span style=\"font-size:12pt;font-family:consolas\"> </span></p>\r\n<p style=\"margin:0in 0in 10pt\"><span style=\"font-size:12pt;line-height:115%;font-family:consolas\">}</span></p>\r\n",
+    "PostedDate": "2009-01-29T06:37:13.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

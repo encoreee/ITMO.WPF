@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "244426",
+    "ThreadId": "71662",
+    "Html": "<p>Hi everyone!</p>\r\n<p>I am trying to diferenciate a doubleclick  in a row of the datagrid from a double click in another part of the datagrid, for example, the scrollBar. Can I capture the double click event of a row? How?</p>\r\n<p>Greeting</p>",
+    "PostedDate": "2009-10-11T14:32:58.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244582",
+    "ThreadId": "71662",
+    "Html": "<p>I think that this link will be usefull:</p>\r\n<p><a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=65726&ANCHOR#Post224574\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=65726&amp;ANCHOR#Post224574</a></p>\r\n<p>Best Regards</p>",
+    "PostedDate": "2009-10-12T02:43:54.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244628",
+    "ThreadId": "71662",
+    "Html": "<p>Thanks a lot. I don't like the nature of that solution but it's simple and it works. So it is what I need. Thanks again.</p>",
+    "PostedDate": "2009-10-12T05:36:56.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

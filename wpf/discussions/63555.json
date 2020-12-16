@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "216117",
+    "ThreadId": "63555",
+    "Html": "<p>In my DataGrid, I need to Display the CellEditingTemplate DataTemplate for all cells in the selected Row (unless the datagrid is readonly), and the CellTemplate for all other rows.</p>\r\n<p>I have tried using a TemplateSelector like this...</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">override</span> DataTemplate SelectTemplate(<span style=\"color:Blue\">object</span> item, DependencyObject container)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Green\">//if (item == null)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Green\">//&nbsp;&nbsp;&nbsp; return base.SelectTemplate(item, container);</span><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ContentPresenter presenter = container <span style=\"color:Blue\">as</span> ContentPresenter;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGridCell cell = presenter.Parent <span style=\"color:Blue\">as</span> DataGridCell;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">if</span> (cell.IsSelected)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">return</span> CellEditingTemplate;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">else</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">return</span> CellTemplate;</p>\r\n<p>The above selector changes the template when the row is selected, but not when it is unselected.</p>\r\n<p>&nbsp;</p>\r\n<p>How can I acheive this?</p>\r\n<p><br><br></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-26T01:58:51.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

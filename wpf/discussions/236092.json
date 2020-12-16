@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "527201",
+    "ThreadId": "236092",
+    "Html": "\r\n<p>Hi...</p>\r\n<p><br>\r\nI am&nbsp; trying to Merge cells in wpf toolkit datagrid .I am trying to do something as shown in the image attached.We can do this in Winforms datagrid.But how to do this using wpf toolkit datagrid.Or is there any alternative controls..? Can we do this using\r\n listview or listbox..? <br>\r\nOr is there any free controls available which have this functionality ?</p>\r\n<p><img src=\"http://www.codeproject.com/KB/webforms/MergeGridViewCells/merge-rows.gif\" alt=\"\"></p>\r\n",
+    "PostedDate": "2010-11-25T21:39:50.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "534031",
+    "ThreadId": "236092",
+    "Html": "\r\n<p>If it can be done in the WPF toolkit datagrid I haven't been able to figure it out.&nbsp; ComponentOne has released a WPF FLexgrid control which can merge cells.&nbsp;&nbsp;&nbsp; I'd like to see cellMerging&nbsp;added to&nbsp;the WPF toolkit&nbsp;Datagrid&nbsp;since\r\n we've invested so much time and so many resources with it but we may have to go with the&nbsp;ComponentOne FlexGrid.&nbsp; You can do it with a listview in gridview but you have to do it in codebehind yourself, there is no&nbsp;cellMerge property and wasn't\r\n worth the&nbsp;time investment for us.</p>\r\n",
+    "PostedDate": "2010-12-10T10:40:48.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

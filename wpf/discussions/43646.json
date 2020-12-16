@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "145103",
+    "ThreadId": "43646",
+    "Html": "Hello,<br>\r\n<br>\r\nI'm looking for ideas to solve the following task:<br>\r\nI have to bring about 20 single clickable commands, which belong together. 20 buttons in one group are not possible (compile error). 20 small ones are not that nice and a dropdown button is also not a really usefull solution.<br>\r\n<br>\r\nAny tips and ideas are appreciated.<br>\r\n<br>\r\nRegards<br>\r\nCarsten\r\n",
+    "PostedDate": "2009-01-07T09:18:42.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145161",
+    "ThreadId": "43646",
+    "Html": "<p>Hi Carsten,</p>\r\n<p>What is the compile error you're getting when you try to put 20 buttons in one group?  If I remember correctly, there shouldn't be a limit to the number of controls you can add to a Group, so I'd like to investigate this error and see if it's a bug or not.</p>\r\n<p>Also, as a side note, we will have a Gallery control in V1 of the Ribbon so hopefully that will solve your problem.  If I think of a better temporary solution, I will let you know.</p>\r\n<p>Thanks!<br>\r\nSamantha</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2009-01-07T11:24:31.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145240",
+    "ThreadId": "43646",
+    "Html": "Or just use one of the many third-party ribbon controls out there that are orders of magnitude better than the Microsoft one.\r\n",
+    "PostedDate": "2009-01-07T15:27:40.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145353",
+    "ThreadId": "43646",
+    "Html": "Hello Samantha,<br>\r\n<br>\r\nhere is the part of the code and following the error message. If you need any translations for the partial german text let me know.<br>\r\n<br>\r\n@Divelements: are you able to write something more usefull then always &quot;use one of the many third-party ribbon controls&quot;? If you are not interested in answering the forum questions, why are you here?<br>\r\n<br>\r\n<p>            &lt;r:RibbonTab Label=&quot;Grafik&quot;&gt;<br>\r\n                &lt;r:RibbonTab.Groups&gt;<br>\r\n                    &lt;r:RibbonGroup Name=&quot;Einfügen&quot; Command=&quot;{StaticResource GraficInsertGroupCommand}&quot;&gt;<br>\r\n                        &lt;r:RibbonGroup.GroupSizeDefinitions&gt;<br>\r\n                            &lt;r:RibbonGroupSizeDefinitionCollection &gt;<br>\r\n                                &lt;r:RibbonGroupSizeDefinition&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                    &lt;r:RibbonControlSizeDefinition ImageSize=&quot;Large&quot; IsLabelVisible=&quot;False&quot; /&gt;<br>\r\n                                &lt;/r:RibbonGroupSizeDefinition&gt;<br>\r\n                                &lt;r:RibbonGroupSizeDefinition IsCollapsed=&quot;True&quot; /&gt;<br>\r\n                            &lt;/r:RibbonGroupSizeDefinitionCollection&gt;<br>\r\n                        &lt;/r:RibbonGroup.GroupSizeDefinitions&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_Title}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_Start}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_Init}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_Decision}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_OpenTables}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_Process}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_PredefinedProcess}&quot; /&gt;<br>\r\n                            &lt;r:RibbonButton Command=&quot;{StaticResource BeanInsert_Termination}&quot; /&gt;                        <br>\r\n                    &lt;/r:RibbonGroup&gt;<br>\r\n                &lt;/r:RibbonTab.Groups&gt;<br>\r\n            &lt;/r:RibbonTab&gt;</p>\r\n<p>Error message:</p>\r\n<p>System.Windows.Markup.XamlParseException ist aufgetreten.<br>\r\n  LineNumber=230<br>\r\n  LinePosition=68<br>\r\n  Message=&quot; Ein Aufrufziel hat einen Ausnahmefehler verursacht.  Fehler in Objekt &quot;Microsoft.Windows.Controls.Ribbon.RibbonControlSizeDefinition&quot; in Markupdatei &quot;BusinessBeansEditor;component/mainwindow.xaml&quot;, Zeile 230, Position 68.&quot;<br>\r\n  NameContext=&quot;GroupSizeDefinitions&quot;<br>\r\n  Source=&quot;PresentationFramework&quot;<br>\r\n  StackTrace:<br>\r\n       bei System.Windows.Markup.XamlParseException.ThrowException(String message, Exception innerException, Int32 lineNumber, Int32 linePosition, Uri baseUri, XamlObjectIds currentXamlObjectIds, XamlObjectIds contextXamlObjectIds, Type objectType)<br>\r\n       bei System.Windows.Markup.XamlParseException.ThrowException(ParserContext parserContext, Int32 lineNumber, Int32 linePosition, String message, Exception innerException)<br>\r\n       bei System.Windows.Markup.BamlRecordReader.ReadRecord(BamlRecord bamlRecord)<br>\r\n       bei System.Windows.Markup.BamlRecordReader.Read(Boolean singleRecord)<br>\r\n       bei System.Windows.Markup.TreeBuilderBamlTranslator.ParseFragment()<br>\r\n       bei System.Windows.Markup.TreeBuilder.Parse()<br>\r\n       bei System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)<br>\r\n       bei System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)<br>\r\n       bei BusinessBeansEditor.MainWindow.InitializeComponent() in C:\\Dokumente und Einstellungen\\cdd\\Eigene Dateien\\Visual Studio 2008\\Projects\\BusinessBeansEditor\\BusinessBeansEditor\\obj\\Debug\\MainWindow.g.vb:Zeile 173.<br>\r\n       bei BusinessBeansEditor.MainWindow..ctor() in C:\\Dokumente und Einstellungen\\cdd\\Eigene Dateien\\Visual Studio 2008\\Projects\\BusinessBeansEditor\\BusinessBeansEditor\\MainWindow.xaml.vb:Zeile 63.<br>\r\n  InnerException: System.Reflection.TargetInvocationException<br>\r\n       Message=&quot;Ein Aufrufziel hat einen Ausnahmefehler verursacht.&quot;<br>\r\n       Source=&quot;mscorlib&quot;<br>\r\n       StackTrace:<br>\r\n            bei System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct&amp; sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)<br>\r\n            bei System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)<br>\r\n            bei System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)<br>\r\n            bei System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)<br>\r\n            bei System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)<br>\r\n            bei System.Windows.Markup.BamlRecordReader.ReadPropertyCustomRecord(BamlPropertyCustomRecord bamlPropertyRecord)<br>\r\n            bei System.Windows.Markup.BamlRecordReader.ReadRecord(BamlRecord bamlRecord)<br>\r\n       InnerException: System.InvalidOperationException<br>\r\n            Message=&quot;Large controls displayed in the Ribbon must contain text labels.&quot;<br>\r\n            Source=&quot;RibbonControlsLibrary&quot;<br>\r\n            StackTrace:<br>\r\n                 bei Microsoft.Windows.Controls.Ribbon.RibbonControlSizeDefinition.OnPropertyChanged(Object sender, PropertyChangedEventArgs e)<br>\r\n                 bei Microsoft.Windows.Controls.Ribbon.RibbonControlSizeDefinition.NotifyPropertyChanged(String info)<br>\r\n                 bei Microsoft.Windows.Controls.Ribbon.RibbonControlSizeDefinition.set_IsLabelVisible(Boolean value)<br>\r\n            InnerException: </p>\r\n<br>\r\nRegards<br>\r\nCarsten\r\n",
+    "PostedDate": "2009-01-08T01:19:47.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145373",
+    "ThreadId": "43646",
+    "Html": "To suggest resolutions to problems.\r\n",
+    "PostedDate": "2009-01-08T02:30:30.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145504",
+    "ThreadId": "43646",
+    "Html": "<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">Hi Carsten,</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\"> </span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">The reason your code won’t run is because there is an error in the RibbonControlSizeDefinitions – “Large” size controls are required by the Office Fluent UI Guidelines to have a large image and a visible label.  In your RibbonControlSizeDefintions, you’re setting ImageSize=”Large” and IsLabelVisible=”False”.  If you change IsLabelVisible to True, you’ll see that the Ribbon should compile and run fine.</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\"> </span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">If you look all the way at the bottom of your exception, you’ll see that it contains the following: Message=&quot;Large controls displayed in the Ribbon must contain text labels.&quot;  At runtime, we are doing a check to make sure that the RibbonControlSizeDefinitions fit the Office Guideline-defined descriptions of Large (Large Image, Visible Label), Medium (Small Image, Visible Label), and Small (Small Image, No Label) controls, and the xaml above is failing, which is causing the exception.<br>\r\n</span></p>\r\n<br>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">Thanks!</span></p>\r\n<p style=\"margin:0in 0in 0pt\"><span style=\"font-family:calibri\">Samantha</span></p>\r\n<br>\r\n",
+    "PostedDate": "2009-01-08T11:46:33.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145613",
+    "ThreadId": "43646",
+    "Html": "Hello Samantha,<br>\r\n<br>\r\nsorry, but I read the error message not carefully. As you said, with visible labels everything works fine.<br>\r\n<br>\r\nThanks for your help<br>\r\nCarsten\r\n",
+    "PostedDate": "2009-01-08T23:48:50.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

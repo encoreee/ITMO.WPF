@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "209666",
+    "ThreadId": "61771",
+    "Html": "<p>I'm using the DataGrid to show data from a table of a old fasio dataset.</p>\r\n<p>My problem is that the ConstraintException is not catched by the DataGrid or I haven't found the trick to catch it and make&nbsp;a usefull dialog that explains the problem to the user.</p>\r\n<p>There must be answer to this issue because it's a straigth forward problem for many applications.</p>\r\n<p>Looking forward to here from fellow developers.</p>",
+    "PostedDate": "2009-07-07T14:25:49.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

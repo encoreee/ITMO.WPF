@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "457971",
+    "ThreadId": "216728",
+    "Html": "<p>Hi all,</p>\r\n<p>I am trying to use ApplicationCommands.Copy to get the values from my DataGrid. Unfortunately, the value appears blank if the (text) binding is set in a style rather than directly. The majority of my bindings are set in styles because they are multibindings; I was unable to find a way to set multibindings directly on a column's text. I am still using V3.5.40128.1 of the WPF Toolkit for fear of breaking things in an update.</p>\r\n<p>Is this something that has been changed in the latest version? If not, can anyone suggest a workaround?</p>",
+    "PostedDate": "2010-06-21T04:07:15.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460837",
+    "ThreadId": "216728",
+    "Html": "<p>Im also running into this issue. I am using the latest WPF toolkit. Any help out there?</p>",
+    "PostedDate": "2010-06-28T13:58:17.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460851",
+    "ThreadId": "216728",
+    "Html": "<p>Actually it appears to just be an issue with Multibinding. I am not using a style but instead have a multibinding directly defined in my DataGridTextColumn</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-28T14:46:27.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463382",
+    "ThreadId": "216728",
+    "Html": "<p>Hmm, I never managed to get MultiBinding directly in the DataGridTextColumn working, although I might not have made much of an effort... Or perhaps it was MultiBinding on properties other than &quot;Binding&quot; that I needed to use Styles for, I cannot recall.</p>\r\n<p>I suspect the issue is not actually with the MultiBinding but with the use of a ValueConverter - if you use a simple Binding&nbsp;(that is, bound to one property) along with a ValueConverter does that work any better? I suspect the source value is copied rather than the output of the ValueConverter, which would be unhelpful in most cases.</p>\r\n<p>The workaround I used was to iterate through every cell, copying its displayed text manually. There is no built-in functionality to do this, but there were some useful posts on these forums - unfortunately I have tried searching for them this morning but cannot find them. :(</p>",
+    "PostedDate": "2010-07-05T01:55:08.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "464737",
+    "ThreadId": "216728",
+    "Html": "<p>The thread is here: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=39426\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=39426</a>. It also links to another thread (<a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=34065</a>) which may actually be more relevant.</p>\r\n<p>It was difficult to find as the title appears to bear no relation to our problem!</p>",
+    "PostedDate": "2010-07-08T02:24:26.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

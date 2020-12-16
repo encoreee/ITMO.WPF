@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "118843",
+    "ThreadId": "35766",
+    "Html": "I am programatically setting ItemSource to an ObservableCollection&lt;MyRecord&gt;<br>\r\nclass MyRecord<br>\r\n{ <br>\r\n&nbsp;&nbsp; public int Id { get; set;&nbsp; }&nbsp; // force on me by the binding<br>\r\n&nbsp;//..<br>\r\n}<br>\r\n<br>\r\nI have AuotGenerateColumns= true so the DataGrid is using reflection to generate the columns. <br>\r\nif MyRecord does contain a public property ID I get a binding error. <br>\r\n<br>\r\nSystem.Windows.Data Error: 39 : BindingExpression path error: 'Id' property not found on 'object' ''MyRecord' (HashCode=9832661)'. BindingExpression:Path=Id; DataItem='MyRecord' (HashCode=9832661); target element is 'DataGridRow' (Name=''); target property is 'Header' (type 'Object')<br>\r\n<br>\r\nI would prefer to get rid of Id.&nbsp; Is there a way to tell binding not to look for the property?<br>\r\nIf I have to have it as a property how can I tell data grid that it is not a column.&nbsp; <br>\r\nI don't want users to see it. <br>\r\n<br>\r\nThanks<br>\r\nKarl <br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-16T08:03:08.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119086",
+    "ThreadId": "35766",
+    "Html": "In the AutoGeneratingColumn event, you can cancel the operation on the particular columns you don't want.&nbsp; In the auto-generating scenario the header name will always be the property name so you can look for that and if it is &quot;Id&quot;, then cancel the operation.\r\n",
+    "PostedDate": "2008-09-17T05:24:34.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

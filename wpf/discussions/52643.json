@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "177008",
+    "ThreadId": "52643",
+    "Html": "Hi!<br>\r\n<br>\r\nI have to DataGrids in a window They both have a vertical scrollbar and if the window gets to small, they have a horizontal scrollbar too. The horizontal scrollbar shall only be visible for the second grid. when scrolling this scrollbar in the second grid, the first grid should scroll too.<br>\r\nI implemented this with two Scrollviewers, but the performance is going down, because the grid takes three times longer to do the databinding.<br>\r\nAnd I cannot scroll the scrollviewer with the mouseweel when I am over the grid!<br>\r\n<br>\r\nIs there a way to bind the first grids Scrollbar to the one of the second grid and hide the scrollbar of the first grid?<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-08T00:13:44.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177471",
+    "ThreadId": "52643",
+    "Html": "I couldn' find a way yet. The attached properties from the scrollbar on the grid only allow me to set the FlowDirection, not the offset.<br>\r\nIs there a way to achieve what I want with the scrollbars of the Grid or do I have to take my Scrollviewers?<br>\r\nThe performance is sooo bad and I don't know what to do against it, so it would be great if anybody could help me with the scrollbars!\r\n",
+    "PostedDate": "2009-04-08T23:11:34.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186522",
+    "ThreadId": "52643",
+    "Html": "I have found a way to get to the Scrollviewers in the DataGrid:<br>\r\n<br>\r\nHere is what I have done:<br>\r\n<span style=\"font-size:13px;color:#2b91af\">ScrollViewer</span><span style=\"font-size:13px\"> view1 = _erwarteteBuchungen.Template.FindName(</span><span style=\"font-size:13px;color:#a31515\">&quot;DG_ScrollViewer&quot;</span><span style=\"font-size:13px\">, _erwarteteBuchungen) </span><span style=\"font-size:13px;color:#0000ff\">as</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">ScrollViewer</span><span style=\"font-size:13px\">;<br>\r\n</span><span style=\"font-size:13px;color:#2b91af\">ScrollViewer</span><span style=\"font-size:13px\"> view2 = _buchungGrid.Template.FindName(</span><span style=\"font-size:13px;color:#a31515\">&quot;DG_ScrollViewer&quot;</span><span style=\"font-size:13px\">, _buchungGrid) </span><span style=\"font-size:13px;color:#0000ff\">as</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">ScrollViewer</span><span style=\"font-size:13px\">;<br>\r\nview2.ScrollToHorizontalOffset(view1.HorizontalOffset);<br>\r\n<br>\r\nBut I still have the problem that the scrolling event is not fired when the user uses the arrow-buttons and does not drag with the mouse. Does anybody know if this is a bug or do I have to use another event for this?</span>\r\n",
+    "PostedDate": "2009-05-04T06:05:14.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186545",
+    "ThreadId": "52643",
+    "Html": "That's an interesting approach. As for your question, have you looked at the CurrentCellChanged event? It sounds like in combination with what you have, it would do nicely.<br>\r\n",
+    "PostedDate": "2009-05-04T07:23:14.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186812",
+    "ThreadId": "52643",
+    "Html": "Hi mikj!<br>\r\n<br>\r\nI did not describe what I meant correctly. I mean this little buttons at the sides of the scrollbar, where you can see the little arrows on...<br>\r\n<br>\r\nBut your suggestion is a good one too. I did not think about the possibility that the user can use the mouse to navigate inside of the grid! There should be a binding for this too. Otherwise the grids wouldn't have the same columns visible anymore. Thanks.\r\n",
+    "PostedDate": "2009-05-04T23:25:54.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187256",
+    "ThreadId": "52643",
+    "Html": "The problem is solved now.<br>\r\nHer is a link to a discussion where a sulotion is shown:<br>\r\n<a href=\"http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/836fbe1b-ec7f-47f9-ae72-2587a601a2a6\">http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/836fbe1b-ec7f-47f9-ae72-2587a601a2a6</a>\r\n",
+    "PostedDate": "2009-05-06T01:37:21.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

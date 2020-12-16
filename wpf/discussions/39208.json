@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "130070",
+    "ThreadId": "39208",
+    "Html": "<p style=\"margin:0cm 0cm 0pt\"><span> </span></p>\r\n<p style=\"margin:0cm 0cm 0pt\">Hi,</p>\r\n<p style=\"margin:0cm 0cm 0pt\">I’m not so familiar with the Xaml in Wpf.</p>\r\n<p style=\"margin:0cm 0cm 0pt\">How to set the CultureInfos ShortDatePattern for the DatePicker.SelectedDateFormat in Xaml and how to create a <span style=\"font-size:10pt;color:#a31515;font-family:'courier new'\">DataGridTemplateColumn </span>at runtime?</p>\r\n<p style=\"margin:0cm 0cm 0pt\"> </p>\r\n<p style=\"margin:0cm 0cm 0pt\">Thanks in advance.</p>\r\n<p style=\"margin:0cm 0cm 0pt\">WorstCase </p>\r\n",
+    "PostedDate": "2008-11-04T14:31:50.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130091",
+    "ThreadId": "39208",
+    "Html": "Have you tried setting the SelectedDateFormat attribute in your DatePicker XAML tag to &quot;Short&quot;?<br>\r\n<br>\r\n-Eric Fabricant, MSFT\r\n",
+    "PostedDate": "2008-11-04T16:38:28.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130233",
+    "ThreadId": "39208",
+    "Html": "Thanks,<br>\r\n<span style=\"font-size:13px;color:#0000ff\">Does the DatePicker supports DateFormat accordingly to the current culture?<br>\r\n</span>\r\n",
+    "PostedDate": "2008-11-05T07:52:40.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130294",
+    "ThreadId": "39208",
+    "Html": "<p style=\"margin:0cm 0cm 0pt\"><span>Sorry, my misstake. Yes, DatePicker does, the underlying TextBox in a DataGridCell does not.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\">I don’t know how to set the StringFormat of the TextBox to set something like that:<span style=\"font-size:10pt;font-family:'courier new'\">            <br>\r\n<br>\r\n<span style=\"color:#2b91af\">TextBox.StringFormat = CultureInfo</span>.DateTimeFormat.ShortDatePattern;</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"> </p>\r\n<p style=\"margin:0cm 0cm 0pt\">Thanks in advance.</p>\r\n<p style=\"margin:0cm 0cm 0pt\">WorstCase</p>\r\n<p style=\"margin:0cm 0cm 0pt\"> </p>\r\n",
+    "PostedDate": "2008-11-05T11:37:19.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

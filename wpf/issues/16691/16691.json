@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When assigning an event handler to the DropDownOpening event in WPF, an argument exception is thrown speaking about an handler mismatch.\n \nLooking at the source, the problem is that the handler is actually being added to the PopulatedEvent instead of the DropDownOpeningEvent.\n \n \n \n        /// <summary>\n        /// Occurs when the value of the\n        /// <see cref=\"P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen\" />\n        /// property is changing from false to true.\n        /// </summary>\n#if SILVERLIGHT\n        public event RoutedPropertyChangingEventHandler<bool> DropDownOpening;\n#else\n        public static readonly RoutedEvent DropDownOpeningEvent = EventManager.RegisterRoutedEvent(\"DropDownOpening\", RoutingStrategy.Bubble, typeof(RoutedPropertyChangingEventHandler<bool>), typeof(AutoCompleteBox));\n \n        /// <summary>\n        /// Occurs when the value of the\n        /// <see cref=\"P:System.Windows.Controls.AutoCompleteBox.IsDropDownOpen\" />\n        /// property is changing from false to true.\n        /// </summary>\n        public event RoutedPropertyChangingEventHandler<bool> DropDownOpening\n        {\n            add { AddHandler(PopulatedEvent, value); }\n            remove { RemoveHandler(PopulatedEvent, value); }\n        }\n#endif",
+    "LastUpdatedDate": "2013-02-21T18:40:08.34-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2011-10-05T22:58:09.57-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DropDownOpening event causing argument exception when adding handler",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16691
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

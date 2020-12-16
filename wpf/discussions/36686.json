@@ -1,0 +1,130 @@
+[
+  {
+    "Id": "121714",
+    "ThreadId": "36686",
+    "Html": "<p>Hello</p>\r\n<p>I tried to change code source of this Datagrid to add new useful functionality in business application.</p>\r\n<p>It is very useful to have some Total,average, etc.. .... at the bottom of each Column ... like an &quot;Header&quot; at the top of each Column.</p>\r\n<p>So, I added on each column, a Footer property, FooterStyle, FooterTemplate, FooterTemplateSelector, etc. ... and changed Generic.xaml to add DataGridFootersPresenter and friends ...</p>\r\n<p>Moreover, I added a new dependancy property bool DataRowHeader.IsCurrentRow and change generic.xaml to show a small triangle in DataRowHeader to show the Current Row in DataGrid (use full when is combined with DataGrid.IsSynchronizedWithCurrentItem=&quot;true&quot; )</p>\r\n<p>example of code :&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private static object OnCoerceIsCurrentRow(DependencyObject d, object baseValue)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGridRowHeader header = (DataGridRowHeader)d;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGridRow parent = header.ParentRow;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (parent != null)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; object currentItem = null;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (parent.DataGridOwner.CurrentCell != null)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentItem = parent.DataGridOwner.CurrentCell.Item;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((currentItem != null)&nbsp; &amp;&amp; (currentItem != DependencyProperty.UnsetValue))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return parent.Item == currentItem;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (parent.DataGridOwner.SelectionMode == DataGridSelectionMode.Single)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; object selectedItem = parent.DataGridOwner.SelectedItem;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (selectedItem != null) &amp;&amp; (parent.Item == selectedItem);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return baseValue;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nThe internal code is pretty good, I think, It is easy to understand, I like for example the internal notification system. this design pattern would be useful for other WPF controls :-)</p>\r\n<p>my question : How can I submit these requests for changes the to WPFToolKit Team ?<br>\r\n(or the code source modification even if I am not understand all the subtility of the code, The Header approach has help me a lot ...) </p>\r\n<p>Best regards</p>\r\n<p>Thibaud</p>\r\n<br>\r\nAnother submit : <br>\r\n<ul>\r\n    <li>FixedColumn at the right side of the datagrid</li>\r\n    <li>+/- expander on Detail panel when the source is Grouping</li>\r\n</ul>\r\n",
+    "PostedDate": "2008-09-29T13:58:25.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121737",
+    "ThreadId": "36686",
+    "Html": "$0Is footer row planned for the final release?$0$0$0$0In case it is not, Thibaud, is it possible to have your code?$0$0",
+    "PostedDate": "2008-09-29T16:11:54.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121904",
+    "ThreadId": "36686",
+    "Html": "<span style=\"font-family:'Calibri','sans-serif';color:#1f497d;font-size:11pt\">Thibaud,<br>\r\n<br>\r\nThanks so much for&nbsp;your input.&nbsp; I and other members of the WPF Toolkit team read this forum daily and record any feature requests in an internal database which we will use to consider new features for future releases.&nbsp; Your requests for a footer row, fixed column on the right, and expander on the details when in grouping have been recorded.&nbsp; While we won't be able to include this in our v1 release, we will consider them for later versions.<br>\r\n<br>\r\nIf you’d like to share your work to help other developers, it’d be great if you could post code snippets and “how to” instructions here in the Discussions (similar to what you did above) or post links to blog posts if you have a blog.&nbsp; This would be very valuable to the WPF development community.&nbsp; <br>\r\n<br>\r\nIf you have any other requests for features, please feel free to create new posts to let us know!<br>\r\n<br>\r\nThank you,<br>\r\nSamantha</span>\r\n",
+    "PostedDate": "2008-09-30T09:52:28.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125085",
+    "ThreadId": "36686",
+    "Html": "Hello Samantha<br>\r\nJust to be sure ... Can I post somewhere a zip file with all my changes in your code ? no problem with copyright or something like that ?<br>\r\nI am not sure I have enough time to realize an &quot;how to&quot; article in next few weeks and so, It would be more easy for me&nbsp;to just post a zip file with your code and just my changes ... :-)<br>\r\nIt would be easy for a developper to do a diff between original sources and new version to see all the differences ... :-)<br>\r\nBest regards<br>\r\nThibaud\r\n",
+    "PostedDate": "2008-10-14T12:41:54.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125142",
+    "ThreadId": "36686",
+    "Html": "Hi Thibaud,<br>\r\n<br>\r\nYes, that shouldn't be a problem.&nbsp; Under the <span id=\"ctl00_ctl00_MasterContent_TabContentPanel_Content_licenseText\">Microsoft Public License (Ms-PL)</span> which is associated with this site, you are granted &quot;a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, <strong>prepare derivative works</strong> of its contribution, and <strong>distribute its contribution or any derivative works that you create</strong>.&quot;&nbsp; The only restriction is that &quot;If you distribute any portion of the software in source code form, you may do so only under this license by<strong> including a complete copy of this license with your distribution.</strong>&quot;&nbsp; You can find a copy of the license under the License tab: <a href=\"http://www.codeplex.com/wpf/license\">http://www.codeplex.com/wpf/license</a>&nbsp;- just stick a .txt file with a copy of the license in your zip file and you should be good to go!<br>\r\n<br>\r\nThanks!<br>\r\nSamantha<br>\r\n",
+    "PostedDate": "2008-10-14T16:01:36.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125229",
+    "ThreadId": "36686",
+    "Html": "Hi Thibaud,<br>\r\nI'd really like to see your changes.is there any way you can post it so I can use it without waiting for the v2 of DataGrid?<br>\r\n",
+    "PostedDate": "2008-10-15T02:40:36.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125654",
+    "ThreadId": "36686",
+    "Html": "Hello<br>\r\n<br>\r\nI just had a message in my blog here :&nbsp;<a href=\"http://thibaud60.blogspot.com/2008/10/wpftoolkit-datagrid-with-footer-and.html\">http://thibaud60.blogspot.com/2008/10/wpftoolkit-datagrid-with-footer-and.html</a><br>\r\nYou can find the zip source file in a link<br>\r\nRegards<br>\r\nThibaud\r\n",
+    "PostedDate": "2008-10-16T10:38:55.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129388",
+    "ThreadId": "36686",
+    "Html": "Hello<br>\r\n<br>\r\nWith the version of Datagrid (announces in 2008 PDC) : I just update my version with Footer <br>\r\n<br>\r\nMoreover, I update too the CurrentRow indicator (just with a new template, no modification in source code, great ! (with new RowHeaderTemplate property)<br>\r\n<br>\r\nYou can downloaded this new version here : <a href=\"http://thibaud60.blogspot.com/2008/11/new-version-of-datagrid-with-footer.html\">http://thibaud60.blogspot.com/2008/11/new-version-of-datagrid-with-footer.html</a><br>\r\n<br>\r\nDear Samantha ! I woud be great you can integrate this type of functionnality in the next version !! :-) <br>\r\n<br>\r\nI just look difference between Beta version and this new version ! your team works hard ! thanks a lot for this future official datagrid of WPF 4.0<br>\r\n<br>\r\nRegards<br>\r\n<br>\r\nThibaud<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-01T08:59:43.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232217",
+    "ThreadId": "36686",
+    "Html": "<p>I would like an update on the column footer status.</p>\r\n<p>When is the next version of the grid coming out and will the footer be included in it?</p>\r\n<p>Thanks and continue the great work.</p>",
+    "PostedDate": "2009-09-08T07:08:04.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450565",
+    "ThreadId": "36686",
+    "Html": "<p>Thank you Thibaud.</p>\r\n<p>I would like to have footer in Datagrid to show aggregate values like sum\\ avergage\\ count, etc.,&nbsp; Got any newer version ot release on this?</p>\r\n<p>Thanks in advance</p>",
+    "PostedDate": "2010-06-02T06:06:26.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519652",
+    "ThreadId": "36686",
+    "Html": "\r\n<p>Not to be a conspiracy theorist, but I believe this is going nowhere because of&nbsp;Microsoft's many control suite&nbsp;partners that make money off of basic things like a &quot;Footer&quot; for data grids. How many years has it been now that people are asking for\r\n this? (of course, I don't expect MS to do our job for us, so...)</p>\r\n<p>Looks like I'll be using Thibaud's update for v4: <a href=\"http://thibaud60.blogspot.com/2010/02/footer-on-wpf-datagrid-by-use-several.html\">\r\nhttp://thibaud60.blogspot.com/2010/02/footer-on-wpf-datagrid-by-use-several.html</a></p>\r\n<p>Thank you Thibaud.</p>\r\n<p><strong>UPDATE 2011-01-05:</strong> Thibaud's solution works wonderfully for syncronizing grids!</p>\r\n",
+    "PostedDate": "2010-11-09T15:26:56.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "593863",
+    "ThreadId": "36686",
+    "Html": "<p>Is this a joke? &nbsp;Does the WPF DataGrid really not have a footer row in April of 2011?!?! &nbsp;How much are third-party widget vendors paying you guys to leave this out?!?!?!&nbsp;</p>",
+    "PostedDate": "2011-04-07T18:02:17.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "839960",
+    "ThreadId": "36686",
+    "Html": "<p><br />I've been looking at the datagrid footer project and thinks it's realy useful. However, I've noticed a bug when you drag a header over two columns the associated grid column moves to the correct place but the main grid column stays in it's original position, do you have any ideas how to fix this ?</p>",
+    "PostedDate": "2012-05-23T08:35:36.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "840105",
+    "ThreadId": "36686",
+    "Html": "<p>Hello<br /><br />In my prototype application, I can easely reproduce the bug. The bug is different if I change the binding Mode of Index column Binding (see AssociatedDataGrid.SynchronizeVerticalDataGrid method)<br /><br />If you change to OneWay Mode, Datagrids work differently ... With TwoWay, grid A change index property of column C, Column C of the Grid B change, and Column A, and B change of Grid B change, with Binding,&nbsp; column A, B and C of Grid A change too ... It is a little bit complex to manage this algorithm ....<br /><br />This code is a prototype, just a prove of concept<br />For real application, I think it would be better to don't use Binding to synchonize index of columns, for Width property, I think is OK, but for index property, kinematics of change's properties is difficult to control with Binding ... It would better to use the \"old school\" algorithm ... (override metaproperty of Index column property, and use DependencyChangedProperty event to synchonize himself grid A and Grid B OR use Attached property to intercept cyclique change of Index property Values)<br /><br />I hope it can help you to adapt this code for your needed<br /><br />Best regards</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-05-23T13:17:37.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "928810",
+    "ThreadId": "36686",
+    "Html": "<p>Hi;</p>\r\n<p>&nbsp;</p>\r\n<p>You mention that there is a version for .Net 4. The download does not look to be the same as the previous. You mention that the new version has synch capabilities between grids but I don't see the footer capability that was in the previous version. Did I miss something - or is the previous version the actual DataGrid with footer.</p>\r\n<p>&nbsp;</p>\r\n<p>Peter</p>",
+    "PostedDate": "2012-10-18T08:36:04.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "929641",
+    "ThreadId": "36686",
+    "Html": "<p>Hello Peter</p>\r\n<p>I am not sure to understand your question, but if you want create a footer with this technic : <a href=\"http://thibaud60.blogspot.com/2010/02/footer-on-wpf-datagrid-by-use-several.html\">http://thibaud60.blogspot.com/2010/02/footer-on-wpf-datagrid-by-use-several.html</a></p>\r\n<p>you must insert in your xaml, Two instances of datagrid, and synchronize each one with another</p>\r\n<p>In bottom DataGrid, you need hide header's columns and put the bottom datagrid just under the first with Zero pixel between each one !</p>",
+    "PostedDate": "2012-10-19T14:59:47.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

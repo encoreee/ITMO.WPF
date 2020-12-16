@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using WPF 4's (in .NET 4) ribbon control, version 3.5.40729.1, in my application (edit: It also happens with the newly released version 4.0.0.11019). The application menu and all sub-menu popups align as far left as possible, usually far outside the ribbon window. The expected location is that the application menu's left edge aligns with the ribbon window's left edge, and that sub-menu popups will align with the left edge of the right (usually recent items) content pane.\n \nEven if just create a brand new ribbonwindow project and run it, the bug happens.\n \nI've attached a screenshot to illustrate.\n \nI also posted about this issue on the msdn forums: http://social.msdn.microsoft.com/Forums/en-US/wpf/thread/3f54d763-fbd1-47bd-8e2a-afbdc3e2f737",
+    "LastUpdatedDate": "2016-11-22T04:50:00.89-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-10-26T05:37:51.983-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Ribbon application menu alignment problem.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 14546
+  },
+  "FileAttachments": [
+    {
+      "FileId": 5061,
+      "FileName": "ribbonerror2.jpg",
+      "DownloadUrl": ".\\5061"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Same problem here. For the record, I'm running Windows 7 Ultimate x64 EN.",
+      "PostedDate": "2011-01-03T16:02:21.237-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Several reboots and reinstalls later, I found out what was causing the issue, at least in my case.\r\n\r\nWhen the Tablet input is enabled and set for right-handed use, the Popup control aligns to the right edge of its placement target, instead of the left one, presumably to prevent the writing hand from obscuring the popup. As the ApplicationMenu of the Ribbon control is rendered through a Popup, this causes the issue reported.\r\n\r\nWhile this behavior might make sense for popups in general (although it would be nice if such things were documented somewhere) it makes the WPF Ribbon control inconsistent with the other ribbons out there that just disregard this specific situation.",
+      "PostedDate": "2011-01-05T08:30:01.77-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@MarioC: You're brilliant! This problem has been bothering me for months. It seems the problem I encountered was the same as you... because when I changed the handedness of my Tablet PC to \"left\", the menus in the ribbon control began to work as expected.\r\n\r\nThe thing is, this problem never appeared for any other ribbon applications besides the ones I've made myself. However, those might be using different APIs and libraries than the wpf ribbon.\r\n\r\nAnyway, I hope that this issue will be fixed now that the problem has been identified. Thank you again!",
+      "PostedDate": "2011-01-05T12:10:04.79-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-01-25T19:03:30.49-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:20.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Impact: Low?? It's still an issue, 2016! And this is the very show stopper for we have to use another Control!",
+      "PostedDate": "2016-11-22T04:50:00.89-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

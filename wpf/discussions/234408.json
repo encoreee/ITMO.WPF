@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "520936",
+    "ThreadId": "234408",
+    "Html": "\r\n<p>We have a situation in which we need to create a custimozed version of WPF data grid to support pagination. and this needs to be shared across the application.&nbsp;</p>\r\n<p>So we are looking for creating a new custom WPF data grid which supports pagination.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-11T23:35:33.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524898",
+    "ThreadId": "234408",
+    "Html": "\r\n<p>you can find a nice solution at&nbsp;<a href=\"http://www.codeproject.com/KB/WPF/WpfDataVirtualization.aspx\">http://www.codeproject.com/KB/WPF/WpfDataVirtualization.aspx</a>&nbsp;or at&nbsp;bea.stollnitz.com/blog/?p=344.</p>\r\n<p>those solutions still need some modification but it's very elegant and has a decent documentation.</p>\r\n<p>share with us your thoughts.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-21T02:28:46.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "125394",
+    "ThreadId": "37820",
+    "Html": "Hi<br>\r\n<br>\r\nI'm looking for a&nbsp; simple example on how to freeze columns.<br>\r\n<br>\r\nHere is what I'm trying to accomplish.&nbsp;<br>\r\n<br>\r\n1) I select a cell on a datagrid.<br>\r\n&nbsp;<br>\r\n2) I find out the column number&nbsp;of the&nbsp;selected cell&nbsp;<br>\r\n<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>Dim</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"> col = DataGrid1.Columns.IndexOf(DataGrid1.CurrentCell.Column)<br>\r\n</span><br>\r\n3) Now I want to freeze this column. I tried to do this<br>\r\nwith&nbsp;&nbsp;<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>DataGrid1.Columns(col).IsFrozen = </p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">True</span></span><br>\r\n<br>\r\nbut it dos not work. It gives me the following error:<br>\r\n<br>\r\nError&nbsp;1&nbsp;'Set' accessor of property 'IsFrozen' is not accessible.&nbsp;<br>\r\n<br>\r\nWhat am I doing wrong? A simple example would help.<br>\r\nThanks<br>\r\n<br>\r\n<br>\r\nMarius<br>\r\n<br>\r\n</p>\r\n",
+    "PostedDate": "2008-10-15T12:05:32.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125405",
+    "ThreadId": "37820",
+    "Html": "IsFrozen is a read-only property so you cannot set a column to be frozen in that manner.&nbsp; To set frozen columns you have to go with the DataGrid.FrozenColumnCount API.\r\n",
+    "PostedDate": "2008-10-15T12:48:30.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

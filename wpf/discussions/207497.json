@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "424393",
+    "ThreadId": "207497",
+    "Html": "<p>Hi,</p>\r\n<p>Let me thank you in advance for you great works out there, and also for your valuable time for development of this toolkit.</p>\r\n<p>1. Isn't there any possible way to force the DatePicker/Calendar to use other calendar types than only Gregorian calender?!! And also force it to retrieve month and day names from current values in System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat or System.Globalization.CultureInfo.CurrentUICulture.DateTimeFormat?!</p>\r\n<p>2. How can I change the text &quot;Show Calendar&quot; to my preferred text in other language.</p>\r\n<p>Thanks for your concern.</p>\r\n<p>Hosein.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-27T01:53:58.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424749",
+    "ThreadId": "207497",
+    "Html": "<p>I was looking into this before because I wanted to use the DatePicker with alternative calendars.&nbsp; Basically you can have the Gregorian calendar displayed in any language you want.&nbsp; The month names and date format will be the CultureInfo of the current thread.</p>\r\n<p>Rather annoyingly, the WPF toolkit does not allow the override of the Watermark text without modifications to the source code.&nbsp; The easiest way I found to do this was to change the ExceptionStringTable.txt file in the Resources folder.&nbsp; Look for the &quot;DatePicker_WatermarkText=Show calendar&quot; line and change &quot;Show calendar&quot; it to whatever you want.&nbsp; If you leave it blank&nbsp; then no text will show.&nbsp; Many other threads on here have posted code to add a new property to allow you to set the the text via code.</p>\r\n<p>Hope that helps.</p>",
+    "PostedDate": "2010-03-28T18:36:06.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "425538",
+    "ThreadId": "207497",
+    "Html": "<p>Hi Elyoh,</p>\r\n<p>Of course it helped me. Thanks a lot for your time and concern.</p>\r\n<p>Hosein</p>",
+    "PostedDate": "2010-03-30T08:44:53.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

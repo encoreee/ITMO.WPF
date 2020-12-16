@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "576529",
+    "ThreadId": "248691",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I am trying to use the datagrid where one column will be combobox. So, trying DataGridComboBoxColumn . However, can figure out how to assign its Itemsource property to an linq object(data table). PLease give me\r\n an example.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2011-03-07T02:12:46.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

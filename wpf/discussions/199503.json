@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "408210",
+    "ThreadId": "199503",
+    "Html": "<p>Hi,</p>\r\n<p>Found a weired problem: I bound a List&lt;&gt; to the ItemSource. When I update an&nbsp;item in the list, and&nbsp;call&nbsp;DataGrid.Items.Refresh the updated item is displayed.</p>\r\n<p>However, if the user sorted the datagrid before, the Refresh has no effect.</p>\r\n<p>I made a workaorund using&nbsp;<span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">CollectionViewSource</span></span><span style=\"font-size:x-small\">.GetDefaultView and Refresh that, but it's not very elegant.</span></p>\r\n<p>Anyone else had this problem?</p>\r\n<p>Regards</p>\r\n<p>Oliver</p>",
+    "PostedDate": "2010-02-26T03:50:00.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431606",
+    "ThreadId": "199503",
+    "Html": "<p>Hi Oliver,</p>\r\n<p>I am also facing the same issue. Can you please elavorate the workaround mentioned above. anyway in my grid the number of rows will not be more than 50 so i think it will be ok for me.</p>\r\n<p>Thanks &amp; Regards,</p>\r\n<p>Shyam Sohane</p>",
+    "PostedDate": "2010-04-15T11:59:08.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431952",
+    "ThreadId": "199503",
+    "Html": "\r\nHi Shyam,<br>\r\n <br>\r\nActually pretty simple:<br>\r\n <br>\r\nCollectionViewSource.GetDefaultView([Your DataGrid Object].ItemsSource).Refresh();<br> <br>\r\n<hr id=stopSpelling>\r\nFrom: [email removed]<br>To: [email removed]<br>Date: Thu, 15 Apr 2010 11:59:10 -0700<br>Subject: Re: DataGrid.Items.Refresh has no effect if the grid was sorted [wpf:199503]<br><br>\r\n\r\n\r\nFrom: shyamsohane<br>\r\n<div id=ecxThreadNotificationPostBody>\r\nHi Oliver,<br>\r\nI am also facing the same issue. Can you please elavorate the workaround mentioned above. anyway in my grid the number of rows will not be more than 50 so i think it will be ok for me.<br>\r\nThanks & Regards,<br>\r\nShyam Sohane<br></div>\r\n<div id=ecxThreadNotificationFooter>\r\nRead the <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=199503&ANCHOR#Post431606\">full discussion online</a>.<br>\r\nTo add a post to this discussion, reply to this email (<a href=\"mailto:wpf@discussions.codeplex.com?subject=[wpf:199503]\">wpf@discussions.codeplex.com</a>)<br>\r\nTo start a new discussion for this project, email <a href=\"mailto:wpf@discussions.codeplex.com\">wpf@discussions.codeplex.com</a><br>\r\nYou are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/199503\">unsubscribe</a> on CodePlex.com.<br>\r\nPlease note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com<br></div> \t\t \t   \t\t  <br><hr>Angst vor Spam? <a href=\"http://redirect.gimas.net/?n=M1004NoSpam\"> Hotmail schützt Sie mit modernster Technologie!</a>",
+    "PostedDate": "2010-04-16T07:58:33.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "204727",
+    "ThreadId": "60448",
+    "Html": "<p>Hi,</p>\r\n<p>How can I get the selected Cell Text Value from a DataGrid instances?</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-23T17:54:28.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204798",
+    "ThreadId": "60448",
+    "Html": "<p>I can see the Cell Text value with the &quot;DataGridCellInfo.Owner.CurrentCellContainer&quot;. But there is no way to access the Owner since it is a private member...</p>\r\n<p>DataGridCellInfo dataGridCellInfo = dataGrid.CurrentCell;</p>\r\n<p>string s = dataGridCellInfo.Owner.CurrentCellContainer.ToString(); // Cannot access private property owner here.</p>\r\n<p>Is there anyway to access these private members?</p>",
+    "PostedDate": "2009-06-23T21:39:09.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

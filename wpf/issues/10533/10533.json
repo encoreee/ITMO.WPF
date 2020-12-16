@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I quickly scroll a DataGrid which is virtualizing rows I get the following:\n \nSystem.OverflowException: Arithmetic operation resulted in an overflow.\n   at System.IntPtr.op_Explicit(IntPtr value)\n   at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n   at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n \nI'm running on Vista x64.\nIf I don't scroll quickly, it doesn't happen.\nIf I don't use virtualization, it doesn't happen.\nIt is not dependant on what is happening to the grid at the time (i.e. if it is being updated)\n \nI've attached a project that reproduces the issue.\nJust build/run and quickly move mouse scroll wheel down.\n \nThanks,\nJan",
+    "LastUpdatedDate": "2013-02-21T18:41:00.02-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-26T01:28:52.91-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Mouse Wheel Scrolling causes Overflow",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 10533
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3314,
+      "FileName": "ScrollBug.zip",
+      "DownloadUrl": ".\\3314"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Unfortunately I could not repro this. Can you provide us with more details which you think would be relevant.",
+      "PostedDate": "2009-08-28T13:57:56.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-31T08:26:31.03-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I can reproduce this on Windows 7 x64 [Version 6.1.7600] using WPFToolkit.dll version 3.5.40128.1 and the attached solution. We are also seeing this in our application ...",
+      "PostedDate": "2009-12-31T08:32:31.17-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-14T05:46:46.71-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "we can reproduce this on Windows 7 x64. Please tell us if there are a workaround. Apparently the problem appears only with the scoll DOWN....",
+      "PostedDate": "2011-03-14T05:48:24.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I am having exactly the same error the only difference is that am using a win forms, both the .net datagridview and developer express datagrid give an “Arithmetic operation resulted in an overflow” exception when I use the mouse wheel to scroll quickly on windows 7 64 bit. Was this issue ever resolved if so what’s the fix.",
+      "PostedDate": "2011-08-29T05:16:59.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:00.02-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

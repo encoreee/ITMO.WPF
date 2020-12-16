@@ -1,0 +1,106 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "Calendar",
+      "DisplayName": "Calendar"
+    },
+    "ClosedComment": "Fixed in the March 2009 release.",
+    "ClosedDate": "2009-03-24T14:26:45.5-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Selecting a year in the decade view  of the calendar control which is the lowest or the highest year displayed result in -/+ 10 years being added. For example, selecting 2010 when range is 1999 - 2010 result in 2020 being selected.  \n \nAny time to fix for this and other datepicker bugs? Or do we have to wait until .NET 4?",
+    "LastUpdatedDate": "2013-05-16T05:31:12.503-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-01-22T12:40:10.82-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Decade Added or Substracted When Highest Or Lowest Year Is Selected In A Decade View",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 9009
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2730,
+      "FileName": "9009 fix by Caleb Vear.patch",
+      "DownloadUrl": ".\\2730"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Is there any update on this bug and a possible fix to it? Thanks",
+      "PostedDate": "2009-02-06T07:27:12.243-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I noticed this bug this afternoon and checked out the source code to see if I could figure out what was going wrong.  It turns out the problem was actually caused by the calendar updating the view when the mouse was pressed down.  Then when the mouse was released the item that was under it after the change was selected instead.  You can see this if you click and hold down the mouse on one of the years preceding or after the currently displayed decade.  The calendar will change the view as if the year had been selected already, then you release the mouse and you click a year 10 years before or after you meant to.\r\n\r\nAfter a little bit of investigation I was able to fix this issue from occurring and I have attached a patch which can be applied to the Calendar.cs file which resolves this issue.  Hopefully this can be included in the next release.\r\n",
+      "PostedDate": "2009-02-09T22:47:32.393-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-09T22:47:32.91-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-09T22:47:41-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have filed a bug in our internal database to be fixed in a future release.",
+      "PostedDate": "2009-02-18T16:57:35.9-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T16:57:36.9-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-09T07:08:38.173-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is fixed in the March 2009 release.",
+      "PostedDate": "2009-03-24T14:26:33.547-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T14:26:34.25-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-24T14:26:45.5-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:35.99-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:12.503-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

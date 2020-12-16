@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "135983",
+    "ThreadId": "40989",
+    "Html": "Hi everyone,<br>\r\n<br>\r\nI'm noticing a problem when my window loads with a datagrid on it. On my window_loaded event, I initialize th datagrid like this:<br>\r\n<span style=\"font-size:13px\">\r\n<p>            dgrdChild.AutoGenerateColumns = false;</p>\r\n<p>            // Columns.<br>\r\n            DataGridTextColumn colAccount = new DataGridTextColumn();<br>\r\n            Binding b = new Binding(&quot;Code&quot;);<br>\r\n            b.Mode = BindingMode.TwoWay;<br>\r\n            colAccount.Binding = b;<br>\r\n            colAccount.Width = new DataGridLength(100, DataGridLengthUnitType.Star);<br>\r\n            colAccount.CanUserSort = false;<br>\r\n            colAccount.Header = &quot;Code&quot;;<br>\r\n            dgrdChild.Columns.Add(colAccount);<br>\r\n<br>\r\n            DataGridTextColumn colDescription = new DataGridTextColumn();<br>\r\n            b = new Binding(&quot;Name&quot;);<br>\r\n            b.Mode = BindingMode.TwoWay;<br>\r\n            colDescription.Binding = b;<br>\r\n            colDescription.Width = new DataGridLength(100, DataGridLengthUnitType.Star);<br>\r\n            colDescription.CanUserSort = false;<br>\r\n            colDescription.Header = &quot;Name&quot;;<br>\r\n            dgrdChild.Columns.Add(colDescription);<br>\r\n<br>\r\n            DataGridTextColumn colAmount = new DataGridTextColumn();<br>\r\n            b = new Binding(&quot;Amount&quot;);<br>\r\n            b.Mode = BindingMode.TwoWay;<br>\r\n            colAmount.Binding = b;<br>\r\n            colAmount.Width = new DataGridLength(50, DataGridLengthUnitType.Star);<br>\r\n            colAmount.CanUserSort = false;<br>\r\n            colAmount.Header = &quot;Amount&quot;;<br>\r\n            dgrdChild.Columns.Add(colAmount);<br>\r\n            dgrdChild.ItemsSource = _TuitionAccountCol;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>The problem is, when the window loads, you can see the columns of the datagrid resizing. I mean, you can visually see that all columns will adjust their width. Am I doing something wrong or anyway to avoid this? Thanks.<span style=\"font-size:13px\"></span></p>\r\n",
+    "PostedDate": "2008-11-27T19:37:42.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138917",
+    "ThreadId": "40989",
+    "Html": "Is there any particular reason why you want to do this in the window_loaded event?  \r\n",
+    "PostedDate": "2008-12-09T05:48:25.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139972",
+    "ThreadId": "40989",
+    "Html": "Hi Vinsibal,<br>\r\n<br>\r\nSorry for the late response...<br>\r\n<br>\r\nNo particular reason... I always just did initialize my controls in the window_loaded event... when it comes to other controls like ListView, I don't see this behavior happening so I thought this is OK. But based on your question, am I placing it in the wrong event? I tried putting it on the constructor but I still see this behavior.<br>\r\n<br>\r\n<br>\r\n<br>\r\nAlso if I may add a related question:<br>\r\n<br>\r\nI have a window with a tabcontrol with 3 tabs. This 3 tabs have content of UserControl, where UserControl has a datagrid inside. In loaded event, I initialize the datagrid like in my original question. Columns are set to:<span style=\"font-size:13px;color:#2b91af\">\r\n<p>DataGridLength</p>\r\n</span>\r\n<p><span style=\"font-size:13px\">(100, </span><span style=\"font-size:13px;color:#2b91af\">DataGridLengthUnitType</span><span style=\"font-size:13px\">.Star)<br>\r\n<br>\r\nOn the first tab, the columns total width occupy the whole length of the grid (as expected). But in both of the next 2 tabs, the horizontal scrollbar appears and width of columns are significantly longer than in the first tab. I don't get it. They all use the same Initializing routine.<br>\r\n<br>\r\nIf you could guide me, it would be greatly appreciated. Thank you very much.\r\n<p> </p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-12-12T01:18:32.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

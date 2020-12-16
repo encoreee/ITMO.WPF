@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "267532",
+    "ThreadId": "78199",
+    "Html": "<p>Hello all, I am struggling with getting a progress bar to update on the MainWindow in my WPF MVVM application.&nbsp; The progressbar is in my main shell(MainWindow) and I need it to update from a class(model) that is utilizing a backgroundworker.</p>\r\n<p>&nbsp;</p>\r\n<p>Any guidance would be appreaciated.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you!</p>",
+    "PostedDate": "2009-12-15T05:02:25.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "479193",
+    "ThreadId": "223231",
+    "Html": "WindowStartupLocation=&quot;CenterScreen&quot; Width=&quot;450&quot; ResizeMode=&quot;CanResize&quot; &gt;\r\n        &lt;Grid.RowDefinitions&gt;\r\n          &lt;RowDefinition Height=&quot;30&quot; /&gt;\r\n            &lt;RowDefinition Height=&quot;130&quot; /&gt;\r\n            &lt;RowDefinition Height=&quot;Auto&quot; Name=&quot;Row to Hide&quot;/&gt;\r\n        &lt;/Grid.RowDefinitions&gt;\r\n\r\nI wanted to hide a specific row. here i wanted to hide third row. In the third row i placed a stackpanel containing listbox and a button. On a click of button in second row, i need third row to open and show the listbox. i specified the stack panel visibility to collapsed but still on page load the third row is taking the space.. Please help",
+    "PostedDate": "2010-08-11T09:25:36.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

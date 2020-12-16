@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "133675",
+    "ThreadId": "40288",
+    "Html": "Building on my thoughts about RibbonCommand forwarding to an existing ICommand <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39187\">here</a>:<br>\r\n<br>\r\nI think what I might like to do is create a RibbonDelegateCommand&lt;T&gt;, that derives from the Prism DelegateCommand&lt;T&gt;. AFAICT from the source code I would at least lose ToolTip functionality, and probably a lot more.<br>\r\n<br>\r\nWould it be possible to modify future versions of the Ribbon to use an IRibbonCommand interface (that derived from ICommand)? That way I could create my own command implementation that wasn't a RoutedCommand.<br>\r\n<br>\r\nI presume the licence for the current CTP prevents me modifying the code and shipping the modified version, right? Otherwise I'll try making the modification myself.<br>\r\n",
+    "PostedDate": "2008-11-19T09:26:17.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133733",
+    "ThreadId": "40288",
+    "Html": "Hi swythan,<br>\r\n<br>\r\nThanks for your comments about RibbonCommand.  We'll take this feedback into account when finalizing our design.  <br>\r\n<br>\r\nAs you guessed, the CTP license does prevent you from modifying and shipping source code.  Thanks for checking with us on that. <br>\r\n<br>\r\nSamantha\r\n",
+    "PostedDate": "2008-11-19T12:01:26.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

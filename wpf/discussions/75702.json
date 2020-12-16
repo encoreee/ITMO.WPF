@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "259018",
+    "ThreadId": "75702",
+    "Html": "<p>Hello everybody.</p>\r\n<p>I wanted to change my selected DataGridRow background when the focus is outside the DataGrid. This is the default convention used by ListBox, ListView and TreeView, a blue selection when the focus is inside the parent control and a gray one when it's outside of it.</p>\r\n<p>Searching on the web, I found that most people use a trigger on DataGrid.IsKeyboardFocusWithin, so that when it's true you have the blue backgroun and when it's false the gray one.</p>\r\n<p>So, I implemented that trigger, only to see that now my selection is always gray. The problem is that DataGrid.IsKeyboardFocusWithin is always false no matter how many times I click on it. I've even checked it using Snoop. I tried setting FocusManager.IsFocusScope to true to no avail. I even thought the problem could be that DataGrid.IsReadOnly is true, so I tried setting it to false to check what would happen, but I only received some errors on the debug console and it didn't fix anything.</p>\r\n<p>What could be possibly happening?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>-Sergi D&iacute;az</p>",
+    "PostedDate": "2009-11-20T03:00:52.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259021",
+    "ThreadId": "75702",
+    "Html": "<p>Now I feel like an idiot. I was setting DataGridCell.Focusable to false. No wonder they weren't catching the focus...</p>\r\n<p>Nothing to see here ;).</p>\r\n<p>&nbsp;</p>\r\n<p>-Sergi D&iacute;az</p>",
+    "PostedDate": "2009-11-20T03:04:33.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

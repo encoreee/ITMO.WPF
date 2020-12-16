@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "158351",
+    "ThreadId": "47314",
+    "Html": "Hi. All.<br>\r\n<br>\r\nHow can I fit RowDetailsTemplate width to DataGrid inner width?<br>\r\nThis size is near the DataGrid.ActualWidth without vertical scrollbar width of DataGrid.<br>\r\nI want to show whole RowDetails cell with no horizontal scroll.<br>\r\n<br>\r\nThank you \r\n",
+    "PostedDate": "2009-02-16T19:42:36.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

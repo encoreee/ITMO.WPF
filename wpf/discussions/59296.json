@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "200733",
+    "ThreadId": "59296",
+    "Html": "<p>Hi there,</p>\r\n<p>Is it possible to specify a custom format for the DatePicker such as &quot;dd MMM yyyy&quot;? The SelectedDateFormat property only allows short or long forms. Surely I don't have to override one of the forms in the current culture in DateTimeFormatInfo?</p>\r\n<p>Thanks,<br>Kent</p>",
+    "PostedDate": "2009-06-12T02:03:49.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

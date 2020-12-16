@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "161886",
+    "ThreadId": "48494",
+    "Html": "&nbsp; Hello.I have some questions about customizing DataGrid. Still now I used ListView.Please help me understand how DataGrid works:<br>\r\n&nbsp;&nbsp; 1) To customize a row in ListView I modified ItemContainerStyle. What I must modify using DataGrid? <br>\r\n&nbsp;&nbsp; 2) Why when I Edit the Style (RowHeader for example) the Style is empty. I must write XAML? It is compatible with Expression Blend?<br>\r\n&nbsp;&nbsp; 3) Why the first column isn't starting from the left 0. It lets space for RowHeader.How I disable it?<br>\r\n&nbsp;Thanks<br>\r\n",
+    "PostedDate": "2009-02-25T06:19:49.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "162017",
+    "ThreadId": "48494",
+    "Html": "Hi johnnyalex,<br>\r\n<br>\r\n1) You can use RowStyle (this property forwards to ItemContainerStyle).<br>\r\n2) I'm not sure that I understand your question.  You should be able to edit Styles in either XAML or code, and they should be compatible with Expression Blend and the Visual Studio WPF Designer (Cider)<br>\r\n3) You can turn off the row header column by setting the HeadersVisibility property to Column.<br>\r\n<br>\r\nThanks,<br>\r\nSamantha\r\n",
+    "PostedDate": "2009-02-25T10:54:32.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

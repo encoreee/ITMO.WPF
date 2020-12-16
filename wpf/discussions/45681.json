@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "152456",
+    "ThreadId": "45681",
+    "Html": "Hi All,<br>\r\n<br>\r\nI have a business object bound to my DataGrid and need to know when a row has completed editing and the datasource object is updated so I can save. I can only find a RowEditEnding though which is too early to save. I ideally need a RowEditEnded so I can be sure the datasource object is updated and I can save the changes.<br>\r\n<br>\r\nAny ideas?<br>\r\n<br>\r\nTIA<br>\r\n",
+    "PostedDate": "2009-01-30T02:30:56.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152491",
+    "ThreadId": "45681",
+    "Html": "See this thread <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39356\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=39356</a> and this thread <a href=\"http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=42538\">http://www.codeplex.com/wpf/Thread/View.aspx?ThreadId=42538</a>.\r\n",
+    "PostedDate": "2009-01-30T05:13:32.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "152502",
+    "ThreadId": "45681",
+    "Html": "Option 1 looks like what I am after, and code compiles find. But the OnDataGridSourceUpdated event does not fire at all? Is there a specific place where you have to hook the event handler? I am doing it on on the page load.\r\n",
+    "PostedDate": "2009-01-30T05:49:23.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153208",
+    "ThreadId": "45681",
+    "Html": "Any ideas here guys? How do I get the SourceUpdated event to fire in option 1 above? This has be really stuck, and delaying my release to the client.<br>\r\n<br>\r\nPLEASE help :)<br>\r\n",
+    "PostedDate": "2009-02-01T23:48:15.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153224",
+    "ThreadId": "45681",
+    "Html": "Okay, some small progress, but in the wrong direction. I am managing to get the TargetUpdated event to fire, but NOT SourceUpdated.<br>\r\n<br>\r\nMy XAML looks like this<br>\r\n&lt;dg:DataGridTemplateColumn Header=&quot;Cost (Ex)&quot; Width=&quot;120&quot;&gt;<br>\r\n&nbsp; &lt;dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Label Content=&quot;{Binding CostEx, NotifyOnSourceUpdated=True}&quot; ContentStringFormat=&quot;{}{0:0.00}&quot; HorizontalContentAlignment=&quot;Right&quot; Margin=&quot;0&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n&nbsp; &lt;/dg:DataGridTemplateColumn.CellTemplate&gt;<br>\r\n&nbsp; &lt;dg:DataGridTemplateColumn.CellEditingTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;DataTemplate&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextBox Text=&quot;{Binding CostEx, NotifyOnSourceUpdated=True}&quot; Margin=&quot;0&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/DataTemplate&gt;<br>\r\n&nbsp; &lt;/dg:DataGridTemplateColumn.CellEditingTemplate&gt;<br>\r\n&lt;/dg:DataGridTemplateColumn&gt;<br>\r\n<br>\r\nIf I changed NotifyOnSourceUpdated to NotifyOnTargetUpdated (and the respective code behind), then the TargetUpdated event is fired. For the source though, nothing is fired at all.<br>\r\n<br>\r\nCode behind looks like this...<br>\r\n<br>\r\npublic Stock()<br>\r\n{<br>\r\n&nbsp; InitializeComponent();<br>\r\n<br>\r\n&nbsp; Binding.AddTargetUpdatedHandler(StockPricingGrid, OnDataGridSourceUpdated);<br>\r\n}<br>\r\n<br>\r\nvoid OnDataGridSourceUpdated(object sender, DataTransferEventArgs e)<br>\r\n{<br>\r\n&nbsp; FMS.DAL.StockPricingCollection items = (FMS.DAL.StockPricingCollection)StockPricingGrid.ItemsSource;<br>\r\n&nbsp; if (items == null)<br>\r\n&nbsp;&nbsp;&nbsp; return;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp; items.SaveAll();<br>\r\n}<br>\r\n",
+    "PostedDate": "2009-02-02T00:51:33.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153225",
+    "ThreadId": "45681",
+    "Html": "Sorry for confusion people. The line above..<br>\r\nBinding.AddTargetUpdatedHandler(StockPricingGrid, OnDataGridSourceUpdated);<br>\r\n<br>\r\nShould read<br>\r\nBinding.AddSourceUpdatedHandler(StockPricingGrid, OnDataGridSourceUpdated);<br>\r\n<br>\r\nI forgot to change it all back when I posted the message here. <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-02-02T00:57:48.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153234",
+    "ThreadId": "45681",
+    "Html": "You can use a RowValidationRule with ValidationStep=&quot;CommittedValue&quot;. That should do what you want (I had the same problem earlier, and CommittedValue causes the validator to invoke when the data has been committed to the bound object).<br>\r\n",
+    "PostedDate": "2009-02-02T01:37:31.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153236",
+    "ThreadId": "45681",
+    "Html": "Thanks mikj. How do I implement a RowValidationRule?<br>\r\n",
+    "PostedDate": "2009-02-02T01:41:59.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153245",
+    "ThreadId": "45681",
+    "Html": "Implement System.Windows.Controls.ValidationRule and then in the XAML:<br>\r\n<br>\r\n&lt;Page ... xmlns:yourns=&quot;clr-namespace:YourNamespace&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid ...&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid.RowValidationRules&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;yourns:YourValidatorClass ValidationStep=&quot;CommittedValue&quot; /&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid.RowValidationRules&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid&gt;<br>\r\n&nbsp;&lt;/Page&gt;<br>\r\n<br>\r\nWhat I have done is simply to let the validator attempt a commit to the data layer, and return a success or failure status based on the result of that.<br>\r\n",
+    "PostedDate": "2009-02-02T01:55:08.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153254",
+    "ThreadId": "45681",
+    "Html": "Great stuff. Your trick is working :)<br>\r\n<br>\r\nWhat I did, was implement the IDataErrorInfo interface on my DAL class, then call Save() in the string Error property. <br>\r\n<br>\r\nThis works and gets the job done, but data is saved everytime a cell is committed which is a load of server traffic. Is there a way to handle validation only when focus leaves a row?<br>\r\n<br>\r\nThanks a lot for your tips mikj. At least now I have something working.<br>\r\n<br>\r\nIn the xaml, I just had to set..<br>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGrid.RowValidationRules</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">  &lt;</span><span style=\"font-size:13px;color:#a31515\">DataErrorValidationRule</span><span style=\"font-size:13px;color:#ff0000\"> ValidationStep</span><span style=\"font-size:13px;color:#0000ff\">=&quot;CommittedValue&quot;/&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">dg</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGrid.RowValidationRules</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<br>\r\n</span></span>\r\n",
+    "PostedDate": "2009-02-02T02:21:39.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153257",
+    "ThreadId": "45681",
+    "Html": "I'm not sure I understand what you are doing at this point. Adding a row validation rule requires no changes to your business object class (unless you choose to implement ValidationRule in it, but I prefer to keep that in a separate *Validator class so it is clear what class performs what function) and it only fires on row exit, not when moving between columns. You also &quot;should not&quot; need the SourceUpdated handler, but I am not too sure exactly when that event fires and am not in a position to look into that right now.<br>\r\n<br>\r\nTry setting a breakpoint in your validator - it should fire _only_ on row exit. If that is the case, your problem is somewhere in the surrounding code, and your best bet might be to put breakpoints there and look at stack traces. If a RowValidationRule fires when you move between cells, I am at a total loss - I can definitely say that it doesn't for me, and even the name implies that it is not supposed to.<br>\r\n",
+    "PostedDate": "2009-02-02T02:29:55.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

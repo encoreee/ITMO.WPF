@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "149057",
+    "ThreadId": "44765",
+    "Html": "Hi,<br>\r\nI'm wondering whether it's possible to stop the Ribbon panel itself getting focus after mouse click. I've tried setting Focusable=false at several places but haven't achieved this.<br>\r\nThanks.\r\n",
+    "PostedDate": "2009-01-20T22:24:03.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

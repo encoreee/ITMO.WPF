@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "134550",
+    "ThreadId": "40559",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a BindingList as my Dataconext to the gird. So when ever data\r\nget changed I use ResetItems method to set the new values to the grid.\r\nBut when this change occur i want to notify the user. So in two or\r\nthree columns i want set the the back color or fore color to some other\r\ncolor and reset it to a normal color after 30 seconds or some time.\r\nhere according to the the new data in the cell color can vary. So how\r\nto archive this blinking cell behavior in this data grid.<br>\r\n<br>\r\nThanks<br>\r\nPats\r\n",
+    "PostedDate": "2008-11-22T21:42:21.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137232",
+    "ThreadId": "40559",
+    "Html": "Maybe this sample here, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/11/04/wpf-vsm-and-datagrid-sample.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/11/04/wpf-vsm-and-datagrid-sample.aspx</a>, can give you some ideas.  I make the whole row pulse when in edit mode.  \r\n",
+    "PostedDate": "2008-12-03T05:42:10.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

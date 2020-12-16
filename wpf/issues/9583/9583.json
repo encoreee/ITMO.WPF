@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed - By design.",
+    "ClosedDate": "2009-03-23T10:40:48.33-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "DatePicker lets user to enter time and correctly parses it and stores in its SelectedDate property, but subsequently clears the text presentation to Date-only.\n \nTo reproduce:\n \n        <UniformGrid>\n            <TextBox\n                Text=\"{Binding SelectedDate, ElementName=pick, UpdateSourceTrigger=PropertyChanged}\"\n                VerticalAlignment=\"Center\" HorizontalAlignment=\"Stretch\" Margin=\"8\"/>\n            <WpfToolkit:DatePicker x:Name=\"pick\"\n                VerticalAlignment=\"Center\" HorizontalAlignment=\"Stretch\" Margin=\"8\"/>\n        </UniformGrid>\n \nClick on DatePicker's textbox, type in 01/01/2009 10:30. Press Tab. The bound textbox on the right shows the correct DateTime value with time.\n \n \n \nWhat is wrong:\n \nThe data is expected to survive roundtrip from text to DateTime presentation, but it does not.\n \n \nProposed solution:\n \nDetect whether SelectedDate has non-zero time and format it with time in that case.\nSpecial handling also required when user chooses the date using mouse. In that case if before mouseclick SelectedDate had a non-zero time, the value after selection should accept the same TimeOfDay instead of going to 12:00 as of now.",
+    "LastUpdatedDate": "2013-05-16T05:31:08.09-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-03-23T06:18:42.367-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker does not fully support TIME part of DateTime",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9583
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is by design.  The DatePicker is only designed to handle dates, not times, and all of the behavior you describe (changing the time to 12:00 for example) is by design.  If you need the control to handle times, you'll need to subclass it or modify the source to be a DateTimePicker.",
+      "PostedDate": "2009-03-23T10:40:36.393-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-23T10:40:36.987-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-23T10:40:48.33-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:25.293-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:08.09-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "273394",
+    "ThreadId": "79818",
+    "Html": "<p>I have the need to show RowDetails in the MS WPF DataGrid when the user performs an action outside of the grid. The thing is though, I need to be able to switch out exactly what the RowDetails will be based on that. For example, if the click Add, I want to show RowDetails below Row of type AddRowDetailControl, and if they choose Edit, I would want to show a different control under the same row instead. Is this possible?</p>",
+    "PostedDate": "2010-01-05T09:48:39.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

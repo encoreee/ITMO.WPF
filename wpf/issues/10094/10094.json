@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This relates to the custom themes - not the wpf toolkit itself, but since the themes seems to be a subproject released under this, as far as I can tell this is the best place to post this.\n \nBasically the initial visual state of checkboxes and radio buttons when they have IsChecked set to true is wrong - they do *not* display a check or radio button as they should.\n \nFor more details, see the following posting:\n \nhttp://wpf.codeplex.com/Thread/View.aspx?ThreadId=58152\n \nRegards,\nPhil",
+    "LastUpdatedDate": "2013-02-21T18:41:13.707-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-06-04T14:23:46.957-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Serious bug in the majority of themes",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10094
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

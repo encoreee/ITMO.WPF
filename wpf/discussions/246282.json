@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "567118",
+    "ThreadId": "246282",
+    "Html": "\r\n<p>Hi there!</p>\r\n<p>&nbsp;</p>\r\n<p>We are using the DataGrid in our current Project (actually the Version from the PresentationFramework 4 .... don't know if this actually makes any difference in the API). It is working pretty well except one little thing that is bugging me for quite some\r\n time now. We do want to use the MultiSelect functionality but at the same time we would very much like to disable the DragSelect behavior (select one row and drag the mouse to select additional rows). The DragSelect is interfering with out Drag&amp;Drop implementation.\r\n I couldn't find any way to disable the DragSelect. Right now we are using a hack to disable it by catching the mouse events before they reach the data grid and some messing around with the selected item. This is no nice solutions and creates a whole lot of\r\n other problems as well. Is there any way to disable the DragSelect Feature that I can not see right now? One option would be to use the CodePlex version, compile it for .Net 4.0 and just throw out the DragSelect code parts or introduce a new Property to disable\r\n it. But when there is another way I really would like to hear about it so we can&nbsp;stick&nbsp;with the Framework assembly.</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2011-02-16T06:13:17.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

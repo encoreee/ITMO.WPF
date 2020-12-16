@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "241548",
+    "ThreadId": "70869",
+    "Html": "<p>I use a style to set a tooltip as follows:</p>\r\n<p>&lt;Style TargetType=&quot;{x:Type graphsharp:EdgeControl}&quot;&gt;<br>&nbsp; &lt;Setter Property=&quot;ToolTip&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;Setter.Value&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Binding RelativeSource=&quot;{x:Static RelativeSource.Self}&quot; Path=&quot;Edge.Name&quot;/&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/Setter.Value&gt;<br>&nbsp; &lt;/Setter&gt;<br>&lt;/Style&gt;</p>\r\n<p>This works fine.&nbsp; I now want my tooltip to be a bit more complex.&nbsp; However,&nbsp;if I replace the &lt;Binding&gt; element by&nbsp;a&nbsp;&lt;Label&gt;, &lt;StackPanel&gt;, &lt;Grid&gt; etc, XAML complains.&nbsp; One proposed solution I found on the web suggested defining the body of the tooltip as a static resource, and then setting the value of the tooltip to be a reference to this resource.&nbsp; E.g.</p>\r\n<p>&lt;StackPanel x:Key=&quot;myToolTip&quot;&gt;<br>&nbsp; &lt;Label&gt;...&lt;/Label&gt;<br>&lt;/StackPanel&gt;</p>\r\n<p>...</p>\r\n<p>&lt;Setter Property=&quot;ToolTip&quot; Value=&quot;{StaticResource myToolTip}&quot;&gt;</p>\r\n<p>This approach stops the XAML parser from complaining.&nbsp; However, I can't figure out how/where to set the data context and binding in this version.&nbsp; If I just take the binding from the first version and stick it in the myToolTip resource then I get an empty tooltip, presumably because the binding is not picking up the correct thing.</p>\r\n<p>If any WPF guru out there can suggest a solution I'd appreciate it.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-10-02T17:01:38.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242890",
+    "ThreadId": "70869",
+    "Html": "<p>Kevin,</p>\r\n<p>You probably already got this working (mostly) using the resource trick over on our Graph# conversation, but I thought I'd answer your question here in case anyone else finds this later.&nbsp; You should be able to use the same binding syntax in the tooltip resource that you use in your normal &quot;inline&quot; content.&nbsp; The problem you had was most likely related to the fact that your binding had an invalid path.</p>\r\n<p>One thing you should ALWAYS do when working with problems like this - run under the debugger and look for binding messages going to the output window of VS.&nbsp; Anytime there are binding errors, they will show up in the output window and often have enough information that you can use them to debug your bindings and fix the errors.&nbsp; For instance, for this error, you should have seen a binding error message that said something about not being able to find an Edge property on some type (which would have been either your root Graph VM type or your Edge VM type, depending on whether you were using my fix that sets the DataContext as appropriate when creating edges &amp; vertices or not).&nbsp; This message should have immediately led you to the conclusion that something was wrong with your bindings and not WPF (though I'm inclined to agree that needing to use a resource for this stuff means that there's something wrong with the way XAML works in this case - actually not XAML, but rather the definition of the ToolTip property).</p>\r\n<p>Kelly</p>",
+    "PostedDate": "2009-10-07T03:22:47.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

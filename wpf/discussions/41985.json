@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "139389",
+    "ThreadId": "41985",
+    "Html": " Hi, <br>\r\nI'm using Entity Framework and have successfully bound a typed list of object to datagrid (ObjectQuery&lt;department /&gt;). Alle classes derive from EntityObject.\r\n<pre>&lt;dg:DataGrid x:Name=&quot;dg&quot; ItemsSource=&quot;{Binding}&quot; Margin=&quot;10&quot; AutoGenerateColumns=&quot;False&quot; Background=&quot;#80909090&quot; AlternationCount=&quot;2&quot;&gt;\r\n&lt;/dg:DataGrid.ContextMenu&gt;\r\n&lt;dg:DataGrid.Columns&gt;\r\n  &lt;dg:DataGridTextColumn Binding=&quot;{Binding DepartmentID, Mode=OneWay}&quot; Header=&quot;ID&quot; Width=&quot;SizeToCells&quot;&gt;&lt;/dg:DataGridTextColumn&gt;\r\n  &lt;dg:DataGridTextColumn Binding=&quot;{Binding Name}&quot; Header=&quot;Department Name&quot; Width=&quot;SizeToCells&quot;&gt;&lt;/dg:DataGridTextColumn&gt; \r\n  &lt;dg:DataGridTextColumn Binding=&quot;{Binding Budget, StringFormat=C}&quot; Header=&quot;Budget&quot; Width=&quot;SizeToCells&quot;&gt;&lt;/dg:DataGridTextColumn&gt;\r\n  &lt;dg:DataGridTextColumn Binding=&quot;{Binding StartDate, StringFormat=d}&quot; Header=&quot;StartDate&quot; Width=&quot;SizeToCells&quot;&gt;&lt;/dg:DataGridTextColumn&gt;\r\n  &lt;dg:DataGridTextColumn Binding=&quot;{Binding Administrator, Mode=OneWay}&quot; Header=&quot;Administrator&quot; Width=&quot;SizeToCells&quot;&gt;&lt;/dg:DataGridTextColumn&gt;\r\n  &lt;dg:DataGridComboBoxColumn Header=&quot;Course List&quot; Width=&quot;200&quot; \r\n     <strong>TextBinding=&quot;{Binding Path=Course.Title}&quot; ItemsSource=&quot;{Binding Path=Course}&quot;</strong> &gt;\r\n  &lt;/dg:DataGridComboBoxColumn&gt;\r\n&lt;/dg:DataGrid.Columns&gt;\r\n&lt;/dg:DataGrid&gt;\r\n</pre>\r\nThe DataGrid binds well and shows all columns. However, the DataGridComboBoxColumn shows nothing. No exception or warning under all circumstances. The Course property is defined as this: public global::System.Data.Objects.DataClasses.EntityCollection&lt;course /&gt; Course Each course object has a property Title. I'm struggling with the definition formatted bold in the source:\r\n<pre>   TextBinding=&quot;{Binding Path=Course.Title}&quot; ItemsSource=&quot;{Binding Path=Course}&quot; \r\n</pre>\r\nSome other variations I tried didn't work either.  Could somebody bring some light into this? The object is filled correctly and has valid data in it, checking DataContext of Window with debugger. When I use same dataource for a drop down and assign in SelectionChanged event the DataContext using code to the element's property department.Course it's working well and the data appear in the combobox. This is code which works well:\r\n<pre>// Same data bound to ListBox works well\r\nprivate void departmentList_SelectionChanged(object sender, SelectionChangedEventArgs e) \r\n{\r\n  Department department = (Department)this.departmentList.SelectedItem;\r\n  courseList.DataContext = department.Course;\r\n}\r\n</pre>\r\n<br>\r\nThanks a lot,<br>\r\nJoerg\r\n",
+    "PostedDate": "2008-12-10T10:38:02.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141661",
+    "ThreadId": "41985",
+    "Html": "Try setting the ItemsSource binding in the ElementStyle and EditingElementStyle.  For more on this see this post, <a href=\"http://blogs.msdn.com/vinsibal/archive/2008/12/17/wpf-datagrid-dynamically-updating-datagridcomboboxcolumn.aspx\">http://blogs.msdn.com/vinsibal/archive/2008/12/17/wpf-datagrid-dynamically-updating-datagridcomboboxcolumn.aspx</a>.\r\n",
+    "PostedDate": "2008-12-18T12:12:32.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

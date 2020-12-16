@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In the rating control it is not possible to click on an item to deselect this item and reduce the rating to the next lower value.\nAlso it is not possible to reset the value to zero with the ratingcontrol after at least one item was selected.\n \nsome example:\nif the rating control has five stars, item 5 is selected, the value is 1.0.\nif I click now on the 5th item, this item should be deselected and the value should be 0.8 after this.\nThe same if only one item is set, then the value in this example is 0.2 after deselection it should be 0.",
+    "LastUpdatedDate": "2013-02-21T18:40:40.857-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2010-03-22T02:02:06.047-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Rating Control (Input.Toolkit) deselect not possible",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12181
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

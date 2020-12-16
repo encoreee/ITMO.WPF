@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "210954",
+    "ThreadId": "62161",
+    "Html": "<p>Hi,</p>\r\n<p>Im having requirment ,upon checking checkbox in row header column ,entire row except checkbox in rowheader has to be disabled and also i need to change one of property of DatagridRow Datacontext on checking and unchecking the textbox.</p>\r\n<p>How to do above case through triggers.</p>\r\n<p>&nbsp;</p>\r\n<p>With Regards,</p>\r\n<p>Mahender</p>",
+    "PostedDate": "2009-07-10T13:14:55.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

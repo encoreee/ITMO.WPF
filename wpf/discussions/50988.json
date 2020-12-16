@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "170868",
+    "ThreadId": "50988",
+    "Html": "Is there a list that shows the controls that work with the new WPF Themes?  I noticed TextBlock does not work.\r\n",
+    "PostedDate": "2009-03-23T07:49:48.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "170946",
+    "ThreadId": "50988",
+    "Html": "If you open the xaml of one of the themes, all of the controls which they are designed to work with are called out in comments (like &lt;!-- Button --&gt;).  Here's a list:<br>\r\n<br>\r\nButton<br>\r\nToggleButton<br>\r\nCheckBox<br>\r\nRadioButton<br>\r\nExpander<br>\r\nTextBox<br>\r\nPasswordBox<br>\r\nRichTextBox<br>\r\nThumb<br>\r\nSlider<br>\r\nScrollBar<br>\r\nScrollViewer<br>\r\nFlowDocumentScrollViewer<br>\r\nListBox<br>\r\nListBoxItem<br>\r\nTabControl<br>\r\nTabItem<br>\r\nComboBox<br>\r\nComboBoxItem<br>\r\nMenu<br>\r\nMenuItem<br>\r\nToolbar<br>\r\nToolTip<br>\r\nProgressBar<br>\r\nTreeView<br>\r\nTreeViewItem <br>\r\n<br>\r\nIt should be pretty easy to extend any of these themes for TextBlock - you just need to create a style which uses the same FontFamily, FontSize, and Foreground (or whatever other properties you want to apply) as the other controls in the theme.\r\n",
+    "PostedDate": "2009-03-23T11:02:56.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

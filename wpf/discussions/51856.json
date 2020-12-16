@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "173964",
+    "ThreadId": "51856",
+    "Html": "<p>I want to color some dates in the Calendar control based on a runtime value. Using the style template doesn't quite do it it seems. What I need is programmatic <br>\r\naccess to the individual CalendarDayButton controls in the Calendar control. I can get at the CalendarItem in the Calendar using code like this:</p>\r\n<p>using System.Windows.Controls;<br>\r\nusing System.Windows.Controls.Primitives;<br>\r\nusing System.Windows.Media;<br>\r\nusing System.Windows.Shapes;</p>\r\n<p>namespace Foo<br>\r\n{<br>\r\n    public class CalendarEx : Calendar<br>\r\n    {<br>\r\n        public override void OnApplyTemplate()<br>\r\n        {<br>\r\n            base.OnApplyTemplate();</p>\r\n<p>            CalendarItem item = this.GetTemplateChild(&quot;CalendarItem&quot;) as CalendarItem;<br>\r\n            item.Background = new SolidColorBrush(Colors.Brown);<br>\r\n        }<br>\r\n    }<br>\r\n}</p>\r\n<p>This sets the background color of the control to brown. I cannot do the same with the CalendarDayButton as that class, and the CalendarItem class are sealed. <br>\r\nAlso, setting the template doesn't give me access to each individual button. Is there a solution to my problem other than rewriting a Calendar control from scratch?</p>\r\n<p>Regards,<br>\r\nSøren</p>\r\n",
+    "PostedDate": "2009-03-31T10:46:45.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173975",
+    "ThreadId": "51856",
+    "Html": "It seems I didn't search hard enough. Found a clue here: <a href=\"http://wpf.codeplex.com/Thread/View.aspx?ThreadId=49144\">http://wpf.codeplex.com/Thread/View.aspx?ThreadId=49144</a><br>\r\n<br>\r\nI'll take alook at that.<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-31T11:02:08.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

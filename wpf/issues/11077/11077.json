@@ -1,0 +1,126 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you scroll up/down with the mouse and you don't change the selected row(s) but the event will be fired as many times as many row you scrolled. In this case the event should not be fired.\nIf you scroll with keyboard and you use the page up/down keys, you jump a few rows and change the selection. In this case the event will be fire not only once but as many times as many rows you jumped. \n \nThis behaviour is a major performance issue if you have a longer task to do when you have the selection changed.\n \nTo reproduce:\n1, Create a DataGrid\n2, Fill it with 100 rows\n3, Make the DataGrid big enough to display 20 lines\n4, Make the Vertical Scrollbar visible\n5, Create a SelectionChanged event (you can put a Sleep() into the handler to feel the problem:)\n6, Put a breakpoint into the event\n7, Run the app\n8, Select a row\n9, Scroll with keyboard or mouse\n \n \nI used the DataGrid of the June 2009 Toolkit, and also tried the DataGrid in build 29533 (November 2009).",
+    "LastUpdatedDate": "2015-03-12T17:29:48.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-12-08T04:03:36.847-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid SelectionChanged event fired many times when scrolling",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 11077
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3617,
+      "FileName": "DataGridWpfTest.7z",
+      "DownloadUrl": ".\\3617"
+    },
+    {
+      "FileId": 8836,
+      "FileName": "WeirdOrNot.png",
+      "DownloadUrl": ".\\8836"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "andrasfuchs ,\r\n\r\nI could not repro this issue. Can you please provide a simple isolated repro application?\r\n\r\nNavin",
+      "PostedDate": "2009-12-15T18:00:18.577-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello Navin,\r\n\r\nI created a repro project, so you can see the problem. I have to admit, that my description was not precise enough, but I realized it only when I started to build this repro project.\r\nSo the problem is not with the DataGrid itself, but with the DataGridComboBoxColumn. The DataGrid works perfectly until I added the DataGridComboBoxColumn and set its properties.\r\nI've tested it with the wpf toolkit b29533 so the DataGrid reference in the project points to a local project, you might need to replace it to make it work.\r\nPlease find it attached.\r\n\r\nAndras\r\n",
+      "PostedDate": "2009-12-16T05:10:17.63-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-16T05:10:23.03-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-16T05:11:37.45-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello Andras,\r\n\r\nI was able to repro the issue using your project. The issue here is that on scrolling, DataGridComboBoxColumn fires the SelectionChangedEvent and not the DataGrid. But SelectionChangedEvent is a routedevent which if unhandled bubles up and eventually gets handled by the DataGrid SelectionChangedEventHandler. Therefore it is the responsibility of the DataGrid Event Handler to see if the event is fired from some inner control (ComboBox in this case) or by the DataGrid itself. The code for example would look like:\r\n\r\nprivate void orderDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)\r\n        {\r\n            // put a breakpoint here            \r\n            if (e.OriginalSource == this.orderDataGrid)\r\n            {\r\n                 //Your code for the handler                \r\n            }            \r\n        }\r\n\r\nHope this helps.\r\n\r\nNavin",
+      "PostedDate": "2009-12-16T17:39:27.763-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello Navin,\r\n\r\nExcellent, thank you for your help!\r\n\r\nAndras",
+      "PostedDate": "2009-12-17T03:44:12.69-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-17T17:07:09.643-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:40:50.227-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:03.903-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:04.023-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:35:36.3-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "![Image](http://1drv.ms/1x0gTi2)",
+      "PostedDate": "2015-03-12T17:26:11.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-03-12T17:27:10.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hmm this place doesn't like OneDrive link.  Here's the image again as attachment",
+      "PostedDate": "2015-03-12T17:27:11.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hmmm 2 I don't see any attachment to my text above.  Let's try the OneDrive link directly in text.  Sorry about that\r\n\r\nhttp://1drv.ms/1x0gTi2\r\n\r\n",
+      "PostedDate": "2015-03-12T17:29:48.31-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

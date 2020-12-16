@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "132699",
+    "ThreadId": "39976",
+    "Html": "Hi.., <br>\r\nCan we display unbound data to the DataGrid.?? say just by adding columns and rows..??<br>\r\n",
+    "PostedDate": "2008-11-14T11:29:36.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132742",
+    "ThreadId": "39976",
+    "Html": "Yes, you can add columns through DataGrid.Columns.Add() and you can add rows through DataGrid.Items.Add.  \r\n",
+    "PostedDate": "2008-11-14T14:57:27.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132778",
+    "ThreadId": "39976",
+    "Html": "Hi vinsibal,<br>\r\ncan you give us an example.<br>\r\nhow to add / edit / select unbound data in datagrid??<br>\r\nThanks in advance.<br>\r\n",
+    "PostedDate": "2008-11-14T19:52:50.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132808",
+    "ThreadId": "39976",
+    "Html": "Thanks Vinisibal, for you reply,<br>\r\n<br>\r\nBut i am not add column/rows as you have said, can you please give an example that shows how to achieve this..??<br>\r\n",
+    "PostedDate": "2008-11-15T07:16:43.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133388",
+    "ThreadId": "39976",
+    "Html": "Here is a basic example:<br>\r\n<span style=\"font-size:13px\">\r\n<p>DataGrid_Standard.Columns.Add(</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataGridTextColumn</span><span style=\"font-size:13px\"> { Header = </span><span style=\"font-size:13px;color:#a31515\">&quot;First Name&quot;</span><span style=\"font-size:13px\">, Binding = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#a31515\">&quot;FirstName&quot;</span><span style=\"font-size:13px\">)</span><span style=\"font-size:13px\"> });<br>\r\nDataGrid_Standard.Columns.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">DataGridTextColumn</span><span style=\"font-size:13px\"> { Header = </span><span style=\"font-size:13px;color:#a31515\">&quot;Last Name&quot;</span><span style=\"font-size:13px\">, Binding = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Binding</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#a31515\">&quot;LastName&quot;</span><span style=\"font-size:13px\">)</span><span style=\"font-size:13px\"> });<br>\r\nDataGrid_Standard.Items.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Person</span><span style=\"font-size:13px\"> { FirstName = </span><span style=\"font-size:13px;color:#a31515\">&quot;John&quot;</span><span style=\"font-size:13px\">, LastName = </span><span style=\"font-size:13px;color:#a31515\">&quot;Smith&quot;</span><span style=\"font-size:13px\"> });<br>\r\nDataGrid_Standard.Items.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Person</span><span style=\"font-size:13px\"> { FirstName = </span><span style=\"font-size:13px;color:#a31515\">&quot;John&quot;</span><span style=\"font-size:13px\">, LastName = </span><span style=\"font-size:13px;color:#a31515\">&quot;Smith&quot;</span><span style=\"font-size:13px\"> });<br>\r\nDataGrid_Standard.Items.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Person</span><span style=\"font-size:13px\"> { FirstName = </span><span style=\"font-size:13px;color:#a31515\">&quot;John&quot;</span><span style=\"font-size:13px\">, LastName = </span><span style=\"font-size:13px;color:#a31515\">&quot;Smith&quot;</span><span style=\"font-size:13px\"> });<br>\r\nDataGrid_Standard.Items.Add(</span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Person</span><span style=\"font-size:13px\"> { FirstName = </span><span style=\"font-size:13px;color:#a31515\">&quot;John&quot;</span><span style=\"font-size:13px\">, LastName = </span><span style=\"font-size:13px;color:#a31515\">&quot;Smith&quot;</span><span style=\"font-size:13px\"> });\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-11-18T05:34:54.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133545",
+    "ThreadId": "39976",
+    "Html": "Thanks Vinsibal,<br>\r\n<br>\r\nI will try it out.<br>\r\n",
+    "PostedDate": "2008-11-18T19:46:37.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

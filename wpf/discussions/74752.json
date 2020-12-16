@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "255854",
+    "ThreadId": "74752",
+    "Html": "<p>I want to do a lot of things like sorting, paging, grouping and filtering on the WPF Datagrid.</p>\r\n<p>As I already know, paging could be done using LINQ, but firstly, I need to get the total number of records retrieved from the database,</p>\r\n<p>and then page the records in another ObservableCollection class, bind to the WPF Datagrid so that it can display only those&nbsp;paged records.</p>\r\n<p>Sorting, Grouping and Filtering also can be done using CollectionView class.</p>\r\n<p>The problem is,&nbsp;how can I do&nbsp;to sort a paged DataGrid ? Let says I have 100 records, 20 per page, total 5 pages</p>\r\n<p>after binding&nbsp;20 records to the Datagrid, I can only sort&nbsp;those 20 records ONLY when I clicking the header button of DataGrid ...</p>\r\n<p>What I want to do is when I&nbsp;click on&nbsp;the header button&nbsp;of the DataGrid, I can&nbsp;sort the total 100 records again and then get only 20 out of them, display it.</p>\r\n<p>Does anyone can give me a hand and tell me how can I achieve this ?</p>\r\n<p>By the way, I know PagedCollectionView is available on Silverlight 3 but absent in WPF Application, can I use this function on WPF Application ?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for reply !!!</p>",
+    "PostedDate": "2009-11-11T00:15:45.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462168",
+    "ThreadId": "74752",
+    "Html": "(Eight months of silence later..)\r\n\r\nI would like to know this aswell.\r\nWhen will the WPF DataGrid have an equivalent of &quot;PagedCollectionView&quot; ? \r\n\r\n",
+    "PostedDate": "2010-07-01T06:17:06.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498407",
+    "ThreadId": "74752",
+    "Html": "<p>Does anyone know if a PagedCollectionView class is planned to be added to WPF? I.e. will the Silverlight class be ported to WPF at some point? This seems like a glaring omission from WPF.</p>\r\n<p>Also it would be great if a VirtualizedWrapPanel were added.</p>",
+    "PostedDate": "2010-09-25T08:44:44.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515939",
+    "ThreadId": "74752",
+    "Html": "\r\n<p>There is an implementation in the Silverlight Toolkit:&nbsp;<a href=\"http://www.koders.com/csharp/fidE23B98B81F3358F85B5DE7B1FBD54B4324D3BB08.aspx?s=collectionviewgrouproot#L123\">http://www.koders.com/csharp/fidE23B98B81F3358F85B5DE7B1FBD54B4324D3BB08.aspx?s=collectionviewgrouproot#L123</a></p>\r\n<p>Maybe this will help you</p>\r\n",
+    "PostedDate": "2010-11-02T07:18:28.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515951",
+    "ThreadId": "74752",
+    "Html": "\r\n<p>Thanks for the post. I'm still hoping that someone from Microsoft will reply and explain why this functionality hasn't already been ported to WPF. It seems like a glaring omission and I would have expected it to be in .NET 4.0.</p>\r\n",
+    "PostedDate": "2010-11-02T07:42:15.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516419",
+    "ThreadId": "74752",
+    "Html": "\r\n<p>Hey Microsoft DataGrid without paging property is useless.</p>\r\n",
+    "PostedDate": "2010-11-03T05:54:34.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516476",
+    "ThreadId": "74752",
+    "Html": "\r\n<p>Useless to you, maybe.&nbsp; I have no use for paging in my app.&nbsp; I'd rather see them fix other problems with DataGrid, like inability to use databinding for header text and general performance.</p>\r\n",
+    "PostedDate": "2010-11-03T07:40:13.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

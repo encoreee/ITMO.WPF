@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "258642",
+    "ThreadId": "75598",
+    "Html": "<p>I'm coding a style that combines a progressbar with text and will be used within a datagrid column. In the control template I need to access the bound value in order to convert it to text as well as to set the StringFormat (later I need the value in a datatrigger to determine the color of the bar based on % completed). Since this can be reused, I don't want to code the Path= binding reference to a specific field, but would rather access the value that the control is bound to. I'm having a hard time with how to reference that. Below are two of the bindings I'm using, but they have a Path= statement. I basically want to use whatever binding that the control was setup with and pass it to my converter or add additional parameters to the binding (ie Mode=OneWay and StringFormat=P2). Been search for&nbsp; a solution for some time now.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>Progressbar</p>\r\n<p>Value=&quot;{Binding Path=<span style=\"color:#ff0000\">Pct_change</span>, Converter={StaticResource pctConverter}, Mode=OneWay}&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>TextBlock</p>\r\n<p>Text=&quot;{Binding Path=<span style=\"color:#ff0000\">Pct_change</span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mode=OneWay,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringFormat=P2}&quot;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-19T05:27:36.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

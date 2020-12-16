@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "431567",
+    "ThreadId": "209470",
+    "Html": "<p>Hello everyone!</p>\r\n<p>I have a project, where I show datas in a datagrid with multiple columns. I want to be able to filter the text in some of them. Is there a way to modify the header of the column so that it shows a text box where I can write my search text?</p>\r\n<p>Or is there another similar way (maybe something like a row above the column)?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-04-15T10:32:59.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

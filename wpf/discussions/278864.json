@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "695901",
+    "ThreadId": "278864",
+    "Html": "\r\n<p>Is it possible to save a Chart within a FlowDocument to file. I add a chart and it displays fine on screen, then when it is saved to a XamlPackage using the code below&nbsp;but file doesn't contain the Chart, and when loaded and displayed this detail is\r\n missing.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> range = <span style=\"color:blue\">new</span> TextRange(Document.ContentStart, Document.ContentEnd);\r\n<span style=\"color:blue\">using</span> (<span style=\"color:blue\">var</span> stream = System.IO.File.Create(filename))\r\n{\r\n    range.Save(stream, DataFormats.XamlPackage);\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Is there a way to save the Chart to file too?</p>\r\n<p>Thanks<br>\r\nChunda</p>\r\n",
+    "PostedDate": "2011-11-09T07:41:01.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

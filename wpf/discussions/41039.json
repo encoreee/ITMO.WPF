@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "136133",
+    "ThreadId": "41039",
+    "Html": "I have a business object that I am attaching to a grid. However, I can not sort it. It is using BindingList. Can we we make the grid sort? <br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-11-28T09:55:52.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136509",
+    "ThreadId": "41039",
+    "Html": "Hi,<br>\r\n<br>\r\nBindingList does not implementing sorting (or filtering), you can confirm this by testing the BindingList.SupportsSorting methods which returns false. When using a BindingList it is up to you to implement sorting.<br>\r\n<br>\r\nBindingList is the old collection that is used for databinding. Within WPF you should use ObservableCollection which does implement sorting and will allow your grid to sort.<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://wpfadventures.wordpress.com/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n",
+    "PostedDate": "2008-12-01T01:33:33.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136733",
+    "ThreadId": "41039",
+    "Html": "Colin,<br>\r\nhow can I implement sorting for IBindingList for the toolkit? <br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-12-01T13:44:20.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136831",
+    "ThreadId": "41039",
+    "Html": "Hi,<br>\r\n<br>\r\nYou could inherit from BindingList and implement sort. See this forum post:<br>\r\n<br>\r\nhttp://bytes.com/groups/net-c/754604-sort-bindinglist<br>\r\n<br>\r\nHowever, if you go to all this effort - why not just use ObservableCollection ?<br>\r\n<br>\r\nRegards,<br>\r\nColin E.<br>\r\n--<br>\r\nhttp://wpfadventures.wordpress.com/ - my WPF blog<br>\r\nhttp://www.codeproject.com/KB/WPF/WPFDataGridExamples.aspx - WPF DataGrid Practical Examples <br>\r\n",
+    "PostedDate": "2008-12-02T00:54:26.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137060",
+    "ThreadId": "41039",
+    "Html": "How can I attach the sort view utility to ObjectDataProvider? <br>\r\n<br>\r\nAre you going to support sorting for BindingList when you release the product?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-12-02T14:56:01.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137138",
+    "ThreadId": "41039",
+    "Html": "Hi Colin,<div><br></div><div> What georgio is trying to say (I think) and what I keep trying to find, is that <span style=\"font-family:'segoe ui';font-size:13px\">ObservableCollection just can't do for us, because we are usign linq objects that have a AsBingingList() method and no AsObservableCollection method.</span></div><div><span style=\"font-family:'segoe ui';font-size:13px\"><br></span></div><div><span style=\"font-family:'segoe ui';font-size:13px\"> Georgio</span></div><div><br></div><div><span style=\"font-family:'segoe ui';font-size:13px\">  Unfortunately for us there is little hope sorting will ever be supported on BindingList, you can take a look at <span style=\"font-family:'times new roman';font-size:16px\"><a href=\"http://www.codeplex.com/bindablelinq\">http://www.codeplex.com/bindablelinq</a> maybe it will help.</span></span></div><div><br></div><div>Regards,</div><div>Calin</div>",
+    "PostedDate": "2008-12-02T22:27:05.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137282",
+    "ThreadId": "41039",
+    "Html": "We are using a framework that binding is based on BindingList. I have tried out some vendor products (telerik) <br>\r\nand sorting works out of the box without any extra code. They must do something internally. Can you do something similar?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-12-03T07:43:34.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139633",
+    "ThreadId": "41039",
+    "Html": "There's a good article here about how to get a CollectionViewSource to do the sorting on your Binding list here:<br>\r\n<br>\r\n<a href=\"http://wpfmentor.blogspot.com/2008/12/observable-collections-independent-of.html\">http://wpfmentor.blogspot.com/2008/12/observable-collections-independent-of.html</a><br>\r\n",
+    "PostedDate": "2008-12-11T02:49:36.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140140",
+    "ThreadId": "41039",
+    "Html": "I do not seem to get it to work. I do not get any error but the grid does not display the results. Any ideas? This is what I have.<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">local</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">ExtendedCollectionViewSource</span><span style=\"font-size:13px;color:#ff0000\"> x</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#ff0000\">Key</span><span style=\"font-size:13px;color:#0000ff\">=&quot;cvs&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Source</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#0000ff\">}&quot;&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">local</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">ExtendedCollectionViewSource.SortDescriptions</span><span style=\"font-size:13px;color:#0000ff\">&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">ComponentModel</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">SortDescription</span><span style=\"font-size:13px;color:#ff0000\"> Direction</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Descending&quot;/&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">local</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">ExtendedCollectionViewSource.SortDescriptions</span><span style=\"font-size:13px;color:#0000ff\">&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#a31515\">local</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">ExtendedCollectionViewSource</span><span style=\"font-size:13px;color:#0000ff\">&gt;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#a31515\">dataGridView</span><span style=\"font-size:13px;color:#0000ff\">:</span><span style=\"font-size:13px;color:#a31515\">DataGrid</span><span style=\"font-size:13px;color:#ff0000\"> Grid.Row</span><span style=\"font-size:13px;color:#0000ff\">=&quot;1&quot;</span><span style=\"font-size:13px;color:#ff0000\"> Margin</span><span style=\"font-size:13px;color:#0000ff\">=&quot;6,39,31,9&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">Name</span><span style=\"font-size:13px;color:#0000ff\">=&quot;dataGridOrders&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#ff0000\">AutoGenerateColumns</span><span style=\"font-size:13px;color:#0000ff\">=&quot;False&quot;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#ff0000\">SelectionUnit</span><span style=\"font-size:13px;color:#0000ff\">=&quot;Cell&quot;\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#ff0000\">ItemsSource</span><span style=\"font-size:13px;color:#0000ff\">=&quot;{</span><span style=\"font-size:13px;color:#a31515\">Binding</span><span style=\"font-size:13px;color:#ff0000\"> Source</span><span style=\"font-size:13px;color:#0000ff\">={</span><span style=\"font-size:13px;color:#a31515\">StaticResource</span><span style=\"font-size:13px;color:#ff0000\"> cvs</span><span style=\"font-size:13px;color:#0000ff\">}}&quot;</span><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<br>\r\n<br>\r\n//c#<br>\r\n<span style=\"font-size:13px\">\r\n<p>orders = Pts.OrderQuery.Library.</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">Orders</span><span style=\"font-size:13px\">.GetOrdersNone();\r\n<p>&nbsp;</p>\r\n<p>dataGridOrders.DataContext = orders;</p>\r\n</span></p>\r\n<br>\r\n",
+    "PostedDate": "2008-12-12T11:48:52.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

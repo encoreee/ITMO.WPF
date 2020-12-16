@@ -1,0 +1,151 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am developing one WPF application. It is a desktop application. It uses WPF Toolkit DataGrid. For Tab navigation, I have set TabIndex for every control.\n \nWPF Toolkit DataGrid does support Tab navigation. However, there is a bug.  If user press Tab key at last row of datagrid, it navigates to the First control in TabIndex order. So, if you have any controls after DataGrid, they will be skipped. \n \nHere is the code I used......\n=====================================================================================================\n \n<toolkit:DataGrid Name=\"gvHistory\" ItemsSource=\"{Binding}\" AutoGenerateColumns=\"False\" Grid.Row=\"4\" Margin=\"12,35,5.5,2\"  Grid.ColumnSpan=\"2\"\n                     AlternationCount=\"2\" RowStyle=\"{StaticResource GridRowStyle}\"  CellStyle=\"{StaticResource GridCellStyle}\" RowHeight=\"25\" GridLinesVisibility=\"None\"    CanUserReorderColumns=\"False\" CanUserResizeColumns=\"False\" CanUserResizeRows=\"False\" CanUserAddRows=\"False\"> \n                \n            <toolkit:DataGrid.Columns>\n \n                    <toolkit:DataGridTextColumn Header=\"Status\"         Width=\"70\"   Binding=\"{Binding Status}\"       IsReadOnly=\"True\"/>\n                    <toolkit:DataGridTextColumn Header=\"Comments\"       Width=\"150\"  Binding=\"{Binding Comments}\"     IsReadOnly=\"True\"/>\n                    <toolkit:DataGridTextColumn Header=\"Updated By\"     Width=\"120\"  Binding=\"{Binding UpdatedBy}\"    IsReadOnly=\"True\"/>\n                    <toolkit:DataGridTextColumn Header=\"Updated On\"     Width=\"135\"  Binding=\"{Binding UpdatedDate}\"  IsReadOnly=\"True\"/>\n                 \n                </toolkit:DataGrid.Columns>\n            </toolkit:DataGrid>\n \n            <Canvas Grid.Row=\"5\" Grid.ColumnSpan=\"2\" Name=\"cvsAUC\" Margin=\"12,8,6,6\" Background=\"AliceBlue\" >\n                <Button Name=\"btnAdd\"       Style=\"{StaticResource BDButton}\"   Grid.Row=\"5\"  Click=\"btnAdd_Click\"       Width=\"67\" Height=\"25\" Canvas.Left=\"558\" Canvas.Top=\"8\" >_Add</Button>\n                <Button Name=\"btnUpdate\"    Style=\"{StaticResource BDButton}\"   Grid.Row=\"5\"  Click=\"btnUpdate_Click\"    Width=\"60\" Height=\"25\" Canvas.Left=\"638\" Canvas.Top=\"8\" >_Update</Button>\n                <Button Name=\"btnCancel\"            Style=\"{StaticResource BDButton}\"   Grid.Row=\"5\"  Click=\"btnCancel_Click\"            Width=\"60\" Height=\"25\" Canvas.Left=\"709\" Canvas.Top=\"8\" IsCancel=\"True\" >_Cancel</Button>\n            </Canvas>\n=====================================================================================================\n \n How can I we resolve this problem ? Has anybody faced such problem before ?\n \n \nThanks,\nSambhaji",
+    "LastUpdatedDate": "2013-02-21T18:41:42.273-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2008-12-03T23:31:39.48-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in Tab Navigation with WPF Toolkit Datagrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 8406
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2602,
+      "FileName": "DatagridTest.zip",
+      "DownloadUrl": ".\\2602"
+    },
+    {
+      "FileId": 2624,
+      "FileName": "repro.zip",
+      "DownloadUrl": ".\\2624"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi Sambhaji,\r\n\r\nThanks for reporting the issue. \r\nI tried your markup, but I don't see any DataGrid row.  Then, I created a datagrid myself and add some controls after it, and I can use tab to navigate the control after the datagrid. If you can provide a reproduceable small project, I can help you to investigate.\r\n\r\nThanks,\r\nWilliam",
+      "PostedDate": "2008-12-04T08:19:51.987-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-07T10:26:07.43-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello William\r\n\r\nWe are experiencing a similar issue with the tab ordering in WPF when a DataGrid control is added to a page.\r\n\r\nI've attached a sample project demonstrating the issue.\r\n\r\nIt contains 3 texboxes and a datagrid. The tab order is set as follows:\r\n- Textbox1 (tabindex = 0)\r\n- Datagrid1 (tabindex = 1)\r\n- Textbox2 (tabindex = 2)\r\n- Textbox3 (tabindex = 3)\r\n\r\nWhen tabbing from Textbox1, here's the sequence it follows:\r\n- Textbox1\r\n- Textbox2 (order broken, it should tab to the Datagrid)\r\n- Textbox3\r\n- Datagrid1\r\n\r\nLet me know if you need more info.\r\n\r\nThanks,\r\nMatt",
+      "PostedDate": "2009-01-07T11:07:45.103-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-07T11:07:46.29-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-07T11:09:20.18-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Matt,\r\n\r\nThanks for the repro. I can repro the problem, and I filed a bug to track the issue.\r\n\r\nWilliam",
+      "PostedDate": "2009-01-09T15:53:20.74-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also ran into the same problem.\r\n\r\nI've attached a repro project for you.\r\n\r\nI did a little bit of investigation of the source, and it looks to me like the problem might be caused by the static constructor for DataGridCellsPanel, which updates the value of KeyboardNavigation.TabNavigationProperty to Local.\r\n\r\nIf I remove that code, the bug no longer repros for me. I, of course, have no idea if it is the right fix, but it unblocks me so I'm going to go with it for a while.\r\n\r\nI included a copy of the modified file along with the repro project.\r\n\r\n",
+      "PostedDate": "2009-01-13T05:23:36.723-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T05:23:41.63-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ok... so I don't think my fix was the right one....( I can tried to somewhere else, and the change causes more problems)\r\n\r\nSo, please disregard",
+      "PostedDate": "2009-01-13T05:37:12.983-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T18:50:47.183-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "FYI:\r\n\r\nI was able to work around this by changing the value of KeyboardNavigation.TabNavigationProperty to KeyboardNavigationMode.Local (it was set to Continue).\r\nI made the modification directly to the static constructor for the DataGrid. If you don't want to hack at the source, then you can work around the issue in your apps by adding:\r\n\r\nKeyBoardNavigation.TabNavigation=\"KeyboardNavigationMode.Local\" to your data grid declaration in Xaml.\r\n\r\n",
+      "PostedDate": "2009-01-13T22:51:56.027-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Oh... one more thing....\r\n\r\nThe control template for the grid also needs to be updated if you want to keep the behavior of having tab focus the first cell in the control.\r\nThe ScrollViewer contained inside the control's template has it's IsTabStop value set to true by default. It needs to be set to false. It's easiest to make the change in the control's source (Generic.xaml), because then it works with every theme, but if you don't have any accessibility issues then just updating the control template may be easier for you.",
+      "PostedDate": "2009-01-13T23:09:15.443-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-18T18:15:00.92-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-01T16:05:45.39-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-29T09:25:40.247-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is the issue Matt describes fixed in either the WPF Toolkit or .NET Framework 4?\r\n\r\nThanks,\r\n\r\nAlexander",
+      "PostedDate": "2011-08-19T04:21:47.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is the issue Matt describes already resolved in either WPF Toolkit or .NET Framework 4?\r\n\r\nThanks,\r\n\r\nAlexander",
+      "PostedDate": "2011-08-19T04:24:07.93-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is the issue Matt describes already resolved in either WPF Toolkit or .NET Framework 4?\r\n\r\nThanks,\r\n\r\nAlexander",
+      "PostedDate": "2011-08-19T04:25:06.52-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "any news about this issue?",
+      "PostedDate": "2012-02-28T04:05:44.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:42.273-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

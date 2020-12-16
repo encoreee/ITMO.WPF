@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "245448",
+    "ThreadId": "71907",
+    "Html": "<p>Hi!</p>\r\n<p>I have a DataGrid which contains RowDetails. The RowDetails Template is also a DataGrid which contains RowDatails. So I get a n-level hierarchy DataGrid.</p>\r\n<p>Now my problem:</p>\r\n<p>I exand the RowDetails with 10 rows&nbsp;from a row of the second level for example. Then I expand another RowDetails from the second level too with 5 rows, the space between the the rows from the second level will not updated. So there is displayed an empty space of 5 rows.</p>\r\n<p>How can I update the the space, so that there is no empty space.</p>\r\n<p>&nbsp;</p>\r\n<p>Regrads, Hendrik</p>",
+    "PostedDate": "2009-10-14T01:46:59.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

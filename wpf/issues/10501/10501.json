@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "if you delete a number where the year is supposed to be after selecting a date the year can display 0209 instead of 2009.  I also noticed that validation is not done when the DisplayDateStart and DisplayDateEnd are set.  The date is still allowed to be set outside of this time frame.",
+    "LastUpdatedDate": "2013-02-21T18:41:00.347-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-08-21T10:02:07.987-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DatePicker - Error On DateValidation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10501
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "For the first issue can you provide a repro and some step by step instructions along with what you expected ?\r\n\r\nThe displaydatestart and displaydateend do not affect the CurrentDate.  A user can select a date and then navigate to show other dates.  This is by design.",
+      "PostedDate": "2009-08-25T13:47:13.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:00.347-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

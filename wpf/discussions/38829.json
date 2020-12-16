@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "128805",
+    "ThreadId": "38829",
+    "Html": "Hi, I am using &quot;CommittingEdit&quot; event for&nbsp;validations for all of my dataGrid, but as I installed the V1 and I can't fine &quot;CommittingEdit&quot; event.<br>\r\nIs it intentionally removed or what? Why? Any alternative solution? ASAP.<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-10-29T22:43:58.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128893",
+    "ThreadId": "38829",
+    "Html": "The API has been updated to CellEditEnding and RowEditEnding.  This is to let you know what type of commit is occurring.  Before CommittingEdit was called for both which was a little confusing.\r\n",
+    "PostedDate": "2008-10-30T05:51:16.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "DataGrid",
+      "DisplayName": "DataGrid"
+    },
+    "ClosedComment": "Upon further inspection, we realized that this is actually by design.  DataGrid.CurrentItem is designed to give the value of the keyboard-focused element.  If you move focus to outside of the DataGrid, then this no longer returns a value.  If you are looking for the value of the currently selected item in the collection, you should use DataGrid.Items.CurrentItem.  Thanks&#33;",
+    "ClosedDate": "2009-05-27T10:47:35.353-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear,\n \nThe annexed file demonstrates that 'datagrid.CurrentItem' and other related information is not available\nwhen user clicks on TextBox besides the datagrid.\n \nThanks,\n \nJulie\n \nProcedure\n------------\nUnzip annexed file\nStart Visual Studio 2008 and adjust the reference to 'WPFToolkit.dll' (I used v3.5.40128.1) in the  solution project\n \nScenario\n----------\nStart Application \nStep 1:\nClick on cell 'A' in the datagrid: the 3 textboxes display information about this cell and related item.\nStep 2:\nClick in any of the 3 textboxes: the information has disappeared.\nStep3:\nTab now from the Textboxes into the Datagrid (to obtain focus): the information appears again.\n \nConclusion:\nEither a bug or information is  'datagrid.currentItemWhileDataGridHasFocus'",
+    "LastUpdatedDate": "2013-05-16T05:31:06.323-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "wpf",
+    "ReportedDate": "2009-05-16T04:14:15.363-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid : 'datagrid.CurrentItem' information disappears when focus outside datagrid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9992
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3078,
+      "FileName": "06 current item.zip",
+      "DownloadUrl": ".\\3078"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thank you for reporting this issue.  We've filed a bug to track this internally.  As a workaround, you can bind to DataGrid.Items.CurrentItem instead of CurrentItem and I think this will give you the same value in most cases.",
+      "PostedDate": "2009-05-22T13:40:58.147-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-22T13:41:12.507-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-27T10:47:35.353-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "How can I then bind to the current item? ",
+      "PostedDate": "2009-05-27T14:09:54.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "See follow up in workitem : 10054",
+      "PostedDate": "2009-05-28T00:22:56.5-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:41:16.337-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:31:06.323-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

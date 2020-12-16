@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "227894",
+    "ThreadId": "67039",
+    "Html": "<p>Hi all!</p>\r\n<p>I have a question about the&nbsp;DataPointStyle of a ColumnSeries for example.</p>\r\n<p>I have a UserControl with one chart and the chart have one ColumnSeries. Now I would like to bind the DataPointStyle to a property in my ViewModel so&nbsp;the UserControl&nbsp;is a bit &nbsp;more generic.</p>\r\n<p>But it don&acute;t work that way. My chart&nbsp; use the default style. Is there a way to assign style to the series?</p>\r\n<p>Regrads</p>\r\n<p>Hendrik</p>",
+    "PostedDate": "2009-08-26T04:30:07.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228186",
+    "ThreadId": "67039",
+    "Html": "<p>I don't think I understand the problem. :( ColumnSeries.Style should accept a Style/TargetType=ColumnSeries which will style the Series. Is that not working for you?</p>",
+    "PostedDate": "2009-08-26T17:44:59.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228251",
+    "ThreadId": "67039",
+    "Html": "<p>Sorry for the bad description.</p>\r\n<p>I would like to write something like this.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Chart</span><span style=\"color:Blue\">&gt;</span>\r\n       <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ColumnSeries</span> \r\n                <span style=\"color:Red\">ItemsSource</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding MainContent}</span><span style=\"color:Black\">&quot;</span>\r\n                <span style=\"color:Red\">DependentValueBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Value}</span><span style=\"color:Black\">&quot;</span>\r\n                <span style=\"color:Red\">IndependentValueBinding</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Name}</span><span style=\"color:Black\">&quot;</span>\r\n                <span style=\"color:Red\">DataPointStyle</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding ChartStyle}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n       <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ColumnSeries</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">charting</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Chart</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>The properties &quot;MainContent&quot; and &quot;ChartStyle&quot; are properties from my viewModel. But the DataPointStyle-Binding don&acute;t work. It works just with Static- or DynamicResource.</p>",
+    "PostedDate": "2009-08-26T23:15:22.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228491",
+    "ThreadId": "67039",
+    "Html": "<p>I think I know what's going on here - the DataPointStyle is only used by a Series when it's creating the DataPoints - and if it changes later, the DataPoints are not updated with the new Style. So I think your Binding is just getting applied *after* the DataPoints have been created and therefore it seems not to work. So the fix would be to see if you can get that Binding in place *before* the DataPoints are set - perhaps by making sure MainContent gets set after ChartStyle is.</p>\r\n<p>PS - Good news is that the next release of Charting has some fixes that should make the original scenario work fine because the DataPoint changes will automatically propagate everywhere they should go. :)</p>",
+    "PostedDate": "2009-08-27T11:31:21.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228614",
+    "ThreadId": "67039",
+    "Html": "<p>Thanks for your response!</p>\r\n<p>I tried to set the MainContent after the Style but it don&acute;t work too. If I add the complete ColumnSeries from code then all Bindings work fine but that&acute;s not what I&acute;m looking for. I think I have to wait for the next release.</p>\r\n<p>Hendrik</p>",
+    "PostedDate": "2009-08-28T00:25:53.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

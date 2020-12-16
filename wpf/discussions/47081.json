@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "157470",
+    "ThreadId": "47081",
+    "Html": "Hello,<br>\r\nI read (Vincent Sibal's blog: Overview of the editing features in WPF DataGrid) that there are some editing events on the datagrid:<br>\r\n - CommittingEdit<br>\r\n - CancellingEdit<br>\r\n - BeginningEdit<br>\r\n - PreparingCellForEdit<br>\r\n - InitializingNewItem.<br>\r\n<br>\r\nBut I can not find the: CommittingEdit.<br>\r\n<br>\r\nDoes somebody know if this really exists?<br>\r\n",
+    "PostedDate": "2009-02-13T08:45:03.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157671",
+    "ThreadId": "47081",
+    "Html": "CommittingEdit and CancellingEdit were updated to use RowEditEnding and CellEditEnding where a parameter DataGridEditAction is passed to them to determine if it is a commit or cancel.\r\n",
+    "PostedDate": "2009-02-14T07:08:32.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

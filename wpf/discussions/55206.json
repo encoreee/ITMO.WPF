@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "186365",
+    "ThreadId": "55206",
+    "Html": "In windows forms I was able to<br>\r\n<span style=\"font-size:16px\">IsoStorage = </span><span style=\"color:#2b91af;font-size:16px\">IsolatedStorageFile</span><span style=\"font-size:16px\">.GetStore(</span><span style=\"color:#2b91af;font-size:16px\">IsolatedStorageScope</span><span style=\"font-size:16px\">.User | </span><span style=\"color:#2b91af;font-size:16px\">IsolatedStorageScope</span><span style=\"font-size:16px\">.Application, </span><span style=\"color:#0000ff;font-size:16px\">null</span><span style=\"font-size:16px\">);<br>\r\nin the application constructor.<br>\r\nWhen I do this in a WPF application in the Application_Startup method I get an error.<br>\r\n<span style=\"font-size:16px\">Unable to determine application identity of the caller.<br>\r\n<br>\r\nIs isolated storage supported in WPF? When will the application finally be identifiable to the isolated storage routines?<br>\r\n<br>\r\nI also modified the app.xaml to execute these routines at<br>\r\n<span style=\"color:#ff0000;font-size:16px\">LoadCompleted</span><span style=\"color:#0000ff;font-size:16px\">=&quot;Application_LoadCompleted&quot;<br>\r\n</span><span style=\"font-size:16px\"> </span><span style=\"color:#ff0000;font-size:16px\">SessionEnding</span><span style=\"color:#0000ff;font-size:16px\"><span style=\"color:#0000ff;font-size:16px\">=&quot;Application_SessionEnding&quot;<br>\r\nThese routines never get executed. The Startup and Exit routines do get called. What else do I have to do to cause these to run?<br>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>Tom<br>\r\n<br>\r\n </p>\r\n</span></span>\r\n",
+    "PostedDate": "2009-05-03T18:48:51.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224519",
+    "ThreadId": "55206",
+    "Html": "<p>I have a similar problem with WPF.&nbsp; What is weird for me is that when I run it in the debugger, via the F5 key, without breakpoints it works fine.&nbsp; However if I run it outside of the debugger, via Ctrl-F5, I get the &quot;Unable to determinde application identity of the caller&quot; error.&nbsp; If anyone is interested, I have a sample project that illustrates my issue.</p>",
+    "PostedDate": "2009-08-17T09:35:17.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

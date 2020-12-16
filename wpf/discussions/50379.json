@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "168797",
+    "ThreadId": "50379",
+    "Html": "I found interesting problem while was trying to use DynamicResource in DataGridColumn header.<br>\r\nI coded following<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Window.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;sys:String x:Key=&quot;HeaderText&quot;&gt;Header Text&lt;/sys:String&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Window.Resources&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tk:DataGridTextColumn Header=&quot;{DynamicResource HeaderText}&quot; Width=&quot;100&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid.Columns&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tk:DataGrid&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>\r\n<br>\r\nBut header displayed empty string.<br>\r\nMoreover in DataGridColumn class HeaderProperty returns null.<br>\r\nCould you please help me to figure out where is the problem and how to correct it.<br>\r\n<br>\r\nThank you. <br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2009-03-16T16:57:47.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168826",
+    "ThreadId": "50379",
+    "Html": "The Columns property is unable to use the internal WPF feature inheritance context, which would enable this scenario. It is something we're considering for the .NET 4.0 release.<br>\r\n<br>\r\nBen\r\n",
+    "PostedDate": "2009-03-16T18:07:22.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

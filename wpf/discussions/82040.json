@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "281809",
+    "ThreadId": "82040",
+    "Html": "<p>Will Ribbon for wpf provide a &quot;RibbonPage&quot; class used for XBAP style applications?</p>\r\n<p>According to another project &quot;WPF C# Ribbon Control Library&quot; <a title=\"http://www.codeproject.com/KB/WPF/ribboncontrol.aspx\" href=\"http://www.codeproject.com/KB/WPF/ribboncontrol.aspx\">http://www.codeproject.com/KB/WPF/ribboncontrol.aspx</a> . It's 1.0.0.6 added a RibbonPage class.</p>\r\n<p>Is there a plan to add RibbonPage feature in this project? Or it's not needed already?</p>\r\n<p>Thank you!</p>",
+    "PostedDate": "2010-01-26T04:44:46.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
