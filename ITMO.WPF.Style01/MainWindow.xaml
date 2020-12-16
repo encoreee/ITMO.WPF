@@ -13,6 +13,23 @@
             <Setter Property="BorderBrush" Value="White" />
             <Setter Property="Width" Value="135" />
             <Setter Property="Height" Value="30" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Name="Storyboard1">
+                            <Storyboard Duration="0:0:1">
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="20" />
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" To="26,118,45,104" />
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="210"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" To="40" />
+                        </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="Storyboard1" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="Label">
             <Setter Property="Background" Value="Black" />
@@ -20,6 +37,23 @@
             <Setter Property="BorderBrush" Value="White" />
             <Setter Property="Width" Value="135" />
             <Setter Property="Height" Value="35" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Name="Storyboard1">
+                            <Storyboard Duration="0:0:1">
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="20" />
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" To="26,118,45,104" />
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="210"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" To="40" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="Storyboard1" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="Black" />
@@ -27,6 +61,23 @@
             <Setter Property="BorderBrush" Value="White" />
             <Setter Property="Width" Value="135" />
             <Setter Property="Height" Value="30" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Name="Storyboard1">
+                            <Storyboard Duration="0:0:1">
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="20" />
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" To="26,118,45,104" />
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="210"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" To="40" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="Storyboard1" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid>

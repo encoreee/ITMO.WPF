@@ -21,3 +21,9 @@ D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\bin\Debug\
 D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.csproj.CoreCompileInputs.cache
 D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.dll
 D:\Александр\Repository\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.pdb
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.csprojAssemblyReference.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.csproj.CoreCompileInputs.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Debug\CalculatorEngine.pdb

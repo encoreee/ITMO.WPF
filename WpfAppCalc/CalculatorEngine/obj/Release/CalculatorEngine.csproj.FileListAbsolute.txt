@@ -1,3 +1,7 @@
 C:\Users\bayes\Desktop\Windows_App\Calculator_starter_2\Starter_new\CalculatorEngine\bin\Release\CalculatorEngine.dll
 C:\Users\bayes\Desktop\Windows_App\Calculator_starter_2\Starter_new\CalculatorEngine\obj\Release\CalculatorEngine.csproj.CoreCompileInputs.cache
 C:\Users\bayes\Desktop\Windows_App\Calculator_starter_2\Starter_new\CalculatorEngine\obj\Release\CalculatorEngine.dll
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\bin\Release\CalculatorEngine.dll
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Release\CalculatorEngine.csprojAssemblyReference.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Release\CalculatorEngine.csproj.CoreCompileInputs.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\CalculatorEngine\obj\Release\CalculatorEngine.dll

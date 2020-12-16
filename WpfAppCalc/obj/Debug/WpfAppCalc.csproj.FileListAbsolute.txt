@@ -69,3 +69,10 @@ D:\Александр\Repository\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.csproj
 D:\Александр\Repository\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.csproj.CopyComplete
 D:\Александр\Repository\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.exe
 D:\Александр\Repository\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.pdb
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.csprojAssemblyReference.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\MainWindow.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\App.g.cs
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc_MarkupCompile.cache
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc_MarkupCompile.lref
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.exe
+C:\Users\RaikovAN\source\repos\ITMO.WPF\WpfAppCalc\obj\Debug\WpfAppCalc.pdb

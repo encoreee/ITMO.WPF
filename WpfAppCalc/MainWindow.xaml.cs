@@ -20,7 +20,7 @@ namespace WpfAppCalc
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+    /// </summary>asdfcbcvbvbcbvcbvc
     public partial class MainWindow : Window
     {
 
@@ -366,6 +366,7 @@ namespace WpfAppCalc
         {
             string result = CalcEngine.CalcEqual();
             Result res = new Result();
+            OutputDisplay.Text = result;
             res.result = result;
             res.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             res.TopMost = true;
