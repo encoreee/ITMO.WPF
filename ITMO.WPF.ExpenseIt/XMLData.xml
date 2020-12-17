@@ -9,7 +9,6 @@
 			<Expense ExpenseType="Document printing" ExpenseAmount="50"/>
 			<Expense ExpenseType="Gift" ExpenseAmount="125" />
 		</Person>
-		47
 		<Person Name="John" Department="Engineering">
 			<Expense ExpenseType="Magazine subscription" ExpenseAmount="50"/>
 			<Expense ExpenseType="New machine" ExpenseAmount="600" />
