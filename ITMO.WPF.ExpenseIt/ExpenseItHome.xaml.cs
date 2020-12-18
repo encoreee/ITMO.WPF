@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace ITMO.WPF.ExpenseIt
+namespace ExpenseIt
 {
     /// <summary>
-    /// Логика взаимодействия для ExpenseItHome.xaml
+    /// Interaction logic for ExpenseItHome.xaml
     /// </summary>
     public partial class ExpenseItHome : Page
     {
@@ -25,11 +14,18 @@ namespace ITMO.WPF.ExpenseIt
             InitializeComponent();
         }
 
+        private void ExpenseItHome_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Trigger live region to be read when loaded.
+            FrameworkElementAutomationPeer.FromElement(LiveRegion)?.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged);
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // View Expense Report
             ExpenseReportPage expenseReportPage = new ExpenseReportPage(this.peopleListBox.SelectedItem);
             this.NavigationService.Navigate(expenseReportPage);
         }
+
     }
 }

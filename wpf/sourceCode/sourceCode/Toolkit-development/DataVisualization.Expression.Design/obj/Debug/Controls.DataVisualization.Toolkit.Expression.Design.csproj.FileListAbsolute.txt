@@ -1,4 +1,0 @@
-C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\DataVisualization.Expression.Design\obj\Debug\Controls.DataVisualization.Toolkit.Expression.Design.csprojAssemblyReference.cache
-C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\DataVisualization.Expression.Design\obj\Debug\System.Windows.Controls.DataVisualization.Design.Properties.Resources.resources
-C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\DataVisualization.Expression.Design\obj\Debug\Controls.DataVisualization.Toolkit.Expression.Design.csproj.GenerateResource.cache
-C:\Users\RaikovAN\source\repos\ITMO.WPF\wpf\sourceCode\sourceCode\Toolkit-development\DataVisualization.Expression.Design\obj\Debug\Controls.DataVisualization.Toolkit.Expression.Design.csproj.CoreCompileInputs.cache
